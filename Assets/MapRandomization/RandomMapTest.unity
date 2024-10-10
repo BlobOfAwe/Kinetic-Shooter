@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96082122}
   m_Layer: 0
-  m_Name: Chunk (4)
+  m_Name: Chunk1-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518782700}
   m_Layer: 0
-  m_Name: Chunk (2)
+  m_Name: Chunk2-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 692818268}
   m_Layer: 0
-  m_Name: Chunk (7)
+  m_Name: Chunk1-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892312085}
   m_Layer: 0
-  m_Name: Chunk (1)
+  m_Name: Chunk1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1211240402}
   m_Layer: 0
-  m_Name: Chunk (8)
+  m_Name: Chunk2-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1309934574}
   m_Layer: 0
-  m_Name: Chunk (6)
+  m_Name: Chunk0-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563347003}
   m_Layer: 0
-  m_Name: Chunk (5)
+  m_Name: Chunk2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -784,7 +784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619439657}
   m_Layer: 0
-  m_Name: Chunk
+  m_Name: Chunk0-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -834,6 +834,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4928ac01ef7df814794ff18ceb2d9288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionRows:
+  - transforms:
+    - {fileID: 1619439657}
+    - {fileID: 892312085}
+    - {fileID: 518782700}
+  - transforms:
+    - {fileID: 1880002669}
+    - {fileID: 96082122}
+    - {fileID: 1563347003}
+  - transforms:
+    - {fileID: 1309934574}
+    - {fileID: 692818268}
+    - {fileID: 1211240402}
   chunks:
   - {fileID: 7619132063919105966, guid: 13195b011f4a57349a14245bf764e412, type: 3}
   - {fileID: 7619132063919105966, guid: 2adfd4c1d81fc5548b9d7ec2ae88740b, type: 3}
@@ -844,16 +857,6 @@ MonoBehaviour:
   - {fileID: 7619132063919105966, guid: 345ba763a63807940bcb918af0fc1565, type: 3}
   - {fileID: 7619132063919105966, guid: 1a57a3aebb057dc48a808bdac4087161, type: 3}
   - {fileID: 7619132063919105966, guid: a7c4bab17161300489d00113ea591c05, type: 3}
-  positions:
-  - {fileID: 1619439657}
-  - {fileID: 892312085}
-  - {fileID: 518782700}
-  - {fileID: 1880002669}
-  - {fileID: 96082122}
-  - {fileID: 1563347003}
-  - {fileID: 1309934574}
-  - {fileID: 692818268}
-  - {fileID: 1211240402}
 --- !u!4 &1678758310
 Transform:
   m_ObjectHideFlags: 0
@@ -879,7 +882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880002669}
   m_Layer: 0
-  m_Name: Chunk (3)
+  m_Name: Chunk0-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
