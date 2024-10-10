@@ -83,4 +83,69 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
+
+    public void GenerateNoAdjacent()
+    {
+        for (int x = 0; x < randomValues.GetLength(0); x++)
+        {
+            for (int y = 0; y < randomValues.GetLength(1); y++)
+            {
+                randomValues[x, y] = -1;
+            }
+        }
+
+        for (int x = 0; x < positions.GetLength(0); x++)
+        {
+            for (int y = 0; y < positions.GetLength(1); y++)
+            {
+                int r = Random.Range(0, chunks.Length);
+
+                int left;
+                if (x - 1 >= 0)
+                {
+                    left = randomValues[x - 1, y];
+                } else
+                {
+                    left = -1;
+                }
+                int right;
+                if (x + 1 < positions.GetLength(0))
+                {
+                    right = randomValues[x + 1, y];
+                } else
+                {
+                    right = -1;
+                }
+                int down;
+                if (y - 1 >= 0)
+                {
+                    down = randomValues[x, y - 1];
+                } else
+                {
+                    down = -1;
+                }
+                int up;
+                if (y + 1 < positions.GetLength(1))
+                {
+                    up = randomValues[x, y + 1];
+                } else
+                {
+                    up = -1;
+                }
+
+                if (chunks.Length > 1)
+                {
+                    while (r == left || r == right || r == down || r == up)
+                    {
+                        r = Random.Range(0, chunks.Length);
+                    }
+                } else
+                {
+                    Debug.LogWarning("There must be more than one chunk in order to prevent adjacent chunks.");
+                }
+                randomValues[x, y] = r;
+                Instantiate(chunks[r], positions[x, y]);
+            }
+        }
+    }
 }
