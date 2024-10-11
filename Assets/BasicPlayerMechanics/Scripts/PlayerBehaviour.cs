@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public float recoilForce = 1f;
+    [SerializeField]
+    private bool canMoveManually = false;
 
-    public bool canMoveManually = false;
+    [SerializeField]
+    private float moveSpeed = 1f;
 
-    public float moveSpeed = 1f;
-
-    public float moveAcceleration = 1f;
+    [SerializeField]
+    private float moveAcceleration = 1f;
 
     [SerializeField]
     private Camera mainCam;
@@ -18,7 +19,8 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject aimReticle;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
 
     private Vector2 moveDir;
 
@@ -32,15 +34,6 @@ public class PlayerBehaviour : MonoBehaviour
     public void OnAim(InputAction.CallbackContext context)
     {
         cursorPos = context.ReadValue<Vector2>();
-    }
-
-    public void OnShoot(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            Debug.Log("Shoot!");
-            rb.AddForce(-transform.up * recoilForce, ForceMode2D.Impulse);
-        }
     }
 
     public void OnMove(InputAction.CallbackContext context)

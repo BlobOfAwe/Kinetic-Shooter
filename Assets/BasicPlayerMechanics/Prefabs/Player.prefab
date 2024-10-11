@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
   - component: {fileID: 5819992535482682430}
+  - component: {fileID: 6893133300616319179}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -194,8 +195,8 @@ MonoBehaviour:
     m_ActionName: Player/Aim[/Mouse/position,/Pen/position]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8544861283654042662}
-        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+      - m_Target: {fileID: 6893133300616319179}
+        m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
         m_MethodName: OnShoot
         m_Mode: 0
         m_Arguments:
@@ -224,6 +225,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a74be310-121e-4844-b8f5-c457ebe806d5
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CameraZoom, Assembly-CSharp
+        m_MethodName: OnZoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7bad86ad-8206-4dab-8c06-bb16e6a60e44
+    m_ActionName: Player/(TESTING) Camera Zoom[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -241,12 +258,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilForce: 10
-  canMoveManually: 0
+  canMoveManually: 1
   moveSpeed: 10
   moveAcceleration: 10
   mainCam: {fileID: 0}
   aimReticle: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!114 &5819992535482682430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +277,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &6893133300616319179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d62d781484a56a43a9ba34fb39e22f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilForce: 10
+  fireInterval: 0.25
+  bullet: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
