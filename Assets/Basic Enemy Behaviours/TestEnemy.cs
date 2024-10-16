@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class TestEnemy : Enemy
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
-    // Update is called once per frame
-    void Update()
+    // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
+    public override void DerivativeUpdate()
     {
         if (ReadyToStateChange()){
-            if (target == null) { state = 0; } // If the enemy has no target, Wander
-            else if (Vector2.Distance(target.transform.position, transform.position) > stayDistance) { state = 1; } // If the enemy has a target far enough away, Pursue
-            else if (Vector2.Distance(target.transform.position, transform.position) < stayDistance) { state = 2; } // If the enemy is close to its target, Attack
+            // If the enemy has no target, Wander
+            if (target == null) 
+            { state = 0; }
+            // If the enemy is already strafing and the target has not gone far enough to be chased, Strafe, 
+            else if (state == 2 && distanceToTarget < stayDistance + chaseDistance) 
+            { state = 2; }
+            // If the enemy is far enough away, Pursue
+            else if (distanceToTarget > stayDistance) 
+            { state = 1; }
+            // If the enemy is close to its target, Attack
+            else if (distanceToTarget < stayDistance) 
+            { state = 2; } 
+            
         }
 
         switch (state)
@@ -25,12 +30,13 @@ public class TestEnemy : Enemy
                 SearchForTarget(); 
                 break;
             case 1: // Pursuit
-                RefreshTarget();
-                Pursue(); 
+                RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
+                Pursue();
                 break;
             case 2: // Attack
                 Strafe();
-                if (primary.available) { primary.OnActivate(); }
+                if (secondary.available && distanceToTarget < (secondary.range + 1)) { secondary.OnActivate(); }
+                else if (primary.available && distanceToTarget < primary.range) { primary.OnActivate(); };
                 break;
         }
     }

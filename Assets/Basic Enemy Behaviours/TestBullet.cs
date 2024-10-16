@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class TestBullet : Projectile
 {
+    public GameObject shooter;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (!shooter) { Debug.LogError("Bullet initialized without reference to shooter"); }
     }
 
     // Update is called once per frame
@@ -17,10 +20,14 @@ public class TestBullet : Projectile
         rb.velocity = transform.up * speed;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    // When the bullet collides with something, disable it
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.position = Vector2.zero;
-        try { collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse); } catch { }
-        gameObject.SetActive(false);
+        if (collision.gameObject != shooter)
+        {
+            transform.position = Vector2.zero;
+            try { collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse); } catch { }
+            gameObject.SetActive(false);
+        }
     }
 }
