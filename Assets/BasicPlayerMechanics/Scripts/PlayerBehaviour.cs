@@ -26,6 +26,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     private Vector2 cursorPos;
 
+    private Vector2 aimPos;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,12 +55,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Vector2 aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
         if (aimReticle != null)
         {
             aimReticle.transform.position = aimPos;
         }
-        transform.up = aimPos - (Vector2)transform.position;
     }
 
     private void FixedUpdate()
@@ -67,5 +68,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             rb.AddForce(moveDir * moveAcceleration);
         }
+        transform.up = aimPos - (Vector2)transform.position;
     }
 }
