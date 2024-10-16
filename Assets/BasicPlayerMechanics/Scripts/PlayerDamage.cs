@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviour
 {
     [SerializeField]
     private float maxHealth = 100f;
+
+    [SerializeField]
+    private int gameOverScene = 0;
 
     private float health;
 
@@ -27,6 +31,7 @@ public class PlayerDamage : MonoBehaviour
         if (health <= 0f)
         {
             Debug.Log("Game Over");
+            SceneManager.LoadScene(gameOverScene);
         }
     }
 
