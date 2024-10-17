@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class TestMeleeSwipe : Ability
 {
-    public BoxCollider2D hitbox;
+    private BoxCollider2D hitbox;
+
     public float knockback;
     public float damage;
     public float activeTime;
