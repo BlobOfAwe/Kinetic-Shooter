@@ -9,7 +9,7 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField]
     private int gameOverScene = 0;
 
-    private float health;
+    public float health;
 
     private void Awake()
     {
