@@ -4,10 +4,10 @@ using UnityEngine;
 public class TestBuildHealthDisplay : MonoBehaviour
 {
     [SerializeField]
-    private PlayerDamage playerDamage;
+    private Player player;
 
     private void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = "Health: " + playerDamage.health;
+        GetComponent<TextMeshProUGUI>().text = "Health: " + player.health;
     }
 }
