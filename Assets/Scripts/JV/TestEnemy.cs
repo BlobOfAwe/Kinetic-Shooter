@@ -35,8 +35,9 @@ public class TestEnemy : Enemy
                 break;
             case 2: // Attack
                 Strafe();
-                if (secondary.available && distanceToTarget < (secondary.range + 1)) { secondary.OnActivate(); }
-                else if (primary.available && distanceToTarget < primary.range) { primary.OnActivate(); };
+                // Edited to work with new code - NK
+                if (enemyEntity.secondary.available && distanceToTarget < (enemyEntity.secondary.range + 1)) { enemyEntity.UseAbility(enemyEntity.secondary); }
+                else if (enemyEntity.primary.available && distanceToTarget < enemyEntity.primary.range) { enemyEntity.UseAbility(enemyEntity.primary); };
                 break;
         }
     }

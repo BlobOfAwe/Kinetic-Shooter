@@ -7,6 +7,8 @@ public abstract class Entity : MonoBehaviour
 
     public float health;
 
+    public Ability primary, secondary, utility, additional;
+
     private void Awake()
     {
         health = maxHealth;
@@ -30,5 +32,13 @@ public abstract class Entity : MonoBehaviour
     protected virtual void Death()
     {
         Debug.Log(gameObject.name + " died.");
+    }
+
+    public virtual void UseAbility(Ability ability)
+    {
+        if (ability.available)
+        {
+            ability.OnActivate();
+        }
     }
 }
