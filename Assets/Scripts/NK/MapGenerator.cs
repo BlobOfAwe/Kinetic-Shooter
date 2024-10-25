@@ -156,5 +156,8 @@ public class MapGenerator : MonoBehaviour
                 Instantiate(chunks[r], positions[x, y].position, Quaternion.Euler(0f, rotation, 0f));
             }
         }
+
+        // Recalculate A* graph
+        AstarPath.active.Scan();
     }
 }
