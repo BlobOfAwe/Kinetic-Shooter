@@ -15,6 +15,8 @@ public abstract class Enemy : MonoBehaviour
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
+    // Added by Nathaniel
+    protected Entity enemyEntity;
 
     public float distanceToTarget; // Distance from the enemy to the identified target
 
@@ -30,7 +32,9 @@ public abstract class Enemy : MonoBehaviour
     public float speed = 1f; // How fast can the enemy move
 
     public LayerMask hostile; // Objects on these layers are valid attack targets
-    public Ability primary, secondary, utility, additional;
+
+    // Moved to Entity class. - NK
+    //public Ability primary, secondary, utility, additional;
 
     // Unless specified otherwise, state 0 is Wandering, state 1 is Pursuing. States beyond that should be written into the derivative class
     public int state;
@@ -44,6 +48,8 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
+        // Added by Nathaniel
+        enemyEntity = GetComponent<EnemyEntity> ();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame

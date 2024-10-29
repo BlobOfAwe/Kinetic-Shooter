@@ -1,3 +1,4 @@
+//using System;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
@@ -31,7 +32,8 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void Generate()
+    // Pure random generation. No longer used.
+    /*public void Generate()
     {
         for (int x = 0; x < positions.GetLength(0); x++)
         {
@@ -41,9 +43,10 @@ public class MapGenerator : MonoBehaviour
                 Instantiate(chunks[r], positions[x, y]);
             }
         }
-    }
+    }*/
 
-    public void GenerateNoDuplicate()
+    // No duplicates. No longer used.
+    /*public void GenerateNoDuplicate()
     {
         for (int x = 0; x < randomValues.GetLength(0); x++)
         {
@@ -82,9 +85,10 @@ public class MapGenerator : MonoBehaviour
                 Instantiate(chunks[r], positions[x, y]);
             }
         }
-    }
+    }*/
 
-    public void GenerateNoAdjacent()
+    // No adjacent chunks. Previously called GenerateNoAdjacent()
+    public void Generate()
     {
         for (int x = 0; x < randomValues.GetLength(0); x++)
         {
@@ -144,8 +148,16 @@ public class MapGenerator : MonoBehaviour
                     Debug.LogWarning("There must be more than one chunk in order to prevent adjacent chunks.");
                 }
                 randomValues[x, y] = r;
-                Instantiate(chunks[r], positions[x, y]);
+                float rotation = 0f;
+                if (Random.Range(0, 2) == 1)
+                {
+                    rotation = 180f;
+                }
+                Instantiate(chunks[r], positions[x, y].position, Quaternion.Euler(0f, rotation, 0f));
             }
         }
+
+        // Recalculate A* graph
+        AstarPath.active.Scan();
     }
 }

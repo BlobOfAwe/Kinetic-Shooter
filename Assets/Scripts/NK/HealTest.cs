@@ -5,15 +5,15 @@ public class HealTest : MonoBehaviour
     [SerializeField]
     private float health = 0f;
 
-    private PlayerDamage playerDamage;
+    private Player player;
 
     private void Awake()
     {
-        playerDamage = FindObjectOfType<PlayerDamage>();
+        player = FindObjectOfType<Player>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        playerDamage.Heal(health);
+        player.ChangeHealth(health);
     }
 }
