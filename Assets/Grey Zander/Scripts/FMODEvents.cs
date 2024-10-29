@@ -5,11 +5,14 @@ using FMODUnity;
 
 public class FMODEvents : MonoBehaviour
 {
-    [field: Header("SFX 1")]
-    [field: SerializeField] public EventReference meowMoment { get; private set; }
+    [field: Header("Player Movement")]
+    [field: SerializeField] public EventReference playerMovementSound { get; private set; }
 
-    [field: Header("SFX 2")]
-    [field: SerializeField] public EventReference chickenMoment { get; private set; }
+    [field: Header("Player Gunshot")]
+    [field: SerializeField] public EventReference playerGunshot { get; private set; }
+
+    [field: Header("Item SFX")]
+    [field: SerializeField] public EventReference itemIdleSound { get; private set; }
 
     [field: Header("Ambience")]
     [field: SerializeField] public EventReference windAmbience { get; private set; }

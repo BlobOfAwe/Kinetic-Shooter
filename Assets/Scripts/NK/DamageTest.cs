@@ -1,4 +1,5 @@
 using UnityEngine;
+using FMODUnity;
 
 public class DamageTest : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class DamageTest : MonoBehaviour
     private float damage = 0f;
 
     private PlayerDamage playerDamage;
+
+    //audio emitter variable
+    private StudioEventEmitter emitter;
 
     private void Awake()
     {
