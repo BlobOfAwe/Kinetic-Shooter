@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 3078936830243233736}
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
-  - component: {fileID: 5819992535482682430}
+  - component: {fileID: 7522504481564178850}
   - component: {fileID: 6893133300616319179}
+  - component: {fileID: 571558318740040795}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -227,9 +228,9 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CameraZoom, Assembly-CSharp
-        m_MethodName: OnZoom
+      - m_Target: {fileID: 571558318740040795}
+        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
+        m_MethodName: OnQuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -239,8 +240,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 7bad86ad-8206-4dab-8c06-bb16e6a60e44
-    m_ActionName: Player/(TESTING) Camera Zoom[/Keyboard/z]
+    m_ActionId: d1288318-1d97-46cf-82e8-a065e01e8966
+    m_ActionName: Player/(TESTING) Quit[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 571558318740040795}
+        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
+        m_MethodName: OnRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e0ed686c-3829-4e96-8e9f-2d8d6e0d5f7f
+    m_ActionName: Player/(TESTING) Reload Scene[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -264,7 +281,7 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   aimReticle: {fileID: 0}
   rb: {fileID: 0}
---- !u!114 &5819992535482682430
+--- !u!114 &7522504481564178850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,10 +290,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5777279789927432716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084b17f03ce3a6240bf776c1569b7dae, type: 3}
+  m_Script: {fileID: 11500000, guid: cf93c29b9d8722c44a0a3bf3bf34a340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  health: 0
+  primary: {fileID: 0}
+  secondary: {fileID: 0}
+  utility: {fileID: 0}
+  additional: {fileID: 0}
   gameOverScene: 1
 --- !u!114 &6893133300616319179
 MonoBehaviour:
@@ -293,3 +315,15 @@ MonoBehaviour:
   recoilForce: 10
   fireInterval: 0.25
   bullet: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
+--- !u!114 &571558318740040795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2991be030f46fa546ab52a0455365be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
