@@ -865,6 +865,7 @@ RectTransform:
   - {fileID: 1235776153}
   - {fileID: 1357672687}
   - {fileID: 772846152}
+  - {fileID: 2086474575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -961,9 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362750533fbd86e4abc2788aa9d38224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlotPrefab: {fileID: 1583285225}
-  sidebarContainer: {fileID: 1357672687}
-  tooltipText: {fileID: 772846153}
 --- !u!1 &1580995801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,12 +1192,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086474573}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 256.9302, y: 963.27716, z: -1.3706284}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -703.0698, y: 423.27716, z: -1.3706284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1331639089}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2086474576
 MonoBehaviour:
@@ -1221,5 +1219,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 677774093}
   - {fileID: 1580995804}
-  - {fileID: 2086474575}
   - {fileID: 1331639089}
