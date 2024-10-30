@@ -1,19 +1,28 @@
 using UnityEngine;
+using FMODUnity;
 
 public class HealTest : MonoBehaviour
 {
     [SerializeField]
     private float health = 0f;
 
-    private Player player;
+    private PlayerDamage playerDamage;
+
+    //audio emitter variable
+    private StudioEventEmitter emitter;
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+        playerDamage = FindObjectOfType<PlayerDamage>();
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemIdleSound, this.gameObject);
+        emitter.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.ChangeHealth(health);
+        playerDamage.Heal(health);
+        //stops emitter when collected
+        emitter.Stop();
     }
 }

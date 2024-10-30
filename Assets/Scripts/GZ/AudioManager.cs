@@ -22,6 +22,9 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
+    private List<EventInstance> eventInstances;
+    private List<StudioEventEmitter> eventEmitters;
+
     public static AudioManager instance {  get; private set; }
 
     private void Awake()
@@ -31,6 +34,9 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Found more than one Audio Manager in the scene");
         }
         instance = this;
+
+        eventInstances = new List<EventInstance>();
+        eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -69,10 +75,41 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.start();
     }
 
+    public void SetMusicIntensity(string parameterName, float parameterValue)
+    {
+        musicEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
     public EventInstance CreateEventInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        eventInstances.Add(eventInstance);
         return eventInstance;
     }
 
+    public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)
+    {
+        StudioEventEmitter emitter = emitterGameObject.GetComponent<StudioEventEmitter>();
+        emitter.EventReference = eventReference;
+        eventEmitters.Add(emitter);
+        return emitter;
+    }
+
+    private void CleanUp()
+    {
+        foreach (EventInstance eventInstance in eventInstances)
+        {
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
+        }
+        foreach (StudioEventEmitter emitter in eventEmitters)
+        {
+            emitter.Stop();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        CleanUp();
+    }
 }

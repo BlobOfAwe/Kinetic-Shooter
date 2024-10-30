@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using FMOD.Studio;
+using FMODUnity;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -27,6 +30,15 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector2 cursorPos;
 
     private Vector2 aimPos;
+
+    //audio variable for player movement
+    private EventInstance playerMovementSound;
+
+    //creates an FMOD events instance for player movement
+    private void Start()
+    {
+        playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerMovementSound);
+    }
 
     private void Awake()
     {
@@ -69,5 +81,58 @@ public class PlayerBehaviour : MonoBehaviour
             rb.AddForce(moveDir * moveAcceleration);
         }
         transform.up = aimPos - (Vector2)transform.position;
+
+        UpdateSound();
+    }
+
+    //detects if player is moving using WASD and plays audio
+    private void UpdateSound()
+    {
+        //plays hover sound if player presses "W"
+        if (Input.GetKey(KeyCode.W))
+        {
+            PLAYBACK_STATE playbackState;
+            playerMovementSound.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerMovementSound.start();
+            }
+        }
+        else if (Input.GetKey(KeyCode.A))
+        //plays hover sound if player presses "A"
+        {
+            PLAYBACK_STATE playbackState;
+            playerMovementSound.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerMovementSound.start();
+            }
+        }
+        else if (Input.GetKey(KeyCode.S))
+        //plays hover sound if player presses "S"
+        {
+            PLAYBACK_STATE playbackState;
+            playerMovementSound.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerMovementSound.start();
+            }
+        }
+        else if (Input.GetKey(KeyCode.D))
+        //plays hover sound if player presses "D"
+        {
+            PLAYBACK_STATE playbackState;
+            playerMovementSound.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerMovementSound.start();
+            }
+        }
+        else
+        //stops hover sound
+        {
+            playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
     }
 }
+
