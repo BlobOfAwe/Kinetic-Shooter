@@ -258,6 +258,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e0ed686c-3829-4e96-8e9f-2d8d6e0d5f7f
     m_ActionName: Player/(TESTING) Reload Scene[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 571558318740040795}
+        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
+        m_MethodName: OnBackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f5da2a87-54e0-443b-83b6-c9b12a1ffb42
+    m_ActionName: Player/(TESTING) Back To Menu[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

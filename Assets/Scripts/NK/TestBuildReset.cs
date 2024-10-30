@@ -12,4 +12,9 @@ public class TestBuildReset : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnBackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

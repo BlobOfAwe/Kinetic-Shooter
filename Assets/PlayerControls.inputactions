@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "(TESTING) Back To Menu",
+                    "type": "Button",
+                    "id": "f5da2a87-54e0-443b-83b6-c9b12a1ffb42",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,6 +212,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "(TESTING) Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7e8a955-3d48-4da5-83eb-0c8baab5fd43",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "(TESTING) Back To Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
