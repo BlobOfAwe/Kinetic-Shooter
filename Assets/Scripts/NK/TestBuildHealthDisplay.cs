@@ -4,7 +4,12 @@ using UnityEngine;
 public class TestBuildHealthDisplay : MonoBehaviour
 {
     [SerializeField]
-    private Player player;
+    private PlayerBehaviour player;
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<PlayerBehaviour>();
+    }
 
     private void Update()
     {

@@ -5,7 +5,7 @@ using System.Diagnostics;
 using FMOD.Studio;
 using FMODUnity;
 
-public class PlayerBehaviour : MonoBehaviour
+public class PlayerBehaviour : Entity
 {
     [SerializeField]
     private bool canMoveManually = false;
@@ -25,6 +25,9 @@ public class PlayerBehaviour : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb;
 
+    [SerializeField]
+    private int gameOverScene = 0;
+
     private Vector2 moveDir;
 
     private Vector2 cursorPos;
@@ -37,6 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
     //creates an FMOD events instance for player movement
     private void Start()
     {
+        health = maxHealth;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerMovementSound);
     }
 
@@ -133,6 +137,11 @@ public class PlayerBehaviour : MonoBehaviour
         {
             playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
+    }
+
+    protected override void Death()
+    {
+        SceneManager.LoadScene(gameOverScene);
     }
 }
 

@@ -6,7 +6,7 @@ public class HealTest : MonoBehaviour
     [SerializeField]
     private float health = 0f;
 
-    private PlayerDamage playerDamage;
+    [SerializeField] PlayerDamage playerDamage;
 
     //audio emitter variable
     private StudioEventEmitter emitter;

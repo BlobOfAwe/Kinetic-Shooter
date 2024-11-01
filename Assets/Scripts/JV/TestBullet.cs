@@ -26,7 +26,12 @@ public class TestBullet : Projectile
         if (collision.gameObject != shooter)
         {
             transform.position = Vector2.zero;
-            try { collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse); } catch { }
+            try 
+            { 
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse); 
+                collision.gameObject.GetComponent<Entity>().Damage(damage);
+            } 
+            catch { }
             gameObject.SetActive(false);
         }
     }

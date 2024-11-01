@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TestEnemy : Enemy
 {
-
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -35,9 +34,8 @@ public class TestEnemy : Enemy
                 break;
             case 2: // Attack
                 Strafe();
-                // Edited to work with new code - NK
-                if (enemyEntity.secondary.available && distanceToTarget < (enemyEntity.secondary.range + 1)) { enemyEntity.UseAbility(enemyEntity.secondary); }
-                else if (enemyEntity.primary.available && distanceToTarget < enemyEntity.primary.range) { enemyEntity.UseAbility(enemyEntity.primary); };
+                if (secondary.available && distanceToTarget < (secondary.range + 1)) { UseAbility(secondary); }
+                else if (primary.available && distanceToTarget < primary.range) { UseAbility(primary); };
                 break;
         }
     }

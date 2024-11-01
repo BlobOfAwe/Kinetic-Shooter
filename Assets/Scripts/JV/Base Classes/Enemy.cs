@@ -9,36 +9,31 @@ using UnityEngine;
 [RequireComponent (typeof (Collider2D))]
 [RequireComponent(typeof (AIPath))]
 
-public abstract class Enemy : MonoBehaviour
+// Class <Enemy> now inherits directly from the Abstract Entity class
+public abstract class Enemy : Entity
 {
+    [Header("Component References")]
     public Rigidbody2D rb;
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
-    // Added by Nathaniel
-    protected Entity enemyEntity;
 
+    [Header("Targeting")]
+    public LayerMask hostile; // Objects on these layers are valid attack targets
     public float distanceToTarget; // Distance from the enemy to the identified target
-
     public float sightRange; // How far away can the enemy see
     public float stayDistance; // How close the enemy will get to the player
     public float chaseDistance; // How far can the player get before the enemy chases them
-
     public float pursuitDuration; // How long the enemy will pursue the player while outside FOV before losing interest
     public float pursuitTimer; // Used to measure pursuitDuration
-    
-    
+
+    [Header("Movement")]
     public float acceleration = 1f; // How fast does the enemy accelerate
     public float speed = 1f; // How fast can the enemy move
 
-    public LayerMask hostile; // Objects on these layers are valid attack targets
-
-    // Moved to Entity class. - NK
-    //public Ability primary, secondary, utility, additional;
-
+    [Header("State Management")]
     // Unless specified otherwise, state 0 is Wandering, state 1 is Pursuing. States beyond that should be written into the derivative class
     public int state;
-
     private float stateChangeCooldown = 0.5f; // How long after a state change before the state can change again
     private int lastState = -1; // What was the enemy state last frame
     private float stateChangeCooldownTimer; // Used to time stateChangeCooldown
@@ -48,8 +43,6 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
-        // Added by Nathaniel
-        enemyEntity = GetComponent<EnemyEntity> ();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -59,6 +52,13 @@ public abstract class Enemy : MonoBehaviour
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
         
         DerivativeUpdate(); // Run derived class-specific logic
+    }
+    
+    // Required implementation of the abstract function Entity.Death()
+    protected override void Death()
+    {
+        Debug.Log(gameObject.name + " was killed");
+        Destroy(gameObject);
     }
 
     // Checks to see if a valid target is within sightRange
