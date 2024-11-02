@@ -7,9 +7,14 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    public float speed = 5f;
-    public float damage = 1f;
-    public float knockback = 1f;
-    public Rigidbody2D rb;
-
+    [SerializeField]
+    protected float speed = 5f;
+    [SerializeField]
+    protected float damage = 1f;
+    [SerializeField]
+    protected float knockback = 1f;
+    [SerializeField]
+    protected Rigidbody2D rb;
+    [SerializeField]
+    protected Transform firePoint;
 }

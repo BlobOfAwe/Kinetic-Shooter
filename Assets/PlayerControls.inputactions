@@ -15,7 +15,16 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "a74be310-121e-4844-b8f5-c457ebe806d5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Primary Fire",
                     "type": "Button",
                     "id": "b36b141e-ddcb-4e1c-ae5f-e000d18febb5",
                     "expectedControlType": "Button",
@@ -24,13 +33,31 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "a74be310-121e-4844-b8f5-c457ebe806d5",
-                    "expectedControlType": "Vector2",
+                    "name": "Secondary Fire",
+                    "type": "Button",
+                    "id": "a4d84051-9fa7-46cc-8aee-d1224b5d983e",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Utility",
+                    "type": "Button",
+                    "id": "7705bfa2-bc32-4329-9f6c-c3f298c6d183",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Additional Ability",
+                    "type": "Button",
+                    "id": "fbaa2fe2-dba7-4a4f-9c81-56255d34ab55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "(TESTING) Quit",
@@ -69,6 +96,61 @@
                     "processors": "",
                     "groups": "Keyboard+Mouse",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f74718dc-04ab-4402-a07f-55fd9131bf49",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Primary Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a15558bd-b60e-4733-a249-b17337450c9e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "(TESTING) Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "213ede4e-8ac1-49e8-8ad3-0fdd763e8135",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "(TESTING) Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7e8a955-3d48-4da5-83eb-0c8baab5fd43",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "(TESTING) Back To Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4a06014-c651-4664-b367-359559508208",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Secondary Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -184,45 +266,23 @@
                 },
                 {
                     "name": "",
-                    "id": "f74718dc-04ab-4402-a07f-55fd9131bf49",
-                    "path": "<Mouse>/leftButton",
+                    "id": "2bdc8f24-41cb-4592-b66d-9ca86d71c99a",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard+Mouse",
-                    "action": "Shoot",
+                    "action": "Utility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a15558bd-b60e-4733-a249-b17337450c9e",
-                    "path": "<Keyboard>/escape",
+                    "id": "72dd2b72-29af-41ea-9fa8-a5461b40ad68",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Quit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "213ede4e-8ac1-49e8-8ad3-0fdd763e8135",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Reload Scene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c7e8a955-3d48-4da5-83eb-0c8baab5fd43",
-                    "path": "<Keyboard>/backspace",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Back To Menu",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Additional Ability",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
