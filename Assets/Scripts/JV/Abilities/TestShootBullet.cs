@@ -5,13 +5,16 @@ using UnityEngine;
 public class TestShootBullet : Ability
 {
     [SerializeField] GameObject bulletPrefab;
+    // Added maxBullets instead of the max number of bullets being hard-coded. - NK
+    [SerializeField]
+    private int maxBullets = 10;
     private GameObject[] bullets;
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
     private void Awake()
     {
-        bullets = new GameObject[9];
+        bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++) 
         { 
             bullets[i] = Instantiate(bulletPrefab);
@@ -43,6 +46,7 @@ public class TestShootBullet : Ability
         }
 
         // If no inactive bullets were found, throw an error
-        Debug.LogError("No instantiated bullets available to be fired from object: " + gameObject.name);
+        // Changed this from an error to a message because this can happen if the max number of bullets are fired at once, which isn't a problem. - NK
+        Debug.Log("No instantiated bullets available to be fired from object: " + gameObject.name);
     }
 }
