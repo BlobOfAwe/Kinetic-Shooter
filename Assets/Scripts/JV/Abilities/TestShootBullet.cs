@@ -38,6 +38,7 @@ public class TestShootBullet : Ability
                 bullet.transform.position = transform.position; // Set the bullet to my position
                 bullet.transform.eulerAngles = transform.eulerAngles; // Set the bullet's rotation to my rotation
                 rb.AddForce(-transform.up * bullet.GetComponent<Projectile>().knockback, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }
 

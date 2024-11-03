@@ -15,8 +15,9 @@ public class TestBullet : Projectile
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         rb.velocity = transform.up * speed;
     }
 
