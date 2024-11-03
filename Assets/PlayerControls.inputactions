@@ -58,33 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "(TESTING) Quit",
-                    "type": "Button",
-                    "id": "d1288318-1d97-46cf-82e8-a065e01e8966",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "(TESTING) Reload Scene",
-                    "type": "Button",
-                    "id": "e0ed686c-3829-4e96-8e9f-2d8d6e0d5f7f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "(TESTING) Back To Menu",
-                    "type": "Button",
-                    "id": "f5da2a87-54e0-443b-83b6-c9b12a1ffb42",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -107,39 +80,6 @@
                     "processors": "",
                     "groups": "Keyboard+Mouse",
                     "action": "Primary Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a15558bd-b60e-4733-a249-b17337450c9e",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Quit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "213ede4e-8ac1-49e8-8ad3-0fdd763e8135",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Reload Scene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c7e8a955-3d48-4da5-83eb-0c8baab5fd43",
-                    "path": "<Keyboard>/backspace",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "(TESTING) Back To Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

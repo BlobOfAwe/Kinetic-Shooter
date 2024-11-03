@@ -3,18 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class TestBuildReset : MonoBehaviour
 {
-    public void OnRestart()
+    private void Update()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void OnQuitGame()
-    {
-        Application.Quit();
-    }
-
-    public void OnBackToMenu()
-    {
-        SceneManager.LoadScene(0);
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        if (Input.GetKeyDown(KeyCode.Backspace))
+            SceneManager.LoadScene(0);
     }
 }
