@@ -6,6 +6,9 @@ using UnityEngine;
 public class TestBullet : Projectile
 {
     public GameObject shooter;
+    // Added by Nathaniel Klassen
+    [SerializeField]
+    private LayerMask shootableLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,11 @@ public class TestBullet : Projectile
     }
 
     // When the bullet collides with something, disable it
+    // Changed so that bullet is only disabled if it collides with something that matches a specific layer. - NK
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject != shooter)
+        //if (collision.gameObject != shooter)
+        if ((shootableLayer & (1 << collision.gameObject.layer)) != 0)
         {
             transform.position = Vector2.zero;
             try 

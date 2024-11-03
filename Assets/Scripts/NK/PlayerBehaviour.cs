@@ -71,53 +71,67 @@ public class PlayerBehaviour : Entity
 
     public void OnUsePrimary(InputAction.CallbackContext context)
     {
-        if (primaryAutofire)
+        if (primary != null)
         {
-            if (context.started)
+            if (primaryAutofire)
             {
-                isFiringPrimary = true;
+                if (context.started)
+                {
+                    isFiringPrimary = true;
+                }
+                if (context.canceled)
+                {
+                    isFiringPrimary = false;
+                }
             }
-            if (context.canceled)
+            else if (context.performed)
             {
-                isFiringPrimary = false;
+                UseAbility(primary);
             }
-        } else if (context.performed)
-        {
-            UseAbility(primary);
         }
     }
 
     public void OnUseSecondary(InputAction.CallbackContext context)
     {
-        if (secondaryAutofire)
+        if (secondary != null)
         {
-            if (context.started)
+            if (secondaryAutofire)
             {
-                isFiringSecondary = true;
+                if (context.started)
+                {
+                    isFiringSecondary = true;
+                }
+                if (context.canceled)
+                {
+                    isFiringSecondary = false;
+                }
             }
-            if (context.canceled)
+            else if (context.performed)
             {
-                isFiringSecondary = false;
+                UseAbility(secondary);
             }
-        } else if (context.performed)
-        {
-            UseAbility(secondary);
         }
     }
 
     public void OnUseUtility(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (utility != null)
         {
-            UseAbility(utility);
+            if (context.performed)
+            {
+                UseAbility(utility);
+            }
         }
     }
 
     public void OnUseAdditional(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (additional != null)
         {
-            UseAbility(additional);
+            if (context.performed)
+            {
+                UseAbility(additional);
+            }
         }
     }
 
