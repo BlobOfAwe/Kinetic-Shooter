@@ -6,6 +6,7 @@ public class TestShootBullet : Ability
 {
     [SerializeField] GameObject bulletPrefab;
     private GameObject[] bullets;
+    private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
     private void Awake()
@@ -19,6 +20,12 @@ public class TestShootBullet : Ability
         }
     }
 
+    private void Start()
+    {
+        try { rb = GetComponent<Rigidbody2D>(); }
+        catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+    }
+
     // Shoot a bullet from the gameObject's position
     public override void OnActivate()
     {
@@ -30,6 +37,7 @@ public class TestShootBullet : Ability
             if (!bullet.activeSelf) {  // If the bullet is not active (being fired)
                 bullet.transform.position = transform.position; // Set the bullet to my position
                 bullet.transform.eulerAngles = transform.eulerAngles; // Set the bullet's rotation to my rotation
+                rb.AddForce(-transform.up * bullet.GetComponent<Projectile>().knockback, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }
 

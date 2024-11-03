@@ -11,8 +11,7 @@ public abstract class Projectile : MonoBehaviour
     protected float speed = 5f;
     [SerializeField]
     protected float damage = 1f;
-    [SerializeField]
-    protected float knockback = 1f;
+    public float knockback = 1f;
     [SerializeField]
     protected Rigidbody2D rb;
     [SerializeField]

@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneSelector.unity
     guid: 70555b245b1ae474c8cb954b9897388d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MechanicsTest.unity
     guid: 77ffa771bba2be1458521ec064b55a31
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ItemManagement.unity
     guid: cf36041ffdbbd084ea6e8746a8805f38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOverScene.unity
     guid: 127f35c44d063584b93a70c9678317f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/TechArt/Scenes/PickUpTest.unity
     guid: 705966c1d5c96e14c98a62543d57e851
+  - enabled: 1
+    path: Assets/Scenes/Sprint3_Demo.unity
+    guid: 9e64e2bb6b69ead4e9246cb50bde38a5
   m_configObjects: {}

@@ -9,6 +9,7 @@ public abstract class Item : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.GetComponentInChildren<InventoryManager>().AddItem(this);
+        Destroy(gameObject);
         Debug.Log("Picked up item");
     }
 }

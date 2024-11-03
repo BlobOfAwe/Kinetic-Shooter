@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +11,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] InventorySlot slotPrefab;
     [SerializeField] Transform slotParent;
     [SerializeField] int initialSize = 20;
+
+    [SerializeField] GameObject tooltip;
+    [SerializeField] TMPro.TMP_Text tooltipText;
 
     private void Awake()
     {
@@ -24,6 +26,22 @@ public class InventoryManager : MonoBehaviour
             inventory.Add(NewSlot());
         }
     }
+
+    private void Start()
+    {
+        slotParent.gameObject.SetActive(false);
+        tooltip.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ToggleSidebar();
+        }
+        UpdateTooltipPosition();
+    }
+
 
     public void AddItem(Item item)
     {
@@ -73,5 +91,40 @@ public class InventoryManager : MonoBehaviour
         var obj = Instantiate(slotPrefab, slotParent);
         obj.gameObject.SetActive(false);
         return obj.GetComponent<InventorySlot>();
+    }
+
+    // ------------------------
+    // All of the following code is taken from the now obsolete Sidebar.cs
+    // ------------------------
+    public void ToggleSidebar()
+    {
+        slotParent.gameObject.SetActive(!slotParent.gameObject.activeSelf);
+    }
+
+    public void ShowTooltip(string description)
+    {
+        tooltipText.text = description;
+        tooltip.SetActive(true);
+        PositionTooltip();
+    }
+    public void HideTooltip()
+    {
+        tooltip.SetActive(false);
+    }
+    private void PositionTooltip()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        tooltip.transform.position = mousePosition - new Vector3(30, 30, 0);
+    }
+    private void UpdateTooltipPosition()
+    {
+        if (tooltip.activeSelf)
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            RectTransform tooltipRect = tooltip.GetComponent<RectTransform>();
+            float clampedX = Mathf.Clamp(mousePosition.x, tooltipRect.rect.width / 2, Screen.width - tooltipRect.rect.width / 2);
+            float clampedY = Mathf.Clamp(mousePosition.y, tooltipRect.rect.height / 2, Screen.height - tooltipRect.rect.height / 2);
+            tooltip.transform.position = new Vector3(clampedX, clampedY - 20, 0);
+        }
     }
 }
