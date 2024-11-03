@@ -8,6 +8,9 @@ public class TestShootBullet : Ability
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
     private int maxBullets = 10;
+    // Added firePoint to shoot from instead of this gameObject. - NK
+    [SerializeField]
+    private Transform firePoint;
     private GameObject[] bullets;
     private Rigidbody2D rb;
 
@@ -18,7 +21,7 @@ public class TestShootBullet : Ability
         for (int i = 0; i < bullets.Length; i++) 
         { 
             bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = gameObject;
+            bullets[i].GetComponent<TestBullet>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
             bullets[i].SetActive(false); 
         }
     }
@@ -38,9 +41,9 @@ public class TestShootBullet : Ability
         foreach (GameObject bullet in bullets)
         {
             if (!bullet.activeSelf) {  // If the bullet is not active (being fired)
-                bullet.transform.position = transform.position; // Set the bullet to my position
-                bullet.transform.eulerAngles = transform.eulerAngles; // Set the bullet's rotation to my rotation
-                rb.AddForce(-transform.up * bullet.GetComponent<Projectile>().knockback, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
+                rb.AddForce(-firePoint.up * bullet.GetComponent<Projectile>().knockback, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }

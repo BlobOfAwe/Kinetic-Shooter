@@ -28,6 +28,9 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private GameObject aimReticle;
 
+    [SerializeField]
+    private Transform aimTransform;
+
     [HideInInspector]
     public Rigidbody2D rb;
 
@@ -67,6 +70,23 @@ public class PlayerBehaviour : Entity
     public void OnMove(InputAction.CallbackContext context)
     {
         moveDir = context.ReadValue<Vector2>();
+
+        // MOVED CODE FROM UpdateSound() TO HERE. - NK
+        //detects if player is moving and plays audio
+        if (context.started)
+        {
+            PLAYBACK_STATE playbackState;
+            playerMovementSound.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerMovementSound.start();
+            }
+        }
+        //stops hover sound
+        if (context.canceled)
+        {
+            playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        }
     }
 
     public void OnUsePrimary(InputAction.CallbackContext context)
@@ -168,13 +188,14 @@ public class PlayerBehaviour : Entity
         {
             rb.AddForce(moveDir * moveAcceleration);
         }
-        transform.up = aimPos - (Vector2)transform.position;
+        aimTransform.up = aimPos - (Vector2)transform.position;
 
-        UpdateSound();
+        //UpdateSound();
     }
 
+    // COMMENTED OUT THIS CODE BECAUSE IT SHOULD BE DONE IN OnMove(). - NK
     //detects if player is moving using WASD and plays audio
-    private void UpdateSound()
+    /*private void UpdateSound()
     {
         //plays hover sound if player presses "W"
         if (Input.GetKey(KeyCode.W))
@@ -221,7 +242,7 @@ public class PlayerBehaviour : Entity
         {
             playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
-    }
+    }*/
 
     protected override void Death()
     {
