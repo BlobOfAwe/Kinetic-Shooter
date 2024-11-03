@@ -17,6 +17,8 @@ public abstract class Enemy : Entity
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
+    [SerializeField]
+    private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile; // Objects on these layers are valid attack targets
@@ -58,6 +60,7 @@ public abstract class Enemy : Entity
     protected override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
+        enemyCounter.EnemyDefeated(); // Added to make the enemy counter count down when an enemy is defeated. - NK
         Destroy(gameObject);
     }
 
