@@ -6,18 +6,18 @@ public class DamageTest : MonoBehaviour
     [SerializeField]
     private float damage = 0f;
 
-    private Player player;
+    private PlayerBehaviour playerBehaviour;
 
     //audio emitter variable
     private StudioEventEmitter emitter;
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+        playerBehaviour = FindObjectOfType<PlayerBehaviour>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        player.ChangeHealth(-damage);
+        playerBehaviour.Damage(damage);
     }
 }

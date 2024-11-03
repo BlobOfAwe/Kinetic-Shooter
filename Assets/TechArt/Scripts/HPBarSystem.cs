@@ -3,9 +3,10 @@ using UnityEngine.UI;
 
 public class HPBarSystem : MonoBehaviour
 {
+    // Changed HP values from int to float. - NK
     public Image fillImage;
-    public int maxHp = 100;
-    private int currentHp;
+    public float maxHp = 100;
+    private float currentHp;
     private float targetFill;
     public float fillSpeed = 5f; 
 
@@ -29,14 +30,14 @@ public class HPBarSystem : MonoBehaviour
         fillImage.fillAmount = Mathf.Lerp(fillImage.fillAmount, targetFill, Time.deltaTime * fillSpeed);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHp -= damage;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
-        targetFill = (float)currentHp / maxHp;
+        targetFill = currentHp / maxHp;
     }
 
-    public void HealHp(int amount)
+    public void HealHp(float amount)
     {
         currentHp += amount;
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
@@ -45,6 +46,6 @@ public class HPBarSystem : MonoBehaviour
 
     private void UpdateHpBar()
     {
-        targetFill = (float)currentHp / maxHp;
+        targetFill = currentHp / maxHp;
     }
 }

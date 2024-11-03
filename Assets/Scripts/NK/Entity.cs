@@ -15,7 +15,7 @@ public abstract class Entity : MonoBehaviour
         health = maxHealth;
     }
 
-    public void Damage(float amount)
+    public virtual void Damage(float amount)
     {
         health -= amount;
         Debug.Log("Took " + amount + " damage.");
@@ -26,7 +26,7 @@ public abstract class Entity : MonoBehaviour
             Death();
         }
     }
-    public void Heal(float amount)
+    public virtual void Heal(float amount)
     {
         health += amount;
         if (health > maxHealth)
@@ -36,7 +36,7 @@ public abstract class Entity : MonoBehaviour
         Debug.Log("Healed " + amount + " health.");
         Debug.Log("Health: " + health);
     }
-    public void ChangeHealth(float amount)
+    /*public void ChangeHealth(float amount)
     {
         health += amount;
         if (health > maxHealth)
@@ -49,7 +49,7 @@ public abstract class Entity : MonoBehaviour
         {
             Death();
         }
-    }
+    }*/
 
     // JV - Changed to Abstract function to force derivative classes to override the function with unique behaviour
     protected abstract void Death();

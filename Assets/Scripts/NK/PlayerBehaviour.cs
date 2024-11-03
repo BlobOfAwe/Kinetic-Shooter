@@ -31,6 +31,9 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private Transform aimTransform;
 
+    [SerializeField]
+    private HPBarSystem hpBar;
+
     [HideInInspector]
     public Rigidbody2D rb;
 
@@ -87,6 +90,18 @@ public class PlayerBehaviour : Entity
         {
             playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
+    }
+
+    public override void Damage(float amount)
+    {
+        base.Damage(amount);
+        hpBar.TakeDamage(amount);
+    }
+
+    public override void Heal(float amount)
+    {
+        base.Heal(amount);
+        hpBar.HealHp(amount);
     }
 
     public void OnUsePrimary(InputAction.CallbackContext context)
