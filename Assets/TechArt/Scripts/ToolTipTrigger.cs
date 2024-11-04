@@ -5,11 +5,11 @@ using UnityEngine.EventSystems;
 public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     //This script handles the intialization and management of the tooltips
-    public Sidebar sidebar;
+    public InventoryManager sidebar;
     private string description;
     private string title;
 
-    public void Initialize(Sidebar sidebar, string description)
+    public void Initialize(InventoryManager sidebar, string description)
     {
         this.sidebar = sidebar;
         this.description = description;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,8 +66,11 @@ public class InventoryManager : MonoBehaviour
             {
                 slot.gameObject.SetActive(true);
                 slot.item = item;
+                slot.gameObject.GetComponent<ToolTipTrigger>().Initialize(this, item.description);
                 slot.quantity = 1;
+                slot.GetComponentInChildren<TextMeshProUGUI>().text = "x" + slot.quantity.ToString();
                 slot.sprite = item.sprite;
+                
 
                 slot.gameObject.GetComponent<Image>().sprite = slot.sprite;
                 return;

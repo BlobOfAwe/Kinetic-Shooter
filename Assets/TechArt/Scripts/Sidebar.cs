@@ -1,6 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/// <summary>
+/// THIS SCRIPT IS NOW OBSOLETE!!!
+/// All necessary code has been copied to InventoryManager.cs, and all references fo Sidebar.cs have been appropriately replaced.
+/// - JV
+/// </summary>
+
 public class Sidebar : MonoBehaviour
 {
 
@@ -34,7 +40,9 @@ public class Sidebar : MonoBehaviour
         GameObject newSlot = Instantiate(pickupSlot, sidebarPanel);
         Image icon = newSlot.GetComponent<Image>();
         icon.sprite = newPickup.icon;
-        newSlot.AddComponent<ToolTipTrigger>().Initialize(this, newPickup.description);
+        
+        // JV - Commented out as the parameter of ToolTipTrigger.Initialize() was changed to search for InventoryManager rather than Sidebar
+        //newSlot.AddComponent<ToolTipTrigger>().Initialize(this, newPickup.description);
     }
     public void ShowTooltip(string description)
     {

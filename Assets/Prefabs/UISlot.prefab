@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -7.6, y: 8.4}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 59.12, y: 7.2}
   m_Pivot: {x: 0.1, y: -0.5}
 --- !u!222 &6555931205013354468
@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 2371782092240832577}
   - component: {fileID: 4434925191064627120}
   - component: {fileID: 8714801138493788985}
+  - component: {fileID: -3387116140410321438}
   m_Layer: 5
   m_Name: UISlot
   m_TagString: Untagged
@@ -226,3 +227,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-3387116140410321438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324955134054820206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f104711207cbb4e4981d18dd1cfe77bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sidebar: {fileID: 0}

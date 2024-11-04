@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Item : MonoBehaviour
 {
     public Sprite sprite;
+    public string title;
+    public string description;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
