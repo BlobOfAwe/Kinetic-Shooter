@@ -1840,44 +1840,11 @@ PrefabInstance:
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 595564999}
-    m_RemovedComponents:
-    - {fileID: 4683766399628494289, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7196206578916276599, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1469175919}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
---- !u!1 &1469175918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7196206578916276599, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 1469175917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1469175919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469175918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 15
-    m_Right: 15
-    m_Top: 15
-    m_Bottom: 15
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 25, y: 25}
-  m_Spacing: {x: 15, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 4
 --- !u!1001 &1523783666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1929,10 +1896,6 @@ PrefabInstance:
     - target: {fileID: 863582455569772561, guid: e74ec0bab76d95148ac45739e6659c2a, type: 3}
       propertyPath: m_Name
       value: Enemy Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 863582455569772561, guid: e74ec0bab76d95148ac45739e6659c2a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4289594241533071670, guid: e74ec0bab76d95148ac45739e6659c2a, type: 3}
       propertyPath: target

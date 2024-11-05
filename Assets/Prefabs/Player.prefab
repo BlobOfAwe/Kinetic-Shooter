@@ -404,8 +404,8 @@ GameObject:
   - component: {fileID: 3078936830243233736}
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
-  - component: {fileID: 571558318740040795}
   - component: {fileID: 8645813176973339046}
+  - component: {fileID: 571558318740040795}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -665,54 +665,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fbaa2fe2-dba7-4a4f-9c81-56255d34ab55
     m_ActionName: Player/Additional Ability[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 571558318740040795}
-        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
-        m_MethodName: OnQuitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d1288318-1d97-46cf-82e8-a065e01e8966
-    m_ActionName: Player/(TESTING) Quit[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 571558318740040795}
-        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
-        m_MethodName: OnRestart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e0ed686c-3829-4e96-8e9f-2d8d6e0d5f7f
-    m_ActionName: Player/(TESTING) Reload Scene[/Keyboard/r]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 571558318740040795}
-        m_TargetAssemblyTypeName: TestBuildReset, Assembly-CSharp
-        m_MethodName: OnBackToMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f5da2a87-54e0-443b-83b6-c9b12a1ffb42
-    m_ActionName: Player/(TESTING) Back To Menu[/Keyboard/backspace]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -744,20 +696,9 @@ MonoBehaviour:
   mainCam: {fileID: 0}
   aimReticle: {fileID: 0}
   aimTransform: {fileID: 1625521789409699392}
+  hpBar: {fileID: 0}
   rb: {fileID: 0}
   gameOverScene: 0
---- !u!114 &571558318740040795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777279789927432716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2991be030f46fa546ab52a0455365be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8645813176973339046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +717,18 @@ MonoBehaviour:
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 10
   firePoint: {fileID: 1625521789409699392}
+--- !u!114 &571558318740040795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2991be030f46fa546ab52a0455365be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5855219836532266464
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +894,7 @@ GameObject:
   - component: {fileID: 8518306110852091214}
   - component: {fileID: 3626381369976393752}
   - component: {fileID: 5738236036888129858}
-  - component: {fileID: 4683766399628494289}
+  - component: {fileID: 8730447275355375454}
   m_Layer: 5
   m_Name: InventoryLayoutGroup
   m_TagString: Untagged
@@ -1006,7 +959,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4683766399628494289
+--- !u!114 &8730447275355375454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1015,23 +968,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7196206578916276599}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 4
-    m_Right: 4
-    m_Top: 4
-    m_Bottom: 4
-  m_ChildAlignment: 6
-  m_Spacing: 18.36
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
+    m_Left: 15
+    m_Right: 15
+    m_Top: 15
+    m_Bottom: 15
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 25, y: 25}
+  m_Spacing: {x: 15, y: 10}
+  m_Constraint: 0
+  m_ConstraintCount: 4
 --- !u!1 &8939562301954783627
 GameObject:
   m_ObjectHideFlags: 0
