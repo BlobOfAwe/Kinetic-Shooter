@@ -16,7 +16,7 @@ public class HealTest : MonoBehaviour
     {
         playerDamage = FindObjectOfType<PlayerDamage>();
         //creates an audio emitter and plays event
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemIdleSound, this.gameObject);
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
         emitter.Play();
     }
 

@@ -13,7 +13,7 @@ public class ItemAudioEmitter : MonoBehaviour
 
     private void Start()
     {
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemIdleSound, this.gameObject);
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
         emitter.Play();
     }
 }
