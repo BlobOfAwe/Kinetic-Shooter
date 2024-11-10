@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3039777987711909108}
   - component: {fileID: 4664960110283890850}
   - component: {fileID: 5298378293093524004}
+  - component: {fileID: 3963096049457240412}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -624,6 +625,42 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!19719996 &3963096049457240412
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060585214898374635}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &2110782905714190885
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3384942167675234022}
   - component: {fileID: 7243273611294508750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Blockout 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
