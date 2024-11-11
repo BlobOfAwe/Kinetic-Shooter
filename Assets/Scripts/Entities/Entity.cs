@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public abstract class Entity : MonoBehaviour
 {
     [SerializeField]
-    protected float maxHealth;
+    protected float maxHealth = 100f;
 
     public float health;
 
@@ -23,7 +23,6 @@ public abstract class Entity : MonoBehaviour
         Debug.Log("Health: " + health);
         if (health <= 0f)
         {
-            Debug.Log("Game Over");
             Death();
         }
     }

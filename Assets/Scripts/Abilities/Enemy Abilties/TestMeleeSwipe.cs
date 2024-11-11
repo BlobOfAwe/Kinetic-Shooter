@@ -9,13 +9,17 @@ public class TestMeleeSwipe : Ability
     private BoxCollider2D hitbox;
 
     public float knockback;
-    public float damage;
     public float activeTime;
 
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
     void Awake()
     {
-        GameObject hitboxObj = Instantiate(new GameObject("TestMeleeSwipeHitbox", typeof(BoxCollider2D)), transform.position, Quaternion.identity, transform);
+        GameObject hitboxObj = new GameObject("TestMeleeSwipeHitbox", typeof(BoxCollider2D));
+        hitboxObj.transform.parent = transform;
+        hitboxObj.transform.rotation = Quaternion.identity;
+        hitboxObj.transform.position = transform.position;
+        
+        
         hitbox = hitboxObj.GetComponent<BoxCollider2D>();
         hitbox.size = new Vector2(hitbox.size.x, range);
         hitbox.offset = Vector2.up * (range / 2 + 0.5f);

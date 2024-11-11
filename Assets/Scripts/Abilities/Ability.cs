@@ -9,6 +9,7 @@ public abstract class Ability : MonoBehaviour
     public bool available = true;
     private float cooldownTimer;
     public float range = 3f;
+    public float damage = 10f;
 
     public abstract void OnActivate();
 

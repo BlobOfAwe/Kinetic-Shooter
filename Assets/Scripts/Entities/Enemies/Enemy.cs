@@ -18,15 +18,14 @@ public abstract class Enemy : Entity
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
-    [SerializeField]
-    private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
+    [SerializeField] private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
-    public LayerMask hostile; // Objects on these layers are valid attack targets
+    public LayerMask hostile = 8; // Objects on these layers are valid attack targets
     public float distanceToTarget; // Distance from the enemy to the identified target
-    public float sightRange; // How far away can the enemy see
-    public float stayDistance; // How close the enemy will get to the player
-    public float chaseDistance; // How far can the player get before the enemy chases them
+    public float sightRange = 20f; // How far away can the enemy see
+    public float stayDistance = 5f; // How close the enemy will get to the player
+    public float chaseDistance = 7f; // How far can the player get before the enemy chases them
     public float pursuitDuration; // How long the enemy will pursue the player while outside FOV before losing interest
     public float pursuitTimer; // Used to measure pursuitDuration
 
@@ -46,6 +45,7 @@ public abstract class Enemy : Entity
         rb = GetComponent<Rigidbody2D> ();
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
+        enemyCounter = FindAnyObjectByType<EnemyCounter> ();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -62,6 +62,7 @@ public abstract class Enemy : Entity
     {
         Debug.Log(gameObject.name + " was killed");
         enemyCounter.EnemyDefeated(); // Added to make the enemy counter count down when an enemy is defeated. - NK
+        Debug.Log("hello " + gameObject);
         Destroy(gameObject);
     }
 
