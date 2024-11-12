@@ -14,7 +14,6 @@ using UnityEngine;
 public abstract class Enemy : Entity
 {
     [Header("Component References")]
-    public Rigidbody2D rb;
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
@@ -22,16 +21,12 @@ public abstract class Enemy : Entity
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
-    public float distanceToTarget; // Distance from the enemy to the identified target
-    public float sightRange = 20f; // How far away can the enemy see
-    public float stayDistance = 5f; // How close the enemy will get to the player
-    public float chaseDistance = 7f; // How far can the player get before the enemy chases them
-    public float pursuitDuration; // How long the enemy will pursue the player while outside FOV before losing interest
-    public float pursuitTimer; // Used to measure pursuitDuration
-
-    [Header("Movement")]
-    public float acceleration = 1f; // How fast does the enemy accelerate
-    public float speed = 1f; // How fast can the enemy move
+    protected float distanceToTarget; // Distance from the enemy to the identified target
+    [SerializeField] protected float sightRange = 20f; // How far away can the enemy see
+    [SerializeField] protected float stayDistance = 5f; // How close the enemy will get to the player
+    [SerializeField] protected float chaseDistance = 7f; // How far can the player get before the enemy chases them
+    [SerializeField] protected float pursuitDuration; // How long the enemy will pursue the player while outside FOV before losing interest
+    protected float pursuitTimer; // Used to measure pursuitDuration
 
     [Header("State Management")]
     // Unless specified otherwise, state 0 is Wandering, state 1 is Pursuing. States beyond that should be written into the derivative class
@@ -42,7 +37,6 @@ public abstract class Enemy : Entity
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D> ();
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
@@ -53,6 +47,8 @@ public abstract class Enemy : Entity
     {
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
+
+        aiPath.maxSpeed = totalSpeed;
         
         DerivativeUpdate(); // Run derived class-specific logic
     }
@@ -85,6 +81,20 @@ public abstract class Enemy : Entity
         }
     }
 
+    // Wander aimlessly
+    public void Wander()
+    {
+        aiPath.enableRotation = true;
+        if (!aiPath.pathPending && aiPath.reachedEndOfPath || !ReadyToStateChange())
+        {
+            // Choose a random destination point somewhere within range.
+            aiPath.destination = RandomPointWithinRadius(transform, stayDistance);
+        }
+
+        aiPath.maxSpeed = 0.2f * totalSpeed;
+    }
+
+
     // Chase the player at speed
     public void Pursue()
     {
@@ -92,7 +102,7 @@ public abstract class Enemy : Entity
         aiPath.destination = target.transform.position;
     }
 
-    // Stop moving towards the player, and strafe right around the player
+    // Stop moving towards the player, and move around the player
     public void Strafe()
     {
         aiPath.enableRotation = false;
@@ -100,6 +110,21 @@ public abstract class Enemy : Entity
         {
             // Choose a random destination point `stayDistance` distance away from the target.
             aiPath.destination = RandomPointOnEdge(target.transform, stayDistance);
+        }
+        Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+        transform.up = dir;
+    }
+
+    // Stay a fixed distance back from the player
+    public void KeepBack()
+    {
+        aiPath.enableRotation = false;
+        float angle = Mathf.Atan2(transform.position.y - target.transform.position.y, transform.position.x - target.transform.position.x);
+        Vector2 newPos = new Vector3(Mathf.Cos(angle) * stayDistance, Mathf.Sin(angle) * stayDistance) + target.transform.position;
+
+        if (!aiPath.pathPending && aiPath.reachedEndOfPath || !ReadyToStateChange())
+        {
+            if (distanceToTarget < stayDistance) { aiPath.destination = newPos; }
         }
         Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
         transform.up = dir;

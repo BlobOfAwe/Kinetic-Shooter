@@ -35,8 +35,6 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private HPBarSystem hpBar;
 
-    [HideInInspector]
-    public Rigidbody2D rb;
 
     [SerializeField]
     private int gameOverScene = 0;
@@ -54,16 +52,12 @@ public class PlayerBehaviour : Entity
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
+
     //creates an FMOD events instance for player movement
     private void Start()
     {
         health = maxHealth;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerMovementSound);
-    }
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     public void OnAim(InputAction.CallbackContext context)

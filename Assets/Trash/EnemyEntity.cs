@@ -11,10 +11,10 @@ public class EnemyEntity : Entity
 {
     private Enemy enemyBehaviour;
 
-    private void Awake()
-    {
-        enemyBehaviour = GetComponent<Enemy>();
-    }
+    //private void Awake()
+    //{
+    //    enemyBehaviour = GetComponent<Enemy>();
+    //}
 
     protected override void Death()
     {

@@ -682,12 +682,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackStat: 0
+  defenseStat: 0
+  speedStat: 0
+  hpStat: 0
+  recoverStat: 0
+  attackBuffs: []
+  defenseBuffs: []
+  speedBuffs: []
+  hpBuffs: []
+  recoverBuffs: []
   maxHealth: 100
   health: 0
+  totalAttack: 0
+  totalDefense: 0
+  totalSpeed: 0
   primary: {fileID: 8645813176973339046}
   secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
+  buffManager: {fileID: 0}
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -714,6 +728,7 @@ MonoBehaviour:
   cooldown: 0.5
   available: 1
   range: 3
+  damageModifier: 1
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 10
   firePoint: {fileID: 1625521789409699392}

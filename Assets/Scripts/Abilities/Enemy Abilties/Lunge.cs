@@ -1,3 +1,4 @@
+// ## - JV
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ public class Lunge : Ability
 
     private Rigidbody rb;
     private BoxCollider2D hitbox;
+    private Entity entity;
     private bool lunging;
 
     // FOR WHITEBOX USE ONLY
@@ -23,6 +25,7 @@ public class Lunge : Ability
     {
         rb = GetComponent<Rigidbody>();
         sprite = GetComponent<SpriteRenderer>();
+        entity = GetComponent<Entity>();
         baseColor = sprite.color;
     }
 
@@ -51,7 +54,7 @@ public class Lunge : Ability
         rb.AddForce(transform.up * lungeForce, ForceMode2D.Force);
         
         // Wait for endTime seconds before ending the lunge
-        yield return new WaitForSeconds(endtime);
+        yield return new WaitForSeconds(endtime*(100/(100+entity.totalSpeed)));
         lunging = false;
 
         sprite.color = baseColor;
@@ -68,7 +71,7 @@ public class Lunge : Ability
         {
             try 
             { 
-                collision.gameObject.GetComponent<Entity>().Damage(damage);
+                collision.gameObject.GetComponent<Entity>().Damage(10); // 10 should be replaced by the appropriate damage calculation
             }
             catch { }
         }

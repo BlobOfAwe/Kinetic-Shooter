@@ -28,6 +28,7 @@ public class BaseNormalEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
+                Wander();
                 break;
             case 1: // Pursuit
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
