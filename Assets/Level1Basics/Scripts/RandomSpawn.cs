@@ -18,7 +18,7 @@ public class RandomSpawn : MonoBehaviour
 
     private Vector2 spawnPosition;
 
-    private void Start()
+    public void Spawn()
     {
         spawnPosition.x = Random.Range(minX, maxX);
         spawnPosition.y = Random.Range(minY, maxY);
