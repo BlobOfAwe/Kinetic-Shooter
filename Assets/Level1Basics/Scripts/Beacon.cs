@@ -11,13 +11,8 @@ public class Beacon : MonoBehaviour
     [SerializeField] float bossCamSize;
     private float startingCamSize;
     [SerializeField] float timeToFullZoomOut = 1f;
-    private CinemachineVirtualCamera vCam;
+    [SerializeField] private CinemachineVirtualCamera vCam;
 
-    private void Start()
-    {
-        vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
-        startingCamSize = vCam.m_Lens.OrthographicSize;
-    }
     //audio emitter variable
     private StudioEventEmitter emitter;
 
@@ -28,9 +23,19 @@ public class Beacon : MonoBehaviour
         emitter.Play();
     }
 
+    private void Start()
+    {
+
+        vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
+        startingCamSize = vCam.m_Lens.OrthographicSize;
+        Debug.LogWarning("Hi I started");
+    }
+
     public void Activate()
     {
         active = true;
+
+        FindAnyObjectByType<AudioParameterController>().IncrementIntensity(-1);
 
         StartCoroutine(ZoomOut());
 

@@ -109,7 +109,6 @@ public class PlayerBehaviour : Entity
                 if (context.started)
                 {
                     isFiringPrimary = true;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
@@ -174,8 +173,10 @@ public class PlayerBehaviour : Entity
 
     public void OnQuit(InputAction.CallbackContext context)
     {
-        Application.Quit();
+        Quit();
     }
+
+    public void Quit() { Application.Quit(); }
 
     new private void Update()
     {
