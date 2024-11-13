@@ -162,7 +162,7 @@ RectTransform:
   m_GameObject: {fileID: 601235612788152571}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.36197916, y: 0.36197916, z: 0.36197916}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1817776229873301873}
@@ -177,7 +177,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7212224820874849978
 Canvas:
   m_ObjectHideFlags: 0
@@ -251,7 +251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1739107766364458760}
   - component: {fileID: 2963018982402319158}
-  - component: {fileID: 6381842621689001624}
   m_Layer: 0
   m_Name: UImanager
   m_TagString: Untagged
@@ -289,20 +288,6 @@ MonoBehaviour:
   fillImage: {fileID: 2564829377531881405}
   maxHp: 100
   fillSpeed: 5
---- !u!114 &6381842621689001624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518707410962690822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdc35fa6a58d8e49b4d29bb65ab9683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalEnemies: 10
-  enemyCounterText: {fileID: 7828729185248199735}
 --- !u!1 &1911667546708327962
 GameObject:
   m_ObjectHideFlags: 0
