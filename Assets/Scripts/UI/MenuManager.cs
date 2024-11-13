@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        //SceneManager.LoadScene("Loadouts"); change to whichever scene we are loading
+        SceneManager.LoadScene("Sprint3_Build"); //change to whichever scene we are loading
     }
     public void ToggleMainMenu()
     {

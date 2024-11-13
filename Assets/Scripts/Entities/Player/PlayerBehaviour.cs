@@ -60,6 +60,7 @@ public class PlayerBehaviour : Entity
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
     }
 
+
     public void OnAim(InputAction.CallbackContext context)
     {
         cursorPos = context.ReadValue<Vector2>();
@@ -196,12 +197,13 @@ public class PlayerBehaviour : Entity
 
     private void FixedUpdate()
     {
-        if (canMoveManually && rb.velocity.magnitude < moveSpeed)
+        if (canMoveManually)
         {
             rb.AddForce(moveDir * moveAcceleration);
         }
         aimTransform.up = aimPos - (Vector2)transform.position;
 
+        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
         //UpdateSound();
     }
 
