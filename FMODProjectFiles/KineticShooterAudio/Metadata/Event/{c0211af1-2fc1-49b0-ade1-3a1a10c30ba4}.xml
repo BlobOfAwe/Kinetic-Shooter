@@ -5,7 +5,7 @@
 			<value>WideShots</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{3a29c3e7-9d2f-4555-aa61-dcd5e2630185}</destination>
@@ -82,7 +82,11 @@
 			<destination>{3ebede43-dcd4-43ae-8928-c84b396f4061}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{98c4a430-1434-4137-91a4-47c70776dd3d}" />
+	<object class="MultiSound" id="{98c4a430-1434-4137-91a4-47c70776dd3d}">
+		<relationship name="sounds">
+			<destination>{bbc1e41c-9071-420c-9765-fbda9bbc585c}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{bab4c742-b5fa-46d4-9ae4-2bcf17289437}">
 		<relationship name="effects">
 			<destination>{2a8f39d8-ff72-471a-8f12-a2005e8cb248}</destination>
@@ -95,6 +99,34 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a25253fb-2b24-4124-8fe0-12e36f040d10}" />
+	<object class="SingleSound" id="{bbc1e41c-9071-420c-9765-fbda9bbc585c}">
+		<property name="volume">
+			<value>-17</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{15ba52e3-a119-4443-b499-6025bcec41c0}</destination>
+			<destination>{e0f85059-f3c1-4d0d-9688-5bd8fe7df24f}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{12ce8539-f39a-4491-87ce-551cf9dee9eb}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{2a8f39d8-ff72-471a-8f12-a2005e8cb248}" />
 	<object class="MixerBusFader" id="{fd5629b8-0571-40fe-be68-edb8536148ad}" />
+	<object class="RandomizerModulator" id="{15ba52e3-a119-4443-b499-6025bcec41c0}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>2.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{e0f85059-f3c1-4d0d-9688-5bd8fe7df24f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>7</value>
+		</property>
+	</object>
 </objects>

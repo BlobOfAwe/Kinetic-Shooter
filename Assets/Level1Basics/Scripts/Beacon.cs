@@ -1,5 +1,6 @@
 using Cinemachine;
 using System.Collections;
+using FMODUnity;
 using UnityEngine;
 
 public class Beacon : MonoBehaviour
@@ -17,6 +18,16 @@ public class Beacon : MonoBehaviour
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
         startingCamSize = vCam.m_Lens.OrthographicSize;
     }
+    //audio emitter variable
+    private StudioEventEmitter emitter;
+
+    public void Awake()
+    {
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.beaconLoop, this.gameObject);
+        emitter.Play();
+    }
+
     public void Activate()
     {
         active = true;
