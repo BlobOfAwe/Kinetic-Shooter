@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class Beacon : MonoBehaviour
 {
+    [SerializeField]
     private Forcefield forcefield;
 
-    private void Awake()
+    /*private void Awake()
     {
-        forcefield = GetComponent<Forcefield>();
-    }
+        forcefield = GetComponentInChildren<Forcefield>();
+    }*/
 
     public void Activate()
     {
-        forcefield.gameObject.SetActive(true);
         Debug.Log("Beacon activated!");
+        forcefield.gameObject.SetActive(true);
     }
 }
