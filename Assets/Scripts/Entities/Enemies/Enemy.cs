@@ -13,6 +13,9 @@ using UnityEngine;
 // Class <Enemy> now inherits directly from the Abstract Entity class
 public abstract class Enemy : Entity
 {
+    [Header("Spawning")]
+    public int spawnCost; // How many credits does it cost to spawn this enemy
+
     [Header("Component References")]
     public GameObject target;
     public Seeker seeker;

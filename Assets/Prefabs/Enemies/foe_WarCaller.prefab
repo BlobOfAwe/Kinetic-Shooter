@@ -245,7 +245,7 @@ MonoBehaviour:
   speedBuffs: []
   hpBuffs: []
   recoverBuffs: []
-  maxHealth: 100
+  maxHealth: 200
   health: 0
   totalAttack: 0
   totalDefense: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 15
   available: 1
+  inUse: 0
   range: 100
   damageModifier: 1
   buffIndicators: []
