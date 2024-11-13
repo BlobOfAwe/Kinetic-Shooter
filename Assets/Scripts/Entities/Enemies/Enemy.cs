@@ -76,6 +76,7 @@ public abstract class Enemy : Entity
             FindObjectOfType<Forcefield>().Deactivate();
         }
         Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
         Destroy(gameObject);
     }
 

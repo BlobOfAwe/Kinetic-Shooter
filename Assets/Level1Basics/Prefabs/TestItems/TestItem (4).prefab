@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7353865979790091572}
   - component: {fileID: 4586937487861674590}
   - component: {fileID: 2702895489040831201}
+  - component: {fileID: -3529008247682634715}
   m_Layer: 0
   m_Name: TestItem (4)
   m_TagString: Untagged
@@ -101,3 +102,34 @@ MonoBehaviour:
   maxX: 35.5
   minY: -26.5
   maxY: 26.5
+--- !u!114 &-3529008247682634715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634069998293061957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1791659208
+      Data2: 1158384876
+      Data3: -1756881735
+      Data4: 1110242641
+    Path: event:/SFX/Item/ItemApproach
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 2
+  OverrideMaxDistance: 5

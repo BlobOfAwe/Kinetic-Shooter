@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class Beacon : MonoBehaviour
@@ -5,6 +6,16 @@ public class Beacon : MonoBehaviour
     [SerializeField]
     private Forcefield forcefield;
     public bool active;
+
+    //audio emitter variable
+    private StudioEventEmitter emitter;
+
+    public void Awake()
+    {
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.beaconLoop, this.gameObject);
+        emitter.Play();
+    }
 
     public void Activate()
     {
