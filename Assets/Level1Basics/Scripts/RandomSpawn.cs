@@ -25,5 +25,6 @@ public class RandomSpawn : MonoBehaviour
         transform.position = spawnPosition;
         GraphNode node = AstarPath.active.GetNearest(transform.position, NNConstraint.Default).node;
         transform.position = (Vector3)node.position;
+        AstarPath.active.Scan();
     }
 }

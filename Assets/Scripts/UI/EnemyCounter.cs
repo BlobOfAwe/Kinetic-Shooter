@@ -20,7 +20,7 @@ public class EnemyCounter : MonoBehaviour
     [SerializeField]
     private float bossYOffsetMax; // Added by NK.
     [SerializeField]
-    private GameObject beacon; // Added by NK.
+    private Beacon beacon; // Added by NK.
     [SerializeField]
     private TMP_Text enemyCounterText;
 
@@ -52,7 +52,8 @@ public class EnemyCounter : MonoBehaviour
             bossOffset.x = Random.Range(bossXOffsetMin, bossXOffsetMax);
             bossOffset.y = Random.Range(bossYOffsetMin, bossYOffsetMax);
             GraphNode node = AstarPath.active.GetNearest((Vector2)beacon.transform.position + bossOffset, NNConstraint.Default).node;
-            Instantiate(bossEnemy, (Vector3)node.position, Quaternion.identity);
+            Instantiate(bossEnemy, Vector3.zero/*(Vector3)node.position*/, Quaternion.identity);
+            beacon.Activate();
         }
     }
 

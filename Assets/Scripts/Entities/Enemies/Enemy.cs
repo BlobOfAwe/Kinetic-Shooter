@@ -18,7 +18,6 @@ public abstract class Enemy : Entity
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
-    [SerializeField]
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
@@ -41,11 +40,17 @@ public abstract class Enemy : Entity
     private int lastState = -1; // What was the enemy state last frame
     private float stateChangeCooldownTimer; // Used to time stateChangeCooldown
 
+    // I don't know what category to put this in. - NK
+    [Header("Other")]
+    [SerializeField]
+    private bool isBoss = false; // Added by Nathaniel Klassen
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D> ();
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
+        enemyCounter = FindObjectOfType<EnemyCounter>(); // Added by Nathaniel Klassen
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -61,7 +66,16 @@ public abstract class Enemy : Entity
     protected override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
-        enemyCounter.EnemyDefeated(); // Added to make the enemy counter count down when an enemy is defeated. - NK
+        // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
+        if (!isBoss)
+        {
+            enemyCounter.EnemyDefeated();
+        } else
+        {
+            Debug.Log("You beat the boss!");
+            // Whatever happens when a boss is defeated goes here.
+        }
+        Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
         Destroy(gameObject);
     }
 
