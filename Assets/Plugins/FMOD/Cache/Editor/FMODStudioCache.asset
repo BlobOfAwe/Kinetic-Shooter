@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: 4870559303043606722}
   MinDistance: 1
   MaxDistance: 20
-  Length: 244235
+  Length: 333913
 --- !u!114 &-8281060266239998081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +125,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638667651233742357
+  lastModified: 638670456310356985
   FileSizes:
   - Name: Desktop
-    Value: 16405056
+    Value: 26767520
   Exists: 1
 --- !u!114 &-7970139341514490549
 MonoBehaviour:
@@ -156,7 +156,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 66847
+  Length: 59268
 --- !u!114 &-7621149545957863675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638667651158122499
+  lastModified: 638670420428095079
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -440,13 +440,13 @@ MonoBehaviour:
     Data4: -623727631
   Banks:
   - {fileID: 8794050686704094127}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 7500
+  Length: 22961
 --- !u!114 &-3534434085265650835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,10 +647,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Player/Movement/BasicMovement
   Guid:
-    Data1: 67294925
-    Data2: 1293585052
-    Data3: 544438457
-    Data4: 953258887
+    Data1: -36229141
+    Data2: 1294141513
+    Data3: -953129813
+    Data4: 1057355258
   Banks:
   - {fileID: 8794050686704094127}
   IsStream: 0
@@ -659,7 +659,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1875
+  Length: 1254
 --- !u!114 &-957002633510064236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
   - {fileID: -5350728456640471976}
   StringsBanks:
   - {fileID: 7668973455979810650}
-  cacheTime: 638667651236590988
+  cacheTime: 638670456310936391
   cacheVersion: 131617
 --- !u!114 &402312292333426586
 MonoBehaviour:
@@ -1106,13 +1106,13 @@ MonoBehaviour:
     Data4: -1639879213
   Banks:
   - {fileID: -8281060266239998081}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 69799
 --- !u!114 &4298446201289117936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,19 +1154,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Player/Movement/FastFlying
   Guid:
-    Data1: -36229141
-    Data2: 1294141513
-    Data3: -953129813
-    Data4: 1057355258
+    Data1: 67294925
+    Data2: 1293585052
+    Data3: 544438457
+    Data4: 953258887
   Banks:
   - {fileID: 8794050686704094127}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1687
 --- !u!114 &4870559303043606722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1233,10 +1233,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638667651158006430
+  lastModified: 638670453626461515
   FileSizes:
   - Name: Desktop
-    Value: 1661312
+    Value: 1958784
   Exists: 1
 --- !u!114 &6308094778536195337
 MonoBehaviour:
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638667651158134721
+  lastModified: 638670420428109144
   FileSizes:
   - Name: Desktop
     Value: 3488
@@ -1516,10 +1516,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638667651236590988
+  lastModified: 638670456310936391
   FileSizes:
   - Name: Desktop
-    Value: 451136
+    Value: 1027808
   Exists: 1
 --- !u!114 &9126031892805218504
 MonoBehaviour:

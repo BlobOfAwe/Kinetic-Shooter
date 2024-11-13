@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity;
 
 public class LoadoutManager : MonoBehaviour
 {
@@ -31,16 +32,20 @@ public class LoadoutManager : MonoBehaviour
     }
     public void NextLoadout()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelect, this.transform.position);
         currentIndex++;
         if (currentIndex >= loadouts.Length) currentIndex = 0;
         UpdateLoadoutUI();
+        
     }
 
     public void PreviousLoadout()
     {
-            currentIndex--;
-            if (currentIndex < 0) currentIndex = loadouts.Length - 1;
-            UpdateLoadoutUI();
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonSelect, this.transform.position);
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = loadouts.Length - 1;
+        UpdateLoadoutUI();
+      
     }
     private void UpdateLoadoutUI()
     {

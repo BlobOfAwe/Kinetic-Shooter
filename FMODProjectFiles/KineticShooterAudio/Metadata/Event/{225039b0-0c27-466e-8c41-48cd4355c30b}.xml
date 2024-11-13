@@ -5,7 +5,7 @@
 			<value>EnemyDamaged</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9f08ccdb-51b1-4a57-a08f-b4b3811c4fbe}</destination>
@@ -82,7 +82,11 @@
 			<destination>{fea410d2-e207-40cf-abe8-f52b0ce8d5fd}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{535f02fa-214d-48ed-a4a4-0b7e11745ba5}" />
+	<object class="MultiSound" id="{535f02fa-214d-48ed-a4a4-0b7e11745ba5}">
+		<relationship name="sounds">
+			<destination>{1852559a-ab65-4328-ba6d-d13ea0cfb92c}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{bcebfbe2-5b83-46ff-bd95-99879cf31a06}">
 		<relationship name="effects">
 			<destination>{d1cf1a91-9f88-42bd-a0a4-ad7ac97367ae}</destination>
@@ -95,6 +99,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e6273fdb-d5ff-4be6-b67b-1ded5ebf6d9c}" />
+	<object class="SingleSound" id="{1852559a-ab65-4328-ba6d-d13ea0cfb92c}">
+		<relationship name="audioFile">
+			<destination>{7bac1bbe-5d56-4378-ac62-f71053cbbfa9}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{d1cf1a91-9f88-42bd-a0a4-ad7ac97367ae}" />
 	<object class="MixerBusFader" id="{edaf115a-fd33-41fa-a0a7-87928defca8a}" />
 </objects>

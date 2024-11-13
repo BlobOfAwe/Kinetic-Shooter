@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class AudioManager : MonoBehaviour
 
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
+
+
 
     public static AudioManager instance {  get; private set; }
 
@@ -52,8 +55,33 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        InitiliazeAmbience(FMODEvents.instance.level1Ambience);
-        InitiliazeMusic(FMODEvents.instance.level1Music);
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Level 1")
+        {
+            InitiliazeAmbience(FMODEvents.instance.level1Ambience);
+            InitiliazeMusic(FMODEvents.instance.level1Music);
+        }
+        else if (sceneName == "Level 1")
+        {
+            InitiliazeAmbience(FMODEvents.instance.level2Ambience);
+            InitiliazeMusic(FMODEvents.instance.level2Music);
+        }
+        else if (sceneName == "Level 3")
+        {
+            InitiliazeAmbience(FMODEvents.instance.level3Ambience);
+            InitiliazeMusic(FMODEvents.instance.level3Music);
+        }
+        else if (sceneName == "LoadoutSelectionSceneAudio")
+        {
+            InitiliazeAmbience(FMODEvents.instance.mainMenuAmbience);
+            InitiliazeMusic(FMODEvents.instance.mainMenuMusic);
+        }
+
     }
 
     private void Update()
