@@ -11,12 +11,12 @@ public class EnemyEntity : Entity
 {
     private Enemy enemyBehaviour;
 
-    private void Awake()
-    {
-        enemyBehaviour = GetComponent<Enemy>();
-    }
+    //private void Awake()
+    //{
+    //    enemyBehaviour = GetComponent<Enemy>();
+    //}
 
-    protected override void Death()
+    public override void Death()
     {
         // JV - base.Death() can no longer be called as it is now an abstract function. To reenable this code, change Entity.Death to a virtual function
         //base.Death();

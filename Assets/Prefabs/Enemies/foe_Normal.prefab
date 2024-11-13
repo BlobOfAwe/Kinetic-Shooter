@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: 5656869920427263351}
   - component: {fileID: 6775570359730079573}
   - component: {fileID: 4453793798671692911}
-  - component: {fileID: 4289594241533071670}
-  - component: {fileID: 56178050216891224}
-  - component: {fileID: 1279669753148048819}
+  - component: {fileID: 7955933720918278427}
+  - component: {fileID: 2444843956360531543}
   m_Layer: 7
-  m_Name: Enemy Test
+  m_Name: foe_Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.52380955, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -223,7 +222,7 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &4289594241533071670
+--- !u!114 &7955933720918278427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,16 +231,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72acd5b4b11dd54aab898463203caf9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7595b3275d26b724990b5febb43155fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackStat: 10
+  defenseStat: 0
+  speedStat: 3
+  hpStat: 50
+  recoverStat: 0
+  attackBuffs: []
+  defenseBuffs: []
+  speedBuffs: []
+  hpBuffs: []
+  recoverBuffs: []
   maxHealth: 100
   health: 0
-  primary: {fileID: 56178050216891224}
-  secondary: {fileID: 1279669753148048819}
+  totalAttack: 0
+  totalDefense: 0
+  totalSpeed: 0
+  totalRecovery: 0
+  healthMultiplier: 0
+  attackMultiplier: 0
+  defenseMultiplier: 0
+  speedMultiplier: 0
+  recoveryMultiplier: 0
+  primary: {fileID: 2444843956360531543}
+  secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  spawnCost: 5
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -249,16 +268,12 @@ MonoBehaviour:
   hostile:
     serializedVersion: 2
     m_Bits: 8
-  distanceToTarget: 0
-  sightRange: 20.7
-  stayDistance: 4.3
-  chaseDistance: 6.7
+  sightRange: 20
+  stayDistance: 5
+  chaseDistance: 7
   pursuitDuration: 0
-  pursuitTimer: 0
-  acceleration: 1
-  speed: 1
   state: 0
---- !u!114 &56178050216891224
+--- !u!114 &2444843956360531543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,30 +282,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abac87ef73c9cc54c98002466ab4f7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 3
-  available: 1
-  range: 50
-  bulletPrefab: {fileID: 8025443713472894268, guid: 106f575805b7126459123e6a102f15bf, type: 3}
-  maxBullets: 10
-  firePoint: {fileID: 553466555589206235}
---- !u!114 &1279669753148048819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863582455569772561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4bdaa7d93ce2a3499132932760ea968, type: 3}
+  m_Script: {fileID: 11500000, guid: 63d347d89acab094d85bd4bb159e587e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 5
   available: 1
-  range: 0.5
-  knockback: 0
-  damage: 0
-  activeTime: 0.1
+  inUse: 0
+  range: 3
+  damageModifier: 1
+  canDamage:
+    serializedVersion: 2
+    m_Bits: 8
+  startup: 0.5
+  startupSpeed: 1
+  lungeForce: 600
+  endtime: 1

@@ -20,6 +20,15 @@ public class MapGenerator : MonoBehaviour
         public Transform[] transforms;
     }
 
+    [SerializeField]
+    private GameObject[] itemPrefabs;
+
+    [SerializeField]
+    private int minItems = 0;
+
+    [SerializeField]
+    private int maxItems = 0;
+
     private void Awake()
     {
         positions = new Transform[positionRows[0].transforms.Length, positionRows.Length];
@@ -160,5 +169,19 @@ public class MapGenerator : MonoBehaviour
 
         // Recalculate A* graph
         AstarPath.active.Scan();
+
+        // Spawn items around the map.
+        int itemAmount = Random.Range(minItems, maxItems);
+        for (int i = 0; i < itemAmount; i++)
+        {
+            Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
+        }
+
+        // Find and update all positions of randomly spawning objects.
+        RandomSpawn[] randomSpawns = FindObjectsOfType<RandomSpawn>();
+        for (int i = 0; i < randomSpawns.Length; i++)
+        {
+            randomSpawns[i].Spawn();
+        }
     }
 }

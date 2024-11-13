@@ -35,8 +35,6 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private HPBarSystem hpBar;
 
-    [HideInInspector]
-    public Rigidbody2D rb;
 
     [SerializeField]
     private int gameOverScene = 0;
@@ -54,16 +52,12 @@ public class PlayerBehaviour : Entity
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
+
     //creates an FMOD events instance for player movement
     private void Start()
     {
         health = maxHealth;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
-    }
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     public void OnAim(InputAction.CallbackContext context)
@@ -181,8 +175,10 @@ public class PlayerBehaviour : Entity
         Application.Quit();
     }
 
-    private void Update()
+    new private void Update()
     {
+        base.Update();
+
         aimPos = mainCam.ScreenToWorldPoint(cursorPos);
         if (aimReticle != null)
         {
@@ -260,7 +256,7 @@ public class PlayerBehaviour : Entity
         }
     }*/
 
-    protected override void Death()
+    public override void Death()
     {
         SceneManager.LoadScene(gameOverScene);
     }

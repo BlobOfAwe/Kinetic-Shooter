@@ -5,17 +5,25 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    public float cooldown = 0.5f;
+    [SerializeField] protected float cooldown = 0.5f;
     public bool available = true;
+    public bool inUse = false; // Is the ability currently being used?
     private float cooldownTimer;
     public float range = 3f;
+    [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
 
     public abstract void OnActivate();
 
-    public IEnumerator BeginCooldown()
+    protected IEnumerator BeginCooldown()
     {
         available = false;
         yield return new WaitForSeconds(cooldown);
         available = true;
+    }
+
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
