@@ -52,8 +52,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        InitiliazeAmbience(FMODEvents.instance.windAmbience);
-        InitiliazeMusic(FMODEvents.instance.menuMusic);
+        InitiliazeAmbience(FMODEvents.instance.level1Ambience);
+        InitiliazeMusic(FMODEvents.instance.level1Music);
     }
 
     private void Update()

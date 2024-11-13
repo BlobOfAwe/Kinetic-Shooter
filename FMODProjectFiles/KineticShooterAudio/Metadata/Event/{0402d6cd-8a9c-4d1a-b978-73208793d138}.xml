@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{0402d6cd-8a9c-4d1a-b978-73208793d138}">
 		<property name="name">
-			<value>PlayerMovement</value>
+			<value>BasicMovement</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{727ed671-fef0-4c77-871d-d2780b19543c}</destination>
+			<destination>{18a2aeb9-250d-49e6-99be-b521b5af546f}</destination>
 		</relationship>
 		<relationship name="tags">
 			<destination>{dd45f1bc-2d18-480f-9599-3228e9133333}</destination>

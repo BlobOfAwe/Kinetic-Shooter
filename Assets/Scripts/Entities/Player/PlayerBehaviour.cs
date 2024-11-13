@@ -58,7 +58,7 @@ public class PlayerBehaviour : Entity
     private void Start()
     {
         health = maxHealth;
-        playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerMovementSound);
+        playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
     }
 
     private void Awake()
