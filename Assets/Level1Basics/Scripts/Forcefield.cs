@@ -10,6 +10,8 @@ public class Forcefield : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    private bool isDeactivated = false;
+
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -17,7 +19,7 @@ public class Forcefield : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((playerLayer & (1 << collision.gameObject.layer)) != 0)
+        if (!isDeactivated && ((playerLayer & (1 << collision.gameObject.layer)) != 0))
         {
             sr.enabled = true;
             Debug.Log("Player entered the beacon radius.");
@@ -30,5 +32,6 @@ public class Forcefield : MonoBehaviour
     {
         sr.enabled = false;
         forcefieldCollider.enabled = false;
+        isDeactivated = true;
     }
 }
