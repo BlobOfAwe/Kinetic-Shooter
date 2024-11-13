@@ -20,7 +20,7 @@ public abstract class Enemy : Entity
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
-    [SerializeField] private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
+    private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
@@ -37,6 +37,11 @@ public abstract class Enemy : Entity
     private float stateChangeCooldown = 0.5f; // How long after a state change before the state can change again
     private int lastState = -1; // What was the enemy state last frame
     private float stateChangeCooldownTimer; // Used to time stateChangeCooldown
+
+    // I don't know what category to put this in. - NK
+    [Header("Other")]
+    [SerializeField]
+    private bool isBoss = false; // Added by Nathaniel Klassen
 
     private void Start()
     {
@@ -60,7 +65,17 @@ public abstract class Enemy : Entity
     protected override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
-        enemyCounter.EnemyDefeated(); // Added to make the enemy counter count down when an enemy is defeated. - NK
+        // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
+        if (!isBoss)
+        {
+            enemyCounter.EnemyDefeated();
+        } else
+        {
+            Debug.Log("You beat the boss!");
+            // Whatever happens when a boss is defeated goes here.
+            FindObjectOfType<Forcefield>().Deactivate();
+        }
+        Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
         Destroy(gameObject);
     }
 

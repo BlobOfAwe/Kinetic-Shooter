@@ -1,13 +1,30 @@
 // ## - ZS
+using Pathfinding;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyCounter : MonoBehaviour
 {
-    public int totalEnemies = 10;
+    // Changed public variables that don't need to be public but need to be set in the inspector to private and added [SerializeField].
+    [SerializeField]
+    private int totalEnemies = 10;
     private int remainingEnemies;
-    public TMP_Text enemyCounterText;
+    [SerializeField]
+    private GameObject bossEnemy; // Added by NK.
+    [SerializeField]
+    private float bossXOffsetMin; // Added by NK.
+    [SerializeField]
+    private float bossXOffsetMax; // Added by NK.
+    [SerializeField]
+    private float bossYOffsetMin; // Added by NK.
+    [SerializeField]
+    private float bossYOffsetMax; // Added by NK.
+    [SerializeField]
+    private Beacon beacon; // Added by NK.
+    [SerializeField]
+    private TMP_Text enemyCounterText;
+
+    private bool bossIsSpawned = false; // Added by NK.
 
     void Start()
     {
@@ -25,13 +42,27 @@ public class EnemyCounter : MonoBehaviour
 
     public void EnemyDefeated()
     {
-        remainingEnemies = remainingEnemies - 1;
+        remainingEnemies -= 1;
         remainingEnemies = Mathf.Max(remainingEnemies, 0);
         UpdateEnemyCounter();
-
         if (remainingEnemies <= 0)
         {
-            Debug.Log("An Elite Enemy Has Spawned"); //insert Elite enemy spawn
+            Debug.Log("An Elite Enemy Has Spawned");
+            beacon.Activate(); // Added by Nathaniel Klassen.
+        }
+    }
+
+    // Method created by Nathaniel Klassen.
+    public void SpawnBoss()
+    {
+        if (!bossIsSpawned)
+        {
+            Vector2 bossOffset;
+            bossOffset.x = Random.Range(bossXOffsetMin, bossXOffsetMax);
+            bossOffset.y = Random.Range(bossYOffsetMin, bossYOffsetMax);
+            GraphNode node = AstarPath.active.GetNearest((Vector2)beacon.transform.position + bossOffset, NNConstraint.Default).node;
+            Instantiate(bossEnemy, (Vector3)node.position, Quaternion.identity);
+            bossIsSpawned = true;
         }
     }
 

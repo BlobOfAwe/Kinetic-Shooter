@@ -34,12 +34,16 @@ public class TestBullet : Projectile
         if ((shootableLayer & (1 << collision.gameObject.layer)) != 0)
         {
             transform.position = Vector2.zero;
+            // if statement should check against damageable objects.
             try 
             { 
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse);
                 collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
             } 
-            catch {  }
+            catch
+            {
+                Debug.LogError("TODO: Colliding against non-damagable objects.");
+            }
             gameObject.SetActive(false);
         }
     }
