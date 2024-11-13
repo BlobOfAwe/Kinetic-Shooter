@@ -5,6 +5,9 @@ public class Forcefield : MonoBehaviour
     [SerializeField]
     private LayerMask playerLayer;
 
+    [SerializeField]
+    private Collider2D forcefieldCollider;
+
     private SpriteRenderer sr;
 
     private void Awake()
@@ -18,6 +21,14 @@ public class Forcefield : MonoBehaviour
         {
             sr.enabled = true;
             Debug.Log("Player entered the beacon radius.");
+            forcefieldCollider.enabled = true;
+            FindObjectOfType<EnemyCounter>().SpawnBoss();
         }
+    }
+
+    public void Deactivate()
+    {
+        sr.enabled = false;
+        forcefieldCollider.enabled = false;
     }
 }

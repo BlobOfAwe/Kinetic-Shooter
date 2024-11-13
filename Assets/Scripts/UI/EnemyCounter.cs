@@ -24,6 +24,8 @@ public class EnemyCounter : MonoBehaviour
     [SerializeField]
     private TMP_Text enemyCounterText;
 
+    private bool bossIsSpawned = false; // Added by NK.
+
     void Start()
     {
         remainingEnemies = totalEnemies;
@@ -46,13 +48,21 @@ public class EnemyCounter : MonoBehaviour
         if (remainingEnemies <= 0)
         {
             Debug.Log("An Elite Enemy Has Spawned");
-            // The following code is by Nathaniel Klassen.
+            beacon.Activate(); // Added by Nathaniel Klassen.
+        }
+    }
+
+    // Method created by Nathaniel Klassen.
+    public void SpawnBoss()
+    {
+        if (!bossIsSpawned)
+        {
             Vector2 bossOffset;
             bossOffset.x = Random.Range(bossXOffsetMin, bossXOffsetMax);
             bossOffset.y = Random.Range(bossYOffsetMin, bossYOffsetMax);
             GraphNode node = AstarPath.active.GetNearest((Vector2)beacon.transform.position + bossOffset, NNConstraint.Default).node;
             Instantiate(bossEnemy, (Vector3)node.position, Quaternion.identity);
-            beacon.Activate();
+            bossIsSpawned = true;
         }
     }
 

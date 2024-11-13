@@ -74,6 +74,7 @@ public abstract class Enemy : Entity
         {
             Debug.Log("You beat the boss!");
             // Whatever happens when a boss is defeated goes here.
+            FindObjectOfType<Forcefield>().Deactivate();
         }
         Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
         Destroy(gameObject);
