@@ -31,7 +31,8 @@ public class EnemyCounter : MonoBehaviour
         remainingEnemies = totalEnemies;
         UpdateEnemyCounter();
     }
-  // Debug
+
+    // Debug
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.U))
@@ -48,7 +49,7 @@ public class EnemyCounter : MonoBehaviour
         if (remainingEnemies <= 0)
         {
             Debug.Log("An Elite Enemy Has Spawned");
-            beacon.Activate(); // Added by Nathaniel Klassen.
+            if (!beacon.active) { beacon.Activate(); }// Added by Nathaniel Klassen.
         }
     }
 

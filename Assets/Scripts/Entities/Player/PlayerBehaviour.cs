@@ -256,7 +256,7 @@ public class PlayerBehaviour : Entity
         }
     }*/
 
-    protected override void Death()
+    public override void Death()
     {
         SceneManager.LoadScene(gameOverScene);
     }

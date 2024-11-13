@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7793059730456197326}
   - component: {fileID: 2310738426492231700}
   - component: {fileID: 9187585865182503900}
+  - component: {fileID: -5134780170386273307}
   m_Layer: 0
   m_Name: TestItem
   m_TagString: Untagged
@@ -101,3 +102,18 @@ MonoBehaviour:
   maxX: 35.5
   minY: -26.5
   maxY: 26.5
+--- !u!114 &-5134780170386273307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009946594431939825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93df4b6e676aeab40a11f819b45583a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 4ba485328fc2af34b838bae1a378f3e8, type: 3}
+  title: Test Item 1
+  description: A bizarre cat

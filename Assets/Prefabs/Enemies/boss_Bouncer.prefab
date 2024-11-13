@@ -153,7 +153,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &6775570359730079573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackStat: 30
-  defenseStat: 60
+  defenseStat: 0
   speedStat: 2
-  hpStat: 600
+  hpStat: 300
   recoverStat: 3
   attackBuffs: []
   defenseBuffs: []
@@ -262,10 +262,10 @@ MonoBehaviour:
   utility: {fileID: 3490139462273597173}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
-  enemyCounter: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -274,6 +274,7 @@ MonoBehaviour:
   chaseDistance: 7
   pursuitDuration: 0
   state: 0
+  isBoss: 0
 --- !u!114 &3490139462273597173
 MonoBehaviour:
   m_ObjectHideFlags: 0

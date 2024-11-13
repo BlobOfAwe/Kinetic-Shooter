@@ -62,7 +62,7 @@ public abstract class Enemy : Entity
     }
     
     // Required implementation of the abstract function Entity.Death()
-    protected override void Death()
+    public override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
         // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK

@@ -81,7 +81,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    protected abstract void Death();
+    public abstract void Death();
     
     // To be called whenever a change ocurrs to any of the buff lists
     protected void UpdateStats()

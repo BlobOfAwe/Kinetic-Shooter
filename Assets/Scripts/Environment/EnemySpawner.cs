@@ -10,6 +10,8 @@ using UnityEngine;
 /// </summary>
 public class EnemySpawner : MonoBehaviour
 {
+    public bool active;
+
     [SerializeField] private float addCreditsPerSecond;
     [SerializeField] private float maxSpawnTimeInterval;
     [SerializeField] private Enemy[] enemyPrefabs;
@@ -30,21 +32,24 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (timeToNextSpawn <= 0)
+        if (active)
         {
-            selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; 
+            if (timeToNextSpawn <= 0)
+            {
+                if (!lastSpawnSuccess) { selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; }
 
-            lastSpawnSuccess = AttemptSpawn(selectedEnemy);
+                lastSpawnSuccess = AttemptSpawn(selectedEnemy);
 
-            // If the spawn was a success, try to spawn another enemy of the same type within the next second. Otherwise, start the process over
-            timeToNextSpawn = lastSpawnSuccess ? Random.Range(0f, 1f) : Random.Range(0f, maxSpawnTimeInterval);
-        }
+                // If the spawn was a success, try to spawn another enemy of the same type within the next second. Otherwise, start the process over
+                timeToNextSpawn = lastSpawnSuccess ? Random.Range(0f, 1f) : Random.Range(0f, maxSpawnTimeInterval);
+            }
 
-        // Otherwise, decrease the timer and add credits
-        else 
-        { 
-            timeToNextSpawn -= Time.deltaTime;
-            credits += addCreditsPerSecond * Time.deltaTime;
+            // Otherwise, decrease the timer and add credits
+            else
+            {
+                timeToNextSpawn -= Time.deltaTime;
+                credits += addCreditsPerSecond * Time.deltaTime;
+            }
         }
     }
 
