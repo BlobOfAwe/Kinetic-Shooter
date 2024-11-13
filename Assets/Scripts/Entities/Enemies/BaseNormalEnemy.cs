@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class BaseNormalEnemy : Enemy
 {
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()

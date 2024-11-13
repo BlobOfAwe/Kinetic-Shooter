@@ -11,12 +11,13 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField]
     protected float speed = 5f;
     [SerializeField]
-    protected float damage = 1f;
-    public float knockback = 1f;
+    protected float damageMultiplier = 1f; // Deals damage based on the totalAttack of the Shooter
     [SerializeField]
     protected Rigidbody2D rb;
     [SerializeField]
     protected Transform firePoint;
+
+    public GameObject shooter;
 
     // Everything below added by Nathaniel Klassen
     public float despawnTime = 0f;

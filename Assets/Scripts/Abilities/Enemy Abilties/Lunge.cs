@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class Lunge : Ability
 {
+    public LayerMask canDamage = 8; // Objects on these layers are valid attack targets
     [SerializeField] private float startup; // How long does the enemy indicate before it lunges?
     [SerializeField] private float startupSpeed; // While starting up, the entity will back up. How fast does it do this?
     [SerializeField] private float lungeForce; // How far does the entity lunge?
     [SerializeField] private float endtime; // After lunging, how long (in seconds) before the entity can move again
 
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private BoxCollider2D hitbox;
     private Entity entity;
     private bool lunging;
@@ -23,7 +24,7 @@ public class Lunge : Ability
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         entity = GetComponent<Entity>();
         baseColor = sprite.color;
@@ -69,11 +70,14 @@ public class Lunge : Ability
     {
         if (lunging)
         {
-            try 
-            { 
-                collision.gameObject.GetComponent<Entity>().Damage(10); // 10 should be replaced by the appropriate damage calculation
+            if ((canDamage & (1 << collision.gameObject.layer)) != 0)
+            {
+                try
+                {
+                    collision.gameObject.GetComponent<Entity>().Damage(entity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
+                }
+                catch { }
             }
-            catch { }
         }
     }
 }

@@ -175,8 +175,10 @@ public class PlayerBehaviour : Entity
         Application.Quit();
     }
 
-    private void Update()
+    new private void Update()
     {
+        base.Update();
+
         aimPos = mainCam.ScreenToWorldPoint(cursorPos);
         if (aimReticle != null)
         {

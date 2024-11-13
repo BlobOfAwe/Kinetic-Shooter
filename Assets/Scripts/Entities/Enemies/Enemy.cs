@@ -43,7 +43,7 @@ public abstract class Enemy : Entity
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
-    private void Update()
+    new private void Update()
     {
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
@@ -58,7 +58,6 @@ public abstract class Enemy : Entity
     {
         Debug.Log(gameObject.name + " was killed");
         enemyCounter.EnemyDefeated(); // Added to make the enemy counter count down when an enemy is defeated. - NK
-        Debug.Log("hello " + gameObject);
         Destroy(gameObject);
     }
 
@@ -79,6 +78,13 @@ public abstract class Enemy : Entity
             pursuitTimer = 0;
             SearchForTarget();
         }
+    }
+
+    public void FaceTarget()
+    {
+        aiPath.enableRotation = false;
+        Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
+        transform.up = dir;
     }
 
     // Wander aimlessly
@@ -105,20 +111,17 @@ public abstract class Enemy : Entity
     // Stop moving towards the player, and move around the player
     public void Strafe()
     {
-        aiPath.enableRotation = false;
         if (!aiPath.pathPending && aiPath.reachedEndOfPath || !ReadyToStateChange())
         {
             // Choose a random destination point `stayDistance` distance away from the target.
             aiPath.destination = RandomPointOnEdge(target.transform, stayDistance);
         }
-        Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-        transform.up = dir;
+        FaceTarget();
     }
 
     // Stay a fixed distance back from the player
     public void KeepBack()
     {
-        aiPath.enableRotation = false;
         float angle = Mathf.Atan2(transform.position.y - target.transform.position.y, transform.position.x - target.transform.position.x);
         Vector2 newPos = new Vector3(Mathf.Cos(angle) * stayDistance, Mathf.Sin(angle) * stayDistance) + target.transform.position;
 
@@ -126,8 +129,8 @@ public abstract class Enemy : Entity
         {
             if (distanceToTarget < stayDistance) { aiPath.destination = newPos; }
         }
-        Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-        transform.up = dir;
+
+        FaceTarget();
     }
 
     public bool ReadyToStateChange()

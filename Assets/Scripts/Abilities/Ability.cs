@@ -7,6 +7,7 @@ public abstract class Ability : MonoBehaviour
 {
     [SerializeField] protected float cooldown = 0.5f;
     public bool available = true;
+    public bool inUse = false; // Is the ability currently being used?
     private float cooldownTimer;
     public float range = 3f;
     [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage

@@ -21,7 +21,7 @@ public abstract class Entity : MonoBehaviour
     public List<Buff> recoverBuffs;
 
     [Header("Final Values")]
-    public float maxHealth = 100f;
+    public float maxHealth;
     public float health;
     public float totalAttack;
     // The equation for damage is: damage * (100/(100+totalDefense)). This will never reach 0.
@@ -50,8 +50,14 @@ public abstract class Entity : MonoBehaviour
 
     protected void Awake()
     {
+        UpdateStats();
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    protected void Update()
+    {
+        Heal(totalRecovery * Time.deltaTime);
     }
 
     public virtual void Damage(float amount)
@@ -73,8 +79,6 @@ public abstract class Entity : MonoBehaviour
         {
             health = maxHealth;
         }
-        Debug.Log("Healed " + amount + " health.");
-        Debug.Log("Health: " + health);
     }
 
     protected abstract void Death();

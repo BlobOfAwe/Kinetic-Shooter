@@ -542,7 +542,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &925940763141688901
 MonoBehaviour:
@@ -682,11 +682,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackStat: 0
+  attackStat: 10
   defenseStat: 0
-  speedStat: 0
-  hpStat: 0
-  recoverStat: 0
+  speedStat: 5
+  hpStat: 100
+  recoverStat: 1
   attackBuffs: []
   defenseBuffs: []
   speedBuffs: []
@@ -697,11 +697,17 @@ MonoBehaviour:
   totalAttack: 0
   totalDefense: 0
   totalSpeed: 0
+  totalRecovery: 0
+  healthMultiplier: 0
+  attackMultiplier: 0
+  defenseMultiplier: 0
+  speedMultiplier: 0
+  recoveryMultiplier: 0
   primary: {fileID: 8645813176973339046}
   secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
-  buffManager: {fileID: 0}
+  rb: {fileID: 0}
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -711,7 +717,6 @@ MonoBehaviour:
   aimReticle: {fileID: 0}
   aimTransform: {fileID: 1625521789409699392}
   hpBar: {fileID: 0}
-  rb: {fileID: 0}
   gameOverScene: 0
 --- !u!114 &8645813176973339046
 MonoBehaviour:
@@ -725,12 +730,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abac87ef73c9cc54c98002466ab4f7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 0.1
   available: 1
   range: 3
-  damageModifier: 1
+  damageModifier: 0.2
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 10
+  maxBullets: 60
+  recoil: 5
   firePoint: {fileID: 1625521789409699392}
 --- !u!114 &571558318740040795
 MonoBehaviour:

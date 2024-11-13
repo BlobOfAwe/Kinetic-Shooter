@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class TestBullet : Projectile
 {
-    public GameObject shooter;
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
+    [SerializeField]
+    private float knockback;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,10 @@ public class TestBullet : Projectile
             transform.position = Vector2.zero;
             try 
             { 
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse); 
-                collision.gameObject.GetComponent<Entity>().Damage(damage);
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse);
+                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
             } 
-            catch { }
+            catch {  }
             gameObject.SetActive(false);
         }
     }

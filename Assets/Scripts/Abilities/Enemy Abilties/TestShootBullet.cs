@@ -9,6 +9,7 @@ public class TestShootBullet : Ability
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
     private int maxBullets = 10;
+    [SerializeField] private float recoil = 1;
     // Added firePoint to shoot from instead of this gameObject. - NK
     [SerializeField]
     private Transform firePoint;
@@ -44,7 +45,7 @@ public class TestShootBullet : Ability
             if (!bullet.activeSelf) {  // If the bullet is not active (being fired)
                 bullet.transform.position = firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-firePoint.up * bullet.GetComponent<Projectile>().knockback, ForceMode2D.Impulse); // Add any knockback to the object
+                rb.AddForce(-firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }

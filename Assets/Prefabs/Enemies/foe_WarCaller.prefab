@@ -235,11 +235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3f38e8e5d1d1e41b2cc17c569d0abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackStat: 0
-  defenseStat: 0
-  speedStat: 0
+  attackStat: 1
+  defenseStat: 1
+  speedStat: 3
   hpStat: 100
-  recoverStat: 0
+  recoverStat: 1
   attackBuffs: []
   defenseBuffs: []
   speedBuffs: []
@@ -250,11 +250,16 @@ MonoBehaviour:
   totalAttack: 0
   totalDefense: 0
   totalSpeed: 0
+  totalRecovery: 0
+  healthMultiplier: 0
+  attackMultiplier: 0
+  defenseMultiplier: 0
+  speedMultiplier: 0
+  recoveryMultiplier: 0
   primary: {fileID: 2657488395672243237}
   secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
-  buffManager: {fileID: 0}
   rb: {fileID: 0}
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -263,8 +268,10 @@ MonoBehaviour:
   hostile:
     serializedVersion: 2
     m_Bits: 56
-  acceleration: 1
-  speed: 1
+  sightRange: 20
+  stayDistance: 16.6
+  chaseDistance: 0
+  pursuitDuration: 0
   state: 0
 --- !u!114 &2657488395672243237
 MonoBehaviour:
