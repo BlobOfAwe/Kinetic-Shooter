@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
             rb.AddForce(-transform.up * recoilForce, ForceMode2D.Impulse);
             fireTime = fireInterval;
             //Calls on FMOD event "Gunshot" to play whenever player shoots
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.playerGunshot, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, this.transform.position);
         } else if (fireTime > 0f)
         {
             fireTime -= Time.deltaTime;
