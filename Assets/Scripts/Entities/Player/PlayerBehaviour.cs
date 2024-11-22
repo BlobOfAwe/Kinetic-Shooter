@@ -2,9 +2,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using System.Diagnostics;
 using FMOD.Studio;
-using FMODUnity;
+using System.Collections.Generic;
 
 public class PlayerBehaviour : Entity
 {
@@ -35,6 +34,13 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private HPBarSystem hpBar;
 
+    public enum StatType { attack, defense, speed, hp, recover }
+
+    private List<Upgrade> attackUpgrades;
+    private List<Upgrade> defenseUpgrades;
+    private List<Upgrade> speedUpgrades;
+    private List<Upgrade> hpUpgrades;
+    private List<Upgrade> recoverUpgrades;
 
     [SerializeField]
     private int gameOverScene = 0;
@@ -99,6 +105,67 @@ public class PlayerBehaviour : Entity
         base.Heal(amount);
         hpBar.HealHp(amount);
     }
+
+    /*public void UpgradeStats(StatType statType, float value, bool multiply)
+    {
+        switch (statType)
+        {
+            case StatType.attack:
+                if (multiply)
+                {
+                    attackStat *= value;
+                } else
+                {
+                    attackStat += value;
+                }
+                Debug.Log("Attack increased to " + attackStat);
+                break;
+            case StatType.defense:
+                if (multiply)
+                {
+                    defenseStat *= value;
+                } else
+                {
+                    defenseStat += value;
+                }
+                Debug.Log("Defense increased to " + defenseStat);
+                break;
+            case StatType.speed:
+                if (multiply)
+                {
+                    speedStat *= value;
+                } else
+                {
+                    speedStat += value;
+                }
+                Debug.Log("Speed increased to " + speedStat);
+                break;
+            case StatType.hp:
+                if (multiply)
+                {
+                    hpStat *= value;
+                } else
+                {
+                    hpStat += value;
+                }
+                Debug.Log("HP increased to " + hpStat);
+                break;
+            case StatType.recover:
+                if (multiply)
+                {
+                    recoverStat *= value;
+                } else
+                {
+                    recoverStat += value;
+                }
+                Debug.Log("Recover increased to " + recoverStat);
+                break;
+            default:
+                Debug.LogError("Not a valid stat type.");
+                break;
+        }
+        UpdateStats();
+    }*/
 
     public void OnUsePrimary(InputAction.CallbackContext context)
     {

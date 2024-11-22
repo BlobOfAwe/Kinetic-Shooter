@@ -14,18 +14,19 @@ public abstract class Item : MonoBehaviour
     //audio emitter variable
     private StudioEventEmitter emitter;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         //creates an audio emitter and plays event
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
-        emitter.Play();
+        // COMMENTED OUT LINES THAT HAVE TO DO WITH AN AUDIO EMITTER BECAUSE IT CAUSES ISSUES - NK
+        //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
+        //emitter.Play();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         collision.GetComponentInChildren<InventoryManager>().AddItem(this);
         Destroy(gameObject);
-        emitter.Stop();
+        //emitter.Stop();
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
         Debug.Log("Picked up item");
     }

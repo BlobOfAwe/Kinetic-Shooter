@@ -5,18 +5,19 @@ public abstract class Upgrade : Item
 {
     protected PlayerBehaviour player;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         player = FindObjectOfType<PlayerBehaviour>();
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        ApplyUpgrade();
         base.OnTriggerEnter2D(collision);
+        player.UpdateStats();
     }
 
-    protected virtual void ApplyUpgrade()
+    public virtual void ApplyUpgrade(int quantity)
     {
         Debug.Log("Upgrade applied.");
     }

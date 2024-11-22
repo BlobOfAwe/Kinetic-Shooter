@@ -32,11 +32,11 @@ public abstract class Entity : MonoBehaviour
 
     // Keeps track of multiplicative buffs
     [Header("Buff Multipliers")]
-    [SerializeField] protected float healthMultiplier;
-    [SerializeField] protected float attackMultiplier;
-    [SerializeField] protected float defenseMultiplier;
-    [SerializeField] protected float speedMultiplier;
-    [SerializeField] protected float recoveryMultiplier;
+    public float healthMultiplier;
+    public float attackMultiplier;
+    public float defenseMultiplier;
+    public float speedMultiplier;
+    public float recoveryMultiplier;
 
     [Header("Abilities")]
     public Ability primary;
@@ -46,6 +46,7 @@ public abstract class Entity : MonoBehaviour
 
     [Header("Component References")]
     [HideInInspector] public Rigidbody2D rb;
+    private InventoryManager inventoryManager;
 
 
     protected void Awake()
@@ -53,6 +54,7 @@ public abstract class Entity : MonoBehaviour
         UpdateStats();
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        inventoryManager = GetComponentInChildren<InventoryManager>();
     }
 
     protected void Update()
@@ -84,7 +86,7 @@ public abstract class Entity : MonoBehaviour
     public abstract void Death();
     
     // To be called whenever a change ocurrs to any of the buff lists
-    protected void UpdateStats()
+    public void UpdateStats()
     {
         float currentHPPercentage = health / maxHealth;
 
@@ -99,6 +101,22 @@ public abstract class Entity : MonoBehaviour
         speedMultiplier = 1;
         healthMultiplier = 1;
         recoveryMultiplier = 1;
+
+        // UPGRADES
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
+                        Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
+                    }
+                }
+            }
+        }
 
         // ATTACK
         foreach (Buff buff in attackBuffs) 

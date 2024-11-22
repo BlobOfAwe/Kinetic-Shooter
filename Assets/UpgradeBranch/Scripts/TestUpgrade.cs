@@ -6,9 +6,9 @@ public class TestUpgrade : Upgrade
     [SerializeField]
     private float speedMultiplier = 1f;
 
-    protected override void ApplyUpgrade()
+    public override void ApplyUpgrade(int quantity)
     {
-        player.totalSpeed *= speedMultiplier; // This needs to be changed.
-        Debug.Log("Applied super speed!");
+        player.speedMultiplier = speedMultiplier * quantity;
+        Debug.Log("Speed multiplied by " + speedMultiplier);
     }
 }
