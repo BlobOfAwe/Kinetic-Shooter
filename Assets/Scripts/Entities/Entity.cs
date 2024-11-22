@@ -105,16 +105,18 @@ public abstract class Entity : MonoBehaviour
         // UPGRADES
         if (inventoryManager != null)
         {
+            Debug.Log("Checking inventory...");
             foreach (InventorySlot slot in inventoryManager.inventory)
             {
                 if (slot.item != null)
                 {
+                    Debug.Log("Inventory slot " + slot + " has an item.");
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
                         slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
                         Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
                     }
-                }
+                } else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
             }
         }
 
@@ -158,6 +160,13 @@ public abstract class Entity : MonoBehaviour
             else if (buff.modification == Buff.modificationType.Multiplicative) { recoveryMultiplier += buff.value; }
         }
         totalRecovery *= recoveryMultiplier;
+
+        // DEBUG
+        if (inventoryManager != null)
+        {
+            Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
+            Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
+        }
     }
 
     public virtual void UseAbility(Ability ability)
