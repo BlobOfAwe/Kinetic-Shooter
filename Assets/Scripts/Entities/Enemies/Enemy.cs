@@ -1,9 +1,5 @@
 // ## - JV
 using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent (typeof (Rigidbody2D))]
@@ -188,7 +184,7 @@ public abstract class Enemy : Entity
         return point;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         // Draws the circle around which the enemy strafes
         Gizmos.color = Color.red;
@@ -197,6 +193,7 @@ public abstract class Enemy : Entity
         // The range beyond which the enemy pursues the player
         Gizmos.color = Color.grey;
         Gizmos.DrawWireSphere(transform.position, stayDistance + chaseDistance);
+        Gizmos.DrawWireSphere(transform.position, stayDistance);
 
         
         Gizmos.color = Color.yellow;

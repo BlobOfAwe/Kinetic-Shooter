@@ -32,11 +32,11 @@ public abstract class Entity : MonoBehaviour
 
     // Keeps track of multiplicative buffs
     [Header("Buff Multipliers")]
-    [SerializeField] protected float healthMultiplier;
-    [SerializeField] protected float attackMultiplier;
-    [SerializeField] protected float defenseMultiplier;
-    [SerializeField] protected float speedMultiplier;
-    [SerializeField] protected float recoveryMultiplier;
+    [SerializeField] protected float healthMultiplier = 1;
+    [SerializeField] protected float attackMultiplier = 1;
+    [SerializeField] protected float defenseMultiplier = 1;
+    [SerializeField] protected float speedMultiplier = 1;
+    [SerializeField] protected float recoveryMultiplier = 1;
 
     [Header("Abilities")]
     public Ability primary;

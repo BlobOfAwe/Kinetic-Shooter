@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 1479278624}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: speedStat
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: gameOverScene
@@ -492,11 +492,9 @@ MonoBehaviour:
   addCreditsPerSecond: 1
   maxSpawnTimeInterval: 20
   enemyPrefabs:
-  - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
   timeToNextSpawn: 0
-  credits: 15
+  credits: 10
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
   spawnRange: 10.5

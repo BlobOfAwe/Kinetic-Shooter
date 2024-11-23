@@ -14,12 +14,10 @@ GameObject:
   - component: {fileID: 5656869920427263351}
   - component: {fileID: 6775570359730079573}
   - component: {fileID: 4453793798671692911}
-  - component: {fileID: 8202357859040422502}
-  - component: {fileID: 3490139462273597173}
-  - component: {fileID: 3360637977860876143}
-  - component: {fileID: 8692585260050756621}
+  - component: {fileID: 4939012426212569785}
+  - component: {fileID: 7324984096438370378}
   m_Layer: 7
-  m_Name: boss_Bouncer
+  m_Name: foe_Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +35,8 @@ Transform:
   m_LocalPosition: {x: 11.98, y: -5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1896449255532745756}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &801344071807104314
@@ -81,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b69fd516175f2f4eaac4dba4bbe8da9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 0.9999878, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +103,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 25
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -153,7 +152,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.5
 --- !u!114 &6775570359730079573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 2.33
+  radius: 0.6
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -224,7 +223,7 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &8202357859040422502
+--- !u!114 &4939012426212569785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,14 +232,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37fd0be1a8a3f074e88b874131471e9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 25bca556f033c754aa8431b889a3e1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackStat: 30
-  defenseStat: 60
-  speedStat: 2
-  hpStat: 300
-  recoverStat: 3
+  attackStat: 20
+  defenseStat: 0
+  speedStat: 6
+  hpStat: 50
+  recoverStat: 0
   attackBuffs: []
   defenseBuffs: []
   speedBuffs: []
@@ -257,25 +256,25 @@ MonoBehaviour:
   defenseMultiplier: 0
   speedMultiplier: 0
   recoveryMultiplier: 0
-  primary: {fileID: 8692585260050756621}
-  secondary: {fileID: 3360637977860876143}
-  utility: {fileID: 3490139462273597173}
+  primary: {fileID: 7324984096438370378}
+  secondary: {fileID: 0}
+  utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
-  spawnCost: 0
+  spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
-  sightRange: 200
+  sightRange: 300
   stayDistance: 5
-  chaseDistance: 7
+  chaseDistance: 5
   pursuitDuration: 0
   state: 0
-  isBoss: 1
---- !u!114 &3490139462273597173
+  isBoss: 0
+--- !u!114 &7324984096438370378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -284,63 +283,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4457fb4f184ae1e418fe4ced694c9a88, type: 3}
+  m_Script: {fileID: 11500000, guid: abac87ef73c9cc54c98002466ab4f7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
+  cooldown: 2
   available: 1
   inUse: 0
-  range: 300
+  range: 20
   damageModifier: 1
-  canDamage:
-    serializedVersion: 2
-    m_Bits: 8
-  shockwavePrefab: {fileID: 8025443713472894268, guid: d970851031685404096eb16d903c8e8f, type: 3}
-  shockwavesAmount: 6
-  shockwaveSpread: 60
-  startup: 1
-  bounceDelay: 0
-  lungeForce: 50
-  endtime: 0
-  maxBounces: 5
-  shockwaves: []
---- !u!114 &3360637977860876143
-MonoBehaviour:
+  bulletPrefab: {fileID: 8025443713472894268, guid: de2e9887ef1601b45954a78b2f12f47c, type: 3}
+  maxBullets: 10
+  recoil: 1
+  firePoint: {fileID: 1896449255532745756}
+--- !u!1 &5423862139120101622
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863582455569772561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86ba58c199b5ee646962f8cc95a7fcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 30
-  available: 1
-  inUse: 0
-  range: 0
-  damageModifier: 0
-  enemies:
-  - {fileID: 863582455569772561, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  amount: 5
---- !u!114 &8692585260050756621
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1896449255532745756}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1896449255532745756
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863582455569772561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4779146e79327a4e878c1998e37b914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 3
-  available: 1
-  inUse: 0
-  range: 0
-  damageModifier: 0
-  bulletPrefab: {fileID: 8025443713472894268, guid: 106f575805b7126459123e6a102f15bf, type: 3}
-  amount: 8
-  bullets: []
+  m_GameObject: {fileID: 5423862139120101622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 553466555589206235}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
