@@ -9,8 +9,7 @@ public class TestBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    [SerializeField]
-    private float knockback;
+    public float knockback; // Changed to public so that this value can be changed by abilities. - NK
 
     // Start is called before the first frame update
     void Start()

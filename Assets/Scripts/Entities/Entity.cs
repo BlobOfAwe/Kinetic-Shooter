@@ -176,7 +176,7 @@ public abstract class Entity : MonoBehaviour
                 "Defense: " + (totalDefense / defenseMultiplier) + " * " + defenseMultiplier + " = " + totalDefense + "\n" +
                 "Speed: " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed + "\n" +
                 "Max HP: " + (maxHealth / healthMultiplier) + " * " + healthMultiplier + " = " + maxHealth + "\n" +
-                "Recover: " + (totalRecovery / recoveryMultiplier) + " * " + recoveryMultiplier + " = " + totalRecovery;
+                "Recover: " + (totalRecovery / recoveryMultiplier) + " * " + recoveryMultiplier + " = " + totalRecovery + "\n";
         }
     }
 

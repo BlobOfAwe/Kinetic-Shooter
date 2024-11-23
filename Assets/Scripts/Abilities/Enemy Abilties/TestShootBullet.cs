@@ -9,7 +9,13 @@ public class TestShootBullet : Ability
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
     private int maxBullets = 10;
-    [SerializeField] private float recoil = 1;
+    public float recoil = 1; // Changed to public so it can be accessed by upgrades. - NK
+    public float recoilMultiplier = 1f; // Added this so that recoil can be multiplied by upgrades. - NK
+
+    // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
+    public float bulletSpeedMultiplier = 1f;
+    public float bulletKnockbackMultiplier = 1f;
+
     // Added firePoint to shoot from instead of this gameObject. - NK
     [SerializeField]
     private Transform firePoint;
@@ -47,8 +53,10 @@ public class TestShootBullet : Ability
             if (!bullet.activeSelf) {  // If the bullet is not active (being fired)
                 bullet.transform.position = firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
+                rb.AddForce(-firePoint.up * recoil * recoilMultiplier, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
+                bullet.GetComponent<TestBullet>().speed *= bulletSpeedMultiplier;
+                bullet.GetComponent<TestBullet>().knockback *= bulletKnockbackMultiplier;
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }
 
