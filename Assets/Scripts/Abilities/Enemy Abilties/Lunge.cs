@@ -26,7 +26,6 @@ public class Lunge : Ability
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        entity = GetComponent<Entity>();
         baseColor = sprite.color;
     }
 
@@ -74,7 +73,7 @@ public class Lunge : Ability
             {
                 try
                 {
-                    collision.gameObject.GetComponent<Entity>().Damage(entity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
+                    collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
                 }
                 catch { }
             }

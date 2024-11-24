@@ -8,8 +8,9 @@ public class SpreadShot : Ability
     [SerializeField] private int amount;
     [SerializeField] private GameObject[] bullets;
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         bullets = new GameObject[amount*3]; // Create enough bullets for 3 shots to be active at a time
         for (int i = 0; i < bullets.Length; i++)
         {
