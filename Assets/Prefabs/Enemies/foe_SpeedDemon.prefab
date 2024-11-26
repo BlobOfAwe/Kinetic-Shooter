@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 5656869920427263351}
   - component: {fileID: 6775570359730079573}
   - component: {fileID: 4453793798671692911}
-  - component: {fileID: 4939012426212569785}
-  - component: {fileID: 7324984096438370378}
+  - component: {fileID: 8768425740899451525}
+  - component: {fileID: 6319996032255132710}
   m_Layer: 7
-  m_Name: foe_Sniper
+  m_Name: foe_SpeedDemon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,10 +33,9 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.98, y: -5.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 1896449255532745756}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &801344071807104314
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.9999878, b: 0, a: 1}
+  m_Color: {r: 0.5641509, g: 0.99400735, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,7 +151,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!114 &6775570359730079573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +222,7 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
---- !u!114 &4939012426212569785
+--- !u!114 &8768425740899451525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,14 +231,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25bca556f033c754aa8431b889a3e1eb, type: 3}
+  m_Script: {fileID: 11500000, guid: d7f6a56c17bbc7e42b2f3490f9254afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackStat: 20
+  attackStat: 5
   defenseStat: 0
-  speedStat: 6
-  hpStat: 50
-  recoverStat: 0
+  speedStat: 8
+  hpStat: 30
+  recoverStat: 3
   attackBuffs: []
   defenseBuffs: []
   speedBuffs: []
@@ -251,30 +250,30 @@ MonoBehaviour:
   totalDefense: 0
   totalSpeed: 0
   totalRecovery: 0
-  healthMultiplier: 0
-  attackMultiplier: 0
-  defenseMultiplier: 0
-  speedMultiplier: 0
-  recoveryMultiplier: 0
-  primary: {fileID: 7324984096438370378}
+  healthMultiplier: 1
+  attackMultiplier: 1
+  defenseMultiplier: 1
+  speedMultiplier: 1
+  recoveryMultiplier: 1
+  primary: {fileID: 6319996032255132710}
   secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
-  spawnCost: 10
+  spawnCost: 5
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
-  sightRange: 300
-  stayDistance: 6
-  chaseDistance: 12
+  sightRange: 20
+  stayDistance: 3
+  chaseDistance: 7
   pursuitDuration: 0
   state: 0
   isBoss: 0
---- !u!114 &7324984096438370378
+--- !u!114 &6319996032255132710
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,46 +282,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 863582455569772561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abac87ef73c9cc54c98002466ab4f7a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2921ea4bf6b65984fad48ea05b95fcf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 3
   available: 1
   inUse: 0
-  range: 20
+  range: 3
   damageModifier: 1
-  bulletPrefab: {fileID: 8025443713472894268, guid: de2e9887ef1601b45954a78b2f12f47c, type: 3}
-  maxBullets: 10
-  recoil: 1
-  firePoint: {fileID: 1896449255532745756}
---- !u!1 &5423862139120101622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1896449255532745756}
-  m_Layer: 7
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1896449255532745756
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5423862139120101622}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 553466555589206235}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  canDamage:
+    serializedVersion: 2
+    m_Bits: 8
+  startup: 0.2
+  startupSpeed: 2
+  lungeForce: 800
+  endtime: 1
+  latched: 0
+  stunDuration: 5

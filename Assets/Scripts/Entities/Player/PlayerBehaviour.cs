@@ -18,9 +18,6 @@ public class PlayerBehaviour : Entity
     private bool canMoveManually = false;
 
     [SerializeField]
-    private float moveSpeed = 1f;
-
-    [SerializeField]
     private float moveAcceleration = 1f;
 
     [SerializeField]

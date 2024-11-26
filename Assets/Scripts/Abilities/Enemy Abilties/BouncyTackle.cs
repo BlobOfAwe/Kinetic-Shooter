@@ -18,7 +18,6 @@ public class BouncyTackle : Ability
 
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
-    private Entity entity;
     private bool lunging;
     [SerializeField] private GameObject[] shockwaves;
     
@@ -29,8 +28,10 @@ public class BouncyTackle : Ability
     private SpriteRenderer sprite;
 
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
+        
         // Create the shockwave objects
         shockwaves = new GameObject[shockwavesAmount];
         for (int i = 0; i < shockwavesAmount; i++)
@@ -45,7 +46,6 @@ public class BouncyTackle : Ability
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        entity = GetComponent<Entity>();
         baseColor = sprite.color;
         Physics2D.queriesStartInColliders = false; // Raycasts that start inside a collider should not register that collider
     }
@@ -67,7 +67,7 @@ public class BouncyTackle : Ability
                 // Try to damage the object
                 try
                 {
-                    collision.gameObject.GetComponent<Entity>().Damage(entity.totalAttack * damageModifier);
+                    collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier);
                 }
                 catch { }
             }

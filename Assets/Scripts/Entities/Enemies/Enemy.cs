@@ -39,7 +39,7 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
 
-    private void Start()
+    protected void Start()
     {
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
@@ -120,7 +120,7 @@ public abstract class Enemy : Entity
     public void Pursue()
     {
         aiPath.enableRotation = true;
-        aiPath.destination = target.transform.position;
+        if (target != null) { aiPath.destination = target.transform.position; }
     }
 
     // Stop moving towards the player, and move around the player

@@ -13,8 +13,10 @@ public class WarCry : Ability
     [SerializeField] private GameObject buffIndicatorPrefab;
     [SerializeField] private float buffDuration;
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
+        
         // Initialize a predetermined number of indicators. This reduces the potential load for instantiating indicators at runtime
         for (int i = 0; i < initialIndicators; i++)
         {

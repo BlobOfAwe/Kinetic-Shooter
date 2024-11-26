@@ -1,4 +1,8 @@
-public class BaseSniperEnemy : Enemy
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BaseSpeedDemonEnemy : Enemy
 {
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
@@ -8,16 +12,15 @@ public class BaseSniperEnemy : Enemy
             // If the enemy has no target, Wander
             if (target == null)
             { state = 0; }
-            // If the enemy is far enough away, Pursue
-            else if (distanceToTarget > stayDistance + chaseDistance)
-            { state = 1; }
-            // If the enemy is too close to its target, retreat
-            else if (distanceToTarget < stayDistance)
-            { state = 3; }
-            // If the enemy is between the pursuit and stay distances, Attack
-            else if (distanceToTarget > stayDistance && distanceToTarget < stayDistance + chaseDistance)
+            // If the enemy is already strafing and the target has not gone far enough to be chased, Strafe, 
+            else if (state == 2 && distanceToTarget < stayDistance + chaseDistance)
             { state = 2; }
-            
+            // If the enemy is far enough away, Pursue
+            else if (distanceToTarget > stayDistance)
+            { state = 1; }
+            // If the enemy is close to its target, Attack
+            else if (distanceToTarget < stayDistance)
+            { state = 2; }
 
         }
 
@@ -32,11 +35,8 @@ public class BaseSniperEnemy : Enemy
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack
-                FaceTarget();
+                Strafe();
                 if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
-                break;
-            case 3: // Retreat
-                KeepBack();
                 break;
         }
     }
