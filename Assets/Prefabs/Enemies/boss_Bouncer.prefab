@@ -262,7 +262,6 @@ MonoBehaviour:
   utility: {fileID: 3490139462273597173}
   additional: {fileID: 0}
   rb: {fileID: 0}
-  statsDisplay: {fileID: 0}
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -275,7 +274,7 @@ MonoBehaviour:
   chaseDistance: 7
   pursuitDuration: 0
   state: 0
-  isBoss: 1
+  isBoss: 0
 --- !u!114 &3490139462273597173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 10
-  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 300
@@ -319,7 +317,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 30
-  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 0
@@ -340,7 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 3
-  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 0

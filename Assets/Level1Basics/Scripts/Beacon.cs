@@ -2,7 +2,6 @@ using Cinemachine;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Beacon : MonoBehaviour
 {
@@ -13,9 +12,6 @@ public class Beacon : MonoBehaviour
     private float startingCamSize;
     [SerializeField] float timeToFullZoomOut = 1f;
     [SerializeField] private CinemachineVirtualCamera vCam;
-    [SerializeField] private string nextLevelScene = "";
-    [HideInInspector]
-    public bool levelIsFinished = false; // temporary
 
     //audio emitter variable
     private StudioEventEmitter emitter;
@@ -51,15 +47,6 @@ public class Beacon : MonoBehaviour
         Debug.Log("Beacon activated!");
         forcefield.gameObject.SetActive(true);
         
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // temporary
-        if (levelIsFinished)
-        {
-            SceneManager.LoadScene(nextLevelScene);
-        }
     }
 
     IEnumerator ZoomOut()
