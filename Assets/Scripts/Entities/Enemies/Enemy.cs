@@ -1,4 +1,5 @@
 // ## - JV
+using System.Collections;
 using Pathfinding;
 using UnityEngine;
 

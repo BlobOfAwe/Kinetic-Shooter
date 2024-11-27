@@ -32,7 +32,7 @@ public class StandardTertiaryBoomDash : Ability
                 Vector2 explosionKnockbackVector = (targetEntity.transform.position - transform.position).normalized * explosionKnockback * distanceDropoffValue;
                 targetEntity.gameObject.GetComponent<Rigidbody2D>().AddForce(explosionKnockbackVector);
 
-                float explosionDamage = (entity.totalAttack * damageModifier) * distanceDropoffValue;
+                float explosionDamage = (thisEntity.totalAttack * damageModifier) * distanceDropoffValue;
                 Debug.Log("explosionDamage for entity " + targetEntity.gameObject.name + " at " + (Vector2.Distance(transform.position, targetEntity.transform.position) / range) * 100 + "% of range equals " + explosionDamage);
                 targetEntity.Damage(explosionDamage);
             }

@@ -14,8 +14,9 @@ public class StandardSecondarySwipe : Ability
     public float activeTime;
 
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
-    void Awake()
+    new void Awake()
     {
+        base.Awake();
         GameObject hitboxObj = new GameObject("SecondarySwipeHitbox", typeof(BoxCollider2D));
 
         hitbox = hitboxObj.GetComponent<BoxCollider2D>();
@@ -43,7 +44,7 @@ public class StandardSecondarySwipe : Ability
             StartCoroutine(target.Stagger(staggerTime));
             Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
             target.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
-            target.Damage(entity.totalAttack * damageModifier);
+            target.Damage(thisEntity.totalAttack * damageModifier);
         }
     }
 

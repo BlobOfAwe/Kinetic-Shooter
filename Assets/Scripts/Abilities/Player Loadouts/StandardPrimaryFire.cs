@@ -16,8 +16,9 @@ public class StandardPrimaryFire : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++)
         {
