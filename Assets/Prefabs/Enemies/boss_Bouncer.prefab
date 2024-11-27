@@ -331,7 +331,8 @@ MonoBehaviour:
   damageModifier: 0
   enemies:
   - {fileID: 863582455569772561, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  amount: 5
+  - {fileID: 863582455569772561, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
+  amount: 7
   bossSpawnAnimator: {fileID: 536302097104265161}
   spawnPoint: {fileID: 8589704739381277583}
 --- !u!114 &8692585260050756621

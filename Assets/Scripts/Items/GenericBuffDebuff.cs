@@ -20,13 +20,14 @@ public class GenericBuffDebuff : Item
     {
         if (!collision.GetComponent<PlayerBehaviour>()) { return; }
 
-        buffTarget = collision.gameObject.GetComponent<PlayerBehaviour>();
+        buffTarget = collision.GetComponent<PlayerBehaviour>();
         ApplyBuff(duration);
         
-        emitter.Stop();
-        Destroy(gameObject);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
         Debug.Log("Picked up item");
+
+        emitter.Stop();
+        Destroy(gameObject);
     }
 
     public void ApplyBuff(float duration)

@@ -7,7 +7,6 @@ public class SniperBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    public float knockbackMultiplier; // Added so that upgrades can affect bullet knockback. - NK
     private float knockback;
 
     // Start is called before the first frame update
@@ -31,7 +30,6 @@ public class SniperBullet : Projectile
         //if (collision.gameObject != shooter)
         if ((shootableLayer & (1 << collision.gameObject.layer)) != 0)
         {
-            bool hitDamageable;
             // transform.position = Vector2.zero; // Moved - NK
             // if statement should check against damageable objects.
 

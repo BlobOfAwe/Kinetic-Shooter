@@ -9,7 +9,6 @@ public class TestBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    public float knockbackMultiplier; // Added so that upgrades can affect bullet knockback. - NK
     private float knockback;
 
     // Start is called before the first frame update
