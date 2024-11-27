@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class StandardSecondarySwipe : Ability
 {
     private BoxCollider2D hitbox;
+    private SpriteRenderer hitboxSprite;
     private PlayerBehaviour player;
 
     public float knockback;
@@ -13,14 +15,21 @@ public class StandardSecondarySwipe : Ability
     [SerializeField] float sideReach = 2f;
     public float activeTime;
 
+    [SerializeField] Sprite tempHitbox;
+
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
     new void Awake()
     {
         base.Awake();
-        GameObject hitboxObj = new GameObject("SecondarySwipeHitbox", typeof(BoxCollider2D));
+        GameObject hitboxObj = new GameObject("SecondarySwipeHitbox", typeof(BoxCollider2D), typeof(SpriteRenderer));
+        hitboxSprite = hitboxObj.GetComponent<SpriteRenderer>();
+        hitboxSprite.sprite = tempHitbox;
+        hitboxSprite.color = Color.red;
+        hitboxSprite.enabled = false;
+
 
         hitbox = hitboxObj.GetComponent<BoxCollider2D>();
-        hitbox.size = new Vector2(sideReach, range);
+        hitbox.transform.localScale = new Vector2(sideReach, range);
         hitbox.offset = Vector2.up * (range / 2 - 1);
         hitbox.isTrigger = true;
         hitbox.enabled = false;
@@ -55,6 +64,7 @@ public class StandardSecondarySwipe : Ability
         hitbox.transform.position = player.aimTransform.position;
 
         hitbox.enabled = true;
+        hitboxSprite.enabled = true;
         StartCoroutine(BeginCooldown());
         StartCoroutine(DisableAfterSeconds());
     }
@@ -63,6 +73,7 @@ public class StandardSecondarySwipe : Ability
     {
         yield return new WaitForSeconds(activeTime);
         hitbox.enabled = false;
+        hitboxSprite.enabled=false;
     }
 
     new private void OnDrawGizmos()

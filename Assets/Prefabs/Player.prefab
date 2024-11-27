@@ -808,6 +808,7 @@ MonoBehaviour:
   staggerTime: 0.2
   sideReach: 2
   activeTime: 0.3
+  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!114 &8695497593494931543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,6 +832,7 @@ MonoBehaviour:
   explosionDropoff: 2
   explosionKnockback: 60
   dashForce: 60
+  tempHitBox: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
 --- !u!1 &5855219836532266464
 GameObject:
   m_ObjectHideFlags: 0

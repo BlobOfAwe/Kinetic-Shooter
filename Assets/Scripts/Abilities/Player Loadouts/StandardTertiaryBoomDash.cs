@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Versioning;
 using UnityEngine;
 
 public class StandardTertiaryBoomDash : Ability
@@ -9,14 +10,23 @@ public class StandardTertiaryBoomDash : Ability
     [SerializeField] private float explosionKnockback;
     [SerializeField] private float dashForce;
     private PlayerBehaviour player;
+    private SpriteRenderer hurtbox;
+    [SerializeField] Sprite tempHitBox;
 
     private void Start()
     {
         player = GetComponent<PlayerBehaviour>();
+        
+        GameObject hurtboxObj = new GameObject("UtilityBoomHitbox", typeof(SpriteRenderer));
+        hurtbox = hurtboxObj.GetComponent<SpriteRenderer>();
+        hurtbox.sprite = tempHitBox;
+        hurtbox.color = Color.red;
+        hurtbox.enabled = false;
     }
 
     public override void OnActivate()
     {
+        StartCoroutine(DisplayExplosionHitbox());
 
         StartCoroutine(BeginCooldown());
 
@@ -41,5 +51,14 @@ public class StandardTertiaryBoomDash : Ability
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
         rb.AddForce(player.aimTransform.up * dashForce, ForceMode2D.Impulse);
+    }
+
+    IEnumerator DisplayExplosionHitbox()
+    {
+        hurtbox.transform.position = transform.position;
+        hurtbox.transform.localScale = Vector2.one * range * 2;
+        hurtbox.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        hurtbox.enabled = false;
     }
 }
