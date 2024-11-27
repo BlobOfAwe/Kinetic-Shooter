@@ -1,5 +1,6 @@
 // ## - NK
 using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Diagnostics;
@@ -28,7 +29,15 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     private HPBarSystem hpBar;
+    //Added by ZS to reference the animators and set the timer for the death delay
+    [SerializeField]
+    private Animator playerAnimator;
 
+    [SerializeField]
+    private Animator playerGunAnimator;
+
+    [SerializeField]
+    private float deathDelay = 0.5f;
 
     [SerializeField]
     private int gameOverScene = 0;
@@ -106,7 +115,9 @@ public class PlayerBehaviour : Entity
             {
                 if (context.started)
                 {
+                    playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
+
                 }
                 if (context.canceled)
                 {
@@ -192,6 +203,11 @@ public class PlayerBehaviour : Entity
 
     private void FixedUpdate()
     {
+        //Added by ZS, checks if the player is idle, and if they are, plays the idle animation.
+        Vector2 velocity = rb.velocity;
+        bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
+        playerAnimator.SetBool("isIdle", isIdle);
+
         if (canMoveManually)
         {
             rb.AddForce(moveDir * moveAcceleration);
@@ -254,6 +270,13 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
+        playerAnimator.SetTrigger("isDead");
+        StartCoroutine(HandleDeath());
+    }
+    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
+    private IEnumerator HandleDeath()
+    {
+        yield return new WaitForSeconds(deathDelay);
         SceneManager.LoadScene(gameOverScene);
     }
 }

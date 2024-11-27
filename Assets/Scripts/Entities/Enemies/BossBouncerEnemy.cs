@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BossBouncerEnemy : Enemy
 {
+    [SerializeField]
+    private Animator bossAnimator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -25,6 +27,7 @@ public class BossBouncerEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
+                bossAnimator.SetBool("isMoving", true);
                 Wander();
                 break;
             case 1: // Attack
