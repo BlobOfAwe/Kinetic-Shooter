@@ -1,0 +1,29 @@
+// ## - NK
+using UnityEngine;
+
+public abstract class Upgrade : Item
+{
+    protected PlayerBehaviour player;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        player = FindObjectOfType<PlayerBehaviour>();
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        player.UpdateStats();
+    }
+
+    public virtual void ApplyUpgrade(int quantity)
+    {
+        Debug.Log("Upgrade applied.");
+    }
+
+    public virtual void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    {
+        Debug.Log("The projectile was destroyed.");
+    }
+}

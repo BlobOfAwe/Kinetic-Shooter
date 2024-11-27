@@ -711,6 +711,7 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  statsText: {fileID: 0}
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -739,9 +740,12 @@ MonoBehaviour:
   range: 3
   damageModifier: 1
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 10
-  recoil: 20
---- !u!114 &-8703714131133300266
+  maxBullets: 60
+  recoil: 5
+  bulletSpeedMultiplier: 1
+  bulletKnockbackMultiplier: 1
+  firePoint: {fileID: 1625521789409699392}
+--- !u!114 &571558318740040795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

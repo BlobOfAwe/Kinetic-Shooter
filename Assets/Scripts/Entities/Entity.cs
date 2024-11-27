@@ -1,6 +1,7 @@
 // ## - NK
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,11 +33,11 @@ public abstract class Entity : MonoBehaviour
 
     // Keeps track of multiplicative buffs
     [Header("Buff Multipliers")]
-    [SerializeField] protected float healthMultiplier = 1;
-    [SerializeField] protected float attackMultiplier = 1;
-    [SerializeField] protected float defenseMultiplier = 1;
-    [SerializeField] protected float speedMultiplier = 1;
-    [SerializeField] protected float recoveryMultiplier = 1;
+    public float healthMultiplier;
+    public float attackMultiplier;
+    public float defenseMultiplier;
+    public float speedMultiplier;
+    public float recoveryMultiplier;
 
     [Header("Abilities")]
     public Ability primary;
@@ -46,6 +47,9 @@ public abstract class Entity : MonoBehaviour
 
     [Header("Component References")]
     [HideInInspector] public Rigidbody2D rb;
+    protected InventoryManager inventoryManager;
+
+    [SerializeField] private StatsDisplay statsDisplay;
 
 
     protected void Awake()
@@ -53,6 +57,7 @@ public abstract class Entity : MonoBehaviour
         UpdateStats();
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        inventoryManager = GetComponentInChildren<InventoryManager>();
     }
 
     protected void Update()
@@ -84,7 +89,7 @@ public abstract class Entity : MonoBehaviour
     public abstract void Death();
     
     // To be called whenever a change ocurrs to any of the buff lists
-    protected void UpdateStats()
+    public void UpdateStats()
     {
         float currentHPPercentage = health / maxHealth;
 
@@ -99,6 +104,24 @@ public abstract class Entity : MonoBehaviour
         speedMultiplier = 1;
         healthMultiplier = 1;
         recoveryMultiplier = 1;
+
+        // UPGRADES
+        if (inventoryManager != null)
+        {
+            Debug.Log("Checking inventory...");
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    Debug.Log("Inventory slot " + slot + " has an item.");
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
+                        Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
+                    }
+                } else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
+            }
+        }
 
         // ATTACK
         foreach (Buff buff in attackBuffs) 
@@ -146,6 +169,17 @@ public abstract class Entity : MonoBehaviour
             else if (buff.modification == Buff.modificationType.Multiplicative) { recoveryMultiplier *= buff.value; }
         }
         totalRecovery *= recoveryMultiplier;
+
+        // DEBUG
+        if (inventoryManager != null)
+        {
+            Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
+            Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
+        }
+        if (statsDisplay != null)
+        {
+            statsDisplay.UpdateDisplay();
+        }
     }
 
     public virtual void UseAbility(Ability ability)

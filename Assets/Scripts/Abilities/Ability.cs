@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public abstract class Ability : MonoBehaviour
 {
-    [SerializeField] protected float cooldown = 0.5f;
+    public float cooldown = 0.5f; // Changed to public so it can be accessed by upgrades. - NK
+    public float cooldownMultiplier = 1f; // Added this so that cooldown can be multiplied by upgrades. - NK
     public bool available = true;
     public bool inUse = false; // Is the ability currently being used?
     private float cooldownTimer;
@@ -24,7 +25,7 @@ public abstract class Ability : MonoBehaviour
     protected IEnumerator BeginCooldown()
     {
         available = false;
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         available = true;
     }
 
