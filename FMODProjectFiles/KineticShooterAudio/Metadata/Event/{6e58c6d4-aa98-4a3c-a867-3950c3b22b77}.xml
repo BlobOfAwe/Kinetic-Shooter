@@ -5,7 +5,7 @@
 			<value>BossEnemyAppear</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{9f08ccdb-51b1-4a57-a08f-b4b3811c4fbe}</destination>
@@ -56,7 +56,7 @@
 			<destination>{5ace5174-1b2f-490f-946c-4bdeac343a59}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c3f8f65c-5eab-4eca-9c5d-cf4a189a930c}</destination>
+			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{95e66e28-60ca-43ad-b2c4-e9e01627aad7}" />
@@ -82,7 +82,11 @@
 			<destination>{dcb0fcd0-e25a-47b2-bf92-d6929a4dfa45}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{caa89b5d-8b7d-4b30-96b9-c16268db5b87}" />
+	<object class="MultiSound" id="{caa89b5d-8b7d-4b30-96b9-c16268db5b87}">
+		<relationship name="sounds">
+			<destination>{b829e2b4-5687-4010-902c-4784a9e315c8}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{c9cc6610-93d6-4ea7-a681-8a74895900c9}">
 		<relationship name="effects">
 			<destination>{115901f3-06e5-4ad8-8ec0-5a17445a02fc}</destination>
@@ -95,6 +99,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7efd1e82-6b1f-45f8-9bf6-72d0bb41d912}" />
+	<object class="SingleSound" id="{b829e2b4-5687-4010-902c-4784a9e315c8}">
+		<property name="volume">
+			<value>-7.5</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{21bdcf54-6b8c-49c4-bc47-d732bfdaed86}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{115901f3-06e5-4ad8-8ec0-5a17445a02fc}" />
 	<object class="MixerBusFader" id="{053a00d3-502c-4a58-b726-9af3e6e19ad8}" />
 </objects>

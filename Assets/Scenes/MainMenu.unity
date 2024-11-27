@@ -1581,8 +1581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 10.163, y: 0}
+  m_SizeDelta: {x: 10.326, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &415970168
 GameObject:
@@ -4479,15 +4479,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4895251246070834377, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: SFXVolume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4895251246070834377, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: musicVolume
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895251246070834377, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: masterVolume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4895251246070834377, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: ambienceVolume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5273,8 +5277,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 10.163, y: 0}
+  m_SizeDelta: {x: 10.326, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1324911572
 GameObject:
@@ -5844,8 +5848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 10.163, y: 0}
+  m_SizeDelta: {x: 10.326, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1645311892
 GameObject:
@@ -6405,6 +6409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   settingsMenu: {fileID: 0}
+  parameterNamePause: 
+  parameterValuePause: 0
 --- !u!1 &1917032863
 GameObject:
   m_ObjectHideFlags: 0
@@ -6438,8 +6444,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 10.163, y: 0}
+  m_SizeDelta: {x: 10.326, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1965569131
 GameObject:

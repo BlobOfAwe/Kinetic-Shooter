@@ -65,6 +65,9 @@ public class PlayerBehaviour : Entity
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
+    //ending parameter
+    [SerializeField] private string parameterNameEnding;
+    [SerializeField] private float parameterValueEnding;
 
     //creates an FMOD events instance for player movement
     private void Start()
@@ -250,7 +253,7 @@ public class PlayerBehaviour : Entity
                 {
                     playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
-
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
@@ -375,7 +378,7 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
-       // playerAnimator.SetTrigger("isDead");
+        // playerAnimator.SetTrigger("isDead");
         SceneManager.LoadScene(gameOverScene);
         //StartCoroutine(HandleDeath());
     }
