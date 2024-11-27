@@ -122,6 +122,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &64269810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64269812}
+  - component: {fileID: 64269811}
+  m_Layer: 0
+  m_Name: BuffDebuffSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &64269811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64269810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69f9047b14c85ee40b785c41f430ad50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  addCreditsPerSecond: 1
+  maxSpawnTimeInterval: 20
+  buffPrefabs:
+  - {fileID: 7692336996507665111, guid: c476c5cff871d5a4994e9744b68be22b, type: 3}
+  - {fileID: 7692336996507665111, guid: 2875f93e11ecb744abb900d050b52b19, type: 3}
+  timeToNextSpawn: 0
+  credits: 15
+  selectedBuff: {fileID: 0}
+  lastSpawnSuccess: 0
+  costToSpawn: 5
+  spawnRange: 18.25
+  spawnPosition: {x: 0, y: 0}
+  player: {fileID: 176354478}
+--- !u!4 &64269812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64269810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77527799
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &287445712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44905,8 +44963,8 @@ MonoBehaviour:
   - {fileID: 4137132167847580081, guid: 4099f008a87c7ca419aba191e263da26, type: 3}
   itemPrefabs:
   - {fileID: 5797877328153500716, guid: c61e17f0706058e428601a02b1493944, type: 3}
-  minItems: 5
-  maxItems: 10
+  minItems: 0
+  maxItems: 0
 --- !u!4 &1616450769
 Transform:
   m_ObjectHideFlags: 0
@@ -45192,6 +45250,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1616450769}
   - {fileID: 287445713}
+  - {fileID: 64269812}
   - {fileID: 638390379}
   - {fileID: 176354472}
   - {fileID: 1901418927}

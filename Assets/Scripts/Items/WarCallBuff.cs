@@ -22,14 +22,6 @@ public class WarCallBuff : MonoBehaviour
         particleSys = gameObject.GetComponent<ParticleSystem>();
     }
 
-    private void Update()
-    {
-        if (buff == buffType.Heal)
-        {
-            try { buffTarget.Heal(recoverBuff * Time.deltaTime); } catch { }
-        }
-    }
-
     public void ApplyBuff(float duration)
     {
         buffTarget = GetComponentInParent<Enemy>();
