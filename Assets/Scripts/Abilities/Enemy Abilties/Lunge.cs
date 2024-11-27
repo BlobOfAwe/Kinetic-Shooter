@@ -14,7 +14,6 @@ public class Lunge : Ability
 
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
-    private Entity entity;
     private bool lunging;
 
     // FOR WHITEBOX USE ONLY

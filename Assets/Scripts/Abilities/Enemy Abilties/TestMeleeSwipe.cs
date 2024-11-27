@@ -47,7 +47,7 @@ public class TestMeleeSwipe : Ability
         hitbox.enabled = false;
     }
 
-    private void OnDrawGizmos()
+    private new void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         if (hitbox && hitbox.enabled) 

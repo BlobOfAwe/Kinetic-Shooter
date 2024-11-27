@@ -18,7 +18,6 @@ public class BouncyTackle : Ability
 
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
-    private Entity entity;
     private bool lunging;
     [SerializeField] private GameObject[] shockwaves;
     

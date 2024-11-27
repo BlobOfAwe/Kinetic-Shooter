@@ -11,6 +11,12 @@ public abstract class Ability : MonoBehaviour
     private float cooldownTimer;
     public float range = 3f;
     [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
+    protected Entity entity;
+
+    private void Start()
+    {
+        entity = GetComponent<Entity>();
+    }
 
     public abstract void OnActivate();
 
