@@ -253,6 +253,51 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
+  - m_Index: 16
+    m_Metrics:
+      m_Width: 49.3125
+      m_Height: 55.890625
+      m_HorizontalBearingX: 4.234375
+      m_HorizontalBearingY: 55.890625
+      m_HorizontalAdvance: 57.875
+    m_GlyphRect:
+      m_X: 608
+      m_Y: 10
+      m_Width: 50
+      m_Height: 56
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 17
+    m_Metrics:
+      m_Width: 54
+      m_Height: 55.890625
+      m_HorizontalBearingX: 4.234375
+      m_HorizontalBearingY: 55.890625
+      m_HorizontalAdvance: 62.546875
+    m_GlyphRect:
+      m_X: 677
+      m_Y: 10
+      m_Width: 55
+      m_Height: 56
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 25
+    m_Metrics:
+      m_Width: 46.53125
+      m_Height: 55.703125
+      m_HorizontalBearingX: 4.234375
+      m_HorizontalBearingY: 55.703125
+      m_HorizontalAdvance: 55.078125
+    m_GlyphRect:
+      m_X: 751
+      m_Y: 10
+      m_Width: 47
+      m_Height: 56
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 32
@@ -326,6 +371,22 @@ MonoBehaviour:
     m_Unicode: 117
     m_GlyphIndex: 35
     m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 66
+    m_GlyphIndex: 16
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 65
+    m_GlyphIndex: 15
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 67
+    m_GlyphIndex: 17
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 75
+    m_GlyphIndex: 25
+    m_Scale: 1
   m_AtlasTextures:
   - {fileID: 611706076394964748}
   m_AtlasTextureIndex: 0
@@ -384,6 +445,18 @@ MonoBehaviour:
     m_Y: 0
     m_Width: 69
     m_Height: 75
+  - m_X: 598
+    m_Y: 0
+    m_Width: 69
+    m_Height: 75
+  - m_X: 667
+    m_Y: 0
+    m_Width: 74
+    m_Height: 75
+  - m_X: 741
+    m_Y: 0
+    m_Width: 66
+    m_Height: 75
   m_FreeGlyphRects:
   - m_X: 0
     m_Y: 150
@@ -401,9 +474,9 @@ MonoBehaviour:
     m_Y: 75
     m_Width: 640
     m_Height: 948
-  - m_X: 598
+  - m_X: 807
     m_Y: 0
-    m_Width: 425
+    m_Width: 216
     m_Height: 1023
   m_fontInfo:
     Name: 

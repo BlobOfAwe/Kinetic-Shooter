@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Diagnostics;
 using FMOD.Studio;
 using FMODUnity;
+using Unity.VisualScripting;
 
 public class PlayerBehaviour : Entity
 {
@@ -20,13 +21,11 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float moveAcceleration = 1f;
 
-    [SerializeField]
     private Camera mainCam;
 
     [SerializeField]
     public Transform aimTransform;
 
-    [SerializeField]
     private HPBarSystem hpBar;
 
 
@@ -51,7 +50,40 @@ public class PlayerBehaviour : Entity
     private void Start()
     {
         health = maxHealth;
+        hpBar = FindAnyObjectByType<HPBarSystem>();
+        mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
+
+        // Assigns the player.ability to be the component based on the specified ability type
+        primary = (Ability)GetComponent(GameManager.playerLoadout.primaryAbility.GetType());
+        secondary = (Ability)GetComponent(GameManager.playerLoadout.secondaryAbility.GetType());
+        utility = (Ability)GetComponent(GameManager.playerLoadout.utilityAbility.GetType());
+
+    }
+
+    new private void Update()
+    {
+        base.Update();
+
+        if (isFiringPrimary)
+        {
+            UseAbility(primary);
+        }
+        if (isFiringSecondary)
+        {
+            UseAbility(secondary);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMoveManually)
+        {
+            rb.AddForce(moveDir * moveAcceleration);
+        }
+
+        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        //UpdateSound();
     }
 
 
@@ -176,30 +208,7 @@ public class PlayerBehaviour : Entity
 
     public void Quit() { Application.Quit(); }
 
-    new private void Update()
-    {
-        base.Update();
 
-        if (isFiringPrimary)
-        {
-            UseAbility(primary);
-        }
-        if (isFiringSecondary)
-        {
-            UseAbility(secondary);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (canMoveManually)
-        {
-            rb.AddForce(moveDir * moveAcceleration);
-        }
-
-        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
-        //UpdateSound();
-    }
 
     // COMMENTED OUT THIS CODE BECAUSE IT SHOULD BE DONE IN OnMove(). - NK
     //detects if player is moving using WASD and plays audio

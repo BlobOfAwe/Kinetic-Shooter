@@ -33,6 +33,8 @@ public class BuffDebuffSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (player == null) { player = FindAnyObjectByType<PlayerBehaviour>(); }
+        
         if (active)
         {
             if (timeToNextSpawn <= 0)

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using FMODUnity;
+using Unity.VisualScripting;
+using System;
 
 public class LoadoutManager : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class LoadoutManager : MonoBehaviour
     public TextMeshProUGUI loadoutInfoText;
     public TextMeshProUGUI loadoutTitleText;
     private int currentIndex = 0;
-    public Loadout[] loadouts; 
+    public Loadout[] loadouts;
+    [SerializeField] private GameObject playerPrefab;
     [System.Serializable]
     //class stores the information for each loadout
     public class Loadout
@@ -24,7 +27,9 @@ public class LoadoutManager : MonoBehaviour
         public string ability;
         public string description;
         public Sprite loadoutImage;
-        public Ability selectedAbility;
+        public Ability primaryAbility;
+        public Ability secondaryAbility;
+        public Ability utilityAbility;
     }
     private void Start()
     {
@@ -59,5 +64,10 @@ public class LoadoutManager : MonoBehaviour
                                $"<b>Secondary:</b> {currentLoadout.secondary}\n" +
                                $"<b>Ability:</b> {currentLoadout.ability}";
         PlayerPrefs.SetInt("SelectedLoadoutIndex", currentIndex);
+    }
+
+    public void AssignLoadoutToPlayer()
+    {
+        GameManager.playerLoadout = loadouts[currentIndex];
     }
 }

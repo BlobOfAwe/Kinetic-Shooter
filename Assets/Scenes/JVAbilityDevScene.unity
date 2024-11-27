@@ -4424,11 +4424,6 @@ Transform:
   - {fileID: 424798920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &238334431 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1625521789409699392, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 1161779782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &424798919
 GameObject:
   m_ObjectHideFlags: 0
@@ -44136,10 +44131,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1314501562018809629, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b18b23eba05a8354b8d498358d318f78, type: 3}
     - target: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -44149,59 +44140,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1889581401}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: hpStat
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: mainCam
       value: 
       objectReference: {fileID: 1519369543}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: primary
-      value: 
-      objectReference: {fileID: 1161779793}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: utility
-      value: 
-      objectReference: {fileID: 1161779795}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: secondary
-      value: 
-      objectReference: {fileID: 1161779794}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: speedStat
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: gameOverScene
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645813176973339046, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: recoil
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645813176973339046, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: cooldown
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8645813176973339046, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: damageModifier
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8645813176973339046, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1161779795}
-    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      insertIndex: 7
-      addedObject: {fileID: 1161779794}
-    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      insertIndex: 8
-      addedObject: {fileID: 1161779793}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
 --- !u!4 &1161779783 stripped
 Transform:
@@ -44224,71 +44169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1161779793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161779784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89961ccd2eb5704b8d5aecc00d653e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 0.5
-  available: 1
-  inUse: 0
-  range: 3
-  damageModifier: 1
-  bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 10
-  recoil: 10
-  firePoint: {fileID: 238334431}
---- !u!114 &1161779794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161779784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 15
-  available: 1
-  inUse: 0
-  range: 2
-  damageModifier: 1.5
-  knockback: 20
-  staggerTime: 0.2
-  sideReach: 2
-  activeTime: 0.1
---- !u!114 &1161779795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161779784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fd8d67ceb74d4783c785541000e85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 10
-  available: 1
-  inUse: 0
-  range: 3
-  damageModifier: 1
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  explosionDropoff: 2
-  explosionKnockback: 30
-  dashForce: 60
 --- !u!1 &1190868703
 GameObject:
   m_ObjectHideFlags: 0

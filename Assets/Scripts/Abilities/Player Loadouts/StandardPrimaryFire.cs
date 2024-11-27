@@ -9,9 +9,9 @@ public class StandardPrimaryFire : Ability
     [SerializeField]
     private int maxBullets = 10;
     [SerializeField] private float recoil = 1;
+    private PlayerBehaviour player;
     
     
-    [SerializeField] private Transform firePoint; // A transform slightly removed from the player to avoid bullets overlapping with the player
     private GameObject[] bullets;
     private Rigidbody2D rb;
 
@@ -19,11 +19,12 @@ public class StandardPrimaryFire : Ability
     private new void Awake()
     {
         base.Awake();
+        player = GetComponent<PlayerBehaviour>();
         bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++)
         {
             bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+            bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
             bullets[i].SetActive(false);
         }
     }
@@ -46,9 +47,9 @@ public class StandardPrimaryFire : Ability
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
-                bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
+                rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
