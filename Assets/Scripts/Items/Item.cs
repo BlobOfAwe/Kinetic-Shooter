@@ -18,8 +18,8 @@ public abstract class Item : MonoBehaviour
     protected void Start()
     {
         //creates an audio emitter and plays event
-        //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
-        //emitter.Play();
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
+        emitter.Play();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +28,7 @@ public abstract class Item : MonoBehaviour
         {
             collision.GetComponentInChildren<InventoryManager>().AddItem(this);
 
-            //emitter.Stop();
+            emitter.Stop();
             gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
 
 
