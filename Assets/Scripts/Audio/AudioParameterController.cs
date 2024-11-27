@@ -12,6 +12,12 @@ public class AudioParameterController : MonoBehaviour
     [SerializeField] private string parameterNameStage;
     [SerializeField] private float parameterValueStage;
 
+    [SerializeField] private string parameterNamePause;
+    [SerializeField] private float parameterValuePause;
+
+    [SerializeField] private string parameterNameEnding;
+    [SerializeField] private float parameterValueEnding;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.O))
@@ -34,6 +40,17 @@ public class AudioParameterController : MonoBehaviour
         {
             parameterValueStage++;
             AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            parameterValuePause--;
+            AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
+        }
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            parameterValuePause++;
+            AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         }
     }
 

@@ -128,13 +128,13 @@ MonoBehaviour:
     Data4: 1057355258
   Banks:
   - {fileID: 2883800237204123689}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1254
+  Length: 10000
 --- !u!114 &-7830735713724481206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +216,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7193089871181274299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Music/level1_ending
+  m_EditorClassIdentifier: 
+  Name: level1_ending
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3911068529
+    data2: 2129448781
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-6583096028956021190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +320,8 @@ MonoBehaviour:
   Parameters:
   - {fileID: -1537655976983879191}
   - {fileID: 7854661241692925182}
+  - {fileID: 3557449357162150220}
+  - {fileID: -7193089871181274299}
   MinDistance: 1
   MaxDistance: 20
   Length: 333913
@@ -325,7 +351,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1687
+  Length: 9059
 --- !u!114 &-5554997382757087557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +378,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 59268
+  Length: 29805
 --- !u!114 &-5352572969973312482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,10 +583,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638670953103616066
+  lastModified: 638682570875888797
   FileSizes:
   - Name: Desktop
-    Value: 3488
+    Value: 3522
   Exists: 1
 --- !u!114 &-3340905088933603720
 MonoBehaviour:
@@ -748,33 +774,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-597078818791136079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/LossState
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/LossState
-  Guid:
-    Data1: -1486923866
-    Data2: 1094154361
-    Data3: -374751556
-    Data4: -466866643
-  Banks:
-  - {fileID: 2883800237204123689}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-390928001052121389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,13 +855,11 @@ MonoBehaviour:
   - {fileID: -8232617882900767191}
   - {fileID: 5382687409683784560}
   - {fileID: 1100208814044840168}
-  - {fileID: -597078818791136079}
   - {fileID: -6583096028956021190}
   - {fileID: 6941252295221618975}
   - {fileID: -4678104714665550741}
   - {fileID: 3901547166454346082}
   - {fileID: -3679779631735353235}
-  - {fileID: 8971808762280599191}
   - {fileID: -4299696646909627771}
   - {fileID: 7993022731526358964}
   - {fileID: -5790998039821331001}
@@ -870,12 +867,13 @@ MonoBehaviour:
   - {fileID: -7852043002828166619}
   - {fileID: 2102723509973350376}
   - {fileID: -7795709050686240743}
+  - {fileID: 2028517965487138179}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4855234936659396955}
   StringsBanks:
   - {fileID: -3463065209373744652}
-  cacheTime: 638670955369617440
+  cacheTime: 638682570920996892
   cacheVersion: 131617
 --- !u!114 &211450915939965905
 MonoBehaviour:
@@ -1027,10 +1025,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638670456310356985
+  lastModified: 638682570892915734
   FileSizes:
   - Name: Desktop
-    Value: 26767520
+    Value: 29962944
   Exists: 1
 --- !u!114 &1674777153145539680
 MonoBehaviour:
@@ -1086,6 +1084,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2028517965487138179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/BossEnemyMovement
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/BossEnemyMovement
+  Guid:
+    Data1: 336189064
+    Data2: 1255566883
+    Data3: 22389123
+    Data4: -2013675239
+  Banks:
+  - {fileID: 2883800237204123689}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11363
 --- !u!114 &2102723509973350376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,10 +1180,34 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638670955369617440
+  lastModified: 638682570920996892
   FileSizes:
   - Name: Desktop
-    Value: 1028512
+    Value: 3557376
+  Exists: 1
+--- !u!114 &3557449357162150220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Music/level1_pause
+  m_EditorClassIdentifier: 
+  Name: level1_pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1053798372
+    data2: 3965535339
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &3901547166454346082
 MonoBehaviour:
@@ -1207,13 +1256,13 @@ MonoBehaviour:
     Data4: -1549523635
   Banks:
   - {fileID: 5585121938882380293}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5875
+  Length: 28336
 --- !u!114 &4855234936659396955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1278,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638670953103580885
+  lastModified: 638682570875868430
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -1283,11 +1332,11 @@ MonoBehaviour:
   - {fileID: 2883800237204123689}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 11363
 --- !u!114 &5164416241891314648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,13 +1357,13 @@ MonoBehaviour:
     Data4: 1116979628
   Banks:
   - {fileID: 2883800237204123689}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8000
+  Length: 117315
 --- !u!114 &5382687409683784560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1357,10 +1406,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638670453626461515
+  lastModified: 638682570875767515
   FileSizes:
   - Name: Desktop
-    Value: 1958784
+    Value: 2928224
   Exists: 1
 --- !u!114 &6941252295221618975
 MonoBehaviour:
@@ -1512,33 +1561,6 @@ MonoBehaviour:
     Data2: 1281461613
     Data3: 874591403
     Data4: 991724559
-  Banks:
-  - {fileID: 2883800237204123689}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8971808762280599191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/WinState
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/WinState
-  Guid:
-    Data1: -1720415294
-    Data2: 1263282991
-    Data3: -876652413
-    Data4: -2128700471
   Banks:
   - {fileID: 2883800237204123689}
   IsStream: 0

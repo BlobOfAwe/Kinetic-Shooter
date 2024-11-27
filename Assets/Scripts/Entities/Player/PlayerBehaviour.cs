@@ -108,7 +108,7 @@ public class PlayerBehaviour : Entity
                 if (context.started)
                 {
                     isFiringPrimary = true;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
