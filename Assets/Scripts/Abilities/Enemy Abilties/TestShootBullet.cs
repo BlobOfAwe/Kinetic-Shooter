@@ -30,7 +30,7 @@ public class TestShootBullet : Ability
         for (int i = 0; i < bullets.Length; i++) 
         { 
             bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+            bullets[i].GetComponent<Projectile>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
             bullets[i].SetActive(false); 
         }
     }

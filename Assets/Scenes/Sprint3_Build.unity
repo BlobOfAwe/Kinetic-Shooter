@@ -683,6 +683,8 @@ MonoBehaviour:
   bossCamSize: 10
   timeToFullZoomOut: 3
   vCam: {fileID: 0}
+  nextLevelScene: 
+  levelIsFinished: 0
 --- !u!114 &638390376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44912,9 +44914,9 @@ MonoBehaviour:
   - {fileID: 4137132167847580081, guid: b308ac807deb55f478ffd7e658ea6f44, type: 3}
   - {fileID: 4137132167847580081, guid: 4099f008a87c7ca419aba191e263da26, type: 3}
   itemPrefabs:
-  - {fileID: 5797877328153500716, guid: c61e17f0706058e428601a02b1493944, type: 3}
-  minItems: 0
-  maxItems: 0
+  - {fileID: 7673192598118557021, guid: 038fe402f7fc21449aad86160c05ce66, type: 3}
+  minItems: 4
+  maxItems: 6
 --- !u!4 &1616450769
 Transform:
   m_ObjectHideFlags: 0
