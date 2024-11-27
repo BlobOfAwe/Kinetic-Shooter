@@ -8,9 +8,11 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    public float speed = 5f; // Changed to public so that this value can be changed by abilities. - NK
+    public float speedMultiplier = 1f; // Added so that upgrades can affect projectile speed. - NK
     [SerializeField]
-    protected float damageMultiplier = 1f; // Deals damage based on the totalAttack of the Shooter
+    protected float speed = 5f;
+    [SerializeField]
+    public float damageMultiplier = 1f; // Deals damage based on the totalAttack of the Shooter // Changed to public. - NK
     [SerializeField]
     protected Rigidbody2D rb;
     [SerializeField]

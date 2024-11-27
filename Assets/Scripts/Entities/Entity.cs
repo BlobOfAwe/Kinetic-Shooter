@@ -47,9 +47,9 @@ public abstract class Entity : MonoBehaviour
 
     [Header("Component References")]
     [HideInInspector] public Rigidbody2D rb;
-    private InventoryManager inventoryManager;
+    protected InventoryManager inventoryManager;
 
-    [SerializeField] private TextMeshProUGUI statsText;
+    [SerializeField] private StatsDisplay statsDisplay;
 
 
     protected void Awake()
@@ -170,13 +170,9 @@ public abstract class Entity : MonoBehaviour
             Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
             Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
         }
-        if (statsText != null)
+        if (statsDisplay != null)
         {
-            statsText.text = "Attack: " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack + "\n" +
-                "Defense: " + (totalDefense / defenseMultiplier) + " * " + defenseMultiplier + " = " + totalDefense + "\n" +
-                "Speed: " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed + "\n" +
-                "Max HP: " + (maxHealth / healthMultiplier) + " * " + healthMultiplier + " = " + maxHealth + "\n" +
-                "Recover: " + (totalRecovery / recoveryMultiplier) + " * " + recoveryMultiplier + " = " + totalRecovery + "\n";
+            statsDisplay.UpdateDisplay();
         }
     }
 

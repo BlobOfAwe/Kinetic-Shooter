@@ -106,6 +106,24 @@ public class PlayerBehaviour : Entity
         hpBar.HealHp(amount);
     }
 
+    public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, hitDamageable, slot.quantity);
+                    }
+                }
+            }
+        }
+        bullet.gameObject.SetActive(false);
+    }
+
     /*public void UpgradeStats(StatType statType, float value, bool multiply)
     {
         switch (statType)

@@ -21,4 +21,9 @@ public abstract class Upgrade : Item
     {
         Debug.Log("Upgrade applied.");
     }
+
+    public virtual void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    {
+        Debug.Log("The projectile was destroyed.");
+    }
 }

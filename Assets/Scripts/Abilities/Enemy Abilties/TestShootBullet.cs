@@ -55,8 +55,8 @@ public class TestShootBullet : Ability
                 bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-firePoint.up * recoil * recoilMultiplier, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
-                bullet.GetComponent<TestBullet>().speed *= bulletSpeedMultiplier;
-                bullet.GetComponent<TestBullet>().knockback *= bulletKnockbackMultiplier;
+                bullet.GetComponent<TestBullet>().speedMultiplier = bulletSpeedMultiplier;
+                bullet.GetComponent<TestBullet>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }
 
