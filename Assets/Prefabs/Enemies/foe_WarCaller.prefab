@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.39499283, g: 0.3335777, b: 0.6075471, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8a91bc57f86b04f4292280704a4cdc04, type: 3}
+  m_Color: {r: 0.6377357, g: 0.2250124, b: 0.25699013, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -116,7 +116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &5656869920427263351
 CircleCollider2D:
@@ -237,8 +237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackStat: 1
   defenseStat: 1
-  speedStat: 3
-  hpStat: 100
+  speedStat: 1
+  hpStat: 150
   recoverStat: 1
   attackBuffs: []
   defenseBuffs: []
@@ -261,15 +261,15 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
-  spawnCost: 20
+  spawnCost: 30
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   hostile:
     serializedVersion: 2
-    m_Bits: 56
+    m_Bits: 8
   sightRange: 20
-  stayDistance: 16.6
+  stayDistance: 16
   chaseDistance: 0
   pursuitDuration: 0
   state: 0

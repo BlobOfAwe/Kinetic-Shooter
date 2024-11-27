@@ -1,9 +1,6 @@
 // ## - JV
-using Pathfinding;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
+using Pathfinding;
 using UnityEngine;
 
 [RequireComponent (typeof (Rigidbody2D))]
@@ -43,7 +40,7 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
 
-    private void Start()
+    protected void Start()
     {
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
@@ -124,7 +121,7 @@ public abstract class Enemy : Entity
     public void Pursue()
     {
         aiPath.enableRotation = true;
-        aiPath.destination = target.transform.position;
+        if (target != null) { aiPath.destination = target.transform.position; }
     }
 
     // Stop moving towards the player, and move around the player
@@ -136,6 +133,13 @@ public abstract class Enemy : Entity
             aiPath.destination = RandomPointOnEdge(target.transform, stayDistance);
         }
         FaceTarget();
+    }
+
+    public IEnumerator Stagger(float duration)
+    {
+        aiPath.canMove = false;
+        yield return new WaitForSeconds(duration);
+        aiPath.canMove = true;
     }
 
     // Stay a fixed distance back from the player
@@ -188,7 +192,7 @@ public abstract class Enemy : Entity
         return point;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         // Draws the circle around which the enemy strafes
         Gizmos.color = Color.red;
@@ -197,6 +201,7 @@ public abstract class Enemy : Entity
         // The range beyond which the enemy pursues the player
         Gizmos.color = Color.grey;
         Gizmos.DrawWireSphere(transform.position, stayDistance + chaseDistance);
+        Gizmos.DrawWireSphere(transform.position, stayDistance);
 
         
         Gizmos.color = Color.yellow;

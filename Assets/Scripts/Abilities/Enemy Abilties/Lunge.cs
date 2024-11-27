@@ -14,7 +14,6 @@ public class Lunge : Ability
 
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
-    private Entity entity;
     private bool lunging;
 
     // FOR WHITEBOX USE ONLY
@@ -26,7 +25,6 @@ public class Lunge : Ability
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        entity = GetComponent<Entity>();
         baseColor = sprite.color;
     }
 
@@ -55,7 +53,7 @@ public class Lunge : Ability
         rb.AddForce(transform.up * lungeForce, ForceMode2D.Force);
         
         // Wait for endTime seconds before ending the lunge
-        yield return new WaitForSeconds(endtime*(100/(100+entity.totalSpeed)));
+        yield return new WaitForSeconds(endtime*(100 / (100 + thisEntity.totalSpeed)));
         lunging = false;
 
         sprite.color = baseColor;
@@ -72,11 +70,7 @@ public class Lunge : Ability
         {
             if ((canDamage & (1 << collision.gameObject.layer)) != 0)
             {
-                try
-                {
-                    collision.gameObject.GetComponent<Entity>().Damage(entity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
-                }
-                catch { }
+                collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
             }
         }
     }

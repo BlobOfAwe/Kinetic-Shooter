@@ -54,5 +54,11 @@ public class AudioParameterController : MonoBehaviour
         }
     }
 
+    public void IncrementIntensity (int increment)
+    {
+        parameterValueIntensity += increment;
+        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+    }
+
 
 }

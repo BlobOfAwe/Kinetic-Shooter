@@ -6,4 +6,5 @@ using UnityEngine;
 public static class GameManager
 {
     public static bool debugEnabled;
+    public static LoadoutManager.Loadout playerLoadout;
 }

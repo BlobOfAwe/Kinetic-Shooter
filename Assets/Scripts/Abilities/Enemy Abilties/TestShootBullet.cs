@@ -17,8 +17,9 @@ public class TestShootBullet : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++) 
         { 
@@ -38,6 +39,8 @@ public class TestShootBullet : Ability
     public override void OnActivate()
     {
         StartCoroutine(BeginCooldown());
+
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)

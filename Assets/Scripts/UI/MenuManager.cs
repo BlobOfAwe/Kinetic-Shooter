@@ -9,10 +9,10 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     public Animator animator;
-
+    //use AsynchLoad script instead
     public void StartGame()
     {
-        //SceneManager.LoadScene("Loadouts"); change to whichever scene we are loading
+        SceneManager.LoadScene("LoadoutSelectionScene"); //change to whichever scene we are loading
     }
     public void ToggleMainMenu()
     {
@@ -29,9 +29,15 @@ public class MenuManager : MonoBehaviour
         bool isAudioPanel = animator.GetBool("isAudioPanel");
         animator.SetBool("isAudioPanel", !isAudioPanel);
     }
+    public void ToggleLoadoutMenu()
+    {
+        bool isLoadoutMenu = animator.GetBool("isLoadoutMenu");
+        animator.SetBool("isLoadoutMenu", !isLoadoutMenu);
+    }
     public void ReturnToMainMenu()
     {
         animator.SetBool("isTitleScreen", false);
+        animator.SetBool("isLoadoutMenu", false);
         animator.SetBool("isMainMenu", true);
         animator.SetBool("isSettings", false);
         animator.SetBool("isAudioPanel", false);

@@ -7,9 +7,11 @@ public class SpreadShot : Ability
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private int amount;
     [SerializeField] private GameObject[] bullets;
+    [SerializeField] private Animator bossGunAnimator;
 
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         bullets = new GameObject[amount*3]; // Create enough bullets for 3 shots to be active at a time
         for (int i = 0; i < bullets.Length; i++)
         {
@@ -32,6 +34,7 @@ public class SpreadShot : Ability
                 // If the bullet is inactive, activate it for the shot
                 if (!bullets[j].activeSelf)
                 {
+                    bossGunAnimator.SetTrigger("isShooting");
                     bullets[j].transform.position = transform.position;
                     bullets[j].transform.eulerAngles = transform.eulerAngles + (Vector3.forward * (360 / amount) * i);
                     bullets[j].GetComponent<Projectile>().timeRemaining = bullets[i].GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK

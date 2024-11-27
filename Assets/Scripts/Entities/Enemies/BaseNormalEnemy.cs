@@ -27,8 +27,8 @@ public class BaseNormalEnemy : Enemy
                 Wander();
                 break;
             case 1: // Pursuit
-                RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 Pursue();
+                RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack
                 Strafe();

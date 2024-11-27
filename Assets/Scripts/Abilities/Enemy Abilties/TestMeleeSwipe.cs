@@ -12,8 +12,10 @@ public class TestMeleeSwipe : Ability
     public float activeTime;
 
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
-    void Awake()
+    new void Awake()
     {
+        base.Awake();
+        
         GameObject hitboxObj = new GameObject("TestMeleeSwipeHitbox", typeof(BoxCollider2D));
         hitboxObj.transform.parent = transform;
         hitboxObj.transform.rotation = Quaternion.identity;
@@ -47,8 +49,9 @@ public class TestMeleeSwipe : Ability
         hitbox.enabled = false;
     }
 
-    private void OnDrawGizmos()
+    new private void OnDrawGizmos()
     {
+        base.OnDrawGizmos();
         Gizmos.color = Color.red;
         if (hitbox && hitbox.enabled) 
         {

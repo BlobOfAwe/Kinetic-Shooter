@@ -5,29 +5,20 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SceneSelector.unity
-    guid: 70555b245b1ae474c8cb954b9897388d
-  - enabled: 0
-    path: Assets/Trash/MechanicsTest.unity
-    guid: 77ffa771bba2be1458521ec064b55a31
-  - enabled: 0
-    path: Assets/Trash/ItemManagement.unity
-    guid: cf36041ffdbbd084ea6e8746a8805f38
-  - enabled: 0
-    path: Assets/Scenes/GameOverScene.unity
-    guid: 127f35c44d063584b93a70c9678317f5
-  - enabled: 0
-    path: Assets/Trash/PickUpTest.unity
-    guid: 705966c1d5c96e14c98a62543d57e851
   - enabled: 1
-    path: Assets/Scenes/Sprint3_Demo.unity
-    guid: 9e64e2bb6b69ead4e9246cb50bde38a5
+    path: Assets/Scenes/MainMenu.unity
+    guid: 680c13b2e765a22478a6c751a2ecdff3
   - enabled: 1
     path: Assets/Scenes/LoadoutSelectionScene.unity
     guid: 80d91d8bb67df4f40ae2f0a52085af2b
   - enabled: 1
-    path: Assets/Scenes/LoadOutPersistenceTestScene.unity
-    guid: 8421b33d31620824382b92aa6aec49aa
+    path: Assets/Scenes/Sprint3_Build.unity
+    guid: aacc18d49a357c647903be6fa3ac6930
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: 127f35c44d063584b93a70c9678317f5
+  - enabled: 0
+    path: Assets/Scenes/JVSprint4EnemyDev.unity
+    guid: d418650cf3aa5c94daaa0149d19ecd08
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ef194648287b1ac4fb4d8a99db31e8c3, type: 2}
