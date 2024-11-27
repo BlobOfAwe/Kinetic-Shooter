@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &287445712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,16 +442,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  addCreditsPerSecond: 1
+  addCreditsPerSecond: 1.5
   maxSpawnTimeInterval: 20
   enemyPrefabs:
+  - {fileID: 3305726313623563983, guid: 6fcfec6ca129d9341ab66df41b08ba72, type: 3}
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
+  - {fileID: 8768425740899451525, guid: 811e39f3e64c005449abec8ed4e6f72a, type: 3}
+  leaderPrefabs:
+  - {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+  - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
   timeToNextSpawn: 0
-  credits: 15
+  credits: 10
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
+  maxEnemiesPerSpawn: 4
   spawnRange: 10.5
   spawnPosition: {x: 0, y: 0}
   player: {fileID: 0}
@@ -626,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: primary
+      value: 
+      objectReference: {fileID: 1996331367}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45185,6 +45194,17 @@ Transform:
   - {fileID: 1438056806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1996331367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+  m_PrefabInstance: {fileID: 493073860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89961ccd2eb5704b8d5aecc00d653e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

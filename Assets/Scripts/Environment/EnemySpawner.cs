@@ -15,10 +15,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float addCreditsPerSecond;
     [SerializeField] private float maxSpawnTimeInterval;
     [SerializeField] private Enemy[] enemyPrefabs;
+    [SerializeField] private Enemy[] leaderPrefabs;
     [SerializeField] private float timeToNextSpawn;
     [SerializeField] private float credits;
     [SerializeField] private Enemy selectedEnemy;
     [SerializeField] private bool lastSpawnSuccess;
+    [SerializeField] private float maxEnemiesPerSpawn;
 
     [SerializeField] private float spawnRange;
 
@@ -36,7 +38,14 @@ public class EnemySpawner : MonoBehaviour
         {
             if (timeToNextSpawn <= 0)
             {
-                if (!lastSpawnSuccess) { selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; }
+                if (!lastSpawnSuccess) 
+                { 
+                    selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; 
+                    if (credits > selectedEnemy.spawnCost * maxEnemiesPerSpawn) 
+                    { 
+                        selectedEnemy = leaderPrefabs[Random.Range(0, leaderPrefabs.Length)];    
+                    }
+                }
 
                 lastSpawnSuccess = AttemptSpawn(selectedEnemy);
 
@@ -74,10 +83,5 @@ public class EnemySpawner : MonoBehaviour
         GraphNode node = AstarPath.active.GetNearest(enemy.transform.position, NNConstraint.Default).node;
         enemy.gameObject.transform.position = (Vector3)node.position;
         AstarPath.active.Scan();
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireCube(player.transform.position, Vector2.one * spawnRange * 2);
     }
 }

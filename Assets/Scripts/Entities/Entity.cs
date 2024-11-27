@@ -65,8 +65,8 @@ public abstract class Entity : MonoBehaviour
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
         health -= amount * (100/(100+totalDefense)); 
-        Debug.Log("Took " + amount + " damage.");
-        Debug.Log("Health: " + health);
+        //Debug.Log("Took " + amount + " damage.");
+        //Debug.Log("Health: " + health);
         if (health <= 0f)
         {
             Death();

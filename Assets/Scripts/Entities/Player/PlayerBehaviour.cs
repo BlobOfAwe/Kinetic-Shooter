@@ -41,6 +41,9 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private int gameOverScene = 0;
 
+    [SerializeField]
+    private float manualMoveModifier = 0.1f;
+
     private bool isFiringPrimary = false;
 
     private bool isFiringSecondary = false;
@@ -93,13 +96,19 @@ public class PlayerBehaviour : Entity
 
         if (canMoveManually)
         {
-            rb.AddForce(moveDir * moveAcceleration);
+            float manualMoveX = Mathf.Abs(rb.velocity.x) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.x : 0;
+            float manualMoveY = Mathf.Abs(rb.velocity.y) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.y : 0;
+            rb.velocity += new Vector2(manualMoveX, manualMoveY); 
         }
 
         if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
         //UpdateSound();
     }
 
+    /// <summary>
+    /// If the player is moving slower than the lower bound;
+    /// Add to the velocity until they hit that lower bound;
+    /// </summary>
 
     public void OnAim(InputAction.CallbackContext context)
     {

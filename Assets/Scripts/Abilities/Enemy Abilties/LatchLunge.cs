@@ -44,11 +44,12 @@ public class LatchLunge : Ability
         }
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (latched)
         {
             transform.localPosition = lockRelativePosition;
+            sprite.color = Color.blue;
         }
     }
 
@@ -102,6 +103,10 @@ public class LatchLunge : Ability
         if (latched)
         {
             StopAllCoroutines();
+
+            sprite.color = baseColor;
+            lunging = false;
+
             // Set the object layer to the standard enemy layer
             int layer = LayerMask.NameToLayer("Enemy");
             gameObject.layer = layer;
@@ -115,8 +120,14 @@ public class LatchLunge : Ability
         {
             if ((canDamage & (1 << collision.gameObject.layer)) != 0)
             {
+                // Latch onto the player
                 latched = true;
+                Debug.Log("Latched");
+
+                // set the parent
                 transform.parent = collision.transform;
+                
+                // set the position
                 player = transform.parent.GetComponent<PlayerBehaviour>();
                 thisEnemy.aiPath.canMove = false;
                 lockRelativePosition = transform.localPosition;
@@ -126,6 +137,8 @@ public class LatchLunge : Ability
                 gameObject.layer = layer;
 
                 rb.velocity = Vector2.zero;
+
+                lunging = false;
             }
         }
 

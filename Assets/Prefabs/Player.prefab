@@ -404,8 +404,9 @@ GameObject:
   - component: {fileID: 3078936830243233736}
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
-  - component: {fileID: 8645813176973339046}
-  - component: {fileID: 571558318740040795}
+  - component: {fileID: -2479830224578350400}
+  - component: {fileID: -8703714131133300266}
+  - component: {fileID: 821309631429538210}
   - component: {fileID: 2034691178650426096}
   - component: {fileID: 2862676695539945837}
   m_Layer: 3
@@ -473,7 +474,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b18b23eba05a8354b8d498358d318f78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -686,7 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackStat: 10
   defenseStat: 0
-  speedStat: 5
+  speedStat: 10
   hpStat: 100
   recoverStat: 1
   attackBuffs: []
@@ -705,7 +706,7 @@ MonoBehaviour:
   defenseMultiplier: 0
   speedMultiplier: 0
   recoveryMultiplier: 0
-  primary: {fileID: 8645813176973339046}
+  primary: {fileID: 0}
   secondary: {fileID: 0}
   utility: {fileID: 0}
   additional: {fileID: 0}
@@ -714,14 +715,13 @@ MonoBehaviour:
   secondaryAutofire: 1
   canMoveManually: 1
   moveAcceleration: 10
-  mainCam: {fileID: 0}
   aimTransform: {fileID: 1625521789409699392}
-  hpBar: {fileID: 0}
   playerAnimator: {fileID: 2862676695539945837}
   playerGunAnimator: {fileID: 381498854442721121}
   deathDelay: 1
   gameOverScene: 0
---- !u!114 &8645813176973339046
+  manualMoveModifier: 0.1
+--- !u!114 &-2479830224578350400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -730,19 +730,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5777279789927432716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abac87ef73c9cc54c98002466ab4f7a1, type: 3}
+  m_Script: {fileID: 11500000, guid: a89961ccd2eb5704b8d5aecc00d653e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.1
+  cooldown: 0.5
   available: 1
   inUse: 0
   range: 3
-  damageModifier: 0.2
+  damageModifier: 1
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 60
-  recoil: 5
-  firePoint: {fileID: 1625521789409699392}
---- !u!114 &571558318740040795
+  maxBullets: 10
+  recoil: 20
+--- !u!114 &-8703714131133300266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -751,9 +750,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 5777279789927432716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2991be030f46fa546ab52a0455365be0, type: 3}
+  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 15
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 2
+  knockback: 60
+  staggerTime: 0.2
+  sideReach: 2
+  activeTime: 0.5
+  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+--- !u!114 &821309631429538210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685fd8d67ceb74d4783c785541000e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 10
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 1.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  explosionDropoff: 2
+  explosionKnockback: 20
+  dashForce: 60
+  tempHitBox: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
 --- !u!114 &2034691178650426096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +811,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5777279789927432716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c71f36619b0ed3e42af4041f32d3d006, type: 2}
   m_CullingMode: 0
