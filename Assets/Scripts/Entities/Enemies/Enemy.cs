@@ -134,6 +134,13 @@ public abstract class Enemy : Entity
         FaceTarget();
     }
 
+    public IEnumerator Stagger(float duration)
+    {
+        aiPath.canMove = false;
+        yield return new WaitForSeconds(duration);
+        aiPath.canMove = true;
+    }
+
     // Stay a fixed distance back from the player
     public void KeepBack()
     {

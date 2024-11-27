@@ -24,10 +24,7 @@ public class PlayerBehaviour : Entity
     private Camera mainCam;
 
     [SerializeField]
-    private GameObject aimReticle;
-
-    [SerializeField]
-    private Transform aimTransform;
+    public Transform aimTransform;
 
     [SerializeField]
     private HPBarSystem hpBar;
@@ -61,6 +58,10 @@ public class PlayerBehaviour : Entity
     public void OnAim(InputAction.CallbackContext context)
     {
         cursorPos = context.ReadValue<Vector2>();
+        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+
+        aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
+        aimTransform.up = aimPos - (Vector2)transform.position;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -179,11 +180,6 @@ public class PlayerBehaviour : Entity
     {
         base.Update();
 
-        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
-        if (aimReticle != null)
-        {
-            aimReticle.transform.position = aimPos;
-        }
         if (isFiringPrimary)
         {
             UseAbility(primary);
@@ -200,7 +196,6 @@ public class PlayerBehaviour : Entity
         {
             rb.AddForce(moveDir * moveAcceleration);
         }
-        aimTransform.up = aimPos - (Vector2)transform.position;
 
         if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
         //UpdateSound();
