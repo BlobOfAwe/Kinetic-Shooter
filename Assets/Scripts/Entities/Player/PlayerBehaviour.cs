@@ -39,7 +39,7 @@ public class PlayerBehaviour : Entity
     private float deathDelay = 0.5f;
 
     [SerializeField]
-    private int gameOverScene = 0;
+    private int gameOverScene = 3;
 
     [SerializeField]
     private float manualMoveModifier = 0.1f;
@@ -288,14 +288,15 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
-        playerAnimator.SetTrigger("isDead");
-        StartCoroutine(HandleDeath());
+       // playerAnimator.SetTrigger("isDead");
+        SceneManager.LoadScene(gameOverScene);
+        //StartCoroutine(HandleDeath());
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-    private IEnumerator HandleDeath()
-    {
-        yield return new WaitForSeconds(deathDelay);
-        SceneManager.LoadScene(gameOverScene);
-    }
+   // private IEnumerator HandleDeath()
+   // {
+   //     yield return new WaitForSeconds(deathDelay);
+
+   // }
 }
 

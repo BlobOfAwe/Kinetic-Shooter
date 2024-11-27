@@ -348,7 +348,6 @@ GameObject:
   m_Component:
   - component: {fileID: 235579674}
   - component: {fileID: 235579673}
-  - component: {fileID: 235579675}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -384,19 +383,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &235579675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235579672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27db0e44a4f98784e925fdfdb32a5dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1001 &263901799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,17 +492,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
---- !u!114 &263901800 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 263901799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &453348064
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,9 +785,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 263901800}
-        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
-        m_MethodName: Death
+      - m_Target: {fileID: 235579673}
+        m_TargetAssemblyTypeName: AsyncLoader, Assembly-CSharp
+        m_MethodName: StartAsyncLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -822,7 +797,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 235579675}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: PlayClickSound
         m_Mode: 1
@@ -889,7 +864,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 235579675}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
           m_MethodName: PlayHoverSound
           m_Mode: 1
