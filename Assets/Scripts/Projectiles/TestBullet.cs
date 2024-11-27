@@ -45,7 +45,6 @@ public class TestBullet : Projectile
             {
                 collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
             }
-           
             gameObject.SetActive(false);
         }
     }

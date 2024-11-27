@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
             InitiliazeAmbience(FMODEvents.instance.level3Ambience);
             InitiliazeMusic(FMODEvents.instance.level3Music);
         }
-        else if (sceneName == "LoadoutSelectionSceneAudio")
+        else if (sceneName == "MainMenu")
         {
             InitiliazeAmbience(FMODEvents.instance.mainMenuAmbience);
             InitiliazeMusic(FMODEvents.instance.mainMenuMusic);

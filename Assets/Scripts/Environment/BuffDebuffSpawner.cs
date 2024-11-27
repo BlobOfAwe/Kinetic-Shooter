@@ -1,4 +1,5 @@
 // ## - JV
+using FMODUnity;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,9 +27,17 @@ public class BuffDebuffSpawner : MonoBehaviour
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] private PlayerBehaviour player;
 
+
+    //audio emitter variable
+    protected StudioEventEmitter emitter;
+
     private void Start()
     {
         player = FindAnyObjectByType<PlayerBehaviour>();
+
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
+        emitter.Play();
     }
 
     private void Update()

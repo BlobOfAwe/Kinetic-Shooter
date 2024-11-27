@@ -35,7 +35,7 @@ public class Beacon : MonoBehaviour
     {
         active = true;
 
-        FindAnyObjectByType<AudioParameterController>().IncrementIntensity(-1);
+        // FindAnyObjectByType<AudioParameterController>().IncrementIntensity(-1);
 
         StartCoroutine(ZoomOut());
 
