@@ -93,6 +93,22 @@ public abstract class Entity : MonoBehaviour
     {
         float currentHPPercentage = health / maxHealth;
 
+        // Reset TestShootBullet if applicable
+        TestShootBullet testShootBullet = GetComponent<TestShootBullet>();
+        if (testShootBullet != null) 
+        {
+            testShootBullet.bulletKnockbackMultiplier = 1;
+            testShootBullet.bulletSpeedMultiplier = 1;
+        }
+
+        // Reset StandardPrimaryFire if applicable
+        StandardPrimaryFire standardPrimaryFire = GetComponent<StandardPrimaryFire>();
+        if (standardPrimaryFire != null)
+        {
+            standardPrimaryFire.bulletKnockbackMultiplier = 1;
+            standardPrimaryFire.bulletSpeedMultiplier = 1;
+        }
+
         maxHealth = hpStat;
         totalAttack = attackStat;
         totalDefense = defenseStat;

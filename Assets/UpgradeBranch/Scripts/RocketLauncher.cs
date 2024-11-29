@@ -26,8 +26,8 @@ public class RocketLauncher : Upgrade
     public override void ApplyUpgrade(int quantity)
     {
         player.attackMultiplier += damageIncrease * quantity;
-        shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease;
-        shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease;
+        shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
+        shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * Mathf.Pow(shootAbility.bulletSpeedMultiplier,quantity);
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
