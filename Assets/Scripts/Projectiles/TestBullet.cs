@@ -9,7 +9,6 @@ public class TestBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    public float knockbackMultiplier; // Added so that upgrades can affect bullet knockback. - NK
     private float knockback;
 
     // Start is called before the first frame update
@@ -36,17 +35,25 @@ public class TestBullet : Projectile
             bool hitDamageable;
             // transform.position = Vector2.zero; // Moved - NK
             // if statement should check against damageable objects.
-            try 
-            { 
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback * knockbackMultiplier, ForceMode2D.Impulse);
-                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
-                hitDamageable = true;
-            } 
-            catch
+
+            if (collision.gameObject.GetComponent<Rigidbody2D>())
             {
-                Debug.LogError("TODO: Colliding against non-damagable objects.");
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse);
+            }
+
+            if (collision.gameObject.GetComponent<Entity>())
+            {
+                hitDamageable = true;
+                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
+            }
+
+            else 
+            {
                 hitDamageable = false;
             }
+           
+            gameObject.SetActive(false);
+           
             FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
             transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
             //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK

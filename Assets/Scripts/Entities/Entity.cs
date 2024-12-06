@@ -70,8 +70,8 @@ public abstract class Entity : MonoBehaviour
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
         health -= amount * (100/(100+totalDefense)); 
-        Debug.Log("Took " + amount + " damage.");
-        Debug.Log("Health: " + health);
+        //Debug.Log("Took " + amount + " damage.");
+        //Debug.Log("Health: " + health);
         if (health <= 0f)
         {
             Death();
@@ -92,6 +92,22 @@ public abstract class Entity : MonoBehaviour
     public void UpdateStats()
     {
         float currentHPPercentage = health / maxHealth;
+
+        // Reset TestShootBullet if applicable
+        TestShootBullet testShootBullet = GetComponent<TestShootBullet>();
+        if (testShootBullet != null) 
+        {
+            testShootBullet.bulletKnockbackMultiplier = 1;
+            testShootBullet.bulletSpeedMultiplier = 1;
+        }
+
+        // Reset StandardPrimaryFire if applicable
+        StandardPrimaryFire standardPrimaryFire = GetComponent<StandardPrimaryFire>();
+        if (standardPrimaryFire != null)
+        {
+            standardPrimaryFire.bulletKnockbackMultiplier = 1;
+            standardPrimaryFire.bulletSpeedMultiplier = 1;
+        }
 
         maxHealth = hpStat;
         totalAttack = attackStat;
@@ -127,7 +143,7 @@ public abstract class Entity : MonoBehaviour
         foreach (Buff buff in attackBuffs) 
         {
             if (buff.modification == Buff.modificationType.Additive) { totalAttack += buff.value; } 
-            else if (buff.modification == Buff.modificationType.Multiplicative) { attackMultiplier += buff.value; }
+            else if (buff.modification == Buff.modificationType.Multiplicative) { attackMultiplier *= buff.value; }
         }
         totalAttack *= attackMultiplier;
 
@@ -135,15 +151,21 @@ public abstract class Entity : MonoBehaviour
         foreach (Buff buff in defenseBuffs) 
         {
             if (buff.modification == Buff.modificationType.Additive) { totalDefense += buff.value; }
-            else if (buff.modification == Buff.modificationType.Multiplicative) { defenseMultiplier += buff.value; }
+            else if (buff.modification == Buff.modificationType.Multiplicative) { defenseMultiplier *= buff.value; }
         }
         totalDefense *= defenseMultiplier;
+
+        if (totalDefense < -99)
+        {
+            Debug.LogError("Total defense cannot exceed -99 in the negative range. Set total defense to -99.");
+            totalDefense = -99;
+        }
 
         // SPEED
         foreach (Buff buff in speedBuffs) 
         {
             if (buff.modification == Buff.modificationType.Additive) { totalSpeed += buff.value; }
-            else if (buff.modification == Buff.modificationType.Multiplicative) { speedMultiplier += buff.value; }
+            else if (buff.modification == Buff.modificationType.Multiplicative) { speedMultiplier *= buff.value; }
         }
         totalSpeed *= speedMultiplier;
 
@@ -151,7 +173,7 @@ public abstract class Entity : MonoBehaviour
         foreach (Buff buff in hpBuffs) 
         {
             if (buff.modification == Buff.modificationType.Additive) { maxHealth += buff.value; }
-            else if (buff.modification == Buff.modificationType.Multiplicative) { healthMultiplier += buff.value; }
+            else if (buff.modification == Buff.modificationType.Multiplicative) { healthMultiplier *= buff.value; }
         }
         maxHealth *= healthMultiplier;
         health = maxHealth * currentHPPercentage;
@@ -160,7 +182,7 @@ public abstract class Entity : MonoBehaviour
         foreach (Buff buff in recoverBuffs) 
         {
             if (buff.modification == Buff.modificationType.Additive) { totalRecovery += buff.value; }
-            else if (buff.modification == Buff.modificationType.Multiplicative) { recoveryMultiplier += buff.value; }
+            else if (buff.modification == Buff.modificationType.Multiplicative) { recoveryMultiplier *= buff.value; }
         }
         totalRecovery *= recoveryMultiplier;
 

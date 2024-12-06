@@ -5,9 +5,8 @@ public abstract class Upgrade : Item
 {
     protected PlayerBehaviour player;
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         player = FindObjectOfType<PlayerBehaviour>();
     }
 

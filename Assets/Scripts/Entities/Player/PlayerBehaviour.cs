@@ -1,8 +1,11 @@
 // ## - NK
 using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
+using FMODUnity;
+using Unity.VisualScripting;
 using System.Collections.Generic;
 
 public class PlayerBehaviour : Entity
@@ -17,22 +20,17 @@ public class PlayerBehaviour : Entity
     private bool canMoveManually = false;
 
     [SerializeField]
-    private float moveSpeed = 1f;
-
-    [SerializeField]
     private float moveAcceleration = 1f;
 
-    [SerializeField]
     private Camera mainCam;
 
     [SerializeField]
-    private GameObject aimReticle;
+    public Transform aimTransform;
 
-    [SerializeField]
-    private Transform aimTransform;
-
-    [SerializeField]
     private HPBarSystem hpBar;
+    //Added by ZS to reference the animators and set the timer for the death delay
+    [SerializeField]
+    private Animator playerAnimator;
 
     public enum StatType { attack, defense, speed, hp, recover }
 
@@ -43,7 +41,16 @@ public class PlayerBehaviour : Entity
     private List<Upgrade> recoverUpgrades;
 
     [SerializeField]
-    private int gameOverScene = 0;
+    private Animator playerGunAnimator;
+
+    [SerializeField]
+    private float deathDelay = 0.5f;
+
+    [SerializeField]
+    private int gameOverScene = 3;
+
+    [SerializeField]
+    private float manualMoveModifier = 0.1f;
 
     private bool isFiringPrimary = false;
 
@@ -58,18 +65,69 @@ public class PlayerBehaviour : Entity
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
+    //ending parameter
+    [SerializeField] private string parameterNameEnding;
+    [SerializeField] private float parameterValueEnding;
 
     //creates an FMOD events instance for player movement
     private void Start()
     {
         health = maxHealth;
+        hpBar = FindAnyObjectByType<HPBarSystem>();
+        mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
+
+        // Assigns the player.ability to be the component based on the specified ability type
+        primary = (Ability)GetComponent(GameManager.playerLoadout.primaryAbility.GetType());
+        secondary = (Ability)GetComponent(GameManager.playerLoadout.secondaryAbility.GetType());
+        utility = (Ability)GetComponent(GameManager.playerLoadout.utilityAbility.GetType());
+
     }
 
+    new private void Update()
+    {
+        base.Update();
+
+        if (isFiringPrimary)
+        {
+            UseAbility(primary);
+        }
+        if (isFiringSecondary)
+        {
+            UseAbility(secondary);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        //Added by ZS, checks if the player is idle, and if they are, plays the idle animation.
+        Vector2 velocity = rb.velocity;
+        bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
+        playerAnimator.SetBool("isIdle", isIdle);
+
+        if (canMoveManually)
+        {
+            float manualMoveX = Mathf.Abs(rb.velocity.x) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.x : 0;
+            float manualMoveY = Mathf.Abs(rb.velocity.y) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.y : 0;
+            rb.velocity += new Vector2(manualMoveX, manualMoveY); 
+        }
+
+        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        //UpdateSound();
+    }
+
+    /// <summary>
+    /// If the player is moving slower than the lower bound;
+    /// Add to the velocity until they hit that lower bound;
+    /// </summary>
 
     public void OnAim(InputAction.CallbackContext context)
     {
         cursorPos = context.ReadValue<Vector2>();
+        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+
+        aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
+        aimTransform.up = aimPos - (Vector2)transform.position;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -193,7 +251,9 @@ public class PlayerBehaviour : Entity
             {
                 if (context.started)
                 {
+                    playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
@@ -263,36 +323,7 @@ public class PlayerBehaviour : Entity
 
     public void Quit() { Application.Quit(); }
 
-    new private void Update()
-    {
-        base.Update();
 
-        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
-        if (aimReticle != null)
-        {
-            aimReticle.transform.position = aimPos;
-        }
-        if (isFiringPrimary)
-        {
-            UseAbility(primary);
-        }
-        if (isFiringSecondary)
-        {
-            UseAbility(secondary);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (canMoveManually)
-        {
-            rb.AddForce(moveDir * moveAcceleration);
-        }
-        aimTransform.up = aimPos - (Vector2)transform.position;
-
-        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
-        //UpdateSound();
-    }
 
     // COMMENTED OUT THIS CODE BECAUSE IT SHOULD BE DONE IN OnMove(). - NK
     //detects if player is moving using WASD and plays audio
@@ -347,7 +378,15 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
+        // playerAnimator.SetTrigger("isDead");
         SceneManager.LoadScene(gameOverScene);
+        //StartCoroutine(HandleDeath());
     }
+    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
+   // private IEnumerator HandleDeath()
+   // {
+   //     yield return new WaitForSeconds(deathDelay);
+
+   // }
 }
 

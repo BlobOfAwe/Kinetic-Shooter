@@ -56,7 +56,7 @@
 			<destination>{cf8dad99-c2ee-47c0-a376-f4d6c2f5c1df}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c3f8f65c-5eab-4eca-9c5d-cf4a189a930c}</destination>
+			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d99161a1-d143-4275-bf5c-e3c846ac0ac9}" />
@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{964207c9-049e-4496-be16-2efb7b3ec9d0}">
 		<relationship name="sounds">
-			<destination>{a074f753-956a-4a3f-9eb1-0542fd8a2346}</destination>
+			<destination>{c6967905-530d-4da0-9c11-285925abdf54}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4af97b76-8bc6-4532-b963-b3cbd51627ee}">
@@ -96,29 +96,26 @@
 	<object class="MixerBusEffectChain" id="{e29eff7c-4271-4d0d-bc07-368d593e9206}">
 		<relationship name="effects">
 			<destination>{39cd2e09-59e0-488e-85ed-419cdf6ce80c}</destination>
-			<destination>{24105d4a-be11-4e96-a99c-7f14193b509a}</destination>
+			<destination>{e3115201-480b-480f-b9aa-ed76da5e6e0c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ff012545-c3a7-405c-bc9f-f14d9be8b00c}" />
-	<object class="SingleSound" id="{a074f753-956a-4a3f-9eb1-0542fd8a2346}">
-		<property name="volume">
-			<value>-16.5</value>
-		</property>
+	<object class="SingleSound" id="{c6967905-530d-4da0-9c11-285925abdf54}">
 		<relationship name="audioFile">
-			<destination>{26485841-115e-4b6a-9ee3-3027d26da927}</destination>
+			<destination>{d1411bcb-d810-45a7-9357-0936ceb3b97b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{0d63aa3e-b4c5-4fa5-8a92-34a969cd8ec4}" />
 	<object class="MixerBusFader" id="{39cd2e09-59e0-488e-85ed-419cdf6ce80c}" />
-	<object class="ThreeEQEffect" id="{24105d4a-be11-4e96-a99c-7f14193b509a}">
+	<object class="ThreeEQEffect" id="{e3115201-480b-480f-b9aa-ed76da5e6e0c}">
 		<property name="lowGain">
-			<value>-4</value>
+			<value>-19.5</value>
 		</property>
 		<property name="midGain">
-			<value>-2</value>
+			<value>-7.5</value>
 		</property>
 		<property name="highGain">
-			<value>-0.5</value>
+			<value>-6</value>
 		</property>
 	</object>
 </objects>

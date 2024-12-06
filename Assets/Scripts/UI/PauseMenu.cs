@@ -3,12 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
+using FMODUnity;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject settingsMenu;
     private bool isPaused = false;
+
+    // Audio
+    [SerializeField] private string parameterNamePause;
+    [SerializeField] private float parameterValuePause;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -25,12 +32,16 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResumeGame()
     {
+        parameterValuePause--;
+        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
     void PauseGame()
     {
+        parameterValuePause++;
+        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -63,4 +74,5 @@ public class PauseMenu : MonoBehaviour
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHover, this.transform.position);
     }
+    
 }

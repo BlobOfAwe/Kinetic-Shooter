@@ -22,9 +22,9 @@ public class RocketExplosion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Entity>() != null)
+        if (collision.gameObject.GetComponent<Enemy>() != null)
         {
-            collision.gameObject.GetComponent<Entity>().Damage(damage);
+            collision.gameObject.GetComponent<Enemy>().Damage(damage);
         }
     }
 

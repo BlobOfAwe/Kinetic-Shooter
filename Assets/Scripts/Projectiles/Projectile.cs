@@ -13,6 +13,7 @@ public abstract class Projectile : MonoBehaviour
     protected float speed = 5f;
     [SerializeField]
     public float damageMultiplier = 1f; // Deals damage based on the totalAttack of the Shooter // Changed to public. - NK
+    public float knockbackMultiplier; // Added so that upgrades can affect bullet knockback. - NK
     [SerializeField]
     protected Rigidbody2D rb;
     [SerializeField]

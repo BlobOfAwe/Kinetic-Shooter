@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using static WarCallBuff;
 
 public abstract class Item : MonoBehaviour
 {
@@ -12,23 +13,27 @@ public abstract class Item : MonoBehaviour
     public string description;
 
     //audio emitter variable
-    private StudioEventEmitter emitter;
+    protected StudioEventEmitter emitter;
 
-    protected virtual void Awake()
+    protected void Start()
     {
         //creates an audio emitter and plays event
-        // COMMENTED OUT LINES THAT HAVE TO DO WITH AN AUDIO EMITTER BECAUSE IT CAUSES ISSUES - NK
-        //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
-        //emitter.Play();
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
+        emitter.Play();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponentInChildren<InventoryManager>().AddItem(this);
-        //Destroy(gameObject);
-        gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
-        //emitter.Stop();
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
-        Debug.Log("Picked up item");
+        if (collision.gameObject.GetComponent<PlayerBehaviour>() != null)
+        {
+            collision.GetComponentInChildren<InventoryManager>().AddItem(this);
+
+            emitter.Stop();
+            gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
+
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
+            Debug.Log("Picked up item");
+        }
     }
 }

@@ -23,13 +23,14 @@ public class TestShootBullet : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private void Awake()
+    new private void Awake()
     {
+        base.Awake();
         bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++) 
         { 
             bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+            bullets[i].GetComponent<Projectile>().shooter = firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
             bullets[i].SetActive(false); 
         }
     }
@@ -45,7 +46,7 @@ public class TestShootBullet : Ability
     {
         StartCoroutine(BeginCooldown());
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
@@ -55,8 +56,8 @@ public class TestShootBullet : Ability
                 bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-firePoint.up * recoil * recoilMultiplier, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
-                bullet.GetComponent<TestBullet>().speedMultiplier = bulletSpeedMultiplier;
-                bullet.GetComponent<TestBullet>().knockbackMultiplier = bulletKnockbackMultiplier;
+                bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
+                bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.SetActive(true); return; } // Set the bullet to active and return
         }
 

@@ -26,6 +26,14 @@ public class EnemyCounter : MonoBehaviour
 
     private bool bossIsSpawned = false; // Added by NK.
 
+    //Audio variables
+
+    [SerializeField] private string parameterNameIntensity;
+    [SerializeField] private float parameterValueIntensity;
+
+    [SerializeField] private string parameterNameStage;
+    [SerializeField] private float parameterValueStage;
+
     void Start()
     {
         remainingEnemies = totalEnemies;
@@ -38,6 +46,29 @@ public class EnemyCounter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             EnemyDefeated();
+        }
+        //Audio Intensity
+        if (remainingEnemies == 18)
+        {
+            parameterValueIntensity = 1;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        }
+        else if (remainingEnemies == 15)
+        {
+            parameterValueIntensity = 2;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        }
+        if (remainingEnemies == 12)
+        {
+            parameterValueIntensity = 4;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+            parameterValueStage = 1;
+            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+        }
+        if (remainingEnemies == 5)
+        {
+            parameterValueIntensity = 5;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
         }
     }
 
@@ -64,6 +95,10 @@ public class EnemyCounter : MonoBehaviour
             GraphNode node = AstarPath.active.GetNearest((Vector2)beacon.transform.position + bossOffset, NNConstraint.Default).node;
             Instantiate(bossEnemy, (Vector3)node.position, Quaternion.identity);
             bossIsSpawned = true;
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.bossEnemyAppear, this.transform.position);
+            parameterValueStage = 2;
+            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+
         }
     }
 
