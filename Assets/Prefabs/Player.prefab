@@ -405,10 +405,10 @@ GameObject:
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
   - component: {fileID: -2479830224578350400}
-  - component: {fileID: -8703714131133300266}
   - component: {fileID: 821309631429538210}
   - component: {fileID: 2034691178650426096}
   - component: {fileID: 2862676695539945837}
+  - component: {fileID: 571558318740040795}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -668,6 +668,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fbaa2fe2-dba7-4a4f-9c81-56255d34ab55
     m_ActionName: Player/Additional Ability[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8544861283654042662}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnHunker
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 553edb50-29d8-4c63-9b46-da68b48bc456
+    m_ActionName: Player/Hunker[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -711,7 +727,7 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
-  statsText: {fileID: 0}
+  statsDisplay: {fileID: 0}
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -722,6 +738,8 @@ MonoBehaviour:
   deathDelay: 1
   gameOverScene: 3
   manualMoveModifier: 0.1
+  parameterNameEnding: 
+  parameterValueEnding: 0
 --- !u!114 &-2479830224578350400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,6 +753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0.5
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 3
@@ -744,29 +763,6 @@ MonoBehaviour:
   recoil: 5
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
-  firePoint: {fileID: 1625521789409699392}
---- !u!114 &571558318740040795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777279789927432716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 15
-  available: 1
-  inUse: 0
-  range: 3
-  damageModifier: 2
-  knockback: 60
-  staggerTime: 0.2
-  sideReach: 2
-  activeTime: 0.5
-  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!114 &821309631429538210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,6 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 10
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 3
@@ -828,6 +825,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &571558318740040795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 15
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 2
+  knockback: 60
+  staggerTime: 0.2
+  sideReach: 2
+  activeTime: 0.5
+  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!1 &5855219836532266464
 GameObject:
   m_ObjectHideFlags: 0

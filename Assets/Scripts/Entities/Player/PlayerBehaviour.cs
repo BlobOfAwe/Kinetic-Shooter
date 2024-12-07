@@ -107,8 +107,22 @@ public class PlayerBehaviour : Entity
 
         if (canMoveManually)
         {
-            float manualMoveX = Mathf.Abs(rb.velocity.x) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.x : 0;
-            float manualMoveY = Mathf.Abs(rb.velocity.y) < totalSpeed * manualMoveModifier ? totalSpeed * manualMoveModifier * moveDir.y : 0;
+            // If (negative Input)
+            // If (Velocity > the negative-maximum for base movement speed)
+            // Add movement speed
+            // else if (positive Input)
+            // If (Velocity < the positive-maximum for base movement speed)
+            float manualMoveX;
+            float manualMoveY;
+
+            if (moveDir.x < 0 && rb.velocity.x > -totalSpeed * manualMoveModifier) { manualMoveX = totalSpeed * manualMoveModifier * moveDir.x; }
+            else if (moveDir.x > 0 && rb.velocity.x < totalSpeed * manualMoveModifier) { manualMoveX = totalSpeed * manualMoveModifier * moveDir.x; }
+            else { manualMoveX = 0; }
+
+            if (moveDir.y < 0 && rb.velocity.y > -totalSpeed * manualMoveModifier) { manualMoveY = totalSpeed * manualMoveModifier * moveDir.y; }
+            else if (moveDir.y > 0 && rb.velocity.y < totalSpeed * manualMoveModifier) { manualMoveY = totalSpeed * manualMoveModifier * moveDir.y; }
+            else { manualMoveY = 0; }
+
             rb.velocity += new Vector2(manualMoveX, manualMoveY); 
         }
 
@@ -152,6 +166,20 @@ public class PlayerBehaviour : Entity
         }
     }
 
+    public void OnHunker(InputAction.CallbackContext context)
+    {
+        Debug.Log("Hunkered");
+        if (context.performed)
+        {
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+        }
+        else
+        {
+            rb.isKinematic = false;
+        }
+    }
+
     public override void Damage(float amount)
     {
         base.Damage(amount);
@@ -181,67 +209,6 @@ public class PlayerBehaviour : Entity
         }
         bullet.gameObject.SetActive(false);
     }
-
-    /*public void UpgradeStats(StatType statType, float value, bool multiply)
-    {
-        switch (statType)
-        {
-            case StatType.attack:
-                if (multiply)
-                {
-                    attackStat *= value;
-                } else
-                {
-                    attackStat += value;
-                }
-                Debug.Log("Attack increased to " + attackStat);
-                break;
-            case StatType.defense:
-                if (multiply)
-                {
-                    defenseStat *= value;
-                } else
-                {
-                    defenseStat += value;
-                }
-                Debug.Log("Defense increased to " + defenseStat);
-                break;
-            case StatType.speed:
-                if (multiply)
-                {
-                    speedStat *= value;
-                } else
-                {
-                    speedStat += value;
-                }
-                Debug.Log("Speed increased to " + speedStat);
-                break;
-            case StatType.hp:
-                if (multiply)
-                {
-                    hpStat *= value;
-                } else
-                {
-                    hpStat += value;
-                }
-                Debug.Log("HP increased to " + hpStat);
-                break;
-            case StatType.recover:
-                if (multiply)
-                {
-                    recoverStat *= value;
-                } else
-                {
-                    recoverStat += value;
-                }
-                Debug.Log("Recover increased to " + recoverStat);
-                break;
-            default:
-                Debug.LogError("Not a valid stat type.");
-                break;
-        }
-        UpdateStats();
-    }*/
 
     public void OnUsePrimary(InputAction.CallbackContext context)
     {
