@@ -137,11 +137,14 @@ public class PlayerBehaviour : Entity
 
     public void OnAim(InputAction.CallbackContext context)
     {
-        cursorPos = context.ReadValue<Vector2>();
-        aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+        if (!GameManager.paused)
+        {
+            cursorPos = context.ReadValue<Vector2>();
+            aimPos = mainCam.ScreenToWorldPoint(cursorPos);
 
-        aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
-        aimTransform.up = aimPos - (Vector2)transform.position;
+            aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
+            aimTransform.up = aimPos - (Vector2)transform.position;
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
