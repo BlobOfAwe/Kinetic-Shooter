@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c78cde61961e3946a847a908525eb8d, type: 3}
+  m_Name: BuffIconData
+  m_EditorClassIdentifier: 
+  buffIcons:
+  - buffType: 0
+    icons:
+    - {fileID: 21300000, guid: 582d6048b61753c499f14a9b50d87765, type: 3}
+    - {fileID: 21300000, guid: bddd685fc1a574c44a00f35be956d536, type: 3}
+    - {fileID: 21300000, guid: e03ef3751eacc164fa939f27a530893b, type: 3}
+    - {fileID: 21300000, guid: 628ca5451bf206447b57bc38ff98a9d0, type: 3}
+    - {fileID: 21300000, guid: e73b4180ffc3e4c48ac50bac609dba7f, type: 3}
+  - buffType: 1
+    icons:
+    - {fileID: 21300000, guid: 582d6048b61753c499f14a9b50d87765, type: 3}
+    - {fileID: 21300000, guid: bddd685fc1a574c44a00f35be956d536, type: 3}
+    - {fileID: 21300000, guid: e03ef3751eacc164fa939f27a530893b, type: 3}
+    - {fileID: 21300000, guid: 628ca5451bf206447b57bc38ff98a9d0, type: 3}
+    - {fileID: 21300000, guid: e73b4180ffc3e4c48ac50bac609dba7f, type: 3}
+  - buffType: 2
+    icons:
+    - {fileID: 21300000, guid: 582d6048b61753c499f14a9b50d87765, type: 3}
+    - {fileID: 21300000, guid: bddd685fc1a574c44a00f35be956d536, type: 3}
+    - {fileID: 21300000, guid: e03ef3751eacc164fa939f27a530893b, type: 3}
+    - {fileID: 21300000, guid: 628ca5451bf206447b57bc38ff98a9d0, type: 3}
+    - {fileID: 21300000, guid: e73b4180ffc3e4c48ac50bac609dba7f, type: 3}
+  - buffType: 3
+    icons:
+    - {fileID: 21300000, guid: 582d6048b61753c499f14a9b50d87765, type: 3}
+    - {fileID: 21300000, guid: bddd685fc1a574c44a00f35be956d536, type: 3}
+    - {fileID: 21300000, guid: e03ef3751eacc164fa939f27a530893b, type: 3}
+    - {fileID: 21300000, guid: 628ca5451bf206447b57bc38ff98a9d0, type: 3}
+    - {fileID: 21300000, guid: e73b4180ffc3e4c48ac50bac609dba7f, type: 3}
+  - buffType: 4
+    icons:
+    - {fileID: 21300000, guid: 582d6048b61753c499f14a9b50d87765, type: 3}
+    - {fileID: 21300000, guid: bddd685fc1a574c44a00f35be956d536, type: 3}
+    - {fileID: 21300000, guid: e03ef3751eacc164fa939f27a530893b, type: 3}
+    - {fileID: 21300000, guid: 628ca5451bf206447b57bc38ff98a9d0, type: 3}
+    - {fileID: 21300000, guid: e73b4180ffc3e4c48ac50bac609dba7f, type: 3}
