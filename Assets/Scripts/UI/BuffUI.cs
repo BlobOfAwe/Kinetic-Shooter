@@ -51,17 +51,17 @@ public class BuffUI : MonoBehaviour
         durationFill.fillAmount = remainingDuration / duration;
         durationText.text = Mathf.Ceil(remainingDuration).ToString();
         float timePercentage = remainingDuration / duration;
-        int iconIndex = Mathf.FloorToInt(timePercentage * 5);
+        int iconIndex = Mathf.FloorToInt(timePercentage * 7);
         if (iconIndex != lastIconIndex)
         {
             lastIconIndex = iconIndex;
             buffIcon.sprite = GetIconForTimePercentage(iconIndex);
         }
     }
-    // Get the respective icon based on the time remaining on 20% intervals
+    // Get the respective icon based on the time remaining on around 14% intervals
     private Sprite GetIconForTimePercentage(int index)
     {
-        if (index >= 0 && index < 5)
+        if (index >= 0 && index < 7)
         {
             return buffIconData.GetIcon(buff.buffType, index);
         }
