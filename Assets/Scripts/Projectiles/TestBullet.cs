@@ -9,7 +9,6 @@ public class TestBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    [SerializeField]
     private float knockback;
 
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class TestBullet : Projectile
     protected override void Update()
     {
         base.Update();
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.up * speed * speedMultiplier;
     }
 
     // When the bullet collides with something, disable it
@@ -33,7 +32,8 @@ public class TestBullet : Projectile
         //if (collision.gameObject != shooter)
         if ((shootableLayer & (1 << collision.gameObject.layer)) != 0)
         {
-            transform.position = Vector2.zero;
+            bool hitDamageable;
+            // transform.position = Vector2.zero; // Moved - NK
             // if statement should check against damageable objects.
 
             if (collision.gameObject.GetComponent<Rigidbody2D>())
@@ -43,9 +43,20 @@ public class TestBullet : Projectile
 
             if (collision.gameObject.GetComponent<Entity>())
             {
+                hitDamageable = true;
                 collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
             }
+
+            else 
+            {
+                hitDamageable = false;
+            }
+           
             gameObject.SetActive(false);
+           
+            FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
+            transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+            //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
         }
     }
 }

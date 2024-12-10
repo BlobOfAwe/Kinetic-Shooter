@@ -10,8 +10,12 @@ public class StandardPrimaryFire : Ability
     private int maxBullets = 10;
     [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
-    
-    
+
+    // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
+    public float bulletSpeedMultiplier = 1f;
+    public float bulletKnockbackMultiplier = 1f;
+
+
     private GameObject[] bullets;
     private Rigidbody2D rb;
 
@@ -51,6 +55,8 @@ public class StandardPrimaryFire : Ability
                 bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
+                bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
+                bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
         }

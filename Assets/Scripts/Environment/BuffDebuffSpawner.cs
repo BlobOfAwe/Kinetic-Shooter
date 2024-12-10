@@ -34,10 +34,6 @@ public class BuffDebuffSpawner : MonoBehaviour
     private void Start()
     {
         player = FindAnyObjectByType<PlayerBehaviour>();
-
-        //creates an audio emitter and plays event
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
-        emitter.Play();
     }
 
     private void Update()

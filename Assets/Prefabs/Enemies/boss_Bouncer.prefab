@@ -64,7 +64,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   utility: {fileID: 3490139462273597173}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  statsDisplay: {fileID: 0}
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 10
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 300
@@ -322,13 +324,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 30
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 0
   damageModifier: 0
   enemies:
   - {fileID: 863582455569772561, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  amount: 5
+  - {fileID: 863582455569772561, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
+  amount: 7
   bossSpawnAnimator: {fileID: 536302097104265161}
   spawnPoint: {fileID: 8589704739381277583}
 --- !u!114 &8692585260050756621
@@ -344,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 3
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 0

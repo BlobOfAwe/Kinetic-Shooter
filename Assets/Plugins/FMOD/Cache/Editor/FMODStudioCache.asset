@@ -54,30 +54,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8468687019996314020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1Music/level1_ending
-  m_EditorClassIdentifier: 
-  Name: level1_ending
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 3911068529
-    data2: 2129448781
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-8449018560451385656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,8 +296,8 @@ MonoBehaviour:
   Parameters:
   - {fileID: -1537655976983879191}
   - {fileID: 7854661241692925182}
-  - {fileID: 6031351957429152890}
-  - {fileID: -8468687019996314020}
+  - {fileID: 3745778873686054613}
+  - {fileID: 301647308421631882}
   MinDistance: 1
   MaxDistance: 20
   Length: 333913
@@ -583,7 +559,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638683038124063845
+  lastModified: 638688597935775285
   FileSizes:
   - Name: Desktop
     Value: 3522
@@ -696,6 +672,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1564946373668077172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/BossEnemyMovement
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/BossEnemyMovement
+  Guid:
+    Data1: 336189064
+    Data2: 1255566883
+    Data3: 22389123
+    Data4: -2013675239
+  Banks:
+  - {fileID: 2883800237204123689}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11363
 --- !u!114 &-1537655976983879191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,13 +870,13 @@ MonoBehaviour:
   - {fileID: -7852043002828166619}
   - {fileID: 2102723509973350376}
   - {fileID: -7795709050686240743}
-  - {fileID: 5498284552999808765}
+  - {fileID: -1564946373668077172}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4855234936659396955}
   StringsBanks:
   - {fileID: -3463065209373744652}
-  cacheTime: 638683038875125893
+  cacheTime: 638688597938265182
   cacheVersion: 131617
 --- !u!114 &211450915939965905
 MonoBehaviour:
@@ -902,6 +905,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &301647308421631882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Music/level1_ending
+  m_EditorClassIdentifier: 
+  Name: level1_ending
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3911068529
+    data2: 2129448781
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &898723724014866588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1052,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638683038875125893
+  lastModified: 638688597937951750
   FileSizes:
   - Name: Desktop
     Value: 33707232
@@ -1153,10 +1180,34 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638683031359861235
+  lastModified: 638688597938265182
   FileSizes:
   - Name: Desktop
     Value: 3557376
+  Exists: 1
+--- !u!114 &3745778873686054613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Level1Music/level1_pause
+  m_EditorClassIdentifier: 
+  Name: level1_pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1053798372
+    data2: 3965535339
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &3901547166454346082
 MonoBehaviour:
@@ -1227,7 +1278,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638683038124028695
+  lastModified: 638688597935764853
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -1340,33 +1391,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5498284552999808765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/BossEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/BossEnemyMovement
-  Guid:
-    Data1: 336189064
-    Data2: 1255566883
-    Data3: 22389123
-    Data4: -2013675239
-  Banks:
-  - {fileID: 2883800237204123689}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 11363
 --- !u!114 &5585121938882380293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,34 +1406,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638683038123947905
+  lastModified: 638688597935764853
   FileSizes:
   - Name: Desktop
     Value: 2928224
-  Exists: 1
---- !u!114 &6031351957429152890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Level1Music/level1_pause
-  m_EditorClassIdentifier: 
-  Name: level1_pause
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1053798372
-    data2: 3965535339
-  Type: 0
-  IsGlobal: 0
-  Labels: []
   Exists: 1
 --- !u!114 &6941252295221618975
 MonoBehaviour:

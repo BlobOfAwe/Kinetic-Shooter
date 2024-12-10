@@ -22,12 +22,18 @@ public abstract class Item : MonoBehaviour
         emitter.Play();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponentInChildren<InventoryManager>().AddItem(this);
-        emitter.Stop();
-        Destroy(gameObject);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
-        Debug.Log("Picked up item");
+        if (collision.gameObject.GetComponent<PlayerBehaviour>() != null)
+        {
+            collision.GetComponentInChildren<InventoryManager>().AddItem(this);
+
+            emitter.Stop();
+            gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
+
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
+            Debug.Log("Picked up item");
+        }
     }
 }

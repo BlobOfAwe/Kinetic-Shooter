@@ -3,10 +3,10 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using System.Diagnostics;
 using FMOD.Studio;
 using FMODUnity;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 public class PlayerBehaviour : Entity
 {
@@ -31,6 +31,14 @@ public class PlayerBehaviour : Entity
     //Added by ZS to reference the animators and set the timer for the death delay
     [SerializeField]
     private Animator playerAnimator;
+
+    public enum StatType { attack, defense, speed, hp, recover }
+
+    private List<Upgrade> attackUpgrades;
+    private List<Upgrade> defenseUpgrades;
+    private List<Upgrade> speedUpgrades;
+    private List<Upgrade> hpUpgrades;
+    private List<Upgrade> recoverUpgrades;
 
     [SerializeField]
     private Animator playerGunAnimator;
@@ -155,6 +163,85 @@ public class PlayerBehaviour : Entity
         base.Heal(amount);
         hpBar.HealHp(amount);
     }
+
+    public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, hitDamageable, slot.quantity);
+                    }
+                }
+            }
+        }
+        bullet.gameObject.SetActive(false);
+    }
+
+    /*public void UpgradeStats(StatType statType, float value, bool multiply)
+    {
+        switch (statType)
+        {
+            case StatType.attack:
+                if (multiply)
+                {
+                    attackStat *= value;
+                } else
+                {
+                    attackStat += value;
+                }
+                Debug.Log("Attack increased to " + attackStat);
+                break;
+            case StatType.defense:
+                if (multiply)
+                {
+                    defenseStat *= value;
+                } else
+                {
+                    defenseStat += value;
+                }
+                Debug.Log("Defense increased to " + defenseStat);
+                break;
+            case StatType.speed:
+                if (multiply)
+                {
+                    speedStat *= value;
+                } else
+                {
+                    speedStat += value;
+                }
+                Debug.Log("Speed increased to " + speedStat);
+                break;
+            case StatType.hp:
+                if (multiply)
+                {
+                    hpStat *= value;
+                } else
+                {
+                    hpStat += value;
+                }
+                Debug.Log("HP increased to " + hpStat);
+                break;
+            case StatType.recover:
+                if (multiply)
+                {
+                    recoverStat *= value;
+                } else
+                {
+                    recoverStat += value;
+                }
+                Debug.Log("Recover increased to " + recoverStat);
+                break;
+            default:
+                Debug.LogError("Not a valid stat type.");
+                break;
+        }
+        UpdateStats();
+    }*/
 
     public void OnUsePrimary(InputAction.CallbackContext context)
     {

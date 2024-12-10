@@ -16,17 +16,18 @@ public class GenericBuffDebuff : Item
         category = (Buff.buffCategory)Random.Range(0, 5);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.GetComponent<PlayerBehaviour>()) { return; }
 
-        buffTarget = collision.gameObject.GetComponent<PlayerBehaviour>();
+        buffTarget = collision.GetComponent<PlayerBehaviour>();
         ApplyBuff(duration);
         
-        emitter.Stop();
-        Destroy(gameObject);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
         Debug.Log("Picked up item");
+
+        emitter.Stop();
+        Destroy(gameObject);
     }
 
     public void ApplyBuff(float duration)
