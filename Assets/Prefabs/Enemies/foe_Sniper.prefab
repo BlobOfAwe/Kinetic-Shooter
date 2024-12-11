@@ -262,6 +262,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+
+  isInvincible: 0
+
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -275,6 +278,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 10
 --- !u!114 &7324984096438370378
 MonoBehaviour:
   m_ObjectHideFlags: 0

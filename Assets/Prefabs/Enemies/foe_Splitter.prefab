@@ -260,6 +260,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+
+  isInvincible: 0
+
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -273,6 +276,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &574769013154786359
@@ -535,6 +539,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+
+  isInvincible: 0
+
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -548,6 +555,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &863582455569772561
@@ -812,6 +820,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 30
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -825,6 +834,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 30
   childSplots:
   - {fileID: 6259057669362176755}
   - {fileID: 7538930451151872605}
@@ -1091,6 +1101,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+
+  isInvincible: 0
+
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -1104,6 +1117,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 3244894281966807365}
   - {fileID: 1841696412842891636}
@@ -1370,6 +1384,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -1383,6 +1398,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 8441521243172747671}
   - {fileID: 2420111627402098335}
@@ -1647,6 +1663,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -1660,6 +1677,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &5530449420590398368
@@ -1924,6 +1942,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -1937,6 +1956,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 2156084444792162472}
   - {fileID: 8854784172884473441}
@@ -2201,6 +2221,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -2214,6 +2235,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &7174379957588540675
@@ -2476,6 +2498,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -2489,6 +2512,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &7209161570922567999
@@ -2751,6 +2775,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -2764,6 +2789,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &7892687087857863766
@@ -3028,6 +3054,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -3041,6 +3068,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 7581988967221698795}
   - {fileID: 8462764000385351106}
@@ -3305,6 +3333,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -3318,6 +3347,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &8526675024526887316
@@ -3582,6 +3612,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -3595,6 +3626,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 6829888207886858896}
   - {fileID: 6725952862840511561}
@@ -3859,6 +3891,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -3872,6 +3905,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots: []
   splotRepelForce: 100
 --- !u!1 &9156635061939805477
@@ -4136,6 +4170,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -4149,6 +4184,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
   childSplots:
   - {fileID: 6513827871543098872}
   - {fileID: 6497809449285840368}
