@@ -261,6 +261,8 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -274,6 +276,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 10
 --- !u!114 &7324984096438370378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 20
@@ -294,6 +298,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8025443713472894268, guid: de2e9887ef1601b45954a78b2f12f47c, type: 3}
   maxBullets: 10
   recoil: 1
+  recoilMultiplier: 1
+  bulletSpeedMultiplier: 1
+  bulletKnockbackMultiplier: 1
   firePoint: {fileID: 1896449255532745756}
 --- !u!1 &5423862139120101622
 GameObject:

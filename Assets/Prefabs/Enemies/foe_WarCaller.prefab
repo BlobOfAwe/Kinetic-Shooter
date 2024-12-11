@@ -261,6 +261,8 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 30
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -274,6 +276,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 30
 --- !u!114 &2657488395672243237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 15
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 100
