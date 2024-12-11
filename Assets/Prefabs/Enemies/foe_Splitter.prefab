@@ -260,9 +260,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-
   isInvincible: 0
-
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -278,7 +276,8 @@ MonoBehaviour:
   isBoss: 0
   score: 0
   childSplots: []
-  splotRepelForce: 100
+  splotRepelForce: 0
+  iSecondsAfterSplit: 1.5
 --- !u!1 &574769013154786359
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,9 +538,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-
   isInvincible: 0
-
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -557,7 +554,8 @@ MonoBehaviour:
   isBoss: 0
   score: 0
   childSplots: []
-  splotRepelForce: 100
+  splotRepelForce: 0
+  iSecondsAfterSplit: 1.5
 --- !u!1 &863582455569772561
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +819,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
-  spawnCost: 30
+  spawnCost: 20
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -839,6 +837,7 @@ MonoBehaviour:
   - {fileID: 6259057669362176755}
   - {fileID: 7538930451151872605}
   splotRepelForce: 100
+  iSecondsAfterSplit: 0.5
 --- !u!1 &4112392926816349324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,9 +1100,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-
   isInvincible: 0
-
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -1118,10 +1115,9 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
-  childSplots:
-  - {fileID: 3244894281966807365}
-  - {fileID: 1841696412842891636}
-  splotRepelForce: 100
+  childSplots: []
+  splotRepelForce: 0
+  iSecondsAfterSplit: 1.5
 --- !u!1 &4402616220886617411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1399,7 @@ MonoBehaviour:
   - {fileID: 8441521243172747671}
   - {fileID: 2420111627402098335}
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &5444929357922348667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,6 +1677,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &5530449420590398368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1959,7 @@ MonoBehaviour:
   - {fileID: 2156084444792162472}
   - {fileID: 8854784172884473441}
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &5642555926493039506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2237,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &7174379957588540675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,6 +2515,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &7209161570922567999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +2793,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &7892687087857863766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3073,6 +3075,7 @@ MonoBehaviour:
   - {fileID: 7581988967221698795}
   - {fileID: 8462764000385351106}
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &8121888792089555804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3353,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &8526675024526887316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,6 +3635,7 @@ MonoBehaviour:
   - {fileID: 6829888207886858896}
   - {fileID: 6725952862840511561}
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &9125049897477331767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,6 +3913,7 @@ MonoBehaviour:
   score: 0
   childSplots: []
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
 --- !u!1 &9156635061939805477
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,3 +4195,4 @@ MonoBehaviour:
   - {fileID: 6513827871543098872}
   - {fileID: 6497809449285840368}
   splotRepelForce: 100
+  iSecondsAfterSplit: 1.5
