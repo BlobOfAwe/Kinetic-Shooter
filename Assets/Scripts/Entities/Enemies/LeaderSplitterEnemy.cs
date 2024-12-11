@@ -6,16 +6,18 @@ public class LeaderSplitterEnemy : Enemy
 {
     [SerializeField] private LeaderSplitterEnemy[] childSplots;
     [SerializeField] private float splotRepelForce; // How much are the splots repelled from each other after spawning
+    [SerializeField] private float iSecondsAfterSplit;
 
     new private void Start()
     {
         base.Start();
 
-        if (childSplots != null)
+        LeaderSplitterEnemy[] children = GetComponentsInChildren<LeaderSplitterEnemy>();
+        foreach (var child in children) 
         {
-            foreach (var splot in childSplots)
+            if (child != this)
             {
-                splot.gameObject.SetActive(false);
+                child.gameObject.SetActive(false);
             }
         }
     }
@@ -27,6 +29,8 @@ public class LeaderSplitterEnemy : Enemy
             {
                 splot.transform.parent = null;
                 splot.gameObject.SetActive(true);
+                
+                ApplyBuff(splot);
 
                 Vector2 randomDirection = new Vector2(Random.Range(0, 1), Random.Range(0, 1)).normalized;
                 splot.GetComponent<Rigidbody2D>().AddForce(randomDirection * splotRepelForce, ForceMode2D.Impulse);
@@ -70,4 +74,20 @@ public class LeaderSplitterEnemy : Enemy
             collision.gameObject.GetComponent<Entity>().Damage(totalAttack);
         }
     }
+
+    public void ApplyBuff(Enemy buffTarget)
+    {
+        Buff buffConstructor = ScriptableObject.CreateInstance<Buff>(); // Create a new buff object
+
+        buffConstructor.buffType = Buff.buffCategory.DEFENSE_BUFF;
+
+        buffConstructor.value = 999999;
+        buffConstructor.modification = Buff.modificationType.Additive;
+
+        buffConstructor.duration = iSecondsAfterSplit;
+
+        buffTarget.ApplyBuff(buffConstructor);
+        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
+    }
+
 }

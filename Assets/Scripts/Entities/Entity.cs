@@ -206,7 +206,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void UseAbility(Ability ability)
     {
-        if (ability.available)
+        if (ability.available && !GameManager.paused)
         {
             ability.OnActivate();
         }
