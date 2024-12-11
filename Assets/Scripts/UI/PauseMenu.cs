@@ -10,7 +10,6 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject settingsMenu;
-    private bool isPaused = false;
 
     // Audio
     [SerializeField] private string parameterNamePause;
@@ -20,7 +19,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (GameManager.paused)
             {
                 ResumeGame();
             }
@@ -36,7 +35,7 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        GameManager.paused = false;
     }
     void PauseGame()
     {
@@ -44,7 +43,7 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
+        GameManager.paused = true;
 
     }
     public void OpenSettingsMenu()

@@ -51,6 +51,9 @@ public abstract class Entity : MonoBehaviour
 
     [SerializeField] private StatsDisplay statsDisplay;
 
+    [SerializeField]
+    protected bool isInvincible = false;
+
 
     protected void Awake()
     {
@@ -69,7 +72,10 @@ public abstract class Entity : MonoBehaviour
     {
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
-        health -= amount * (100/(100+totalDefense)); 
+        if (!isInvincible)
+        {
+            health -= amount * (100 / (100 + totalDefense));
+        }
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
         if (health <= 0f)
@@ -200,7 +206,7 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void UseAbility(Ability ability)
     {
-        if (ability.available)
+        if (ability.available && !GameManager.paused)
         {
             ability.OnActivate();
         }

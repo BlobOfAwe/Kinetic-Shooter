@@ -262,7 +262,8 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  spawnCost: 30
+  isInvincible: 0
+  spawnCost: 20
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -270,11 +271,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   sightRange: 20
-  stayDistance: 16
-  chaseDistance: 0
+  stayDistance: 5
+  chaseDistance: 7
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 0
 --- !u!114 &2657488395672243237
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -446,13 +446,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  addCreditsPerSecond: 1
-  maxSpawnTimeInterval: 20
+  addCreditsPerSecond: 2
+  maxSpawnTimeInterval: 10
   enemyPrefabs:
   - {fileID: 3305726313623563983, guid: 6fcfec6ca129d9341ab66df41b08ba72, type: 3}
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
   - {fileID: 8768425740899451525, guid: 811e39f3e64c005449abec8ed4e6f72a, type: 3}
+  - {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+  - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
   leaderPrefabs:
   - {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
   - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
@@ -460,7 +462,7 @@ MonoBehaviour:
   credits: 10
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
-  maxEnemiesPerSpawn: 4
+  maxEnemiesPerSpawn: 6
   spawnRange: 10.5
   spawnPosition: {x: 0, y: 0}
   player: {fileID: 0}
@@ -687,7 +689,7 @@ MonoBehaviour:
   bossCamSize: 10
   timeToFullZoomOut: 3
   vCam: {fileID: 0}
-  nextLevelScene: Sprint3_Build
+  nextLevelScene: WINScene
   levelIsFinished: 0
 --- !u!114 &638390376
 MonoBehaviour:
@@ -44930,6 +44932,63 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1001 &1575928840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830716537222708844, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8992352216531085834, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: m_Name
+      value: ScoreManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
 --- !u!1 &1608689525
 GameObject:
   m_ObjectHideFlags: 0
@@ -45070,7 +45129,6 @@ MonoBehaviour:
     - {fileID: 1635763136}
     - {fileID: 1489882161}
   chunks:
-  - {fileID: 5263458874981382081, guid: 2d5dbebd40a7a6c42bce6d6baae32235, type: 3}
   - {fileID: 5263458874981382081, guid: 71495adc50bbbe4408b525f0e3bde59c, type: 3}
   - {fileID: 5263458874981382081, guid: 9f4f0abd51faf054f9dad94824f9cbef, type: 3}
   - {fileID: 5263458874981382081, guid: d9ac740ece8141742918ee600817e305, type: 3}
@@ -45396,6 +45454,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1616450769}
   - {fileID: 287445713}
+  - {fileID: 1575928840}
   - {fileID: 64269812}
   - {fileID: 638390379}
   - {fileID: 1901418927}

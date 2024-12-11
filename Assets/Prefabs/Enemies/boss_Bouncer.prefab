@@ -267,6 +267,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -280,6 +281,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 1
+  score: 0
   bossAnimator: {fileID: 4313039758088035429}
 --- !u!114 &3490139462273597173
 MonoBehaviour:
@@ -330,11 +332,12 @@ MonoBehaviour:
   range: 0
   damageModifier: 0
   enemies:
-  - {fileID: 863582455569772561, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
-  - {fileID: 863582455569772561, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
+  - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
+  - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
   amount: 7
   bossSpawnAnimator: {fileID: 536302097104265161}
   spawnPoint: {fileID: 8589704739381277583}
+  localSpawnCredits: 25
 --- !u!114 &8692585260050756621
 MonoBehaviour:
   m_ObjectHideFlags: 0

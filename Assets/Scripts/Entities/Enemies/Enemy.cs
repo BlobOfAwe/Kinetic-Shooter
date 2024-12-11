@@ -18,6 +18,7 @@ public abstract class Enemy : Entity
     public Seeker seeker;
     public AIPath aiPath;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
+    private ScoreManager scoreManager; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
@@ -39,12 +40,15 @@ public abstract class Enemy : Entity
     [Header("Other")]
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
+    [SerializeField]
+    private int score = 0; // Added by Nathaniel Klassen
 
     protected void Start()
     {
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
+        scoreManager = FindObjectOfType<ScoreManager> ();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -62,6 +66,10 @@ public abstract class Enemy : Entity
     public override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
+        if (scoreManager != null)
+        {
+            scoreManager.AddPoints(score);
+        }
         // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
         if (!isBoss)
         {
