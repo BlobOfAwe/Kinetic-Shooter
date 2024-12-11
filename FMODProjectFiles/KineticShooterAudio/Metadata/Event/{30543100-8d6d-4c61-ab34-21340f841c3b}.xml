@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{2c0ed0f5-3d9f-44ea-a8db-b57fcb99b94a}">
 		<relationship name="sounds">
-			<destination>{9ea23e43-b5e1-4f56-8e0c-61cdd8780406}</destination>
+			<destination>{39a13c57-966d-44a7-8a4b-a68724fd3f1a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{440b2c67-3a8c-4950-9856-9c6d9dd80f6a}">
@@ -99,25 +99,37 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{80f42d72-8ea6-46d8-8a0b-ba304aee9142}" />
-	<object class="SingleSound" id="{9ea23e43-b5e1-4f56-8e0c-61cdd8780406}">
+	<object class="SingleSound" id="{39a13c57-966d-44a7-8a4b-a68724fd3f1a}">
 		<property name="volume">
-			<value>-12</value>
+			<value>-3.5</value>
 		</property>
 		<relationship name="modulators">
-			<destination>{09d84875-a438-46c3-8901-f535908be625}</destination>
+			<destination>{a3d5a0aa-2159-4fe9-941f-1b9bccd90256}</destination>
+			<destination>{353afccd-58f1-42a1-8891-4472bb13fd7d}</destination>
 		</relationship>
 		<relationship name="audioFile">
-			<destination>{244fae74-8af9-40d7-bbe4-62fe810efcac}</destination>
+			<destination>{e12aedf4-1e9e-44d5-b9fe-a3463de476e6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{cb5e68a0-9fbd-49da-8256-64afb9e56890}" />
 	<object class="MixerBusFader" id="{cf110106-bc43-4e7c-884b-8e49f152f06d}" />
-	<object class="RandomizerModulator" id="{09d84875-a438-46c3-8901-f535908be625}">
+	<object class="RandomizerModulator" id="{a3d5a0aa-2159-4fe9-941f-1b9bccd90256}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>10</value>
+			<value>7.5</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{353afccd-58f1-42a1-8891-4472bb13fd7d}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="attackTime">
+			<value>4230.77002</value>
+		</property>
+		<property name="peakValue">
+			<value>35.5555573</value>
 		</property>
 	</object>
 </objects>
