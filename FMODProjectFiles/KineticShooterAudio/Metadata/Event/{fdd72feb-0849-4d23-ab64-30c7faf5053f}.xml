@@ -81,9 +81,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{2e54fe2e-7653-4f4f-ba25-94bde3cab6d8}">
-		<property name="volume">
-			<value>10</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{52300ca6-01f5-412e-ba7c-8bf0417540ff}</destination>
 		</relationship>
@@ -130,6 +127,9 @@
 		<property name="timelockedOffset">
 			<value>0.5</value>
 		</property>
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="fadeInCurve">
 			<destination>{3bb56da5-94c2-421d-a062-55e45aeffbb6}</destination>
 		</relationship>
@@ -138,9 +138,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{9807fb42-03ad-42a4-b3cb-e096417373e1}">
-		<property name="volume">
-			<value>-10</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -211,8 +208,7 @@
 	<object class="MixerBusEffectChain" id="{62d59e89-71bd-4c74-938f-7fef35121f93}">
 		<relationship name="effects">
 			<destination>{3472456b-8c67-4b0f-a7cf-7e37b9cf7cba}</destination>
-			<destination>{090a7d1f-8609-4677-b943-ba83e1924085}</destination>
-			<destination>{a1fb62bc-dd88-4541-bbb9-be1b2b80623d}</destination>
+			<destination>{04501ab6-cdfe-46c0-bae9-9093281f4260}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{04cf90b1-b942-4b6a-a2d4-be8c1a9b6084}" />
@@ -283,14 +279,18 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{3472456b-8c67-4b0f-a7cf-7e37b9cf7cba}" />
-	<object class="ThreeEQEffect" id="{090a7d1f-8609-4677-b943-ba83e1924085}">
-		<property name="lowGain">
-			<value>-26</value>
+	<object class="MultibandEqEffect" id="{04501ab6-cdfe-46c0-bae9-9093281f4260}">
+		<property name="filterTypeA">
+			<value>8</value>
 		</property>
-	</object>
-	<object class="SFXReverbEffect" id="{a1fb62bc-dd88-4541-bbb9-be1b2b80623d}">
-		<property name="wetLevel">
-			<value>-17.5</value>
+		<property name="frequencyA">
+			<value>649.722717</value>
+		</property>
+		<property name="qualityA">
+			<value>0.7961725</value>
+		</property>
+		<property name="gainA">
+			<value>-12.931036</value>
 		</property>
 	</object>
 </objects>

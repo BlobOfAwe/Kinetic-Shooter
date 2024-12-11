@@ -58,15 +58,25 @@ public class EnemyCounter : MonoBehaviour
             parameterValueIntensity = 2;
             AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
         }
-        if (remainingEnemies == 12)
+        else if (remainingEnemies == 13)
+        {
+            parameterValueIntensity = 3;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        }
+        else if (remainingEnemies == 11)
         {
             parameterValueIntensity = 4;
             AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        }
+        else if (remainingEnemies == 10)
+        {
             parameterValueStage = 1;
             AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
         }
-        if (remainingEnemies == 5)
+        else if (remainingEnemies == 6)
         {
+            parameterValueStage = 1;
+            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
             parameterValueIntensity = 5;
             AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
         }
@@ -98,6 +108,8 @@ public class EnemyCounter : MonoBehaviour
             AudioManager.instance.PlayOneShot(FMODEvents.instance.bossEnemyAppear, this.transform.position);
             parameterValueStage = 2;
             AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+            parameterValueIntensity = 5;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
 
         }
     }

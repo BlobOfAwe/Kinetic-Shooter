@@ -33,6 +33,8 @@ public class SelfDestruct : Ability
         particles.transform.parent = null;
         particles.gameObject.SetActive(true);
         particles.Play();
+        // explosion audio
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.grenadeExplosionAbility, this.transform.position);
         gameObject.SetActive(false);
         yield return new WaitForSeconds(3);
         Destroy(particles.gameObject);
