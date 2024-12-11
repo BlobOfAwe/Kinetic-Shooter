@@ -65,6 +65,8 @@ public class PlayerBehaviour : Entity
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
+    private float audioTimer = 0.5f;
+
     //ending parameter
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
@@ -97,6 +99,14 @@ public class PlayerBehaviour : Entity
             UseAbility(secondary);
         }
 
+
+        // audio timer
+        if (audioTimer > 0)
+        {
+            //Subtract elapsed time every frame
+            audioTimer -= Time.deltaTime;
+        }
+
         if (Input.GetKeyDown(KeyCode.Slash))
         {
             if (isInvincible)
@@ -107,6 +117,7 @@ public class PlayerBehaviour : Entity
                 isInvincible = true;
             }
             Debug.Log("Invincibility = " + isInvincible);
+
         }
     }
 
@@ -177,7 +188,7 @@ public class PlayerBehaviour : Entity
         //stops hover sound
         if (context.canceled)
         {
-            playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            playerMovementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 
@@ -198,6 +209,12 @@ public class PlayerBehaviour : Entity
     public override void Damage(float amount)
     {
         base.Damage(amount);
+        hpBar.TakeDamage(amount);
+        if (audioTimer <= 0)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
+            audioTimer = 0.5f;
+        }
         if (!isInvincible)
         {
             hpBar.TakeDamage(amount);
@@ -238,7 +255,7 @@ public class PlayerBehaviour : Entity
                 {
                     playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, this.transform.position);
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
                 if (context.canceled)
                 {

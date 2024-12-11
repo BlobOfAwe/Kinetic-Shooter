@@ -44,7 +44,7 @@ public class StandardPrimaryFire : Ability
     {
         StartCoroutine(BeginCooldown());
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
