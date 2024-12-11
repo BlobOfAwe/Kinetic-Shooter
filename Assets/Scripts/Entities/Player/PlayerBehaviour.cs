@@ -96,6 +96,18 @@ public class PlayerBehaviour : Entity
         {
             UseAbility(secondary);
         }
+
+        if (Input.GetKey(KeyCode.Slash))
+        {
+            if (isInvincible)
+            {
+                isInvincible = false;
+            } else
+            {
+                isInvincible = true;
+            }
+            Debug.Log("Invincibility = " + isInvincible);
+        }
     }
 
     private void FixedUpdate()
@@ -155,7 +167,10 @@ public class PlayerBehaviour : Entity
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        hpBar.TakeDamage(amount);
+        if (!isInvincible)
+        {
+            hpBar.TakeDamage(amount);
+        }
     }
 
     public override void Heal(float amount)
