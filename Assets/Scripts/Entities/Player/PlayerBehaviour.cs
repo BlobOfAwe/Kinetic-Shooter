@@ -199,10 +199,12 @@ public class PlayerBehaviour : Entity
         {
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
+            canMoveManually = false;
         }
         else
         {
             rb.isKinematic = false;
+            canMoveManually = true;
         }
     }
 
