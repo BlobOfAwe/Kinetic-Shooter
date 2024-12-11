@@ -57,7 +57,7 @@ public class GenericBuffDebuff : Item
         
         buffConstructor.duration = duration;
         buffTarget.ApplyBuff(buffConstructor);
-
+        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
         // Apply the buff to the entity
         StartCoroutine(ActiveBuff(duration));
     }
