@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c78cde61961e3946a847a908525eb8d, type: 3}
+  m_Name: BuffIconData
+  m_EditorClassIdentifier: 
+  buffIcons:
+  - buffType: 0
+    icons:
+    - {fileID: -880324423, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: -298005053, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: -949234254, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: -146858619, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: 1160623762, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: -2126458901, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    - {fileID: -1783374839, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+  - buffType: 1
+    icons:
+    - {fileID: -1009278439, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: -903128434, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: 213278168, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: 507192887, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: -76365448, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: 582785054, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    - {fileID: 355514284, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+  - buffType: 2
+    icons:
+    - {fileID: -1645725202, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: 2022620332, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: 1071080582, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: 1235494891, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: 2024579778, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: -983114927, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    - {fileID: -634640314, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+  - buffType: 3
+    icons:
+    - {fileID: -512423421, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -1540244466, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -1249583651, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -1317448077, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -2019578662, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -2143951132, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    - {fileID: -1028143193, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+  - buffType: 4
+    icons:
+    - {fileID: 678943944, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: 1281860508, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: -1422932695, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: -1427896441, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: 86555887, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: -2126278893, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+    - {fileID: -34159833, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}

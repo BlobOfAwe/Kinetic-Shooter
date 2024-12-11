@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,6 +261,10 @@ MonoBehaviour:
   utility: {fileID: 0}
   additional: {fileID: 0}
   rb: {fileID: 0}
+  statsDisplay: {fileID: 0}
+
+  isInvincible: 0
+
   spawnCost: 7
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -274,6 +278,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  score: 7
 --- !u!114 &6319996032255132710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 3
+  cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 3
@@ -300,8 +306,6 @@ MonoBehaviour:
   endtime: 1
   latched: 0
   stunDuration: 5
-  latchCollider: {fileID: 4982110625554511726}
-  mainCollider: {fileID: 5656869920427263351}
 --- !u!1 &938633410468682402
 GameObject:
   m_ObjectHideFlags: 0
