@@ -6,6 +6,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private int score = 0;
 
+    [SerializeField]
+    private int menuSceneBuildIndex = 0;
+
     private static ScoreManager instance;
 
     private void Awake()
@@ -24,6 +27,10 @@ public class ScoreManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Scene Loaded");
+        if (scene.buildIndex == menuSceneBuildIndex)
+        {
+            ResetScore();
+        }
         if (FindObjectOfType<ScoreDisplay>() != null)
         {
             FindObjectOfType<ScoreDisplay>().UpdateScore(score);

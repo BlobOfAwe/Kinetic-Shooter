@@ -97,7 +97,7 @@ public class PlayerBehaviour : Entity
             UseAbility(secondary);
         }
 
-        if (Input.GetKey(KeyCode.Slash))
+        if (Input.GetKeyDown(KeyCode.Slash))
         {
             if (isInvincible)
             {

@@ -66,7 +66,10 @@ public abstract class Enemy : Entity
     public override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
-        scoreManager.AddPoints(score);
+        if (scoreManager != null)
+        {
+            scoreManager.AddPoints(score);
+        }
         // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
         if (!isBoss)
         {
