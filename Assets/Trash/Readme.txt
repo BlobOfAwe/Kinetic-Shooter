@@ -1,1 +1,0 @@
-This folder contains all of the assets that are planned to be deleted. They will be kept here for now and deleted later, just in case we realize that we need to recover anything.
