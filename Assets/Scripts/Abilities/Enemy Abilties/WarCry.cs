@@ -80,4 +80,9 @@ public class WarCry : Ability
             buffIndicators[i].GetComponent<WarCallBuff>().ApplyBuff(buffDuration);
         }
     }
+
+    public override void PurgeDependantObjects()
+    {
+        foreach (ParticleSystem indicator in buffIndicators) { Destroy(indicator.gameObject); }
+    }
 }

@@ -66,6 +66,13 @@ public abstract class Enemy : Entity
     public override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
+        
+        // Purge any dependant objects from the enemy's abilities
+        if (primary != null) { primary.PurgeDependantObjects(); }
+        if (secondary != null) { secondary.PurgeDependantObjects(); }
+        if (utility != null) { utility.PurgeDependantObjects(); }
+        if (additional != null) { additional.PurgeDependantObjects(); }
+
         if (scoreManager != null)
         {
             scoreManager.AddPoints(score);

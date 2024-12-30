@@ -65,6 +65,11 @@ public class TetherSwipe : Ability
         StartCoroutine(DisableAfterSeconds());
     }
 
+    public override void PurgeDependantObjects()
+    {
+        Destroy(hitbox.gameObject);
+    }
+
     IEnumerator DisableAfterSeconds()
     {
         yield return new WaitForSeconds(activeTime);

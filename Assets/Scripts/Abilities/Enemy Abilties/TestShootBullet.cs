@@ -65,4 +65,9 @@ public class TestShootBullet : Ability
         // Changed this from an error to a message because this can happen if the max number of bullets are fired at once, which isn't a problem. - NK
         Debug.Log("No instantiated bullets available to be fired from object: " + gameObject.name);
     }
+
+    public override void PurgeDependantObjects()
+    {
+        foreach (GameObject bullet in bullets) { Destroy(bullet); }
+    }
 }

@@ -57,6 +57,11 @@ public class BouncyTackle : Ability
         StartCoroutine(BeginLunge(transform.up));
     }
 
+    public override void PurgeDependantObjects()
+    {
+        foreach (GameObject obj in shockwaves) { Destroy(obj); }
+    }
+
     // If this entity collides with something while it is lunging, attempt to damage it
     private void OnCollisionEnter2D(Collision2D collision)
     {
