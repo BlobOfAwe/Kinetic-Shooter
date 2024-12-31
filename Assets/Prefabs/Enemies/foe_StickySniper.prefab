@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4939012426212569785}
   - component: {fileID: 7324984096438370378}
   m_Layer: 7
-  m_Name: foe_Sniper
+  m_Name: foe_StickySniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ad86115ede230ef48afb94807c9eb031, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.05724907, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25bca556f033c754aa8431b889a3e1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackStat: 10
+  attackStat: 15
   defenseStat: 0
   speedStat: 6
   hpStat: 50
@@ -295,7 +295,7 @@ MonoBehaviour:
   inUse: 0
   range: 20
   damageModifier: 1
-  bulletPrefab: {fileID: 8025443713472894268, guid: de2e9887ef1601b45954a78b2f12f47c, type: 3}
+  bulletPrefab: {fileID: 8025443713472894268, guid: bde78f617cad36b4b8b2578be48a0305, type: 3}
   maxBullets: 10
   recoil: 1
   recoilMultiplier: 1

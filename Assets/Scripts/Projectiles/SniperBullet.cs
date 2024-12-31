@@ -9,13 +9,6 @@ public class SniperBullet : Projectile
     private LayerMask shootableLayer;
     private float knockback;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        if (!shooter) { Debug.LogError("Bullet initialized without reference to shooter"); }
-    }
-
     // Update is called once per frame
     protected override void Update()
     {
@@ -40,7 +33,7 @@ public class SniperBullet : Projectile
 
             if (collision.gameObject.GetComponent<Entity>())
             {
-                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
+                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooterEntity.totalAttack);
             }
 
             gameObject.SetActive(false);
