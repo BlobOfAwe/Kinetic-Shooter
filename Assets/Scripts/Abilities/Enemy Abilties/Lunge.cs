@@ -24,7 +24,7 @@ public class Lunge : Ability
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<Enemy>().sprite;
         baseColor = sprite.color;
     }
 

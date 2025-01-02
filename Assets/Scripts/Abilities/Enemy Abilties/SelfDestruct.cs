@@ -7,7 +7,12 @@ public class SelfDestruct : Ability
     [SerializeField] private float countdown = 1f;
     [SerializeField] private float dropoff = 2f; // A value of 1 indicates linear drop-off. The greater the value, the slower the initial dropoff
     [SerializeField] private ParticleSystem particles;
+    private SpriteRenderer sprite;
 
+    private void Start()
+    {
+        sprite = GetComponent<Enemy>().sprite;
+    }
     public override void OnActivate()
     {
         available = false;
@@ -17,7 +22,7 @@ public class SelfDestruct : Ability
     private IEnumerator Explode()
     {
         thisEntity.totalSpeed *= 0.2f;
-        GetComponent<SpriteRenderer>().color = Color.red;
+        sprite.color = Color.red;
         yield return new WaitForSeconds(countdown);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, range);
         foreach (var obj in colliders)

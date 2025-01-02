@@ -45,7 +45,7 @@ public class BouncyTackle : Ability
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<Enemy>().sprite;
         baseColor = sprite.color;
         Physics2D.queriesStartInColliders = false; // Raycasts that start inside a collider should not register that collider
     }

@@ -29,7 +29,7 @@ public class LatchLunge : Ability
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<Enemy>().sprite;
         baseColor = sprite.color;
         thisEnemy = GetComponent<Enemy>();
     }

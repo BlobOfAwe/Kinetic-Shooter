@@ -17,6 +17,7 @@ public abstract class Enemy : Entity
     public GameObject target;
     public Seeker seeker;
     public AIPath aiPath;
+    public SpriteRenderer sprite;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
     private ScoreManager scoreManager; // Added by Nathaniel Klassen
 
@@ -42,6 +43,8 @@ public abstract class Enemy : Entity
     private bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
+    [SerializeField]
+    private bool rotateSpriteToFacePlayer = false;
 
     protected void Start()
     {
@@ -49,6 +52,7 @@ public abstract class Enemy : Entity
         aiPath = GetComponent<AIPath> ();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
         scoreManager = FindObjectOfType<ScoreManager> ();
+        if (sprite == null) { Debug.LogError(gameObject.name + " has no sprite assigned."); }
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -61,7 +65,12 @@ public abstract class Enemy : Entity
         
         DerivativeUpdate(); // Run derived class-specific logic
     }
-    
+
+    private void LateUpdate()
+    {
+        if (!rotateSpriteToFacePlayer) { sprite.transform.rotation = Quaternion.Euler(Vector2.zero); }
+    }
+
     // Required implementation of the abstract function Entity.Death()
     public override void Death()
     {
