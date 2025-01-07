@@ -5,7 +5,7 @@ public abstract class Upgrade : Item
 {
     protected PlayerBehaviour player;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         player = FindObjectOfType<PlayerBehaviour>();
     }

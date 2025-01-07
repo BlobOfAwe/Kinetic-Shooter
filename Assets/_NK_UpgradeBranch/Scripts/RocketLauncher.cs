@@ -17,7 +17,7 @@ public class RocketLauncher : Upgrade
 
     private StandardPrimaryFire shootAbility; // TestShootBullet will be replaced with whatever is the final basic bullet shooting ability.
 
-    protected new void Awake()
+    protected override void Awake()
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
