@@ -44,6 +44,8 @@ public class StandardPrimaryFire : Ability
     {
         StartCoroutine(BeginCooldown());
 
+        // Modified code to animate gun and play fire sound here and only here. - NK
+        player.playerGunAnimator.SetTrigger("isShooting");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position

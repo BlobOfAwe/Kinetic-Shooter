@@ -40,8 +40,7 @@ public class PlayerBehaviour : Entity
     private List<Upgrade> hpUpgrades;
     private List<Upgrade> recoverUpgrades;
 
-    [SerializeField]
-    private Animator playerGunAnimator;
+    public Animator playerGunAnimator; // Changed to public so that the animator can be referenced by abilities.
 
     [SerializeField]
     private float deathDelay = 0.5f;
@@ -255,9 +254,11 @@ public class PlayerBehaviour : Entity
             {
                 if (context.started)
                 {
-                    playerGunAnimator.SetTrigger("isShooting");
+                    // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
+
+                    //playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
+                    //AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
