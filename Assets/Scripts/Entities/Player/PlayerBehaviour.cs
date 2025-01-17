@@ -397,11 +397,6 @@ public class PlayerBehaviour : Entity
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
     }
-    public void WinPanel()
-    {
-        winPanel.SetActive(true);
-        GameManager.paused = true;
-    }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
     // private IEnumerator HandleDeath()
     // {

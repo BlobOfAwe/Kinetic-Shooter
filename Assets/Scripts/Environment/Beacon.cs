@@ -14,6 +14,7 @@ public class Beacon : MonoBehaviour
     [SerializeField] float timeToFullZoomOut = 1f;
     [SerializeField] private CinemachineVirtualCamera vCam;
     [SerializeField] private string nextLevelScene = "";
+    [SerializeField] private GameObject winPanel;
     [HideInInspector]
     public bool levelIsFinished = false; // temporary
 
@@ -58,7 +59,7 @@ public class Beacon : MonoBehaviour
         // temporary
         if (levelIsFinished)
         {
-            SceneManager.LoadScene(nextLevelScene);
+            WinGame();
         }
     }
 
@@ -71,5 +72,9 @@ public class Beacon : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         vCam.m_Lens.OrthographicSize = bossCamSize;
+    }
+    private void WinGame()
+    {
+        winPanel.SetActive(true);
     }
 }
