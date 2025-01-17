@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
-  addCreditsPerSecond: 2
+  addCreditsPerSecond: 1
   maxSpawnTimeInterval: 10
   enemyPrefabs:
   - {fileID: 3305726313623563983, guid: 6fcfec6ca129d9341ab66df41b08ba72, type: 3}
@@ -474,7 +474,8 @@ MonoBehaviour:
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
   maxEnemiesPerSpawn: 6
-  spawnRange: 10.5
+  maxSpawnDistance: 0
+  minSpawnDistance: 0
   spawnPosition: {x: 0, y: 0}
   player: {fileID: 0}
 --- !u!1 &295779775
