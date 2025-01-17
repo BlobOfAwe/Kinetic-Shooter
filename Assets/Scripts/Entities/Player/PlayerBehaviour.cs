@@ -31,7 +31,11 @@ public class PlayerBehaviour : Entity
     //Added by ZS to reference the animators and set the timer for the death delay
     [SerializeField]
     private Animator playerAnimator;
-
+    // Added by ZS to reference the GameOver Panels
+    [SerializeField]
+    private GameObject gameOverPanel;
+    [SerializeField]
+    private GameObject winPanel;
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -65,7 +69,6 @@ public class PlayerBehaviour : Entity
     private EventInstance playerMovementSound;
 
     private float audioTimer = 0.5f;
-
     //ending parameter
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
@@ -384,14 +387,26 @@ public class PlayerBehaviour : Entity
     public override void Death()
     {
         // playerAnimator.SetTrigger("isDead");
-        SceneManager.LoadScene(gameOverScene);
+        //SceneManager.LoadScene(gameOverScene);
+        GameOverPanel();
         //StartCoroutine(HandleDeath());
     }
+    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
+    public void GameOverPanel()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+    }
+    public void WinPanel()
+    {
+        winPanel.SetActive(true);
+        GameManager.paused = true;
+    }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-   // private IEnumerator HandleDeath()
-   // {
-   //     yield return new WaitForSeconds(deathDelay);
+    // private IEnumerator HandleDeath()
+    // {
+    //     yield return new WaitForSeconds(deathDelay);
 
-   // }
+    // }
 }
 
