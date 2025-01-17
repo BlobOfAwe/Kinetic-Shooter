@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public abstract class Entity : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private float attackStat;
-    [SerializeField] private float defenseStat;
-    [SerializeField] private float speedStat;
-    [SerializeField] private float hpStat;
-    [SerializeField] private float recoverStat;
+    [SerializeField] protected float attackStat;
+    [SerializeField] protected float defenseStat;
+    [SerializeField] protected float speedStat;
+    [SerializeField] protected float hpStat;
+    [SerializeField] protected float recoverStat;
 
     [Header("Buff/Debuff Lists")]
     public List<Buff> attackBuffs;
@@ -74,7 +74,9 @@ public abstract class Entity : MonoBehaviour
         // It prevents damage from ever reaching 0
         if (!isInvincible)
         {
-            health -= amount * (100 / (100 + totalDefense));
+            float totalDamage = amount * (100 / (100 + totalDefense));
+            health -= totalDamage;
+            Debug.Log(totalDamage);
         }
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);

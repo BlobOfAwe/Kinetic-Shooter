@@ -213,7 +213,7 @@ public class PlayerBehaviour : Entity
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        hpBar.TakeDamage(amount);
+        //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
@@ -221,14 +221,14 @@ public class PlayerBehaviour : Entity
         }
         if (!isInvincible)
         {
-            hpBar.TakeDamage(amount);
+            //hpBar.TakeDamage(amount);
         }
     }
 
     public override void Heal(float amount)
     {
         base.Heal(amount);
-        hpBar.HealHp(amount);
+        //hpBar.HealHp(amount);
     }
 
     public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)

@@ -2,6 +2,7 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -22,13 +23,21 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private bool lastSpawnSuccess;
     [SerializeField] private float maxEnemiesPerSpawn;
 
-    [SerializeField] private float spawnRange;
+    [SerializeField] private float maxSpawnDistance;
+    [SerializeField] private float minSpawnDistance;
 
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] private PlayerBehaviour player;
 
+    private int[] randFlip; // Used by UnityEngine.Random to choose either 1 or -1
     private void Start()
     {
+        randFlip = new int[2];
+        randFlip[0] = -1;
+        randFlip[1] = 1;
+
+        addCreditsPerSecond = 1 * (1 + GameManager.difficultyCoefficient);
+
         player = FindAnyObjectByType<PlayerBehaviour>();
     }
 
@@ -75,8 +84,9 @@ public class EnemySpawner : MonoBehaviour
     }
     public void Spawn(Enemy enemyPrefab)
     {
-        spawnPosition.x = player.transform.position.x + Random.Range(-spawnRange, spawnRange);
-        spawnPosition.y = player.transform.position.y + Random.Range(-spawnRange, spawnRange);
+        
+        spawnPosition.x = player.transform.position.x + (Random.Range(minSpawnDistance, maxSpawnDistance) * randFlip[Random.Range(0,randFlip.Length)]);
+        spawnPosition.y = player.transform.position.y + (Random.Range(minSpawnDistance, maxSpawnDistance) * randFlip[Random.Range(0, randFlip.Length)]);
 
         Enemy enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
