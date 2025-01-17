@@ -314,6 +314,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1616450769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229129826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8524497701854331890, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26c905ef936a7a4a92a5507e21886ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &267142003
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +596,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &477922863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2488333769044983209, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26c905ef936a7a4a92a5507e21886ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &493073860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -641,6 +663,14 @@ PrefabInstance:
       propertyPath: primary
       value: 
       objectReference: {fileID: 1996331367}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: winPanel
+      value: 
+      objectReference: {fileID: 553722597}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 1611796992}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -650,6 +680,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 157162509160279005, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
   m_PrefabInstance: {fileID: 493073860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &553722597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5541923507258668553, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &638390374
 GameObject:
@@ -980,6 +1015,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &940481001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3613932317971073159, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26c905ef936a7a4a92a5507e21886ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &964080673
 GameObject:
   m_ObjectHideFlags: 0
@@ -43544,6 +43590,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 229129826}
+    - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: winScoreDisplay
+      value: 
+      objectReference: {fileID: 477922863}
+    - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: deathScoreDisplay
+      value: 
+      objectReference: {fileID: 940481001}
     - target: {fileID: 8992352216531085834, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
       propertyPath: m_Name
       value: ScoreManager
@@ -43637,6 +43695,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1611796992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4870405423284291584, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616450766
 GameObject:
   m_ObjectHideFlags: 0
