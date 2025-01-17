@@ -704,7 +704,7 @@ MonoBehaviour:
   attackStat: 10
   defenseStat: 0
   speedStat: 10
-  hpStat: 100
+  hpStat: 200
   recoverStat: 1
   attackBuffs: []
   defenseBuffs: []
@@ -728,6 +728,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  isInvincible: 0
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
