@@ -91,6 +91,7 @@ public abstract class Enemy : Entity
         {
             scoreManager.AddPoints(score);
         }
+        else { Debug.LogError("No Score Manager in Scene"); }
         // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
         if (!isBoss)
         {

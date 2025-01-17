@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    private TextMeshProUGUI text;
-    private int currentScore = 0;
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private int currentScore = 0;
 
     private void Awake()
     {
@@ -27,5 +27,6 @@ public class ScoreDisplay : MonoBehaviour
         {
             text.text = "Score: " + currentScore;
         }
+        else { Debug.LogError("No score text detected"); }
     }
 }
