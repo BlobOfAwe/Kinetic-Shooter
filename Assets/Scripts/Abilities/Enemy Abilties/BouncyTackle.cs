@@ -45,7 +45,7 @@ public class BouncyTackle : Ability
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<Enemy>().sprite;
         baseColor = sprite.color;
         Physics2D.queriesStartInColliders = false; // Raycasts that start inside a collider should not register that collider
     }
@@ -55,6 +55,11 @@ public class BouncyTackle : Ability
         available = false;
         inUse = true;
         StartCoroutine(BeginLunge(transform.up));
+    }
+
+    public override void PurgeDependantObjects()
+    {
+        foreach (GameObject obj in shockwaves) { Destroy(obj); }
     }
 
     // If this entity collides with something while it is lunging, attempt to damage it

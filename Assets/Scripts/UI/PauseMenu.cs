@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void ResumeGame()
     {
+        CloseSettingsMenu(); // Added this so that the settings menu automatically closes in case it was open when the game is resumed. - NK
         parameterValuePause--;
         AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
         pauseMenu.SetActive(false);

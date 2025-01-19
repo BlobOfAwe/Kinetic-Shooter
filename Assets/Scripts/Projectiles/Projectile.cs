@@ -18,14 +18,28 @@ public abstract class Projectile : MonoBehaviour
     protected Rigidbody2D rb;
     [SerializeField]
     protected Transform firePoint;
+    protected new Collider2D collider;
 
     public GameObject shooter;
+    protected Entity shooterEntity;
 
     // Everything below added by Nathaniel Klassen
     public float despawnTime = 0f;
     [HideInInspector]
     public float timeRemaining;
 
+    protected virtual void Start()
+    {
+        collider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        if (!shooter) 
+        { Debug.LogError("Bullet initialized without reference to shooter"); }
+        else
+        {
+            shooterEntity = shooter.GetComponentInParent<Entity>();
+            if (!shooterEntity) { Debug.LogWarning("Bullet not associated with an Entity object shooter."); }
+        }
+    }
     protected virtual void Update()
     {
         // Despawns the projectile automatically after a set amount of time has passed without it hitting anything.

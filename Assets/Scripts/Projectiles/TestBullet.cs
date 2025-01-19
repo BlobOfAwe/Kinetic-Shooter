@@ -11,13 +11,6 @@ public class TestBullet : Projectile
     private LayerMask shootableLayer;
     private float knockback;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        if (!shooter) { Debug.LogError("Bullet initialized without reference to shooter"); }
-    }
-
     // Update is called once per frame
     protected override void Update()
     {
@@ -44,7 +37,7 @@ public class TestBullet : Projectile
             if (collision.gameObject.GetComponent<Entity>())
             {
                 hitDamageable = true;
-                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooter.GetComponentInParent<Entity>().totalAttack);
+                collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooterEntity.totalAttack);
             }
 
             else 

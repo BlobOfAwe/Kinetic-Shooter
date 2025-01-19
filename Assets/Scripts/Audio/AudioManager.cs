@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        if (sceneName == "Sprint3_Build")
+        if (sceneName == "MAIN")
         {
             InitiliazeAmbience(FMODEvents.instance.level1Ambience);
             InitiliazeMusic(FMODEvents.instance.level1Music);

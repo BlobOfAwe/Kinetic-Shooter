@@ -22,12 +22,20 @@ public abstract class Ability : MonoBehaviour
 
     public abstract void OnActivate();
 
+    // Called on an Entity's death to destroy any objects created by the ability
+    // Does nothing by default, and must be overriden by child class
+    public virtual void PurgeDependantObjects()
+    {
+        return;
+    }
+
     protected IEnumerator BeginCooldown()
     {
         available = false;
         yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         available = true;
     }
+
 
     protected void OnDrawGizmos()
     {

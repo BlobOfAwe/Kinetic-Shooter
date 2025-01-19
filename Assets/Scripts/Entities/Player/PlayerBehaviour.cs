@@ -31,7 +31,11 @@ public class PlayerBehaviour : Entity
     //Added by ZS to reference the animators and set the timer for the death delay
     [SerializeField]
     private Animator playerAnimator;
-
+    // Added by ZS to reference the GameOver Panels
+    [SerializeField]
+    private GameObject gameOverPanel;
+    [SerializeField]
+    private GameObject winPanel;
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -40,8 +44,7 @@ public class PlayerBehaviour : Entity
     private List<Upgrade> hpUpgrades;
     private List<Upgrade> recoverUpgrades;
 
-    [SerializeField]
-    private Animator playerGunAnimator;
+    public Animator playerGunAnimator; // Changed to public so that the animator can be referenced by abilities.
 
     [SerializeField]
     private float deathDelay = 0.5f;
@@ -66,7 +69,6 @@ public class PlayerBehaviour : Entity
     private EventInstance playerMovementSound;
 
     private float audioTimer = 0.5f;
-
     //ending parameter
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
@@ -211,7 +213,7 @@ public class PlayerBehaviour : Entity
     public override void Damage(float amount)
     {
         base.Damage(amount);
-        hpBar.TakeDamage(amount);
+        //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
@@ -219,14 +221,14 @@ public class PlayerBehaviour : Entity
         }
         if (!isInvincible)
         {
-            hpBar.TakeDamage(amount);
+            //hpBar.TakeDamage(amount);
         }
     }
 
     public override void Heal(float amount)
     {
         base.Heal(amount);
-        hpBar.HealHp(amount);
+        //hpBar.HealHp(amount);
     }
 
     public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
@@ -255,9 +257,11 @@ public class PlayerBehaviour : Entity
             {
                 if (context.started)
                 {
-                    playerGunAnimator.SetTrigger("isShooting");
+                    // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
+
+                    //playerGunAnimator.SetTrigger("isShooting");
                     isFiringPrimary = true;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
+                    //AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
                 if (context.canceled)
                 {
@@ -383,14 +387,21 @@ public class PlayerBehaviour : Entity
     public override void Death()
     {
         // playerAnimator.SetTrigger("isDead");
-        SceneManager.LoadScene(gameOverScene);
+        //SceneManager.LoadScene(gameOverScene);
+        GameOverPanel();
         //StartCoroutine(HandleDeath());
     }
+    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
+    public void GameOverPanel()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+    }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-   // private IEnumerator HandleDeath()
-   // {
-   //     yield return new WaitForSeconds(deathDelay);
+    // private IEnumerator HandleDeath()
+    // {
+    //     yield return new WaitForSeconds(deathDelay);
 
-   // }
+    // }
 }
 

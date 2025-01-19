@@ -30,7 +30,7 @@ public class LeaderSplitterEnemy : Enemy
                 splot.transform.parent = null;
                 splot.gameObject.SetActive(true);
                 
-                ApplyBuff(splot);
+                ApplyInvincibilityBuff(splot);
 
                 Vector2 randomDirection = new Vector2(Random.Range(0, 1), Random.Range(0, 1)).normalized;
                 splot.GetComponent<Rigidbody2D>().AddForce(randomDirection * splotRepelForce, ForceMode2D.Impulse);
@@ -75,7 +75,7 @@ public class LeaderSplitterEnemy : Enemy
         }
     }
 
-    public void ApplyBuff(Enemy buffTarget)
+    private void ApplyInvincibilityBuff(Enemy buffTarget)
     {
         Buff buffConstructor = ScriptableObject.CreateInstance<Buff>(); // Create a new buff object
 
@@ -87,7 +87,6 @@ public class LeaderSplitterEnemy : Enemy
         buffConstructor.duration = iSecondsAfterSplit;
 
         buffTarget.ApplyBuff(buffConstructor);
-        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
     }
 
 }
