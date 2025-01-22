@@ -7,7 +7,7 @@ public class StatsDisplay : MonoBehaviour
     private PlayerBehaviour playerBehaviour;
 
     [SerializeField]
-    private TestShootBullet shootAbility;
+    private StandardPrimaryFire shootAbility;
 
     private TextMeshProUGUI textMesh;
 
@@ -28,8 +28,8 @@ public class StatsDisplay : MonoBehaviour
                 "Max HP: " + (playerBehaviour.maxHealth / playerBehaviour.healthMultiplier) + " * " + playerBehaviour.healthMultiplier + " = " + playerBehaviour.maxHealth + "\n" +
                 "Recover: " + (playerBehaviour.totalRecovery / playerBehaviour.recoveryMultiplier) + " * " + playerBehaviour.recoveryMultiplier + " = " + playerBehaviour.totalRecovery + "\n\n" +
                 "Weapon:\n" +
-                "Cooldown: " + (shootAbility.cooldown / shootAbility.cooldownMultiplier) + " * " + shootAbility.cooldownMultiplier + " = " + shootAbility.cooldown + "\n" +
-                "Recoil: " + (shootAbility.recoil / shootAbility.recoilMultiplier) + " * " + shootAbility.recoilMultiplier + " = " + shootAbility.recoil + "\n" +
+                "Cooldown: *" + shootAbility.cooldownMultiplier + "\n" +
+                //"Recoil: " + (shootAbility.recoil / shootAbility.recoilMultiplier) + " * " + shootAbility.recoilMultiplier + " = " + shootAbility.recoil + "\n" +
                 "Bullet Speed: *" + shootAbility.bulletSpeedMultiplier + "\n" +
                 "Bullet Knockback: *" + shootAbility.bulletKnockbackMultiplier;
     }
