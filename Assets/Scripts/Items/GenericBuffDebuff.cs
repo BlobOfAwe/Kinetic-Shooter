@@ -57,8 +57,7 @@ public class GenericBuffDebuff : Item
         
         buffConstructor.duration = duration;
         buffTarget.ApplyBuff(buffConstructor);
-        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
-
+        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor, buff, null);//Added by Z.S
     }
 
 }
