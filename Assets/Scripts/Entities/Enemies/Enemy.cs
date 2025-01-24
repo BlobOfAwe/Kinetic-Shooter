@@ -71,7 +71,7 @@ public abstract class Enemy : Entity
         DerivativeUpdate(); // Run derived class-specific logic
     }
 
-    private void LateUpdate()
+    void LateUpdate()
     {
         if (!rotateSpriteToFacePlayer) { sprite.transform.rotation = Quaternion.Euler(Vector2.zero); }
     }
