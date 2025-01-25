@@ -35,7 +35,7 @@ public class RocketLauncher : Upgrade
         // AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketEquipAbility, this.transform.position);
     }
 
-    public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         Debug.Log(bullet.transform.position);
         Instantiate(explosion, bullet.transform.position, Quaternion.identity).GetComponent<RocketExplosion>().SetDamage(player.totalAttack * bullet.damageMultiplier * quantity * damagePercent);

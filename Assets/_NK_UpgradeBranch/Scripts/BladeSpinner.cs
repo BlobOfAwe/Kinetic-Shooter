@@ -13,7 +13,7 @@ public class BladeSpinner : Upgrade
         base.ApplyUpgrade(quantity);
     }
 
-    public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         if (Random.Range(0f, 1f) <= spawnChance * quantity)
         {

@@ -35,10 +35,10 @@ public class ImpalerRounds : Upgrade
         FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
-    public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         //Instantiate(piercingBullet, bullet.transform.position, Quaternion.identity);
-        if (hitDamageable)
+        if (target.GetComponent<Entity>() != null)
         {
             if (!bullet.isPiercing)
             {

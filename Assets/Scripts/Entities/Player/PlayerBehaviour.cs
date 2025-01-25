@@ -231,7 +231,7 @@ public class PlayerBehaviour : Entity
         //hpBar.HealHp(amount);
     }
 
-    public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
+    public void ProjectileDestroyEffect(TestBullet bullet, GameObject target)
     {
         if (inventoryManager != null)
         {
@@ -241,12 +241,12 @@ public class PlayerBehaviour : Entity
                 {
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
-                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, hitDamageable, slot.quantity);
+                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, target, slot.quantity);
                     }
                 }
             }
         }
-        if (hitDamageable)
+        if (target.GetComponent<Entity>() != null)
         {
             bullet.hits -= 1;
             Debug.Log("hits: " + bullet.hits);
