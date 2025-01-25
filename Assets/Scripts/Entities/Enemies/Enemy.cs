@@ -14,7 +14,7 @@ public abstract class Enemy : Entity
     public int spawnCost; // How many credits does it cost to spawn this enemy
 
     [Header("Component References")]
-    public GameObject target;
+    public Transform target;
     public Seeker seeker;
     public AIPath aiPath;
     public SpriteRenderer sprite;
@@ -112,8 +112,8 @@ public abstract class Enemy : Entity
     public void SearchForTarget()
     {
         Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, sightRange, hostile);
-        try { target = targetCollider.gameObject; }
-        catch { target = null; }
+        if (targetCollider != null) { target = targetCollider.transform; }
+        else { target = null; }
     }
 
     // If called each frame, checks SearchForTarget() every pursuitDuration seconds

@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 571558318740040795}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -735,6 +735,8 @@ MonoBehaviour:
   moveAcceleration: 10
   aimTransform: {fileID: 1625521789409699392}
   playerAnimator: {fileID: 2862676695539945837}
+  gameOverPanel: {fileID: 0}
+  winPanel: {fileID: 0}
   playerGunAnimator: {fileID: 381498854442721121}
   deathDelay: 1
   gameOverScene: 3
