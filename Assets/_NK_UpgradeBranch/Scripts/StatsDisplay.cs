@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 
+// This script is for debugging.
 public class StatsDisplay : MonoBehaviour
 {
     [SerializeField]
@@ -22,11 +23,11 @@ public class StatsDisplay : MonoBehaviour
         {
             textMesh = GetComponent<TextMeshProUGUI>();
         }
-        textMesh.text = "Attack: " + (playerBehaviour.totalAttack / playerBehaviour.attackMultiplier) + " * " + playerBehaviour.attackMultiplier + " = " + playerBehaviour.totalAttack + "\n" +
-                "Defense: " + (playerBehaviour.totalDefense / playerBehaviour.defenseMultiplier) + " * " + playerBehaviour.defenseMultiplier + " = " + playerBehaviour.totalDefense + "\n" +
-                "Speed: " + (playerBehaviour.totalSpeed / playerBehaviour.speedMultiplier) + " * " + playerBehaviour.speedMultiplier + " = " + playerBehaviour.totalSpeed + "\n" +
-                "Max HP: " + (playerBehaviour.maxHealth / playerBehaviour.healthMultiplier) + " * " + playerBehaviour.healthMultiplier + " = " + playerBehaviour.maxHealth + "\n" +
-                "Recover: " + (playerBehaviour.totalRecovery / playerBehaviour.recoveryMultiplier) + " * " + playerBehaviour.recoveryMultiplier + " = " + playerBehaviour.totalRecovery + "\n\n" +
+        textMesh.text = "Attack: " + playerBehaviour.totalAttack + " * " + playerBehaviour.attackMultiplier + " = " + (playerBehaviour.totalAttack * playerBehaviour.attackMultiplier) + "\n" +
+                "Defense: " + playerBehaviour.totalDefense + " * " + playerBehaviour.defenseMultiplier + " = " + (playerBehaviour.totalDefense * playerBehaviour.defenseMultiplier) + "\n" +
+                "Speed: " + playerBehaviour.totalSpeed + " * " + playerBehaviour.speedMultiplier + " = " + (playerBehaviour.totalSpeed * playerBehaviour.speedMultiplier) + "\n" +
+                "Max HP: " + playerBehaviour.maxHealth + " * " + playerBehaviour.healthMultiplier + " = " + (playerBehaviour.maxHealth * playerBehaviour.healthMultiplier) + "\n" +
+                "Recover: " + playerBehaviour.totalRecovery + " * " + playerBehaviour.recoveryMultiplier + " = " + (playerBehaviour.totalRecovery * playerBehaviour.recoveryMultiplier) + "\n\n" +
                 "Weapon:\n" +
                 "Cooldown: *" + shootAbility.cooldownMultiplier + "\n" +
                 //"Recoil: " + (shootAbility.recoil / shootAbility.recoilMultiplier) + " * " + shootAbility.recoilMultiplier + " = " + shootAbility.recoil + "\n" +
