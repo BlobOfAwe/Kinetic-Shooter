@@ -115,6 +115,7 @@ public abstract class Entity : MonoBehaviour
         {
             standardPrimaryFire.bulletKnockbackMultiplier = 1;
             standardPrimaryFire.bulletSpeedMultiplier = 1;
+            standardPrimaryFire.cooldownMultiplier = 1;
         }
 
         maxHealth = hpStat;

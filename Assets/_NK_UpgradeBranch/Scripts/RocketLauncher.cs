@@ -31,7 +31,7 @@ public class RocketLauncher : Upgrade
     {
         //player.attackMultiplier += damageIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
-        shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * Mathf.Pow(shootAbility.bulletSpeedMultiplier,quantity);
+        shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
         // AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketEquipAbility, this.transform.position);
     }
 

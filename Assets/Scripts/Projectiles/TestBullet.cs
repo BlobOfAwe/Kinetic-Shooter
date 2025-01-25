@@ -10,6 +10,10 @@ public class TestBullet : Projectile
     [SerializeField]
     private LayerMask shootableLayer;
     private float knockback;
+    [HideInInspector]
+    public bool isPiercing = false;
+    [HideInInspector]
+    public int hits = 1;
 
     // Update is called once per frame
     protected override void Update()
@@ -44,11 +48,14 @@ public class TestBullet : Projectile
             {
                 hitDamageable = false;
             }
-           
-            gameObject.SetActive(false);
-           
+
+            //gameObject.SetActive(false); // Why was this put here? - NK
+
             FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
-            transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+            if (hits <= 0)
+            {
+                transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+            }
             //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
         }
     }

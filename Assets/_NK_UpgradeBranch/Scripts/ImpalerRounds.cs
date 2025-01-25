@@ -20,6 +20,8 @@ public class ImpalerRounds : Upgrade
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
+
+        // Debug - remove later.
         FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
@@ -28,11 +30,22 @@ public class ImpalerRounds : Upgrade
         shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
+
+        // Debug - remove later.
         FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
-    /*public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
     {
-        Instantiate(piercingBullet, bullet.transform.position, Quaternion.identity);
-    }*/
+        //Instantiate(piercingBullet, bullet.transform.position, Quaternion.identity);
+        if (hitDamageable)
+        {
+            if (!bullet.isPiercing)
+            {
+                bullet.isPiercing = true;
+                bullet.hits = quantity + 1;
+                Debug.Log("hits: " + bullet.hits);
+            }
+        }
+    }
 }

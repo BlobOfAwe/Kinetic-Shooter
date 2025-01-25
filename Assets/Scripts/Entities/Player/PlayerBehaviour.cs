@@ -246,7 +246,24 @@ public class PlayerBehaviour : Entity
                 }
             }
         }
-        bullet.gameObject.SetActive(false);
+        if (hitDamageable)
+        {
+            bullet.hits -= 1;
+            Debug.Log("hits: " + bullet.hits);
+        } else
+        {
+            bullet.hits = 1;
+            Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+            bullet.isPiercing = false;
+            bullet.gameObject.SetActive(false);
+        }
+        if (bullet.hits <= 0)
+        {
+            bullet.hits = 1;
+            Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+            bullet.isPiercing = false;
+            bullet.gameObject.SetActive(false);
+        }
     }
 
     public void OnUsePrimary(InputAction.CallbackContext context)
