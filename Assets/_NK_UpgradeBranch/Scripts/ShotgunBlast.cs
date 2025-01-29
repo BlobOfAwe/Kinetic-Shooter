@@ -1,0 +1,56 @@
+using UnityEngine;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
+
+public class ShotgunBlast : Upgrade
+{
+    [SerializeField]
+    private float knockbackIncrease = 0.05f;
+
+    [SerializeField]
+    private float attackIncrease = -0.05f;
+
+    [SerializeField]
+    private float cooldownIncrease = 0.05f;
+
+    [SerializeField]
+    private float offsetAngle = 45f;
+
+    private StandardPrimaryFire shootAbility;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
+
+        // Debug - remove later.
+        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+    }
+
+    public override void ApplyUpgrade(int quantity)
+    {
+        shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
+        player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
+        shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
+
+        // Debug - remove later.
+        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+    }
+
+    public override void FireUpgradeEffect(int quantity)
+    {
+        foreach (GameObject bullet in shootAbility.bullets)
+        {
+            // Copied and slightly modified from StandardPrimaryFire.cs
+            if (!bullet.activeSelf)
+            {  // If the bullet is not active (being fired)
+                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position
+                bullet.transform.eulerAngles = new Vector3(0f, 0f, player.aimTransform.eulerAngles.z + offsetAngle); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
+                bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
+                bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
+                bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
+                bullet.SetActive(true); return;
+            } // Set the bullet to active and return
+        }
+        Debug.Log("Fired " + ((quantity * 2) + 1) + " projectiles.");
+    }
+}

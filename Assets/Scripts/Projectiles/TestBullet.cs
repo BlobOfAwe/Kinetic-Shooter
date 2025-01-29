@@ -49,12 +49,12 @@ public class TestBullet : Projectile
                 hitDamageable = false;
             }*/
 
-            //gameObject.SetActive(false); // Why was this put here? - NK
+            //gameObject.SetActive(false); // Why was this put here? As I say on line 59, this is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
 
             FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, collision.gameObject); // Instead of disabling the object, first apply effects based on upgrades. - NK
             if (hits <= 0)
             {
-                transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+                transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when disabled. - NK
             }
             //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
         }

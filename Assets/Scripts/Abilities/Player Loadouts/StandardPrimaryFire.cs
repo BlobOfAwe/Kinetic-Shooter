@@ -15,8 +15,8 @@ public class StandardPrimaryFire : Ability
     public float bulletSpeedMultiplier = 1f;
     public float bulletKnockbackMultiplier = 1f;
 
-
-    private GameObject[] bullets;
+    [HideInInspector]
+    public GameObject[] bullets; // Changed to public so it can be used with upgrade behaviour. - NK
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab

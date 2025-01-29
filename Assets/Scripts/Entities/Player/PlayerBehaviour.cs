@@ -94,6 +94,7 @@ public class PlayerBehaviour : Entity
 
         if (isFiringPrimary)
         {
+            ProjectileFireEffect();
             UseAbility(primary);
         }
         if (isFiringSecondary)
@@ -266,6 +267,26 @@ public class PlayerBehaviour : Entity
         }
     }
 
+    public void ProjectileFireEffect()
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        if (primary.available)
+                        {
+                            slot.item.GetComponent<Upgrade>().FireUpgradeEffect(slot.quantity);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public void OnUsePrimary(InputAction.CallbackContext context)
     {
         if (primary != null)
@@ -287,6 +308,7 @@ public class PlayerBehaviour : Entity
             }
             else if (context.performed)
             {
+                ProjectileFireEffect();
                 UseAbility(primary);
             }
         }
