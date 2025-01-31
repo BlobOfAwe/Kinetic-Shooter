@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class ShotgunBlast : Upgrade
 {
@@ -13,7 +12,7 @@ public class ShotgunBlast : Upgrade
     private float cooldownIncrease = 0.05f;
 
     [SerializeField]
-    private float offsetAngle = 45f;
+    private float offsetAngle = 10f;
 
     private StandardPrimaryFire shootAbility;
 
@@ -38,18 +37,29 @@ public class ShotgunBlast : Upgrade
 
     public override void FireUpgradeEffect(int quantity)
     {
-        foreach (GameObject bullet in shootAbility.bullets)
+        float offset = offsetAngle;
+        for (int i = 0; i < quantity; i++)
         {
-            // Copied and slightly modified from StandardPrimaryFire.cs
-            if (!bullet.activeSelf)
-            {  // If the bullet is not active (being fired)
-                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position
-                bullet.transform.eulerAngles = new Vector3(0f, 0f, player.aimTransform.eulerAngles.z + offsetAngle); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
-                bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
-                bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
-                bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
-                bullet.SetActive(true); return;
-            } // Set the bullet to active and return
+            for (int j = 0; j < 2; j++)
+            {
+                foreach (GameObject bullet in shootAbility.bullets)
+                {
+                    // Copied and slightly modified from StandardPrimaryFire.cs
+                    if (!bullet.activeSelf)
+                    {  // If the bullet is not active (being fired)
+                        bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position
+                        bullet.transform.eulerAngles = new Vector3(0f, 0f, player.aimTransform.eulerAngles.z + offset); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
+                        bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
+                        bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
+                        bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
+                        bullet.GetComponent<Projectile>().damageMultiplier = shootAbility.bulletDamageMultiplier;
+                        bullet.SetActive(true);
+                        offset = -offset;
+                        break;
+                    } // Set the bullet to active and break
+                }
+            }
+            offset += offsetAngle;
         }
         Debug.Log("Fired " + ((quantity * 2) + 1) + " projectiles.");
     }

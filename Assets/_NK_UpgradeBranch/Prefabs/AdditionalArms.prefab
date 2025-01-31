@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8064715954622458216
+--- !u!1 &5532717159229058636
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7264240332953919175}
-  - component: {fileID: 5913976591475634275}
-  - component: {fileID: 4761589462625812544}
-  - component: {fileID: 2416435513465108849}
-  - component: {fileID: 1497720435500054036}
-  - component: {fileID: 7243753830608397354}
+  - component: {fileID: 7891559980839753854}
+  - component: {fileID: 5234994330212472013}
+  - component: {fileID: 2533865248619418295}
+  - component: {fileID: 4542908328480839134}
+  - component: {fileID: 6760548642173424972}
+  - component: {fileID: 3291823988865590644}
   m_Layer: 0
-  m_Name: ShotgunBlast
+  m_Name: AdditionalArms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7264240332953919175
+--- !u!4 &7891559980839753854
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,13 +36,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5913976591475634275
+--- !u!212 &5234994330212472013
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 46f087714873ea145b2861c6f2efde7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edffc9698de83e74ab3a96f2a866ad83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4761589462625812544
+--- !u!58 &2533865248619418295
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -123,32 +123,34 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2416435513465108849
+--- !u!114 &4542908328480839134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa70ac3c5d18c7246afa9c9fc023a756, type: 3}
+  m_Script: {fileID: 11500000, guid: d8cffd4ed16de9241b9255b09eab001b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 46f087714873ea145b2861c6f2efde7e, type: 3}
-  title: Shotgun Blast
-  description: You now have bullets that spread!
+  sprite: {fileID: 21300000, guid: edffc9698de83e74ab3a96f2a866ad83, type: 3}
+  title: Additional Arms
+  description: Shoot with an extra gun!
+  healthIncrease: 0.05
   knockbackIncrease: 0.05
-  attackIncrease: -0.05
   cooldownIncrease: 0.05
-  offsetAngle: 10
---- !u!114 &1497720435500054036
+  defenseIncrease: -0.05
+  offsetAmount: 0.5
+  extraBulletDamageMultiplier: 0.5
+--- !u!114 &6760548642173424972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
@@ -173,13 +175,13 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &7243753830608397354
+--- !u!114 &3291823988865590644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064715954622458216}
+  m_GameObject: {fileID: 5532717159229058636}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}

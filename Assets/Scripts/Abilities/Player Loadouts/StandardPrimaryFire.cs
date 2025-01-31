@@ -11,9 +11,10 @@ public class StandardPrimaryFire : Ability
     [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
 
-    // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
+    // Added multipliers for bullet speed, knockback, and damage to be manipulated with upgrades. - NK
     public float bulletSpeedMultiplier = 1f;
     public float bulletKnockbackMultiplier = 1f;
+    public float bulletDamageMultiplier = 1f;
 
     [HideInInspector]
     public GameObject[] bullets; // Changed to public so it can be used with upgrade behaviour. - NK
@@ -59,6 +60,7 @@ public class StandardPrimaryFire : Ability
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
+                bullet.GetComponent<Projectile>().damageMultiplier = bulletDamageMultiplier;
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
         }
