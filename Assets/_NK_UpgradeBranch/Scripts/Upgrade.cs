@@ -26,7 +26,7 @@ public abstract class Upgrade : Item
         Debug.Log("The projectile was destroyed.");
     }
 
-    public virtual void FireUpgradeEffect(int quantity)
+    public virtual void FireUpgradeEffect(int quantity, TestBullet testBullet)
     {
         Debug.Log("The projectile was fired.");
     }

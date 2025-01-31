@@ -42,7 +42,7 @@ public class AdditionalArms : Upgrade
         FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
-    public override void FireUpgradeEffect(int quantity)
+    public override void FireUpgradeEffect(int quantity, TestBullet b)
     {
         float offset = offsetAmount;
         for (int i = 0; i < quantity; i++)

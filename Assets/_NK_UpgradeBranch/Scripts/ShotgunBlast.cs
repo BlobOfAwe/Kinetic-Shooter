@@ -35,7 +35,7 @@ public class ShotgunBlast : Upgrade
         FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
-    public override void FireUpgradeEffect(int quantity)
+    public override void FireUpgradeEffect(int quantity, TestBullet b)
     {
         float offset = offsetAngle;
         for (int i = 0; i < quantity; i++)

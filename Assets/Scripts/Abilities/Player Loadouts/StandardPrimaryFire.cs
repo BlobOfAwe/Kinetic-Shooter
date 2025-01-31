@@ -61,6 +61,7 @@ public class StandardPrimaryFire : Ability
                 bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.GetComponent<Projectile>().damageMultiplier = bulletDamageMultiplier;
+                player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
         }

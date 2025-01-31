@@ -55,6 +55,8 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float manualMoveModifier = 0.1f;
 
+    private TestBullet lastBullet;
+
     private bool isFiringPrimary = false;
 
     private bool isFiringSecondary = false;
@@ -94,7 +96,6 @@ public class PlayerBehaviour : Entity
 
         if (isFiringPrimary)
         {
-            ProjectileFireEffect();
             UseAbility(primary);
         }
         if (isFiringSecondary)
@@ -232,6 +233,11 @@ public class PlayerBehaviour : Entity
         //hpBar.HealHp(amount);
     }
 
+    public void SetLastBullet(TestBullet bullet)
+    {
+        lastBullet = bullet;
+    }
+
     public void ProjectileDestroyEffect(TestBullet bullet, GameObject target)
     {
         if (inventoryManager != null)
@@ -267,7 +273,7 @@ public class PlayerBehaviour : Entity
         }
     }
 
-    public void ProjectileFireEffect()
+    public void ProjectileFireEffect(TestBullet bullet)
     {
         if (inventoryManager != null)
         {
@@ -277,10 +283,7 @@ public class PlayerBehaviour : Entity
                 {
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
-                        if (primary.available)
-                        {
-                            slot.item.GetComponent<Upgrade>().FireUpgradeEffect(slot.quantity);
-                        }
+                        slot.item.GetComponent<Upgrade>().FireUpgradeEffect(slot.quantity, bullet);
                     }
                 }
             }
@@ -308,7 +311,6 @@ public class PlayerBehaviour : Entity
             }
             else if (context.performed)
             {
-                ProjectileFireEffect();
                 UseAbility(primary);
             }
         }
