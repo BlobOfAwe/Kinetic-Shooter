@@ -63,6 +63,7 @@ public abstract class Enemy : Entity
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
     new private void Update()
     {
+        base.Update();
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
 
@@ -71,7 +72,7 @@ public abstract class Enemy : Entity
         DerivativeUpdate(); // Run derived class-specific logic
     }
 
-    void LateUpdate()
+    protected void LateUpdate()
     {
         if (!rotateSpriteToFacePlayer) { sprite.transform.rotation = Quaternion.Euler(Vector2.zero); }
     }

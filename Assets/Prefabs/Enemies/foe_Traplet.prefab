@@ -226,7 +226,7 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
-  rotateSpriteToFacePlayer: 0
+  rotateSpriteToFacePlayer: 1
 --- !u!114 &3228195953123852849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,13 +299,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3430238739745844217}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029802316}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 553466555589206235}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &654932088007563945
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a91bc57f86b04f4292280704a4cdc04, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c37cf1591c9a6f14084180bb5ea9e037, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
