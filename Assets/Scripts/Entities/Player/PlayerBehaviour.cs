@@ -36,6 +36,7 @@ public class PlayerBehaviour : Entity
     private GameObject gameOverPanel;
     [SerializeField]
     private GameObject winPanel;
+
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -127,9 +128,9 @@ public class PlayerBehaviour : Entity
     private void FixedUpdate()
     {
         //Added by ZS, checks if the player is idle, and if they are, plays the idle animation.
-        Vector2 velocity = rb.velocity;
-        bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
-        playerAnimator.SetBool("isIdle", isIdle);
+       // Vector2 velocity = rb.velocity;
+       // bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
+       // playerAnimator.SetBool("isIdle", isIdle);
 
         if (canMoveManually)
         {
@@ -203,17 +204,20 @@ public class PlayerBehaviour : Entity
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             canMoveManually = false;
+            playerAnimator.SetBool("isHunkered", true);
         }
         else
         {
             rb.isKinematic = false;
             canMoveManually = true;
+            playerAnimator.SetBool("isHunkered", false);
         }
     }
 
     public override void Damage(float amount)
     {
         base.Damage(amount);
+        playerAnimator.SetTrigger("isHurt");
         //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
@@ -425,10 +429,15 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
-        // playerAnimator.SetTrigger("isDead");
+        playerAnimator.SetTrigger("isDead");
         //SceneManager.LoadScene(gameOverScene);
+        
+        StartCoroutine(HandleDeath());
+    }
+    private IEnumerator HandleDeath()
+    {
+        yield return new WaitForSeconds(deathDelay);
         GameOverPanel();
-        //StartCoroutine(HandleDeath());
     }
     //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
     public void GameOverPanel()
@@ -437,10 +446,6 @@ public class PlayerBehaviour : Entity
         gameOverPanel.SetActive(true);
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-    // private IEnumerator HandleDeath()
-    // {
-    //     yield return new WaitForSeconds(deathDelay);
 
-    // }
 }
 
