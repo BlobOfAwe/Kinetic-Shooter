@@ -49,6 +49,7 @@ public class TestBullet : Projectile
            
             FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
             transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+            transform.localScale = Vector2.one;
             //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
         }
     }
