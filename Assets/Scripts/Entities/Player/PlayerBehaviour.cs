@@ -66,6 +66,10 @@ public class PlayerBehaviour : Entity
 
     private Vector2 aimPos;
 
+    [SerializeField]
+    private SpriteRenderer playerSpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer gunSpriteRenderer;
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
@@ -97,6 +101,7 @@ public class PlayerBehaviour : Entity
         {
             ProjectileFireEffect();
             UseAbility(primary);
+            
         }
         if (isFiringSecondary)
         {
@@ -166,11 +171,26 @@ public class PlayerBehaviour : Entity
     {
         if (!GameManager.paused)
         {
-            cursorPos = context.ReadValue<Vector2>();
-            aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            Vector2 cursorPos = context.ReadValue<Vector2>();
+            Vector2 aimPos = mainCam.ScreenToWorldPoint(cursorPos);
 
-            aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
-            aimTransform.up = aimPos - (Vector2)transform.position;
+            //Created a local variable to refrence the transform position instead of typing it manually. Z.S
+            Vector2 direction = aimPos - (Vector2)transform.position;
+
+            aimTransform.localPosition = direction.normalized;
+            aimTransform.up = direction;
+
+            //Flips the players and the guns sprite to match the direction of the reticle
+            if (direction.x < 0)
+            {
+                playerSpriteRenderer.flipX = false;
+                gunSpriteRenderer.flipX = false;
+            }
+            else if (direction.x > 0)
+            {
+                playerSpriteRenderer.flipX = true;
+                gunSpriteRenderer.flipX = true;
+            }
         }
     }
 
@@ -300,8 +320,9 @@ public class PlayerBehaviour : Entity
                 if (context.started)
                 {
                     // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
-
-                    //playerGunAnimator.SetTrigger("isShooting");
+                    //Added the animator trigger back in because it was interacting weirdly with the ability activation causing the animation to play twice for a single instance of primary activation. Z.S
+                    playerGunAnimator.SetTrigger("isShooting");
+                    
                     isFiringPrimary = true;
                     //AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
