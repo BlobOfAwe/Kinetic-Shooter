@@ -10,6 +10,7 @@ public class StandardPrimaryFire : Ability
     private int maxBullets = 10;
     [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
+   
 
     // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
     public float bulletSpeedMultiplier = 1f;
@@ -47,13 +48,13 @@ public class StandardPrimaryFire : Ability
         // Modified code to animate gun and play fire sound here and only here. - NK
         player.playerGunAnimator.SetTrigger("isShooting");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
-
+        Vector2 bulletOffset = new Vector2(-0.3f, -0.2f);
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.position = (Vector2)player.aimTransform.position + bulletOffset; // Added an offset to make the bullets spawn closer to the gun - Z.S // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK

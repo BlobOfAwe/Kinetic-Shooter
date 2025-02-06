@@ -27,6 +27,11 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     public Transform aimTransform;
 
+    [SerializeField]
+    private float rotationOffset = 0f;
+    [SerializeField]
+    private Transform gunHolder; 
+
     private HPBarSystem hpBar;
     //Added by ZS to reference the animators and set the timer for the death delay
     [SerializeField]
@@ -166,7 +171,7 @@ public class PlayerBehaviour : Entity
     /// If the player is moving slower than the lower bound;
     /// Add to the velocity until they hit that lower bound;
     /// </summary>
-
+ 
     public void OnAim(InputAction.CallbackContext context)
     {
         if (!GameManager.paused)
@@ -174,22 +179,30 @@ public class PlayerBehaviour : Entity
             Vector2 cursorPos = context.ReadValue<Vector2>();
             Vector2 aimPos = mainCam.ScreenToWorldPoint(cursorPos);
 
-            //Created a local variable to refrence the transform position instead of typing it manually. Z.S
-            Vector2 direction = aimPos - (Vector2)transform.position;
+            // Created a local variable to reference the transform position instead of typing it manually. Z.S
+            Vector2 direction = aimPos - (Vector2)aimTransform.position;
 
-            aimTransform.localPosition = direction.normalized;
+            // aimTransform.localPosition = direction.normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             aimTransform.up = direction;
+            gunHolder.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
 
-            //Flips the players and the guns sprite to match the direction of the reticle
+            // Flips the player and gun sprite to make the direction of view
             if (direction.x < 0)
             {
                 playerSpriteRenderer.flipX = false;
-                gunSpriteRenderer.flipX = false;
+                gunSpriteRenderer.flipY = true;
+                gunSpriteRenderer.flipX = true;
+                //gunHolder.localPosition = new Vector2( 0.153f, -0.16f); 
+                aimTransform.localPosition = new Vector2(0.158f, 0.119f);
             }
             else if (direction.x > 0)
             {
                 playerSpriteRenderer.flipX = true;
                 gunSpriteRenderer.flipX = true;
+                gunSpriteRenderer.flipY = false;
+                //gunHolder.localPosition = new Vector2(-0.153f, -0.16f);
+                aimTransform.localPosition = new Vector2(-0.182f, 0.119f);
             }
         }
     }
