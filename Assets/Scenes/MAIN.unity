@@ -40321,6 +40321,14 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: parameterNameStage
+      value: stage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: parameterNameIntensity
+      value: intensity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: parameterValueIntensity
       value: 1
       objectReference: {fileID: 0}

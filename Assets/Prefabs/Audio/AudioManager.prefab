@@ -66,6 +66,10 @@ MonoBehaviour:
   parameterValueIntensity: 0
   parameterNameStage: level1_stage
   parameterValueStage: 0
+  parameterNamePause: 
+  parameterValuePause: 0
+  parameterNameEnding: 
+  parameterValueEnding: 0
 --- !u!1 &2240958918412470983
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,25 +151,25 @@ MonoBehaviour:
     Path: event:/Ambience/MainMenuAmbience
   <level1Music>k__BackingField:
     Guid:
-      Data1: 1919569749
-      Data2: 1167592672
-      Data3: -1066583411
-      Data4: 1813312096
-    Path: event:/Music/Level1Music
-  <level2Music>k__BackingField:
-    Guid:
       Data1: -1778707130
       Data2: 1184199216
       Data3: -1864536136
       Data4: -527590678
-    Path: event:/Music/Level2Music
+    Path: event:/Music/Industrial! Music
+  <level2Music>k__BackingField:
+    Guid:
+      Data1: 1919569749
+      Data2: 1167592672
+      Data3: -1066583411
+      Data4: 1813312096
+    Path: event:/Music/Lava! Music
   <level3Music>k__BackingField:
     Guid:
-      Data1: 1755817413
-      Data2: 1273211194
-      Data3: 795907989
-      Data4: -16685561
-    Path: event:/Music/Level3Music
+      Data1: 1919569749
+      Data2: 1167592672
+      Data3: -1066583411
+      Data4: 1813312096
+    Path: event:/Music/Lava! Music
   <cutsceneMusic>k__BackingField:
     Guid:
       Data1: 1911192739
@@ -210,17 +214,17 @@ MonoBehaviour:
     Path: event:/SFX/Player/Melee/Swoosh
   <basicMovement>k__BackingField:
     Guid:
-      Data1: 67294925
-      Data2: 1293585052
-      Data3: 544438457
-      Data4: 953258887
-    Path: event:/SFX/Player/Movement/BasicMovement
-  <fastFlying>k__BackingField:
-    Guid:
       Data1: -36229141
       Data2: 1294141513
       Data3: -953129813
       Data4: 1057355258
+    Path: event:/SFX/Player/Movement/BasicMovement
+  <fastFlying>k__BackingField:
+    Guid:
+      Data1: 67294925
+      Data2: 1293585052
+      Data3: 544438457
+      Data4: 953258887
     Path: event:/SFX/Player/Movement/FastFlying
   <damageRecieved>k__BackingField:
     Guid:
