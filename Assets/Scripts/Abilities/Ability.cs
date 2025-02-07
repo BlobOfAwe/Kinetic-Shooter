@@ -1,6 +1,7 @@
 // ## - JV
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,7 +30,7 @@ public abstract class Ability : MonoBehaviour
         return;
     }
 
-    protected IEnumerator BeginCooldown()
+    public IEnumerator BeginCooldown()
     {
         available = false;
         yield return new WaitForSeconds(cooldown * cooldownMultiplier);

@@ -162,14 +162,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1
-  speed: 0.2
+  speed: 1
   damageMultiplier: 0
   knockbackMultiplier: 5
   rb: {fileID: 0}
   firePoint: {fileID: 0}
   shooter: {fileID: 0}
-  despawnTime: 5
+  despawnTime: 7
   timeRemaining: 0
   shootableLayer:
     serializedVersion: 2
     m_Bits: 128
+  attractionForce: 200
+  radius: 5
+  dropoff: 2

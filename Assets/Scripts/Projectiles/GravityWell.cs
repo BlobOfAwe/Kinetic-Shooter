@@ -9,8 +9,9 @@ public class GravityWell : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
-    private float knockback;
+    [SerializeField] private float attractionForce;
     [SerializeField] private float radius;
+    [SerializeField] private float dropoff = 2f; // A value of 1 indicates linear drop-off. The greater the value, the slower the initial dropoff
     private Collider2D[] affectedColliders;
 
     // Update is called once per frame
@@ -26,13 +27,13 @@ public class GravityWell : Projectile
 
         foreach (Collider2D collider in affectedColliders)
         {
-            if (collider.gameObject.GetComponent<Enemy>() != null)
+            Enemy target = collider.gameObject.GetComponent<Enemy>();
+            if ( target != null)
             {
-                Entity target = collider.gameObject.GetComponent<PlayerBehaviour>();
-                Vector2 knockbackDir = (collider.transform.position - transform.position).normalized;
+                Vector2 knockbackDir = (transform.position - collider.transform.position).normalized;
                 Rigidbody2D targetRB = target.gameObject.GetComponent<Rigidbody2D>();
                 targetRB.velocity = Vector2.zero;
-                targetRB.AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
+                targetRB.AddForce(knockbackDir * attractionForce * (1 - (Mathf.Pow(Vector2.Distance(transform.position, target.transform.position) / radius, dropoff))), ForceMode2D.Force);
             }
         }
     }

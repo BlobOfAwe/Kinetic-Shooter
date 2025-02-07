@@ -659,26 +659,15 @@ PrefabInstance:
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: utility
       value: 
-      objectReference: {fileID: 1356101955}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: winPanel
-      value: 
-      objectReference: {fileID: 553722597}
+      objectReference: {fileID: 1356101967}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: secondary
       value: 
-      objectReference: {fileID: 1356101952}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: gameOverPanel
-      value: 
-      objectReference: {fileID: 1611796992}
+      objectReference: {fileID: 1356101966}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1356101951}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
 --- !u!4 &493073861 stripped
 Transform:
@@ -1179,7 +1168,7 @@ GameObject:
   - component: {fileID: 1064297877}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40333,11 +40322,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
   m_PrefabInstance: {fileID: 493073860}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1356101951
+--- !u!114 &1356101951 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+  m_PrefabInstance: {fileID: 493073860}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
@@ -40345,47 +40333,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5a6285e3eb68843bf26975608b5fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1.25
-  cooldownMultiplier: 1
-  available: 1
-  inUse: 0
-  range: 0
-  damageModifier: 1
-  bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 30
-  recoil: 1
-  bulletSpeedMultiplier: 1
-  bulletKnockbackMultiplier: 1
-  burstSpacing: 0.07
-  damageModOne: 0.5
-  recoilModOne: 1
-  scaleModOne: 1
-  damageModTwo: 1
-  recoilModTwo: 3
-  scaleModTwo: 1.5
-  damageModThree: 1.5
-  recoilModThree: 10
-  scaleModThree: 3
---- !u!114 &1356101952 stripped
+--- !u!114 &1356101966 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 571558318740040795, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8881820493473276149, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
   m_PrefabInstance: {fileID: 493073860}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 14e842e68052b054e84ea84dcebaf793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1356101955 stripped
+--- !u!114 &1356101967 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 821309631429538210, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1648308658611244154, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
   m_PrefabInstance: {fileID: 493073860}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685fd8d67ceb74d4783c785541000e85, type: 3}
+  m_Script: {fileID: 11500000, guid: b95b22f4e382c3c4da7fa5517794e785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1372423953
@@ -40495,7 +40462,7 @@ GameObject:
   - component: {fileID: 1438056807}
   m_Layer: 6
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43957,11 +43924,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1611796992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4870405423284291584, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-  m_PrefabInstance: {fileID: 1497419929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616450766
 GameObject:
   m_ObjectHideFlags: 0

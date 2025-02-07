@@ -405,10 +405,13 @@ GameObject:
   - component: {fileID: 925940763141688901}
   - component: {fileID: 8544861283654042662}
   - component: {fileID: -2479830224578350400}
-  - component: {fileID: 821309631429538210}
-  - component: {fileID: 2034691178650426096}
-  - component: {fileID: 2862676695539945837}
   - component: {fileID: 571558318740040795}
+  - component: {fileID: 821309631429538210}
+  - component: {fileID: 4128416706835469520}
+  - component: {fileID: 8881820493473276149}
+  - component: {fileID: 1648308658611244154}
+  - component: {fileID: 2862676695539945837}
+  - component: {fileID: 2034691178650426096}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -766,6 +769,29 @@ MonoBehaviour:
   recoil: 5
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
+--- !u!114 &571558318740040795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 15
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 2
+  knockback: 60
+  staggerTime: 0.2
+  sideReach: 2
+  activeTime: 0.5
+  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!114 &821309631429538210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -791,7 +817,7 @@ MonoBehaviour:
   explosionKnockback: 20
   dashForce: 60
   tempHitBox: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
---- !u!114 &2034691178650426096
+--- !u!114 &4128416706835469520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -800,13 +826,79 @@ MonoBehaviour:
   m_GameObject: {fileID: 5777279789927432716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a5a6285e3eb68843bf26975608b5fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -0.5
-  maxX: 0.5
-  minY: -0.5
-  maxY: 0.5
+  cooldown: 1.25
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 0
+  damageModifier: 1
+  bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
+  maxBullets: 30
+  recoil: 1
+  bulletSpeedMultiplier: 1
+  bulletKnockbackMultiplier: 1
+  burstSpacing: 0.07
+  damageModOne: 0.5
+  recoilModOne: 1
+  scaleModOne: 1
+  damageModTwo: 1
+  recoilModTwo: 3
+  scaleModTwo: 1.5
+  damageModThree: 1.5
+  recoilModThree: 10
+  scaleModThree: 3
+--- !u!114 &8881820493473276149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e842e68052b054e84ea84dcebaf793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 20
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 0
+  damageModifier: 1
+  bulletPrefab: {fileID: 8025443713472894268, guid: 8f273e4c6c6b5a44d8f6570244fea74a, type: 3}
+  maxBullets: 5
+  recoil: 1
+  bulletSpeedMultiplier: 1
+  bulletKnockbackMultiplier: 1
+--- !u!114 &1648308658611244154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95b22f4e382c3c4da7fa5517794e785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 25
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 3
+  duration: 10
+  canDamage:
+    serializedVersion: 2
+    m_Bits: 128
+  startup: 0
+  startupSpeed: 0
+  lungeForce: 600
+  endtime: 2.5
 --- !u!95 &2862676695539945837
 Animator:
   serializedVersion: 5
@@ -828,7 +920,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &571558318740040795
+--- !u!114 &2034691178650426096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -837,20 +929,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5777279789927432716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e32d6d5de2e6f7e47b50d01253a4c2d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 15
-  cooldownMultiplier: 1
-  available: 1
-  inUse: 0
-  range: 3
-  damageModifier: 2
-  knockback: 60
-  staggerTime: 0.2
-  sideReach: 2
-  activeTime: 0.5
-  tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  minX: -0.5
+  maxX: 0.5
+  minY: -0.5
+  maxY: 0.5
 --- !u!1 &5855219836532266464
 GameObject:
   m_ObjectHideFlags: 0

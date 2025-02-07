@@ -17,7 +17,7 @@ public class PlayerBehaviour : Entity
     private bool secondaryAutofire = true;
 
     [SerializeField]
-    private bool canMoveManually = false;
+    public bool canMoveManually = false;
 
     [SerializeField]
     private float moveAcceleration = 1f;
