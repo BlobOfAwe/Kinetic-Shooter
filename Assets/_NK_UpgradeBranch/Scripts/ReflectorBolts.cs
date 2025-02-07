@@ -17,6 +17,9 @@ public class ReflectorBolts : Upgrade
     [SerializeField]
     private GameObject reflectorPrefab;
 
+    [SerializeField]
+    private Vector2 reflectorOffset = Vector2.zero;
+
     private StandardPrimaryFire shootAbility;
 
     protected override void Awake()
@@ -40,20 +43,14 @@ public class ReflectorBolts : Upgrade
 
     public override void FireUpgradeEffect(int quantity, TestBullet bullet)
     {
-        Debug.Log("THIS TEXT SHOULD ALWAYS APPEAR WHEN FIRING AFTER OBTAINING REFLECTOR BOLTS!");
         if (Random.Range(0f, 1f) <= reflectorChance)
         {
-            Debug.Log("This bullet is a reflector.");
             if (bullet != null)
             {
-                Instantiate(reflectorPrefab, bullet.transform, false);
-            } else
-            {
-                Debug.LogWarning("No last fired bullet.");
+                GameObject reflector = Instantiate(reflectorPrefab, bullet.transform, false);
+                reflector.transform.Translate(reflectorOffset);
+                reflector.GetComponent<Reflector>().reflects = quantity;
             }
-        } else
-        {
-            Debug.Log("This bullet is not a reflector.");
         }
     }
 }

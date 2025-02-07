@@ -143,7 +143,7 @@ MonoBehaviour:
   damageIncrease: -0.05
   reflectorChance: 0.5
   reflectorPrefab: {fileID: 6132027303149644360, guid: 34c7ca0ab0dec9040a8c2971df62f3be, type: 3}
-  maxReflectors: 10
+  reflectorOffset: {x: 0, y: 0.15}
 --- !u!114 &823256529594154262
 MonoBehaviour:
   m_ObjectHideFlags: 0
