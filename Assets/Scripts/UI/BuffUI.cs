@@ -15,17 +15,20 @@ public class BuffUI : MonoBehaviour
     private Buff buff;
     public BuffIconData buffIconData;
     private int lastIconIndex = -1;
+    private GenericBuffDebuff.buffType currentBuffDebuff;
 
-    public void Initialize(Buff buff)
+
+    public void Initialize(Buff buff, GenericBuffDebuff.buffType buffDebuff)
     {
         this.buff = buff;
-        buffIcon.sprite = buffIconData.GetIcon(buff.buffType);
+        this.currentBuffDebuff = buffDebuff;
+        buffIcon.sprite = buffIconData.GetIcon(buff.buffType, buffDebuff);
         duration = buff.duration;
         remainingDuration = duration;
         UpdateUI();
     }
-    //Resets the buff's duration to a new value and updates the UI to show the change
-    public void ResetDuration(float newDuration)
+        //Resets the buff's duration to a new value and updates the UI to show the change
+        public void ResetDuration(float newDuration)
     {
         duration = newDuration;
         remainingDuration = duration;
@@ -63,11 +66,11 @@ public class BuffUI : MonoBehaviour
     {
         if (index >= 0 && index < 7)
         {
-            return buffIconData.GetIcon(buff.buffType, index);
+            return buffIconData.GetIcon(buff.buffType, currentBuffDebuff, index);
         }
         else
         {
-            return buffIconData.GetIcon(buff.buffType, 0);
+            return buffIconData.GetIcon(buff.buffType, currentBuffDebuff, 0);
         }
     }
 }

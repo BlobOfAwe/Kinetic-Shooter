@@ -9,11 +9,11 @@ public class BuffUIManager : MonoBehaviour
     public Transform buffUIContainer;
     private Dictionary<Buff, GameObject> activeBuffs = new Dictionary<Buff, GameObject>();
 
-    public void AddBuff(Buff buff)
+    public void AddBuff(Buff buff, GenericBuffDebuff.buffType buffDebuff, Sprite icon)
     {
-            GameObject buffUI = Instantiate(buffUIPrefab, buffUIContainer);
-            buffUI.GetComponent<BuffUI>().Initialize(buff);
-            activeBuffs.Add(buff, buffUI);
+        GameObject buffUI = Instantiate(buffUIPrefab, buffUIContainer);
+        buffUI.GetComponent<BuffUI>().Initialize(buff, buffDebuff);
+        activeBuffs.Add(buff, buffUI);
     }
     public void RemoveBuff(Buff buff)
     {

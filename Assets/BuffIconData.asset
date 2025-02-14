@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffIcons:
   - buffType: 0
+    buffDebuff: 0
     icons:
     - {fileID: -880324423, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
     - {fileID: -298005053, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
@@ -22,7 +23,21 @@ MonoBehaviour:
     - {fileID: 1160623762, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
     - {fileID: -2126458901, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
     - {fileID: -1783374839, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+  - buffType: 0
+    buffDebuff: 1
+    icons:
+    - {fileID: -468438744, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: 943932935, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: 724035254, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: -1129881224, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: 490834427, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: -30120734, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+    - {fileID: -1829021549, guid: 74771255f6aaba34a896603d48ba1f70, type: 3}
+  - buffType: 2
+    buffDebuff: 0
+    icons: []
   - buffType: 1
+    buffDebuff: 0
     icons:
     - {fileID: -1009278439, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
     - {fileID: -903128434, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
@@ -31,7 +46,18 @@ MonoBehaviour:
     - {fileID: -76365448, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
     - {fileID: 582785054, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
     - {fileID: 355514284, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+  - buffType: 1
+    buffDebuff: 1
+    icons:
+    - {fileID: -24077418, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: -209015531, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: 1466300506, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: 1337155422, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: -1287569979, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: 658615814, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
+    - {fileID: 536006796, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
   - buffType: 2
+    buffDebuff: 0
     icons:
     - {fileID: -1645725202, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
     - {fileID: 2022620332, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
@@ -40,7 +66,18 @@ MonoBehaviour:
     - {fileID: 2024579778, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
     - {fileID: -983114927, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
     - {fileID: -634640314, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+  - buffType: 2
+    buffDebuff: 1
+    icons:
+    - {fileID: 2104218740, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: 248586560, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: 193992614, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: -1923146111, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: -294336152, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: -1968950965, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
+    - {fileID: 815655531, guid: bfbc167a0d6a5244491ddfd9a306503b, type: 3}
   - buffType: 3
+    buffDebuff: 0
     icons:
     - {fileID: -512423421, guid: e110f411720fce349ba756b4625d7eae, type: 3}
     - {fileID: -1540244466, guid: e110f411720fce349ba756b4625d7eae, type: 3}
@@ -49,7 +86,18 @@ MonoBehaviour:
     - {fileID: -2019578662, guid: e110f411720fce349ba756b4625d7eae, type: 3}
     - {fileID: -2143951132, guid: e110f411720fce349ba756b4625d7eae, type: 3}
     - {fileID: -1028143193, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+  - buffType: 3
+    buffDebuff: 1
+    icons:
+    - {fileID: -331101271, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: -1695590275, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: 1591735568, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: 814327590, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: -759910576, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: -1227492375, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
+    - {fileID: 650051370, guid: 3627969f1de9b894cae53c737ab8e0d0, type: 3}
   - buffType: 4
+    buffDebuff: 0
     icons:
     - {fileID: 678943944, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
     - {fileID: 1281860508, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
@@ -58,3 +106,13 @@ MonoBehaviour:
     - {fileID: 86555887, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
     - {fileID: -2126278893, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
     - {fileID: -34159833, guid: f486e09c52060f247afe671fa9f42cf9, type: 3}
+  - buffType: 4
+    buffDebuff: 1
+    icons:
+    - {fileID: -349939539, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: 137395138, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: -1224334114, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: -717327898, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: -1201669724, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: -246589326, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}
+    - {fileID: 1367988687, guid: 18f33366c8deac24aa2d6857056d946e, type: 3}

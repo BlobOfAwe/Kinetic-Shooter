@@ -101,7 +101,7 @@ public class TetherSwipe : Ability
         buffConstructor.duration = debuffDuration;
 
         buffTarget.ApplyBuff(buffConstructor);
-        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
+        //FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
     }
 
 }

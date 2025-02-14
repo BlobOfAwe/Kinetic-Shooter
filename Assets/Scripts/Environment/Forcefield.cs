@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Forcefield : MonoBehaviour
 {
@@ -7,14 +8,16 @@ public class Forcefield : MonoBehaviour
 
     [SerializeField]
     private Collider2D forcefieldCollider;
-
-    private SpriteRenderer sr;
+    //Commented out references to the sprite renderer since we are using vfx for the zone. -ZS
+    //private SpriteRenderer sr;
+    private VisualEffect beaconZone;
 
     private bool isDeactivated = false;
 
     private void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
+        beaconZone = GetComponent<VisualEffect>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +25,8 @@ public class Forcefield : MonoBehaviour
         if (!isDeactivated && ((playerLayer & (1 << collision.gameObject.layer)) != 0))
         {
             FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
-            sr.enabled = true;
+            //sr.enabled = true;
+            beaconZone.enabled = true;
             Debug.Log("Player entered the beacon radius.");
             forcefieldCollider.enabled = true;
             FindObjectOfType<EnemyCounter>().SpawnBoss();
@@ -31,7 +35,8 @@ public class Forcefield : MonoBehaviour
 
     public void Deactivate()
     {
-        sr.enabled = false;
+       // sr.enabled = false;
+        beaconZone.enabled = false;
         forcefieldCollider.enabled = false;
         isDeactivated = true;
     }

@@ -34,6 +34,11 @@ public class MenuManager : MonoBehaviour
         bool isLoadoutMenu = animator.GetBool("isLoadoutMenu");
         animator.SetBool("isLoadoutMenu", !isLoadoutMenu);
     }
+    public void ToggleLogBookMenu()
+    {
+        bool isLoadoutMenu = animator.GetBool("isLogBookMenu");
+        animator.SetBool("isLogBookMenu", !isLoadoutMenu);
+    }
     public void ReturnToMainMenu()
     {
         animator.SetBool("isTitleScreen", false);
@@ -41,6 +46,7 @@ public class MenuManager : MonoBehaviour
         animator.SetBool("isMainMenu", true);
         animator.SetBool("isSettings", false);
         animator.SetBool("isAudioPanel", false);
+        animator.SetBool("isLogBookMenu", false);
     }
     public void PlayClickSound()
     {
