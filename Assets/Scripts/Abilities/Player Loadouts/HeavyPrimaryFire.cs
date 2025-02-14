@@ -42,12 +42,16 @@ public class HeavyPrimaryFire : Ability
     {
         base.Awake();
         player = GetComponent<PlayerBehaviour>();
-        bullets = new GameObject[maxBullets];
-        for (int i = 0; i < bullets.Length; i++)
+
+        if (player.primary == this)
         {
-            bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
-            bullets[i].SetActive(false);
+            bullets = new GameObject[maxBullets];
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                bullets[i] = Instantiate(bulletPrefab);
+                bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+                bullets[i].SetActive(false);
+            }
         }
     }
 

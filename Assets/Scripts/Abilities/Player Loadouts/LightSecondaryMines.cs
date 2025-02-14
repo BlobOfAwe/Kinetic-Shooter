@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardPrimaryFire : Ability
+public class LightSecondaryMines : Ability
 {
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] float duration = 5;
+    [SerializeField] float minSpeed = 2;
+
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
     private int maxBullets = 10;
-    [SerializeField] private float recoil = 1;
+
     private PlayerBehaviour player;
-
-    // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
-    public float bulletSpeedMultiplier = 1f;
-    public float bulletKnockbackMultiplier = 1f;
-
-
     private GameObject[] bullets;
     private Rigidbody2D rb;
 
@@ -25,13 +22,13 @@ public class StandardPrimaryFire : Ability
         base.Awake();
         player = GetComponent<PlayerBehaviour>();
 
-        if (player.primary == this)
+        if (player.secondary == this)
         {
             bullets = new GameObject[maxBullets];
             for (int i = 0; i < bullets.Length; i++)
             {
                 bullets[i] = Instantiate(bulletPrefab);
-                bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+                bullets[i].GetComponent<Projectile>().shooter = player.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
                 bullets[i].SetActive(false);
             }
         }
@@ -41,33 +38,41 @@ public class StandardPrimaryFire : Ability
     {
         try { rb = GetComponent<Rigidbody2D>(); }
         catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
-
-        if (player.primary == this)
-        {
-
-        }
     }
 
     // Shoot a bullet from the gameObject's position
     public override void OnActivate()
     {
         StartCoroutine(BeginCooldown());
+        StartCoroutine(Drop() );
+        
+    }
 
-        // Modified code to animate gun and play fire sound here and only here. - NK
-        player.playerGunAnimator.SetTrigger("isShooting");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
+    private IEnumerator Drop()
+    {
+        float durationTimer = duration;
+        while (durationTimer > 0)
+        {
+            if (rb.velocity.magnitude > minSpeed)
+            {
+                yield return new WaitForSeconds(0.5f);
+                durationTimer -= 0.5f;
+                DropMine();
+            }
+            else { yield return new WaitForEndOfFrame(); }
+        }
+    }
 
+    private void DropMine()
+    {
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
-                bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = player.transform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = player.transform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
-                bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
-                bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
         }

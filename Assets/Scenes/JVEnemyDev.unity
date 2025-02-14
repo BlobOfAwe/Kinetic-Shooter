@@ -608,6 +608,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: maxBullets
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
+    - target: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: damageModifier
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 157162509160279005, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -653,21 +665,54 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: hpStat
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: primary
       value: 
-      objectReference: {fileID: 1356101951}
+      objectReference: {fileID: 1356101970}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: utility
       value: 
-      objectReference: {fileID: 1356101967}
+      objectReference: {fileID: 1356101995}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: secondary
       value: 
-      objectReference: {fileID: 1356101966}
+      objectReference: {fileID: 1356101982}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: speedStat
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: attackStat
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: defenseStat
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: recoverStat
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8604642930549026033, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      insertIndex: 12
+      addedObject: {fileID: 1356101970}
+    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      insertIndex: 13
+      addedObject: {fileID: 1356101982}
+    - targetCorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      insertIndex: 14
+      addedObject: {fileID: 1356101995}
   m_SourcePrefab: {fileID: 100100000, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
 --- !u!4 &493073861 stripped
 Transform:
@@ -40322,39 +40367,75 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
   m_PrefabInstance: {fileID: 493073860}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1356101951 stripped
+--- !u!114 &1356101970
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 493073860}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a5a6285e3eb68843bf26975608b5fe8, type: 3}
+  m_Script: {fileID: 11500000, guid: e7a06667fc606024895f995f8867d654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1356101966 stripped
+  cooldown: 0.1
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 0.1
+  bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
+  maxBullets: 20
+  recoil: 3
+  bulletSpeedMultiplier: 1
+  bulletKnockbackMultiplier: 1
+--- !u!114 &1356101982
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8881820493473276149, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 493073860}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e842e68052b054e84ea84dcebaf793, type: 3}
+  m_Script: {fileID: 11500000, guid: ad06c92c30bb417499b51c0caf059596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1356101967 stripped
+  cooldown: 30
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 4
+  bulletPrefab: {fileID: 8025443713472894268, guid: 74b59eeffd7274e45bdccbaac19beb4c, type: 3}
+  duration: 5
+  minSpeed: 2
+  maxBullets: 15
+--- !u!114 &1356101995
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1648308658611244154, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 493073860}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356101950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95b22f4e382c3c4da7fa5517794e785, type: 3}
+  m_Script: {fileID: 11500000, guid: 6046bb5684e83ef48a27de27f97292aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 30
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 1
+  duration: 10
+  bouncyMaterial: {fileID: 6200000, guid: 84b4c8a51b322be4a80ed4e0deb24019, type: 2}
+  bulletPrefab: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
+  minSpeed: 0
+  wallSpace: 1
+  maxBullets: 5
 --- !u!1001 &1372423953
 PrefabInstance:
   m_ObjectHideFlags: 0

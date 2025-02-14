@@ -26,7 +26,7 @@ public abstract class Entity : MonoBehaviour
     public float health;
     public float totalAttack;
     // The equation for damage is: damage * (100/(100+totalDefense)). This will never reach 0.
-    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction.
+    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction. -50 results in 200% damage
     public float totalDefense;  
     public float totalSpeed;
     public float totalRecovery;

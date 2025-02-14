@@ -76,15 +76,24 @@ public class PlayerBehaviour : Entity
     //creates an FMOD events instance for player movement
     private void Start()
     {
-        health = maxHealth;
+        
         hpBar = FindAnyObjectByType<HPBarSystem>();
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
 
+        LoadoutManager.Loadout loadout = GameManager.playerLoadout;
         // Assigns the player.ability to be the component based on the specified ability type
-        primary = (Ability)GetComponent(GameManager.playerLoadout.primaryAbility.GetType());
-        secondary = (Ability)GetComponent(GameManager.playerLoadout.secondaryAbility.GetType());
-        utility = (Ability)GetComponent(GameManager.playerLoadout.utilityAbility.GetType());
+        primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
+        secondary = (Ability)GetComponent(loadout.secondaryAbility.GetType());
+        utility = (Ability)GetComponent(loadout.utilityAbility.GetType());
+
+        attackStat = loadout.attackStat;
+        defenseStat = loadout.defenseStat;
+        hpStat = loadout.hpStat;
+        recoverStat = loadout.recoverStat;
+        speedStat = loadout.speedStat;
+
+        health = maxHealth;
 
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardPrimaryFire : Ability
+public class LightPrimaryFire : Ability
 {
     [SerializeField] GameObject bulletPrefab;
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
@@ -41,11 +41,6 @@ public class StandardPrimaryFire : Ability
     {
         try { rb = GetComponent<Rigidbody2D>(); }
         catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
-
-        if (player.primary == this)
-        {
-
-        }
     }
 
     // Shoot a bullet from the gameObject's position
