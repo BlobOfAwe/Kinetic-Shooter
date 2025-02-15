@@ -42,37 +42,48 @@ public class Electromagnetism : Upgrade
     {
         if (target.GetComponent<Enemy>() != null)
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(target.transform.position, maxArcRadius);
-            Enemy closestEnemy = null;
-            float closestDistance = float.PositiveInfinity;
-            for (int i = 0; i < colliders.Length; i++)
+            Arc(bullet, target, quantity, quantity);
+        }
+    }
+
+    private void Arc(TestBullet bullet, GameObject source, int quantity, int arcs)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(source.transform.position, maxArcRadius);
+        Enemy closestEnemy = null;
+        float closestDistance = float.PositiveInfinity;
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if ((colliders[i].GetComponent<Enemy>() != null) && (colliders[i].gameObject != source))
             {
-                if ((colliders[i].GetComponent<Enemy>() != null) && (colliders[i].gameObject != target))
+                if (Vector2.Distance(colliders[i].ClosestPoint(source.transform.position), source.transform.position) < closestDistance)
                 {
-                    if (Vector2.Distance(colliders[i].ClosestPoint(target.transform.position), target.transform.position) < closestDistance)
-                    {
-                        closestEnemy = colliders[i].GetComponent<Enemy>();
-                        closestDistance = Vector2.Distance(colliders[i].ClosestPoint(target.transform.position), target.transform.position);
-                    }
+                    closestEnemy = colliders[i].GetComponent<Enemy>();
+                    closestDistance = Vector2.Distance(colliders[i].ClosestPoint(source.transform.position), source.transform.position);
                 }
             }
-            Color arcZoneColor = Color.red;
-            if (closestEnemy != null)
-            {
-                closestEnemy.Damage(player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent);
-                Debug.Log("Dealt " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage to " + closestEnemy.name);
-                Debug.DrawLine(target.transform.position, closestEnemy.transform.position, Color.yellow, 1f);
-                arcZoneColor = Color.green;
-            } else
-            {
-                Debug.Log("No nearby enemies");
-                arcZoneColor = Color.red;
-            }
-
-            Debug.DrawRay(target.transform.position, Vector2.up * maxArcRadius, arcZoneColor, 1f);
-            Debug.DrawRay(target.transform.position, Vector2.down * maxArcRadius, arcZoneColor, 1f);
-            Debug.DrawRay(target.transform.position, Vector2.left * maxArcRadius, arcZoneColor, 1f);
-            Debug.DrawRay(target.transform.position, Vector2.right * maxArcRadius, arcZoneColor, 1f);
         }
+        Color arcZoneColor = Color.red;
+        if (closestEnemy != null)
+        {
+            closestEnemy.Damage(player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent);
+            Debug.Log("Arc from " + source.name + " to " + closestEnemy.name + ", dealing " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage.");
+            Debug.DrawLine(source.transform.position, closestEnemy.transform.position, Color.yellow, 1f);
+            arcZoneColor = Color.green;
+            arcs -= 1;
+            if (arcs > 0)
+            {
+                Arc(bullet, closestEnemy.gameObject, quantity, arcs);
+            }
+        }
+        else
+        {
+            Debug.Log("No nearby enemies");
+            arcZoneColor = Color.red;
+        }
+
+        Debug.DrawRay(source.transform.position, Vector2.up * maxArcRadius, arcZoneColor, 1f);
+        Debug.DrawRay(source.transform.position, Vector2.down * maxArcRadius, arcZoneColor, 1f);
+        Debug.DrawRay(source.transform.position, Vector2.left * maxArcRadius, arcZoneColor, 1f);
+        Debug.DrawRay(source.transform.position, Vector2.right * maxArcRadius, arcZoneColor, 1f);
     }
 }
