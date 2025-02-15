@@ -17,6 +17,12 @@ public class Electromagnetism : Upgrade
     [SerializeField]
     private float maxArcRadius = 1f;
 
+    [SerializeField]
+    private GameObject arcLine;
+
+    [SerializeField]
+    private float arcLineTime = 1f;
+
     private StandardPrimaryFire shootAbility;
 
     protected override void Awake()
@@ -66,8 +72,9 @@ public class Electromagnetism : Upgrade
         if (closestEnemy != null)
         {
             closestEnemy.Damage(player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent);
+            Instantiate(arcLine).GetComponent<ArcLine>().SetParameters(source, closestEnemy.gameObject, arcLineTime);
             Debug.Log("Arc from " + source.name + " to " + closestEnemy.name + ", dealing " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage.");
-            Debug.DrawLine(source.transform.position, closestEnemy.transform.position, Color.yellow, 1f);
+            Debug.DrawLine(source.transform.position, closestEnemy.transform.position, Color.yellow, arcLineTime);
             arcZoneColor = Color.green;
             arcs -= 1;
             if (arcs > 0)
