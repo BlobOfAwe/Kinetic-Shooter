@@ -50,7 +50,7 @@ public class AdditionalArms : Upgrade
             // Copied and slightly modified from StandardPrimaryFire.cs
             foreach (GameObject bullet in shootAbility.bullets)
             {
-                if (!bullet.activeSelf)
+                if (!bullet.activeSelf && bullet != b.gameObject)
                 {  // If the bullet is not active (being fired)
                     bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position.
                     bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles

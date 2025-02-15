@@ -45,7 +45,7 @@ public class ShotgunBlast : Upgrade
                 foreach (GameObject bullet in shootAbility.bullets)
                 {
                     // Copied and slightly modified from StandardPrimaryFire.cs
-                    if (!bullet.activeSelf)
+                    if (!bullet.activeSelf && bullet != b.gameObject)
                     {  // If the bullet is not active (being fired)
                         bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position
                         bullet.transform.eulerAngles = new Vector3(0f, 0f, player.aimTransform.eulerAngles.z + offset); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
