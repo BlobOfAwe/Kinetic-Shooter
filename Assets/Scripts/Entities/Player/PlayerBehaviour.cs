@@ -27,6 +27,11 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     public Transform aimTransform;
 
+    [SerializeField]
+    private float rotationOffset = 0f;
+    [SerializeField]
+    private Transform gunHolder; 
+
     private HPBarSystem hpBar;
     //Added by ZS to reference the animators and set the timer for the death delay
     [SerializeField]
@@ -36,6 +41,7 @@ public class PlayerBehaviour : Entity
     private GameObject gameOverPanel;
     [SerializeField]
     private GameObject winPanel;
+
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -67,6 +73,10 @@ public class PlayerBehaviour : Entity
 
     private Vector2 aimPos;
 
+    [SerializeField]
+    private SpriteRenderer playerSpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer gunSpriteRenderer;
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
@@ -106,6 +116,7 @@ public class PlayerBehaviour : Entity
         if (isFiringPrimary)
         {
             UseAbility(primary);
+            
         }
         if (isFiringSecondary)
         {
@@ -137,9 +148,9 @@ public class PlayerBehaviour : Entity
     private void FixedUpdate()
     {
         //Added by ZS, checks if the player is idle, and if they are, plays the idle animation.
-        Vector2 velocity = rb.velocity;
-        bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
-        playerAnimator.SetBool("isIdle", isIdle);
+       // Vector2 velocity = rb.velocity;
+       // bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
+       // playerAnimator.SetBool("isIdle", isIdle);
 
         if (canMoveManually)
         {
@@ -170,16 +181,39 @@ public class PlayerBehaviour : Entity
     /// If the player is moving slower than the lower bound;
     /// Add to the velocity until they hit that lower bound;
     /// </summary>
-
+ 
     public void OnAim(InputAction.CallbackContext context)
     {
         if (!GameManager.paused)
         {
-            cursorPos = context.ReadValue<Vector2>();
-            aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            Vector2 cursorPos = context.ReadValue<Vector2>();
+            Vector2 aimPos = mainCam.ScreenToWorldPoint(cursorPos);
 
-            aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
-            aimTransform.up = aimPos - (Vector2)transform.position;
+            // Created a local variable to reference the transform position instead of typing it manually. Z.S
+            Vector2 direction = aimPos - (Vector2)aimTransform.position;
+
+            // aimTransform.localPosition = direction.normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            aimTransform.up = direction;
+            gunHolder.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
+
+            // Flips the player and gun sprite to make the direction of view
+            if (direction.x < 0)
+            {
+                playerSpriteRenderer.flipX = false;
+                gunSpriteRenderer.flipY = true;
+                gunSpriteRenderer.flipX = true;
+                //gunHolder.localPosition = new Vector2( 0.153f, -0.16f); 
+                aimTransform.localPosition = new Vector2(0.158f, 0.119f);
+            }
+            else if (direction.x > 0)
+            {
+                playerSpriteRenderer.flipX = true;
+                gunSpriteRenderer.flipX = true;
+                gunSpriteRenderer.flipY = false;
+                //gunHolder.localPosition = new Vector2(-0.153f, -0.16f);
+                aimTransform.localPosition = new Vector2(-0.182f, 0.119f);
+            }
         }
     }
 
@@ -213,17 +247,20 @@ public class PlayerBehaviour : Entity
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             canMoveManually = false;
+            playerAnimator.SetBool("isHunkered", true);
         }
         else
         {
             rb.isKinematic = false;
             canMoveManually = true;
+            playerAnimator.SetBool("isHunkered", false);
         }
     }
 
     public override void Damage(float amount)
     {
         base.Damage(amount);
+        playerAnimator.SetTrigger("isHurt");
         //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
@@ -325,8 +362,9 @@ public class PlayerBehaviour : Entity
                 if (context.started)
                 {
                     // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
-
-                    //playerGunAnimator.SetTrigger("isShooting");
+                    //Added the animator trigger back in because it was interacting weirdly with the ability activation causing the animation to play twice for a single instance of primary activation. Z.S
+                    playerGunAnimator.SetTrigger("isShooting");
+                    
                     isFiringPrimary = true;
                     //AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                 }
@@ -453,10 +491,15 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
-        // playerAnimator.SetTrigger("isDead");
+        playerAnimator.SetTrigger("isDead");
         //SceneManager.LoadScene(gameOverScene);
+        
+        StartCoroutine(HandleDeath());
+    }
+    private IEnumerator HandleDeath()
+    {
+        yield return new WaitForSeconds(deathDelay);
         GameOverPanel();
-        //StartCoroutine(HandleDeath());
     }
     //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
     public void GameOverPanel()
@@ -465,10 +508,6 @@ public class PlayerBehaviour : Entity
         gameOverPanel.SetActive(true);
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-    // private IEnumerator HandleDeath()
-    // {
-    //     yield return new WaitForSeconds(deathDelay);
 
-    // }
 }
 
