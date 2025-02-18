@@ -31,11 +31,11 @@ public class RocketLauncher : Upgrade
     {
         //player.attackMultiplier += damageIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
-        shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * Mathf.Pow(shootAbility.bulletSpeedMultiplier,quantity);
+        shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
         // AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketEquipAbility, this.transform.position);
     }
 
-    public override void ProjectileUpgradeEffect(TestBullet bullet, bool hitDamageable, int quantity)
+    public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         Debug.Log(bullet.transform.position);
         Instantiate(explosion, bullet.transform.position, Quaternion.identity).GetComponent<RocketExplosion>().SetDamage(player.totalAttack * bullet.damageMultiplier * quantity * damagePercent);

@@ -55,6 +55,8 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float manualMoveModifier = 0.1f;
 
+    private TestBullet lastBullet;
+
     private bool isFiringPrimary = false;
 
     private bool isFiringSecondary = false;
@@ -240,7 +242,12 @@ public class PlayerBehaviour : Entity
         //hpBar.HealHp(amount);
     }
 
-    public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
+    public void SetLastBullet(TestBullet bullet)
+    {
+        lastBullet = bullet;
+    }
+
+    public void ProjectileDestroyEffect(TestBullet bullet, GameObject target)
     {
         if (inventoryManager != null)
         {
@@ -250,12 +257,63 @@ public class PlayerBehaviour : Entity
                 {
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
-                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, hitDamageable, slot.quantity);
+                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, target, slot.quantity);
                     }
                 }
             }
         }
-        bullet.gameObject.SetActive(false);
+        if (target.GetComponent<Entity>() != null)
+        {
+            bullet.hits -= 1;
+            Debug.Log("hits: " + bullet.hits);
+        } else
+        {
+            bullet.hits = 1;
+            Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+            bullet.isPiercing = false;
+            bullet.gameObject.SetActive(false);
+        }
+        if (bullet.hits <= 0)
+        {
+            bullet.hits = 1;
+            Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+            bullet.isPiercing = false;
+            bullet.gameObject.SetActive(false);
+        }
+    }
+
+    public void ProjectileFireEffect(TestBullet bullet)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().FireUpgradeEffect(slot.quantity, bullet);
+                    }
+                }
+            }
+        }
+    }
+
+    public void ProjectileKillEffect(Enemy target)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().KillUpgradeEffect(target, slot.quantity);
+                    }
+                }
+            }
+        }
     }
 
     public void OnUsePrimary(InputAction.CallbackContext context)
