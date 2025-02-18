@@ -80,6 +80,7 @@ public abstract class Enemy : Entity
     public override void Death()
     {
         Debug.Log(gameObject.name + " was killed");
+        FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
         
         // Purge any dependant objects from the enemy's abilities
         if (primary != null) { primary.PurgeDependantObjects(); }

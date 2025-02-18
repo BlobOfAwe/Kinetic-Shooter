@@ -290,6 +290,23 @@ public class PlayerBehaviour : Entity
         }
     }
 
+    public void ProjectileKillEffect(Enemy target)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().KillUpgradeEffect(target, slot.quantity);
+                    }
+                }
+            }
+        }
+    }
+
     public void OnUsePrimary(InputAction.CallbackContext context)
     {
         if (primary != null)
