@@ -22,7 +22,7 @@ public class ImpalerRounds : Upgrade
         shootAbility = player.GetComponent<StandardPrimaryFire>();
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -32,7 +32,7 @@ public class ImpalerRounds : Upgrade
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

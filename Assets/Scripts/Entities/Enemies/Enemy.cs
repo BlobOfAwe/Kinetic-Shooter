@@ -19,7 +19,7 @@ public abstract class Enemy : Entity
     public AIPath aiPath;
     public SpriteRenderer sprite;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
-    private ScoreManager scoreManager; // Added by Nathaniel Klassen
+    [SerializeField] private ScoreManager scoreManager; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets

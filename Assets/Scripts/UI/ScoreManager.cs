@@ -41,7 +41,33 @@ public class ScoreManager : MonoBehaviour
         {
             ResetScore();
         }
-        UpdateScoreDisplays();
+
+        ScoreDisplay[] allLoadedDisplays = FindObjectsOfType<ScoreDisplay>(true);
+        // Iterate through each loaded display and check the game object's name to assign it correctly
+        if (allLoadedDisplays.Length == 3)
+        {
+            foreach (ScoreDisplay display in allLoadedDisplays)
+            {
+                switch (display.gameObject.name)
+                {
+                    case "ScoreDisplay":
+                        scoreDisplay = display;
+                        break;
+                    case "DeathScoreDisplay":
+                        deathScoreDisplay = display;
+                        break;
+                    case "WinScoreDisplay":
+                        winScoreDisplay = display;
+                        break;
+                    default:
+                        Debug.LogError(display.gameObject.name + " is not a valid Score Display Name");
+                        break;
+                }
+            }
+        }
+        else { Debug.LogError("Incorrect number of score displays (" + allLoadedDisplays.Length + ") were detected in scene. Make sure there are exactly three score displays in the scene."); }
+
+            UpdateScoreDisplays();
         // if (FindObjectOfType<ScoreDisplay>() != null)
         // {
         //     FindObjectOfType<ScoreDisplay>().UpdateScore(score);
@@ -76,7 +102,8 @@ public class ScoreManager : MonoBehaviour
     private void UpdateScoreDisplays() 
     { 
         if (scoreDisplay != null) 
-        { scoreDisplay.UpdateScore(score); 
+        { 
+            scoreDisplay.UpdateScore(score); 
         }
         if (deathScoreDisplay != null) 
         { 

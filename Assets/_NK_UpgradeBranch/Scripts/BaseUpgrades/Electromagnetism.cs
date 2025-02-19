@@ -31,7 +31,7 @@ public class Electromagnetism : Upgrade
         shootAbility = player.GetComponent<StandardPrimaryFire>();
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -41,7 +41,7 @@ public class Electromagnetism : Upgrade
         shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

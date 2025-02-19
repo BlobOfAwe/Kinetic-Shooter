@@ -22,7 +22,7 @@ public class ShotgunBlast : Upgrade
         shootAbility = player.GetComponent<StandardPrimaryFire>();
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -32,7 +32,7 @@ public class ShotgunBlast : Upgrade
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)

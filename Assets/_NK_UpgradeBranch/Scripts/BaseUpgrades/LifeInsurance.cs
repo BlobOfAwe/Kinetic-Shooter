@@ -28,7 +28,7 @@ public class LifeInsurance : Upgrade
         shootAbility = player.GetComponent<StandardPrimaryFire>();
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -40,7 +40,7 @@ public class LifeInsurance : Upgrade
         player.speedMultiplier = Mathf.Pow(player.speedMultiplier + manualMoveIncrease, quantity);
 
         // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
+        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
