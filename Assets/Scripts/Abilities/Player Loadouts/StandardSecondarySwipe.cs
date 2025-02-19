@@ -40,8 +40,8 @@ public class StandardSecondarySwipe : Ability
         player = GetComponent<PlayerBehaviour>();
 
         hitbox.transform.parent = transform;
-        hitbox.transform.rotation = player.aimTransform.rotation;
-        hitbox.transform.position = player.aimTransform.position;
+        hitbox.transform.rotation = player.firePoint.rotation;
+        hitbox.transform.position = player.firePoint.position;
     }
 
     // Apply knockback to an object detected by the active hitbox
@@ -60,8 +60,8 @@ public class StandardSecondarySwipe : Ability
     // Enable the hitbox for activeTime seconds
     public override void OnActivate()
     {
-        hitbox.transform.rotation = player.aimTransform.rotation;
-        hitbox.transform.position = player.aimTransform.position;
+        hitbox.transform.rotation = player.firePoint.rotation;
+        hitbox.transform.position = player.firePoint.position;
 
         hitbox.enabled = true;
         hitboxSprite.enabled = true;

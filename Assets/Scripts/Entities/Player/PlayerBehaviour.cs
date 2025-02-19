@@ -26,6 +26,13 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     public Transform aimTransform;
+    [SerializeField]
+    public Transform firePoint;
+
+    // When the player is mirrored, the shoulder's position should be positive/negative this value to mirror around the y axis
+    private float offsetShoulderFromCenterX;
+    // The default position of the firepoint relative to the shoulder. This value is modified by offsetShoulderFromCenterX when the player is mirrored
+    private float firePointLocalPosDefaultX; 
 
     [SerializeField]
     private float rotationOffset = 0f;
@@ -85,15 +92,13 @@ public class PlayerBehaviour : Entity
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
-    //creates an FMOD events instance for player movement
-    private void Start()
-    {
-        
-        hpBar = FindAnyObjectByType<HPBarSystem>();
-        mainCam = Camera.main;
-        playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
+    private LoadoutManager.Loadout loadout;
 
-        LoadoutManager.Loadout loadout = GameManager.playerLoadout;
+    protected override void Awake()
+    {
+        base.Awake();
+        loadout = GameManager.playerLoadout;
+
         // Assigns the player.ability to be the component based on the specified ability type
         primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
         secondary = (Ability)GetComponent(loadout.secondaryAbility.GetType());
@@ -106,6 +111,16 @@ public class PlayerBehaviour : Entity
         speedStat = loadout.speedStat;
 
         health = maxHealth;
+    }
+    //creates an FMOD events instance for player movement
+    private void Start()
+    {
+        offsetShoulderFromCenterX = aimTransform.localPosition.x;
+        firePointLocalPosDefaultX = firePoint.localPosition.x;
+
+        hpBar = FindAnyObjectByType<HPBarSystem>();
+        mainCam = Camera.main;
+        playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
 
     }
 
@@ -201,18 +216,20 @@ public class PlayerBehaviour : Entity
             if (direction.x < 0)
             {
                 playerSpriteRenderer.flipX = false;
+                //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
                 gunSpriteRenderer.flipY = true;
-                gunSpriteRenderer.flipX = true;
                 //gunHolder.localPosition = new Vector2( 0.153f, -0.16f); 
-                aimTransform.localPosition = new Vector2(0.158f, 0.119f);
+                aimTransform.localPosition = new Vector2(offsetShoulderFromCenterX, aimTransform.localPosition.y);
+                firePoint.localPosition = new Vector2(firePointLocalPosDefaultX, firePoint.localPosition.y);
             }
             else if (direction.x > 0)
             {
                 playerSpriteRenderer.flipX = true;
-                gunSpriteRenderer.flipX = true;
+                //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
                 gunSpriteRenderer.flipY = false;
                 //gunHolder.localPosition = new Vector2(-0.153f, -0.16f);
-                aimTransform.localPosition = new Vector2(-0.182f, 0.119f);
+                aimTransform.localPosition = new Vector2(-offsetShoulderFromCenterX, aimTransform.localPosition.y);
+                firePoint.localPosition = new Vector2(-firePointLocalPosDefaultX, firePoint.localPosition.y);
             }
         }
     }

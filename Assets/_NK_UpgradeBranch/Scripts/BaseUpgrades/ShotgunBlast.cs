@@ -47,8 +47,8 @@ public class ShotgunBlast : Upgrade
                     // Copied and slightly modified from StandardPrimaryFire.cs
                     if (!bullet.activeSelf && bullet != b.gameObject)
                     {  // If the bullet is not active (being fired)
-                        bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position
-                        bullet.transform.eulerAngles = new Vector3(0f, 0f, player.aimTransform.eulerAngles.z + offset); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
+                        bullet.transform.position = player.firePoint.position; // Set the bullet to firePoint's position - changed from transform.position
+                        bullet.transform.eulerAngles = new Vector3(0f, 0f, player.firePoint.eulerAngles.z + offset); // Set the bullet's rotation to firePoint's rotation offset by angleOffset.
                         bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
                         bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
                         bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;

@@ -652,7 +652,7 @@ PrefabInstance:
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: primary
       value: 
-      objectReference: {fileID: 1996331367}
+      objectReference: {fileID: 0}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: winPanel
       value: 
@@ -1223,8 +1223,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1972554751
+  m_SortingLayer: -1
   m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -40509,8 +40509,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1972554751
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -44243,17 +44243,6 @@ Transform:
   - {fileID: 1438056806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1996331367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-  m_PrefabInstance: {fileID: 493073860}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356101950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a89961ccd2eb5704b8d5aecc00d653e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

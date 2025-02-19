@@ -22,9 +22,8 @@ public class StandardPrimaryFire : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
+    private void Start()
     {
-        base.Awake();
         player = GetComponent<PlayerBehaviour>();
 
         if (player.primary == this)
@@ -33,20 +32,12 @@ public class StandardPrimaryFire : Ability
             for (int i = 0; i < bullets.Length; i++)
             {
                 bullets[i] = Instantiate(bulletPrefab);
-                bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+                bullets[i].GetComponent<TestBullet>().shooter = player.firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
                 bullets[i].SetActive(false);
             }
-        }
-    }
 
-    private void Start()
-    {
-        try { rb = GetComponent<Rigidbody2D>(); }
-        catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
-
-        if (player.primary == this)
-        {
-
+            try { rb = GetComponent<Rigidbody2D>(); }
+            catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
         }
     }
 
@@ -58,15 +49,15 @@ public class StandardPrimaryFire : Ability
         // Modified code to animate gun and play fire sound here and only here. - NK
         player.playerGunAnimator.SetTrigger("isShooting");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
-        Vector2 bulletOffset = new Vector2(-0.3f, -0.2f);
+
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = (Vector2)player.aimTransform.position + bulletOffset; // Added an offset to make the bullets spawn closer to the gun - Z.S // Set the bullet to firePoint's position - changed from transform.position - NK
-                bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = (Vector2)player.firePoint.position; // Added an offset to make the bullets spawn closer to the gun - Z.S // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
+                rb.AddForce(-player.firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;

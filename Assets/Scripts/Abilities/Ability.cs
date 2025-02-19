@@ -16,7 +16,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
     protected Entity thisEntity;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         thisEntity = GetComponent<Entity>();
     }

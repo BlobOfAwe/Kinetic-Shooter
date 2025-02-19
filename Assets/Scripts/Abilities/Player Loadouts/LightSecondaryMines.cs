@@ -17,9 +17,8 @@ public class LightSecondaryMines : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
+    private void Start()
     {
-        base.Awake();
         player = GetComponent<PlayerBehaviour>();
 
         if (player.secondary == this)
@@ -31,13 +30,10 @@ public class LightSecondaryMines : Ability
                 bullets[i].GetComponent<Projectile>().shooter = player.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
                 bullets[i].SetActive(false);
             }
-        }
-    }
 
-    private void Start()
-    {
-        try { rb = GetComponent<Rigidbody2D>(); }
-        catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+            try { rb = GetComponent<Rigidbody2D>(); }
+            catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+        }
     }
 
     // Shoot a bullet from the gameObject's position

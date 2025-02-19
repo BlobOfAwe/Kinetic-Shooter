@@ -52,8 +52,8 @@ public class AdditionalArms : Upgrade
             {
                 if (!bullet.activeSelf && bullet != b.gameObject)
                 {  // If the bullet is not active (being fired)
-                    bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position.
-                    bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles
+                    bullet.transform.position = player.firePoint.position; // Set the bullet to firePoint's position.
+                    bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles
                     bullet.transform.Translate(Vector2.right * offset); // Offset the bullet's position.
                     bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
                     bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;

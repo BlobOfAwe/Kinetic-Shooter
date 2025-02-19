@@ -32,9 +32,8 @@ public class LightTertiaryBall : Ability
 
 
     // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
+    private void Start()
     {
-        base.Awake();
         player = GetComponent<PlayerBehaviour>();
 
         // Instantiate walls
@@ -46,17 +45,14 @@ public class LightTertiaryBall : Ability
                 bullets[i] = Instantiate(bulletPrefab);
                 bullets[i].SetActive(false);
             }
-        }
-    }
 
-    private void Start()
-    {
-        // Initialize Variables
-        rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
-        col = GetComponent<Collider2D>();
-        baseColor = sprite.color;
-        curled = false;
+            // Initialize Variables
+            rb = GetComponent<Rigidbody2D>();
+            sprite = GetComponent<SpriteRenderer>();
+            col = GetComponent<Collider2D>();
+            baseColor = sprite.color;
+            curled = false;
+        }
     }
 
     public override void OnActivate()

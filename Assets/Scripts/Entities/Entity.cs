@@ -55,7 +55,7 @@ public abstract class Entity : MonoBehaviour
     protected bool isInvincible = false;
 
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         UpdateStats();
         health = maxHealth;

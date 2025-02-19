@@ -38,9 +38,8 @@ public class HeavyPrimaryFire : Ability
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
+    private void Start()
     {
-        base.Awake();
         player = GetComponent<PlayerBehaviour>();
 
         if (player.primary == this)
@@ -49,16 +48,13 @@ public class HeavyPrimaryFire : Ability
             for (int i = 0; i < bullets.Length; i++)
             {
                 bullets[i] = Instantiate(bulletPrefab);
-                bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+                bullets[i].GetComponent<TestBullet>().shooter = player.firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
                 bullets[i].SetActive(false);
             }
-        }
-    }
 
-    private void Start()
-    {
-        try { rb = GetComponent<Rigidbody2D>(); }
-        catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+            try { rb = GetComponent<Rigidbody2D>(); }
+            catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+        }
     }
 
     // Shoot a bullet from the gameObject's position
@@ -89,9 +85,9 @@ public class HeavyPrimaryFire : Ability
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
-                bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-player.aimTransform.up * recoilMod, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = player.firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
+                rb.AddForce(-player.firePoint.up * recoilMod, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;

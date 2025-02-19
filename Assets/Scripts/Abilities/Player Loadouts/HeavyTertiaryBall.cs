@@ -28,15 +28,10 @@ public class HeavyTertiaryBall : Ability
     private Color baseColor;
     private SpriteRenderer sprite;
 
-    // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
-    {
-        base.Awake();
-        player = GetComponent<PlayerBehaviour>();
-    }
-
     private void Start()
     {
+        player = GetComponent<PlayerBehaviour>();
+
         // Initialize Variables
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
