@@ -22,6 +22,8 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float moveAcceleration = 1f;
 
+    // Temporarily serialized for testing.
+    [SerializeField]
     private Camera mainCam;
 
     [SerializeField]
@@ -92,12 +94,16 @@ public class PlayerBehaviour : Entity
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
+    [SerializeField]
     private LoadoutManager.Loadout loadout;
 
     protected override void Awake()
     {
         base.Awake();
-        loadout = GameManager.playerLoadout;
+        if (GameManager.playerLoadout != null)
+        {
+            loadout = GameManager.playerLoadout;
+        }
 
         // Assigns the player.ability to be the component based on the specified ability type
         primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
