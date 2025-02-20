@@ -20,9 +20,6 @@ public class ShotgunBlast : Upgrade
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -30,9 +27,6 @@ public class ShotgunBlast : Upgrade
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)

@@ -26,9 +26,6 @@ public class FastFly : Upgrade
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -39,8 +36,5 @@ public class FastFly : Upgrade
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
         player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 }

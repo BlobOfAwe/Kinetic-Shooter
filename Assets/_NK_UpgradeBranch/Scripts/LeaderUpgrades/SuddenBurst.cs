@@ -21,10 +21,10 @@ public class SuddenBurst : Upgrade
 
     public override void ProjectileUpgradeEffect(TestBullet shotBullet, GameObject target, int quantity)
     {
-        Debug.Log("Bullet with damage of " + shootAbility.bulletDamageMultiplier + " burst into " + fragments + " fragments, each one dealing " + (shootAbility.bulletDamageMultiplier / fragments) + " damage.");
-
-        if (Random.Range(0f, 1f) <= burstChance * quantity)
+        if (Random.Range(0f, 1f) <= burstChance * quantity && shotBullet.isBursting)
         {
+            Debug.Log("Bullet with damage of " + shootAbility.bulletDamageMultiplier + " burst into " + fragments + " fragments, each one dealing " + (shootAbility.bulletDamageMultiplier / fragments) + " damage.");
+
             AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, shotBullet.transform.position);
 
             for (int i = 0; i < fragments; i++)
@@ -39,11 +39,20 @@ public class SuddenBurst : Upgrade
                         bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
                         bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
                         bullet.GetComponent<Projectile>().damageMultiplier = shootAbility.bulletDamageMultiplier / fragments;
+                        bullet.GetComponent<TestBullet>().isFromBurst = true;
                         bullet.SetActive(true);
                         break;
                     }
                 }
             }
+        }
+    }
+
+    public override void FireUpgradeEffect(int quantity, TestBullet testBullet)
+    {
+        if (!testBullet.isBursting)
+        {
+            testBullet.isBursting = true;
         }
     }
 }

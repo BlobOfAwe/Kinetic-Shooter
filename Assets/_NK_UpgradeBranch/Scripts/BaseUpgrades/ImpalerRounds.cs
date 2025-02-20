@@ -20,9 +20,6 @@ public class ImpalerRounds : Upgrade
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -30,9 +27,6 @@ public class ImpalerRounds : Upgrade
         shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

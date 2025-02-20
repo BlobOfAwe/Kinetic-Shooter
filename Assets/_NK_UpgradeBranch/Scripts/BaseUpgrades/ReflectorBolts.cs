@@ -26,9 +26,6 @@ public class ReflectorBolts : Upgrade
     {
         base.Awake();
         shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ApplyUpgrade(int quantity)
@@ -36,9 +33,6 @@ public class ReflectorBolts : Upgrade
         player.defenseMultiplier += defenseIncrease * quantity;
         player.healthMultiplier += healthIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(shootAbility.bulletDamageMultiplier + damageIncrease, quantity);
-
-        // Debug - remove later.
-        FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet bullet)
