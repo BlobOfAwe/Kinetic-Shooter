@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -210,6 +211,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  cushion: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}

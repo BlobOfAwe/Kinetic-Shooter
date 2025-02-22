@@ -874,6 +874,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  cushion: 0
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -890,6 +891,8 @@ MonoBehaviour:
   deathDelay: 1
   gameOverScene: 3
   manualMoveModifier: 0.1
+  isFiringPrimary: 0
+  isFiringSecondary: 0
   playerSpriteRenderer: {fileID: 1314501562018809629}
   gunSpriteRenderer: {fileID: 1125194191410224525}
   parameterNameEnding: 

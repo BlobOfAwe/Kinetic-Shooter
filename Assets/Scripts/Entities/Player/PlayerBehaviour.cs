@@ -72,9 +72,12 @@ public class PlayerBehaviour : Entity
 
     private TestBullet lastBullet;
 
-    private bool isFiringPrimary = false;
+    // Changed to public so it can be accessed by cushion upgrade.
+    [HideInInspector]
+    public bool isFiringPrimary = false;
 
-    private bool isFiringSecondary = false;
+    [HideInInspector]
+    public bool isFiringSecondary = false;
 
     private Vector2 moveDir;
 
@@ -202,7 +205,16 @@ public class PlayerBehaviour : Entity
     /// If the player is moving slower than the lower bound;
     /// Add to the velocity until they hit that lower bound;
     /// </summary>
- 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (cushion > 0f && collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log("Damaged " + collision.gameObject.name + " with shield for " + (totalAttack * cushion) + " damage.");
+            collision.gameObject.GetComponent<Enemy>().Damage(totalAttack * cushion, true);
+        }
+    }
+
     public void OnAim(InputAction.CallbackContext context)
     {
         if (!GameManager.paused)
