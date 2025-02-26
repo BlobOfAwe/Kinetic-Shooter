@@ -100,19 +100,21 @@ public class ScoreManager : MonoBehaviour
     }
     // Added by ZS to update the two variants of the score.
     private void UpdateScoreDisplays() 
-    { 
+    {
+        GameManager.score = score;
         if (scoreDisplay != null) 
         { 
-            scoreDisplay.UpdateScore(score); 
+            scoreDisplay.UpdateScoreText(); 
         }
-        if (deathScoreDisplay != null) 
-        { 
-            deathScoreDisplay.UpdateScore(score); 
-        }
-        if (winScoreDisplay != null)
-        {
-            winScoreDisplay.UpdateScore(score);
-        }
+        // Death and Win Displays are only updated after death or victory respectively
+        //if (deathScoreDisplay != null) 
+        //{ 
+        //    deathScoreDisplay.UpdateScore(score); 
+        //}
+        //if (winScoreDisplay != null)
+        //{
+        //    winScoreDisplay.UpdateScore(score);
+        //}
         Debug.Log("Score:" + score); 
     }
 }

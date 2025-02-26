@@ -15,6 +15,7 @@ public static class GameManager
     /// The difficulty Coefficient increases by 1 every level.
     /// </summary>
     public static float difficultyCoefficient = 0;
+    public static float score = 0;
 
     public static bool debugEnabled;
     public static LoadoutManager.Loadout playerLoadout;
