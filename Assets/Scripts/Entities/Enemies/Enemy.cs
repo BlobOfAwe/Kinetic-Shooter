@@ -105,7 +105,7 @@ public abstract class Enemy : Entity
             FindObjectOfType<Forcefield>().Deactivate();
             FindObjectOfType<Beacon>().levelIsFinished = true; // temporary
         }
-        Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
+        //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
         Destroy(gameObject);
     }

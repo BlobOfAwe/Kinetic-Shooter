@@ -3,6 +3,7 @@ using System.Collections;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class Beacon : MonoBehaviour
 {
@@ -75,6 +76,15 @@ public class Beacon : MonoBehaviour
     }
     private void WinGame()
     {
-        winPanel.SetActive(true);
+        // If the current level is not the last level, load the next level
+        if (GameManager.currentLevel < GameManager.sceneIndexForLevel.Length - 1)
+        {
+            GameManager.currentLevel++;
+            SceneManager.LoadSceneAsync(GameManager.sceneIndexForLevel[GameManager.currentLevel]);
+            GameManager.difficultyCoefficient++;
+        }
+        // Otherwise, enable the win panel
+        else
+            winPanel.SetActive(true);
     }
 }

@@ -76,7 +76,6 @@ public abstract class Entity : MonoBehaviour
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
             health -= totalDamage;
-            Debug.Log(totalDamage);
         }
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
@@ -133,18 +132,18 @@ public abstract class Entity : MonoBehaviour
         // UPGRADES
         if (inventoryManager != null)
         {
-            Debug.Log("Checking inventory...");
+            //Debug.Log("Checking inventory...");
             foreach (InventorySlot slot in inventoryManager.inventory)
             {
                 if (slot.item != null)
                 {
-                    Debug.Log("Inventory slot " + slot + " has an item.");
+                    //Debug.Log("Inventory slot " + slot + " has an item.");
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
                         slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
-                        Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
+                        //Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
                     }
-                } else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
+                } //else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
             }
         }
 

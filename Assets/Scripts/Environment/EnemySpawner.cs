@@ -29,16 +29,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] Vector2 spawnPosition;
     [SerializeField] private PlayerBehaviour player;
 
-    private int[] randFlip; // Used by UnityEngine.Random to choose either 1 or -1
+    private int[] randFlip = {-1,1}; // Used by UnityEngine.Random to choose either 1 or -1
     private void Start()
     {
-        randFlip = new int[2];
-        randFlip[0] = -1;
-        randFlip[1] = 1;
+        addCreditsPerSecond = addCreditsPerSecond * (1 + GameManager.difficultyCoefficient);
 
-        addCreditsPerSecond = 1 * (1 + GameManager.difficultyCoefficient);
-
-        player = FindAnyObjectByType<PlayerBehaviour>();
+        player = FindAnyObjectByType<PlayerBehaviour>(FindObjectsInactive.Exclude);
     }
 
     private void Update()
@@ -75,7 +71,9 @@ public class EnemySpawner : MonoBehaviour
     private bool AttemptSpawn(Enemy enemy)
     {
         // If the enemy is too expensive, fail the spawn
-        if (enemy.spawnCost > credits) { Debug.Log("Failed to spawn enemy " + enemy + " of cost " + enemy.spawnCost); return false; }
+        if (enemy.spawnCost > credits) { 
+            //Debug.Log("Failed to spawn enemy " + enemy + " of cost " + enemy.spawnCost); 
+            return false; }
 
         // Otherwise, spawn the enemy and subtract the cost
         credits -= enemy.spawnCost;
