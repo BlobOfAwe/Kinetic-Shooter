@@ -10,6 +10,10 @@ public class TestBullet : Projectile
     [SerializeField]
     private LayerMask shootableLayer;
     private float knockback;
+    [HideInInspector]
+    public bool isPiercing = false;
+    [HideInInspector]
+    public int hits = 1;
 
     // Update is called once per frame
     protected override void Update()
@@ -25,7 +29,7 @@ public class TestBullet : Projectile
         //if (collision.gameObject != shooter)
         if ((shootableLayer & (1 << collision.gameObject.layer)) != 0)
         {
-            bool hitDamageable;
+            //bool hitDamageable; // We are now checking if an object has an Entity component to determine if an object is damageable, rather than using a bool. - NK
             // transform.position = Vector2.zero; // Moved - NK
             // if statement should check against damageable objects.
 
@@ -36,20 +40,28 @@ public class TestBullet : Projectile
 
             if (collision.gameObject.GetComponent<Entity>())
             {
-                hitDamageable = true;
+                //hitDamageable = true;
                 collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooterEntity.totalAttack);
             }
 
-            else 
+            /*else 
             {
                 hitDamageable = false;
+            }*/
+
+            //gameObject.SetActive(false); // Why was this put here? As I say on line 59, this is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
+
+            FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, collision.gameObject); // Instead of disabling the object, first apply effects based on upgrades. - NK
+            if (hits <= 0)
+            {
+                transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when disabled. - NK
             }
            
-            gameObject.SetActive(false);
-           
-            FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
-            transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
-            //gameObject.SetActive(false); // This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
+           // ^ This is now done in PlayerBehaviour.ProjectileDestroyEffect() - NK
+                //FindObjectOfType<PlayerBehaviour>().ProjectileDestroyEffect(this, hitDamageable); // Instead of disabling the object, first apply effects based on upgrades. - NK
+                //transform.position = Vector2.zero; // Moved here in case upgrades need position of bullet when destroyed. - NK
+                //transform.localScale = Vector2.one;
+            
         }
     }
 }

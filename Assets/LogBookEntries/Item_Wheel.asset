@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Item_Wheel
+  m_EditorClassIdentifier: 
+  entryName: Why
+  entryImage: {fileID: 21300000, guid: ad86115ede230ef48afb94807c9eb031, type: 3}
+  description: "The FitnessGram\u2122 Pacer Test is a multistage aerobic capacity
+    test that progressively gets more difficult as it continues.\r\nThe 20 meter
+    pacer test will begin in 30 seconds. Line up at the start.\r\nThe running speed
+    starts slowly, but gets faster each minute after you hear this signal.\r\nA single
+    lap should be completed each time you hear this sound.\r\nRemember to run in
+    a straight line, and run as long as possible.\r\nThe second time you fail to
+    complete a lap before the sound, your test is over.\r\nThe test will begin on
+    the word start.\r\nOn your mark, get ready, start."
+  isUnlocked: 0
+  unlockCondition: Going Through Multiple loops and getting the true ending

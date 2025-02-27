@@ -60,6 +60,7 @@ namespace Pathfinding {
 	/// </summary>
 	[AddComponentMenu("Pathfinding/AI/AIPath (2D,3D)")]
 	public partial class AIPath : AIBase, IAstarAI {
+
 		/// <summary>
 		/// How quickly the agent accelerates.
 		/// Positive values represent an acceleration in world units per second squared.
@@ -196,8 +197,20 @@ namespace Pathfinding {
 			}
 		}
 
-		/// <summary>\copydoc Pathfinding::IAstarAI::reachedEndOfPath</summary>
-		public bool reachedEndOfPath { get; protected set; }
+        /// <summary>
+        /// Resets the entity's rigidbody velocity when colliding with an obstacle.
+        /// </summary>
+        /// <param name="collision"></param>
+        protected void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.gameObject.layer == resetVelocityLayers)
+            {
+                rigid2D.velocity = Vector2.zero;
+            }
+        }
+
+        /// <summary>\copydoc Pathfinding::IAstarAI::reachedEndOfPath</summary>
+        public bool reachedEndOfPath { get; protected set; }
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::hasPath</summary>
 		public bool hasPath {

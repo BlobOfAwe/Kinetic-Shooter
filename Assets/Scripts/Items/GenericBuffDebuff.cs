@@ -24,7 +24,7 @@ public class GenericBuffDebuff : Item
         ApplyBuff(duration);
         
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
-        Debug.Log("Picked up item");
+       //Debug.Log("Picked up item");
 
         emitter.Stop();
         Destroy(gameObject);
@@ -57,8 +57,7 @@ public class GenericBuffDebuff : Item
         
         buffConstructor.duration = duration;
         buffTarget.ApplyBuff(buffConstructor);
-        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
-
+        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor, buff, null);//Added by Z.S
     }
 
 }

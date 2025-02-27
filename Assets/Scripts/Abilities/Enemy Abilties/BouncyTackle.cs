@@ -84,7 +84,7 @@ public class BouncyTackle : Ability
             // If the object has no rigidbody or the rigidbody is set to kinematic, get a reflection angle and prepare to bounce
             if (collidedRB == null || collidedRB.isKinematic)
             {
-                Debug.Log(bounceCounter + " bounces");
+               //Debug.Log(bounceCounter + " bounces");
 
                 if (bounceCounter > 0) { CalculateBounce(collision); }
 

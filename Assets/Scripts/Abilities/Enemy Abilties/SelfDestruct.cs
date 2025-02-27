@@ -31,7 +31,7 @@ public class SelfDestruct : Ability
             if (targetEntity != null && obj.gameObject != this.gameObject)
             {
                 float explosionDamage = (thisEntity.totalAttack * damageModifier) * (1 - (Mathf.Pow(Vector2.Distance(transform.position, targetEntity.transform.position)/range, dropoff)));
-                Debug.Log("explosionDamage for entity " + targetEntity.gameObject.name + " at " + (Vector2.Distance(transform.position, targetEntity.transform.position) / range) * 100 + "% of range equals " + explosionDamage);
+                //Debug.Log("explosionDamage for entity " + targetEntity.gameObject.name + " at " + (Vector2.Distance(transform.position, targetEntity.transform.position) / range) * 100 + "% of range equals " + explosionDamage);
                 targetEntity.Damage(explosionDamage);
             }
         }

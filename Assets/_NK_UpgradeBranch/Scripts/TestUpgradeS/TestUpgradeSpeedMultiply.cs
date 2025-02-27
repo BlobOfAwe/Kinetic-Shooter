@@ -8,6 +8,7 @@ public class TestUpgradeSpeedMultiply : Upgrade
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
         player.speedMultiplier += speedMultiplier * quantity;
         Debug.Log("Speed multiplier + " + (speedMultiplier * quantity));
     }

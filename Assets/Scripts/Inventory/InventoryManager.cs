@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
@@ -19,13 +20,58 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        // If there is another inventory manager in the scene, get a reference to it
+        InventoryManager[] allInvs = FindObjectsByType<InventoryManager>(FindObjectsSortMode.None);
+        InventoryManager otherInv = null;
+        if (allInvs.Length > 1) 
+        { 
+            foreach (InventoryManager inv in allInvs)
+            {
+                if (inv != this)
+                {
+                    otherInv = inv;
+                }
+            }
+        }
+        
         try { slotPrefab.GetComponent<InventorySlot>(); } 
         catch { Debug.LogError("SlotPrefab does not contain component for Inventory slot"); return; }
         
+        // Initialize the new inventory
         inventory = new List<InventorySlot>(initialSize);
-        for (int i = 0; i < initialSize; i++)
+
+        // If there is a second inventory manager in the scene
+        if (otherInv != null)
         {
-            inventory.Add(NewSlot());
+            // For each slot in the new inventory
+            for (int i = 0; i < initialSize; i++)
+            {
+                // If an item populates that slot in the old inventory, move it to the new inventory
+                if (otherInv.inventory[i].item != null)
+                {
+                    inventory.Add(otherInv.inventory[i]);
+                    otherInv.inventory[i].transform.parent = slotParent;
+
+                    // Moves the item back to the active scene, removing the DontDestroyOnLoad tag
+                    SceneManager.MoveGameObjectToScene(otherInv.inventory[i].item.gameObject, SceneManager.GetActiveScene());
+                }
+                // Otherwise, generate a new slot
+                else
+                {
+                    inventory.Add(NewSlot());
+                }
+            }
+            otherInv.gameObject.SetActive(false);
+            Destroy(otherInv.gameObject);
+        }
+
+        // If this is the only inventory manager, generate a fully new inventory
+        else
+        {
+            for (int i = 0; i < initialSize; i++)
+            {
+                inventory.Add(NewSlot());
+            }
         }
     }
 
@@ -33,6 +79,7 @@ public class InventoryManager : MonoBehaviour
     {
         slotParent.gameObject.SetActive(false);
         tooltip.SetActive(false);
+        GetComponentInParent<Entity>().UpdateStats();
     }
 
     void Update()
@@ -96,6 +143,20 @@ public class InventoryManager : MonoBehaviour
         var obj = Instantiate(slotPrefab, slotParent);
         obj.gameObject.SetActive(false);
         return obj.GetComponent<InventorySlot>();
+    }
+
+    public void PreserveInventory()
+    {
+        transform.parent = null;
+        DontDestroyOnLoad(gameObject);
+
+        foreach (InventorySlot slot in inventory)
+        {
+            if (slot.item != null)
+            {
+                DontDestroyOnLoad(slot.item);
+            }
+        }
     }
 
     // ------------------------

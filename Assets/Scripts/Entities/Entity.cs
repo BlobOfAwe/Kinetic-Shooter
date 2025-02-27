@@ -26,7 +26,7 @@ public abstract class Entity : MonoBehaviour
     public float health;
     public float totalAttack;
     // The equation for damage is: damage * (100/(100+totalDefense)). This will never reach 0.
-    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction.
+    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction. -50 results in 200% damage
     public float totalDefense;  
     public float totalSpeed;
     public float totalRecovery;
@@ -55,7 +55,7 @@ public abstract class Entity : MonoBehaviour
     protected bool isInvincible = false;
 
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         UpdateStats();
         health = maxHealth;
@@ -76,7 +76,6 @@ public abstract class Entity : MonoBehaviour
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
             health -= totalDamage;
-            Debug.Log(totalDamage);
         }
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
@@ -115,6 +114,7 @@ public abstract class Entity : MonoBehaviour
         {
             standardPrimaryFire.bulletKnockbackMultiplier = 1;
             standardPrimaryFire.bulletSpeedMultiplier = 1;
+            standardPrimaryFire.cooldownMultiplier = 1;
         }
 
         maxHealth = hpStat;
@@ -132,18 +132,18 @@ public abstract class Entity : MonoBehaviour
         // UPGRADES
         if (inventoryManager != null)
         {
-            Debug.Log("Checking inventory...");
+            //Debug.Log("Checking inventory...");
             foreach (InventorySlot slot in inventoryManager.inventory)
             {
                 if (slot.item != null)
                 {
-                    Debug.Log("Inventory slot " + slot + " has an item.");
+                    //Debug.Log("Inventory slot " + slot + " has an item.");
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
                         slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
-                        Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
+                        //Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
                     }
-                } else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
+                } //else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
             }
         }
 
@@ -195,11 +195,11 @@ public abstract class Entity : MonoBehaviour
         totalRecovery *= recoveryMultiplier;
 
         // DEBUG
-        if (inventoryManager != null)
-        {
-            Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
-            Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
-        }
+        //if (inventoryManager != null)
+        //{
+        //    Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
+        //    Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
+        //}
         if (statsDisplay != null)
         {
             statsDisplay.UpdateDisplay();

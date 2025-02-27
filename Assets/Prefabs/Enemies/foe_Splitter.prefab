@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -300,6 +301,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5506112364096676143}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -310,6 +312,7 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 30
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 7538930451151872605}
@@ -540,6 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -614,6 +618,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5446564598276922433}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -624,10 +629,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &1153109854617996024
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -842,6 +849,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7121892076314566115}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -852,10 +860,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &1257147517256829528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,6 +1341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -1406,6 +1416,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 772832677693561689}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1416,10 +1427,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &2326619447574277081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -1634,6 +1647,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7605173110703644166}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1644,10 +1658,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &2520333139245991405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -1862,6 +1878,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5312841502110046480}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1872,10 +1889,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &3105787858351604837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -2397,6 +2416,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 6021964516584940954}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -2407,12 +2427,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 1841696412842891636}
   - {fileID: 1885802789279100123}
   splotRepelForce: 0
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &5303953149207212703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,6 +2658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -2711,6 +2733,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7254835815414458085}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -2721,10 +2744,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &5530449420590398368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,6 +2944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -2994,6 +3019,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 8605842806598589871}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3004,12 +3030,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 8760664120714615669}
   - {fileID: 7864851996485042116}
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &5553558039359038952
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,6 +3232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -3279,6 +3307,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7586837564522307866}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3289,12 +3318,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 39777393546055203}
   - {fileID: 4968474553354677259}
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &5786125429738156196
 GameObject:
   m_ObjectHideFlags: 0
@@ -3490,6 +3520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -3564,6 +3595,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 3874334518867957134}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3574,12 +3606,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 8824482241776116004}
   - {fileID: 5937737119171422920}
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &6727387458735450895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3775,6 +3808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -3849,6 +3883,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 4677283693899827122}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3859,12 +3894,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 2427194287461552305}
   - {fileID: 1952737647834903006}
   splotRepelForce: 0
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &6842317335362170966
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -4163,6 +4200,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5661924259252529554}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -4173,10 +4211,11 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &7400671441688976754
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,6 +4663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -4698,6 +4738,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 1293602325205433}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -4708,12 +4749,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 3449285902774385929}
   - {fileID: 9024278956173182716}
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5
 --- !u!1 &8883081483458258088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4938,6 +4980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.6
   height: 2
   canMove: 1
@@ -5012,6 +5055,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 2360292562172162060}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -5022,7 +5066,8 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   score: 0
+  enemyCounterValue: 0.125
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
-  iSecondsAfterSplit: 1.5
+  iSecondsAfterSplit: 0.5

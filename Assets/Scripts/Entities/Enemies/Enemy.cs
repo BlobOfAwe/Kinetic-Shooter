@@ -14,12 +14,12 @@ public abstract class Enemy : Entity
     public int spawnCost; // How many credits does it cost to spawn this enemy
 
     [Header("Component References")]
-    public GameObject target;
+    public Transform target;
     public Seeker seeker;
     public AIPath aiPath;
     public SpriteRenderer sprite;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
-    private ScoreManager scoreManager; // Added by Nathaniel Klassen
+    [SerializeField] private ScoreManager scoreManager; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
@@ -44,9 +44,12 @@ public abstract class Enemy : Entity
     [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
     [SerializeField]
+    public float enemyCounterValue = 1; // How many enemies are counted as defeated when this enemy dies? Usually 1, but may be 0 in some circumstances
+    [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
+    private bool dead;
 
-    protected void Start()
+    protected virtual void Start()
     {
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
@@ -63,6 +66,7 @@ public abstract class Enemy : Entity
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
     new private void Update()
     {
+        base.Update();
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
 
@@ -71,7 +75,7 @@ public abstract class Enemy : Entity
         DerivativeUpdate(); // Run derived class-specific logic
     }
 
-    private void LateUpdate()
+    protected void LateUpdate()
     {
         if (!rotateSpriteToFacePlayer) { sprite.transform.rotation = Quaternion.Euler(Vector2.zero); }
     }
@@ -79,41 +83,50 @@ public abstract class Enemy : Entity
     // Required implementation of the abstract function Entity.Death()
     public override void Death()
     {
-        Debug.Log(gameObject.name + " was killed");
-        
-        // Purge any dependant objects from the enemy's abilities
-        if (primary != null) { primary.PurgeDependantObjects(); }
-        if (secondary != null) { secondary.PurgeDependantObjects(); }
-        if (utility != null) { utility.PurgeDependantObjects(); }
-        if (additional != null) { additional.PurgeDependantObjects(); }
+        if (!dead)
+        {
+            dead = true;
+            //Debug.Log(gameObject.name + " was killed");
+            FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
 
-        if (scoreManager != null)
-        {
-            scoreManager.AddPoints(score);
+            // Purge any dependant objects from the enemy's abilities
+            if (primary != null) { primary.PurgeDependantObjects(); }
+            if (secondary != null) { secondary.PurgeDependantObjects(); }
+            if (utility != null) { utility.PurgeDependantObjects(); }
+            if (additional != null) { additional.PurgeDependantObjects(); }
+
+            if (scoreManager != null)
+            {
+                scoreManager.AddPoints(score);
+            }
+            else
+            {
+                scoreManager = FindAnyObjectByType<ScoreManager>();
+                scoreManager.AddPoints(score);
+            }
+            // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
+            if (!isBoss)
+            {
+                enemyCounter.EnemyDefeated(this);
+            }
+            else
+            {
+                Debug.Log("You beat the boss!");
+                // Whatever happens when a boss is defeated goes here.
+                enemyCounter.BossDefeated(this);
+            }
+            //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
+            Destroy(gameObject);
         }
-        else { Debug.LogError("No Score Manager in Scene"); }
-        // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
-        if (!isBoss)
-        {
-            enemyCounter.EnemyDefeated();
-        } else
-        {
-            Debug.Log("You beat the boss!");
-            // Whatever happens when a boss is defeated goes here.
-            FindObjectOfType<Forcefield>().Deactivate();
-            FindObjectOfType<Beacon>().levelIsFinished = true; // temporary
-        }
-        Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
-        Destroy(gameObject);
     }
 
     // Checks to see if a valid target is within sightRange
     public void SearchForTarget()
     {
         Collider2D targetCollider = Physics2D.OverlapCircle(transform.position, sightRange, hostile);
-        try { target = targetCollider.gameObject; }
-        catch { target = null; }
+        if (targetCollider != null) { target = targetCollider.transform; }
+        else { target = null; }
     }
 
     // If called each frame, checks SearchForTarget() every pursuitDuration seconds

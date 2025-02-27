@@ -15,11 +15,14 @@ public abstract class Item : MonoBehaviour
     //audio emitter variable
     protected StudioEventEmitter emitter;
 
+    protected PlayerBehaviour player;
+
     protected void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
         emitter.Play();
+        player = FindObjectOfType<PlayerBehaviour>();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +36,7 @@ public abstract class Item : MonoBehaviour
 
 
             AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
-            Debug.Log("Picked up item");
+           //Debug.Log("Picked up item");
         }
     }
 }

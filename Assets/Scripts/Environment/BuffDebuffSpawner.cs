@@ -65,7 +65,9 @@ public class BuffDebuffSpawner : MonoBehaviour
     private bool AttemptSpawn(Item buff)
     {
         // If the enemy is too expensive, fail the spawn
-        if (costToSpawn > credits) { Debug.Log("Failed to spawn buff " + buff + " of cost " + costToSpawn); return false; }
+        if (costToSpawn > credits) { 
+            //Debug.Log("Failed to spawn buff " + buff + " of cost " + costToSpawn); 
+            return false; }
 
         // Otherwise, spawn the enemy and subtract the cost
         credits -= costToSpawn;

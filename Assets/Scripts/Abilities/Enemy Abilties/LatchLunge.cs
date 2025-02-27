@@ -122,7 +122,7 @@ public class LatchLunge : Ability
             {
                 // Latch onto the player
                 latched = true;
-                Debug.Log("Latched");
+               //Debug.Log("Latched");
 
                 // set the parent
                 transform.parent = collision.transform;

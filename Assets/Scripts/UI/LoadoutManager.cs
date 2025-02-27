@@ -30,6 +30,14 @@ public class LoadoutManager : MonoBehaviour
         public Ability primaryAbility;
         public Ability secondaryAbility;
         public Ability utilityAbility;
+
+        [Header("Stats")]
+        public float attackStat;
+        public float defenseStat;
+        public float speedStat;
+        public float hpStat;
+        public float recoverStat;
+
     }
     private void Start()
     {

@@ -12,14 +12,15 @@ public class BuffIconData : ScriptableObject
     public class BuffIcon
     {
         public Buff.buffCategory buffType;
+        public GenericBuffDebuff.buffType buffDebuff;
         public List<Sprite> icons; //Creates a list of sprites instead of individual ones to show the progression via the Icon itself
     }
 
-    public Sprite GetIcon(Buff.buffCategory buffType, int index = 0)
+    public Sprite GetIcon(Buff.buffCategory buffType, GenericBuffDebuff.buffType buffDebuff, int index = 0)
     {
         foreach (var buffIcon in buffIcons)
         {
-            if (buffIcon.buffType == buffType)
+            if (buffIcon.buffType == buffType && buffIcon.buffDebuff == buffDebuff)
             {
                 return buffIcon.icons[index];
             }

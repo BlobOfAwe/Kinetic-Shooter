@@ -8,6 +8,7 @@ public class TestUpgradeAttackAdd : Upgrade
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
         player.totalAttack += attackToAdd * quantity;
         Debug.Log("Added to attack by " + (attackToAdd * quantity));
     }
