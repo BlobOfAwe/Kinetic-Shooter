@@ -54,6 +54,9 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected bool isInvincible = false;
 
+    [SerializeField]
+    protected bool isFlammable = true;
+
     // This is to be used with the cushion upgrade on the player specifically.
     [HideInInspector]
     public float cushion = 0f;
@@ -105,6 +108,26 @@ public abstract class Entity : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+    }
+
+    public virtual void Ignite(float damage, float tickSpeed, float time)
+    {
+        if (isFlammable)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(TickDamage(damage, tickSpeed, time));
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    protected IEnumerator TickDamage(float damage, float tickSpeed, float time)
+    {
+        while (time > 0f)
+        {
+            Damage(damage);
+            time -= Time.deltaTime;
+            yield return new WaitForSeconds(tickSpeed);
         }
     }
 
