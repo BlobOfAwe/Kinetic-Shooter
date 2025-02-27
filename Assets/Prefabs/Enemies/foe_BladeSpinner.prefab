@@ -210,12 +210,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 654932088007563945}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -225,6 +227,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: Blade Swinger
   score: 8
   rotateSpriteToFacePlayer: 0
 --- !u!1 &3430238739745844217

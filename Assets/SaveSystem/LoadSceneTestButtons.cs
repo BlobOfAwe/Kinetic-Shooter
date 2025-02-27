@@ -6,30 +6,38 @@ public class LoadSceneTestButtons : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI numberText;
 
-    private int number = 0;
+    private GameData gameData;
+
+    private void Awake()
+    {
+        gameData = DataManager.Instance.gameData;
+    }
 
     public void ChangeValue(int value)
     {
-        number += value;
-        numberText.text = number.ToString();
+        gameData.totalKills += value;
+        numberText.text = gameData.totalKills.ToString();
     }
 
     public void Save()
     {
-        SaveSystem.SaveData(number);
+        DataManager.Instance.SaveGame();
     }
 
     public void Load()
     {
         if (SaveSystem.LoadData() != null)
         {
-            number = SaveSystem.LoadData().testInt;
-            numberText.text = number.ToString();
+            DataManager.Instance.LoadGame();
+            gameData = DataManager.Instance.gameData;
+            numberText.text = gameData.totalKills.ToString();
         }
     }
 
     public void Delete()
     {
-        SaveSystem.DeleteData();
+        DataManager.Instance.DeleteGame();
+        gameData = DataManager.Instance.gameData;
+        numberText.text = gameData.totalKills.ToString();
     }
 }

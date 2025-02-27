@@ -4,12 +4,12 @@ using UnityEngine;
 
 public static class SaveSystem
 {
-    public static void SaveData(int testInt)
+    public static void SaveData(GameData data)
     {
         Debug.Log("Preparing to save...");
 
         string path = Application.persistentDataPath + "/save.json";
-        GameData data = new GameData(testInt);
+        //GameData data = new GameData();
         string json = JsonUtility.ToJson(data);
 
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -38,7 +38,7 @@ public static class SaveSystem
             return data;
         } else
         {
-            Debug.Log("No save file found in " + path);
+            Debug.Log("No save data found in " + path);
             return null;
         }
     }

@@ -296,12 +296,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 0
   spawnCost: 20
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5506112364096676143}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -311,6 +313,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: Splitter
   score: 30
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -612,12 +615,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5446564598276922433}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -627,6 +632,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -842,12 +848,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7121892076314566115}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -857,6 +865,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -1408,12 +1417,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 772832677693561689}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1423,6 +1434,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -1638,12 +1650,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7605173110703644166}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1653,6 +1667,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -1868,12 +1883,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5312841502110046480}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -1883,6 +1900,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -2405,12 +2423,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 6021964516584940954}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -2420,6 +2440,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -2721,12 +2742,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7254835815414458085}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -2736,6 +2759,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -3006,12 +3030,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 8605842806598589871}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3021,6 +3047,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -3293,12 +3320,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 7586837564522307866}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3308,6 +3337,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -3580,12 +3610,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 3874334518867957134}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3595,6 +3627,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -3867,12 +3900,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 4677283693899827122}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -3882,6 +3917,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -4183,12 +4219,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 5661924259252529554}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -4198,6 +4236,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []
@@ -4720,12 +4759,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 1293602325205433}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -4735,6 +4776,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots:
@@ -5036,12 +5078,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 1
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 2360292562172162060}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -5051,6 +5095,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: 
   score: 0
   rotateSpriteToFacePlayer: 0
   childSplots: []

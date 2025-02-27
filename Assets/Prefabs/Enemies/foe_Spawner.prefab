@@ -234,6 +234,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 0
   spawnCost: 15
   target: {fileID: 0}
@@ -250,6 +251,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: Spawner
   score: 7
   rotateSpriteToFacePlayer: 0
 --- !u!1 &5340787648015603122

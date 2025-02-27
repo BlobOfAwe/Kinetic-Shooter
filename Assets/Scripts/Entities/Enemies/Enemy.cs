@@ -42,6 +42,8 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
+    private string enemyName = ""; // Used to track kills of specific enemy types. - NK
+    [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
     [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
@@ -88,6 +90,8 @@ public abstract class Enemy : Entity
         if (secondary != null) { secondary.PurgeDependantObjects(); }
         if (utility != null) { utility.PurgeDependantObjects(); }
         if (additional != null) { additional.PurgeDependantObjects(); }
+
+        DataManager.Instance.gameData.AddKills(enemyName); // Added by Nathaniel Klassen
 
         if (scoreManager != null)
         {

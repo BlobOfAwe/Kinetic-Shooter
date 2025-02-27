@@ -217,12 +217,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
   cushion: 0
   spawnCost: 0
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 2610231607656848988}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -232,6 +234,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 1
+  enemyName: Bouncer
   score: 0
   rotateSpriteToFacePlayer: 0
   bossAnimator: {fileID: 4313039758088035429}
