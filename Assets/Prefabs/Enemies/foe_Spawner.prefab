@@ -192,7 +192,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 7955933720918278427, guid: 6867ba6d5d528fd48b2c5c1f96c1cc32, type: 3}
   bossSpawnAnimator: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 553466555589206235}
   localSpawnCredits: 5
 --- !u!114 &-9137717341263555411
 MonoBehaviour:
@@ -240,6 +240,7 @@ MonoBehaviour:
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 1956464599954232887}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8

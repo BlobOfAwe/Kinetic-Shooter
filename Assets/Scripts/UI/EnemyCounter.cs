@@ -36,6 +36,7 @@ public class EnemyCounter : MonoBehaviour
 
     void Start()
     {
+        totalEnemies = Mathf.RoundToInt(totalEnemies * (1 + (GameManager.difficultyCoefficient * 0.5f))); // Scale the number of enemies based on the difficulty
         remainingEnemies = totalEnemies;
         UpdateEnemyCounter();
     }

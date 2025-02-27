@@ -19,7 +19,7 @@ public abstract class Enemy : Entity
     public AIPath aiPath;
     public SpriteRenderer sprite;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
-    private ScoreManager scoreManager; // Added by Nathaniel Klassen
+    [SerializeField] private ScoreManager scoreManager; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
@@ -105,7 +105,7 @@ public abstract class Enemy : Entity
             FindObjectOfType<Forcefield>().Deactivate();
             FindObjectOfType<Beacon>().levelIsFinished = true; // temporary
         }
-        Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
+        //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
         Destroy(gameObject);
     }

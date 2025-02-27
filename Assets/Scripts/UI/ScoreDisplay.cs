@@ -4,7 +4,7 @@ using UnityEngine;
 public class ScoreDisplay : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private int currentScore = 0;
+    //[SerializeField] private int currentScore = 0; (REPLACED by GameManager.score)
 
     private void Awake()
     {
@@ -15,17 +15,20 @@ public class ScoreDisplay : MonoBehaviour
     { 
         UpdateScoreText(); 
     }
-    public void UpdateScore(int score)
-    {
-        currentScore = score; 
-        UpdateScoreText();
-        //text.text = "Score: " + score;
-    }
-    private void UpdateScoreText()
+
+    // ScoreManager.cs now updates a static variable in GameManager rather than calling this function
+    //public void UpdateScore(int score)
+    //{
+    //    currentScore = score; 
+    //    UpdateScoreText();
+    //    //text.text = "Score: " + score;
+    //}
+
+    public void UpdateScoreText()
     {
         if (text != null)
         {
-            text.text = "Score: " + currentScore;
+            text.text = "Score: " + GameManager.score;
         }
         else { Debug.LogError("No score text detected"); }
     }

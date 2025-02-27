@@ -480,6 +480,25 @@ public class PlayerBehaviour : Entity
 
     public void Quit() { Application.Quit(); }
 
+    public override void Death()
+    {
+        playerAnimator.SetTrigger("isDead");
+        //SceneManager.LoadScene(gameOverScene);
+        
+        StartCoroutine(HandleDeath());
+    }
+    private IEnumerator HandleDeath()
+    {
+        yield return new WaitForSeconds(deathDelay);
+        GameOverPanel();
+    }
+    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
+    public void GameOverPanel()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+    }
+    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
 
 
     // COMMENTED OUT THIS CODE BECAUSE IT SHOULD BE DONE IN OnMove(). - NK
@@ -532,26 +551,6 @@ public class PlayerBehaviour : Entity
             playerMovementSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
     }*/
-
-    public override void Death()
-    {
-        playerAnimator.SetTrigger("isDead");
-        //SceneManager.LoadScene(gameOverScene);
-        
-        StartCoroutine(HandleDeath());
-    }
-    private IEnumerator HandleDeath()
-    {
-        yield return new WaitForSeconds(deathDelay);
-        GameOverPanel();
-    }
-    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
-    public void GameOverPanel()
-    {
-        Time.timeScale = 0f;
-        gameOverPanel.SetActive(true);
-    }
-    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
 
 }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class Beacon : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Beacon : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vCam;
     [SerializeField] private string nextLevelScene = "";
     [SerializeField] private GameObject winPanel;
+    private InventoryManager playerInv;
     [HideInInspector]
     public bool levelIsFinished = false; // temporary
 
@@ -30,7 +32,7 @@ public class Beacon : MonoBehaviour
 
     private void Start()
     {
-
+        playerInv = FindAnyObjectByType<PlayerBehaviour>().GetComponentInChildren<InventoryManager>();
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
         startingCamSize = vCam.m_Lens.OrthographicSize;
         Debug.LogWarning("Hi I started");
@@ -75,6 +77,16 @@ public class Beacon : MonoBehaviour
     }
     private void WinGame()
     {
-        winPanel.SetActive(true);
+        // If the current level is not the last level, load the next level
+        if (GameManager.currentLevel < GameManager.sceneIndexForLevel.Length - 1)
+        {
+            playerInv.PreserveInventory();
+            GameManager.currentLevel++;
+            SceneManager.LoadSceneAsync(GameManager.sceneIndexForLevel[GameManager.currentLevel]);
+            GameManager.difficultyCoefficient++;
+        }
+        // Otherwise, enable the win panel
+        else
+            winPanel.SetActive(true);
     }
 }
