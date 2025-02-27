@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
   m_Name: Item_Wheel
   m_EditorClassIdentifier: 
+  entryID: 2
   entryName: Why
   entryImage: {fileID: 21300000, guid: ad86115ede230ef48afb94807c9eb031, type: 3}
+  entryIcon: {fileID: 21300000, guid: ad86115ede230ef48afb94807c9eb031, type: 3}
   description: "The FitnessGram\u2122 Pacer Test is a multistage aerobic capacity
     test that progressively gets more difficult as it continues.\r\nThe 20 meter
     pacer test will begin in 30 seconds. Line up at the start.\r\nThe running speed
@@ -22,5 +24,5 @@ MonoBehaviour:
     a straight line, and run as long as possible.\r\nThe second time you fail to
     complete a lap before the sound, your test is over.\r\nThe test will begin on
     the word start.\r\nOn your mark, get ready, start."
-  isUnlocked: 0
+  isUnlocked: 1
   unlockCondition: Going Through Multiple loops and getting the true ending

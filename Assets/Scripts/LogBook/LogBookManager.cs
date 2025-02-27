@@ -9,65 +9,111 @@ using TMPro;
 /// </summary>
 public class LogBookManager : MonoBehaviour
 {
+
     public static LogBookManager Instance;
 
-    [SerializeField] 
+    [Header("Entries")]
+    [SerializeField]
     private LogEntry[] allEntries;
-    private int currentIndex;
 
+    [Header("Ui Entries Button")]
+    [SerializeField]
+    private LogBookGrid[] gridButtons;
+
+    [Header("Detail View")]
+    [SerializeField]
+    private GameObject detailPanel;
     [SerializeField]
     private TMP_Text entryName;
     [SerializeField]
     private Image entryImage;
     [SerializeField]
-    private TMP_Text descriptionText;
+    private Sprite lockedIcon;
+    [SerializeField]
+    private Sprite lockedImage;
+    [SerializeField]
+    private TMP_Text entryDescription;
+
+    private Dictionary<string, LogEntry> entryDictionary = new Dictionary<string, LogEntry>();
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            InitializeDictionary();
+            InitializeManualGrid();
         }
         else
         {
-            Destroy(gameObject);    
+            Destroy(gameObject);
         }
     }
 
-    public void ShowLogBook()
+    private void InitializeDictionary()
     {
-        currentIndex = 0;
-        DisplayEntry();
+        foreach (var entry in allEntries)
+        {
+            entryDictionary.Add(entry.entryID, entry);
+        }
+    }
+    public void InitializeManualGrid()
+    {
+        for (int i = 0; i < gridButtons.Length; i++)
+        {
+            if (i < allEntries.Length)
+            {
+                LogEntry entry = allEntries[i];
+                gridButtons[i].Initialize(
+                    entry.isUnlocked ? entry.entryIcon : lockedIcon,
+                    entry.isUnlocked ? entry.entryName : "???",
+                    entry.entryID,
+                    entry.isUnlocked
+                );
+            }
+            else
+            {
+                gridButtons[i].gameObject.SetActive(false);
+            }
+        }
     }
 
-    private void DisplayEntry()
+    public void ShowEntryDetails(string entryID)
     {
-        LogEntry currentEntry = allEntries[currentIndex];
-
-        entryName.text = currentEntry.isUnlocked ? currentEntry.entryName : "???";
-
-        entryImage.sprite = currentEntry.isUnlocked ? currentEntry.entryImage : Resources.Load<Sprite>("LockedSprite");
-
-        descriptionText.text = currentEntry.isUnlocked ? currentEntry.description : $"Unlock by {currentEntry.unlockCondition}";
-    }
-
-    public void NextEntry()
-    {
-        currentIndex = (currentIndex + 1) % allEntries.Length;
-        DisplayEntry();
-    }
-
-    public void PreviousEntry()
-    {
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = allEntries.Length - 1;
-        DisplayEntry();
+        if (entryDictionary.TryGetValue(entryID, out LogEntry entry))
+        {
+            detailPanel.SetActive(true);
+            entryName.text = entry.isUnlocked ? entry.entryName : "???";
+            entryImage.sprite = entry.isUnlocked ? entry.entryImage : lockedImage;
+            entryDescription.text = entry.isUnlocked ?
+                entry.description :
+                $"Unlock by {entry.unlockCondition}";
+        }
     }
 
     public void UnlockEntry(string entryID)
     {
-        var entry = System.Array.Find(allEntries, e => e.name == entryID);
-        if (entry != null) entry.isUnlocked = true;
+        if (entryDictionary.TryGetValue(entryID, out LogEntry entry))
+        {
+            entry.isUnlocked = true;
+            RefreshGridItem(entryID);
+        }
     }
 
+    private void RefreshGridItem(string entryID)
+    {
+        foreach (var gridItem in gridButtons)
+        {
+            if (gridItem.EntryID == entryID)
+            {
+                LogEntry entry = entryDictionary[entryID];
+                gridItem.UpdateAppearance(
+                    entry.entryIcon,
+                    entry.entryName,
+                    entry.isUnlocked
+                );
+                break;
+            }
+        }
+    }
 }
