@@ -54,6 +54,12 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected bool isInvincible = false;
 
+    [SerializeField]
+    protected bool isFlammable = true;
+
+    // This is to be used with the cushion upgrade on the player specifically.
+    [HideInInspector]
+    public float cushion = 0f;
 
     protected virtual void Awake()
     {
@@ -70,11 +76,23 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void Damage(float amount)
     {
+        Damage(amount, false);
+    }
+
+    public virtual void Damage(float amount, bool isContactDamage)
+    {
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
         if (!isInvincible)
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
+            if (isContactDamage)
+            {
+                totalDamage *= 1f - cushion;
+            } else
+            {
+                totalDamage *= 100 / (100 + (cushion * 100));
+            }
             health -= totalDamage;
         }
         //Debug.Log("Took " + amount + " damage.");
@@ -90,6 +108,26 @@ public abstract class Entity : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+    }
+
+    public virtual void Ignite(float damage, float tickSpeed, float time)
+    {
+        if (isFlammable)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(TickDamage(damage, tickSpeed, time));
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    protected IEnumerator TickDamage(float damage, float tickSpeed, float time)
+    {
+        while (time > 0f)
+        {
+            Damage(damage);
+            time -= Time.deltaTime;
+            yield return new WaitForSeconds(tickSpeed);
         }
     }
 

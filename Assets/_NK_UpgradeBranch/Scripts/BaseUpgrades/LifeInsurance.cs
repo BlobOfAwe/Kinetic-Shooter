@@ -32,9 +32,6 @@ public class LifeInsurance : Upgrade
         shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
         player.speedMultiplier = Mathf.Pow(player.speedMultiplier + manualMoveIncrease, quantity);
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

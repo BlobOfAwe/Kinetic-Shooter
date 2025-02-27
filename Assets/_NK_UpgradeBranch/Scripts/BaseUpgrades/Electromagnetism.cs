@@ -33,9 +33,6 @@ public class Electromagnetism : Upgrade
         player.attackMultiplier += attackIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

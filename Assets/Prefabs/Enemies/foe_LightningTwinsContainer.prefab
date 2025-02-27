@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 0.01
   height: 0.01
   canMove: 0
@@ -221,11 +222,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
+  cushion: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 4816121462079683429}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 0
@@ -235,6 +239,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: Lightning Twins
   score: 0
   rotateSpriteToFacePlayer: 0
 --- !u!1 &3438049341815713322

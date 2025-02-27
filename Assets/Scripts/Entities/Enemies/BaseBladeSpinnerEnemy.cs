@@ -42,7 +42,7 @@ public class BaseBladeSpinnerEnemy : Enemy
     {
         if ((hostile & (1 << collision.gameObject.layer)) != 0)
         {
-            collision.gameObject.GetComponent<Entity>().Damage(totalAttack);
+            collision.gameObject.GetComponent<Entity>().Damage(totalAttack, true);
         }
     }
 

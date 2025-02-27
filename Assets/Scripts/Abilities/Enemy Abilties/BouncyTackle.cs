@@ -72,7 +72,7 @@ public class BouncyTackle : Ability
                 // Try to damage the object
                 try
                 {
-                    collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier);
+                    collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier, true);
                 }
                 catch { }
             }

@@ -9,6 +9,7 @@ public class AsyncLoader : MonoBehaviour
 
     public void StartAsyncLoad()
     {
+        DataManager.Instance.SaveGame(); // Automatically saves the game when a scene changes. - NK
         // If you are loading from the main menu scene, the run is starting, set the difficulty to 0
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {

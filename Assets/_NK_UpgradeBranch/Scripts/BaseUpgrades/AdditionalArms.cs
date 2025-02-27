@@ -30,9 +30,6 @@ public class AdditionalArms : Upgrade
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
         player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)

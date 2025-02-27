@@ -211,6 +211,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
+  cushion: 0
   spawnCost: 1
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -226,6 +228,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  enemyName: Minlet
   score: 0
   enemyCounterValue: 0
   rotateSpriteToFacePlayer: 0

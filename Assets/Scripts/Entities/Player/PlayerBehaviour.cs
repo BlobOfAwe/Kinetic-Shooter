@@ -22,6 +22,8 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float moveAcceleration = 1f;
 
+    // Temporarily serialized for testing.
+    [SerializeField]
     private Camera mainCam;
 
     [SerializeField]
@@ -70,9 +72,12 @@ public class PlayerBehaviour : Entity
 
     private TestBullet lastBullet;
 
-    private bool isFiringPrimary = false;
+    // Changed to public so it can be accessed by cushion upgrade.
+    [HideInInspector]
+    public bool isFiringPrimary = false;
 
-    private bool isFiringSecondary = false;
+    [HideInInspector]
+    public bool isFiringSecondary = false;
 
     private Vector2 moveDir;
 
@@ -92,12 +97,16 @@ public class PlayerBehaviour : Entity
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
+    [SerializeField]
     private LoadoutManager.Loadout loadout;
 
     protected override void Awake()
     {
         base.Awake();
-        loadout = GameManager.playerLoadout;
+        if (GameManager.playerLoadout != null)
+        {
+            loadout = GameManager.playerLoadout;
+        }
 
         // Assigns the player.ability to be the component based on the specified ability type
         primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
@@ -196,7 +205,16 @@ public class PlayerBehaviour : Entity
     /// If the player is moving slower than the lower bound;
     /// Add to the velocity until they hit that lower bound;
     /// </summary>
- 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (cushion > 0f && collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log("Damaged " + collision.gameObject.name + " with shield for " + (totalAttack * cushion) + " damage.");
+            collision.gameObject.GetComponent<Enemy>().Damage(totalAttack * cushion, true);
+        }
+    }
+
     public void OnAim(InputAction.CallbackContext context)
     {
         if (!GameManager.paused)
@@ -322,23 +340,32 @@ public class PlayerBehaviour : Entity
                 }
             }
         }
-        if (target.GetComponent<Entity>() != null)
+        if (bullet.isFromBurst)
         {
-            bullet.hits -= 1;
-            //Debug.Log("hits: " + bullet.hits);
+            bullet.isFromBurst = false;
         } else
         {
-            bullet.hits = 1;
-            //Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
-            bullet.isPiercing = false;
-            bullet.gameObject.SetActive(false);
-        }
-        if (bullet.hits <= 0)
-        {
-            bullet.hits = 1;
-            //Debug.Log("Out of hits. Hits reset to " + bullet.hits);
-            bullet.isPiercing = false;
-            bullet.gameObject.SetActive(false);
+            if (target.GetComponent<Entity>() != null)
+            {
+                bullet.hits -= 1;
+                Debug.Log("hits: " + bullet.hits);
+            }
+            else
+            {
+                bullet.hits = 1;
+                Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+                bullet.isPiercing = false;
+                bullet.isBursting = false;
+                bullet.gameObject.SetActive(false);
+            }
+            if (bullet.hits <= 0)
+            {
+                bullet.hits = 1;
+                Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+                bullet.isPiercing = false;
+                bullet.isBursting = false;
+                bullet.gameObject.SetActive(false);
+            }
         }
     }
 

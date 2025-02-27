@@ -23,9 +23,6 @@ public class ShotgunBlast : Upgrade
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)

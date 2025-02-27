@@ -33,8 +33,5 @@ public class FastFly : Upgrade
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
         player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
     }
 }

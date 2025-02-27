@@ -42,6 +42,8 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
+    private string enemyName = ""; // Used to track kills of specific enemy types. - NK
+    [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
     [SerializeField]
     public float enemyCounterValue = 1; // How many enemies are counted as defeated when this enemy dies? Usually 1, but may be 0 in some circumstances
@@ -117,6 +119,9 @@ public abstract class Enemy : Entity
             }
             //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
             AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
+            
+            DataManager.Instance.gameData.AddKills(enemyName); // Added by Nathaniel Klassen
+
             Destroy(gameObject);
         }
     }

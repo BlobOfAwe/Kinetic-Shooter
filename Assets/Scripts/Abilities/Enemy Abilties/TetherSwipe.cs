@@ -52,7 +52,7 @@ public class TetherSwipe : Ability
             targetRB.velocity = Vector2.zero;
             targetRB.AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
             ApplySlow(target);
-            target.Damage(thisEntity.totalAttack * damageModifier);
+            target.Damage(thisEntity.totalAttack * damageModifier, true);
         }
     }
 

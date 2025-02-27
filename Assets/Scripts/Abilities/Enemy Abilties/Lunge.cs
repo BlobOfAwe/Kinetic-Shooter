@@ -70,7 +70,7 @@ public class Lunge : Ability
         {
             if ((canDamage & (1 << collision.gameObject.layer)) != 0)
             {
-                collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier); // 10 should be replaced by the appropriate damage calculation
+                collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier, true); // 10 should be replaced by the appropriate damage calculation
             }
         }
     }

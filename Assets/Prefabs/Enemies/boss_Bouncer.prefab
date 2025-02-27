@@ -217,6 +217,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
+  isFlammable: 1
+  cushion: 0
   spawnCost: 100
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -232,6 +234,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 1
+  enemyName: Bouncer
   score: 0
   rotateSpriteToFacePlayer: 0
   bossAnimator: {fileID: 4313039758088035429}

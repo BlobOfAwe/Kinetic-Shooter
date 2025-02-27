@@ -59,11 +59,13 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        DataManager.Instance.SaveGame(); // Automatically saves the game when the player exits to main menu. - NK
         SceneManager.LoadScene("MainMenu"); 
     }
     public void QuitGame()
     {
-       //Debug.Log("Quitting game");
+        DataManager.Instance.SaveGame(); // Automatically saves the game when the player quits the game. - NK
+        Debug.Log("Quitting game");
         Application.Quit();
     }
     public void PlayClickSound()

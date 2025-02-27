@@ -14,6 +14,10 @@ public class TestBullet : Projectile
     public bool isPiercing = false;
     [HideInInspector]
     public int hits = 1;
+    [HideInInspector]
+    public bool isBursting = false;
+    [HideInInspector]
+    public bool isFromBurst = false;
 
     // Update is called once per frame
     protected override void Update()
@@ -38,7 +42,7 @@ public class TestBullet : Projectile
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up * knockback, ForceMode2D.Impulse);
             }
 
-            if (collision.gameObject.GetComponent<Entity>())
+            if (collision.gameObject.GetComponent<Entity>() && !isFromBurst)
             {
                 //hitDamageable = true;
                 collision.gameObject.GetComponent<Entity>().Damage(damageMultiplier * shooterEntity.totalAttack);
