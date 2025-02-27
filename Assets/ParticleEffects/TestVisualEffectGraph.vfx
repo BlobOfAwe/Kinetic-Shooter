@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: SimpleParticleSystem
+  m_Name: TestVisualEffectGraph
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -627,7 +627,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.01788330078125,"value":-0.0487823486328125,"inTangent":0.28620609641075137,"outTangent":0.28620609641075137,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.5475609302520752,"value":0.10281461477279663,"inTangent":-0.05526825785636902,"outTangent":-0.05526825785636902,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.93804931640625,"value":-0.0521087646484375,"inTangent":-0.3967426121234894,"outTangent":-0.3967426121234894,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.01788330078125,"value":-0.0487823486328125,"inTangent":0.28620609641075137,"outTangent":0.28620609641075137,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.5475609302520752,"value":0.10281461477279663,"inTangent":-0.0723889023065567,"outTangent":-0.0723889023065567,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9019353985786438,"value":-0.04991507902741432,"inTangent":-0.43098390102386477,"outTangent":-0.43098390102386477,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -725,7 +725,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":8.0,"g":4.303419589996338,"b":0.0,"a":1.0},"time":0.11764705926179886},{"color":{"r":8.0,"g":0.9041118025779724,"b":0.0,"a":1.0},"time":0.2058899849653244},{"color":{"r":16.0,"g":2.6809885501861574,"b":0.0,"a":1.0},"time":0.7176470756530762},{"color":{"r":3.1151833534240724,"g":0.3433690071105957,"b":0.0,"a":1.0},"time":0.8352941274642944},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":1.0,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.0,"g":7.999999046325684,"b":5.608434200286865,"a":1.0},"time":0.11764705926179886},{"color":{"r":0.0,"g":7.999999046325684,"b":2.550941228866577,"a":1.0},"time":0.21470969915390016},{"color":{"r":0.0,"g":1.266921877861023,"b":15.999998092651368,"a":1.0},"time":0.7176470756530762},{"color":{"r":0.0,"g":3.115182876586914,"b":2.1915767192840578,"a":1.0},"time":0.8352941274642944},{"color":{"r":0.0,"g":0.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":1.0,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
