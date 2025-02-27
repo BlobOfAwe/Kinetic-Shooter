@@ -18,47 +18,43 @@ public class AudioParameterController : MonoBehaviour
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
-    private void Update()
+    public void IncrementIntensity()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            parameterValueIntensity--;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
+        if (parameterValueIntensity < 3)
         {
             parameterValueIntensity++;
             AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
         }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            parameterValueStage--;
-            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            parameterValueStage++;
-            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
-        }
-
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            parameterValuePause--;
-            AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
-        }
-        else if (Input.GetKeyDown(KeyCode.M))
-        {
-            parameterValuePause++;
-            AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
-        }
+        
     }
-
-    public void IncrementIntensity (int increment)
+    public void DecreaseIntensity()
     {
-        parameterValueIntensity += increment;
-        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        if (parameterValueIntensity > 0)
+        {
+            parameterValueIntensity--;
+            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+        }
+      
+    }
+    public void IncrementStage()
+    {
+        parameterValueStage ++;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
+    public void EndingWin()
+    {
+        if (parameterValueStage == 4)
+        {
+            parameterValueEnding = 1;
+            AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
+        }
+        
     }
 
+    public void EndingLoss()
+    {
+        parameterValueEnding = 2;
+        AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
+    }
 
 }

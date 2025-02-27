@@ -27,12 +27,13 @@ public abstract class Item : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBehaviour>() != null)
         {
             collision.GetComponentInChildren<InventoryManager>().AddItem(this);
-
+            //stops emitter audio
             emitter.Stop();
             gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
 
-
+            //plays pickup sound
             AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
+
             Debug.Log("Picked up item");
         }
     }

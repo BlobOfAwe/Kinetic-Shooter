@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class StandardPrimaryFire : Ability
 {
@@ -46,7 +47,6 @@ public class StandardPrimaryFire : Ability
 
         // Modified code to animate gun and play fire sound here and only here. - NK
         player.playerGunAnimator.SetTrigger("isShooting");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
@@ -61,6 +61,7 @@ public class StandardPrimaryFire : Ability
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
         }
 
         // If no inactive bullets were found, throw an error

@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
-
+    public static int songSelection = 0;
 
     public static AudioManager instance {  get; private set; }
 
@@ -61,25 +61,53 @@ public class AudioManager : MonoBehaviour
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        if (sceneName == "MAIN")
+        // Retrieve current variable status
+
+
+        // Main Menu
+        if (sceneName == "MainMenu")
         {
-            InitiliazeAmbience(FMODEvents.instance.level1Ambience);
-            InitiliazeMusic(FMODEvents.instance.level1Music);
+            songSelection = 0;
         }
-        else if (sceneName == "Level 1")
+        // Industrial Level
+        else if (sceneName == "Industrial Level")
         {
-            InitiliazeAmbience(FMODEvents.instance.level2Ambience);
-            InitiliazeMusic(FMODEvents.instance.level2Music);
+            songSelection = 1;
         }
-        else if (sceneName == "Level 3")
+        // Jungle Level
+        else if (sceneName == "Jungle Level")
         {
-            InitiliazeAmbience(FMODEvents.instance.level3Ambience);
-            InitiliazeMusic(FMODEvents.instance.level3Music);
+            songSelection = 2;
         }
-        else if (sceneName == "MainMenu")
+        // Lava Level
+        else if (sceneName == "Lava Level")
+        {
+            songSelection = 3;
+        }
+
+        // Main Menu
+        if (songSelection == 0)
         {
             InitiliazeAmbience(FMODEvents.instance.mainMenuAmbience);
             InitiliazeMusic(FMODEvents.instance.mainMenuMusic);
+        }
+        // Industrial Level
+        else if (songSelection == 1)
+        {
+            InitiliazeAmbience(FMODEvents.instance.industrialAmbience);
+            InitiliazeMusic(FMODEvents.instance.industrialMusic);
+        }
+        // Jungle Level
+        else if (songSelection == 2)
+        {
+            InitiliazeAmbience(FMODEvents.instance.jungleAmbience);
+            InitiliazeMusic(FMODEvents.instance.jungleMusic);
+        }
+        // Lava Level
+        else if (songSelection == 3)
+        {
+            InitiliazeAmbience(FMODEvents.instance.lavaAmbience);
+            InitiliazeMusic(FMODEvents.instance.lavaMusic);
         }
 
     }

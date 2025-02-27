@@ -21,7 +21,7 @@ public class Forcefield : MonoBehaviour
     {
         if (!isDeactivated && ((playerLayer & (1 << collision.gameObject.layer)) != 0))
         {
-            FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
+            //FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
             sr.enabled = true;
             Debug.Log("Player entered the beacon radius.");
             forcefieldCollider.enabled = true;
