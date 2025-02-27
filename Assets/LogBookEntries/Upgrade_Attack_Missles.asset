@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
   m_Name: Upgrade_Attack_Missles
   m_EditorClassIdentifier: 
+  entryID: 3
   entryName: SameOlRye
   entryImage: {fileID: 21300000, guid: 5db16098ae041c14b8cb37fd8d8588e1, type: 3}
+  entryIcon: {fileID: 0}
   description: YeeHaw
   isUnlocked: 0
   unlockCondition: Killing 3 Splitters
