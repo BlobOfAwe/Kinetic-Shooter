@@ -51,7 +51,7 @@ public static class SaveSystem
 
         if (File.Exists(path))
         {
-            FileUtil.DeleteFileOrDirectory(path);
+            File.Delete(path);
             Debug.Log("Save data deleted!");
         } else
         {

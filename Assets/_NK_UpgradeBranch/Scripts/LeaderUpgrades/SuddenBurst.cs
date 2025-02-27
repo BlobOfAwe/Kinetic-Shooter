@@ -13,12 +13,6 @@ public class SuddenBurst : Upgrade
 
     private StandardPrimaryFire shootAbility;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-    }
-
     public override void ProjectileUpgradeEffect(TestBullet shotBullet, GameObject target, int quantity)
     {
         if (Random.Range(0f, 1f) <= burstChance * quantity && shotBullet.isBursting)
