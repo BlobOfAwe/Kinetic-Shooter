@@ -44,9 +44,12 @@ public abstract class Enemy : Entity
     [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
     [SerializeField]
+    public float enemyCounterValue = 1; // How many enemies are counted as defeated when this enemy dies? Usually 1, but may be 0 in some circumstances
+    [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
+    private bool dead;
 
-    protected void Start()
+    protected virtual void Start()
     {
         seeker = GetComponent<Seeker> ();
         aiPath = GetComponent<AIPath> ();
@@ -80,34 +83,42 @@ public abstract class Enemy : Entity
     // Required implementation of the abstract function Entity.Death()
     public override void Death()
     {
-        Debug.Log(gameObject.name + " was killed");
-        FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
-        
-        // Purge any dependant objects from the enemy's abilities
-        if (primary != null) { primary.PurgeDependantObjects(); }
-        if (secondary != null) { secondary.PurgeDependantObjects(); }
-        if (utility != null) { utility.PurgeDependantObjects(); }
-        if (additional != null) { additional.PurgeDependantObjects(); }
+        if (!dead)
+        {
+            dead = true;
+            //Debug.Log(gameObject.name + " was killed");
+            FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
 
-        if (scoreManager != null)
-        {
-            scoreManager.AddPoints(score);
+            // Purge any dependant objects from the enemy's abilities
+            if (primary != null) { primary.PurgeDependantObjects(); }
+            if (secondary != null) { secondary.PurgeDependantObjects(); }
+            if (utility != null) { utility.PurgeDependantObjects(); }
+            if (additional != null) { additional.PurgeDependantObjects(); }
+
+            if (scoreManager != null)
+            {
+                scoreManager.AddPoints(score);
+            }
+            else
+            {
+                scoreManager = FindAnyObjectByType<ScoreManager>();
+                scoreManager.AddPoints(score);
+            }
+            // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
+            if (!isBoss)
+            {
+                enemyCounter.EnemyDefeated(this);
+            }
+            else
+            {
+                Debug.Log("You beat the boss!");
+                // Whatever happens when a boss is defeated goes here.
+                enemyCounter.BossDefeated(this);
+            }
+            //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
+            Destroy(gameObject);
         }
-        else { Debug.LogError("No Score Manager in Scene"); }
-        // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
-        if (!isBoss)
-        {
-            enemyCounter.EnemyDefeated();
-        } else
-        {
-            Debug.Log("You beat the boss!");
-            // Whatever happens when a boss is defeated goes here.
-            FindObjectOfType<Forcefield>().Deactivate();
-            FindObjectOfType<Beacon>().levelIsFinished = true; // temporary
-        }
-        //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
-        Destroy(gameObject);
     }
 
     // Checks to see if a valid target is within sightRange

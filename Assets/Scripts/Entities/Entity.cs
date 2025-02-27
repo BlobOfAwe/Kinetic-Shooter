@@ -195,11 +195,11 @@ public abstract class Entity : MonoBehaviour
         totalRecovery *= recoveryMultiplier;
 
         // DEBUG
-        if (inventoryManager != null)
-        {
-            Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
-            Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
-        }
+        //if (inventoryManager != null)
+        //{
+        //    Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
+        //    Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
+        //}
         if (statsDisplay != null)
         {
             statsDisplay.UpdateDisplay();

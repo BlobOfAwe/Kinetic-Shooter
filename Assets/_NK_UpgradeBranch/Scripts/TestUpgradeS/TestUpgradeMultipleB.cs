@@ -11,6 +11,7 @@ public class TestUpgradeMultipleB : Upgrade
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
         player.totalSpeed += speedToAdd * quantity;
         player.attackMultiplier += attackMultiplier * quantity;
         Debug.Log("Added to speed by " + (speedToAdd * quantity));

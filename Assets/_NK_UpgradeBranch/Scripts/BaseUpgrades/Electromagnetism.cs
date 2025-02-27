@@ -25,17 +25,11 @@ public class Electromagnetism : Upgrade
 
     private StandardPrimaryFire shootAbility;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
-    }
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
         player.attackMultiplier += attackIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
@@ -73,7 +67,7 @@ public class Electromagnetism : Upgrade
         {
             closestEnemy.Damage(player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent);
             Instantiate(arcLine).GetComponent<ArcLine>().SetParameters(source, closestEnemy.gameObject, arcLineTime);
-            Debug.Log("Arc from " + source.name + " to " + closestEnemy.name + ", dealing " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage.");
+            //Debug.Log("Arc from " + source.name + " to " + closestEnemy.name + ", dealing " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage.");
             Debug.DrawLine(source.transform.position, closestEnemy.transform.position, Color.yellow, arcLineTime);
             arcZoneColor = Color.green;
             arcs -= 1;
@@ -84,7 +78,7 @@ public class Electromagnetism : Upgrade
         }
         else
         {
-            Debug.Log("No nearby enemies");
+            //Debug.Log("No nearby enemies");
             arcZoneColor = Color.red;
         }
 

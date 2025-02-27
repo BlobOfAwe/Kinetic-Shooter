@@ -38,7 +38,7 @@ public class PlantSpike : Ability
         // Check the Normal of the wall
         if (hit)
         {
-            Debug.Log("Plant spike at normal " + hit.normal);
+           //Debug.Log("Plant spike at normal " + hit.normal);
             // Spawn a spike projectile on that wall
             // Check for the first available inactive bullet, and activate it from this object's position
             foreach (GameObject bullet in bullets)
@@ -58,6 +58,6 @@ public class PlantSpike : Ability
 
         thisEnemy.target = null;
         thisEnemy.state = 0; // Manually set the enemy state to override the StateChange Cooldown
-        Debug.Log("Set enemy state " + thisEnemy.state);
+       //Debug.Log("Set enemy state " + thisEnemy.state);
     }
 }

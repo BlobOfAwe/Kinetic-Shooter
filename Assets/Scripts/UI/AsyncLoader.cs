@@ -11,7 +11,10 @@ public class AsyncLoader : MonoBehaviour
     {
         // If you are loading from the main menu scene, the run is starting, set the difficulty to 0
         if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
             GameManager.difficultyCoefficient = 0;
+            GameManager.currentLevel = 0;
+        }
         StartCoroutine(LoadSceneAsync(sceneToLoad));
     }
     IEnumerator LoadSceneAsync(int index)

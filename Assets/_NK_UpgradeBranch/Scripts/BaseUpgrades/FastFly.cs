@@ -22,17 +22,11 @@ public class FastFly : Upgrade
 
     private StandardPrimaryFire shootAbility;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
-    }
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
         shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
         shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;

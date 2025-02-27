@@ -8,6 +8,7 @@ public class TestUpgradeAttackMultiply : Upgrade
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
         player.attackMultiplier += attackMultiplier * quantity;
         Debug.Log("Attack multiplier + " + (attackMultiplier * quantity));
     }

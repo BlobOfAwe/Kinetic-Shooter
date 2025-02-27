@@ -22,17 +22,10 @@ public class AdditionalArms : Upgrade
 
     private StandardPrimaryFire shootAbility;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
-    }
-
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
         player.healthMultiplier += healthIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;

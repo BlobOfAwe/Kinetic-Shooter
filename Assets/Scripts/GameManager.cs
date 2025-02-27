@@ -1,6 +1,7 @@
 // ## - JV
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public static class GameManager
@@ -24,7 +25,9 @@ public static class GameManager
     /// to which environment. The indexes can be changed, or more can be added to increase the game length.
     /// This is retrieved by Beacon.cs to load levels after completion.
     /// </summary>
-    public static int[] sceneIndexForLevel = {1,1};
+    public static int[] sceneIndexForLevel = {1,1,1,2,2,2,3,3,3};
+
+    public static int[] bossSpawnCreditsForLevel = { 20, 40, 100, 60, 120, 160, 180, 200, 260 };
     
     /// <summary>
     /// Which level the player is on. The first level is level 0. This is compared to the index of sceneIndexForLevel

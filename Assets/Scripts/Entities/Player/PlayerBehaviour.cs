@@ -202,7 +202,13 @@ public class PlayerBehaviour : Entity
         if (!GameManager.paused)
         {
             Vector2 cursorPos = context.ReadValue<Vector2>();
-            Vector2 aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            Vector2 aimPos = Vector2.zero;
+
+            if (mainCam != null)
+            {
+                aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            }
+            else { Debug.LogWarning("No Main Camera detected"); }
 
             // Created a local variable to reference the transform position instead of typing it manually. Z.S
             Vector2 direction = aimPos - (Vector2)aimTransform.position;
@@ -258,7 +264,7 @@ public class PlayerBehaviour : Entity
 
     public void OnHunker(InputAction.CallbackContext context)
     {
-        Debug.Log("Hunkered");
+        //Debug.Log("Hunkered");
         if (context.performed)
         {
             rb.velocity = Vector2.zero;
@@ -319,18 +325,18 @@ public class PlayerBehaviour : Entity
         if (target.GetComponent<Entity>() != null)
         {
             bullet.hits -= 1;
-            Debug.Log("hits: " + bullet.hits);
+            //Debug.Log("hits: " + bullet.hits);
         } else
         {
             bullet.hits = 1;
-            Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+            //Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
             bullet.isPiercing = false;
             bullet.gameObject.SetActive(false);
         }
         if (bullet.hits <= 0)
         {
             bullet.hits = 1;
-            Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+            //Debug.Log("Out of hits. Hits reset to " + bullet.hits);
             bullet.isPiercing = false;
             bullet.gameObject.SetActive(false);
         }

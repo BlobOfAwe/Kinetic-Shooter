@@ -35,7 +35,6 @@ public class Beacon : MonoBehaviour
         playerInv = FindAnyObjectByType<PlayerBehaviour>().GetComponentInChildren<InventoryManager>();
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
         startingCamSize = vCam.m_Lens.OrthographicSize;
-        Debug.LogWarning("Hi I started");
     }
 
     public void Activate()
@@ -77,13 +76,14 @@ public class Beacon : MonoBehaviour
     }
     private void WinGame()
     {
+        GameManager.difficultyCoefficient++;
+
         // If the current level is not the last level, load the next level
         if (GameManager.currentLevel < GameManager.sceneIndexForLevel.Length - 1)
         {
             playerInv.PreserveInventory();
             GameManager.currentLevel++;
             SceneManager.LoadSceneAsync(GameManager.sceneIndexForLevel[GameManager.currentLevel]);
-            GameManager.difficultyCoefficient++;
         }
         // Otherwise, enable the win panel
         else

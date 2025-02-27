@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
-        Debug.Log("+" + points + " points!");
+        //Debug.Log("+" + points + " points!");
         UpdateScoreDisplays();
         //if (FindObjectOfType<ScoreDisplay>() != null)
         //{
@@ -115,6 +115,6 @@ public class ScoreManager : MonoBehaviour
         //{
         //    winScoreDisplay.UpdateScore(score);
         //}
-        Debug.Log("Score:" + score); 
+        //Debug.Log("Score:" + score); 
     }
 }

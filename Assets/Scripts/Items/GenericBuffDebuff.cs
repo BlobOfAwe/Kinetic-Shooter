@@ -24,7 +24,7 @@ public class GenericBuffDebuff : Item
         ApplyBuff(duration);
         
         AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
-        Debug.Log("Picked up item");
+       //Debug.Log("Picked up item");
 
         emitter.Stop();
         Destroy(gameObject);

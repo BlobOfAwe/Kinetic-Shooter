@@ -21,14 +21,10 @@ public class RocketLauncher : Upgrade
 
     private StandardPrimaryFire shootAbility; // TestShootBullet will be replaced with whatever is the final basic bullet shooting ability.
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-    }
-
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
         //player.attackMultiplier += damageIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);
@@ -37,7 +33,7 @@ public class RocketLauncher : Upgrade
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
-        Debug.Log(bullet.transform.position);
+        //Debug.Log(bullet.transform.position);
         Instantiate(explosion, bullet.transform.position, Quaternion.identity).GetComponent<RocketExplosion>().SetDamage(player.totalAttack * bullet.damageMultiplier * quantity * damagePercent);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketImpactAbility, this.transform.position);
     }

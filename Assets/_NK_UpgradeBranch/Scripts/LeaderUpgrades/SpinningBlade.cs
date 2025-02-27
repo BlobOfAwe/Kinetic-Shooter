@@ -33,7 +33,7 @@ public class SpinningBlade : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Enemy>() != null)
             {
-                Debug.Log("HIT " + collision.gameObject.name + " FOR " + damage + " DAMAGE!");
+                //Debug.Log("HIT " + collision.gameObject.name + " FOR " + damage + " DAMAGE!");
                 collision.gameObject.GetComponent<Enemy>().Damage(damage);
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.swooshMelee, this.transform.position);
             }

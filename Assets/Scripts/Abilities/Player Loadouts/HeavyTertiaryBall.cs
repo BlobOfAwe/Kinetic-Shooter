@@ -39,13 +39,13 @@ public class HeavyTertiaryBall : Ability
         curled = false;
 
         // Construct the armor buff to make the player invincible while curled
-        armorBuff = new Buff();
+        armorBuff = ScriptableObject.CreateInstance<Buff>();
         armorBuff.buffType = Buff.buffCategory.DEFENSE_BUFF;
         armorBuff.modification = Buff.modificationType.Additive;
         armorBuff.value = 999999999;
 
         // Construct the speed debuff to immobilize the player while curled
-        speedDebuff = new Buff();
+        speedDebuff = ScriptableObject.CreateInstance<Buff>();
         speedDebuff.buffType = Buff.buffCategory.SPEED_BUFF;
         speedDebuff.modification = Buff.modificationType.Multiplicative;
         speedDebuff.value = 0;

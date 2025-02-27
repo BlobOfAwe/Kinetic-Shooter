@@ -26,6 +26,8 @@ public class StandardPrimaryFire : Ability
     {
         player = GetComponent<PlayerBehaviour>();
 
+        Debug.Log("Player's primary ability is " + player.primary.GetType());
+
         if (player.primary == this)
         {
             bullets = new GameObject[maxBullets];
@@ -39,6 +41,7 @@ public class StandardPrimaryFire : Ability
             try { rb = GetComponent<Rigidbody2D>(); }
             catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
         }
+        
     }
 
     // Shoot a bullet from the gameObject's position

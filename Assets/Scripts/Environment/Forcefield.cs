@@ -22,12 +22,12 @@ public class Forcefield : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isDeactivated && ((playerLayer & (1 << collision.gameObject.layer)) != 0))
+        if (!isDeactivated && !beaconZone.enabled && ((playerLayer & (1 << collision.gameObject.layer)) != 0))
         {
             FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
             //sr.enabled = true;
             beaconZone.enabled = true;
-            Debug.Log("Player entered the beacon radius.");
+           //Debug.Log("Player entered the beacon radius.");
             forcefieldCollider.enabled = true;
             FindObjectOfType<EnemyCounter>().SpawnBoss();
         }

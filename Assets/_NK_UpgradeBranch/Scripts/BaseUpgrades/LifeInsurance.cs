@@ -22,17 +22,11 @@ public class LifeInsurance : Upgrade
 
     private StandardPrimaryFire shootAbility;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
-
-        // Debug - remove later.
-        //FindObjectOfType<StatsDisplay>().UpdateDisplay();
-    }
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
+        shootAbility = player.GetComponent<StandardPrimaryFire>();
         player.defenseMultiplier += defenseIncrease * quantity;
         player.healthMultiplier += healthIncrease * quantity;
         shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * quantity;
