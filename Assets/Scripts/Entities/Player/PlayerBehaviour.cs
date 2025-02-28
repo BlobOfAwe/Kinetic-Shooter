@@ -305,6 +305,7 @@ public class PlayerBehaviour : Entity
         //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
+            //plays damage sound
             AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
             audioTimer = 0.5f;
         }
@@ -416,7 +417,7 @@ public class PlayerBehaviour : Entity
                     playerGunAnimator.SetTrigger("isShooting");
                     
                     isFiringPrimary = true;
-                    //AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
+                    //AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
                 }
                 if (context.canceled)
                 {

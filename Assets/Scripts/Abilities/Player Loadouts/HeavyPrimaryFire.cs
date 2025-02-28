@@ -78,7 +78,7 @@ public class HeavyPrimaryFire : Ability
     {
         // Modified code to animate gun and play fire sound here and only here. - NK
         player.playerGunAnimator.SetTrigger("isShooting");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.heavyPrimary, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)

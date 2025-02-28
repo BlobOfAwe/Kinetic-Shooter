@@ -30,6 +30,9 @@ public class StandardTertiaryBoomDash : Ability
 
         StartCoroutine(BeginCooldown());
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.standardAbility, this.transform.position);
+
+
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, range, enemyLayer);
 
         foreach (var obj in enemies)

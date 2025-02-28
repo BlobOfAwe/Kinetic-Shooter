@@ -8,14 +8,14 @@ public class FMODEvents : MonoBehaviour
 {
     // Ambience Events
 
-    [field: Header("Level 1 Ambience")]
-    [field: SerializeField] public EventReference level1Ambience { get; private set; }
+    [field: Header("Industrial Ambience")]
+    [field: SerializeField] public EventReference industrialAmbience { get; private set; }
 
-    [field: Header("Level 2 Ambience")]
-    [field: SerializeField] public EventReference level2Ambience { get; private set; }
+    [field: Header("Jungle Ambience")]
+    [field: SerializeField] public EventReference jungleAmbience { get; private set; }
 
-    [field: Header("Level 3 Ambience")]
-    [field: SerializeField] public EventReference level3Ambience { get; private set; }
+    [field: Header("Lava Ambience")]
+    [field: SerializeField] public EventReference lavaAmbience { get; private set; }
 
     [field: Header("Cutscene Ambience")]
     [field: SerializeField] public EventReference cutsceneAmbience { get; private set; }
@@ -25,14 +25,14 @@ public class FMODEvents : MonoBehaviour
 
     // Music Events
 
-    [field: Header("Level 1 Music")]
-    [field: SerializeField] public EventReference level1Music { get; private set; }
+    [field: Header("Industrial Music")]
+    [field: SerializeField] public EventReference industrialMusic { get; private set; }
 
-    [field: Header("Level 2 Music")]
-    [field: SerializeField] public EventReference level2Music { get; private set; }
+    [field: Header("Jungle Music")]
+    [field: SerializeField] public EventReference jungleMusic { get; private set; }
 
-    [field: Header("Level 3 Music")]
-    [field: SerializeField] public EventReference level3Music { get; private set; }
+    [field: Header("Lava Music")]
+    [field: SerializeField] public EventReference lavaMusic { get; private set; }
 
     [field: Header("Cutscene Music")]
     [field: SerializeField] public EventReference cutsceneMusic { get; private set; }
@@ -45,6 +45,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Shotgun SFX")]
     [field: SerializeField] public EventReference shotgunGun { get; private set; }
 
+    [field: Header("Impaler SFX")]
+    [field: SerializeField] public EventReference impalerGun { get; private set; }
+
     [field: Header("Extra Arms SFX")]
     [field: SerializeField] public EventReference extraArmsGun { get; private set; }
 
@@ -53,6 +56,41 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Melee SFX")]
     [field: SerializeField] public EventReference swooshMelee { get; private set; }
+
+    // Loadout SFX
+
+    // STANDARD
+
+    [field: Header("Standard Primary SFX")]
+    [field: SerializeField] public EventReference standardPrimary { get; private set; }
+
+    [field: Header("Standard Secondary SFX")]
+    [field: SerializeField] public EventReference standardSecondary { get; private set; }
+
+    [field: Header("Standard Ability SFX")]
+    [field: SerializeField] public EventReference standardAbility { get; private set; }
+
+    // HEAVY
+
+    [field: Header("Heavy Primary SFX")]
+    [field: SerializeField] public EventReference heavyPrimary { get; private set; }
+
+    [field: Header("Heavy Secondary SFX")]
+    [field: SerializeField] public EventReference heavySecondary { get; private set; }
+
+    [field: Header("Heavy Ability SFX")]
+    [field: SerializeField] public EventReference heavyAbility { get; private set; }
+
+    // LIGHT
+
+    [field: Header("Light Primary SFX")]
+    [field: SerializeField] public EventReference lightPrimary { get; private set; }
+
+    [field: Header("Light Secondary SFX")]
+    [field: SerializeField] public EventReference lightSecondary { get; private set; }
+
+    [field: Header("Light Ability SFX")]
+    [field: SerializeField] public EventReference lightAbility { get; private set; }
 
     // Player SFX: Movement Events
 
