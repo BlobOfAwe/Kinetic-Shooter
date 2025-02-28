@@ -81,7 +81,7 @@ public class EnemyCounter : MonoBehaviour
         if (remainingEnemies == 0)
         {
             //Debug.Log("An Elite Enemy Has Spawned");
-            if (!beacon.active) { beacon.Activate(); }// Added by Nathaniel Klassen.
+            if (beacon != null && !beacon.active) { beacon.Activate(); }// Added by Nathaniel Klassen.
         }
     }
 
