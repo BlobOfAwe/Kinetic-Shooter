@@ -33,7 +33,8 @@ public class Beacon : MonoBehaviour
 
     private void Start()
     {
-        playerInv = FindAnyObjectByType<PlayerBehaviour>().GetComponentInChildren<InventoryManager>();
+        player = FindAnyObjectByType<PlayerBehaviour>();
+        playerInv = player.GetComponentInChildren<InventoryManager>();
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
         startingCamSize = vCam.m_Lens.OrthographicSize;
     }

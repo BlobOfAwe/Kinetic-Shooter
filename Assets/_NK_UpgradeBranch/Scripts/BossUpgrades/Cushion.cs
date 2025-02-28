@@ -7,6 +7,7 @@ public class Cushion : Upgrade
 
     public override void ApplyUpgrade(int quantity)
     {
+        base.ApplyUpgrade(quantity);
         if (FindObjectOfType<CushionShield>() == null)
         {
             Instantiate(cushionShield, player.transform);
