@@ -43,8 +43,8 @@ public class PlayerBehaviour : Entity
 
     private HPBarSystem hpBar;
     //Added by ZS to reference the animators and set the timer for the death delay
-    [SerializeField]
-    private Animator playerAnimator;
+    
+    public Animator playerAnimator;
     // Added by ZS to reference the GameOver Panels
     [SerializeField]
     private GameObject gameOverPanel;
@@ -503,6 +503,13 @@ public class PlayerBehaviour : Entity
     {
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
+    }
+
+    public void TeleportAnim()
+    {
+        totalSpeed = 0f;
+        playerAnimator.SetTrigger("isTeleporting");
+        playerGunAnimator.SetTrigger("isTeleporting");
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
 

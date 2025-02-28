@@ -18,7 +18,9 @@ public class Beacon : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     private InventoryManager playerInv;
     [HideInInspector]
-    public bool levelIsFinished = false; // temporary
+    public bool levelIsFinished = false; // temporary\
+    [SerializeField]
+    private PlayerBehaviour player;
 
     //audio emitter variable
     private StudioEventEmitter emitter;
@@ -57,10 +59,13 @@ public class Beacon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         // temporary
         if (levelIsFinished)
         {
-            WinGame();
+            StartCoroutine(WinGame());
+            player.TeleportAnim();
+            //WinGame();
         }
     }
 
@@ -74,8 +79,9 @@ public class Beacon : MonoBehaviour
         }
         vCam.m_Lens.OrthographicSize = bossCamSize;
     }
-    private void WinGame()
+    private IEnumerator WinGame()
     {
+        yield return new WaitForSeconds(1.5f);
         GameManager.difficultyCoefficient++;
 
         // If the current level is not the last level, load the next level
