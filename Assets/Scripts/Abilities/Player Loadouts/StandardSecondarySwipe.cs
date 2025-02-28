@@ -67,6 +67,7 @@ public class StandardSecondarySwipe : Ability
         hitboxSprite.enabled = true;
         StartCoroutine(BeginCooldown());
         StartCoroutine(DisableAfterSeconds());
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.standardSecondary, this.transform.position);
     }
 
     IEnumerator DisableAfterSeconds()

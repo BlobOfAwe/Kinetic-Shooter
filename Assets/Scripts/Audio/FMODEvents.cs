@@ -57,6 +57,41 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Melee SFX")]
     [field: SerializeField] public EventReference swooshMelee { get; private set; }
 
+    // Loadout SFX
+
+    // STANDARD
+
+    [field: Header("Standard Primary SFX")]
+    [field: SerializeField] public EventReference standardPrimary { get; private set; }
+
+    [field: Header("Standard Secondary SFX")]
+    [field: SerializeField] public EventReference standardSecondary { get; private set; }
+
+    [field: Header("Standard Ability SFX")]
+    [field: SerializeField] public EventReference standardAbility { get; private set; }
+
+    // HEAVY
+
+    [field: Header("Heavy Primary SFX")]
+    [field: SerializeField] public EventReference heavyPrimary { get; private set; }
+
+    [field: Header("Heavy Secondary SFX")]
+    [field: SerializeField] public EventReference heavySecondary { get; private set; }
+
+    [field: Header("Heavy Ability SFX")]
+    [field: SerializeField] public EventReference heavyAbility { get; private set; }
+
+    // LIGHT
+
+    [field: Header("Light Primary SFX")]
+    [field: SerializeField] public EventReference lightPrimary { get; private set; }
+
+    [field: Header("Light Secondary SFX")]
+    [field: SerializeField] public EventReference lightSecondary { get; private set; }
+
+    [field: Header("Light Ability SFX")]
+    [field: SerializeField] public EventReference lightAbility { get; private set; }
+
     // Player SFX: Movement Events
 
     [field: Header("Basic Movement")]

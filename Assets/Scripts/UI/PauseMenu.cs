@@ -11,9 +11,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject settingsMenu;
 
-    // Audio
-    [SerializeField] private string parameterNamePause;
-    [SerializeField] private float parameterValuePause;
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
 
     void Update()
     {
@@ -32,16 +31,14 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         CloseSettingsMenu(); // Added this so that the settings menu automatically closes in case it was open when the game is resumed. - NK
-        parameterValuePause--;
-        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
+        parameterController.Unpaused();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameManager.paused = false;
     }
     void PauseGame()
     {
-        parameterValuePause++;
-        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
+        parameterController.Paused();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameManager.paused = true;

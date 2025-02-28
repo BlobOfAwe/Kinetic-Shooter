@@ -70,17 +70,17 @@ public class AudioManager : MonoBehaviour
             songSelection = 0;
         }
         // Industrial Level
-        else if (sceneName == "Industrial Level")
+        else if (sceneName == "MAIN")
         {
             songSelection = 1;
         }
         // Jungle Level
-        else if (sceneName == "Jungle Level")
+        else if (sceneName == "MAIN_2")
         {
             songSelection = 2;
         }
         // Lava Level
-        else if (sceneName == "Lava Level")
+        else if (sceneName == "MAIN_3")
         {
             songSelection = 3;
         }

@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
 
     private static ScoreManager instance;
 
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
 
     private void Awake()
     {
@@ -57,6 +59,7 @@ public class ScoreManager : MonoBehaviour
                         deathScoreDisplay = display;
                         break;
                     case "WinScoreDisplay":
+                        parameterController.EndingWin();
                         winScoreDisplay = display;
                         break;
                     default:

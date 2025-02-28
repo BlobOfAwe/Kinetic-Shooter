@@ -1,6 +1,7 @@
 // ## - GZ
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class AudioParameterController : MonoBehaviour
@@ -25,8 +26,8 @@ public class AudioParameterController : MonoBehaviour
             parameterValueIntensity++;
             AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
         }
-        
     }
+
     public void DecreaseIntensity()
     {
         if (parameterValueIntensity > 0)
@@ -37,10 +38,14 @@ public class AudioParameterController : MonoBehaviour
       
     }
     public void IncrementStage()
-    {
-        parameterValueStage ++;
-        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+        { 
+        if (parameterValueStage < 4)
+        {
+            parameterValueStage++;
+            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+        }
     }
+
     public void EndingWin()
     {
         if (parameterValueStage == 4)
@@ -48,7 +53,6 @@ public class AudioParameterController : MonoBehaviour
             parameterValueEnding = 1;
             AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
         }
-        
     }
 
     public void EndingLoss()
@@ -57,4 +61,57 @@ public class AudioParameterController : MonoBehaviour
         AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
     }
 
+    public void Paused()
+    {
+        parameterValuePause = 1;
+        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
+    }
+
+    public void Unpaused()
+    {
+        parameterValuePause = 0;
+        AudioManager.instance.SetMusicIntensity(parameterNamePause, parameterValuePause);
+    }
+
+    //temporary intensity
+
+    public void IntensityOne()
+    {
+        parameterValueIntensity = 1;
+        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+    }
+    public void IntensityTwo()
+    {
+        parameterValueIntensity = 2;
+        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+    }
+
+    public void IntensityThree()
+    {
+        parameterValueIntensity = 3;
+        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+    }
+
+    //temporary stage
+
+    public void StageOne()
+    {
+        parameterValueStage = 1;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
+    public void StageTwo()
+    {
+        parameterValueStage = 2;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
+    public void StageThree()
+    {
+        parameterValueStage = 3;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
+    public void StageFour()
+    {
+        parameterValueStage = 4;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
 }

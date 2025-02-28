@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4024545155582286812}
   - component: {fileID: 4895251246070834377}
-  - component: {fileID: 2469818775549233405}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -32,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6343175141911394954}
+  - {fileID: 2030188857831410107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4895251246070834377
@@ -50,13 +50,45 @@ MonoBehaviour:
   musicVolume: 1
   ambienceVolume: 1
   SFXVolume: 1
---- !u!114 &2469818775549233405
+--- !u!1 &1520601692966435500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030188857831410107}
+  - component: {fileID: 5060754713572733352}
+  m_Layer: 0
+  m_Name: AudioParameterController
+  m_TagString: AudioParamaterController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030188857831410107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520601692966435500}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.444965, y: 9.984062, z: 113.44663}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4024545155582286812}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5060754713572733352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483171461850264308}
+  m_GameObject: {fileID: 1520601692966435500}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022dfc1b0e34882419434505f30076ab, type: 3}
@@ -116,25 +148,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <industrialAmbience>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 927350164
+      Data2: 1285468481
+      Data3: -700215377
+      Data4: 1609299554
+    Path: event:/Ambience/IndustrialAmbience
   <jungleAmbience>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -651573896
+      Data2: 1232390499
+      Data3: -998787198
+      Data4: -447866585
+    Path: event:/Ambience/JungleAmbience
   <lavaAmbience>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1735622038
+      Data2: 1291843973
+      Data3: 1007549884
+      Data4: -1258394067
+    Path: event:/Ambience/LavaAmbience
   <cutsceneAmbience>k__BackingField:
     Guid:
       Data1: -152587993
@@ -151,25 +183,25 @@ MonoBehaviour:
     Path: event:/Ambience/MainMenuAmbience
   <industrialMusic>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1778707130
+      Data2: 1184199216
+      Data3: -1864536136
+      Data4: -527590678
+    Path: event:/Music/IndustrialMusic
   <jungleMusic>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1755817413
+      Data2: 1273211194
+      Data3: 795907989
+      Data4: -16685561
+    Path: event:/Music/JungleMusic
   <lavaMusic>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1919569749
+      Data2: 1167592672
+      Data3: -1066583411
+      Data4: 1813312096
+    Path: event:/Music/LavaMusic
   <cutsceneMusic>k__BackingField:
     Guid:
       Data1: 1911192739
@@ -191,6 +223,13 @@ MonoBehaviour:
       Data3: 874591403
       Data4: 991724559
     Path: event:/SFX/Player/Gun/Shotgun
+  <impalerGun>k__BackingField:
+    Guid:
+      Data1: 1632778861
+      Data2: 1101647265
+      Data3: -1418748741
+      Data4: 821173001
+    Path: event:/SFX/Player/Gun/Impaler
   <extraArmsGun>k__BackingField:
     Guid:
       Data1: -2105095142
@@ -212,6 +251,69 @@ MonoBehaviour:
       Data3: -1234088819
       Data4: 980795246
     Path: event:/SFX/Player/Melee/Swoosh
+  <standardPrimary>k__BackingField:
+    Guid:
+      Data1: -803468748
+      Data2: 1316403540
+      Data3: -1116534861
+      Data4: 235773763
+    Path: event:/SFX/Player/Loadouts/StandardPrimary
+  <standardSecondary>k__BackingField:
+    Guid:
+      Data1: 100207332
+      Data2: 1190585209
+      Data3: -1299306096
+      Data4: 1720706253
+    Path: event:/SFX/Player/Loadouts/StandardSecondary
+  <standardAbility>k__BackingField:
+    Guid:
+      Data1: -1348867910
+      Data2: 1206284018
+      Data3: 1888966561
+      Data4: 1378137982
+    Path: event:/SFX/Player/Loadouts/StandardInherent
+  <heavyPrimary>k__BackingField:
+    Guid:
+      Data1: -260175439
+      Data2: 1249803978
+      Data3: 593729180
+      Data4: -1990775894
+    Path: event:/SFX/Player/Loadouts/HeavyPrimary
+  <heavySecondary>k__BackingField:
+    Guid:
+      Data1: -108147872
+      Data2: 1212100701
+      Data3: -1209385061
+      Data4: -224063369
+    Path: event:/SFX/Player/Loadouts/HeavySecondary
+  <heavyAbility>k__BackingField:
+    Guid:
+      Data1: 1241409933
+      Data2: 1268039060
+      Data3: 1146371227
+      Data4: -1170223514
+    Path: event:/SFX/Player/Loadouts/HeavyInherent
+  <lightPrimary>k__BackingField:
+    Guid:
+      Data1: 1290217954
+      Data2: 1197241856
+      Data3: -299949892
+      Data4: -304458996
+    Path: event:/SFX/Player/Loadouts/LightPrimary
+  <lightSecondary>k__BackingField:
+    Guid:
+      Data1: 1070970810
+      Data2: 1220339827
+      Data3: -931440240
+      Data4: -1103118285
+    Path: event:/SFX/Player/Loadouts/LightSecondary
+  <lightAbility>k__BackingField:
+    Guid:
+      Data1: 688659987
+      Data2: 1308015868
+      Data3: 162375095
+      Data4: -1320496221
+    Path: event:/SFX/Player/Loadouts/LightInherent
   <basicMovement>k__BackingField:
     Guid:
       Data1: -36229141

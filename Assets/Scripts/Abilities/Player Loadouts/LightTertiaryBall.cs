@@ -62,6 +62,7 @@ public class LightTertiaryBall : Ability
             curled = true;
             col.sharedMaterial = bouncyMaterial;
             StartCoroutine(Curl());
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAbility, this.transform.position);
         }
         else
         {

@@ -30,13 +30,11 @@ public class EnemyCounter : MonoBehaviour
 
     private bool bossIsSpawned = false; // Added by NK.
 
-    //Audio variables
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
 
-    [SerializeField] private string parameterNameIntensity;
-    [SerializeField] private float parameterValueIntensity;
-
-    [SerializeField] private string parameterNameStage;
-    [SerializeField] private float parameterValueStage;
+    //private bool increaseAudioIntensity = false; // Grey
+    //private bool increaseAudioStage = false; // Grey
 
     void Start()
     {
@@ -50,38 +48,29 @@ public class EnemyCounter : MonoBehaviour
     void Update()
     {
         //Audio Intensity
-        if (remainingEnemies == 18)
+        if (remainingEnemies == 18 || remainingEnemies == 17 || remainingEnemies == 16)
         {
-            parameterValueIntensity = 1;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+            parameterController.IntensityOne();
         }
-        else if (remainingEnemies == 15)
+        else if (remainingEnemies == 15 || remainingEnemies == 14 || remainingEnemies == 13)
         {
-            parameterValueIntensity = 2;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+            parameterController.IntensityTwo();
+            parameterController.StageOne();
         }
-        else if (remainingEnemies == 13)
+        else if (remainingEnemies == 10 || remainingEnemies == 9 || remainingEnemies == 8)
         {
-            parameterValueIntensity = 3;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+            parameterController.IntensityThree();
+            parameterController.StageTwo();
         }
-        else if (remainingEnemies == 11)
+        else if (remainingEnemies == 5 || remainingEnemies == 4 || remainingEnemies == 3)
         {
-            parameterValueIntensity = 4;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+            parameterController.StageThree();
         }
-        else if (remainingEnemies == 10)
+        else if (remainingEnemies == 0)
         {
-            parameterValueStage = 1;
-            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+            parameterController.StageFour();
         }
-        else if (remainingEnemies == 6)
-        {
-            parameterValueStage = 1;
-            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
-            parameterValueIntensity = 5;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
-        }
+
     }
 
     public void EnemyDefeated(Enemy enemy)
@@ -124,11 +113,6 @@ public class EnemyCounter : MonoBehaviour
 
             bossIsSpawned = true;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.bossEnemyAppear, this.transform.position);
-            parameterValueStage = 2;
-            AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
-            parameterValueIntensity = 5;
-            AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
-
             UpdateEnemyCounter();
         }
     }

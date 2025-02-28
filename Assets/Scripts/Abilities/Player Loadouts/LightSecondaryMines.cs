@@ -61,6 +61,8 @@ public class LightSecondaryMines : Ability
 
     private void DropMine()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.lightSecondary, this.transform.position);
+
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {
