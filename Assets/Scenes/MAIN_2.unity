@@ -430,10 +430,7 @@ MonoBehaviour:
   bossYOffsetMax: 2
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
-  parameterNameIntensity: level1_intensity
-  parameterValueIntensity: 0
-  parameterNameStage: level1_stage
-  parameterValueStage: 0
+  parameterController: {fileID: 0}
 --- !u!4 &287445713
 Transform:
   m_ObjectHideFlags: 0
@@ -734,6 +731,7 @@ MonoBehaviour:
   nextLevelScene: WINScene
   winPanel: {fileID: 553722597}
   levelIsFinished: 0
+  player: {fileID: 0}
 --- !u!114 &638390376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44177,17 +44175,18 @@ MonoBehaviour:
   - {fileID: 5263458874981382081, guid: f2dbc657e2c1e7545ac231cf15ec5ae4, type: 3}
   - {fileID: 5263458874981382081, guid: 0911622224bcd6e40966a9394f898e58, type: 3}
   itemPrefabs:
-  - {fileID: 7673192598118557021, guid: 038fe402f7fc21449aad86160c05ce66, type: 3}
-  - {fileID: 1374930253847889423, guid: 1525347521710f440a1eca3946f86ff2, type: 3}
   - {fileID: 5532717159229058636, guid: 049c7f03733181d45af1ac15359d42ae, type: 3}
-  - {fileID: 5340369963167817549, guid: 402580eea7d3d434fa094e4226bd7fe6, type: 3}
   - {fileID: 3567290826582329312, guid: c0b415fe4021067478d94a16116b0f7e, type: 3}
   - {fileID: 9194187478719208311, guid: 833ebaa7e702c1e47b412cb81677f02a, type: 3}
   - {fileID: 72902786346909994, guid: 26065bd98c4e0734abeac2065c1ed220, type: 3}
   - {fileID: 7118894349532340653, guid: f879c29cb4fded4479d25c605b43bb66, type: 3}
   - {fileID: 2581933093498011819, guid: 02adad0d5a0d9144c8878862b3e25bdb, type: 3}
   - {fileID: 8064715954622458216, guid: 6eb461590e55bd543bb76652b1b6b3de, type: 3}
+  - {fileID: 5813218222885952574, guid: a24eaac904de8324caeb98610bb8a664, type: 3}
   - {fileID: 3607853531875335252, guid: 49502e32eebd36241b95024cbc6826c7, type: 3}
+  - {fileID: 1374930253847889423, guid: 1525347521710f440a1eca3946f86ff2, type: 3}
+  - {fileID: 5172675366219040299, guid: 56e45c63c061297479a520f0baeaf17b, type: 3}
+  - {fileID: 7673192598118557021, guid: 038fe402f7fc21449aad86160c05ce66, type: 3}
   minItems: 6
   maxItems: 8
 --- !u!4 &1616450769
