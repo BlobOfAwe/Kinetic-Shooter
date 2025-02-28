@@ -192,7 +192,7 @@ MonoBehaviour:
   attackStat: 30
   defenseStat: 60
   speedStat: 2
-  hpStat: 200
+  hpStat: 300
   recoverStat: 3
   attackBuffs: []
   defenseBuffs: []
@@ -236,6 +236,7 @@ MonoBehaviour:
   isBoss: 1
   enemyName: Bouncer
   score: 0
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 0
   bossAnimator: {fileID: 4313039758088035429}
 --- !u!114 &3490139462273597173

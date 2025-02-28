@@ -59,10 +59,10 @@ public abstract class Enemy : Entity
         scoreManager = FindObjectOfType<ScoreManager> ();
         if (sprite == null) { Debug.LogError(gameObject.name + " has no sprite assigned."); }
 
-        attackStat *= 1 + GameManager.difficultyCoefficient * 0.5f;
-        hpStat *= 1 + GameManager.difficultyCoefficient * 0.5f;
+        attackStat *= 1 + GameManager.difficultyCoefficient * 0.2f;
+        hpStat *= 1 + GameManager.difficultyCoefficient * 0.2f;
         speedStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
-        recoverStat *= 1 + GameManager.difficultyCoefficient * 0.5f;
+        recoverStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame

@@ -879,7 +879,6 @@ MonoBehaviour:
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
-  moveAcceleration: 10
   mainCam: {fileID: 0}
   aimTransform: {fileID: 483480286036629128}
   firePoint: {fileID: 6551512579325167027}
@@ -890,7 +889,6 @@ MonoBehaviour:
   winPanel: {fileID: 0}
   playerGunAnimator: {fileID: 2859449797758082515}
   deathDelay: 1
-  gameOverScene: 3
   manualMoveModifier: 0.1
   isFiringPrimary: 0
   isFiringSecondary: 0
@@ -914,7 +912,7 @@ MonoBehaviour:
     speedStat: 10
     hpStat: 200
     recoverStat: 1
-  primary: {fileID: 0}
+  primaryShootAbility: {fileID: 0}
 --- !u!114 &-2479830224578350400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1010,6 @@ MonoBehaviour:
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 30
-  recoil: 1
   burstSpacing: 0.07
   damageModOne: 0.5
   recoilModOne: 1
@@ -1089,7 +1086,7 @@ MonoBehaviour:
   available: 1
   inUse: 0
   range: 3
-  damageModifier: 0.1
+  damageModifier: 0.2
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
@@ -1140,7 +1137,6 @@ MonoBehaviour:
   duration: 10
   bouncyMaterial: {fileID: 6200000, guid: 84b4c8a51b322be4a80ed4e0deb24019, type: 2}
   bulletPrefab: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
-  minSpeed: 0
   wallSpace: 1
   maxBullets: 5
 --- !u!95 &2862676695539945837

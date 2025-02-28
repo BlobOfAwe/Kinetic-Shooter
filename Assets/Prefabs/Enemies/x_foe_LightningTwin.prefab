@@ -186,7 +186,7 @@ MonoBehaviour:
   attackStat: 25
   defenseStat: 0
   speedStat: 3
-  hpStat: 45
+  hpStat: 35
   recoverStat: 1
   attackBuffs: []
   defenseBuffs: []
@@ -230,6 +230,7 @@ MonoBehaviour:
   isBoss: 0
   enemyName: Lightning Twins
   score: 0
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 0
   twin: {fileID: 0}
   eldest: 0

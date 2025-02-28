@@ -5,8 +5,8 @@ public class ShotgunBlast : Upgrade
     [SerializeField]
     private float knockbackIncrease = 0.05f;
 
-    //[SerializeField]
-    //private float attackIncrease = -0.60f;
+    [SerializeField]
+    private float attackIncrease = -0.60f;
 
     [SerializeField]
     private float cooldownIncrease = 0.05f;
@@ -19,7 +19,7 @@ public class ShotgunBlast : Upgrade
         base.ApplyUpgrade(quantity);
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         //player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
-        player.attackMultiplier /= (quantity * 2) + 1;
+        player.attackMultiplier /= -attackIncrease * quantity + 1;
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
     }
 
