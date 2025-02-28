@@ -70,7 +70,8 @@ public class LoadoutManager : MonoBehaviour
         loadoutInfoText.text = $"<b>Weapon:</b> {currentLoadout.weapon}\n" +
                                $"<b>Primary:</b> {currentLoadout.primary}\n" +
                                $"<b>Secondary:</b> {currentLoadout.secondary}\n" +
-                               $"<b>Ability:</b> {currentLoadout.ability}";
+                               $"<b>Ability:</b> {currentLoadout.ability}\n" +
+                               $"<b>Description:</b> {currentLoadout.description}\n";
         PlayerPrefs.SetInt("SelectedLoadoutIndex", currentIndex);
     }
 

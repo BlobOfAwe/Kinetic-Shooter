@@ -1232,10 +1232,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 72
   m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 4
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -7091,10 +7091,10 @@ MonoBehaviour:
   loadouts:
   - loadout: Standard
     weapon: Repulsor Mk IIV
-    primary: Steady Pulse
-    secondary: Point Blank
-    ability: TET (Tactical Explosive Tackle)
-    description: The standard kit.
+    primary: 'STEADY PULSE: Fire bullets doing medium damage at a medium pace.'
+    secondary: 'POINT BLANK: Blast enemies in front of you with explosive knockback.'
+    ability: 'EXPLOSIVE LEAP: Explode in a radius, launching yourself forward.'
+    description: The standard kit. Reliable in all scenarios.
     loadoutImage: {fileID: 21300000, guid: 4137d3bd08076764eaf36d65dd778806, type: 3}
     primaryAbility: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 571558318740040795, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
@@ -7105,11 +7105,14 @@ MonoBehaviour:
     hpStat: 200
     recoverStat: 1
   - loadout: Heavy
-    weapon: The Big Ol'RustBucket
-    primary: Shoots a bullet so wide it tears a hole in the space time continium
-    secondary: Im gonn mess you up pardner
-    ability: SKIBIIIIIIDY
-    description: Groove so stanky it drops yer pants
+    weapon: Triburst Phaser
+    primary: 'TRIBURST: Fire three bullets in rapid succession, each stronger than
+      the last.'
+    secondary: 'GRAVITY WELL: Trap enemies in a powerful black hole.'
+    ability: 'POWER MODE: Assume an armored stance, making you invincible. Activate
+      again to launch forward.'
+    description: A tanky but slow loadout that steamrolls enemies with no regard
+      for damage.
     loadoutImage: {fileID: 21300000, guid: c47c730a37d11b141be313cc13881f7b, type: 3}
     primaryAbility: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 8881820493473276149, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
@@ -7117,29 +7120,30 @@ MonoBehaviour:
     attackStat: 20
     defenseStat: 50
     speedStat: 5
-    hpStat: 250
-    recoverStat: 1.5
+    hpStat: 300
+    recoverStat: 2
   - loadout: Light
-    weapon: Sword
-    primary: Swipe forward in a wide arc, smashing through enemies
-    secondary: Sit down and cry
-    ability: YEEEEEEEHAW
-    description: Throw it down and keep pratyin till the day dont end
+    weapon: Photon Minigun LG
+    primary: 'RAPID SHOT: Fire weak bullets in very rapid succession.'
+    secondary: 'MINES: Drop mines as long as you are moving.'
+    ability: 'REBOUND: Become bouncy, bouncing off of walls and building momentum.
+      Activate again to create a temporary wall.'
+    description: A light, low-damage loadout that specializes in mobility.
     loadoutImage: {fileID: 21300000, guid: 2edb75be17d10d84bbba98a9554d9fe6, type: 3}
     primaryAbility: {fileID: 7780019012083256913, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 1537881835366685869, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     utilityAbility: {fileID: 4444130273591118226, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-    attackStat: 7
+    attackStat: 10
     defenseStat: -10
-    speedStat: 20
+    speedStat: 13
     hpStat: 150
     recoverStat: 5
-  - loadout: invinbel
-    weapon: invle
-    primary: nkvl
-    secondary: Point Blank
-    ability: TET (Tactical Explosive Tackle)
-    description: The standard kit.
+  - loadout: 'DEBUG: Invincible'
+    weapon: God Himself
+    primary: 'STEADY PULSE: Fire bullets doing medium damage at a medium pace.'
+    secondary: 'POINT BLANK: Blast enemies in front of you with explosive knockback.'
+    ability: 'EXPLOSIVE LEAP: Explode in a radius, launching yourself forward.'
+    description: Completely invulnerable, and oneshot all enemies
     loadoutImage: {fileID: 21300000, guid: 46f087714873ea145b2861c6f2efde7e, type: 3}
     primaryAbility: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 571558318740040795, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
