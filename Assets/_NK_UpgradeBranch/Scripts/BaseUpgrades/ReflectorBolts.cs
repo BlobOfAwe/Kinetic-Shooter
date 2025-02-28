@@ -20,12 +20,12 @@ public class ReflectorBolts : Upgrade
     [SerializeField]
     private Vector2 reflectorOffset = Vector2.zero;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         player.defenseMultiplier += defenseIncrease * quantity;
         player.healthMultiplier += healthIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(shootAbility.bulletDamageMultiplier + damageIncrease, quantity);

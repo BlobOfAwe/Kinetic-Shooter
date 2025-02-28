@@ -23,13 +23,13 @@ public class Electromagnetism : Upgrade
     [SerializeField]
     private float arcLineTime = 1f;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         player.attackMultiplier += attackIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);

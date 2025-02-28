@@ -11,12 +11,12 @@ public class SuddenBurst : Upgrade
     [SerializeField]
     private GameObject bulletBurst;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
     }
 
     public override void ProjectileUpgradeEffect(TestBullet shotBullet, GameObject target, int quantity)

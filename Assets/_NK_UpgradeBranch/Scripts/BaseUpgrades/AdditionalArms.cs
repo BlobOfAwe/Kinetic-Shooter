@@ -20,12 +20,12 @@ public class AdditionalArms : Upgrade
     [SerializeField]
     private float extraBulletDamageMultiplier = 0.5f;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         player.healthMultiplier += healthIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;

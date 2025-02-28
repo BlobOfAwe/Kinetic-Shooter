@@ -1,9 +1,7 @@
 // ## - NK
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -146,13 +144,15 @@ public abstract class Entity : MonoBehaviour
             testShootBullet.bulletSpeedMultiplier = 1;
         }
 
-        // Reset StandardPrimaryFire if applicable
-        StandardPrimaryFire standardPrimaryFire = GetComponent<StandardPrimaryFire>();
-        if (standardPrimaryFire != null)
+        ShootAbility[] allShootAbilities = GetComponents<ShootAbility>();
+        if (allShootAbilities != null)
         {
-            standardPrimaryFire.bulletKnockbackMultiplier = 1;
-            standardPrimaryFire.bulletSpeedMultiplier = 1;
-            standardPrimaryFire.cooldownMultiplier = 1;
+            foreach (ShootAbility ability in allShootAbilities)
+            {
+                ability.bulletKnockbackMultiplier = 1;
+                ability.bulletSpeedMultiplier = 1;
+                ability.cooldownMultiplier = 1;
+            }
         }
 
         maxHealth = hpStat;

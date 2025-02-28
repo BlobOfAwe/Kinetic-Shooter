@@ -19,12 +19,12 @@ public class RocketLauncher : Upgrade
     [SerializeField]
     private GameObject explosion;
 
-    private StandardPrimaryFire shootAbility; // TestShootBullet will be replaced with whatever is the final basic bullet shooting ability.
+    private ShootAbility shootAbility; // TestShootBullet will be replaced with whatever is the final basic bullet shooting ability.
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         //player.attackMultiplier += damageIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);

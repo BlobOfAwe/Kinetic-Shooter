@@ -99,6 +99,7 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     private LoadoutManager.Loadout loadout;
+    public new ShootAbility primary;
 
     protected override void Awake()
     {
@@ -109,7 +110,7 @@ public class PlayerBehaviour : Entity
         }
 
         // Assigns the player.ability to be the component based on the specified ability type
-        primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
+        primary = (ShootAbility)GetComponent(loadout.primaryAbility.GetType());
         secondary = (Ability)GetComponent(loadout.secondaryAbility.GetType());
         utility = (Ability)GetComponent(loadout.utilityAbility.GetType());
 

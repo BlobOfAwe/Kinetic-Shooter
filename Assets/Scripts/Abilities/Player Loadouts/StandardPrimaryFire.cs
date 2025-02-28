@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 
-public class StandardPrimaryFire : Ability
+public class StandardPrimaryFire : ShootAbility
 {
     [SerializeField] GameObject bulletPrefab;
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
@@ -11,15 +11,8 @@ public class StandardPrimaryFire : Ability
     private int maxBullets = 10;
     [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
-   
 
-    // Added multipliers for bullet speed, knockback, and damage to be manipulated with upgrades. - NK
-    public float bulletSpeedMultiplier = 1f;
-    public float bulletKnockbackMultiplier = 1f;
-    public float bulletDamageMultiplier = 1f;
 
-    [HideInInspector]
-    public GameObject[] bullets; // Changed to public so it can be used with upgrade behaviour. - NK
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
@@ -74,6 +67,6 @@ public class StandardPrimaryFire : Ability
 
         // If no inactive bullets were found, throw an error
         // Changed this from an error to a message because this can happen if the max number of bullets are fired at once, which isn't a problem. - NK
-        Debug.Log("No instantiated bullets available to be fired from object: " + gameObject.name);
+        Debug.LogWarning("No instantiated bullets available to be fired from object: " + gameObject.name);
     }
 }

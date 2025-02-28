@@ -10,11 +10,11 @@ public class Reflector : MonoBehaviour
 
     public int reflects = 1;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     private void Awake()
     {
-        shootAbility = FindObjectOfType<PlayerBehaviour>().gameObject.GetComponent<StandardPrimaryFire>();
+        shootAbility = FindObjectOfType<PlayerBehaviour>().gameObject.GetComponent<ShootAbility>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

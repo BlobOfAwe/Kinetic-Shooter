@@ -8,7 +8,7 @@ public class StatsDisplay : MonoBehaviour
     private PlayerBehaviour playerBehaviour;
 
     [SerializeField]
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     private TextMeshProUGUI textMesh;
 

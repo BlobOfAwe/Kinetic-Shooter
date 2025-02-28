@@ -14,13 +14,13 @@ public class ImpalerRounds : Upgrade
     [SerializeField]
     private GameObject piercingBullet;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
         shootAbility.bulletSpeedMultiplier = Mathf.Pow(shootAbility.bulletSpeedMultiplier + bulletSpeedIncrease, quantity);

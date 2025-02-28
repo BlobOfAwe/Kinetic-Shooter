@@ -20,13 +20,13 @@ public class LifeInsurance : Upgrade
     [SerializeField]
     private float healAmount = 0.05f;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         player.defenseMultiplier += defenseIncrease * quantity;
         player.healthMultiplier += healthIncrease * quantity;
         shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * quantity;

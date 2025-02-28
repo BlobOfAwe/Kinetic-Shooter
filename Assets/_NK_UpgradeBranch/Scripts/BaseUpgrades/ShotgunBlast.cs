@@ -14,12 +14,12 @@ public class ShotgunBlast : Upgrade
     [SerializeField]
     private float offsetAngle = 10f;
 
-    private StandardPrimaryFire shootAbility;
+    private ShootAbility shootAbility;
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.GetComponent<StandardPrimaryFire>();
+        shootAbility = player.primary;
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
@@ -45,8 +45,11 @@ public class ShotgunBlast : Upgrade
                         bullet.GetComponent<Projectile>().damageMultiplier = shootAbility.bulletDamageMultiplier;
                         bullet.SetActive(true);
                         offset = -offset;
+                        Debug.Log("Found A Bullet to Copy");
                         break;
                     } // Set the bullet to active and break
+
+                    Debug.Log(bullet.gameObject.name + " Unavailable.");
                 }
             }
             offset += offsetAngle;
