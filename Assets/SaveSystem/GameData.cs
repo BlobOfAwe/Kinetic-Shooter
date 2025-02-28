@@ -28,6 +28,7 @@ public class GameData
     [Header("Loadout Kills")]
     public int standardLoadoutKills;
     public int heavyLoadoutKills;
+    public int lightLoadoutKills;
 
     public GameData()
     {
@@ -56,6 +57,7 @@ public class GameData
 
         standardLoadoutKills = 0;
         heavyLoadoutKills = 0;
+        lightLoadoutKills = 0;
     }
 
     public void AddKills(string enemyName)
@@ -121,6 +123,9 @@ public class GameData
                 break;
             case "Heavy":
                 heavyLoadoutKills += 1;
+                break;
+            case "Light":
+                lightLoadoutKills += 1;
                 break;
         }
     }

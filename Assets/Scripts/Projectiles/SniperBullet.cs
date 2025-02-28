@@ -7,6 +7,7 @@ public class SniperBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
+    [SerializeField]
     private float knockback;
 
     // Update is called once per frame

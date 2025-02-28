@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: War Caller
+  m_EditorClassIdentifier: 
+  entryID: 11
+  entryName: War Caller
+  entryImage: {fileID: 1312850003, guid: ce306985cf8e0dd4182ea87ce7ae84f6, type: 3}
+  entryIcon: {fileID: 1312850003, guid: ce306985cf8e0dd4182ea87ce7ae84f6, type: 3}
+  description: "Classification/Rank: \u2018Leader\u2019 \r\n\r\nPhysiology: Upright
+    and monocular, this creature can be recognized by its green exoskeleton, scuttling
+    arachnid-like legs, and the mysterious light it emits from its stomach and mouth
+    while vocalizing.  While the exact source and mechanism of this bioluminescence
+    is not yet understood, its effect on nearby units is striking.  The War Caller
+    itself has not been observed engaging in direct combat, and its lack of teeth
+    and its flipper-like appendages would make it ill-suited for the task.  Given
+    the War Caller\u2019s heavy reliance on surrounding creatures, the current hypothesis
+    among EPDF xenobiologists is that the War Caller might not be a naturally-occurring
+    organism, and has instead been bred or modified to serve this specific purpose.\r\n\r\nBehaviour:
+    War Callers emit a bright glow alongside a powerful sonic wave, with a possible
+    electromagnetic component.   Depending on the colour and frequency emitted this
+    emission has different effects on the surrounding creatures. Calls accompanied
+    by a teal light appear to have some form of healing effect.  Orange light speed,
+    and damage.\r\n"
+  isUnlocked: 0
+  unlockCondition: Kill 15 War Callers
+  unlockVariable: callerKills
+  requiredUnlockVariableValue: 20

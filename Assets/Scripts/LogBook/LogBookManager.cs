@@ -17,8 +17,11 @@ public class LogBookManager : MonoBehaviour
     private LogEntry[] allEntries;
 
     [Header("Ui Entries Button")]
-    [SerializeField]
     private LogBookGrid[] gridButtons;
+    [SerializeField]
+    private LogBookGrid gridButtonPrefab;
+    [SerializeField]
+    private Transform gridButtonParent;
 
     [Header("Detail View")]
     [SerializeField]
@@ -36,7 +39,7 @@ public class LogBookManager : MonoBehaviour
 
     private Dictionary<string, LogEntry> entryDictionary = new Dictionary<string, LogEntry>();
 
-    private void Awake()
+    private void Start()
     {
         if (Instance == null)
         {
@@ -52,13 +55,24 @@ public class LogBookManager : MonoBehaviour
 
     private void InitializeDictionary()
     {
+        GameData saveData = DataManager.Instance.gameData;
         foreach (var entry in allEntries)
         {
             entryDictionary.Add(entry.entryID, entry);
+            if ((int)saveData.GetType().GetField(entry.unlockVariable).GetValue(saveData) >= entry.requiredUnlockVariableValue)
+                entry.isUnlocked = true;
+            else
+                entry.isUnlocked = false;
         }
     }
     public void InitializeManualGrid()
     {
+        gridButtons = new LogBookGrid[allEntries.Length];
+        for (int i = 0; i < gridButtons.Length; i++)
+        {
+            gridButtons[i] = Instantiate(gridButtonPrefab, gridButtonParent);
+        }
+
         for (int i = 0; i < gridButtons.Length; i++)
         {
             if (i < allEntries.Length)

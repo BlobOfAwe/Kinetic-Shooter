@@ -50,7 +50,7 @@ public class StandardSecondarySwipe : Ability
         if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             Enemy target = collision.gameObject.GetComponent<Enemy>();
-            //StartCoroutine(target.Stagger(staggerTime));
+            StartCoroutine(target.Stagger(staggerTime));
             Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
             target.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDir * knockback, ForceMode2D.Impulse);
             target.Damage(thisEntity.totalAttack * damageModifier);

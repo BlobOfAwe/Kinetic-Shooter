@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Spawner
+  m_EditorClassIdentifier: 
+  entryID: 10
+  entryName: Spawner
+  entryImage: {fileID: 21300000, guid: 66d70df31330573438fe98a3ea5de691, type: 3}
+  entryIcon: {fileID: 21300000, guid: 66d70df31330573438fe98a3ea5de691, type: 3}
+  description: "This snake-like creature appears to have multiple sections to its
+    body, allowing for maneuverability and the productions of smaller creatures while
+    it moves. While the Spawner creature itself isn\u2019t too fast, the minlets
+    it releases are incredibly fast. Keep track of their whereabouts at all times. "
+  isUnlocked: 0
+  unlockCondition: Kill 50 Spawners
+  unlockVariable: spawnerKills
+  requiredUnlockVariableValue: 20

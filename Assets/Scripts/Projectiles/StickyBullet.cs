@@ -7,6 +7,7 @@ public class StickyBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
+    [SerializeField]
     private float knockback;
     private bool stuck;
 

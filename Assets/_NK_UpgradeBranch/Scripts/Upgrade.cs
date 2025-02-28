@@ -13,7 +13,7 @@ public abstract class Upgrade : Item
     public virtual void ApplyUpgrade(int quantity)
     {
         player = FindObjectOfType<PlayerBehaviour>();
-        shootAbility = player.primary;
+        shootAbility = player.primaryShootAbility;
         //Debug.Log("Upgrade applied.");
     }
 

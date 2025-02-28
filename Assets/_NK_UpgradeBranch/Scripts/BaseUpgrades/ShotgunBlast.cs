@@ -5,8 +5,8 @@ public class ShotgunBlast : Upgrade
     [SerializeField]
     private float knockbackIncrease = 0.05f;
 
-    [SerializeField]
-    private float attackIncrease = -0.60f;
+    //[SerializeField]
+    //private float attackIncrease = -0.60f;
 
     [SerializeField]
     private float cooldownIncrease = 0.05f;

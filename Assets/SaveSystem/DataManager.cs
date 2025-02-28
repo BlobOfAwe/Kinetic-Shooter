@@ -76,23 +76,23 @@ public class DataManager : MonoBehaviour
 
     private void UpdateLogBook()
     {
-        /*if (gameData.enemyTypeKills >= required)
-        {
-            LogBookManager.Instance.UnlockEntry("Name of Log Book Entry");
-        }*/
+        //*if (gameData.enemyTypeKills >= required)
+        //{
+        //    LogBookManager.Instance.UnlockEntry("Name of Log Book Entry");
+        //}*/
 
         // Below are placeholder conditions because log book is very unfinished currently.
-        if (gameData.bouncerKills >= 1)
-        {
-            LogBookManager.Instance.UnlockEntry("TheGoodOlScoth");
-        }
-        if (gameData.totalKills >= 10)
-        {
-            LogBookManager.Instance.UnlockEntry("Why");
-        }
-        if (gameData.splitterKills >= 3)
-        {
-            LogBookManager.Instance.UnlockEntry("SameOlRye");
-        }
+        //if (gameData.bouncerKills >= 1)
+        //{
+        //    LogBookManager.Instance.UnlockEntry("TheGoodOlScoth");
+        //}
+        //if (gameData.totalKills >= 10)
+        //{
+        //    LogBookManager.Instance.UnlockEntry("Why");
+        //}
+        //if (gameData.splitterKills >= 3)
+        //{
+        //    LogBookManager.Instance.UnlockEntry("SameOlRye");
+        //}
     }
 }

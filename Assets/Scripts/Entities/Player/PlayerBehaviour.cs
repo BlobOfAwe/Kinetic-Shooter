@@ -19,9 +19,6 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     public bool canMoveManually = false;
 
-    [SerializeField]
-    private float moveAcceleration = 1f;
-
     // Temporarily serialized for testing.
     [SerializeField]
     private Camera mainCam;
@@ -65,9 +62,6 @@ public class PlayerBehaviour : Entity
     private float deathDelay = 0.5f;
 
     [SerializeField]
-    private int gameOverScene = 3;
-
-    [SerializeField]
     private float manualMoveModifier = 0.1f;
 
     private TestBullet lastBullet;
@@ -99,7 +93,7 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     private LoadoutManager.Loadout loadout;
-    public new ShootAbility primary;
+    public ShootAbility primaryShootAbility; // A more specific reference to Entity.primary used by upgrades
 
     protected override void Awake()
     {
@@ -110,7 +104,8 @@ public class PlayerBehaviour : Entity
         }
 
         // Assigns the player.ability to be the component based on the specified ability type
-        primary = (ShootAbility)GetComponent(loadout.primaryAbility.GetType());
+        primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
+        primaryShootAbility = (ShootAbility)primary;
         secondary = (Ability)GetComponent(loadout.secondaryAbility.GetType());
         utility = (Ability)GetComponent(loadout.utilityAbility.GetType());
 

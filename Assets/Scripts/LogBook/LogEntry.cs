@@ -12,4 +12,6 @@ public class LogEntry : ScriptableObject
     [TextArea] public string description;
     public bool isUnlocked;
     public string unlockCondition;
+    public string unlockVariable;
+    public int requiredUnlockVariableValue;
 }

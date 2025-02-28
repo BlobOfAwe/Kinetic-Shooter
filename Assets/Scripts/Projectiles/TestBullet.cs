@@ -9,6 +9,7 @@ public class TestBullet : Projectile
     // Added by Nathaniel Klassen
     [SerializeField]
     private LayerMask shootableLayer;
+    [SerializeField]
     private float knockback;
     [HideInInspector]
     public bool isPiercing = false;

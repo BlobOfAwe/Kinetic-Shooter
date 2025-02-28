@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Minion
+  m_EditorClassIdentifier: 
+  entryID: 1
+  entryName: Minion
+  entryImage: {fileID: 21300000, guid: 8a91bc57f86b04f4292280704a4cdc04, type: 3}
+  entryIcon: {fileID: 21300000, guid: 8a91bc57f86b04f4292280704a4cdc04, type: 3}
+  description: "Physiology: This creature is humanoid in appearance, but seems deeply
+    unnatural. It\u2019s disproportionate head is twice the size of its torso and
+    it appears to be secreting some form of poison from its mouth. While it\u2019s
+    thought that the creature cannot feel emotions, it does appear to have a large
+    smile which never fades, even when deceased.\r\n\r\nBehavior: This creature gradually
+    moves towards the player and attacks when in reaching distance. It is recommended
+    to kill on sight - there is no reasoning with these creatures.\r\n"
+  isUnlocked: 1
+  unlockCondition: Kill 100 Minions
+  unlockVariable: normalKills
+  requiredUnlockVariableValue: 20

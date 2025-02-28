@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Splitter
+  m_EditorClassIdentifier: 
+  entryID: 12
+  entryName: Splitter
+  entryImage: {fileID: 21300000, guid: 09d7088732eb972478b7b71405282957, type: 3}
+  entryIcon: {fileID: 21300000, guid: 09d7088732eb972478b7b71405282957, type: 3}
+  description: "Classification/Rank: \u2018Leader\u2019 \r\n\r\nPhysiology: This
+    creature is a large green mass with a humanoid upper body protruding from the
+    front of the mass. It has two eyes, but seemingly no eyelids. It shows no emotion.\r\n\r\nBehaviour:
+    Upon being destroyed, the splitter divides  . Do not underestimate the smaller
+    splitters, in numbers, they pose a serious threat."
+  isUnlocked: 1
+  unlockCondition: Kill 15 Splitters
+  unlockVariable: splitterKills
+  requiredUnlockVariableValue: 20

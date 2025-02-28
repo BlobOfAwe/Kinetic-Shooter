@@ -14,7 +14,6 @@ public class Beacon : MonoBehaviour
     private float startingCamSize;
     [SerializeField] float timeToFullZoomOut = 1f;
     [SerializeField] private CinemachineVirtualCamera vCam;
-    [SerializeField] private string nextLevelScene = "";
     [SerializeField] private GameObject winPanel;
     private InventoryManager playerInv;
     [HideInInspector]

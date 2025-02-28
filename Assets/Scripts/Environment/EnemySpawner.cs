@@ -16,12 +16,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float addCreditsPerSecond;
     [SerializeField] private float maxSpawnTimeInterval;
     [SerializeField] private Enemy[] enemyPrefabs;
-    [SerializeField] private Enemy[] leaderPrefabs;
     [SerializeField] private float timeToNextSpawn;
     [SerializeField] private float credits;
+    private float maxCredits;
     [SerializeField] private Enemy selectedEnemy;
     [SerializeField] private bool lastSpawnSuccess;
     [SerializeField] private float maxEnemiesPerSpawn;
+    private int spawnedEnemiesThisWave;
 
     [SerializeField] private float maxSpawnDistance;
     [SerializeField] private float minSpawnDistance;
@@ -33,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         addCreditsPerSecond = addCreditsPerSecond * (1 + GameManager.difficultyCoefficient);
-
+        maxCredits = addCreditsPerSecond * maxSpawnTimeInterval * 3;
+        spawnedEnemiesThisWave = 0;
         player = FindAnyObjectByType<PlayerBehaviour>(FindObjectsInactive.Exclude);
     }
 
@@ -45,14 +47,14 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (!lastSpawnSuccess) 
                 { 
-                    selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)]; 
-                    if (credits > selectedEnemy.spawnCost * maxEnemiesPerSpawn) 
-                    { 
-                        selectedEnemy = leaderPrefabs[Random.Range(0, leaderPrefabs.Length)];    
-                    }
+                    selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+                    spawnedEnemiesThisWave = 0;
                 }
 
                 lastSpawnSuccess = AttemptSpawn(selectedEnemy);
+
+                if (lastSpawnSuccess) { spawnedEnemiesThisWave++; }
+                if (spawnedEnemiesThisWave >= maxEnemiesPerSpawn) { lastSpawnSuccess = false; }
 
                 // If the spawn was a success, try to spawn another enemy of the same type within the next second. Otherwise, start the process over
                 timeToNextSpawn = lastSpawnSuccess ? Random.Range(0f, 1f) : Random.Range(0f, maxSpawnTimeInterval);
@@ -62,7 +64,8 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 timeToNextSpawn -= Time.deltaTime;
-                credits += addCreditsPerSecond * Time.deltaTime;
+                if (credits < maxCredits)
+                    credits += addCreditsPerSecond * Time.deltaTime;
             }
         }
     }

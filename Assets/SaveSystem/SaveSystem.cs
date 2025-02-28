@@ -15,7 +15,7 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
         StreamWriter writer = new StreamWriter(stream);
         writer.Write(json);
-        Debug.Log("Game saved!");
+        Debug.Log("Game saved to " + path);
         writer.Close();
         stream.Close();
     }
@@ -32,7 +32,7 @@ public static class SaveSystem
             StreamReader reader = new StreamReader(stream);
             string json = reader.ReadToEnd();
             GameData data = JsonUtility.FromJson<GameData>(json);
-            Debug.Log("Game loaded!");
+            Debug.Log("Game loaded from " + path);
             reader.Close();
             stream.Close();
             return data;

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Speed Demon
+  m_EditorClassIdentifier: 
+  entryID: 3
+  entryName: Grappler
+  entryImage: {fileID: 21300000, guid: e22d1b9d3fe52ad4c88a1cc6466a53b4, type: 3}
+  entryIcon: {fileID: 21300000, guid: e22d1b9d3fe52ad4c88a1cc6466a53b4, type: 3}
+  description: "Physiology: This creature has arachnid-like legs with razor sharp
+    tips designed to implant themselves in its prey, and progressively bite them
+    until death. There is no internal means for digestion, suggesting the creature's
+    main goal is destruction, not survival.\r\n\r\nBehaviour: This creature runs
+    toward its player and attaches to them, doing progressive damage over time until
+    it is rammed into a wall, dislodging it from its prey. Keep your distance and
+    don\u2019t panic. \r\n"
+  isUnlocked: 0
+  unlockCondition: Kill 100 Grapplers
+  unlockVariable: speedKills
+  requiredUnlockVariableValue: 20

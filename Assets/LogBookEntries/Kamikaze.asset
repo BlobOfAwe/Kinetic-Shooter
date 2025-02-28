@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Kamikaze
+  m_EditorClassIdentifier: 
+  entryID: 9
+  entryName: Kamikaze
+  entryImage: {fileID: 21300000, guid: 3b0648c8cce511045a15e6c0216615be, type: 3}
+  entryIcon: {fileID: 21300000, guid: 3b0648c8cce511045a15e6c0216615be, type: 3}
+  description: 'Physiology: Like the Blade Spinner, the Kamikaze weapon appears to
+    be completely mechanical, using antigravitic technology to propel itself, using
+    one large ocular sensor to track victims.
+
+    
+
+    Behaviour: The Kamikaze
+    weapon propels itself towards its victims, exploding on impact.'
+  isUnlocked: 0
+  unlockCondition: Kill 50 Kamikaze
+  unlockVariable: kamikazeKills
+  requiredUnlockVariableValue: 20

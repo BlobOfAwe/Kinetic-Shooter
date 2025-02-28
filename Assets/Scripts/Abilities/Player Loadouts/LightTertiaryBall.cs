@@ -12,7 +12,6 @@ public class LightTertiaryBall : Ability
 
     [Header("Walls")]
     [SerializeField] GameObject bulletPrefab;
-    [SerializeField] float minSpeed = 2;
     [SerializeField] float wallSpace = 2;
 
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK

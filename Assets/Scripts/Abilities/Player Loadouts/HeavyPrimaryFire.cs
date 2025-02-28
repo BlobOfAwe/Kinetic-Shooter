@@ -8,7 +8,6 @@ public class HeavyPrimaryFire : ShootAbility
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
     private int maxBullets = 30;
-    [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
 
 
