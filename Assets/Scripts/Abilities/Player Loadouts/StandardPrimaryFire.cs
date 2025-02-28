@@ -55,10 +55,12 @@ public class StandardPrimaryFire : ShootAbility
                 bullet.transform.position = (Vector2)player.firePoint.position; // Added an offset to make the bullets spawn closer to the gun - Z.S // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-player.firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
-                bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
-                bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
-                bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
-                bullet.GetComponent<Projectile>().damageMultiplier = bulletDamageMultiplier;
+                Projectile bulletProj = bullet.GetComponent<Projectile>();
+                bulletProj.timeRemaining = bulletProj.despawnTime; // Reset the bullet's despawn timer. - NK
+                bulletProj.speedMultiplier = bulletSpeedMultiplier;
+                bulletProj.knockbackMultiplier = bulletKnockbackMultiplier;
+                bulletProj.damageMultiplier = bulletDamageMultiplier * damageModifier;
+                bulletProj.effectModifier = damageModifier;
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return

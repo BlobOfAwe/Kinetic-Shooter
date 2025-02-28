@@ -12,7 +12,7 @@ public class SlowShots : Upgrade
     private GameObject explosion;
 
     [SerializeField]
-    private float explosionDamage = 10f;
+    private float explosionDamage = 2f;
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
@@ -40,7 +40,7 @@ public class SlowShots : Upgrade
         if (target.totalSpeed <= 0f)
         {
             Debug.Log(target.name + " exploded!");
-            Instantiate(explosion, target.transform.position, Quaternion.identity).GetComponent<RocketExplosion>().SetDamage(explosionDamage);
+            Instantiate(explosion, target.transform.position, Quaternion.identity).GetComponent<RocketExplosion>().SetDamage(player.totalAttack * explosionDamage);
             AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketImpactAbility, target.transform.position);
         } else
         {

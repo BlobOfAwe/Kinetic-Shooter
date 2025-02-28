@@ -14,6 +14,7 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField]
     public float damageMultiplier = 1f; // Deals damage based on the totalAttack of the Shooter // Changed to public. - NK
     public float knockbackMultiplier; // Added so that upgrades can affect bullet knockback. - NK
+    public float effectModifier = 1; // How effective is this bullet at triggering upgrade effects? 1 = 100% effect
     [SerializeField]
     protected Rigidbody2D rb;
     [SerializeField]

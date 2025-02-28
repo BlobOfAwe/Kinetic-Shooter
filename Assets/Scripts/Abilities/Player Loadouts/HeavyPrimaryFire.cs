@@ -84,10 +84,12 @@ public class HeavyPrimaryFire : ShootAbility
                 bullet.transform.position = (Vector2)player.firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-player.firePoint.up * recoilMod, ForceMode2D.Impulse); // Add any knockback to the object
-                bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
-                bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
-                bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
-                bullet.GetComponent<Projectile>().damageMultiplier *= damageMod * damageModifier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
+                Projectile bulletProj = bullet.GetComponent<Projectile>();
+                bulletProj.timeRemaining = bulletProj.despawnTime; // Reset the bullet's despawn timer. - NK
+                bulletProj.speedMultiplier = bulletSpeedMultiplier;
+                bulletProj.knockbackMultiplier = bulletKnockbackMultiplier;
+                bulletProj.damageMultiplier *= damageMod * damageModifier * bulletDamageMultiplier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
+                bulletProj.effectModifier = damageModifier * damageMod;
                 bullet.transform.localScale = Vector3.one * scaleMod;
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;

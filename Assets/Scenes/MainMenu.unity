@@ -7114,11 +7114,11 @@ MonoBehaviour:
     primaryAbility: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 8881820493473276149, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     utilityAbility: {fileID: 1648308658611244154, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-    attackStat: 10
+    attackStat: 20
     defenseStat: 50
     speedStat: 5
     hpStat: 250
-    recoverStat: 1
+    recoverStat: 1.5
   - loadout: Light
     weapon: Sword
     primary: Swipe forward in a wide arc, smashing through enemies
@@ -7129,7 +7129,7 @@ MonoBehaviour:
     primaryAbility: {fileID: 7780019012083256913, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     secondaryAbility: {fileID: 1537881835366685869, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
     utilityAbility: {fileID: 4444130273591118226, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-    attackStat: 8
+    attackStat: 7
     defenseStat: -10
     speedStat: 20
     hpStat: 150
@@ -8549,8 +8549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   settingsMenu: {fileID: 0}
-  parameterNamePause: 
-  parameterValuePause: 0
+  parameterController: {fileID: 0}
 --- !u!1 &1897401785
 GameObject:
   m_ObjectHideFlags: 0

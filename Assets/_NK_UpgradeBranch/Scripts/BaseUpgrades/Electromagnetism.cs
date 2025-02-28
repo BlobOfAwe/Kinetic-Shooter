@@ -15,7 +15,7 @@ public class Electromagnetism : Upgrade
     private float bulletKnockbackIncrease = -0.05f;
 
     [SerializeField]
-    private float maxArcRadius = 1f;
+    private float maxArcRadius = 3f;
 
     [SerializeField]
     private GameObject arcLine;
@@ -23,16 +23,14 @@ public class Electromagnetism : Upgrade
     [SerializeField]
     private float arcLineTime = 1f;
 
-    private ShootAbility shootAbility;
-
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.primary;
         player.attackMultiplier += attackIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;
-        shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
+        //shootAbility.bulletKnockbackMultiplier = Mathf.Pow(shootAbility.bulletKnockbackMultiplier + bulletKnockbackIncrease, quantity);
+        shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
     }
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)

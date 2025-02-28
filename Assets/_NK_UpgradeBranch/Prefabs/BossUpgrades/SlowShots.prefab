@@ -138,10 +138,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 219a656c54cf77c4394ddc389d14fd3d, type: 3}
   title: Slow Shots
   description: Shots now slow enemies!
-  enemySlow: -2
-  duration: 2
+  enemySlow: -0.5
+  duration: 4
   explosion: {fileID: 6102170954844317050, guid: 0a344dc35930bac419a8afbead9cbc3f, type: 3}
-  explosionDamage: 10
+  explosionDamage: 2
 --- !u!114 &6605421527813062902
 MonoBehaviour:
   m_ObjectHideFlags: 0

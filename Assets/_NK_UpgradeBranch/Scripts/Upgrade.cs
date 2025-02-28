@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class Upgrade : Item
 {
+    protected ShootAbility shootAbility;
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
@@ -12,6 +13,7 @@ public abstract class Upgrade : Item
     public virtual void ApplyUpgrade(int quantity)
     {
         player = FindObjectOfType<PlayerBehaviour>();
+        shootAbility = player.primary;
         //Debug.Log("Upgrade applied.");
     }
 

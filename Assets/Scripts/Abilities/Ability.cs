@@ -13,7 +13,7 @@ public abstract class Ability : MonoBehaviour
     public bool inUse = false; // Is the ability currently being used?
     private float cooldownTimer;
     public float range = 3f;
-    [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
+    [SerializeField] public float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
     protected Entity thisEntity;
 
     protected virtual void Awake()

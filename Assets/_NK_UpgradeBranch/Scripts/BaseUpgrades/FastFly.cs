@@ -20,18 +20,18 @@ public class FastFly : Upgrade
     [SerializeField]
     private float defenseIncrease = -0.05f;
 
-    private ShootAbility shootAbility;
-
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.primary;
-        shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
+        //shootAbility.cooldownMultiplier = Mathf.Pow(shootAbility.cooldownMultiplier + cooldownIncrease, quantity);
+        shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
         shootAbility.bulletSpeedMultiplier += bulletSpeedIncrease * quantity;
         player.speedMultiplier += manualMoveIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += bulletKnockbackIncrease * quantity;
-        player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
-        player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
+        //player.attackMultiplier = Mathf.Pow(player.attackMultiplier + attackIncrease, quantity);
+        player.attackMultiplier += attackIncrease * quantity;
+        //player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
+        player.defenseMultiplier += defenseIncrease * quantity;
     }
 }

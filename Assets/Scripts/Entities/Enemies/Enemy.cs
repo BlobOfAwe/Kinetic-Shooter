@@ -162,7 +162,7 @@ public abstract class Enemy : Entity
             aiPath.destination = RandomPointWithinRadius(transform, stayDistance);
         }
 
-        aiPath.maxSpeed = 0.2f * totalSpeed;
+        aiPath.maxSpeed = 0.6f * totalSpeed;
     }
 
 

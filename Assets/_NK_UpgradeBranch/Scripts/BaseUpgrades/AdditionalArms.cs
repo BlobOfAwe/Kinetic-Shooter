@@ -18,18 +18,17 @@ public class AdditionalArms : Upgrade
     private float offsetAmount = 1f;
 
     [SerializeField]
-    private float extraBulletDamageMultiplier = 0.5f;
+    private float extraBulletDamageMultiplier = 0.2f;
 
-    private ShootAbility shootAbility;
 
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
-        shootAbility = player.primary;
         player.healthMultiplier += healthIncrease * quantity;
         shootAbility.bulletKnockbackMultiplier += knockbackIncrease * quantity;
         shootAbility.cooldownMultiplier += cooldownIncrease * quantity;
-        player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
+        //player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
+        player.defenseMultiplier += defenseIncrease * quantity;
     }
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)
@@ -45,10 +44,12 @@ public class AdditionalArms : Upgrade
                     bullet.transform.position = player.firePoint.position; // Set the bullet to firePoint's position.
                     bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles
                     bullet.transform.Translate(Vector2.right * offset); // Offset the bullet's position.
-                    bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer.
-                    bullet.GetComponent<Projectile>().speedMultiplier = shootAbility.bulletSpeedMultiplier;
-                    bullet.GetComponent<Projectile>().knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
-                    bullet.GetComponent<Projectile>().damageMultiplier = shootAbility.bulletDamageMultiplier * extraBulletDamageMultiplier;
+                    Projectile bulletProj = bullet.GetComponent<Projectile>();
+                    bulletProj.timeRemaining = bulletProj.despawnTime; // Reset the bullet's despawn timer.
+                    bulletProj.speedMultiplier = shootAbility.bulletSpeedMultiplier;
+                    bulletProj.knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
+                    bulletProj.damageMultiplier = shootAbility.bulletDamageMultiplier * extraBulletDamageMultiplier;
+                    bulletProj.effectModifier = shootAbility.damageModifier * extraBulletDamageMultiplier;
                     bullet.SetActive(true);
                     if (offset < 0f)
                     {
