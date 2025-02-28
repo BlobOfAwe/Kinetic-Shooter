@@ -16,25 +16,29 @@ namespace Pathfinding {
 	/// </summary>
 	[RequireComponent(typeof(Seeker))]
 	public abstract class AIBase : VersionedMonoBehaviour {
-		/// <summary>\copydoc Pathfinding::IAstarAI::radius</summary>
-		public float radius = 0.5f;
+        
+		/// <summary> Layers which, when collided with, reset the entity's rigidbody velocity to 0. </summary>
+		public int resetVelocityLayers = 6; // Layer six referrs to the 6th labeled layer. In this case, obstacles
+
+        /// <summary>\copydoc Pathfinding::IAstarAI::radius</summary>
+        public float radius = 0.5f;
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::height</summary>
 		public float height = 2;
 
-		/// <summary>
-		/// Determines how often the agent will search for new paths (in seconds).
-		/// The agent will plan a new path to the target every N seconds.
-		///
-		/// If you have fast moving targets or AIs, you might want to set it to a lower value.
-		///
-		/// See: <see cref="shouldRecalculatePath"/>
-		/// See: <see cref="SearchPath"/>
-		///
-		/// Deprecated: This has been renamed to \reflink{autoRepath.interval}.
-		/// See: \reflink{AutoRepathPolicy}
-		/// </summary>
-		public float repathRate {
+        /// <summary>
+        /// Determines how often the agent will search for new paths (in seconds).
+        /// The agent will plan a new path to the target every N seconds.
+        ///
+        /// If you have fast moving targets or AIs, you might want to set it to a lower value.
+        ///
+        /// See: <see cref="shouldRecalculatePath"/>
+        /// See: <see cref="SearchPath"/>
+        ///
+        /// Deprecated: This has been renamed to \reflink{autoRepath.interval}.
+        /// See: \reflink{AutoRepathPolicy}
+        /// </summary>
+        public float repathRate {
 			get {
 				return this.autoRepath.interval;
 			}
@@ -69,21 +73,23 @@ namespace Pathfinding {
 		[UnityEngine.Serialization.FormerlySerializedAs("speed")]
 		public float maxSpeed = 1;
 
-		/// <summary>
-		/// Gravity to use.
-		/// If set to (NaN,NaN,NaN) then Physics.Gravity (configured in the Unity project settings) will be used.
-		/// If set to (0,0,0) then no gravity will be used and no raycast to check for ground penetration will be performed.
-		/// </summary>
-		public Vector3 gravity = new Vector3(float.NaN, float.NaN, float.NaN);
+        /// <summary>
+        /// Gravity to use.
+        /// If set to (NaN,NaN,NaN) then Physics.Gravity (configured in the Unity project settings) will be used.
+        /// If set to (0,0,0) then no gravity will be used and no raycast to check for ground penetration will be performed.
+        /// </summary>
+        public Vector3 gravity = new Vector3(float.NaN, float.NaN, float.NaN);
 
-		/// <summary>
-		/// Layer mask to use for ground placement.
-		/// Make sure this does not include the layer of any colliders attached to this gameobject.
-		///
-		/// See: <see cref="gravity"/>
-		/// See: https://docs.unity3d.com/Manual/Layers.html
-		/// </summary>
-		public LayerMask groundMask = -1;
+        
+
+        /// <summary>
+        /// Layer mask to use for ground placement.
+        /// Make sure this does not include the layer of any colliders attached to this gameobject.
+        ///
+        /// See: <see cref="gravity"/>
+        /// See: https://docs.unity3d.com/Manual/Layers.html
+        /// </summary>
+        public LayerMask groundMask = -1;
 
 		/// <summary>
 		/// Offset along the Y coordinate for the ground raycast start position.
@@ -655,7 +661,13 @@ namespace Pathfinding {
 				// Note that rigid.MovePosition may or may not move the character immediately.
 				// Check the Unity documentation for the special cases.
 				if (rigid != null) rigid.MovePosition(currentPosition);
-				else if (rigid2D != null) rigid2D.MovePosition(currentPosition);
+				else if (rigid2D != null)
+				{
+					Vector2 rbVelocity = rigid2D.velocity;
+					currentPosition = currentPosition + ((Vector3)rbVelocity * Time.fixedDeltaTime);
+					rigid2D.velocity = rbVelocity * (1 - Time.fixedDeltaTime * rigid2D.drag);
+					rigid2D.MovePosition(currentPosition);
+				}
 				else tr.position = currentPosition;
 			}
 
@@ -672,15 +684,15 @@ namespace Pathfinding {
 			prevFrame = currentFrame;
 		}
 
-		/// <summary>
-		/// Constrains the character's position to lie on the navmesh.
-		/// Not all movement scripts have support for this.
-		///
-		/// Returns: New position of the character that has been clamped to the navmesh.
-		/// </summary>
-		/// <param name="position">Current position of the character.</param>
-		/// <param name="positionChanged">True if the character's position was modified by this method.</param>
-		protected virtual Vector3 ClampToNavmesh (Vector3 position, out bool positionChanged) {
+        /// <summary>
+        /// Constrains the character's position to lie on the navmesh.
+        /// Not all movement scripts have support for this.
+        ///
+        /// Returns: New position of the character that has been clamped to the navmesh.
+        /// </summary>
+        /// <param name="position">Current position of the character.</param>
+        /// <param name="positionChanged">True if the character's position was modified by this method.</param>
+        protected virtual Vector3 ClampToNavmesh (Vector3 position, out bool positionChanged) {
 			positionChanged = false;
 			return position;
 		}

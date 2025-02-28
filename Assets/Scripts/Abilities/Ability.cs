@@ -1,6 +1,7 @@
 // ## - JV
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] protected float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
     protected Entity thisEntity;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         thisEntity = GetComponent<Entity>();
     }
@@ -29,7 +30,7 @@ public abstract class Ability : MonoBehaviour
         return;
     }
 
-    protected IEnumerator BeginCooldown()
+    public IEnumerator BeginCooldown()
     {
         available = false;
         yield return new WaitForSeconds(cooldown * cooldownMultiplier);

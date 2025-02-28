@@ -15,11 +15,14 @@ public abstract class Item : MonoBehaviour
     //audio emitter variable
     protected StudioEventEmitter emitter;
 
+    protected PlayerBehaviour player;
+
     protected void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
         emitter.Play();
+        player = FindObjectOfType<PlayerBehaviour>();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -27,14 +30,13 @@ public abstract class Item : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBehaviour>() != null)
         {
             collision.GetComponentInChildren<InventoryManager>().AddItem(this);
-            //stops emitter audio
+
             emitter.Stop();
             gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
 
-            //plays pickup sound
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
 
-            Debug.Log("Picked up item");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.itemPickup, this.transform.position);
+           //Debug.Log("Picked up item");
         }
     }
 }

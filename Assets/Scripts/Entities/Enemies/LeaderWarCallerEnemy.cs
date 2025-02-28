@@ -5,6 +5,13 @@ using UnityEngine;
 
 public class LeaderWarCallerEnemy : Enemy
 {
+    protected override void Start()
+    {
+        Enemy[] children = GetComponentsInChildren<Enemy>();
+        foreach (Enemy child in children) { child.transform.parent = null; }
+        
+        base.Start();
+    }
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -24,13 +31,14 @@ public class LeaderWarCallerEnemy : Enemy
             case 0: // Wandering
                 Wander();
                 SearchForTarget();
-                if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
                 break;
             case 1: // Keep Back
                 KeepBack();
                 RefreshTarget();
-                if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
                 break;
         }
+
+        if (primary.available) { UseAbility(primary); }
+        if (secondary.available) { UseAbility(secondary); }
     }
 }

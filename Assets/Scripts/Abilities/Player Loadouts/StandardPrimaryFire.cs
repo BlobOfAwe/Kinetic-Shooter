@@ -11,33 +11,38 @@ public class StandardPrimaryFire : Ability
     private int maxBullets = 10;
     [SerializeField] private float recoil = 1;
     private PlayerBehaviour player;
+   
 
-    // Added multipliers for bullet speed and knockback to be manipulated with upgrades. - NK
+    // Added multipliers for bullet speed, knockback, and damage to be manipulated with upgrades. - NK
     public float bulletSpeedMultiplier = 1f;
     public float bulletKnockbackMultiplier = 1f;
+    public float bulletDamageMultiplier = 1f;
 
-
-    private GameObject[] bullets;
+    [HideInInspector]
+    public GameObject[] bullets; // Changed to public so it can be used with upgrade behaviour. - NK
     private Rigidbody2D rb;
 
     // Populate the array bullets with instances of bulletPrefab
-    private new void Awake()
-    {
-        base.Awake();
-        player = GetComponent<PlayerBehaviour>();
-        bullets = new GameObject[maxBullets];
-        for (int i = 0; i < bullets.Length; i++)
-        {
-            bullets[i] = Instantiate(bulletPrefab);
-            bullets[i].GetComponent<TestBullet>().shooter = player.aimTransform.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
-            bullets[i].SetActive(false);
-        }
-    }
-
     private void Start()
     {
-        try { rb = GetComponent<Rigidbody2D>(); }
-        catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+        player = GetComponent<PlayerBehaviour>();
+
+        Debug.Log("Player's primary ability is " + player.primary.GetType());
+
+        if (player.primary == this)
+        {
+            bullets = new GameObject[maxBullets];
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                bullets[i] = Instantiate(bulletPrefab);
+                bullets[i].GetComponent<TestBullet>().shooter = player.firePoint.gameObject; // Changed to set bullets' shooters to firePoint instead of this gameObject. - NK
+                bullets[i].SetActive(false);
+            }
+
+            try { rb = GetComponent<Rigidbody2D>(); }
+            catch { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
+        }
+        
     }
 
     // Shoot a bullet from the gameObject's position
@@ -53,12 +58,14 @@ public class StandardPrimaryFire : Ability
         {
             if (!bullet.activeSelf)
             {  // If the bullet is not active (being fired)
-                bullet.transform.position = player.aimTransform.position; // Set the bullet to firePoint's position - changed from transform.position - NK
-                bullet.transform.eulerAngles = player.aimTransform.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
-                rb.AddForce(-player.aimTransform.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
+                bullet.transform.position = (Vector2)player.firePoint.position; // Added an offset to make the bullets spawn closer to the gun - Z.S // Set the bullet to firePoint's position - changed from transform.position - NK
+                bullet.transform.eulerAngles = player.firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
+                rb.AddForce(-player.firePoint.up * recoil, ForceMode2D.Impulse); // Add any knockback to the object
                 bullet.GetComponent<Projectile>().timeRemaining = bullet.GetComponent<Projectile>().despawnTime; // Reset the bullet's despawn timer. - NK
                 bullet.GetComponent<Projectile>().speedMultiplier = bulletSpeedMultiplier;
                 bullet.GetComponent<Projectile>().knockbackMultiplier = bulletKnockbackMultiplier;
+                bullet.GetComponent<Projectile>().damageMultiplier = bulletDamageMultiplier;
+                player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
             AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);

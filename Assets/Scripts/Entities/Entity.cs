@@ -26,7 +26,7 @@ public abstract class Entity : MonoBehaviour
     public float health;
     public float totalAttack;
     // The equation for damage is: damage * (100/(100+totalDefense)). This will never reach 0.
-    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction.
+    // A total defense of 100 results in a 50% damage reduction. Defense of 300 results in 75% damage reduction. -50 results in 200% damage
     public float totalDefense;  
     public float totalSpeed;
     public float totalRecovery;
@@ -54,8 +54,14 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected bool isInvincible = false;
 
+    [SerializeField]
+    protected bool isFlammable = true;
 
-    protected void Awake()
+    // This is to be used with the cushion upgrade on the player specifically.
+    [HideInInspector]
+    public float cushion = 0f;
+
+    protected virtual void Awake()
     {
         UpdateStats();
         health = maxHealth;
@@ -70,13 +76,24 @@ public abstract class Entity : MonoBehaviour
 
     public virtual void Damage(float amount)
     {
+        Damage(amount, false);
+    }
+
+    public virtual void Damage(float amount, bool isContactDamage)
+    {
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
         if (!isInvincible)
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
+            if (isContactDamage)
+            {
+                totalDamage *= 1f - cushion;
+            } else
+            {
+                totalDamage *= 100 / (100 + (cushion * 100));
+            }
             health -= totalDamage;
-            Debug.Log(totalDamage);
         }
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
@@ -91,6 +108,26 @@ public abstract class Entity : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
+        }
+    }
+
+    public virtual void Ignite(float damage, float tickSpeed, float time)
+    {
+        if (isFlammable)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(TickDamage(damage, tickSpeed, time));
+            GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    protected IEnumerator TickDamage(float damage, float tickSpeed, float time)
+    {
+        while (time > 0f)
+        {
+            Damage(damage);
+            time -= Time.deltaTime;
+            yield return new WaitForSeconds(tickSpeed);
         }
     }
 
@@ -115,6 +152,7 @@ public abstract class Entity : MonoBehaviour
         {
             standardPrimaryFire.bulletKnockbackMultiplier = 1;
             standardPrimaryFire.bulletSpeedMultiplier = 1;
+            standardPrimaryFire.cooldownMultiplier = 1;
         }
 
         maxHealth = hpStat;
@@ -132,18 +170,18 @@ public abstract class Entity : MonoBehaviour
         // UPGRADES
         if (inventoryManager != null)
         {
-            Debug.Log("Checking inventory...");
+            //Debug.Log("Checking inventory...");
             foreach (InventorySlot slot in inventoryManager.inventory)
             {
                 if (slot.item != null)
                 {
-                    Debug.Log("Inventory slot " + slot + " has an item.");
+                    //Debug.Log("Inventory slot " + slot + " has an item.");
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
                         slot.item.GetComponent<Upgrade>().ApplyUpgrade(slot.quantity);
-                        Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
+                        //Debug.Log("Applied " + slot.item.gameObject.name + " " + slot.quantity + " time(s).");
                     }
-                } else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
+                } //else { Debug.Log("Inventory slot " + slot + " does not have an item."); }
             }
         }
 
@@ -195,11 +233,11 @@ public abstract class Entity : MonoBehaviour
         totalRecovery *= recoveryMultiplier;
 
         // DEBUG
-        if (inventoryManager != null)
-        {
-            Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
-            Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
-        }
+        //if (inventoryManager != null)
+        //{
+        //    Debug.Log("Speed: " + speedStat + " -> " + (totalSpeed / speedMultiplier) + " * " + speedMultiplier + " = " + totalSpeed);
+        //    Debug.Log("Attack: " + attackStat + " -> " + (totalAttack / attackMultiplier) + " * " + attackMultiplier + " = " + totalAttack);
+        //}
         if (statsDisplay != null)
         {
             statsDisplay.UpdateDisplay();

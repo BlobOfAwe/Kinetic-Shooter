@@ -10,6 +10,6 @@ public class Buff : ScriptableObject
     public modificationType modification;
     public buffCategory buffType;
     public float value;
-    public float duration = 0;
+    public float duration = 0; // A Duration of 0 means the buff never expires
     private Entity entity;
 }

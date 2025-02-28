@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
+  resetVelocityLayers: 6
   radius: 2.33
   height: 2
   canMove: 1
@@ -216,11 +217,14 @@ MonoBehaviour:
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
   isInvincible: 0
-  spawnCost: 0
+  isFlammable: 1
+  cushion: 0
+  spawnCost: 100
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
   sprite: {fileID: 2610231607656848988}
+  scoreManager: {fileID: 0}
   hostile:
     serializedVersion: 2
     m_Bits: 8
@@ -230,6 +234,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 1
+  enemyName: Bouncer
   score: 0
   rotateSpriteToFacePlayer: 0
   bossAnimator: {fileID: 4313039758088035429}
@@ -284,7 +289,6 @@ MonoBehaviour:
   enemies:
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
-  amount: 7
   bossSpawnAnimator: {fileID: 536302097104265161}
   spawnPoint: {fileID: 8589704739381277583}
   localSpawnCredits: 25

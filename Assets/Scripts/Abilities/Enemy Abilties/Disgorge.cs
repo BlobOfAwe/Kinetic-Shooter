@@ -5,7 +5,6 @@ using UnityEngine;
 public class Disgorge : Ability
 {
     [SerializeField] private Enemy[] enemies;
-    [SerializeField] private int amount;
     [SerializeField]
     private Animator bossSpawnAnimator;
     [SerializeField]
@@ -17,7 +16,7 @@ public class Disgorge : Ability
     {
         StartCoroutine(BeginCooldown());
         credits = localSpawnCredits;
-        bossSpawnAnimator.SetTrigger("isSpawning");
+        if (bossSpawnAnimator != null) { bossSpawnAnimator.SetTrigger("isSpawning"); }
         SpawnEnemies();
     }
 

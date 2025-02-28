@@ -17,15 +17,29 @@ public class PlayerBehaviour : Entity
     private bool secondaryAutofire = true;
 
     [SerializeField]
-    private bool canMoveManually = false;
+    public bool canMoveManually = false;
 
     [SerializeField]
     private float moveAcceleration = 1f;
 
+    // Temporarily serialized for testing.
+    [SerializeField]
     private Camera mainCam;
 
     [SerializeField]
     public Transform aimTransform;
+    [SerializeField]
+    public Transform firePoint;
+
+    // When the player is mirrored, the shoulder's position should be positive/negative this value to mirror around the y axis
+    private float offsetShoulderFromCenterX;
+    // The default position of the firepoint relative to the shoulder. This value is modified by offsetShoulderFromCenterX when the player is mirrored
+    private float firePointLocalPosDefaultX; 
+
+    [SerializeField]
+    private float rotationOffset = 0f;
+    [SerializeField]
+    private Transform gunHolder; 
 
     private HPBarSystem hpBar;
     //Added by ZS to reference the animators and set the timer for the death delay
@@ -36,6 +50,7 @@ public class PlayerBehaviour : Entity
     private GameObject gameOverPanel;
     [SerializeField]
     private GameObject winPanel;
+
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -55,9 +70,14 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float manualMoveModifier = 0.1f;
 
-    private bool isFiringPrimary = false;
+    private TestBullet lastBullet;
 
-    private bool isFiringSecondary = false;
+    // Changed to public so it can be accessed by cushion upgrade.
+    [HideInInspector]
+    public bool isFiringPrimary = false;
+
+    [HideInInspector]
+    public bool isFiringSecondary = false;
 
     private Vector2 moveDir;
 
@@ -65,6 +85,10 @@ public class PlayerBehaviour : Entity
 
     private Vector2 aimPos;
 
+    [SerializeField]
+    private SpriteRenderer playerSpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer gunSpriteRenderer;
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
@@ -73,18 +97,39 @@ public class PlayerBehaviour : Entity
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
+    [SerializeField]
+    private LoadoutManager.Loadout loadout;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        if (GameManager.playerLoadout != null)
+        {
+            loadout = GameManager.playerLoadout;
+        }
+
+        // Assigns the player.ability to be the component based on the specified ability type
+        primary = (Ability)GetComponent(loadout.primaryAbility.GetType());
+        secondary = (Ability)GetComponent(loadout.secondaryAbility.GetType());
+        utility = (Ability)GetComponent(loadout.utilityAbility.GetType());
+
+        attackStat = loadout.attackStat;
+        defenseStat = loadout.defenseStat;
+        hpStat = loadout.hpStat;
+        recoverStat = loadout.recoverStat;
+        speedStat = loadout.speedStat;
+
+        health = maxHealth;
+    }
     //creates an FMOD events instance for player movement
     private void Start()
     {
-        health = maxHealth;
+        offsetShoulderFromCenterX = aimTransform.localPosition.x;
+        firePointLocalPosDefaultX = firePoint.localPosition.x;
+
         hpBar = FindAnyObjectByType<HPBarSystem>();
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
-
-        // Assigns the player.ability to be the component based on the specified ability type
-        primary = (Ability)GetComponent(GameManager.playerLoadout.primaryAbility.GetType());
-        secondary = (Ability)GetComponent(GameManager.playerLoadout.secondaryAbility.GetType());
-        utility = (Ability)GetComponent(GameManager.playerLoadout.utilityAbility.GetType());
 
     }
 
@@ -95,6 +140,7 @@ public class PlayerBehaviour : Entity
         if (isFiringPrimary)
         {
             UseAbility(primary);
+            
         }
         if (isFiringSecondary)
         {
@@ -126,9 +172,9 @@ public class PlayerBehaviour : Entity
     private void FixedUpdate()
     {
         //Added by ZS, checks if the player is idle, and if they are, plays the idle animation.
-        Vector2 velocity = rb.velocity;
-        bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
-        playerAnimator.SetBool("isIdle", isIdle);
+       // Vector2 velocity = rb.velocity;
+       // bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
+       // playerAnimator.SetBool("isIdle", isIdle);
 
         if (canMoveManually)
         {
@@ -160,15 +206,55 @@ public class PlayerBehaviour : Entity
     /// Add to the velocity until they hit that lower bound;
     /// </summary>
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (cushion > 0f && collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log("Damaged " + collision.gameObject.name + " with shield for " + (totalAttack * cushion) + " damage.");
+            collision.gameObject.GetComponent<Enemy>().Damage(totalAttack * cushion, true);
+        }
+    }
+
     public void OnAim(InputAction.CallbackContext context)
     {
         if (!GameManager.paused)
         {
-            cursorPos = context.ReadValue<Vector2>();
-            aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            Vector2 cursorPos = context.ReadValue<Vector2>();
+            Vector2 aimPos = Vector2.zero;
 
-            aimTransform.localPosition = (aimPos - (Vector2)transform.position).normalized;
-            aimTransform.up = aimPos - (Vector2)transform.position;
+            if (mainCam != null)
+            {
+                aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+            }
+            else { Debug.LogWarning("No Main Camera detected"); }
+
+            // Created a local variable to reference the transform position instead of typing it manually. Z.S
+            Vector2 direction = aimPos - (Vector2)aimTransform.position;
+
+            // aimTransform.localPosition = direction.normalized;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            aimTransform.up = direction;
+            gunHolder.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
+
+            // Flips the player and gun sprite to make the direction of view
+            if (direction.x < 0)
+            {
+                playerSpriteRenderer.flipX = false;
+                //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
+                gunSpriteRenderer.flipY = true;
+                //gunHolder.localPosition = new Vector2( 0.153f, -0.16f); 
+                aimTransform.localPosition = new Vector2(offsetShoulderFromCenterX, aimTransform.localPosition.y);
+                firePoint.localPosition = new Vector2(firePointLocalPosDefaultX, firePoint.localPosition.y);
+            }
+            else if (direction.x > 0)
+            {
+                playerSpriteRenderer.flipX = true;
+                //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
+                gunSpriteRenderer.flipY = false;
+                //gunHolder.localPosition = new Vector2(-0.153f, -0.16f);
+                aimTransform.localPosition = new Vector2(-offsetShoulderFromCenterX, aimTransform.localPosition.y);
+                firePoint.localPosition = new Vector2(-firePointLocalPosDefaultX, firePoint.localPosition.y);
+            }
         }
     }
 
@@ -196,23 +282,26 @@ public class PlayerBehaviour : Entity
 
     public void OnHunker(InputAction.CallbackContext context)
     {
-        Debug.Log("Hunkered");
+        //Debug.Log("Hunkered");
         if (context.performed)
         {
             rb.velocity = Vector2.zero;
             rb.isKinematic = true;
             canMoveManually = false;
+            playerAnimator.SetBool("isHunkered", true);
         }
         else
         {
             rb.isKinematic = false;
             canMoveManually = true;
+            playerAnimator.SetBool("isHunkered", false);
         }
     }
 
     public override void Damage(float amount)
     {
         base.Damage(amount);
+        playerAnimator.SetTrigger("isHurt");
         //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
@@ -232,7 +321,12 @@ public class PlayerBehaviour : Entity
         //hpBar.HealHp(amount);
     }
 
-    public void ProjectileDestroyEffect(TestBullet bullet, bool hitDamageable)
+    public void SetLastBullet(TestBullet bullet)
+    {
+        lastBullet = bullet;
+    }
+
+    public void ProjectileDestroyEffect(TestBullet bullet, GameObject target)
     {
         if (inventoryManager != null)
         {
@@ -242,12 +336,72 @@ public class PlayerBehaviour : Entity
                 {
                     if (slot.item.GetComponent<Upgrade>() != null)
                     {
-                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, hitDamageable, slot.quantity);
+                        slot.item.GetComponent<Upgrade>().ProjectileUpgradeEffect(bullet, target, slot.quantity);
                     }
                 }
             }
         }
-        bullet.gameObject.SetActive(false);
+        if (bullet.isFromBurst)
+        {
+            bullet.isFromBurst = false;
+        } else
+        {
+            if (target.GetComponent<Entity>() != null)
+            {
+                bullet.hits -= 1;
+                Debug.Log("hits: " + bullet.hits);
+            }
+            else
+            {
+                bullet.hits = 1;
+                Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+                bullet.isPiercing = false;
+                bullet.isBursting = false;
+                bullet.gameObject.SetActive(false);
+            }
+            if (bullet.hits <= 0)
+            {
+                bullet.hits = 1;
+                Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+                bullet.isPiercing = false;
+                bullet.isBursting = false;
+                bullet.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void ProjectileFireEffect(TestBullet bullet)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().FireUpgradeEffect(slot.quantity, bullet);
+                    }
+                }
+            }
+        }
+    }
+
+    public void ProjectileKillEffect(Enemy target)
+    {
+        if (inventoryManager != null)
+        {
+            foreach (InventorySlot slot in inventoryManager.inventory)
+            {
+                if (slot.item != null)
+                {
+                    if (slot.item.GetComponent<Upgrade>() != null)
+                    {
+                        slot.item.GetComponent<Upgrade>().KillUpgradeEffect(target, slot.quantity);
+                    }
+                }
+            }
+        }
     }
 
     public void OnUsePrimary(InputAction.CallbackContext context)
@@ -259,8 +413,9 @@ public class PlayerBehaviour : Entity
                 if (context.started)
                 {
                     // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
-
-                    //playerGunAnimator.SetTrigger("isShooting");
+                    //Added the animator trigger back in because it was interacting weirdly with the ability activation causing the animation to play twice for a single instance of primary activation. Z.S
+                    playerGunAnimator.SetTrigger("isShooting");
+                    
                     isFiringPrimary = true;
                     //AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
                 }
@@ -332,6 +487,25 @@ public class PlayerBehaviour : Entity
 
     public void Quit() { Application.Quit(); }
 
+    public override void Death()
+    {
+        playerAnimator.SetTrigger("isDead");
+        //SceneManager.LoadScene(gameOverScene);
+        
+        StartCoroutine(HandleDeath());
+    }
+    private IEnumerator HandleDeath()
+    {
+        yield return new WaitForSeconds(deathDelay);
+        GameOverPanel();
+    }
+    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
+    public void GameOverPanel()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+    }
+    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
 
 
     // COMMENTED OUT THIS CODE BECAUSE IT SHOULD BE DONE IN OnMove(). - NK
@@ -385,24 +559,5 @@ public class PlayerBehaviour : Entity
         }
     }*/
 
-    public override void Death()
-    {
-        // playerAnimator.SetTrigger("isDead");
-        //SceneManager.LoadScene(gameOverScene);
-        GameOverPanel();
-        //StartCoroutine(HandleDeath());
-    }
-    //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
-    public void GameOverPanel()
-    {
-        Time.timeScale = 0f;
-        gameOverPanel.SetActive(true);
-    }
-    //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
-    // private IEnumerator HandleDeath()
-    // {
-    //     yield return new WaitForSeconds(deathDelay);
-
-    // }
 }
 
