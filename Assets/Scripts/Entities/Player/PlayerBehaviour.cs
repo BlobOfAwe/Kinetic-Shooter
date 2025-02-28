@@ -501,7 +501,7 @@ public class PlayerBehaviour : Entity
     //Added by ZS to display the Gameover/Win screens as a panel rather than seperate scenes.
     public void GameOverPanel()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
     }
 
