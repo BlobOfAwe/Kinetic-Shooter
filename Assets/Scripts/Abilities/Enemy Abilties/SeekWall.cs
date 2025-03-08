@@ -39,9 +39,12 @@ public class SeekWall : Ability
             }
         }
 
-        targetPointer.position = hits[Random.Range(0, filledIndex)].point;
-        thisEnemy.target = targetPointer;
-        thisEnemy.state = 2; // Manually set the enemy state to override the StateChange Cooldown
+        if (hits.Length > 0)
+        {
+            targetPointer.position = hits[Random.Range(0, filledIndex)].point;
+            thisEnemy.target = targetPointer;
+            thisEnemy.state = 2; // Manually set the enemy state to override the StateChange Cooldown
+        }
     }
 
     public override void PurgeDependantObjects()
