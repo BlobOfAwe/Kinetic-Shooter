@@ -341,7 +341,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 3
   m_Sprite: {fileID: 46809901, guid: 7d472e59960b3e745b14cd6a6f79dfc4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -1147,7 +1147,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5777279789927432716}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c71f36619b0ed3e42af4041f32d3d006, type: 2}
   m_CullingMode: 0
@@ -1191,6 +1191,7 @@ GameObject:
   - component: {fileID: 4538207216289663167}
   - component: {fileID: 9172123952420406705}
   - component: {fileID: 7662345944437024847}
+  - component: {fileID: 5918095137901082383}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
@@ -1330,6 +1331,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sidebar: {fileID: 0}
+--- !u!225 &5918095137901082383
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5855219836532266464}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &6406260738438089926
 GameObject:
   m_ObjectHideFlags: 0
