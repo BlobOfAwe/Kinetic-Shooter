@@ -138,6 +138,17 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: edffc9698de83e74ab3a96f2a866ad83, type: 3}
   title: Additional Arms
   description: Shoot with an extra gun!
+  statModifications:
+  - statIcon: {fileID: -1783374839, guid: 504a7529a62f0894482a247e014cf38c, type: 3}
+    isPositive: 1
+  - statIcon: {fileID: -634640314, guid: 2d9351fdc8db24b4598fb6ba4821a7db, type: 3}
+    isPositive: 1
+  - statIcon: {fileID: 355514284, guid: 59ecb4c91b4e0a24ebfdd82abbdc9a4a, type: 3}
+    isPositive: 1
+  - statIcon: {fileID: -1028143193, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    isPositive: 0
+  - statIcon: {fileID: -1028143193, guid: e110f411720fce349ba756b4625d7eae, type: 3}
+    isPositive: 1
   healthIncrease: 0.05
   knockbackIncrease: 0.05
   cooldownIncrease: 0.05

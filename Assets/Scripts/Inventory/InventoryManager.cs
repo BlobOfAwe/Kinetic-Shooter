@@ -16,7 +16,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] int initialSize = 20;
 
     [SerializeField] GameObject tooltip;
-    [SerializeField] TMPro.TMP_Text tooltipText;
+    [SerializeField] private TMPro.TMP_Text tooltipText;
+    [SerializeField] private TMPro.TMP_Text tooltipTitle;
+    [SerializeField] private Transform statIconsPanel;  
+    [SerializeField] private GameObject statIconPrefab;
+    [SerializeField] private Sprite upArrowSprite;     
+    [SerializeField] private Sprite downArrowSprite;
 
     private void Awake()
     {
@@ -114,7 +119,11 @@ public class InventoryManager : MonoBehaviour
             {
                 slot.gameObject.SetActive(true);
                 slot.item = item;
-                slot.gameObject.GetComponent<ToolTipTrigger>().Initialize(this, item.description);
+                var tooltipTrigger = slot.gameObject.GetComponent<ToolTipTrigger>();
+                tooltipTrigger.Initialize(this, item.description);
+                tooltipTrigger.title = item.title;
+                tooltipTrigger.modifications = item.statModifications;
+                //slot.gameObject.GetComponent<ToolTipTrigger>().Initialize(this, item.description);
                 slot.quantity = 1;
                 slot.GetComponentInChildren<TextMeshProUGUI>().text = "x" + slot.quantity.ToString();
                 slot.sprite = item.sprite;
@@ -167,9 +176,34 @@ public class InventoryManager : MonoBehaviour
         slotParent.gameObject.SetActive(!slotParent.gameObject.activeSelf);
     }
 
-    public void ShowTooltip(string description)
+    public void ShowTooltip(string title, string description, List<StatGrabber> modifications)
     {
+        tooltipTitle.text = title;
         tooltipText.text = description;
+        foreach (Transform child in statIconsPanel)
+        {
+            Destroy(child.gameObject);
+        }
+        int count = Mathf.Min(modifications.Count, 6);
+        for (int i = 0; i < count; i++)
+        {
+            var mod = modifications[i];
+            GameObject iconObj = Instantiate(statIconPrefab, statIconsPanel);
+            Image iconImage = iconObj.GetComponent<Image>();
+            if (iconImage != null)
+            {
+                iconImage.sprite = mod.statIcon;
+            }
+            Transform arrowTransform = iconObj.transform.Find("Arrow");
+            if (arrowTransform != null)
+            {
+                Image arrowImage = arrowTransform.GetComponent<Image>();
+                if (arrowImage != null)
+                {
+                    arrowImage.sprite = mod.isPositive ? upArrowSprite : downArrowSprite;
+                }
+            }
+        }
         tooltip.SetActive(true);
         PositionTooltip();
     }

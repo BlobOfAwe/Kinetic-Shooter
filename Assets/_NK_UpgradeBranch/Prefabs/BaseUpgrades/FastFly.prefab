@@ -138,6 +138,19 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f192c4d2fa6421242a4ef912f79b2384, type: 3}
   title: Fast Flying
   description: Your speed is increased!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 0
   cooldownIncrease: -0.1
   bulletSpeedIncrease: 0.1
   manualMoveIncrease: 0.2

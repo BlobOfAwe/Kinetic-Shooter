@@ -138,6 +138,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 46f087714873ea145b2861c6f2efde7e, type: 3}
   title: Shotgun Blast
   description: You now have bullets that spread!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 1
   knockbackIncrease: 0.05
   attackIncrease: -0.3
   cooldownIncrease: 0.05

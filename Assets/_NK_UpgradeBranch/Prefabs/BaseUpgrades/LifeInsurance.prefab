@@ -138,6 +138,19 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 217513f4245cbe6419d789fd6583db4d, type: 3}
   title: Life Insurance
   description: Heal yourself when you deal damage!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 1
   defenseIncrease: 0.05
   healthIncrease: 0.05
   bulletSpeedIncrease: 0.05

@@ -11,7 +11,7 @@ public abstract class Item : MonoBehaviour
     public Sprite sprite;
     public string title;
     public string description;
-
+    public List<StatGrabber> statModifications;
     //audio emitter variable
     protected StudioEventEmitter emitter;
 

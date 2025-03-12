@@ -138,6 +138,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 9c46ae46d6cf7bf468bc82ca029a9331, type: 3}
   title: Impaler Rounds
   description: Shots now pierce through enemies!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 0
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
   cooldownIncrease: -0.05
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.05

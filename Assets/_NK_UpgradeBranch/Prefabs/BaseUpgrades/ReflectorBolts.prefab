@@ -138,6 +138,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: b598154eb05a14541bc39518131d9683, type: 3}
   title: Reflector Bolts
   description: Some bullets now reflect enemy projectiles!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
   defenseIncrease: 0.05
   healthIncrease: 0.05
   damageIncrease: -0.05

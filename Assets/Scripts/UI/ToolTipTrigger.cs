@@ -1,5 +1,6 @@
 // ## - ZS
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,8 +9,8 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     //This script handles the intialization and management of the tooltips
     public InventoryManager sidebar;
     private string description;
-    private string title;
-
+    public string title;
+    public List<StatGrabber> modifications;
     public void Initialize(InventoryManager sidebar, string description)
     {
         this.sidebar = sidebar;
@@ -21,7 +22,7 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        sidebar.ShowTooltip(description);
+        sidebar.ShowTooltip(title, description, modifications);
         //sidebar.ShowTooltip(title);
     }
     //Coroutine needed to avoid the tooltip flickering non stop because of the raycasting interaction.
