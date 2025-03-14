@@ -9,16 +9,19 @@ public class Firestarter : Upgrade
     private float tickDamage = 1f;
 
     [SerializeField]
-    private float tickSpeed = 1f;
+    private float tickInterval = 1f;
 
     [SerializeField]
     private float burnTime = 1f;
+
+    [SerializeField]
+    private GameObject flame;
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         if (Random.Range(0f, 1f) <= igniteChance && target.GetComponent<Enemy>() != null)
         {
-            target.GetComponent<Entity>().Ignite(tickDamage, tickSpeed, burnTime);
+            target.GetComponent<Entity>().Ignite(tickDamage, tickInterval, burnTime, flame);
         }
     }
 }
