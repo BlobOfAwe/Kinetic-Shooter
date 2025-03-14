@@ -27,6 +27,8 @@ public class EnemyCounter : MonoBehaviour
     private Beacon beacon; // Added by NK.
     [SerializeField]
     private TMP_Text enemyCounterText;
+    [SerializeField]
+    private BeaconIndicator beaconIndicator;
 
     private bool bossIsSpawned = false; // Added by NK.
 
@@ -81,7 +83,9 @@ public class EnemyCounter : MonoBehaviour
         if (remainingEnemies == 0)
         {
             //Debug.Log("An Elite Enemy Has Spawned");
+            beaconIndicator.StartBurst();
             if (beacon != null && !beacon.active) { beacon.Activate(); }// Added by Nathaniel Klassen.
+            
         }
     }
 
