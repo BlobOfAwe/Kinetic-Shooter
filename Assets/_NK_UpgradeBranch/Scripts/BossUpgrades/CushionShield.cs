@@ -15,6 +15,9 @@ public class CushionShield : MonoBehaviour
     private LayerMask solidLayers;
 
     [SerializeField]
+    private float maxTransparency = 1f;
+
+    [SerializeField]
     private Color chargedColor = Color.green;
 
     private Color originalColor = Color.white;
@@ -84,7 +87,7 @@ public class CushionShield : MonoBehaviour
             shieldCharge = 0f;
             sr.color = originalColor;
         }
-        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, shieldCharge);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, shieldCharge * maxTransparency);
         player.cushion = shieldCharge;
     }
 }
