@@ -20,6 +20,7 @@ public abstract class Enemy : Entity
     public SpriteRenderer sprite;
     private EnemyCounter enemyCounter; // Added by Nathaniel Klassen
     [SerializeField] private ScoreManager scoreManager; // Added by Nathaniel Klassen
+    private SpecialUpgradeSpawner specialUpgradeSpawner; // Added by Nathaniel Klassen
 
     [Header("Targeting")]
     public LayerMask hostile = 8; // Objects on these layers are valid attack targets
@@ -42,11 +43,15 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
+    private bool isLeader = false; // Added by Nathaniel Klassen
+    [SerializeField]
     private string enemyName = ""; // Used to track kills of specific enemy types. - NK
     [SerializeField]
     private int score = 0; // Added by Nathaniel Klassen
     [SerializeField]
     public float enemyCounterValue = 1; // How many enemies are counted as defeated when this enemy dies? Usually 1, but may be 0 in some circumstances
+    [SerializeField]
+    private float leaderUpgradeSpawnChance = 0; // 0 is 0%, 1 is 100% - Added by Nathaniel Klassen
     [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
     private bool dead;
@@ -57,6 +62,7 @@ public abstract class Enemy : Entity
         aiPath = GetComponent<AIPath> ();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
         scoreManager = FindObjectOfType<ScoreManager> ();
+        specialUpgradeSpawner = FindObjectOfType<SpecialUpgradeSpawner>(); // Added by Nathaniel Klassen
         if (sprite == null) { Debug.LogError(gameObject.name + " has no sprite assigned."); }
 
         attackStat *= 1 + GameManager.difficultyCoefficient * 0.2f;
@@ -106,6 +112,17 @@ public abstract class Enemy : Entity
                 scoreManager = FindAnyObjectByType<ScoreManager>();
                 scoreManager.AddPoints(score);
             }
+            // Added by Nathaniel Klassen
+            if (isLeader)
+            {
+                if (Random.Range(0f,1f) <= leaderUpgradeSpawnChance)
+                {
+                    if (specialUpgradeSpawner != null)
+                    {
+                        specialUpgradeSpawner.SpawnLeaderUpgrade(transform.position);
+                    }
+                }
+            }
             // Added to make the enemy counter count down when an enemy is defeated, unless it's a boss, in which case something else happens. - NK
             if (!isBoss)
             {
@@ -113,6 +130,11 @@ public abstract class Enemy : Entity
             }
             else
             {
+                // Added by Nathaniel Klassen
+                if (specialUpgradeSpawner != null)
+                {
+                    specialUpgradeSpawner.SpawnBossUpgrade(transform.position);
+                }
                 Debug.Log("You beat the boss!");
                 // Whatever happens when a boss is defeated goes here.
                 enemyCounter.BossDefeated(this);

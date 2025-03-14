@@ -19,7 +19,7 @@ public class Firestarter : Upgrade
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
-        if (Random.Range(0f, 1f) <= igniteChance && target.GetComponent<Enemy>() != null)
+        if (Random.Range(0f, 1f) <= igniteChance * quantity * bullet.effectModifier && target.GetComponent<Enemy>() != null)
         {
             target.GetComponent<Entity>().Ignite(tickDamage, tickInterval, burnTime, flame);
         }
