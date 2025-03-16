@@ -226,11 +226,13 @@ MonoBehaviour:
   sightRange: 20
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
   enemyName: Sniper
   score: 8
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 0
 --- !u!114 &7324984096438370378
 MonoBehaviour:

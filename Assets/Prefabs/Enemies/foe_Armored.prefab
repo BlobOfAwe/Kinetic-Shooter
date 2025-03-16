@@ -238,7 +238,7 @@ MonoBehaviour:
   isInvincible: 0
   isFlammable: 1
   cushion: 0
-  spawnCost: 7
+  spawnCost: 12
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -255,6 +255,7 @@ MonoBehaviour:
   isBoss: 0
   enemyName: Armoured
   score: 7
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 0
 --- !u!1 &5340787648015603122
 GameObject:

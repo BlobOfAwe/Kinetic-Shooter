@@ -27,6 +27,7 @@ public abstract class Enemy : Entity
     [SerializeField] protected float sightRange = 20f; // How far away can the enemy see
     [SerializeField] protected float stayDistance = 5f; // How close the enemy will get to the player
     [SerializeField] protected float chaseDistance = 7f; // How far can the player get before the enemy chases them
+    [SerializeField] protected float rotationSpeed = 2f; // How quickly the enemy rotates to follow the player
     [SerializeField] protected float pursuitDuration; // How long the enemy will pursue the player while outside FOV before losing interest
     protected float pursuitTimer; // Used to measure pursuitDuration
 
@@ -149,7 +150,20 @@ public abstract class Enemy : Entity
     {
         aiPath.enableRotation = false;
         Vector2 dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
-        transform.up = dir;
+        float currentAngle = Mathf.Atan2(transform.up.y, transform.up.x) * Mathf.Rad2Deg; // The current angle of the enemy
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg; // The angle of the target relative to the enemy
+        float differenceAngle = targetAngle - currentAngle; // The angle between the current angle and the target
+        if (Mathf.Abs(differenceAngle) > 180)
+        {
+            float newDifferenceAngle = 360 - Mathf.Abs(differenceAngle);
+            if (differenceAngle > 0) { newDifferenceAngle *= -1; }
+            differenceAngle = newDifferenceAngle;
+        }
+        float deltaAngle = Mathf.Min(Mathf.Abs(differenceAngle), rotationSpeed); // The angle to be rotated this frame
+        if (differenceAngle < 0) { deltaAngle *= -1; }
+        //Debug.Log("currentAngle: " + currentAngle + " targetAngle: " + targetAngle + " differenceAngle: " + differenceAngle + " delta: " + deltaAngle);
+
+        transform.eulerAngles += Vector3.forward * deltaAngle;
     }
 
     // Wander aimlessly

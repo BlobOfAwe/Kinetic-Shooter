@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class BaseSniperEnemy : Enemy
 {
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
@@ -39,5 +41,7 @@ public class BaseSniperEnemy : Enemy
                 KeepBack();
                 break;
         }
+
+        Debug.DrawRay(transform.position, transform.up);
     }
 }
