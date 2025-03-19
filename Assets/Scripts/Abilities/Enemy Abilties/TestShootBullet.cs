@@ -51,7 +51,7 @@ public class TestShootBullet : Ability
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {
-            if (!bullet.activeSelf) {  // If the bullet is not active (being fired)
+            if (!bullet.activeSelf) {  // If the bullet is not active (being fired) 
                 bullet.transform.position = firePoint.position; // Set the bullet to firePoint's position - changed from transform.position - NK
                 bullet.transform.eulerAngles = firePoint.eulerAngles; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                 rb.AddForce(-firePoint.up * recoil * recoilMultiplier, ForceMode2D.Impulse); // Add any knockback to the object

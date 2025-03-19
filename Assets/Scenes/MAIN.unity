@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdc35fa6a58d8e49b4d29bb65ab9683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalEnemies: 15
+  totalEnemies: 1
   bossSpawningCredits: 0
   remainingBosses: 0
   bossEnemies:
@@ -690,6 +690,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5541923507258668553, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
   m_PrefabInstance: {fileID: 1497419929}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &630776342
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3112369215467155691, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_Name
+      value: foe_LightningTwinsContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.51862
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.339342
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09696773
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302814277506464597, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 15e724d0c3730f24eb222a938719908c, type: 3}
 --- !u!114 &638390375 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
@@ -44003,3 +44060,4 @@ SceneRoots:
   - {fileID: 493073860}
   - {fileID: 896367707}
   - {fileID: 879053011}
+  - {fileID: 630776342}

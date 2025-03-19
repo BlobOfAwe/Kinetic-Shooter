@@ -50,7 +50,10 @@ public class Beacon : MonoBehaviour
         // Stop the enemy spawner and find and destroy all loaded enemies - JV
         FindAnyObjectByType<EnemySpawner>().active = false;
         Enemy[] enemies = FindObjectsOfType<Enemy>();
-        foreach (Enemy enemy in enemies) { enemy.gameObject.SetActive(false); }
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].Death();
+        }
         
         Debug.Log("Beacon activated!");
         forcefield.gameObject.SetActive(true);
