@@ -73,6 +73,8 @@ public class PlayerBehaviour : Entity
     [HideInInspector]
     public bool isFiringSecondary = false;
 
+    private bool isGameEnd = false;
+
     private Vector2 moveDir;
 
     private Vector2 cursorPos;
@@ -133,14 +135,17 @@ public class PlayerBehaviour : Entity
     {
         base.Update();
 
-        if (isFiringPrimary)
+        if (!isGameEnd)
         {
-            UseAbility(primary);
-            
-        }
-        if (isFiringSecondary)
-        {
-            UseAbility(secondary);
+            if (isFiringPrimary)
+            {
+                UseAbility(primary);
+
+            }
+            if (isFiringSecondary)
+            {
+                UseAbility(secondary);
+            }
         }
 
 
@@ -151,7 +156,8 @@ public class PlayerBehaviour : Entity
             audioTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Slash))
+        // Obsolete. Invincibility is now handled differently.
+        /*if (Input.GetKeyDown(KeyCode.Slash))
         {
             if (isInvincible)
             {
@@ -162,7 +168,7 @@ public class PlayerBehaviour : Entity
             }
             Debug.Log("Invincibility = " + isInvincible);
 
-        }
+        }*/
     }
 
     private void FixedUpdate()
@@ -172,7 +178,7 @@ public class PlayerBehaviour : Entity
        // bool isIdle = Mathf.Abs(velocity.x) < 0.1f && Mathf.Abs(velocity.y) < 0.1f;
        // playerAnimator.SetBool("isIdle", isIdle);
 
-        if (canMoveManually)
+        if (canMoveManually && !isGameEnd)
         {
             // If (negative Input)
             // If (Velocity > the negative-maximum for base movement speed)
@@ -213,7 +219,7 @@ public class PlayerBehaviour : Entity
 
     public void OnAim(InputAction.CallbackContext context)
     {
-        if (!GameManager.paused)
+        if (!GameManager.paused && !isGameEnd)
         {
             Vector2 cursorPos = context.ReadValue<Vector2>();
             Vector2 aimPos = Vector2.zero;
@@ -256,41 +262,47 @@ public class PlayerBehaviour : Entity
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveDir = context.ReadValue<Vector2>();
+        if (!isGameEnd)
+        {
+            moveDir = context.ReadValue<Vector2>();
 
-        // MOVED CODE FROM UpdateSound() TO HERE. - NK
-        //detects if player is moving and plays audio
-        if (context.started)
-        {
-            PLAYBACK_STATE playbackState;
-            playerMovementSound.getPlaybackState(out playbackState);
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            // MOVED CODE FROM UpdateSound() TO HERE. - NK
+            //detects if player is moving and plays audio
+            if (context.started)
             {
-                playerMovementSound.start();
+                PLAYBACK_STATE playbackState;
+                playerMovementSound.getPlaybackState(out playbackState);
+                if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+                {
+                    playerMovementSound.start();
+                }
             }
-        }
-        //stops hover sound
-        if (context.canceled)
-        {
-            playerMovementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //stops hover sound
+            if (context.canceled)
+            {
+                playerMovementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
     }
 
     public void OnHunker(InputAction.CallbackContext context)
     {
-        //Debug.Log("Hunkered");
-        if (context.performed)
+        if (!isGameEnd)
         {
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = true;
-            canMoveManually = false;
-            playerAnimator.SetBool("isHunkered", true);
-        }
-        else
-        {
-            rb.isKinematic = false;
-            canMoveManually = true;
-            playerAnimator.SetBool("isHunkered", false);
+            //Debug.Log("Hunkered");
+            if (context.performed)
+            {
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                canMoveManually = false;
+                playerAnimator.SetBool("isHunkered", true);
+            }
+            else
+            {
+                rb.isKinematic = false;
+                canMoveManually = true;
+                playerAnimator.SetBool("isHunkered", false);
+            }
         }
     }
 
@@ -305,10 +317,11 @@ public class PlayerBehaviour : Entity
             AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
             audioTimer = 0.5f;
         }
-        if (!isInvincible)
+        
+        /*if (!isInvincible)
         {
             //hpBar.TakeDamage(amount);
-        }
+        }*/
     }
 
     public override void Heal(float amount)
@@ -402,7 +415,7 @@ public class PlayerBehaviour : Entity
 
     public void OnUsePrimary(InputAction.CallbackContext context)
     {
-        if (primary != null)
+        if (primary != null && !isGameEnd)
         {
             if (primaryAutofire)
             {
@@ -429,7 +442,7 @@ public class PlayerBehaviour : Entity
 
     public void OnUseSecondary(InputAction.CallbackContext context)
     {
-        if (secondary != null)
+        if (secondary != null && !isGameEnd)
         {
             if (secondaryAutofire)
             {
@@ -451,7 +464,7 @@ public class PlayerBehaviour : Entity
 
     public void OnUseUtility(InputAction.CallbackContext context)
     {
-        if (utility != null)
+        if (utility != null && !isGameEnd)
         {
             if (context.performed)
             {
@@ -462,7 +475,7 @@ public class PlayerBehaviour : Entity
 
     public void OnUseAdditional(InputAction.CallbackContext context)
     {
-        if (additional != null)
+        if (additional != null && !isGameEnd)
         {
             if (context.performed)
             {
@@ -485,10 +498,15 @@ public class PlayerBehaviour : Entity
 
     public override void Death()
     {
-        playerAnimator.SetTrigger("isDead");
-        //SceneManager.LoadScene(gameOverScene);
-        
-        StartCoroutine(HandleDeath());
+        if (!isGameEnd)
+        {
+            isGameEnd = true;
+            totalSpeed = 0f;
+            playerAnimator.SetTrigger("isDead");
+            //SceneManager.LoadScene(gameOverScene);
+
+            StartCoroutine(HandleDeath());
+        }
     }
     private IEnumerator HandleDeath()
     {
@@ -504,9 +522,13 @@ public class PlayerBehaviour : Entity
 
     public void TeleportAnim()
     {
-        totalSpeed = 0f;
-        playerAnimator.SetTrigger("isTeleporting");
-        playerGunAnimator.SetTrigger("isTeleporting");
+        if (!isGameEnd)
+        {
+            isGameEnd = true;
+            totalSpeed = 0f;
+            playerAnimator.SetTrigger("isTeleporting");
+            playerGunAnimator.SetTrigger("isTeleporting");
+        }
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu
 

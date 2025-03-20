@@ -50,8 +50,9 @@ public abstract class Entity : MonoBehaviour
 
     [SerializeField] private StatsDisplay statsDisplay;
 
-    [SerializeField]
-    protected bool isInvincible = false;
+    // Obsolete. Invincibility is now handled differently.
+    /*[SerializeField]
+    protected bool isInvincible = false;*/
 
     [SerializeField]
     protected bool isFlammable = true;
@@ -112,7 +113,9 @@ public abstract class Entity : MonoBehaviour
     {
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
-        if (!isInvincible)
+        
+        // Obsolete. Invincibility is now handled differently.
+        //if (!isInvincible)
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
             if (isContactDamage)
