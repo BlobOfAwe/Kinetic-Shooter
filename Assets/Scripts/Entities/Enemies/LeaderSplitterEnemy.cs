@@ -20,6 +20,8 @@ public class LeaderSplitterEnemy : Enemy
                 child.gameObject.SetActive(false);
             }
         }
+
+        leaderUpgradeSpawnChance *= enemyCounterValue;
     }
     public override void Death()
     {

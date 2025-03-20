@@ -314,7 +314,7 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 1
+  isLeader: 0
   enemyName: Splitter
   score: 30
   enemyCounterValue: 0
@@ -637,11 +637,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -874,11 +874,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -1447,11 +1447,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -1684,11 +1684,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -1921,11 +1921,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -2469,7 +2469,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 1841696412842891636}
@@ -2788,11 +2788,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -3084,7 +3084,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 8760664120714615669}
@@ -3378,7 +3378,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 39777393546055203}
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 8824482241776116004}
@@ -3966,7 +3966,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 2427194287461552305}
@@ -4285,11 +4285,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100
@@ -4833,7 +4833,7 @@ MonoBehaviour:
   enemyName: 
   score: 0
   enemyCounterValue: 0
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots:
   - {fileID: 3449285902774385929}
@@ -5152,11 +5152,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: 
   score: 0
   enemyCounterValue: 0.125
-  leaderUpgradeSpawnChance: 0
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   childSplots: []
   splotRepelForce: 100

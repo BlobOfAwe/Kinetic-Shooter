@@ -41,9 +41,9 @@ public abstract class Enemy : Entity
     // I don't know what category to put this in. - NK
     [Header("Other")]
     [SerializeField]
-    private bool isBoss = false; // Added by Nathaniel Klassen
+    protected bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
-    private bool isLeader = false; // Added by Nathaniel Klassen
+    protected bool isLeader = false; // Added by Nathaniel Klassen
     [SerializeField]
     private string enemyName = ""; // Used to track kills of specific enemy types. - NK
     [SerializeField]
@@ -51,7 +51,7 @@ public abstract class Enemy : Entity
     [SerializeField]
     public float enemyCounterValue = 1; // How many enemies are counted as defeated when this enemy dies? Usually 1, but may be 0 in some circumstances
     [SerializeField]
-    private float leaderUpgradeSpawnChance = 0; // 0 is 0%, 1 is 100% - Added by Nathaniel Klassen
+    protected float leaderUpgradeSpawnChance = 0; // 0 is 0%, 1 is 100% - Added by Nathaniel Klassen
     [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
     private bool dead;

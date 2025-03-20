@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 39777393546055203, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 553466555589206235, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -81,16 +85,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
-      propertyPath: isLeader
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: spawnCost
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3449285902774385929, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449285902774385929, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3698536560306664421, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
@@ -100,9 +104,17 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4968474553354677259, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5937737119171422920, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5937737119171422920, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7538930451151872605, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
@@ -112,17 +124,33 @@ PrefabInstance:
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7864851996485042116, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8760664120714615669, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760664120714615669, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8824482241776116004, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8824482241776116004, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9024278956173182716, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024278956173182716, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: isLeader
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
