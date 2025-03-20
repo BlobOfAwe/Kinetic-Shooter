@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 7780019012083256913}
   - component: {fileID: 1537881835366685869}
   - component: {fileID: 4444130273591118226}
+  - component: {fileID: -1142042064450808926}
   - component: {fileID: 2862676695539945837}
   - component: {fileID: 2034691178650426096}
   m_Layer: 3
@@ -873,9 +874,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
+  isOnFire: 0
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -1139,6 +1140,25 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
   wallSpace: 1
   maxBullets: 5
+--- !u!114 &-1142042064450808926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83790e8270919c341af4e9f9c439b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 1
+  beacon: {fileID: 0}
 --- !u!95 &2862676695539945837
 Animator:
   serializedVersion: 5
