@@ -209,9 +209,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
+  isOnFire: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -227,8 +227,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  isLeader: 0
   enemyName: Blade Swinger
   score: 8
+  enemyCounterValue: 1
+  leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
 --- !u!1 &3430238739745844217
 GameObject:

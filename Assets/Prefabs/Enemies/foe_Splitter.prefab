@@ -295,7 +295,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
   isOnFire: 0
@@ -471,7 +470,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3939528816272706771
 CircleCollider2D:
@@ -618,7 +617,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -708,7 +706,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3478576963361242138
 CircleCollider2D:
@@ -855,7 +853,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -1281,7 +1278,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &749154410818791847
 CircleCollider2D:
@@ -1428,7 +1425,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -1518,7 +1514,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &460076680145027028
 CircleCollider2D:
@@ -1665,7 +1661,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -1755,7 +1750,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &8065704691165130111
 CircleCollider2D:
@@ -1902,7 +1897,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -2299,7 +2293,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7615051319457748678
 CircleCollider2D:
@@ -2446,7 +2440,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -2622,7 +2615,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3391171477413035909
 CircleCollider2D:
@@ -2769,7 +2762,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -2914,7 +2906,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &6014760095536762724
 CircleCollider2D:
@@ -3061,7 +3053,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -3208,7 +3199,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &8241779493124164205
 CircleCollider2D:
@@ -3355,7 +3346,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -3502,7 +3492,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &5408573968306961624
 CircleCollider2D:
@@ -3649,7 +3639,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -3796,7 +3785,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7060591384932850039
 CircleCollider2D:
@@ -3943,7 +3932,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -4119,7 +4107,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &885835320943987210
 CircleCollider2D:
@@ -4266,7 +4254,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -4663,7 +4650,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &1802880975776981348
 CircleCollider2D:
@@ -4810,7 +4797,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0
@@ -4986,7 +4972,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3294498971380220534
 CircleCollider2D:
@@ -5133,7 +5119,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 1
   isOnFire: 0

@@ -109,7 +109,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &3811418780002802434
 MonoBehaviour:
@@ -221,9 +221,9 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
+  isOnFire: 0
   spawnCost: 10
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -239,8 +239,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  isLeader: 0
   enemyName: Lightning Twins
   score: 0
+  enemyCounterValue: 1
+  leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
 --- !u!1 &3438049341815713322
 GameObject:
@@ -366,6 +369,7 @@ MonoBehaviour:
   speed: 0
   damageMultiplier: 1.5
   knockbackMultiplier: 0
+  effectModifier: 1
   rb: {fileID: 0}
   firePoint: {fileID: 4591700079037153176}
   shooter: {fileID: 3741013169912328018}
