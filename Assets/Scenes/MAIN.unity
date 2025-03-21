@@ -509,6 +509,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1616450769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407815662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4447535133532799173, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &407815663 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1604773457763394314, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &437081187
 GameObject:
   m_ObjectHideFlags: 3
@@ -733,6 +749,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6571295099644076439, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: pickupText
+      value: 
+      objectReference: {fileID: 407815662}
+    - target: {fileID: 6571295099644076439, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: pickupCanvasGroup
+      value: 
+      objectReference: {fileID: 407815663}
     - target: {fileID: 8518306110852091214, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 26

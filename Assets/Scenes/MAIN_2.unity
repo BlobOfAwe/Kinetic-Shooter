@@ -730,6 +730,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6571295099644076439, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: pickupText
+      value: 
+      objectReference: {fileID: 2111385894}
+    - target: {fileID: 6571295099644076439, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: pickupCanvasGroup
+      value: 
+      objectReference: {fileID: 2111385895}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: primary
       value: 
@@ -44057,6 +44065,22 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 19151614702368147, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
   m_PrefabInstance: {fileID: 1908882112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111385894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4447535133532799173, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &2111385895 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1604773457763394314, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

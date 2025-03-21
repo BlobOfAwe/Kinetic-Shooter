@@ -22,6 +22,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private GameObject statIconPrefab;
     [SerializeField] private Sprite upArrowSprite;     
     [SerializeField] private Sprite downArrowSprite;
+    [SerializeField] private TMP_Text pickupText;
+    [SerializeField] private CanvasGroup pickupCanvasGroup;
+    [SerializeField] private float displayDuration = 2f;
+    [SerializeField] private float fadeDuration = 0.5f;
+    private Coroutine currentNotificationRoutine;
 
     private void Awake()
     {
@@ -130,8 +135,10 @@ public class InventoryManager : MonoBehaviour
                 
 
                 slot.gameObject.GetComponent<Image>().sprite = slot.sprite;
+                ShowPickupNotification(item.description);
                 return;
             }
+
         }
 
         // If the player does not have the item in their inventory, and the existing inventory space is exhausted
@@ -226,5 +233,30 @@ public class InventoryManager : MonoBehaviour
             float clampedY = Mathf.Clamp(mousePosition.y, tooltipRect.rect.height / 2, Screen.height - tooltipRect.rect.height / 2);
             tooltip.transform.position = new Vector3(clampedX, clampedY - 20, 0);
         }
+    }
+    //Following is for the upgrade notification display Z.S
+    public void ShowPickupNotification(string description)
+    {
+        if (currentNotificationRoutine != null)
+        {
+            StopCoroutine(currentNotificationRoutine);
+        }
+        pickupText.text = $"{description}";
+        currentNotificationRoutine = StartCoroutine(ShowNotificationRoutine());
+    }
+
+    private IEnumerator ShowNotificationRoutine()
+    {
+        pickupCanvasGroup.alpha = 1f;
+        yield return new WaitForSeconds(displayDuration);
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
+        {
+            pickupCanvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pickupCanvasGroup.alpha = 0f;
+        currentNotificationRoutine = null;
     }
 }
