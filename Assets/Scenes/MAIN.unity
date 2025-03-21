@@ -430,7 +430,7 @@ MonoBehaviour:
   bossYOffsetMax: 2
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
-  beaconIndicator: {fileID: 7573787527853165017}
+  beaconIndicator: {fileID: 1497419934}
   parameterController: {fileID: 1102249746}
 --- !u!4 &287445713
 Transform:
@@ -749,6 +749,14 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8818079687504875579, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 7573787527853165017}
+    - target: {fileID: 8818079687504875579, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: arrowRectTransform
+      value: 
+      objectReference: {fileID: 822686438}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -786,6 +794,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f491dc8021516204b9bf426712feff69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &822686438 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1644346424749859580, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879053008
 GameObject:
   m_ObjectHideFlags: 0
@@ -43762,6 +43775,11 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1497419934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 612758956431635732, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575928840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44160,6 +44178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2272644414554483721, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: beaconIndicator
+      value: 
+      objectReference: {fileID: 1497419934}
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: player
       value: 
@@ -44177,17 +44199,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
---- !u!114 &7573787527853165017 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2555349022918078981, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+--- !u!4 &7573787527853165017 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 19151614702368147, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
   m_PrefabInstance: {fileID: 7573787527853165016}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0452db805506c6d41891f4b4dd21148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

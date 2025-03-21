@@ -2,6 +2,7 @@
 using Pathfinding;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyCounter : MonoBehaviour
 {
@@ -28,8 +29,7 @@ public class EnemyCounter : MonoBehaviour
     [SerializeField]
     private TMP_Text enemyCounterText;
     [SerializeField]
-    private BeaconIndicator beaconIndicator;
-
+    private GameObject beaconIndicator;
     private bool bossIsSpawned = false; // Added by NK.
 
     // audio parameter controller script
@@ -83,7 +83,7 @@ public class EnemyCounter : MonoBehaviour
         if (remainingEnemies == 0)
         {
             //Debug.Log("An Elite Enemy Has Spawned");
-            beaconIndicator.StartBurst();
+            beaconIndicator.GetComponent<Image>().enabled = true;
             if (beacon != null && !beacon.active) { beacon.Activate(); }// Added by Nathaniel Klassen.
             
         }
