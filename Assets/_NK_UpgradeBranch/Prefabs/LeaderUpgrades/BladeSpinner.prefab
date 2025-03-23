@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ec667a1b4bb1eb041b0326189beca378, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   title: Blade Spinner
   description: Spinning blades may spawn where your bullets hit!
   spawnChance: 0.1
+  bladeDamageMod: 0.2
   blade: {fileID: 4711800757065724736, guid: f53384b87c884ed49b2e5a4623888f8d, type: 3}
 --- !u!114 &2767555183437518458
 MonoBehaviour:
