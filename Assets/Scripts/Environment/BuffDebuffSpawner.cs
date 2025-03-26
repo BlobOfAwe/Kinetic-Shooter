@@ -85,9 +85,4 @@ public class BuffDebuffSpawner : MonoBehaviour
         buff.gameObject.transform.position = (Vector3)node.position;
         AstarPath.active.Scan();
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireCube(player.transform.position, Vector2.one * spawnRange * 2);
-    }
 }
