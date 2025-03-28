@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6467675388605243776}
   - component: {fileID: 7659291996758975019}
   - component: {fileID: 6789780455132580159}
+  - component: {fileID: 8448638866402165886}
   m_Layer: 0
   m_Name: Cushion
   m_TagString: Untagged
@@ -139,6 +140,7 @@ MonoBehaviour:
   title: Cushion
   description: A cushion is created around you as you fire. When fully charged, it
     will shatter when you bump into enemies or walls.
+  statModifications: []
   cushionShield: {fileID: 7744671072691511239, guid: cdf219773e08f554fb0350a25e7bdf37, type: 3}
 --- !u!114 &7659291996758975019
 MonoBehaviour:
@@ -187,3 +189,24 @@ MonoBehaviour:
   maxX: 36
   minY: -27
   maxY: 27
+--- !u!95 &8448638866402165886
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813218222885952574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b8cc0cfa3f6dd42a570974145de038, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

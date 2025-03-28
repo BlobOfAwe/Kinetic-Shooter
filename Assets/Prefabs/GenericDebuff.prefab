@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7823963515820827571}
   - component: {fileID: 4796901728852165870}
   - component: {fileID: 7692336996507665111}
+  - component: {fileID: 6827315069099959613}
   m_Layer: 0
   m_Name: GenericDebuff
   m_TagString: Untagged
@@ -4967,5 +4968,27 @@ MonoBehaviour:
   sprite: {fileID: 0}
   title: 
   description: 
+  statModifications: []
   buff: 1
   duration: 5
+--- !u!95 &6827315069099959613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797877328153500716}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5c7486d69ad0a24591c18936e3ff41e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

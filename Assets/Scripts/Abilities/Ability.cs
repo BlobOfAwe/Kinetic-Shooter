@@ -15,6 +15,7 @@ public abstract class Ability : MonoBehaviour
     public float range = 3f;
     [SerializeField] public float damageModifier = 1f; // Multiplies Entity.baseDamage. 1 = 100% of base damage
     protected Entity thisEntity;
+    public float currentCooldown { get; protected set; }
 
     protected virtual void Awake()
     {
@@ -29,10 +30,14 @@ public abstract class Ability : MonoBehaviour
     {
         return;
     }
-
+    public virtual void TriggerCooldown()
+    {
+        currentCooldown = cooldown;
+    }
     public IEnumerator BeginCooldown()
     {
         available = false;
+        currentCooldown = cooldown;
         yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         available = true;
     }
@@ -42,5 +47,17 @@ public abstract class Ability : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    protected virtual void Update()
+    {
+        if (currentCooldown > 0)
+        {
+            currentCooldown = Mathf.Max(currentCooldown - Time.deltaTime, 0);
+        }
+        else
+        {
+            currentCooldown = 0;
+        }
     }
 }

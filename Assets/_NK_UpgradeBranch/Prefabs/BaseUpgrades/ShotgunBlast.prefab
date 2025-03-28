@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2416435513465108849}
   - component: {fileID: 1497720435500054036}
   - component: {fileID: 7243753830608397354}
+  - component: {fileID: 8220047483539538023}
   m_Layer: 0
   m_Name: ShotgunBlast
   m_TagString: Untagged
@@ -196,3 +197,24 @@ MonoBehaviour:
   maxX: 36
   minY: -27
   maxY: 27
+--- !u!95 &8220047483539538023
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064715954622458216}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b8cc0cfa3f6dd42a570974145de038, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

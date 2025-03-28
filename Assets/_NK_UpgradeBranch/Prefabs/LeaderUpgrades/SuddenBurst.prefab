@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8973917457889837626}
   - component: {fileID: 7644500314666507854}
   - component: {fileID: 2280892087472683032}
+  - component: {fileID: 6439776756382558349}
   m_Layer: 0
   m_Name: SuddenBurst
   m_TagString: Untagged
@@ -138,7 +139,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 51ddbdfe17695b44195e243d69129b37, type: 3}
   title: Sudden Burst
   description: Some bullets will explode into multiple bullets!
-  spawnChance: 0.2
+  statModifications: []
+  burstChance: 0.2
   fragments: 4
   bulletBurst: {fileID: 8877517681559764493, guid: 6adb9b27fde5f7d418f3c768986c5440, type: 3}
 --- !u!114 &7644500314666507854
@@ -188,3 +190,24 @@ MonoBehaviour:
   maxX: 36
   minY: -27
   maxY: 27
+--- !u!95 &6439776756382558349
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5172675366219040299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b8cc0cfa3f6dd42a570974145de038, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
