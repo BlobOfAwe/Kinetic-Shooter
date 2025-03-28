@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6807974394541269084}
   - component: {fileID: 823256529594154262}
   - component: {fileID: 2723903674696347536}
+  - component: {fileID: 5133592081486908893}
   m_Layer: 0
   m_Name: ReflectorBolts
   m_TagString: Untagged
@@ -138,6 +139,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: b598154eb05a14541bc39518131d9683, type: 3}
   title: Reflector Bolts
   description: Some bullets now reflect enemy projectiles!
+  statModifications:
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 1
+  - statIcon: {fileID: 0}
+    isPositive: 0
   defenseIncrease: 0.05
   healthIncrease: 0.05
   damageIncrease: -0.05
@@ -191,3 +199,24 @@ MonoBehaviour:
   maxX: 36
   minY: -27
   maxY: 27
+--- !u!95 &5133592081486908893
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2581933093498011819}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b8cc0cfa3f6dd42a570974145de038, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

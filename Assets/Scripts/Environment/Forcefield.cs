@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.UI;
 
 public class Forcefield : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Forcefield : MonoBehaviour
     //Commented out references to the sprite renderer since we are using vfx for the zone. -ZS
     //private SpriteRenderer sr;
     private VisualEffect beaconZone;
-
+    [SerializeField]
+    private GameObject beaconIndicator;
     private bool isDeactivated = false;
 
     private void Awake()
@@ -27,7 +29,8 @@ public class Forcefield : MonoBehaviour
             //FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
             //sr.enabled = true;
             beaconZone.enabled = true;
-           //Debug.Log("Player entered the beacon radius.");
+            beaconIndicator.GetComponent<Image>().enabled = false;
+            //Debug.Log("Player entered the beacon radius.");
             forcefieldCollider.enabled = true;
             FindObjectOfType<EnemyCounter>().SpawnBoss();
         }

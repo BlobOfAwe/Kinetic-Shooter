@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8801130425893471332}
   - component: {fileID: 2767555183437518458}
   - component: {fileID: 5834560277004389303}
+  - component: {fileID: 1243845616746980333}
   m_Layer: 0
   m_Name: BladeSpinner
   m_TagString: Untagged
@@ -138,7 +139,9 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ec667a1b4bb1eb041b0326189beca378, type: 3}
   title: Blade Spinner
   description: Spinning blades may spawn where your bullets hit!
+  statModifications: []
   spawnChance: 0.1
+  bladeDamageMod: 0.2
   blade: {fileID: 4711800757065724736, guid: f53384b87c884ed49b2e5a4623888f8d, type: 3}
 --- !u!114 &2767555183437518458
 MonoBehaviour:
@@ -187,3 +190,24 @@ MonoBehaviour:
   maxX: 36
   minY: -27
   maxY: 27
+--- !u!95 &1243845616746980333
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374930253847889423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72b8cc0cfa3f6dd42a570974145de038, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
