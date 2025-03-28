@@ -9156,6 +9156,8 @@ GameObject:
   - component: {fileID: 4473495747798602129}
   - component: {fileID: 8632962819174889256}
   - component: {fileID: 1652323221606152603}
+  - component: {fileID: 577328627591853796}
+  - component: {fileID: 2625217585727460222}
   m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
@@ -9984,8 +9986,233 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!50 &577328627591853796
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172709993207298010}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &2625217585727460222
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172709993207298010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 1
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1652323221606152603}
+    m_ColliderPaths:
+    - - X: -40000000
+        Y: -10000000
+      - X: -50000000
+        Y: -10000000
+      - X: -50000000
+        Y: 0
+      - X: -60000000
+        Y: 0
+      - X: -60000000
+        Y: 20000000
+      - X: -70000000
+        Y: 20000000
+      - X: -70000000
+        Y: 60000000
+      - X: -60000000
+        Y: 60000000
+      - X: -60000000
+        Y: 70000000
+      - X: 20000000
+        Y: 70000000
+      - X: 20000000
+        Y: 60000000
+      - X: 40000000
+        Y: 60000000
+      - X: 40000000
+        Y: 70000000
+      - X: 30000000
+        Y: 70000000
+      - X: 30000000
+        Y: 80000000
+      - X: -70000000
+        Y: 80000000
+      - X: -70000000
+        Y: 70000000
+      - X: -80000000
+        Y: 70000000
+      - X: -80000000
+        Y: 10000000
+      - X: -70000000
+        Y: 10000000
+      - X: -70000000
+        Y: -10000000
+      - X: -60000000
+        Y: -10000000
+      - X: -60000000
+        Y: -20000000
+      - X: -50000000
+        Y: -20000000
+      - X: -50000000
+        Y: -20400000
+      - X: -40400000
+        Y: -30000000
+      - X: -40000000
+        Y: -30000000
+    - - X: 80000000
+        Y: 50400000
+      - X: 70400000
+        Y: 60000000
+      - X: 69600000
+        Y: 60000000
+      - X: 60000000
+        Y: 50400000
+      - X: 60000000
+        Y: 40000000
+      - X: 70000000
+        Y: 40000000
+      - X: 70000000
+        Y: -10000000
+      - X: 80000000
+        Y: -10000000
+    - - X: 20000000
+        Y: -30000000
+      - X: 70000000
+        Y: -30000000
+      - X: 70000000
+        Y: -10000000
+      - X: 60000000
+        Y: -10000000
+      - X: 60000000
+        Y: -20000000
+      - X: 10000000
+        Y: -20000000
+      - X: 10000000
+        Y: -30000000
+      - X: -10000000
+        Y: -30000000
+      - X: -10000000
+        Y: -40000000
+      - X: 20000000
+        Y: -40000000
+    - - X: -10000000
+        Y: -70000000
+      - X: -40000000
+        Y: -70000000
+      - X: -40000000
+        Y: -60000000
+      - X: -70000000
+        Y: -60000000
+      - X: -70000000
+        Y: -90000000
+      - X: -10000000
+        Y: -90000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: -4.000029, y: -3}
+      - {x: -4.000029, y: -1}
+      - {x: -5, y: -0.9999706}
+      - {x: -5.000029, y: 0}
+      - {x: -6, y: 0.0000294}
+      - {x: -6.000029, y: 2}
+      - {x: -7, y: 2.0000293}
+      - {x: -6.9999704, y: 6}
+      - {x: -6, y: 6.000029}
+      - {x: -5.9999704, y: 7}
+      - {x: 2, y: 6.9999704}
+      - {x: 2.0000293, y: 6}
+      - {x: 4, y: 6.000029}
+      - {x: 3.999971, y: 7}
+      - {x: 3, y: 7.0000296}
+      - {x: 2.999971, y: 8}
+      - {x: -7, y: 7.9999704}
+      - {x: -7.0000296, y: 7}
+      - {x: -8, y: 6.9999704}
+      - {x: -7.9999704, y: 1}
+      - {x: -7, y: 0.9999706}
+      - {x: -6.9999704, y: -1}
+      - {x: -6, y: -1.0000294}
+      - {x: -5.999971, y: -2}
+      - {x: -5, y: -2.0000293}
+      - {x: -4.9999924, y: -2.0400076}
+      - {x: -4.0399895, y: -3}
+    - - {x: 7.9999704, y: -1}
+      - {x: 7.999992, y: 5.0400076}
+      - {x: 7.039989, y: 6}
+      - {x: 6.959992, y: 5.9999924}
+      - {x: 6, y: 5.0399895}
+      - {x: 6.000029, y: 4}
+      - {x: 7, y: 3.9999704}
+      - {x: 7.0000296, y: -1}
+    - - {x: 1.9999708, y: -4}
+      - {x: 2.0000293, y: -3}
+      - {x: 7, y: -2.999971}
+      - {x: 6.9999704, y: -1}
+      - {x: 6, y: -1.0000293}
+      - {x: 5.9999704, y: -2}
+      - {x: 1, y: -2.0000293}
+      - {x: 0.9999706, y: -3}
+      - {x: -1, y: -3.0000293}
+      - {x: -0.99997073, y: -4}
+    - - {x: -1.0000293, y: -9}
+      - {x: -1.0000293, y: -7}
+      - {x: -4, y: -6.9999704}
+      - {x: -4.000029, y: -6}
+      - {x: -7, y: -6.000029}
+      - {x: -6.9999704, y: -9}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 7172709993207298010}

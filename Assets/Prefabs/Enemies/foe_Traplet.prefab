@@ -167,7 +167,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0
   pickNextWaypointDist: 0.47
-  endReachedDistance: 0.3
+  endReachedDistance: 0.1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -214,6 +214,7 @@ MonoBehaviour:
   isInvincible: 0
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   spawnCost: 3
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -226,11 +227,13 @@ MonoBehaviour:
   sightRange: 20
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
   enemyName: Traplet
   score: 0
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 1
 --- !u!114 &3228195953123852849
 MonoBehaviour:
@@ -271,11 +274,11 @@ MonoBehaviour:
   cooldownMultiplier: 1
   available: 1
   inUse: 0
-  range: 1
+  range: 1.11
   damageModifier: 1
   bulletPrefab: {fileID: 8025443713472894268, guid: 41886386877e23742aa7b3a504c18ff9, type: 3}
   maxBullets: 25
-  offsetFromWall: 0.5
+  offsetFromWall: 0
   walls:
     serializedVersion: 2
     m_Bits: 64

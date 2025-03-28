@@ -9,6 +9,7 @@ public class StandardTertiaryBoomDash : Ability
     [SerializeField] private float explosionDropoff;
     [SerializeField] private float explosionKnockback;
     [SerializeField] private float dashForce;
+    [SerializeField] private float dashDuration;
     private PlayerBehaviour player;
     private SpriteRenderer hurtbox;
     [SerializeField] Sprite tempHitBox;
@@ -27,6 +28,8 @@ public class StandardTertiaryBoomDash : Ability
     public override void OnActivate()
     {
         StartCoroutine(DisplayExplosionHitbox());
+
+        StartCoroutine(RemoveSpeedCap());
 
         StartCoroutine(BeginCooldown());
 
@@ -63,5 +66,12 @@ public class StandardTertiaryBoomDash : Ability
         hurtbox.enabled = true;
         yield return new WaitForSeconds(0.5f);
         hurtbox.enabled = false;
+    }
+
+    IEnumerator RemoveSpeedCap()
+    {
+        player.capSpeedToTotalSpeed = false;
+        yield return new WaitForSeconds(dashDuration);
+        player.capSpeedToTotalSpeed = true;
     }
 }

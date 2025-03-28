@@ -115,18 +115,23 @@ public class GameData
                 necromancerKills += 1;
                 break;
         }
-
-        switch (GameManager.playerLoadout.loadout)
+        if (GameManager.playerLoadout != null)
         {
-            case "Standard":
-                standardLoadoutKills += 1;
-                break;
-            case "Heavy":
-                heavyLoadoutKills += 1;
-                break;
-            case "Light":
-                lightLoadoutKills += 1;
-                break;
+            switch (GameManager.playerLoadout.loadout)
+            {
+                case "Standard":
+                    standardLoadoutKills += 1;
+                    break;
+                case "Heavy":
+                    heavyLoadoutKills += 1;
+                    break;
+                case "Light":
+                    lightLoadoutKills += 1;
+                    break;
+                default:
+                    Debug.LogWarning("GameManager contains null or invalid loadout: " + GameManager.playerLoadout.loadout);
+                    break;
+            }
         }
     }
 }

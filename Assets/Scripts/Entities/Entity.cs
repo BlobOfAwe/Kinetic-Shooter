@@ -59,6 +59,8 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector]
     public float cushion = 0f;
 
+    public bool capSpeedToTotalSpeed = true;
+
     protected virtual void Awake()
     {
         UpdateStats();

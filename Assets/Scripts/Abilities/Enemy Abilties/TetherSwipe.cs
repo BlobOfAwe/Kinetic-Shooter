@@ -6,6 +6,7 @@ public class TetherSwipe : Ability
 {
     private BoxCollider2D hitbox;
     private SpriteRenderer hitboxSprite;
+    private BuffUIManager buffUI;
 
     public float knockback;
     public float activeTime;
@@ -16,6 +17,7 @@ public class TetherSwipe : Ability
     [SerializeField] float sideReach = 2f;
 
     [SerializeField] Sprite tempHitbox;
+    [SerializeField] private Sprite debuffUIIcon;
 
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
     new void Awake()
@@ -39,6 +41,7 @@ public class TetherSwipe : Ability
         hitbox.transform.parent = transform;
         hitbox.transform.rotation = transform.rotation;
         hitbox.transform.localPosition = transform.up * (0.5f + range/2);
+        buffUI = FindObjectOfType<BuffUIManager>();
     }
 
     // Apply knockback to an object detected by the active hitbox
@@ -101,7 +104,8 @@ public class TetherSwipe : Ability
         buffConstructor.duration = debuffDuration;
 
         buffTarget.ApplyBuff(buffConstructor);
-        //FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor);//Added by Z.S
+
+        buffUI.AddBuff(buffConstructor, GenericBuffDebuff.buffType.Debuff, null);//Added by Z.S
     }
 
 }

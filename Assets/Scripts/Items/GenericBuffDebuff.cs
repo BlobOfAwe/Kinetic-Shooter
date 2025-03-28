@@ -9,11 +9,13 @@ public class GenericBuffDebuff : Item
     public buffType buff;
     private PlayerBehaviour buffTarget;
     [SerializeField] private float duration;
+    private BuffUIManager buffUI;
 
     private new void Start()
     {
         base.Start();
         category = (Buff.buffCategory)Random.Range(0, 5);
+        buffUI = FindObjectOfType<BuffUIManager>();
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -57,7 +59,7 @@ public class GenericBuffDebuff : Item
         
         buffConstructor.duration = duration;
         buffTarget.ApplyBuff(buffConstructor);
-        FindObjectOfType<BuffUIManager>().AddBuff(buffConstructor, buff, null);//Added by Z.S
+        buffUI.AddBuff(buffConstructor, buff, null);//Added by Z.S
     }
 
 }
