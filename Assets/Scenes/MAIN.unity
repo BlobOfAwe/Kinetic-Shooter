@@ -448,7 +448,7 @@ MonoBehaviour:
   bossYOffsetMax: 2
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
-  beaconIndicator: {fileID: 0}
+  beaconIndicator: {fileID: 1497419934}
   parameterController: {fileID: 1102249746}
 --- !u!4 &287445713
 Transform:
@@ -43777,6 +43777,11 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1497419934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 612758956431635732, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575928840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44232,6 +44237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2272644414554483721, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: beaconIndicator
+      value: 
+      objectReference: {fileID: 1497419934}
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: player
       value: 

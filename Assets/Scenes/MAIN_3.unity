@@ -43897,8 +43897,11 @@ MonoBehaviour:
   - {fileID: 2581933093498011819, guid: 02adad0d5a0d9144c8878862b3e25bdb, type: 3}
   - {fileID: 7673192598118557021, guid: 038fe402f7fc21449aad86160c05ce66, type: 3}
   - {fileID: 8064715954622458216, guid: 6eb461590e55bd543bb76652b1b6b3de, type: 3}
+  hazardPrefabs: []
   minItems: 6
   maxItems: 8
+  minHazards: 0
+  maxHazards: 0
 --- !u!4 &1616450769
 Transform:
   m_ObjectHideFlags: 0
@@ -44099,6 +44102,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2272644414554483721, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: beaconIndicator
+      value: 
+      objectReference: {fileID: 1886787343}
     - target: {fileID: 7408100330477493710, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: m_Name
       value: Beacon
