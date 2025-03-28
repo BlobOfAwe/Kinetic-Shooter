@@ -11,9 +11,14 @@ public class Cooldown : MonoBehaviour
     public Image utilityCooldown;
     public Image additionalCooldown;
 
+    private void Start()
+    {
+        player = FindAnyObjectByType<PlayerBehaviour>();
+    }
+
     private void Update()
     {
-       UpdateCooldownDisplay(primaryCooldown, player.primary);
+        UpdateCooldownDisplay(primaryCooldown, player.primary);
         UpdateCooldownDisplay(secondaryCooldown, player.secondary);
         UpdateCooldownDisplay(utilityCooldown, player.utility);
         UpdateCooldownDisplay(additionalCooldown, player.additional);

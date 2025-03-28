@@ -165,11 +165,11 @@ public class PlayerBehaviour : Entity
             {
                 UseAbility(secondary);
             }
-            aimLine.SetPosition(0, firePoint.position);
-            aimLine.SetPosition(1, firePoint.position + aimTransform.up * aimLineLength);
+            //aimLine.SetPosition(0, firePoint.position);
+            //aimLine.SetPosition(1, firePoint.position + aimTransform.up * aimLineLength);
         } else
         {
-            aimLine.enabled = false;
+            //aimLine.enabled = false;
         }
 
         // audio timer
