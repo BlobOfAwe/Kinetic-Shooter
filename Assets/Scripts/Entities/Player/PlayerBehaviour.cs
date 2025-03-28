@@ -48,6 +48,10 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private GameObject winPanel;
 
+    private PauseMenu pauseMenu;
+
+    private InventoryManager inventory;
+
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -129,6 +133,8 @@ public class PlayerBehaviour : Entity
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
 
+        pauseMenu = FindObjectOfType<PauseMenu>();
+        inventory = FindObjectOfType<InventoryManager>();
     }
 
     new private void Update()
@@ -473,7 +479,8 @@ public class PlayerBehaviour : Entity
         }
     }
 
-    public void OnUseAdditional(InputAction.CallbackContext context)
+    // Not used
+    /*public void OnUseAdditional(InputAction.CallbackContext context)
     {
         if (additional != null && !isGameEnd)
         {
@@ -481,6 +488,28 @@ public class PlayerBehaviour : Entity
             {
                 UseAbility(additional);
             }
+        }
+    }*/
+
+    public void OnPauseGame(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (GameManager.paused)
+            {
+                pauseMenu.ResumeGame();
+            } else
+            {
+                pauseMenu.PauseGame();
+            }
+        }
+    }
+
+    public void OnInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            inventory.ToggleSidebar();
         }
     }
 

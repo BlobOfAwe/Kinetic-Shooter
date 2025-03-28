@@ -51,18 +51,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Additional Ability",
+                    "name": "Hunker",
                     "type": "Button",
-                    "id": "fbaa2fe2-dba7-4a4f-9c81-56255d34ab55",
+                    "id": "553edb50-29d8-4c63-9b46-da68b48bc456",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hunker",
+                    "name": "Inventory",
                     "type": "Button",
-                    "id": "553edb50-29d8-4c63-9b46-da68b48bc456",
+                    "id": "c6948d58-4a57-4a7c-b817-9867d188c18b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "e84e15b8-9e9a-45c3-99de-637526660ab8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -216,22 +225,11 @@
                 {
                     "name": "",
                     "id": "2bdc8f24-41cb-4592-b66d-9ca86d71c99a",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard+Mouse",
                     "action": "Utility",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "72dd2b72-29af-41ea-9fa8-a5461b40ad68",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard+Mouse",
-                    "action": "Additional Ability",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -243,6 +241,28 @@
                     "processors": "",
                     "groups": "Keyboard+Mouse",
                     "action": "Hunker",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6171443e-8c90-4a36-800f-bbbba1841462",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7889091f-7280-42c7-a0ee-f750ddb67bfc",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard+Mouse",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

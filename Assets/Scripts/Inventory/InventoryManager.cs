@@ -84,10 +84,11 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        // This is now done in PlayerBehaviour.Inventory() - NK
+        /*if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleSidebar();
-        }
+        }*/
         UpdateTooltipPosition();
     }
 
