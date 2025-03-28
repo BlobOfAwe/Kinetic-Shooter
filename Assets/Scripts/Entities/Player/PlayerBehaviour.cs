@@ -193,7 +193,8 @@ public class PlayerBehaviour : Entity
             rb.velocity += new Vector2(manualMoveX, manualMoveY); 
         }
 
-        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        if (capSpeedToTotalSpeed && rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        
         //UpdateSound();
     }
 

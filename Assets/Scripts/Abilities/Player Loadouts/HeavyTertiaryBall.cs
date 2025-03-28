@@ -58,6 +58,7 @@ public class HeavyTertiaryBall : Ability
             rb.isKinematic = true;
             curled = true;
             player.canMoveManually = false;
+            player.rb.velocity = Vector2.zero;
             player.ApplyBuff(armorBuff);
             player.ApplyBuff(speedDebuff);
             player.primary.StopAllCoroutines();
@@ -83,6 +84,7 @@ public class HeavyTertiaryBall : Ability
 
     private IEnumerator LungeForward()
     {
+        player.capSpeedToTotalSpeed = false;
         sprite.color = Color.red;
         rb.velocity = -player.aimTransform.up * startupSpeed;
         yield return new WaitForSeconds(startup);
@@ -94,6 +96,7 @@ public class HeavyTertiaryBall : Ability
 
         // Wait for endTime seconds before ending the lunge
         yield return new WaitForSeconds(endtime * (100 / (100 + thisEntity.totalSpeed)));
+        player.capSpeedToTotalSpeed = true;
         lunging = false;
         player.defenseBuffs.Remove(armorBuff);
         player.speedBuffs.Remove(speedDebuff);
