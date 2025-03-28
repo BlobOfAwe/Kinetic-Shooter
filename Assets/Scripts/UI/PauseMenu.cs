@@ -56,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        GameManager.paused = false; // Added this so that the game no longer behaves as though the game is paused when it isn't. - NK
         DataManager.Instance.SaveGame(); // Automatically saves the game when the player exits to main menu. - NK
         SceneManager.LoadScene("MainMenu"); 
     }
