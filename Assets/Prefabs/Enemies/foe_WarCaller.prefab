@@ -212,10 +212,10 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
+  isOnFire: 0
   spawnCost: 20
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -232,9 +232,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  isLeader: 1
   enemyName: War Caller
   score: 0
   enemyCounterValue: 1
+  leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
 --- !u!114 &2657488395672243237
 MonoBehaviour:

@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 7780019012083256913}
   - component: {fileID: 1537881835366685869}
   - component: {fileID: 4444130273591118226}
+  - component: {fileID: -1142042064450808926}
   - component: {fileID: 2862676695539945837}
   - component: {fileID: 2034691178650426096}
   - component: {fileID: 8818079687504875579}
@@ -994,22 +995,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8544861283654042662}
         m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
-        m_MethodName: OnUseAdditional
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: fbaa2fe2-dba7-4a4f-9c81-56255d34ab55
-    m_ActionName: Player/Additional Ability[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8544861283654042662}
-        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
         m_MethodName: OnHunker
         m_Mode: 0
         m_Arguments:
@@ -1022,6 +1007,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 553edb50-29d8-4c63-9b46-da68b48bc456
     m_ActionName: Player/Hunker[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8544861283654042662}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c6948d58-4a57-4a7c-b817-9867d188c18b
+    m_ActionName: Player/Inventory[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8544861283654042662}
+        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
+        m_MethodName: OnPauseGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e84e15b8-9e9a-45c3-99de-637526660ab8
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1066,10 +1083,10 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
+  isOnFire: 0
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -1085,6 +1102,7 @@ MonoBehaviour:
   playerGunAnimator: {fileID: 2859449797758082515}
   deathDelay: 1
   manualMoveModifier: 0.1
+  aimLineLength: 30
   isFiringPrimary: 0
   isFiringSecondary: 0
   playerSpriteRenderer: {fileID: 1314501562018809629}
@@ -1336,6 +1354,25 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
   wallSpace: 1
   maxBullets: 5
+--- !u!114 &-1142042064450808926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777279789927432716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83790e8270919c341af4e9f9c439b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.5
+  cooldownMultiplier: 1
+  available: 1
+  inUse: 0
+  range: 3
+  damageModifier: 1
+  beacon: {fileID: 0}
 --- !u!95 &2862676695539945837
 Animator:
   serializedVersion: 5

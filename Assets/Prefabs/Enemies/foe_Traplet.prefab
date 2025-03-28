@@ -211,10 +211,10 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
+  isOnFire: 0
   spawnCost: 3
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -231,9 +231,11 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
+  isLeader: 0
   enemyName: Traplet
   score: 0
   enemyCounterValue: 1
+  leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 1
 --- !u!114 &3228195953123852849
 MonoBehaviour:

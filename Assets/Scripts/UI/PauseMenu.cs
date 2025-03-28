@@ -14,7 +14,8 @@ public class PauseMenu : MonoBehaviour
     // audio parameter controller script
     [SerializeField] AudioParameterController parameterController;
 
-    void Update()
+    // This is now handled in PlayerBehaviour.OnPauseGame() - NK
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -27,7 +28,7 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
-    }
+    }*/
     public void ResumeGame()
     {
         CloseSettingsMenu(); // Added this so that the settings menu automatically closes in case it was open when the game is resumed. - NK
@@ -36,13 +37,12 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameManager.paused = false;
     }
-    void PauseGame()
+    public void PauseGame()
     {
         parameterController.Paused();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameManager.paused = true;
-
     }
     public void OpenSettingsMenu()
     {
@@ -56,6 +56,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMainMenu()
     {
         Time.timeScale = 1f;
+        GameManager.paused = false; // Added this so that the game no longer behaves as though the game is paused when it isn't. - NK
         DataManager.Instance.SaveGame(); // Automatically saves the game when the player exits to main menu. - NK
         SceneManager.LoadScene("MainMenu"); 
     }

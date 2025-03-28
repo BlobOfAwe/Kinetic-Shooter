@@ -46,11 +46,13 @@ public abstract class Entity : MonoBehaviour
     [Header("Component References")]
     [HideInInspector] public Rigidbody2D rb;
     protected InventoryManager inventoryManager;
+    protected SpriteRenderer spriteRenderer;
 
     [SerializeField] private StatsDisplay statsDisplay;
 
-    [SerializeField]
-    protected bool isInvincible = false;
+    // Obsolete. Invincibility is now handled differently.
+    /*[SerializeField]
+    protected bool isInvincible = false;*/
 
     [SerializeField]
     protected bool isFlammable = true;
@@ -60,6 +62,16 @@ public abstract class Entity : MonoBehaviour
     public float cushion = 0f;
 
     public bool capSpeedToTotalSpeed = true;
+    [HideInInspector]
+    public bool isOnFire = false;
+
+    protected float tickDamage = 0f;
+
+    protected float tickInterval = 0f;
+
+    protected float tickTime = 0f;
+
+    protected float timeToTick = 0f;
 
     protected virtual void Awake()
     {
@@ -67,11 +79,30 @@ public abstract class Entity : MonoBehaviour
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
         inventoryManager = GetComponentInChildren<InventoryManager>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     protected void Update()
     {
         Heal(totalRecovery * Time.deltaTime);
+        if (isOnFire)
+        {
+            if (tickTime > 0f)
+            {
+                if (timeToTick > 0f)
+                {
+                    timeToTick -= Time.deltaTime;
+                } else
+                {
+                    Damage(tickDamage);
+                    timeToTick = tickInterval;
+                }
+                tickTime -= Time.deltaTime;
+            } else
+            {
+                isOnFire = false;
+            }
+        }
     }
 
     public virtual void Damage(float amount)
@@ -83,7 +114,9 @@ public abstract class Entity : MonoBehaviour
     {
         // This formula was taken from the Risk of Rain 2 Armor stat calculation: https://riskofrain2.fandom.com/wiki/Armor
         // It prevents damage from ever reaching 0
-        if (!isInvincible)
+        
+        // Obsolete. Invincibility is now handled differently.
+        //if (!isInvincible)
         {
             float totalDamage = amount * (100 / (100 + totalDefense));
             if (isContactDamage)
@@ -111,23 +144,16 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    public virtual void Ignite(float damage, float tickSpeed, float time)
+    public virtual void Ignite(float damage, float interval, float time, GameObject fireObject)
     {
-        if (isFlammable)
+        if (isFlammable && !isOnFire)
         {
-            GetComponent<SpriteRenderer>().color = Color.red;
-            StartCoroutine(TickDamage(damage, tickSpeed, time));
-            GetComponent<SpriteRenderer>().color = Color.white;
-        }
-    }
-
-    protected IEnumerator TickDamage(float damage, float tickSpeed, float time)
-    {
-        while (time > 0f)
-        {
-            Damage(damage);
-            time -= Time.deltaTime;
-            yield return new WaitForSeconds(tickSpeed);
+            Debug.Log(name + " ignited!");
+            isOnFire = true;
+            tickDamage = damage;
+            tickInterval = interval;
+            tickTime = time;
+            Instantiate(fireObject, transform);
         }
     }
 

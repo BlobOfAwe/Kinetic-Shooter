@@ -24,10 +24,19 @@ public class MapGenerator : MonoBehaviour
     private GameObject[] itemPrefabs;
 
     [SerializeField]
+    private GameObject[] hazardPrefabs;
+
+    [SerializeField]
     private int minItems = 0;
 
     [SerializeField]
     private int maxItems = 0;
+
+    [SerializeField]
+    private int minHazards = 0;
+
+    [SerializeField]
+    private int maxHazards = 0;
 
     private void Awake()
     {
@@ -175,6 +184,13 @@ public class MapGenerator : MonoBehaviour
         for (int i = 0; i < itemAmount; i++)
         {
             Instantiate(itemPrefabs[Random.Range(0, itemPrefabs.Length)]);
+        }
+
+        // Spawn hazards around the map.
+        int hazardAmount = Random.Range(minHazards, maxHazards);
+        for (int i = 0; i < hazardAmount; i++)
+        {
+            Instantiate(hazardPrefabs[Random.Range(0, hazardPrefabs.Length)]);
         }
 
         // Find and update all positions of randomly spawning objects.
