@@ -876,6 +876,7 @@ MonoBehaviour:
   isInvincible: 0
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   primaryAutofire: 1
   secondaryAutofire: 1
   canMoveManually: 1
@@ -984,7 +985,8 @@ MonoBehaviour:
     m_Bits: 128
   explosionDropoff: 2
   explosionKnockback: 20
-  dashForce: 60
+  dashForce: 20
+  dashDuration: 1
   tempHitBox: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
 --- !u!114 &4128416706835469520
 MonoBehaviour:
@@ -1067,8 +1069,8 @@ MonoBehaviour:
     m_Bits: 128
   startup: 0
   startupSpeed: 0
-  lungeForce: 600
-  endtime: 2.5
+  lungeForce: 20
+  endtime: 1
 --- !u!114 &7780019012083256913
 MonoBehaviour:
   m_ObjectHideFlags: 0

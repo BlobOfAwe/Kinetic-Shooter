@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   resetVelocityLayers: 6
-  radius: 2.33
+  radius: 2.4
   height: 2
   canMove: 1
   maxSpeed: 3
@@ -219,6 +219,7 @@ MonoBehaviour:
   isInvincible: 0
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   spawnCost: 100
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -231,6 +232,7 @@ MonoBehaviour:
   sightRange: 200
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 1

@@ -193,7 +193,8 @@ public class PlayerBehaviour : Entity
             rb.velocity += new Vector2(manualMoveX, manualMoveY); 
         }
 
-        if (rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        if (capSpeedToTotalSpeed && rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }
+        
         //UpdateSound();
     }
 
@@ -345,12 +346,12 @@ public class PlayerBehaviour : Entity
             if (target.GetComponent<Entity>() != null)
             {
                 bullet.hits -= 1;
-                Debug.Log("hits: " + bullet.hits);
+                //Debug.Log("hits: " + bullet.hits);
             }
             else
             {
                 bullet.hits = 1;
-                Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
+                //Debug.Log("Hit a wall. Hits reset to " + bullet.hits);
                 bullet.isPiercing = false;
                 bullet.isBursting = false;
                 bullet.gameObject.SetActive(false);
@@ -358,7 +359,7 @@ public class PlayerBehaviour : Entity
             if (bullet.hits <= 0)
             {
                 bullet.hits = 1;
-                Debug.Log("Out of hits. Hits reset to " + bullet.hits);
+                //Debug.Log("Out of hits. Hits reset to " + bullet.hits);
                 bullet.isPiercing = false;
                 bullet.isBursting = false;
                 bullet.gameObject.SetActive(false);

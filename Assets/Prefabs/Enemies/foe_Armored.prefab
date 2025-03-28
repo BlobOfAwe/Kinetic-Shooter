@@ -192,10 +192,11 @@ MonoBehaviour:
   knockback: -1
   activeTime: 0.5
   onHitSpeedMod: 0.1
-  speedDebuffMod: 0.2
+  speedDebuffMod: 0.5
   debuffDuration: 5
   sideReach: 1.5
   tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  debuffUIIcon: {fileID: 536006796, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
 --- !u!114 &1917370352328444805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +239,8 @@ MonoBehaviour:
   isInvincible: 0
   isFlammable: 1
   cushion: 0
-  spawnCost: 7
+  capSpeedToTotalSpeed: 1
+  spawnCost: 15
   target: {fileID: 0}
   seeker: {fileID: 0}
   aiPath: {fileID: 0}
@@ -250,11 +252,13 @@ MonoBehaviour:
   sightRange: 20
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
   enemyName: Armoured
   score: 7
+  enemyCounterValue: 1
   rotateSpriteToFacePlayer: 0
 --- !u!1 &5340787648015603122
 GameObject:
