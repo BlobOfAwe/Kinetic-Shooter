@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public List<InventorySlot> inventory;
     [SerializeField] InventorySlot slotPrefab;
     [SerializeField] Transform slotParent;
+    [SerializeField] GameObject inventoryBackground;
     [SerializeField] int initialSize = 20;
 
     [SerializeField] GameObject tooltip;
@@ -26,7 +28,12 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private CanvasGroup pickupCanvasGroup;
     [SerializeField] private float displayDuration = 2f;
     [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private bool isPaused;
     private Coroutine currentNotificationRoutine;
+    [Header("Tooltip Positioning")]
+    [SerializeField] private float verticalOffset = 20f;
+    [SerializeField] private float edgePadding = 10f;
+
 
     private void Awake()
     {
@@ -180,7 +187,17 @@ public class InventoryManager : MonoBehaviour
     // ------------------------
     public void ToggleSidebar()
     {
-        slotParent.gameObject.SetActive(!slotParent.gameObject.activeSelf);
+        bool isActive = slotParent.gameObject.activeSelf;
+        bool isBackgroundActive = inventoryBackground.activeSelf;
+        inventoryBackground.SetActive(!isBackgroundActive);
+        slotParent.gameObject.SetActive(!isActive);
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0 : 1;
+        GameManager.paused = isPaused;
+        if (!slotParent.gameObject.activeSelf)
+        {
+            HideTooltip();
+        }
     }
 
     public void ShowTooltip(string title, string description, List<StatGrabber> modifications)
@@ -220,19 +237,43 @@ public class InventoryManager : MonoBehaviour
     }
     private void PositionTooltip()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        tooltip.transform.position = mousePosition - new Vector3(30, 30, 0);
+        RectTransform tooltipRect = tooltip.GetComponent<RectTransform>();
+        tooltipRect.pivot = new Vector2(0, 1);
+        Vector3 desiredPosition = Input.mousePosition + new Vector3(0, -verticalOffset, 0);
+        tooltipRect.position = GetClampedTooltipPosition(desiredPosition, tooltipRect);
     }
     private void UpdateTooltipPosition()
     {
         if (tooltip.activeSelf)
         {
-            Vector3 mousePosition = Input.mousePosition;
             RectTransform tooltipRect = tooltip.GetComponent<RectTransform>();
-            float clampedX = Mathf.Clamp(mousePosition.x, tooltipRect.rect.width / 2, Screen.width - tooltipRect.rect.width / 2);
-            float clampedY = Mathf.Clamp(mousePosition.y, tooltipRect.rect.height / 2, Screen.height - tooltipRect.rect.height / 2);
-            tooltip.transform.position = new Vector3(clampedX, clampedY - 20, 0);
+            Vector3 desiredPosition = Input.mousePosition + new Vector3(0, -verticalOffset, 0);
+            tooltipRect.position = GetClampedTooltipPosition(desiredPosition, tooltipRect);
         }
+        if (isPaused && slotParent.gameObject.activeSelf && tooltip.activeSelf)
+        {
+            if (!IsMouseOverInventorySlot())
+            {
+                HideTooltip();
+            }
+        }
+    }
+
+    private Vector3 GetClampedTooltipPosition(Vector3 desiredPosition, RectTransform tooltipRect)
+    {
+        float tooltipWidth = tooltipRect.rect.width;
+        float tooltipHeight = tooltipRect.rect.height;
+
+        float minX = edgePadding;
+        float maxX = Screen.width - tooltipWidth - edgePadding;
+        float minY = tooltipHeight + edgePadding;
+        float maxY = Screen.height - edgePadding;
+
+        return new Vector3(
+            Mathf.Clamp(desiredPosition.x, minX, maxX),
+            Mathf.Clamp(desiredPosition.y, minY, maxY),
+            0
+        );
     }
     //Following is for the upgrade notification display Z.S
     public void ShowPickupNotification(string description)
@@ -258,5 +299,21 @@ public class InventoryManager : MonoBehaviour
         }
         pickupCanvasGroup.alpha = 0f;
         currentNotificationRoutine = null;
+    }
+    private bool IsMouseOverInventorySlot()
+    {
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Input.mousePosition;
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (RaycastResult result in results)
+        {
+            if (result.gameObject.GetComponent<InventorySlot>() != null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

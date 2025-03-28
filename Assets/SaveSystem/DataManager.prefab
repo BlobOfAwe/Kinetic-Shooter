@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7073634582330626996}
   - component: {fileID: 7484021033734230675}
+  - component: {fileID: 9214079706772467831}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -54,6 +55,7 @@ MonoBehaviour:
     stickyKills: 0
     spawnerKills: 0
     trapletKills: 0
+    minletKills: 0
     lightningKills: 0
     kamikazeKills: 0
     splitterKills: 0
@@ -63,3 +65,19 @@ MonoBehaviour:
     necromancerKills: 0
     standardLoadoutKills: 0
     heavyLoadoutKills: 0
+    lightLoadoutKills: 0
+--- !u!114 &9214079706772467831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5493740111841054802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66ad9654488860438b0e324f70a6d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 9c7497498a5fc494aae92298ef409c14, type: 3}
+  uiCursor: {fileID: 2800000, guid: 873312c40faa0e4449629b029f2f4f13, type: 3}
+  hotspot: {x: 0, y: 0}

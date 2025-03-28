@@ -36,7 +36,9 @@ public class PlayerBehaviour : Entity
     [SerializeField]
     private float rotationOffset = 0f;
     [SerializeField]
-    private Transform gunHolder; 
+    private Transform gunHolder;
+    [SerializeField]
+    private Transform headHolder;
 
     private HPBarSystem hpBar;
     //Added by ZS to reference the animators and set the timer for the death delay
@@ -83,6 +85,8 @@ public class PlayerBehaviour : Entity
     private SpriteRenderer playerSpriteRenderer;
     [SerializeField]
     private SpriteRenderer gunSpriteRenderer;
+    [SerializeField]
+    private SpriteRenderer playerHeadSpriteRenderer;
     //audio variable for player movement
     private EventInstance playerMovementSound;
 
@@ -93,6 +97,7 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     private LoadoutManager.Loadout loadout;
+    
     public ShootAbility primaryShootAbility; // A more specific reference to Entity.primary used by upgrades
 
     protected override void Awake()
@@ -122,10 +127,11 @@ public class PlayerBehaviour : Entity
     {
         offsetShoulderFromCenterX = aimTransform.localPosition.x;
         firePointLocalPosDefaultX = firePoint.localPosition.x;
-
         hpBar = FindAnyObjectByType<HPBarSystem>();
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
+        playerAnimator.SetTrigger("isTeleportingIn");
+        playerGunAnimator.SetTrigger("isTeleportingIn");
 
     }
 
@@ -231,13 +237,17 @@ public class PlayerBehaviour : Entity
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             aimTransform.up = direction;
             gunHolder.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
+            headHolder.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
             // Flips the player and gun sprite to make the direction of view
             if (direction.x < 0)
             {
                 playerSpriteRenderer.flipX = false;
+                playerHeadSpriteRenderer.flipX = true;
+                playerHeadSpriteRenderer.flipY = true;
                 //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
                 gunSpriteRenderer.flipY = true;
+
                 //gunHolder.localPosition = new Vector2( 0.153f, -0.16f); 
                 aimTransform.localPosition = new Vector2(offsetShoulderFromCenterX, aimTransform.localPosition.y);
                 firePoint.localPosition = new Vector2(firePointLocalPosDefaultX, firePoint.localPosition.y);
@@ -245,6 +255,8 @@ public class PlayerBehaviour : Entity
             else if (direction.x > 0)
             {
                 playerSpriteRenderer.flipX = true;
+                playerHeadSpriteRenderer.flipX = true;
+                playerHeadSpriteRenderer.flipY = false;
                 //gunSpriteRenderer.flipX = true; // DEFUNCT This value should never not be true
                 gunSpriteRenderer.flipY = false;
                 //gunHolder.localPosition = new Vector2(-0.153f, -0.16f);
