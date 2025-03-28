@@ -52,6 +52,8 @@ public class PlayerBehaviour : Entity
 
     private InventoryManager inventory;
 
+    private LineRenderer aimLine;
+
     public enum StatType { attack, defense, speed, hp, recover }
 
     private List<Upgrade> attackUpgrades;
@@ -67,6 +69,9 @@ public class PlayerBehaviour : Entity
 
     [SerializeField]
     private float manualMoveModifier = 0.1f;
+
+    [SerializeField]
+    private float aimLineLength = 1f;
 
     private TestBullet lastBullet;
 
@@ -135,6 +140,8 @@ public class PlayerBehaviour : Entity
 
         pauseMenu = FindObjectOfType<PauseMenu>();
         inventory = FindObjectOfType<InventoryManager>();
+
+        aimLine = GetComponentInChildren<LineRenderer>();
     }
 
     new private void Update()
@@ -152,8 +159,12 @@ public class PlayerBehaviour : Entity
             {
                 UseAbility(secondary);
             }
+            aimLine.SetPosition(0, firePoint.position);
+            aimLine.SetPosition(1, firePoint.position + aimTransform.up * aimLineLength);
+        } else
+        {
+            aimLine.enabled = false;
         }
-
 
         // audio timer
         if (audioTimer > 0)
@@ -227,17 +238,30 @@ public class PlayerBehaviour : Entity
     {
         if (!GameManager.paused && !isGameEnd)
         {
-            Vector2 cursorPos = context.ReadValue<Vector2>();
-            Vector2 aimPos = Vector2.zero;
+            PlayerInput playerInput = gameObject.GetComponent<PlayerInput>();
 
-            if (mainCam != null)
+            Vector2 direction = aimTransform.up;
+
+            if (playerInput.currentControlScheme == "Keyboard+Mouse")
             {
-                aimPos = mainCam.ScreenToWorldPoint(cursorPos);
-            }
-            else { Debug.LogWarning("No Main Camera detected"); }
+                Vector2 cursorPos = context.ReadValue<Vector2>();
+                Vector2 aimPos = Vector2.zero;
 
-            // Created a local variable to reference the transform position instead of typing it manually. Z.S
-            Vector2 direction = aimPos - (Vector2)aimTransform.position;
+                if (mainCam != null)
+                {
+                    aimPos = mainCam.ScreenToWorldPoint(cursorPos);
+                }
+                else { Debug.LogWarning("No Main Camera detected"); }
+
+                // Created a local variable to reference the transform position instead of typing it manually. Z.S
+                direction = aimPos - (Vector2)aimTransform.position;
+            } else if (playerInput.currentControlScheme == "Gamepad")
+            {
+                if (Mathf.Abs(context.ReadValue<Vector2>().x) > 0f && Mathf.Abs(context.ReadValue<Vector2>().y) > 0f)
+                {
+                    direction = context.ReadValue<Vector2>();
+                }
+            }
 
             // aimTransform.localPosition = direction.normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
