@@ -511,6 +511,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: damageModOne
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: damageModTwo
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128416706835469520, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: damageModThree
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_Name
       value: Player
