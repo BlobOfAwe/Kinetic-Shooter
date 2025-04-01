@@ -4937,11 +4937,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1791659208
-      Data2: 1158384876
-      Data3: -1756881735
-      Data4: 1110242641
-    Path: event:/SFX/Item/ItemApproach
+      Data1: 653230407
+      Data2: 1339476778
+      Data3: -959002490
+      Data4: 1923434001
+    Path: event:/SFX/Environment/Hazards/DebuffTile
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -4951,8 +4951,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 1
-  OverrideMinDistance: 1.3
-  OverrideMaxDistance: 3
+  OverrideMinDistance: 2
+  OverrideMaxDistance: 6
 --- !u!114 &7692336996507665111
 MonoBehaviour:
   m_ObjectHideFlags: 0

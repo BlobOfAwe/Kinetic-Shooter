@@ -59,7 +59,14 @@
 			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b17fc322-6997-48ae-af1d-7ed7c7253e35}" />
+	<object class="EventAutomatableProperties" id="{b17fc322-6997-48ae-af1d-7ed7c7253e35}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{7fdb59f9-0da4-44b7-a23a-d3ee8ca55c16}" />
 	<object class="Timeline" id="{c19d8fe6-f215-43dd-8402-beb4198199c1}">
 		<property name="isProxyEnabled">
@@ -100,9 +107,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{b343835c-dbb3-475b-a7b9-8edf9660a500}" />
 	<object class="SingleSound" id="{19923385-26c3-45ba-b694-0144dbb69a19}">
-		<property name="volume">
-			<value>-5.5</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{2a7270ac-eae2-4ac4-8fb8-8fdc4b23aa5f}</destination>
 		</relationship>

@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{964207c9-049e-4496-be16-2efb7b3ec9d0}">
 		<relationship name="sounds">
-			<destination>{c6967905-530d-4da0-9c11-285925abdf54}</destination>
+			<destination>{5e99b754-3a5f-4863-b16b-6b89cb638813}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4af97b76-8bc6-4532-b963-b3cbd51627ee}">
@@ -96,29 +96,35 @@
 	<object class="MixerBusEffectChain" id="{e29eff7c-4271-4d0d-bc07-368d593e9206}">
 		<relationship name="effects">
 			<destination>{39cd2e09-59e0-488e-85ed-419cdf6ce80c}</destination>
-			<destination>{e3115201-480b-480f-b9aa-ed76da5e6e0c}</destination>
+			<destination>{d4948833-a9d9-4344-964e-b7f78fdb1c3a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ff012545-c3a7-405c-bc9f-f14d9be8b00c}" />
-	<object class="SingleSound" id="{c6967905-530d-4da0-9c11-285925abdf54}">
-		<property name="volume">
-			<value>5</value>
-		</property>
+	<object class="SingleSound" id="{5e99b754-3a5f-4863-b16b-6b89cb638813}">
 		<relationship name="audioFile">
-			<destination>{d1411bcb-d810-45a7-9357-0936ceb3b97b}</destination>
+			<destination>{26485841-115e-4b6a-9ee3-3027d26da927}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{0d63aa3e-b4c5-4fa5-8a92-34a969cd8ec4}" />
 	<object class="MixerBusFader" id="{39cd2e09-59e0-488e-85ed-419cdf6ce80c}" />
-	<object class="ThreeEQEffect" id="{e3115201-480b-480f-b9aa-ed76da5e6e0c}">
-		<property name="lowGain">
-			<value>-19.5</value>
+	<object class="MultibandEqEffect" id="{d4948833-a9d9-4344-964e-b7f78fdb1c3a}">
+		<property name="filterTypeA">
+			<value>8</value>
 		</property>
-		<property name="midGain">
-			<value>-7.5</value>
+		<property name="filterTypeB">
+			<value>7</value>
 		</property>
-		<property name="highGain">
-			<value>-6</value>
+		<property name="frequencyA">
+			<value>5841.67676</value>
+		</property>
+		<property name="frequencyB">
+			<value>152.354004</value>
+		</property>
+		<property name="gainA">
+			<value>-3.62068939</value>
+		</property>
+		<property name="gainB">
+			<value>-15</value>
 		</property>
 	</object>
 </objects>

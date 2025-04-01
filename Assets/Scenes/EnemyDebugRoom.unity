@@ -39895,7 +39895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00091552734}
+  m_AnchoredPosition: {x: 0, y: 0.0009765625}
   m_SizeDelta: {x: -637.36, y: -717.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118712968
@@ -40161,6 +40161,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightningTwins>k__BackingField.Path
+      value: event:/SFX/Enemy/Base Enemies/LightningTwins
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <fastFlying>k__BackingField.Guid.Data1
       value: 67294925
       objectReference: {fileID: 0}
@@ -40191,6 +40195,22 @@ PrefabInstance:
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <basicMovement>k__BackingField.Guid.Data4
       value: 1057355258
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightningTwins>k__BackingField.Guid.Data1
+      value: -201428753
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightningTwins>k__BackingField.Guid.Data2
+      value: 1091656458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightningTwins>k__BackingField.Guid.Data3
+      value: -1755913571
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightningTwins>k__BackingField.Guid.Data4
+      value: -411683646
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

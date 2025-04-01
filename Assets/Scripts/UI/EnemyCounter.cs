@@ -50,29 +50,20 @@ public class EnemyCounter : MonoBehaviour
     void Update()
     {
         //Audio Intensity
-        if (remainingEnemies == 18 || remainingEnemies == 17 || remainingEnemies == 16)
-        {
-            parameterController.IntensityOne();
-        }
-        else if (remainingEnemies == 15 || remainingEnemies == 14 || remainingEnemies == 13)
-        {
-            parameterController.IntensityTwo();
-            parameterController.StageOne();
-        }
-        else if (remainingEnemies == 10 || remainingEnemies == 9 || remainingEnemies == 8)
-        {
-            parameterController.IntensityThree();
-            parameterController.StageTwo();
-        }
-        else if (remainingEnemies == 5 || remainingEnemies == 4 || remainingEnemies == 3)
+        if (remainingEnemies / totalEnemies < 0.25f)
         {
             parameterController.StageThree();
         }
-        else if (remainingEnemies == 0)
+        else if (remainingEnemies / totalEnemies < 0.50f)
         {
-            parameterController.StageFour();
+            parameterController.StageTwo();
         }
-
+        else if (remainingEnemies/totalEnemies < 0.75f)
+        {
+            parameterController.StageOne();
+        }
+       
+      
     }
 
     public void EnemyDefeated(Enemy enemy)
@@ -117,6 +108,7 @@ public class EnemyCounter : MonoBehaviour
 
             bossIsSpawned = true;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.bossEnemyAppear, this.transform.position);
+            parameterController.StageFour();
             UpdateEnemyCounter();
         }
     }

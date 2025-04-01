@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,6 +29,10 @@ public class HeavyTertiaryBall : Ability
     private Color baseColor;
     private SpriteRenderer sprite;
 
+    //audio variable for player movement
+    private EventInstance heavyAbilityActivate;
+
+
     private void Start()
     {
         player = GetComponent<PlayerBehaviour>();
@@ -49,6 +54,8 @@ public class HeavyTertiaryBall : Ability
         speedDebuff.buffType = Buff.buffCategory.SPEED_BUFF;
         speedDebuff.modification = Buff.modificationType.Multiplicative;
         speedDebuff.value = 0;
+
+        heavyAbilityActivate = AudioManager.instance.CreateEventInstance(FMODEvents.instance.heavyAbilityActive);
     }
 
     public override void OnActivate()
@@ -66,6 +73,9 @@ public class HeavyTertiaryBall : Ability
             player.secondary.StopAllCoroutines();
             player.secondary.available = false;
             sprite.color = Color.blue;
+            PLAYBACK_STATE playbackState;
+            heavyAbilityActivate.getPlaybackState(out playbackState);
+            heavyAbilityActivate.start();
 
             ballCurlCoroutine = StartCoroutine(BallCurl());
         }
@@ -93,6 +103,10 @@ public class HeavyTertiaryBall : Ability
         rb.velocity = Vector2.zero;
         lunging = true;
         rb.AddForce(player.aimTransform.up * lungeForce, ForceMode2D.Impulse);
+
+        heavyAbilityActivate.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.heavyAbilityLaunch, this.transform.position);
+
 
         // Wait for endTime seconds before ending the lunge
         yield return new WaitForSeconds(endtime * (100 / (100 + thisEntity.totalSpeed)));

@@ -216,20 +216,6 @@ MonoBehaviour:
       Data3: 1286121646
       Data4: -1639879213
     Path: event:/Music/MainMenuMusic
-  <shotgunGun>k__BackingField:
-    Guid:
-      Data1: 810823936
-      Data2: 1281461613
-      Data3: 874591403
-      Data4: 991724559
-    Path: event:/SFX/Player/Gun/Shotgun
-  <impalerGun>k__BackingField:
-    Guid:
-      Data1: 1632778861
-      Data2: 1101647265
-      Data3: -1418748741
-      Data4: 821173001
-    Path: event:/SFX/Player/Gun/Impaler
   <extraArmsGun>k__BackingField:
     Guid:
       Data1: -2105095142
@@ -244,13 +230,13 @@ MonoBehaviour:
       Data3: 440066477
       Data4: -1542733040
     Path: event:/SFX/Player/Gun/WideShots
-  <swooshMelee>k__BackingField:
+  <bladeSpinner>k__BackingField:
     Guid:
-      Data1: 2046323123
-      Data2: 1138409609
-      Data3: -1234088819
-      Data4: 980795246
-    Path: event:/SFX/Player/Melee/Swoosh
+      Data1: -1578103234
+      Data2: 1207137173
+      Data3: -1736653642
+      Data4: 865333498
+    Path: event:/SFX/Player/Melee/BladeSpinner
   <standardPrimary>k__BackingField:
     Guid:
       Data1: -803468748
@@ -286,13 +272,20 @@ MonoBehaviour:
       Data3: -1209385061
       Data4: -224063369
     Path: event:/SFX/Player/Loadouts/HeavySecondary
-  <heavyAbility>k__BackingField:
+  <heavyAbilityActive>k__BackingField:
     Guid:
       Data1: 1241409933
       Data2: 1268039060
       Data3: 1146371227
       Data4: -1170223514
-    Path: event:/SFX/Player/Loadouts/HeavyInherent
+    Path: event:/SFX/Player/Loadouts/HeavyInherentActive
+  <heavyAbilityLaunch>k__BackingField:
+    Guid:
+      Data1: -962762412
+      Data2: 1256148334
+      Data3: -1286777177
+      Data4: -1470416776
+    Path: event:/SFX/Player/Loadouts/HeavyInherentLaunch
   <lightPrimary>k__BackingField:
     Guid:
       Data1: 1290217954
@@ -307,13 +300,20 @@ MonoBehaviour:
       Data3: -931440240
       Data4: -1103118285
     Path: event:/SFX/Player/Loadouts/LightSecondary
-  <lightAbility>k__BackingField:
+  <lightAbilityActive>k__BackingField:
     Guid:
       Data1: 688659987
       Data2: 1308015868
       Data3: 162375095
       Data4: -1320496221
-    Path: event:/SFX/Player/Loadouts/LightInherent
+    Path: event:/SFX/Player/Loadouts/LightInherentActive
+  <lightAbilityBounce>k__BackingField:
+    Guid:
+      Data1: -977927201
+      Data2: 1223401663
+      Data3: -1211677510
+      Data4: -2090714115
+    Path: event:/SFX/Player/Loadouts/LightInherentBounce
   <basicMovement>k__BackingField:
     Guid:
       Data1: -36229141
@@ -335,13 +335,6 @@ MonoBehaviour:
       Data3: -372108923
       Data4: 334650285
     Path: event:/SFX/Player/Notification/DamageReceived
-  <playerVoice>k__BackingField:
-    Guid:
-      Data1: 3721508
-      Data2: 1205521427
-      Data3: -581196362
-      Data4: 830117200
-    Path: event:/SFX/Player/Notification/VoiceExclamation
   <electromagnetismAbility>k__BackingField:
     Guid:
       Data1: -1617962046
@@ -489,13 +482,20 @@ MonoBehaviour:
       Data3: 896789413
       Data4: -835273138
     Path: event:/SFX/Enemy/General/EnemyDeath
-  <enemyVoice>k__BackingField:
+  <lightningTwins>k__BackingField:
     Guid:
-      Data1: -1429160945
-      Data2: 1248066342
-      Data3: -965327221
-      Data4: -1352432461
-    Path: event:/SFX/Enemy/General/EnemyVoiceExclamation
+      Data1: -201428753
+      Data2: 1091656458
+      Data3: -1755913571
+      Data4: -411683646
+    Path: event:/SFX/Enemy/Base Enemies/LightningTwins
+  <armadilloBlock>k__BackingField:
+    Guid:
+      Data1: -580065476
+      Data2: 1160959472
+      Data3: -1672333144
+      Data4: -751488505
+    Path: event:/SFX/Enemy/Leader Enemies/ArmadilloBlock
   <bossEnemyAppear>k__BackingField:
     Guid:
       Data1: 1851311828
@@ -503,13 +503,48 @@ MonoBehaviour:
       Data3: 1345939368
       Data4: 1999352515
     Path: event:/SFX/Enemy/Boss Enemies/BossEnemyAppear
-  <enemyMovement>k__BackingField:
+  <bouncerMovement>k__BackingField:
     Guid:
-      Data1: 241768984
-      Data2: 1200500394
-      Data3: 79239595
-      Data4: -77061118
-    Path: event:/SFX/Enemy/EnemyMovement
+      Data1: 1788432580
+      Data2: 1309242010
+      Data3: 240389286
+      Data4: -808402409
+    Path: event:/SFX/Enemy/Boss Enemies/BouncerMovement
+  <buffTile>k__BackingField:
+    Guid:
+      Data1: -1101417253
+      Data2: 1306991014
+      Data3: 1984628158
+      Data4: 1569613452
+    Path: event:/SFX/Environment/Hazards/BuffTile
+  <debuffTile>k__BackingField:
+    Guid:
+      Data1: 653230407
+      Data2: 1339476778
+      Data3: -959002490
+      Data4: 1923434001
+    Path: event:/SFX/Environment/Hazards/DebuffTile
+  <geyserHazard>k__BackingField:
+    Guid:
+      Data1: 1089219027
+      Data2: 1300584891
+      Data3: -577911920
+      Data4: -155214097
+    Path: event:/SFX/Environment/Hazards/Geysers
+  <spikeHazard>k__BackingField:
+    Guid:
+      Data1: 2044171095
+      Data2: 1262367208
+      Data3: -1377149005
+      Data4: 1099981047
+    Path: event:/SFX/Environment/Hazards/Spikes
+  <trainHazard>k__BackingField:
+    Guid:
+      Data1: 891102209
+      Data2: 1212086153
+      Data3: -1065712509
+      Data4: 107511840
+    Path: event:/SFX/Environment/Hazards/Train
   <itemPickup>k__BackingField:
     Guid:
       Data1: 926401910

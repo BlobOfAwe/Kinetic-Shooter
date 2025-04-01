@@ -51,87 +51,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-9073274676228148584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Boss Enemies/NecromancerRevive
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Boss Enemies/NecromancerRevive
-  Guid:
-    Data1: -1859632152
-    Data2: 1325590140
-    Data3: -2074682701
-    Data4: -995631391
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8981693129595522141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/General/EnemyVoiceExclamation
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/General/EnemyVoiceExclamation
-  Guid:
-    Data1: -1429160945
-    Data2: 1248066342
-    Data3: -965327221
-    Data4: -1352432461
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8941103567122145079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Boss Enemies/NecromancerMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Boss Enemies/NecromancerMovement
-  Guid:
-    Data1: 452844795
-    Data2: 1137577207
-    Data3: -384308085
-    Data4: -1187733851
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-8770833629680041889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,60 +102,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-8641556855733089708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Leader Enemies/ArmadilloMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Leader Enemies/ArmadilloMovement
-  Guid:
-    Data1: -580065476
-    Data2: 1160959472
-    Data3: -1672333144
-    Data4: -751488505
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8341827749679308489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Gun/HeavyShots
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Gun/HeavyShots
-  Guid:
-    Data1: -478815077
-    Data2: 1220597854
-    Data3: 700076952
-    Data4: 222427202
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-8063286318294562549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,60 +156,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7858973792668194874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/BladeSpinnerMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/BladeSpinnerMovement
-  Guid:
-    Data1: -2122975091
-    Data2: 1332746300
-    Data3: -1909531970
-    Data4: -1897476991
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7765635162694569142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Gun/Shotgun
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Gun/Shotgun
-  Guid:
-    Data1: 810823936
-    Data2: 1281461613
-    Data3: 874591403
-    Data4: 991724559
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-7639900536184629925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,38 +171,15 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638790609679254927
+=======
+  lastModified: 638780139358462906
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
-    Value: 1486
+    Value: 1982
   Exists: 1
---- !u!114 &-7592787996630784564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/TrapletsEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/TrapletsEnemyMovement
-  Guid:
-    Data1: -2083757844
-    Data2: 1225353726
-    Data3: -904816198
-    Data4: 814537118
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-7537948478592656565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,39 +255,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &-7069701667893358244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Gun/SuddenBurst
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Gun/SuddenBurst
-  Guid:
-    Data1: 2028321518
-    Data2: 1077913439
-    Data3: -710758517
-    Data4: 1417728516
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 4440
 --- !u!114 &-7035012509253205791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,13 +339,13 @@ MonoBehaviour:
     Data4: 1569613452
   Banks:
   - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 32249
 --- !u!114 &-6165226464401636338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,33 +496,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4936355620480642117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/General/EnemySlowed
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/General/EnemySlowed
-  Guid:
-    Data1: 460657280
-    Data2: 1146055229
-    Data3: 517165452
-    Data4: -903662197
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-4818632464590011885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,13 +516,13 @@ MonoBehaviour:
     Data4: -808402409
   Banks:
   - {fileID: -3309961850780505265}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 10487
 --- !u!114 &-4688359965227207528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,60 +601,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4346317060054287987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Boss Enemies/NecromancerDash
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Boss Enemies/NecromancerDash
-  Guid:
-    Data1: -1165029210
-    Data2: 1257810494
-    Data3: -1058054981
-    Data4: 1402691782
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4264887492356666225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/General/EnemySpawned
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/General/EnemySpawned
-  Guid:
-    Data1: 1499461508
-    Data2: 1132281911
-    Data3: 944491655
-    Data4: -270243414
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-3459027814986573601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,10 +643,14 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
+<<<<<<< Updated upstream
   lastModified: 638790609679520310
+=======
+  lastModified: 638787686018203376
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
-    Value: 3461504
+    Value: 4462560
   Exists: 1
 --- !u!114 &-2843891436942385323
 MonoBehaviour:
@@ -994,7 +678,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 27555
+  Length: 32000
 --- !u!114 &-2659371162353536493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,6 +697,33 @@ MonoBehaviour:
     Data2: 1150430324
     Data3: 280180887
     Data4: -2003670282
+  Banks:
+  - {fileID: -3309961850780505265}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2639554347366362505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/Leader Enemies/ArmadilloBlock
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/Leader Enemies/ArmadilloBlock
+  Guid:
+    Data1: -580065476
+    Data2: 1160959472
+    Data3: -1672333144
+    Data4: -751488505
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -1053,33 +764,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 137517
---- !u!114 &-2158869402061262899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Notification/StickyState
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Notification/StickyState
-  Guid:
-    Data1: 166482103
-    Data2: 1125090343
-    Data3: 545649576
-    Data4: -1651553384
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-2054474423930881225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,33 +890,6 @@ MonoBehaviour:
     Data2: 1201826736
     Data3: -430444917
     Data4: 169794849
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1115710396763999985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/SpawnerEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/SpawnerEnemyMovement
-  Guid:
-    Data1: -1253919062
-    Data2: 1252610269
-    Data3: 1445305736
-    Data4: 1340641392
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -1478,12 +1135,10 @@ MonoBehaviour:
   - {fileID: -6049392805742611722}
   - {fileID: -7537948478592656565}
   - {fileID: 56135580401161050}
-  - {fileID: -7765635162694569142}
   - {fileID: 3681469550887369196}
   - {fileID: -2044281180497949854}
   - {fileID: 8171549290208039183}
   - {fileID: -1952923580987774793}
-  - {fileID: 999619083340531654}
   - {fileID: -558989842483126598}
   - {fileID: 500856670426029785}
   - {fileID: -2659371162353536493}
@@ -1499,7 +1154,6 @@ MonoBehaviour:
   - {fileID: -9175760579117089134}
   - {fileID: 6908583386889067398}
   - {fileID: -684199497730843018}
-  - {fileID: 6591528220059995629}
   - {fileID: 607849375151112436}
   - {fileID: -661520587659593481}
   - {fileID: 5678616000622913960}
@@ -1516,41 +1170,18 @@ MonoBehaviour:
   - {fileID: 404741114609123143}
   - {fileID: -7035012509253205791}
   - {fileID: -125444495865136698}
-  - {fileID: 906512875242955728}
-  - {fileID: 6737191996291066189}
-  - {fileID: 8311147813420516805}
-  - {fileID: -8981693129595522141}
-  - {fileID: 4224403804624434938}
-  - {fileID: 2378187025986282579}
-  - {fileID: 7265269444081983937}
-  - {fileID: 2426509425302145639}
   - {fileID: -971292163740446866}
-  - {fileID: -8641556855733089708}
   - {fileID: -7127865467224371942}
-  - {fileID: 6943774018934070300}
   - {fileID: 4601809841216005504}
-  - {fileID: 1402025045276129310}
   - {fileID: 3260337891392889403}
   - {fileID: -981170391681476899}
   - {fileID: -6413201650051389402}
   - {fileID: -3459027814986573601}
-  - {fileID: 4662694415727403552}
   - {fileID: -1273583582893652137}
-  - {fileID: -4936355620480642117}
-  - {fileID: -4264887492356666225}
-  - {fileID: 9208053778905918008}
-  - {fileID: -7858973792668194874}
   - {fileID: 7055693048996387867}
-  - {fileID: 336937348756167031}
-  - {fileID: 1853245899173958287}
   - {fileID: 2840094158823234142}
-  - {fileID: -8341827749679308489}
-  - {fileID: -4346317060054287987}
-  - {fileID: -1115710396763999985}
   - {fileID: 728163596285360235}
   - {fileID: 2617266183296516800}
-  - {fileID: -2158869402061262899}
-  - {fileID: 1599508017061329191}
   - {fileID: 4098395673073256789}
   - {fileID: 5750778908248154162}
   - {fileID: -4818632464590011885}
@@ -1560,17 +1191,22 @@ MonoBehaviour:
   - {fileID: -1853294897606155011}
   - {fileID: 9016356291560825155}
   - {fileID: 4902553293144462226}
-  - {fileID: -9073274676228148584}
-  - {fileID: -7592787996630784564}
-  - {fileID: -7069701667893358244}
-  - {fileID: 2374891280169475708}
-  - {fileID: -8941103567122145079}
+  - {fileID: 7259174352461949610}
+  - {fileID: -2639554347366362505}
+  - {fileID: 1148972785602226284}
+  - {fileID: 4581903217499261286}
+  - {fileID: 2126187512102010202}
+  - {fileID: 681146201595328994}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7639900536184629925}
   StringsBanks:
   - {fileID: 1008104743835113678}
+<<<<<<< Updated upstream
   cacheTime: 638790609679520310
+=======
+  cacheTime: 638787686018203376
+>>>>>>> Stashed changes
   cacheVersion: 131617
 --- !u!114 &56135580401161050
 MonoBehaviour:
@@ -1592,33 +1228,6 @@ MonoBehaviour:
     Data4: 419629243
   Banks:
   - {fileID: 7756539973744136545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &336937348756167031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/MinletsEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/MinletsEnemyMovement
-  Guid:
-    Data1: -853012847
-    Data2: 1110999687
-    Data3: -2012763737
-    Data4: -514825734
-  Banks:
-  - {fileID: -3309961850780505265}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1711,6 +1320,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &681146201595328994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemy/Base Enemies/LightningTwins
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemy/Base Enemies/LightningTwins
+  Guid:
+    Data1: -201428753
+    Data2: 1091656458
+    Data3: -1755913571
+    Data4: -411683646
+  Banks:
+  - {fileID: -3309961850780505265}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5237
 --- !u!114 &728163596285360235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,60 +1374,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &906512875242955728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/KamikazeEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/KamikazeEnemyMovement
-  Guid:
-    Data1: -1821266934
-    Data2: 1194032704
-    Data3: 1676196239
-    Data4: 1452690652
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &999619083340531654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Notification/VoiceExclamation
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Notification/VoiceExclamation
-  Guid:
-    Data1: 3721508
-    Data2: 1205521427
-    Data3: -581196362
-    Data4: 830117200
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &1008104743835113678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1807,10 +1389,14 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638790609679264930
+=======
+  lastModified: 638780139358488664
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
-    Value: 5716
+    Value: 4476
   Exists: 1
 --- !u!114 &1133475332249431029
 MonoBehaviour:
@@ -1839,7 +1425,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &1402025045276129310
+--- !u!114 &1148972785602226284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1849,41 +1435,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Notification/MassiveDamageReceived
+  m_Name: event:/SFX/Player/Loadouts/HeavyInherentLaunch
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Notification/MassiveDamageReceived
+  Path: event:/SFX/Player/Loadouts/HeavyInherentLaunch
   Guid:
-    Data1: -415357623
-    Data2: 1093420508
-    Data3: 1711077044
-    Data4: -85874196
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1599508017061329191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/BaseEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/BaseEnemyMovement
-  Guid:
-    Data1: -48970056
-    Data2: 1160952657
-    Data3: 1670321046
-    Data4: 7723755
+    Data1: -962762412
+    Data2: 1256148334
+    Data3: -1286777177
+    Data4: -1470416776
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -1920,7 +1479,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 117315
---- !u!114 &1853245899173958287
+--- !u!114 &2126187512102010202
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1930,14 +1489,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/SpeedDemonMovement
+  m_Name: event:/SFX/Player/Loadouts/LightInherentBounce
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/SpeedDemonMovement
+  Path: event:/SFX/Player/Loadouts/LightInherentBounce
   Guid:
-    Data1: -632626286
-    Data2: 1165031284
-    Data3: 1624509067
-    Data4: -440647778
+    Data1: -977927201
+    Data2: 1223401663
+    Data3: -1211677510
+    Data4: -2090714115
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -1971,87 +1530,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &2374891280169475708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/LightningTwinsMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/LightningTwinsMovement
-  Guid:
-    Data1: -201428753
-    Data2: 1091656458
-    Data3: -1755913571
-    Data4: -411683646
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2378187025986282579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/SniperEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/SniperEnemyMovement
-  Guid:
-    Data1: 76840733
-    Data2: 1210187195
-    Data3: 981882812
-    Data4: -1074794330
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2426509425302145639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/General/EnemySpawnedSpecial
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/General/EnemySpawnedSpecial
-  Guid:
-    Data1: 1424609841
-    Data2: 1113630061
-    Data3: 255661733
-    Data4: 1026511359
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &2617266183296516800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,10 +1704,14 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
+<<<<<<< Updated upstream
   lastModified: 638790609679244903
+=======
+  lastModified: 638780139358327082
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
-    Value: 2845632
+    Value: 2888448
   Exists: 1
 --- !u!114 &3681469550887369196
 MonoBehaviour:
@@ -2312,7 +1794,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4224403804624434938
+--- !u!114 &4581903217499261286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2322,17 +1804,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Loadouts/LightInherent
+  m_Name: event:/SFX/Player/Loadouts/HeavyInherentActive
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Loadouts/LightInherent
+  Path: event:/SFX/Player/Loadouts/HeavyInherentActive
   Guid:
-    Data1: 688659987
-    Data2: 1308015868
-    Data3: 162375095
-    Data4: -1320496221
+    Data1: 1241409933
+    Data2: 1268039060
+    Data3: 1146371227
+    Data4: -1170223514
   Banks:
   - {fileID: -3309961850780505265}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -2360,39 +1842,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
+  Is3D: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &4662694415727403552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Gun/Impaler
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Gun/Impaler
-  Guid:
-    Data1: 1632778861
-    Data2: 1101647265
-    Data3: -1418748741
-    Data4: 821173001
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Length: 5571
 --- !u!114 &4889296876214752107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2419,7 +1874,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 26824
+  Length: 27262
 --- !u!114 &4902553293144462226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,33 +1983,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6591528220059995629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Melee/Swoosh
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Melee/Swoosh
-  Guid:
-    Data1: 2046323123
-    Data2: 1138409609
-    Data3: -1234088819
-    Data4: 980795246
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6725438642680475745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,33 +2007,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6737191996291066189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Leader Enemies/WarCallerMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Leader Enemies/WarCallerMovement
-  Guid:
-    Data1: -782097653
-    Data2: 1103619140
-    Data3: -923977823
-    Data4: 1376058688
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6794856002867619159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2660,33 +2061,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6943774018934070300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Leader Enemies/SplitterMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Leader Enemies/SplitterMovement
-  Guid:
-    Data1: -431013308
-    Data2: 1086407419
-    Data3: -2034933601
-    Data4: 2115546529
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7055693048996387867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2714,7 +2088,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7265269444081983937
+--- !u!114 &7259174352461949610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2724,14 +2098,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Boss Enemies/BouncerBlink
+  m_Name: event:/SFX/Player/Loadouts/LightInherentActive
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Boss Enemies/BouncerBlink
+  Path: event:/SFX/Player/Loadouts/LightInherentActive
   Guid:
-    Data1: 950408483
-    Data2: 1190713018
-    Data3: -1954158192
-    Data4: 1141556153
+    Data1: 688659987
+    Data2: 1308015868
+    Data3: 162375095
+    Data4: -1320496221
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -2806,33 +2180,6 @@ MonoBehaviour:
     Data2: 1311686451
     Data3: 1805157273
     Data4: -1423489595
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &8311147813420516805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Enemy/Base Enemies/ArmouredEnemyMovement
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Enemy/Base Enemies/ArmouredEnemyMovement
-  Guid:
-    Data1: 1317746957
-    Data2: 1281118675
-    Data3: 903071410
-    Data4: -169728240
   Banks:
   - {fileID: -3309961850780505265}
   IsStream: 0
@@ -2947,30 +2294,3 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &9208053778905918008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Loadouts/HeavyInherent
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Loadouts/HeavyInherent
-  Guid:
-    Data1: 1241409933
-    Data2: 1268039060
-    Data3: 1146371227
-    Data4: -1170223514
-  Banks:
-  - {fileID: -3309961850780505265}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0

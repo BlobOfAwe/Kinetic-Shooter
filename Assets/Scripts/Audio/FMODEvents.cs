@@ -42,20 +42,14 @@ public class FMODEvents : MonoBehaviour
 
     // Player SFX: Weapon Events
 
-    [field: Header("Shotgun SFX")]
-    [field: SerializeField] public EventReference shotgunGun { get; private set; }
-
-    [field: Header("Impaler SFX")]
-    [field: SerializeField] public EventReference impalerGun { get; private set; }
-
     [field: Header("Extra Arms SFX")]
     [field: SerializeField] public EventReference extraArmsGun { get; private set; }
 
     [field: Header("Wide Shots SFX")]
     [field: SerializeField] public EventReference wideShotsGun { get; private set; }
 
-    [field: Header("Melee SFX")]
-    [field: SerializeField] public EventReference swooshMelee { get; private set; }
+    [field: Header("Blade Spinner")]
+    [field: SerializeField] public EventReference bladeSpinner { get; private set; }
 
     // Loadout SFX
 
@@ -78,8 +72,11 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Heavy Secondary SFX")]
     [field: SerializeField] public EventReference heavySecondary { get; private set; }
 
-    [field: Header("Heavy Ability SFX")]
-    [field: SerializeField] public EventReference heavyAbility { get; private set; }
+    [field: Header("Heavy Ability Active SFX")]
+    [field: SerializeField] public EventReference heavyAbilityActive { get; private set; }
+
+    [field: Header("Heavy Ability Launch SFX")]
+    [field: SerializeField] public EventReference heavyAbilityLaunch { get; private set; }
 
     // LIGHT
 
@@ -89,8 +86,11 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Light Secondary SFX")]
     [field: SerializeField] public EventReference lightSecondary { get; private set; }
 
-    [field: Header("Light Ability SFX")]
-    [field: SerializeField] public EventReference lightAbility { get; private set; }
+    [field: Header("Light Ability Active SFX")]
+    [field: SerializeField] public EventReference lightAbilityActive { get; private set; }
+
+    [field: Header("Light Ability Bounce SFX")]
+    [field: SerializeField] public EventReference lightAbilityBounce { get; private set; }
 
     // Player SFX: Movement Events
 
@@ -104,9 +104,6 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Damage Recieved")]
     [field: SerializeField] public EventReference damageRecieved { get; private set; }
-
-    [field: Header("Player Voice Exclamation")]
-    [field: SerializeField] public EventReference playerVoice { get; private set; }
 
     // Player SFX: Ability Events
 
@@ -169,20 +166,48 @@ public class FMODEvents : MonoBehaviour
 
     // Enemy SFX Events
 
+    // GENERAL
+
     [field: Header("Enemy Damaged")]
     [field: SerializeField] public EventReference enemyDamaged { get; private set; }
 
     [field: Header("Enemy Death")]
     [field: SerializeField] public EventReference enemyDeath { get; private set; }
 
-    [field: Header("Enemy Voice Exclamation")]
-    [field: SerializeField] public EventReference enemyVoice { get; private set; }
+    // BASE ENEMIES
+
+    [field: Header("Lightning Twins")]
+    [field: SerializeField] public EventReference lightningTwins { get; private set; }
+
+    // LEADER
+
+    [field: Header("Armadillo Block")]
+    [field: SerializeField] public EventReference armadilloBlock { get; private set; }
+
+    // BOSS ENEMIES
 
     [field: Header("Boss Enemy Appear")]
     [field: SerializeField] public EventReference bossEnemyAppear { get; private set; }
 
-    [field: Header("Enemy Movement")]
-    [field: SerializeField] public EventReference enemyMovement { get; private set; }
+    [field: Header("Bouncer Movement")]
+    [field: SerializeField] public EventReference bouncerMovement { get; private set; }
+
+    // Hazard SFX
+
+    [field: Header("Buff Tile")]
+    [field: SerializeField] public EventReference buffTile { get; private set; }
+
+    [field: Header("Debuff Tile")]
+    [field: SerializeField] public EventReference debuffTile { get; private set; }
+
+    [field: Header("Geysers")]
+    [field: SerializeField] public EventReference geyserHazard { get; private set; }
+
+    [field: Header("Spikes")]
+    [field: SerializeField] public EventReference spikeHazard { get; private set; }
+
+    [field: Header("Train")]
+    [field: SerializeField] public EventReference trainHazard { get; private set; }
 
     // Item SFX Events
 

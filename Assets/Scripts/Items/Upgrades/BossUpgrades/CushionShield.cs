@@ -67,6 +67,7 @@ public class CushionShield : MonoBehaviour
         if (player.GetComponent<Collider2D>().IsTouchingLayers(solidLayers) && shieldCharge >= 1f)
         {
             Debug.Log("Shield shattered!");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.cushionBreakAbility, this.transform.position);
             for (int i = 0; i < shardsAmount; i++)
             {
                 foreach (GameObject shard in shards)

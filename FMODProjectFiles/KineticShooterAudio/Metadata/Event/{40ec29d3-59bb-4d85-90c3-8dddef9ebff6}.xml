@@ -5,7 +5,7 @@
 			<value>Geysers</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7881bdf7-c6a9-4749-80bc-516ef46b8f37}</destination>
@@ -82,7 +82,11 @@
 			<destination>{7ddeaf7b-7814-48ea-9510-78108a141f8c}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{8183b1eb-86aa-460a-bc17-8e83beeea426}" />
+	<object class="MultiSound" id="{8183b1eb-86aa-460a-bc17-8e83beeea426}">
+		<relationship name="sounds">
+			<destination>{a7a6aabe-956b-4665-bd8c-21e2d58a9ca9}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{6d917a4b-6d4f-4ee3-9af1-88a7fbe66d40}">
 		<relationship name="effects">
 			<destination>{60d91c95-7a1c-4ab4-97aa-005c5d6a9dbf}</destination>
@@ -95,6 +99,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{28d32f7f-ef2c-4ff3-8b06-ac1e6ad2bc64}" />
+	<object class="SingleSound" id="{a7a6aabe-956b-4665-bd8c-21e2d58a9ca9}">
+		<relationship name="audioFile">
+			<destination>{3d379a2c-6062-4410-8a4b-aaeaf2bd6eeb}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{60d91c95-7a1c-4ab4-97aa-005c5d6a9dbf}" />
 	<object class="MixerBusFader" id="{775f0460-07bb-4c0c-b34c-1c037f2bda61}" />
 </objects>

@@ -5577,6 +5577,106 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <bladeSpinner>k__BackingField.Path
+      value: event:/SFX/Player/Melee/BladeSpinner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <bladeSpinner>k__BackingField.Guid.Data1
+      value: -1578103234
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <bladeSpinner>k__BackingField.Guid.Data2
+      value: 1207137173
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <bladeSpinner>k__BackingField.Guid.Data3
+      value: -1736653642
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <bladeSpinner>k__BackingField.Guid.Data4
+      value: 865333498
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityActive>k__BackingField.Path
+      value: event:/SFX/Player/Loadouts/HeavyInherentActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityLaunch>k__BackingField.Path
+      value: event:/SFX/Player/Loadouts/HeavyInherentLaunch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityActive>k__BackingField.Path
+      value: event:/SFX/Player/Loadouts/LightInherentActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityBounce>k__BackingField.Path
+      value: event:/SFX/Player/Loadouts/LightInherentBounce
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data1
+      value: 1241409933
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data2
+      value: 1268039060
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data3
+      value: 1146371227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data4
+      value: -1170223514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data1
+      value: -962762412
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data2
+      value: 1256148334
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data3
+      value: -1286777177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data4
+      value: -1470416776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data1
+      value: 688659987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data2
+      value: 1308015868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data3
+      value: 162375095
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data4
+      value: -1320496221
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data1
+      value: -977927201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data2
+      value: 1223401663
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data3
+      value: -1211677510
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data4
+      value: -2090714115
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

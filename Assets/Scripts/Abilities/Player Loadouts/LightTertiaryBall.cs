@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,6 +30,9 @@ public class LightTertiaryBall : Ability
     private SpriteRenderer sprite;
     private GameObject[] bullets;
 
+    //audio variable for player movement
+    private EventInstance lightAbilityActivate;
+
 
     // Populate the array bullets with instances of bulletPrefab
     private void Start()
@@ -52,6 +56,8 @@ public class LightTertiaryBall : Ability
             baseColor = sprite.color;
             curled = false;
         }
+
+        lightAbilityActivate = AudioManager.instance.CreateEventInstance(FMODEvents.instance.lightAbilityActive);
     }
 
     public override void OnActivate()
@@ -61,13 +67,19 @@ public class LightTertiaryBall : Ability
             curled = true;
             col.sharedMaterial = bouncyMaterial;
             StartCoroutine(Curl());
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAbility, this.transform.position);
+            PLAYBACK_STATE playbackState;
+            lightAbilityActivate.getPlaybackState(out playbackState);
+            lightAbilityActivate.start();
         }
         else
         {
             // Check for the first available inactive bullet, and activate it from this object's position
             foreach (GameObject bullet in bullets)
             {
+
+                lightAbilityActivate.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.lightAbilityBounce, this.transform.position);
+
                 if (!bullet.activeSelf)
                 {  // If the bullet is not active (being fired)
                     bullet.transform.position = (Vector2)transform.position + rb.velocity.normalized * wallSpace; // Set the bullet to firePoint's position - changed from transform.position - NK

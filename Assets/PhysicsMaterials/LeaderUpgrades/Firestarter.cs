@@ -21,7 +21,12 @@ public class Firestarter : Upgrade
     {
         if (Random.Range(0f, 1f) <= igniteChance * quantity * bullet.effectModifier && target.GetComponent<Enemy>() != null)
         {
+<<<<<<< Updated upstream:Assets/PhysicsMaterials/LeaderUpgrades/Firestarter.cs
             target.GetComponent<Entity>().Ignite(tickDamage, tickInterval, burnTime, flame);
+=======
+            target.GetComponent<Entity>().Ignite(tickDamage, tickSpeed, burnTime);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.firestarterAbility, this.transform.position);
+>>>>>>> Stashed changes:Assets/_NK_UpgradeBranch/Scripts/LeaderUpgrades/Firestarter.cs
         }
     }
 }

@@ -43,7 +43,7 @@ public class ShotgunBlast : Upgrade
                         bulletProj.knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
                         bulletProj.damageMultiplier = shootAbility.bulletDamageMultiplier;
                         bulletProj.effectModifier = shootAbility.damageModifier;
-
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, this.transform.position);
                         bullet.SetActive(true);
                         offset = -offset;
                         Debug.Log("Found A Bullet to Copy");
