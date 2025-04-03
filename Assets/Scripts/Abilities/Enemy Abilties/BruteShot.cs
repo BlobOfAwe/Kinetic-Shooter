@@ -54,7 +54,7 @@ public class BruteShot : Ability
         if (rb == null) { Debug.LogError("No Rigidbody attatched to " + gameObject.name + ". Knockback and other physics cannot be applied."); }
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (inUse)
         {            

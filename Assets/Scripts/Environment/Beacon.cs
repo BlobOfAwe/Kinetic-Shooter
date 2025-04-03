@@ -24,15 +24,12 @@ public class Beacon : MonoBehaviour
     //audio emitter variable
     private StudioEventEmitter emitter;
 
-    public void Awake()
+    private void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.beaconLoop, this.gameObject);
         emitter.Play();
-    }
 
-    private void Start()
-    {
         player = FindAnyObjectByType<PlayerBehaviour>();
         playerInv = player.GetComponentInChildren<InventoryManager>();
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
@@ -82,7 +79,7 @@ public class Beacon : MonoBehaviour
         }
         vCam.m_Lens.OrthographicSize = bossCamSize;
     }
-    private IEnumerator WinGame()
+    protected virtual IEnumerator WinGame()
     {
         yield return new WaitForSeconds(1.5f);
         GameManager.difficultyCoefficient++;
