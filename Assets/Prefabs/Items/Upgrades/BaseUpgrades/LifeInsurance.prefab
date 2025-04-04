@@ -202,10 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -36
-  maxX: 36
-  minY: -27
-  maxY: 27
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!95 &-6675329849238466312
 Animator:
   serializedVersion: 5

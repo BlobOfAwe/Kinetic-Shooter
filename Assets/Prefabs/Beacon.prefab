@@ -390,10 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -18.5
-  maxX: 18.5
-  minY: -9.5
-  maxY: 9.5
+  wholeMap: 0
+  xMin: -18.5
+  xMax: 18.5
+  yMin: -9.5
+  yMax: 9.5
 --- !u!114 &4840094287813872900
 MonoBehaviour:
   m_ObjectHideFlags: 0
