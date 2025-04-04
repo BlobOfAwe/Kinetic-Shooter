@@ -16,7 +16,7 @@ public abstract class Item : MonoBehaviour
     protected StudioEventEmitter emitter;
     protected PlayerBehaviour player;
 
-    protected void Start()
+    protected virtual void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);

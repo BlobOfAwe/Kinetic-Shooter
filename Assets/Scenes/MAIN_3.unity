@@ -151,12 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f9047b14c85ee40b785c41f430ad50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   addCreditsPerSecond: 1
   maxSpawnTimeInterval: 20
   buffPrefabs:
-  - {fileID: 7692336996507665111, guid: c476c5cff871d5a4994e9744b68be22b, type: 3}
-  - {fileID: 7692336996507665111, guid: 2875f93e11ecb744abb900d050b52b19, type: 3}
+  - {fileID: -5393125944285294311, guid: 74f64e3e122f3b74d8cf42dfc08890b1, type: 3}
   timeToNextSpawn: 0
   credits: 15
   selectedBuff: {fileID: 0}
@@ -842,63 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &491823231
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1955052843754982336, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_Name
-      value: Geyser
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7419175236246200437, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
 --- !u!1001 &493073860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46824,6 +46766,7 @@ MonoBehaviour:
   - {fileID: 8064715954622458216, guid: 6eb461590e55bd543bb76652b1b6b3de, type: 3}
   hazardPrefabs:
   - {fileID: 1955052843754982336, guid: 01dceed1bba9df34b9384106dfd6de6c, type: 3}
+  - {fileID: 1621637924103124499, guid: 88ab66528e97e024983c64281890aa0d, type: 3}
   minItems: 6
   maxItems: 8
   minHazards: 10
@@ -47214,4 +47157,3 @@ SceneRoots:
   - {fileID: 1961050545}
   - {fileID: 385164967}
   - {fileID: 158344265}
-  - {fileID: 491823231}
