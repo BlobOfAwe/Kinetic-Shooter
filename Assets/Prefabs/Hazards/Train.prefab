@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8209746803958859122}
   - component: {fileID: 8922667644591746663}
   - component: {fileID: 5342098081341197189}
+  - component: {fileID: 5961572721142991076}
   - component: {fileID: 6584762920356576224}
   m_Layer: 6
   m_Name: Train
@@ -133,6 +134,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.25, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &5961572721142991076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2957014129743036503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8543f8319284b4f488083a6e094ed848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerYOffset: 0
+  sortingOrderBelow: 1
+  sortingOrderAbove: 4
 --- !u!114 &6584762920356576224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +275,7 @@ GameObject:
   - component: {fileID: 1878205776323988953}
   - component: {fileID: 2823818857060502214}
   - component: {fileID: 1331632221603394016}
+  - component: {fileID: 4760410550285608519}
   m_Layer: 6
   m_Name: TrainCar
   m_TagString: Untagged
@@ -378,3 +395,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.25, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &4760410550285608519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6387775837499627618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8543f8319284b4f488083a6e094ed848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerYOffset: 0
+  sortingOrderBelow: 1
+  sortingOrderAbove: 4
