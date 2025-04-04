@@ -38,11 +38,6 @@ public class BaseTwinsEnemy : Enemy
         }
     }
 
-    public void Update()
-    {
-       
-    }
-
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {

@@ -28,7 +28,7 @@ public class HeavyTertiaryBall : Ability
     private Animator animator;
 
     // FOR WHITEBOX USE ONLY
-    private Color baseColor;
+    //private Color baseColor;
     private SpriteRenderer sprite;
 
     //audio variable for player movement
@@ -42,7 +42,7 @@ public class HeavyTertiaryBall : Ability
         // Initialize Variables
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        baseColor = sprite.color;
+        //baseColor = sprite.color;
         curled = false;
 
         // Construct the armor buff to make the player invincible while curled
@@ -75,7 +75,7 @@ public class HeavyTertiaryBall : Ability
             player.primary.available = false;
             player.secondary.StopAllCoroutines();
             player.secondary.available = false;
-            sprite.color = Color.blue;
+            //sprite.color = Color.blue;
             PLAYBACK_STATE playbackState;
             heavyAbilityActivate.getPlaybackState(out playbackState);
             heavyAbilityActivate.start();
@@ -99,7 +99,7 @@ public class HeavyTertiaryBall : Ability
     private IEnumerator LungeForward()
     {
         player.capSpeedToTotalSpeed = false;
-        sprite.color = Color.red;
+        //sprite.color = Color.red;
         rb.velocity = -player.aimTransform.up * startupSpeed;
         yield return new WaitForSeconds(startup);
 
@@ -125,7 +125,7 @@ public class HeavyTertiaryBall : Ability
 
         StartCoroutine(BeginCooldown());
 
-        sprite.color = baseColor;
+        //sprite.color = baseColor;
     }
     private IEnumerator BallCurl()
     {
@@ -136,7 +136,7 @@ public class HeavyTertiaryBall : Ability
         player.speedBuffs.Remove(speedDebuff);
         player.UpdateStats();
         player.canMoveManually = true;
-        sprite.color = baseColor;
+        //sprite.color = baseColor;
         StartCoroutine(BeginCooldown());
         player.primary.available = true;
         player.secondary.available = true;
