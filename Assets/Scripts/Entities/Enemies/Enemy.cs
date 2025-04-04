@@ -132,9 +132,12 @@ public abstract class Enemy : Entity
             else
             {
                 // Added by Nathaniel Klassen
-                if (specialUpgradeSpawner != null)
+                if (Random.Range(0f, 1f) <= enemyCounterValue)
                 {
-                    specialUpgradeSpawner.SpawnBossUpgrade(transform.position);
+                    if (specialUpgradeSpawner != null)
+                    {
+                        specialUpgradeSpawner.SpawnBossUpgrade(transform.position);
+                    }
                 }
                 Debug.Log("You beat the boss!");
                 // Whatever happens when a boss is defeated goes here.
