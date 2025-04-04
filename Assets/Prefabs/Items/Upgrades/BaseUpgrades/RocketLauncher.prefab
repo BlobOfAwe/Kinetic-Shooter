@@ -138,6 +138,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: eae837964d9d09e46874f6256c9cc3d6, type: 3}
   title: Rocket Launcher
   description: Your bullets are now rockets!
+  statModifications: []
   damagePercent: 0.1
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.1
@@ -170,9 +171,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 7
 --- !u!114 &4507278570387552765
 MonoBehaviour:
   m_ObjectHideFlags: 0

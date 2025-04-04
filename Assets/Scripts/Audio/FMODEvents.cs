@@ -40,7 +40,7 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Main Menu Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }
 
-    // Player SFX: Weapon Events
+    // GUN SFX
 
     [field: Header("Extra Arms SFX")]
     [field: SerializeField] public EventReference extraArmsGun { get; private set; }
@@ -48,8 +48,14 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Wide Shots SFX")]
     [field: SerializeField] public EventReference wideShotsGun { get; private set; }
 
-    [field: Header("Blade Spinner")]
-    [field: SerializeField] public EventReference bladeSpinner { get; private set; }
+    [field: Header("Burst SFX")]
+    [field: SerializeField] public EventReference burstGun { get; private set; }
+
+    [field: Header("Impaler SFX")]
+    [field: SerializeField] public EventReference impalerGun { get; private set; }
+
+    [field: Header("Shotgun SFX")]
+    [field: SerializeField] public EventReference shotGun { get; private set; }
 
     // Loadout SFX
 
@@ -97,8 +103,12 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Basic Movement")]
     [field: SerializeField] public EventReference basicMovement { get; private set; }
 
-    [field: Header("Fast Flying Movement")]
-    [field: SerializeField] public EventReference fastFlying { get; private set; }
+    [field: Header("Hunker Down")]
+    [field: SerializeField] public EventReference hunkerDown { get; private set; }
+
+    [field: Header("Unhunker Down")]
+    [field: SerializeField] public EventReference unhunkerDown { get; private set; }
+
 
     // Player SFX: Notification Events
 
@@ -134,33 +144,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Cushion Break")]
     [field: SerializeField] public EventReference cushionBreakAbility { get; private set; }
 
-    [field: Header("Turret Activation")]
-    [field: SerializeField] public EventReference turretActivateAbility { get; private set; }
-
-    [field: Header("Turret Shot")]
-    [field: SerializeField] public EventReference turretShotAbility { get; private set; }
-
-    [field: Header("Blasting Laser")]
-    [field: SerializeField] public EventReference blastingLaserAbility { get; private set; }
-
-    [field: Header("Grenade Deploy")]
-    [field: SerializeField] public EventReference grenadeDeployAbility { get; private set; }
-
-    [field: Header("Grenade Countdown")]
-    [field: SerializeField] public EventReference grenadeCountdownAbility { get; private set; }
-
-    [field: Header("Grenade Explosion")]
-    [field: SerializeField] public EventReference grenadeExplosionAbility { get; private set; }
-
-    [field: Header("Shield Activate")]
-    [field: SerializeField] public EventReference shieldActivateAbility { get; private set; }
-
-    [field: Header("Shield Use")]
-    [field: SerializeField] public EventReference shieldUseAbility { get; private set; }
-
-    [field: Header("Oil Spill")]
-    [field: SerializeField] public EventReference oilSpillAbility { get; private set; }
-
     [field: Header("Cooldown Refresh")]
     [field: SerializeField] public EventReference cooldownRefresh { get; private set; }
 
@@ -179,10 +162,19 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Lightning Twins")]
     [field: SerializeField] public EventReference lightningTwins { get; private set; }
 
+    [field: Header("Blade Spinner")]
+    [field: SerializeField] public EventReference bladeSpinner { get; private set; }
+
     // LEADER
 
     [field: Header("Armadillo Block")]
     [field: SerializeField] public EventReference armadilloBlock { get; private set; }
+
+    [field: Header("Armadillo Scream")]
+    [field: SerializeField] public EventReference armadilloScream { get; private set; }
+
+    [field: Header("War Caller Call")]
+    [field: SerializeField] public EventReference warCallerCall { get; private set; }
 
     // BOSS ENEMIES
 
@@ -191,6 +183,15 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Bouncer Movement")]
     [field: SerializeField] public EventReference bouncerMovement { get; private set; }
+
+    [field: Header("Bouncer Launch")]
+    [field: SerializeField] public EventReference bouncerLaunch { get; private set; }
+
+    [field: Header("Brute Shoot")]
+    [field: SerializeField] public EventReference bruteShoot { get; private set; }
+
+    [field: Header("Brute Death")]
+    [field: SerializeField] public EventReference bruteDeath { get; private set; }
 
     // Hazard SFX
 

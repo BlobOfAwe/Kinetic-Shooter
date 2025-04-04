@@ -21,6 +21,8 @@ public class Reflector : MonoBehaviour
     {
         if (collision.CompareTag(enemyBulletTag))
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.reflectorBoltAbility, this.transform.position);
+
             Projectile enemyBullet = collision.GetComponent<Projectile>();
             foreach (GameObject bullet in shootAbility.bullets)
             {

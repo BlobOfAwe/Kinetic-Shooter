@@ -33,6 +33,7 @@ public class AdditionalArms : Upgrade
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
         float offset = offsetAmount;
         for (int i = 0; i < quantity; i++)
         {
@@ -50,7 +51,6 @@ public class AdditionalArms : Upgrade
                     bulletProj.knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
                     bulletProj.damageMultiplier = shootAbility.bulletDamageMultiplier * extraBulletDamageMultiplier;
                     bulletProj.effectModifier = shootAbility.damageModifier * extraBulletDamageMultiplier;
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
                     bullet.SetActive(true);
                     if (offset < 0f)
                     {

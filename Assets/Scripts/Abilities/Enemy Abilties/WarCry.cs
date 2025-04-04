@@ -35,6 +35,8 @@ public class WarCry : Ability
         var rand = Random.Range(0, 3);
         Debug.Log(rand);
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.warCallerCall, this.transform.position);
+
         switch (rand)
         {
             case 0:

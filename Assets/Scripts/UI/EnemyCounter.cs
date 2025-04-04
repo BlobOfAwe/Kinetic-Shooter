@@ -54,16 +54,26 @@ public class EnemyCounter : MonoBehaviour
         {
             parameterController.StageThree();
         }
+        else if (remainingEnemies / totalEnemies < 0.40f)
+        {
+            parameterController.IntensityTwo();
+        }
         else if (remainingEnemies / totalEnemies < 0.50f)
         {
             parameterController.StageTwo();
+        }
+        else if (remainingEnemies / totalEnemies < 0.60f)
+        {
+            parameterController.IntensityTwo();
         }
         else if (remainingEnemies/totalEnemies < 0.75f)
         {
             parameterController.StageOne();
         }
-       
-      
+        else if (remainingEnemies / totalEnemies < 0.90f)
+        {
+            parameterController.IntensityOne();
+        }
     }
 
     public void EnemyDefeated(Enemy enemy)

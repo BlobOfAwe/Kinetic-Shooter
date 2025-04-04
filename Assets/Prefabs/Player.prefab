@@ -74,7 +74,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294963336
   m_fontColor: {r: 0.5330188, g: 0.9405644, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294957824
   m_fontColor: {r: 0, g: 0.8580704, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1127,6 +1127,7 @@ MonoBehaviour:
     hpStat: 200
     recoverStat: 1
   primaryShootAbility: {fileID: 0}
+  parameterController: {fileID: 0}
 --- !u!114 &-2479830224578350400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 1
+  playCooldownSound: 0
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
@@ -1170,6 +1172,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 2
+  playCooldownSound: 1
   knockback: 60
   staggerTime: 0.2
   sideReach: 2
@@ -1193,6 +1196,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 1.5
+  playCooldownSound: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1219,6 +1223,7 @@ MonoBehaviour:
   inUse: 0
   range: 0
   damageModifier: 1
+  playCooldownSound: 0
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
@@ -1253,6 +1258,7 @@ MonoBehaviour:
   inUse: 0
   range: 0
   damageModifier: 1
+  playCooldownSound: 1
   bulletPrefab: {fileID: 8025443713472894268, guid: 8f273e4c6c6b5a44d8f6570244fea74a, type: 3}
   maxBullets: 5
   recoil: 1
@@ -1276,6 +1282,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 3
+  playCooldownSound: 1
   duration: 10
   canDamage:
     serializedVersion: 2
@@ -1302,6 +1309,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 0.2
+  playCooldownSound: 0
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
@@ -1327,6 +1335,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 4
+  playCooldownSound: 1
   bulletPrefab: {fileID: 8025443713472894268, guid: 74b59eeffd7274e45bdccbaac19beb4c, type: 3}
   duration: 5
   minSpeed: 2
@@ -1349,6 +1358,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 1
+  playCooldownSound: 1
   duration: 10
   bouncyMaterial: {fileID: 6200000, guid: 84b4c8a51b322be4a80ed4e0deb24019, type: 2}
   bulletPrefab: {fileID: 5339263874294309275, guid: a292c011c30cb1549b0b015b261a098e, type: 3}
@@ -1372,6 +1382,7 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 1
+  playCooldownSound: 1
   beacon: {fileID: 0}
 --- !u!95 &2862676695539945837
 Animator:

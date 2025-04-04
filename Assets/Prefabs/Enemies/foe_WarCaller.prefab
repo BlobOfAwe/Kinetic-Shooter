@@ -256,6 +256,7 @@ MonoBehaviour:
   inUse: 0
   range: 100
   damageModifier: 1
+  playCooldownSound: 0
   buffIndicators: []
   warCryEffect: {fileID: 7376201268880093719}
   initialIndicators: 10
@@ -282,6 +283,7 @@ MonoBehaviour:
   inUse: 0
   range: 20
   damageModifier: 0
+  playCooldownSound: 0
   enemies:
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}

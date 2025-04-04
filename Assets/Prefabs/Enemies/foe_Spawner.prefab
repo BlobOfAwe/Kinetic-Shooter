@@ -189,6 +189,7 @@ MonoBehaviour:
   inUse: 0
   range: 20
   damageModifier: 0
+  playCooldownSound: 0
   enemies:
   - {fileID: 7955933720918278427, guid: 6867ba6d5d528fd48b2c5c1f96c1cc32, type: 3}
   bossSpawnAnimator: {fileID: 0}
@@ -235,6 +236,7 @@ MonoBehaviour:
   statsDisplay: {fileID: 0}
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   isOnFire: 0
   spawnCost: 15
   target: {fileID: 0}
@@ -248,6 +250,7 @@ MonoBehaviour:
   sightRange: 35
   stayDistance: 10
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0

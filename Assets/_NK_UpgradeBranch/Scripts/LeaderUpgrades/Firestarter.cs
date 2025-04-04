@@ -1,4 +1,4 @@
-using UnityEngine;
+/* using UnityEngine;
 
 public class Firestarter : Upgrade
 {
@@ -22,4 +22,4 @@ public class Firestarter : Upgrade
             AudioManager.instance.PlayOneShot(FMODEvents.instance.firestarterAbility, this.transform.position);
         }
     }
-}
+} */

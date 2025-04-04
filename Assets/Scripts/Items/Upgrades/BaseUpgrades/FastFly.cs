@@ -20,6 +20,9 @@ public class FastFly : Upgrade
     [SerializeField]
     private float defenseIncrease = -0.05f;
 
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
+
 
     public override void ApplyUpgrade(int quantity)
     {
@@ -33,5 +36,6 @@ public class FastFly : Upgrade
         player.attackMultiplier += attackIncrease * quantity;
         //player.defenseMultiplier = Mathf.Pow(player.defenseMultiplier + defenseIncrease, quantity);
         player.defenseMultiplier += defenseIncrease * quantity;
+        parameterController.PlayerFlying();
     }
 }

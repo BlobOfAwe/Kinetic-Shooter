@@ -1,5 +1,6 @@
 // ## - JV
 using FMOD.Studio;
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,16 @@ public class BossBouncerEnemy : Enemy
     [SerializeField]
     private Animator bossAnimator;
 
-    //audio variable for boss movement
-    private EventInstance bouncerMovementSound;
+    //audio emitter variable
+    protected StudioEventEmitter emitter;
 
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
 
     public void Start()
     {
-        bouncerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.bouncerMovement);
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.bouncerMovement, this.gameObject);
+        emitter.Play();
     }
 
     public override void DerivativeUpdate()
@@ -40,19 +43,12 @@ public class BossBouncerEnemy : Enemy
                 SearchForTarget();
                 bossAnimator.SetBool("isMoving", true);
                 PLAYBACK_STATE playbackState;
-                // bouncer movement audio - GZ
-                bouncerMovementSound.getPlaybackState(out playbackState);
-                if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
-                {
-                    bouncerMovementSound.start();
-                }
                 Wander();
                 break;
             case 1: // Attack
                 FaceTarget();
                 if (utility.available) { UseAbility(utility); }
-                // bouncer movement audio - GZ
-                bouncerMovementSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.bouncerLaunch, this.transform.position);
                 break;
         }
     }

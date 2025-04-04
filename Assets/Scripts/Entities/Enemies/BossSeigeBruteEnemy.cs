@@ -49,7 +49,7 @@ public class BossSeigeBruteEnemy : Enemy
             case 1: // Attack
                 if (primary.available) { UseAbility(primary); } // Rockfall Ability
                 else if (secondary.available && !primary.inUse) { UseAbility(secondary); } // Fastball Ability
-
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.bruteShoot, this.transform.position);
                 if (utility.available) { UseAbility(utility); } // Disgorge Basic Enemies
                 // Additional Ability is a passive that applies speed buffs when the boss is shot
 
@@ -75,6 +75,7 @@ public class BossSeigeBruteEnemy : Enemy
         speedBuffs.Remove(speedBuff);
         speedBuff.value += accelerateOnDamageTaken;
         ApplyBuff(speedBuff);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.bruteDeath, this.transform.position);
     }
 
     // If this entity collides with something while it is lunging, attempt to damage it

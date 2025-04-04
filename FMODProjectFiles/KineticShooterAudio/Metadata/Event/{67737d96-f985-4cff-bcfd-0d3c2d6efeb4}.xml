@@ -88,7 +88,7 @@
 		<relationship name="modules">
 			<destination>{36cac029-5bee-459d-a67f-d23eb0b856a9}</destination>
 			<destination>{31e857a2-88e9-442c-9c39-878991a1bac7}</destination>
-			<destination>{ceee885f-8bad-4a16-b692-7ef984045346}</destination>
+			<destination>{771674ad-6c76-4e76-9a26-ba31c09a2f14}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{83d19ee8-e280-48d6-b100-88877ebf44ba}</destination>
@@ -98,7 +98,7 @@
 		<relationship name="modules">
 			<destination>{0ca1edbe-85fe-410e-b81c-282f22c4b33e}</destination>
 			<destination>{85fb87e4-c809-4e2f-a534-54077c0fc26e}</destination>
-			<destination>{ceee885f-8bad-4a16-b692-7ef984045346}</destination>
+			<destination>{771674ad-6c76-4e76-9a26-ba31c09a2f14}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{8b8df889-476f-468c-bbef-82da5d204742}</destination>
@@ -238,18 +238,18 @@
 			<destination>{2d2f9016-baf7-403d-aec2-be810f3a9289}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{ceee885f-8bad-4a16-b692-7ef984045346}">
+	<object class="SingleSound" id="{771674ad-6c76-4e76-9a26-ba31c09a2f14}">
 		<property name="length">
-			<value>29.805714285714284</value>
+			<value>41.534693877551021</value>
+		</property>
+		<property name="volume">
+			<value>10</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{3ce555da-05a8-4d6e-8e2f-a3ab11caa54c}</destination>
+			<destination>{4e942fb6-c2ad-4813-b16a-d49c4b9269c1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{83d19ee8-e280-48d6-b100-88877ebf44ba}">
-		<property name="volume">
-			<value>-15.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -265,10 +265,10 @@
 	</object>
 	<object class="LoopRegion" id="{8b8df889-476f-468c-bbef-82da5d204742}">
 		<property name="position">
-			<value>0</value>
+			<value>0.5</value>
 		</property>
 		<property name="length">
-			<value>28</value>
+			<value>27.5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{80943d55-6a2a-49c0-9b4b-3098a082b794}</destination>

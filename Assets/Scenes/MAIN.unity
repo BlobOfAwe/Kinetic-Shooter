@@ -715,6 +715,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: playCooldownSound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 157162509160279005, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -790,6 +794,14 @@ PrefabInstance:
     - target: {fileID: 2862676695539945837, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523678883190622997, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294957824
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576719190064953895, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294963336
       objectReference: {fileID: 0}
     - target: {fileID: 3963104352107066432, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_AnchorMax.y
@@ -867,6 +879,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 1102249746}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44509,6 +44525,10 @@ PrefabInstance:
       propertyPath: winPanel
       value: 
       objectReference: {fileID: 553722597}
+    - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 1102249746}
     - target: {fileID: 7408100330477493710, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: m_Name
       value: Beacon

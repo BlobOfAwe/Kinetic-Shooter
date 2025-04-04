@@ -61,7 +61,10 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{7705dff0-1ed0-4f79-99b5-c38d93009d4c}">
 		<property name="maxVoices">
-			<value>1</value>
+			<value>3</value>
+		</property>
+		<property name="voiceStealing">
+			<value>3</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{d56cdccc-f335-4967-abb5-b925c5ae3591}" />
@@ -88,7 +91,7 @@
 	</object>
 	<object class="MultiSound" id="{5532f067-0152-483c-b4ab-0a8507abd14c}">
 		<relationship name="sounds">
-			<destination>{097e3e2c-e9f6-45bc-92bc-50fd514314e7}</destination>
+			<destination>{ee6e588b-7194-4214-afe0-e4aac2e65c1c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{944f41cf-0add-4a3b-b2bf-f9babd649897}">
@@ -103,37 +106,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fdd723de-d5a1-4139-8471-8dddf19bc6b0}" />
-	<object class="SingleSound" id="{097e3e2c-e9f6-45bc-92bc-50fd514314e7}">
+	<object class="SingleSound" id="{ee6e588b-7194-4214-afe0-e4aac2e65c1c}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-11</value>
 		</property>
-		<relationship name="modulators">
-			<destination>{dc688277-0889-4c98-97d6-a81f90d6bda8}</destination>
-			<destination>{ec5825b3-2b06-41cc-87d2-33e6a6e24114}</destination>
-		</relationship>
 		<relationship name="audioFile">
-			<destination>{d01bc50e-1146-4a16-8ea7-968ae84a408c}</destination>
+			<destination>{f0e93cb2-cef2-4ce3-88d3-19c6f440a5a7}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7851ca39-c91f-4b53-82b8-b86b1bac9568}" />
 	<object class="MixerBusFader" id="{4b5f7d23-c9c5-4f98-a331-8f939e0bcb3a}" />
-	<object class="RandomizerModulator" id="{dc688277-0889-4c98-97d6-a81f90d6bda8}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="amount">
-			<value>11.5</value>
-		</property>
-	</object>
-	<object class="ADSRModulator" id="{ec5825b3-2b06-41cc-87d2-33e6a6e24114}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>pitch</value>
-		</property>
-		<property name="attackTime">
-			<value>4230.76807</value>
-		</property>
-		<property name="peakValue">
-			<value>44.4444427</value>
-		</property>
-	</object>
 </objects>

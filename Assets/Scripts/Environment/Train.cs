@@ -37,6 +37,8 @@ public class Train : MonoBehaviour
 
     private float nextTrain = 0f;
 
+    private bool isMoving;
+
     private void Start()
     {
         transform.position = startPos;
@@ -51,12 +53,18 @@ public class Train : MonoBehaviour
         } else
         {
             transform.position = Vector2.MoveTowards(transform.position, endPos, speed * Time.deltaTime);
+            if (!isMoving)
+            {
+                isMoving = true;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.trainHazard, this.transform.position);
+            }
         }
 
         if ((Vector2)transform.position == endPos)
         {
             transform.position = startPos;
             nextTrain = trainInterval;
+            isMoving = false;
         }
 
         /*if (hitInfo != null && hitInfo.gameObject.GetComponent<Entity>() != null)

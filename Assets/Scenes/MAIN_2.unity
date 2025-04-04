@@ -817,6 +817,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 773717972}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -44179,6 +44183,10 @@ PrefabInstance:
       propertyPath: beaconIndicator
       value: 
       objectReference: {fileID: 1497419934}
+    - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 773717972}
     - target: {fileID: 7408100330477493710, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: m_Name
       value: Beacon

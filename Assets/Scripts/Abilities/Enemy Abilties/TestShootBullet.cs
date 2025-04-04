@@ -46,7 +46,7 @@ public class TestShootBullet : Ability
     {
         StartCoroutine(BeginCooldown());
 
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.standardPrimary, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)

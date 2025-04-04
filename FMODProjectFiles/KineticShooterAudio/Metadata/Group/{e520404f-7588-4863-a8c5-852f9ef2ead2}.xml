@@ -23,6 +23,7 @@
 			<destination>{f065cc48-7c59-4100-8ae0-032dc6d6989c}</destination>
 			<destination>{15b28914-ef7b-46ec-a413-053a13e3d8b1}</destination>
 			<destination>{8210551a-e9de-4ddf-b158-f18e0de9147b}</destination>
+			<destination>{d4baf742-8876-4332-9d96-da03cde5e1ff}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{842d5554-52b0-46c7-94d2-f8045cda89fc}" />
@@ -42,6 +43,11 @@
 	<object class="Sidechain" id="{8210551a-e9de-4ddf-b158-f18e0de9147b}">
 		<property name="level">
 			<value>1.5</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{d4baf742-8876-4332-9d96-da03cde5e1ff}">
+		<property name="wetLevel">
+			<value>-22.5</value>
 		</property>
 	</object>
 </objects>

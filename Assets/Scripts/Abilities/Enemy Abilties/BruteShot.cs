@@ -89,7 +89,7 @@ public class BruteShot : Ability
 
     private void Shoot()
     {
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.bruteShoot, this.transform.position);
 
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)

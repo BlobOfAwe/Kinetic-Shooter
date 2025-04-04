@@ -213,6 +213,7 @@ MonoBehaviour:
   statsDisplay: {fileID: 0}
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   isOnFire: 0
   spawnCost: 5
   target: {fileID: 0}
@@ -226,6 +227,7 @@ MonoBehaviour:
   sightRange: 20
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
@@ -253,6 +255,7 @@ MonoBehaviour:
   inUse: 0
   range: 5
   damageModifier: 4
+  playCooldownSound: 0
   countdown: 2
   dropoff: 2
   particles: {fileID: 3399787048431711643}
