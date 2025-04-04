@@ -12,6 +12,7 @@ public class WarCry : Ability
     [SerializeField] private LayerMask affectLayers;
     [SerializeField] private GameObject buffIndicatorPrefab;
     [SerializeField] private float buffDuration;
+    [SerializeField] private Animator animator;
 
     new private void Awake()
     {
@@ -35,6 +36,8 @@ public class WarCry : Ability
         var rand = Random.Range(0, 3);
         Debug.Log(rand);
 
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.warCallerCall, this.transform.position);
+
         switch (rand)
         {
             case 0:
@@ -46,7 +49,24 @@ public class WarCry : Ability
             default:
                 buffType = WarCallBuff.buffType.Damage; Debug.LogError("Invalid WarCall Type");  break; 
         }
-        
+        switch (buffType)
+        {
+            case WarCallBuff.buffType.Damage:
+                animator.SetBool("isDamage", true);
+                animator.SetBool("isHealth", false);
+                animator.SetBool("isSpeed", false);
+                break;
+            case WarCallBuff.buffType.Heal:
+                animator.SetBool("isHealth", true);
+                animator.SetBool("isDamage", false);
+                animator.SetBool("isSpeed", false);
+                break;
+            case WarCallBuff.buffType.Speed:
+                animator.SetBool("isSpeed", true);
+                animator.SetBool("isDamage", false);
+                animator.SetBool("isHealth", false);
+                break;
+        }
         // Play the particle system effect for the war call
         warCryEffect.Stop();
         warCryEffect.Play();

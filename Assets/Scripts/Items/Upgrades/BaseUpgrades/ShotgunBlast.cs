@@ -25,6 +25,9 @@ public class ShotgunBlast : Upgrade
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.shotGun, this.transform.position);
+        Debug.Log("shooting");
+
         float offset = offsetAngle;
         for (int i = 0; i < quantity; i++)
         {
@@ -43,7 +46,6 @@ public class ShotgunBlast : Upgrade
                         bulletProj.knockbackMultiplier = shootAbility.bulletKnockbackMultiplier;
                         bulletProj.damageMultiplier = shootAbility.bulletDamageMultiplier;
                         bulletProj.effectModifier = shootAbility.damageModifier;
-
                         bullet.SetActive(true);
                         offset = -offset;
                         Debug.Log("Found A Bullet to Copy");

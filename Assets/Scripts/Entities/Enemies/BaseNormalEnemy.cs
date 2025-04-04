@@ -1,5 +1,9 @@
+using UnityEngine;
+
 public class BaseNormalEnemy : Enemy
 {
+    [SerializeField]
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -25,14 +29,20 @@ public class BaseNormalEnemy : Enemy
             case 0: // Wandering
                 SearchForTarget();
                 Wander();
+                animator.SetBool("isMoving", true);
+                animator.SetBool("isAttacking", false);
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
+                animator.SetBool("isAttacking", false);
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack
                 Strafe();
+                animator.SetBool("isMoving", false);
                 if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
+                animator.SetBool("isAttacking", true);
                 break;
         }
     }

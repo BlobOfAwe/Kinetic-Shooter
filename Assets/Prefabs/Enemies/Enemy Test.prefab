@@ -265,6 +265,7 @@ MonoBehaviour:
   statsDisplay: {fileID: 0}
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   isOnFire: 0
   spawnCost: 0
   target: {fileID: 0}
@@ -278,6 +279,7 @@ MonoBehaviour:
   sightRange: 20.7
   stayDistance: 4.3
   chaseDistance: 6.7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
@@ -305,6 +307,7 @@ MonoBehaviour:
   inUse: 0
   range: 50
   damageModifier: 1
+  playCooldownSound: 0
   bulletPrefab: {fileID: 8025443713472894268, guid: 106f575805b7126459123e6a102f15bf, type: 3}
   maxBullets: 10
   recoil: 1
@@ -330,5 +333,6 @@ MonoBehaviour:
   inUse: 0
   range: 0.5
   damageModifier: 1
+  playCooldownSound: 0
   knockback: 0
   activeTime: 0.1

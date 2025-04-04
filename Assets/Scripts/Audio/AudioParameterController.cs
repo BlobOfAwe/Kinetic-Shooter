@@ -19,6 +19,9 @@ public class AudioParameterController : MonoBehaviour
     [SerializeField] private string parameterNameEnding;
     [SerializeField] private float parameterValueEnding;
 
+    [SerializeField] private string parameterNameFlying;
+    [SerializeField] private float parameterValueFlying;
+
     public void IncrementIntensity()
     {
         if (parameterValueIntensity < 3)
@@ -113,5 +116,11 @@ public class AudioParameterController : MonoBehaviour
     {
         parameterValueStage = 4;
         AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
+
+    public void PlayerFlying()
+    {
+        parameterValueIntensity = 1;
+        AudioManager.instance.SetMusicIntensity(parameterNameFlying, parameterValueFlying);
     }
 }

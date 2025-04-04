@@ -1,7 +1,9 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMOD.Studio;
 public class BaseTwinsEnemy : Enemy
 {
     [SerializeField] private BaseTwinsEnemy twin;
@@ -9,10 +11,21 @@ public class BaseTwinsEnemy : Enemy
     [SerializeField] private BoxCollider2D connector;
     [SerializeField] private ParticleSystem particles;
     [SerializeField] private float orphanedBuffValue;
-    
+
+    //audio emitter variable
+    protected StudioEventEmitter emitter;
+    //protected BaseTwinsEnemy lightingTwinsEnemy;
+
     protected new void Start()
     {
+
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.lightningTwins, this.gameObject);
+        emitter.Play();
+        //lightingTwinsEnemy = FindObjectOfType<BaseTwinsEnemy>();
+
         base.Start();
+
         if (eldest)
         {
             var tempObj = transform.parent;
@@ -24,7 +37,7 @@ public class BaseTwinsEnemy : Enemy
             if (twin.eldest) { Debug.LogError("A pair of lightning twins cannot both be eldest"); }
         }
     }
-    
+
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -94,6 +107,8 @@ public class BaseTwinsEnemy : Enemy
 
             twin.twin = null;
             twin.connector = null;
+            //stops audio emitter
+            emitter.Stop();
             Destroy(connector.gameObject);
         }
         

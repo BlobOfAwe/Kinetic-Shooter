@@ -18,7 +18,7 @@ public class SuddenBurst : Upgrade
         {
             Debug.Log("Bullet with damage of " + shootAbility.bulletDamageMultiplier + " burst into " + fragments + " fragments, each one dealing " + (shootAbility.bulletDamageMultiplier / fragments) + " damage.");
 
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.shotgunGun, shotBullet.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.wideShotsGun, shotBullet.transform.position);
 
             for (int i = 0; i < fragments; i++)
             {

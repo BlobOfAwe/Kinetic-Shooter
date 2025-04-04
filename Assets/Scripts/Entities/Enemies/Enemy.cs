@@ -42,7 +42,7 @@ public abstract class Enemy : Entity
     // I don't know what category to put this in. - NK
     [Header("Other")]
     [SerializeField]
-    protected bool isBoss = false; // Added by Nathaniel Klassen
+    public bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
     protected bool isLeader = false; // Added by Nathaniel Klassen
     [SerializeField]
@@ -59,8 +59,8 @@ public abstract class Enemy : Entity
 
     protected virtual void Start()
     {
-        seeker = GetComponent<Seeker> ();
-        aiPath = GetComponent<AIPath> ();
+        seeker = GetComponent<Seeker>();
+        aiPath = GetComponent<AIPath>();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
         scoreManager = FindObjectOfType<ScoreManager> ();
         specialUpgradeSpawner = FindObjectOfType<SpecialUpgradeSpawner>(); // Added by Nathaniel Klassen
@@ -70,6 +70,9 @@ public abstract class Enemy : Entity
         hpStat *= 1 + GameManager.difficultyCoefficient * 0.2f;
         speedStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
         recoverStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
+        if (BossTracker.Instance != null)
+            BossTracker.Instance.AddBoss(this);
+        UpdateStats();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -78,7 +81,6 @@ public abstract class Enemy : Entity
         base.Update();
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
-
         aiPath.maxSpeed = totalSpeed;
         
         DerivativeUpdate(); // Run derived class-specific logic
@@ -132,9 +134,12 @@ public abstract class Enemy : Entity
             else
             {
                 // Added by Nathaniel Klassen
-                if (specialUpgradeSpawner != null)
+                if (Random.Range(0f, 1f) <= enemyCounterValue)
                 {
-                    specialUpgradeSpawner.SpawnBossUpgrade(transform.position);
+                    if (specialUpgradeSpawner != null)
+                    {
+                        specialUpgradeSpawner.SpawnBossUpgrade(transform.position);
+                    }
                 }
                 Debug.Log("You beat the boss!");
                 // Whatever happens when a boss is defeated goes here.
@@ -292,5 +297,10 @@ public abstract class Enemy : Entity
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange); // The sight range of the enemy
         if (target != null) { Gizmos.DrawLine(transform.position, target.transform.position); } // A direct line to the target
+    }
+    private void OnDestroy()
+    {
+        if (BossTracker.Instance != null)
+            BossTracker.Instance.RemoveBoss(this);
     }
 }

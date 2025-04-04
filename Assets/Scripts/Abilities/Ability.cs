@@ -17,6 +17,8 @@ public abstract class Ability : MonoBehaviour
     protected Entity thisEntity;
     public float currentCooldown { get; protected set; }
 
+    [SerializeField] private bool playCooldownSound = false;
+
     protected virtual void Awake()
     {
         thisEntity = GetComponent<Entity>();
@@ -40,8 +42,11 @@ public abstract class Ability : MonoBehaviour
         currentCooldown = cooldown;
         yield return new WaitForSeconds(cooldown * cooldownMultiplier);
         available = true;
+        if (playCooldownSound)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.cooldownRefresh, this.transform.position);
+        }
     }
-
 
     protected void OnDrawGizmos()
     {

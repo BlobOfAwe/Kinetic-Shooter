@@ -7,6 +7,7 @@ public class LeaderSplitterEnemy : Enemy
     [SerializeField] private LeaderSplitterEnemy[] childSplots;
     [SerializeField] private float splotRepelForce; // How much are the splots repelled from each other after spawning
     [SerializeField] private float iSecondsAfterSplit;
+    [SerializeField] private Animator animator;
 
     new private void Start()
     {
@@ -25,13 +26,21 @@ public class LeaderSplitterEnemy : Enemy
     }
     public override void Death()
     {
+        animator.SetBool("isDead", true);
+        StartCoroutine(DeathSequence());
+    }
+    private IEnumerator DeathSequence()
+    {
+        float deathAnimationLength = 1f; 
+        yield return new WaitForSeconds(deathAnimationLength);
         if (childSplots != null)
         {
             foreach (var splot in childSplots)
             {
+                animator.SetBool("isDead", true);
                 splot.transform.parent = null;
                 splot.gameObject.SetActive(true);
-                
+
                 ApplyInvincibilityBuff(splot);
 
                 Vector2 randomDirection = new Vector2(Random.Range(0, 1), Random.Range(0, 1)).normalized;
@@ -40,7 +49,6 @@ public class LeaderSplitterEnemy : Enemy
         }
         base.Death();
     }
-    
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {

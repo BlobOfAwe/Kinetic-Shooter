@@ -5,7 +5,7 @@
 			<value>BouncerProjectileLaunch</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{3bade6cb-d91d-404a-8981-97fe4df2256c}</destination>
@@ -82,7 +82,11 @@
 			<destination>{47665939-2669-4a73-a033-d7bbf359aca6}</destination>
 		</relationship>
 	</object>
-	<object class="MultiSound" id="{435566d6-a284-4cab-8e18-25aa2c5bcc7b}" />
+	<object class="MultiSound" id="{435566d6-a284-4cab-8e18-25aa2c5bcc7b}">
+		<relationship name="sounds">
+			<destination>{f7a67cec-1e10-456b-bd28-c4f8584368f2}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{07c9e475-8040-4a33-92ec-0038a3d3e30c}">
 		<relationship name="effects">
 			<destination>{0bd4a9e4-6b54-404b-b983-b5a194104303}</destination>
@@ -95,6 +99,22 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8db3ee19-1688-40d6-988e-deac6f808113}" />
+	<object class="MultiSound" id="{f7a67cec-1e10-456b-bd28-c4f8584368f2}">
+		<relationship name="sounds">
+			<destination>{91d8242f-c599-4ceb-8e68-b9f6e2268c93}</destination>
+			<destination>{c69c6ebb-c970-47c0-96d4-16a05ce4790e}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{0bd4a9e4-6b54-404b-b983-b5a194104303}" />
 	<object class="MixerBusFader" id="{171c768c-c4c2-406f-83a6-2ed1b34c8805}" />
+	<object class="SingleSound" id="{91d8242f-c599-4ceb-8e68-b9f6e2268c93}">
+		<relationship name="audioFile">
+			<destination>{29af4fcd-ef80-40c5-a971-ffd166823fa3}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{c69c6ebb-c970-47c0-96d4-16a05ce4790e}">
+		<relationship name="audioFile">
+			<destination>{097d94ad-7fc5-4652-8bc9-1e2187070b82}</destination>
+		</relationship>
+	</object>
 </objects>

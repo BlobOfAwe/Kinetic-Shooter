@@ -9,6 +9,8 @@ public class StandardSecondarySwipe : Ability
     private BoxCollider2D hitbox;
     private SpriteRenderer hitboxSprite;
     private PlayerBehaviour player;
+    [SerializeField]
+    private Animator swipeAnim;
 
     public float knockback;
     [SerializeField] float staggerTime = 3f;
@@ -21,11 +23,11 @@ public class StandardSecondarySwipe : Ability
     new void Awake()
     {
         base.Awake();
-        GameObject hitboxObj = new GameObject("SecondarySwipeHitbox", typeof(BoxCollider2D), typeof(SpriteRenderer));
-        hitboxSprite = hitboxObj.GetComponent<SpriteRenderer>();
-        hitboxSprite.sprite = tempHitbox;
-        hitboxSprite.color = Color.red;
-        hitboxSprite.enabled = false;
+        GameObject hitboxObj = new GameObject("SecondarySwipeHitbox", typeof(BoxCollider2D));
+        //hitboxSprite = hitboxObj.GetComponent<SpriteRenderer>();
+        //hitboxSprite.sprite = tempHitbox;
+        //hitboxSprite.color = Color.red;
+        //hitboxSprite.enabled = false;
 
 
         hitbox = hitboxObj.GetComponent<BoxCollider2D>();
@@ -64,7 +66,8 @@ public class StandardSecondarySwipe : Ability
         hitbox.transform.position = player.firePoint.position;
 
         hitbox.enabled = true;
-        hitboxSprite.enabled = true;
+        //hitboxSprite.enabled = true;
+        swipeAnim.SetTrigger("isSwiping");
         StartCoroutine(BeginCooldown());
         StartCoroutine(DisableAfterSeconds());
         AudioManager.instance.PlayOneShot(FMODEvents.instance.standardSecondary, this.transform.position);
@@ -74,7 +77,7 @@ public class StandardSecondarySwipe : Ability
     {
         yield return new WaitForSeconds(activeTime);
         hitbox.enabled = false;
-        hitboxSprite.enabled=false;
+        //hitboxSprite.enabled=false;
     }
 
     new private void OnDrawGizmos()

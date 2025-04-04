@@ -25,6 +25,7 @@ public class Mine : Projectile
         {
             Collider2D[] objs = Physics2D.OverlapCircleAll(transform.position, range);
             particles.gameObject.SetActive(true);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketImpactAbility, this.transform.position);
             particles.Play();
             foreach (Collider2D obj in objs)
             {

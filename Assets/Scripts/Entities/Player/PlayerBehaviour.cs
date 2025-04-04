@@ -111,6 +111,9 @@ public class PlayerBehaviour : Entity
     
     public ShootAbility primaryShootAbility; // A more specific reference to Entity.primary used by upgrades
 
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
+
     protected override void Awake()
     {
         base.Awake();
@@ -165,11 +168,11 @@ public class PlayerBehaviour : Entity
             {
                 UseAbility(secondary);
             }
-            //aimLine.SetPosition(0, firePoint.position);
-            //aimLine.SetPosition(1, firePoint.position + aimTransform.up * aimLineLength);
+            aimLine.SetPosition(0, firePoint.position);
+            aimLine.SetPosition(1, firePoint.position + aimTransform.up * aimLineLength);
         } else
         {
-            //aimLine.enabled = false;
+            aimLine.enabled = false;
         }
 
         // audio timer
@@ -339,11 +342,13 @@ public class PlayerBehaviour : Entity
                 rb.isKinematic = true;
                 canMoveManually = false;
                 playerAnimator.SetBool("isHunkered", true);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.hunkerDown, this.transform.position);
             }
             else
             {
                 rb.isKinematic = false;
                 canMoveManually = true;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.unhunkerDown, this.transform.position);
                 playerAnimator.SetBool("isHunkered", false);
             }
         }
@@ -570,6 +575,7 @@ public class PlayerBehaviour : Entity
             totalSpeed = 0f;
             playerAnimator.SetTrigger("isDead");
             //SceneManager.LoadScene(gameOverScene);
+         
 
             StartCoroutine(HandleDeath());
         }
@@ -583,6 +589,7 @@ public class PlayerBehaviour : Entity
     public void GameOverPanel()
     {
         //Time.timeScale = 0f;
+        parameterController.EndingLoss();
         gameOverPanel.SetActive(true);
     }
 

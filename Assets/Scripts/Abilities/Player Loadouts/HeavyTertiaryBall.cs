@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,10 +24,16 @@ public class HeavyTertiaryBall : Ability
     private PlayerBehaviour player;
     private Rigidbody2D rb;
     private Coroutine ballCurlCoroutine;
+    [SerializeField]
+    private Animator animator;
 
     // FOR WHITEBOX USE ONLY
-    private Color baseColor;
+    //private Color baseColor;
     private SpriteRenderer sprite;
+
+    //audio variable for player movement
+    private EventInstance heavyAbilityActivate;
+
 
     private void Start()
     {
@@ -35,7 +42,7 @@ public class HeavyTertiaryBall : Ability
         // Initialize Variables
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        baseColor = sprite.color;
+        //baseColor = sprite.color;
         curled = false;
 
         // Construct the armor buff to make the player invincible while curled
@@ -49,6 +56,8 @@ public class HeavyTertiaryBall : Ability
         speedDebuff.buffType = Buff.buffCategory.SPEED_BUFF;
         speedDebuff.modification = Buff.modificationType.Multiplicative;
         speedDebuff.value = 0;
+
+        heavyAbilityActivate = AudioManager.instance.CreateEventInstance(FMODEvents.instance.heavyAbilityActive);
     }
 
     public override void OnActivate()
@@ -56,6 +65,7 @@ public class HeavyTertiaryBall : Ability
         if (!curled)
         {
             rb.isKinematic = true;
+            animator.SetBool("isBall", true);
             curled = true;
             player.canMoveManually = false;
             player.rb.velocity = Vector2.zero;
@@ -65,7 +75,10 @@ public class HeavyTertiaryBall : Ability
             player.primary.available = false;
             player.secondary.StopAllCoroutines();
             player.secondary.available = false;
-            sprite.color = Color.blue;
+            //sprite.color = Color.blue;
+            PLAYBACK_STATE playbackState;
+            heavyAbilityActivate.getPlaybackState(out playbackState);
+            heavyAbilityActivate.start();
 
             ballCurlCoroutine = StartCoroutine(BallCurl());
         }
@@ -73,6 +86,7 @@ public class HeavyTertiaryBall : Ability
         else
         {
             StopCoroutine(ballCurlCoroutine);
+            animator.SetBool("isBall", false);
             rb.isKinematic = false;
             curled = false;
             player.speedBuffs.Remove(speedDebuff);
@@ -85,7 +99,7 @@ public class HeavyTertiaryBall : Ability
     private IEnumerator LungeForward()
     {
         player.capSpeedToTotalSpeed = false;
-        sprite.color = Color.red;
+        //sprite.color = Color.red;
         rb.velocity = -player.aimTransform.up * startupSpeed;
         yield return new WaitForSeconds(startup);
 
@@ -93,6 +107,10 @@ public class HeavyTertiaryBall : Ability
         rb.velocity = Vector2.zero;
         lunging = true;
         rb.AddForce(player.aimTransform.up * lungeForce, ForceMode2D.Impulse);
+
+        heavyAbilityActivate.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.heavyAbilityLaunch, this.transform.position);
+
 
         // Wait for endTime seconds before ending the lunge
         yield return new WaitForSeconds(endtime * (100 / (100 + thisEntity.totalSpeed)));
@@ -107,7 +125,7 @@ public class HeavyTertiaryBall : Ability
 
         StartCoroutine(BeginCooldown());
 
-        sprite.color = baseColor;
+        //sprite.color = baseColor;
     }
     private IEnumerator BallCurl()
     {
@@ -118,7 +136,7 @@ public class HeavyTertiaryBall : Ability
         player.speedBuffs.Remove(speedDebuff);
         player.UpdateStats();
         player.canMoveManually = true;
-        sprite.color = baseColor;
+        //sprite.color = baseColor;
         StartCoroutine(BeginCooldown());
         player.primary.available = true;
         player.secondary.available = true;

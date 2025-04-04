@@ -11,6 +11,7 @@ public class Cushion : Upgrade
         if (FindObjectOfType<CushionShield>() == null)
         {
             Instantiate(cushionShield, player.transform);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.cushionActivateAbility, this.transform.position);
             Debug.Log("Shield activated.");
         } else
         {

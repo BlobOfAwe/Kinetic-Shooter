@@ -33,6 +33,7 @@ public class AdditionalArms : Upgrade
 
     public override void FireUpgradeEffect(int quantity, TestBullet b)
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.extraArmsGun, this.transform.position);
         float offset = offsetAmount;
         for (int i = 0; i < quantity; i++)
         {

@@ -29,6 +29,11 @@ public class RocketLauncher : Upgrade
         // AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketEquipAbility, this.transform.position);
     }
 
+    public override void FireUpgradeEffect(int quantity, TestBullet bullet)
+    {
+        //AudioManager.instance.PlayOneShot(FMODEvents.instance.rocketLaunchAbility, this.transform.position);
+    }
+
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
         //Debug.Log(bullet.transform.position);

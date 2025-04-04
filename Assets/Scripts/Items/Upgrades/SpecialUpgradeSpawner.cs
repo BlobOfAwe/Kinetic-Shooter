@@ -10,12 +10,12 @@ public class SpecialUpgradeSpawner : MonoBehaviour
 
     public void SpawnLeaderUpgrade(Vector2 position)
     {
-        Instantiate(leaderUpgrades[Random.Range(0, leaderUpgrades.Length - 1)], position, Quaternion.identity);
+        Instantiate(leaderUpgrades[Random.Range(0, leaderUpgrades.Length)], position, Quaternion.identity);
     }
 
     public void SpawnBossUpgrade(Vector2 position)
     {
-        SpawnBossUpgrade(position, Random.Range(0, bossUpgrades.Length - 1));
+        SpawnBossUpgrade(position, Random.Range(0, bossUpgrades.Length));
     }
 
     public void SpawnBossUpgrade(Vector2 position, int upgradeToSpawn)

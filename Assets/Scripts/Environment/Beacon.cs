@@ -24,15 +24,15 @@ public class Beacon : MonoBehaviour
     //audio emitter variable
     private StudioEventEmitter emitter;
 
-    public void Awake()
+    // audio parameter controller script
+    [SerializeField] AudioParameterController parameterController;
+
+    public void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.beaconLoop, this.gameObject);
         emitter.Play();
-    }
 
-    private void Start()
-    {
         player = FindAnyObjectByType<PlayerBehaviour>();
         playerInv = player.GetComponentInChildren<InventoryManager>();
         vCam = FindAnyObjectByType<CinemachineVirtualCamera>();
@@ -82,10 +82,11 @@ public class Beacon : MonoBehaviour
         }
         vCam.m_Lens.OrthographicSize = bossCamSize;
     }
-    private IEnumerator WinGame()
+    protected virtual IEnumerator WinGame()
     {
         yield return new WaitForSeconds(1.5f);
         GameManager.difficultyCoefficient++;
+        parameterController.EndingWin();
 
         // If the current level is not the last level, load the next level
         if (GameManager.currentLevel < GameManager.sceneIndexForLevel.Length - 1)
@@ -97,5 +98,6 @@ public class Beacon : MonoBehaviour
         // Otherwise, enable the win panel
         else
             winPanel.SetActive(true);
+            parameterController.EndingWin();
     }
 }

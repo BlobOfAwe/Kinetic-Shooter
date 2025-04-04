@@ -22,6 +22,7 @@ public class Firestarter : Upgrade
         if (Random.Range(0f, 1f) <= igniteChance * quantity * bullet.effectModifier && target.GetComponent<Enemy>() != null)
         {
             target.GetComponent<Entity>().Ignite(tickDamage, tickInterval, burnTime, flame);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.firestarterAbility, this.transform.position);
         }
     }
 }

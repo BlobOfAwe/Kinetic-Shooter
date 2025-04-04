@@ -34,7 +34,7 @@ public class LatchLunge : Ability
         thisEnemy = GetComponent<Enemy>();
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (latched)
         {
