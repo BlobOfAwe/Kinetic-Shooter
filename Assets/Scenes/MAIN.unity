@@ -623,10 +623,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Train 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6584762920356576224, guid: 2407c68f78ed7b640ac9f704a4410366, type: 3}
-      propertyPath: trainInterval
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8209746803958859122, guid: 2407c68f78ed7b640ac9f704a4410366, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44
@@ -52245,10 +52241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6405693058789473037, guid: 2f6b8e9e3d1cc3b4eb6ac908560b75b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8244595721396635039, guid: 2f6b8e9e3d1cc3b4eb6ac908560b75b7, type: 3}
-      propertyPath: trainInterval
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
