@@ -12166,9 +12166,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1137687435}
-          m_TargetAssemblyTypeName: AsyncLoader, Assembly-CSharp
-          m_MethodName: StartAsyncLoad
+        - m_Target: {fileID: 1730333010}
+          m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+          m_MethodName: PlayHoverSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -12234,7 +12234,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1730333012}
+      - m_Target: {fileID: 1137687435}
         m_TargetAssemblyTypeName: AsyncLoader, Assembly-CSharp
         m_MethodName: StartAsyncLoad
         m_Mode: 1
