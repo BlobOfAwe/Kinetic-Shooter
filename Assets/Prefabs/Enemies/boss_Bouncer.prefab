@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3360637977860876143}
   - component: {fileID: 8692585260050756621}
   - component: {fileID: 4313039758088035429}
+  - component: {fileID: -5776428860871452868}
   m_Layer: 7
   m_Name: boss_Bouncer
   m_TagString: Untagged
@@ -261,6 +262,7 @@ MonoBehaviour:
   inUse: 0
   range: 300
   damageModifier: 1
+  playCooldownSound: 0
   canDamage:
     serializedVersion: 2
     m_Bits: 8
@@ -291,6 +293,7 @@ MonoBehaviour:
   inUse: 0
   range: 0
   damageModifier: 0
+  playCooldownSound: 0
   enemies:
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
@@ -315,6 +318,7 @@ MonoBehaviour:
   inUse: 0
   range: 0
   damageModifier: 0
+  playCooldownSound: 0
   bulletPrefab: {fileID: 8025443713472894268, guid: 106f575805b7126459123e6a102f15bf, type: 3}
   amount: 8
   bullets: []
@@ -340,6 +344,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5776428860871452868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1788432580
+      Data2: 1309242010
+      Data3: 240389286
+      Data4: -808402409
+    Path: event:/SFX/Enemy/Boss Enemies/BouncerMovement
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 5
+  OverrideMaxDistance: 10
 --- !u!1 &3898560596170818065
 GameObject:
   m_ObjectHideFlags: 0

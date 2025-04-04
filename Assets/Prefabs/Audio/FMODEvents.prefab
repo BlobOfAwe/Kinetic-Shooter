@@ -1,0 +1,480 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1883036127575695980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6719338817841467937}
+  - component: {fileID: 5197287805839924070}
+  m_Layer: 0
+  m_Name: FMODEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6719338817841467937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883036127575695980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5197287805839924070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883036127575695980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a502a92c0e3566a4dbae3d47f1f610d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <industrialAmbience>k__BackingField:
+    Guid:
+      Data1: 927350164
+      Data2: 1285468481
+      Data3: -700215377
+      Data4: 1609299554
+    Path: event:/Ambience/IndustrialAmbience
+  <jungleAmbience>k__BackingField:
+    Guid:
+      Data1: -651573896
+      Data2: 1232390499
+      Data3: -998787198
+      Data4: -447866585
+    Path: event:/Ambience/JungleAmbience
+  <lavaAmbience>k__BackingField:
+    Guid:
+      Data1: 1735622038
+      Data2: 1291843973
+      Data3: 1007549884
+      Data4: -1258394067
+    Path: event:/Ambience/LavaAmbience
+  <cutsceneAmbience>k__BackingField:
+    Guid:
+      Data1: -152587993
+      Data2: 1301886964
+      Data3: 1072658064
+      Data4: -1345026997
+    Path: event:/Ambience/CutsceneAmbience
+  <mainMenuAmbience>k__BackingField:
+    Guid:
+      Data1: 887122104
+      Data2: 1241842126
+      Data3: 2112299172
+      Data4: -1549523635
+    Path: event:/Ambience/MainMenuAmbience
+  <industrialMusic>k__BackingField:
+    Guid:
+      Data1: -1778707130
+      Data2: 1184199216
+      Data3: -1864536136
+      Data4: -527590678
+    Path: event:/Music/IndustrialMusic
+  <jungleMusic>k__BackingField:
+    Guid:
+      Data1: 1755817413
+      Data2: 1273211194
+      Data3: 795907989
+      Data4: -16685561
+    Path: event:/Music/JungleMusic
+  <lavaMusic>k__BackingField:
+    Guid:
+      Data1: 1919569749
+      Data2: 1167592672
+      Data3: -1066583411
+      Data4: 1813312096
+    Path: event:/Music/LavaMusic
+  <cutsceneMusic>k__BackingField:
+    Guid:
+      Data1: 1911192739
+      Data2: 1194717092
+      Data3: 1896980107
+      Data4: 419629243
+    Path: event:/Music/CutsceneMusic
+  <mainMenuMusic>k__BackingField:
+    Guid:
+      Data1: -84617182
+      Data2: 1320780997
+      Data3: 1286121646
+      Data4: -1639879213
+    Path: event:/Music/MainMenuMusic
+  <extraArmsGun>k__BackingField:
+    Guid:
+      Data1: -2105095142
+      Data2: 1127843030
+      Data3: 1933101963
+      Data4: 38212793
+    Path: event:/SFX/Player/Gun/ExtraArms
+  <wideShotsGun>k__BackingField:
+    Guid:
+      Data1: -1071572239
+      Data2: 1236283329
+      Data3: 440066477
+      Data4: -1542733040
+    Path: event:/SFX/Player/Gun/WideShots
+  <burstGun>k__BackingField:
+    Guid:
+      Data1: 1956097059
+      Data2: 1241748942
+      Data3: -569320289
+      Data4: 878480946
+    Path: event:/SFX/Player/Gun/Burst
+  <impalerGun>k__BackingField:
+    Guid:
+      Data1: -46641624
+      Data2: 1175732451
+      Data3: -14617464
+      Data4: -460939611
+    Path: event:/SFX/Player/Gun/Impaler
+  <shotGun>k__BackingField:
+    Guid:
+      Data1: -497438151
+      Data2: 1264971774
+      Data3: -1408202853
+      Data4: 306646780
+    Path: event:/SFX/Player/Gun/Shotgun
+  <standardPrimary>k__BackingField:
+    Guid:
+      Data1: -803468748
+      Data2: 1316403540
+      Data3: -1116534861
+      Data4: 235773763
+    Path: event:/SFX/Player/Loadouts/StandardPrimary
+  <standardSecondary>k__BackingField:
+    Guid:
+      Data1: 100207332
+      Data2: 1190585209
+      Data3: -1299306096
+      Data4: 1720706253
+    Path: event:/SFX/Player/Loadouts/StandardSecondary
+  <standardAbility>k__BackingField:
+    Guid:
+      Data1: -1348867910
+      Data2: 1206284018
+      Data3: 1888966561
+      Data4: 1378137982
+    Path: event:/SFX/Player/Loadouts/StandardInherent
+  <heavyPrimary>k__BackingField:
+    Guid:
+      Data1: -260175439
+      Data2: 1249803978
+      Data3: 593729180
+      Data4: -1990775894
+    Path: event:/SFX/Player/Loadouts/HeavyPrimary
+  <heavySecondary>k__BackingField:
+    Guid:
+      Data1: -108147872
+      Data2: 1212100701
+      Data3: -1209385061
+      Data4: -224063369
+    Path: event:/SFX/Player/Loadouts/HeavySecondary
+  <heavyAbilityActive>k__BackingField:
+    Guid:
+      Data1: 1241409933
+      Data2: 1268039060
+      Data3: 1146371227
+      Data4: -1170223514
+    Path: event:/SFX/Player/Loadouts/HeavyInherentActive
+  <heavyAbilityLaunch>k__BackingField:
+    Guid:
+      Data1: -962762412
+      Data2: 1256148334
+      Data3: -1286777177
+      Data4: -1470416776
+    Path: event:/SFX/Player/Loadouts/HeavyInherentLaunch
+  <lightPrimary>k__BackingField:
+    Guid:
+      Data1: 1290217954
+      Data2: 1197241856
+      Data3: -299949892
+      Data4: -304458996
+    Path: event:/SFX/Player/Loadouts/LightPrimary
+  <lightSecondary>k__BackingField:
+    Guid:
+      Data1: 1070970810
+      Data2: 1220339827
+      Data3: -931440240
+      Data4: -1103118285
+    Path: event:/SFX/Player/Loadouts/LightSecondary
+  <lightAbilityActive>k__BackingField:
+    Guid:
+      Data1: 688659987
+      Data2: 1308015868
+      Data3: 162375095
+      Data4: -1320496221
+    Path: event:/SFX/Player/Loadouts/LightInherentActive
+  <lightAbilityBounce>k__BackingField:
+    Guid:
+      Data1: -977927201
+      Data2: 1223401663
+      Data3: -1211677510
+      Data4: -2090714115
+    Path: event:/SFX/Player/Loadouts/LightInherentBounce
+  <basicMovement>k__BackingField:
+    Guid:
+      Data1: -36229141
+      Data2: 1294141513
+      Data3: -953129813
+      Data4: 1057355258
+    Path: event:/SFX/Player/Movement/PlayerMovement
+  <hunkerDown>k__BackingField:
+    Guid:
+      Data1: -388545672
+      Data2: 1218592889
+      Data3: -1303876220
+      Data4: -120356962
+    Path: event:/SFX/Player/Notification/HunkerDown
+  <unhunkerDown>k__BackingField:
+    Guid:
+      Data1: 10579818
+      Data2: 1077931920
+      Data3: 223853717
+      Data4: 1190046690
+    Path: event:/SFX/Player/Notification/UnhunkerDown
+  <damageRecieved>k__BackingField:
+    Guid:
+      Data1: -1124263860
+      Data2: 1126890886
+      Data3: -372108923
+      Data4: 334650285
+    Path: event:/SFX/Player/Notification/DamageReceived
+  <electromagnetismAbility>k__BackingField:
+    Guid:
+      Data1: -1617962046
+      Data2: 1101037319
+      Data3: 995591056
+      Data4: 1061848469
+    Path: event:/SFX/Player/Abilities/Electromagnetism
+  <rocketEquipAbility>k__BackingField:
+    Guid:
+      Data1: 1460095135
+      Data2: 1090426644
+      Data3: -1685792605
+      Data4: -873171895
+    Path: event:/SFX/Player/Abilities/RocketEquip
+  <rocketLaunchAbility>k__BackingField:
+    Guid:
+      Data1: 112143292
+      Data2: 1151701248
+      Data3: 1613403825
+      Data4: -1398267207
+    Path: event:/SFX/Player/Abilities/RocketLaunch
+  <rocketImpactAbility>k__BackingField:
+    Guid:
+      Data1: 1097276226
+      Data2: 1131121795
+      Data3: -643835995
+      Data4: -1951134138
+    Path: event:/SFX/Player/Abilities/RocketImpact
+  <lifeInsuranceAbility>k__BackingField:
+    Guid:
+      Data1: 409000531
+      Data2: 1295341906
+      Data3: 857930427
+      Data4: -491788200
+    Path: event:/SFX/Player/Abilities/LifeInsurance
+  <reflectorBoltAbility>k__BackingField:
+    Guid:
+      Data1: 102850567
+      Data2: 1139301960
+      Data3: -36966491
+      Data4: 1533290018
+    Path: event:/SFX/Player/Abilities/ReflectorBolt
+  <firestarterAbility>k__BackingField:
+    Guid:
+      Data1: -910110812
+      Data2: 1221309324
+      Data3: 1890317977
+      Data4: -1662186495
+    Path: event:/SFX/Player/Abilities/Firestarter
+  <cushionActivateAbility>k__BackingField:
+    Guid:
+      Data1: 2021482397
+      Data2: 1154606994
+      Data3: 1594304951
+      Data4: 1799034933
+    Path: event:/SFX/Player/Abilities/CushionActivation
+  <cushionBreakAbility>k__BackingField:
+    Guid:
+      Data1: -2129369673
+      Data2: 1245607506
+      Data3: -585077592
+      Data4: 1927917977
+    Path: event:/SFX/Player/Abilities/CushionBreak
+  <cooldownRefresh>k__BackingField:
+    Guid:
+      Data1: -1559249516
+      Data2: 1247677309
+      Data3: -669685572
+      Data4: 860079539
+    Path: event:/SFX/Player/Abilities/CooldownRefresh
+  <enemyDamaged>k__BackingField:
+    Guid:
+      Data1: 575682992
+      Data2: 1181617191
+      Data3: -850902644
+      Data4: 197350723
+    Path: event:/SFX/Enemy/General/EnemyDamaged
+  <enemyDeath>k__BackingField:
+    Guid:
+      Data1: 867516047
+      Data2: 1196406109
+      Data3: 896789413
+      Data4: -835273138
+    Path: event:/SFX/Enemy/General/EnemyDeath
+  <lightningTwins>k__BackingField:
+    Guid:
+      Data1: -201428753
+      Data2: 1091656458
+      Data3: -1755913571
+      Data4: -411683646
+    Path: event:/SFX/Enemy/Base Enemies/LightningTwins
+  <bladeSpinner>k__BackingField:
+    Guid:
+      Data1: -1578103234
+      Data2: 1207137173
+      Data3: -1736653642
+      Data4: 865333498
+    Path: event:/SFX/Enemy/Base Enemies/BladeSpinner
+  <armadilloBlock>k__BackingField:
+    Guid:
+      Data1: -580065476
+      Data2: 1160959472
+      Data3: -1672333144
+      Data4: -751488505
+    Path: event:/SFX/Enemy/Leader Enemies/ArmadilloBlock
+  <armadilloScream>k__BackingField:
+    Guid:
+      Data1: 1252568591
+      Data2: 1232854582
+      Data3: 1892281729
+      Data4: -1953145865
+    Path: event:/SFX/Enemy/Leader Enemies/ArmadilloScream
+  <warCallerCall>k__BackingField:
+    Guid:
+      Data1: 1602906590
+      Data2: 1167359820
+      Data3: -887888732
+      Data4: -467704829
+    Path: event:/SFX/Enemy/Leader Enemies/WarCallerCall
+  <bossEnemyAppear>k__BackingField:
+    Guid:
+      Data1: 1851311828
+      Data2: 1245489816
+      Data3: 1345939368
+      Data4: 1999352515
+    Path: event:/SFX/Enemy/Boss Enemies/BossEnemyAppear
+  <bouncerMovement>k__BackingField:
+    Guid:
+      Data1: 1788432580
+      Data2: 1309242010
+      Data3: 240389286
+      Data4: -808402409
+    Path: event:/SFX/Enemy/Boss Enemies/BouncerMovement
+  <bouncerLaunch>k__BackingField:
+    Guid:
+      Data1: -1652171420
+      Data2: 1260365286
+      Data3: -1194486598
+      Data4: 1726860539
+    Path: event:/SFX/Enemy/Boss Enemies/BouncerProjectileLaunch
+  <bruteShoot>k__BackingField:
+    Guid:
+      Data1: -1293856281
+      Data2: 1180695581
+      Data3: -953990223
+      Data4: -1286592015
+    Path: event:/SFX/Enemy/Boss Enemies/BruteDeath
+  <bruteDeath>k__BackingField:
+    Guid:
+      Data1: 49502312
+      Data2: 1221116377
+      Data3: 1580658062
+      Data4: 2140326283
+    Path: event:/SFX/Enemy/Boss Enemies/BruteShoot
+  <buffTile>k__BackingField:
+    Guid:
+      Data1: -1101417253
+      Data2: 1306991014
+      Data3: 1984628158
+      Data4: 1569613452
+    Path: event:/SFX/Environment/Hazards/BuffTile
+  <debuffTile>k__BackingField:
+    Guid:
+      Data1: 653230407
+      Data2: 1339476778
+      Data3: -959002490
+      Data4: 1923434001
+    Path: event:/SFX/Environment/Hazards/DebuffTile
+  <geyserHazard>k__BackingField:
+    Guid:
+      Data1: 1089219027
+      Data2: 1300584891
+      Data3: -577911920
+      Data4: -155214097
+    Path: event:/SFX/Environment/Hazards/Geysers
+  <spikeHazard>k__BackingField:
+    Guid:
+      Data1: 2044171095
+      Data2: 1262367208
+      Data3: -1377149005
+      Data4: 1099981047
+    Path: event:/SFX/Environment/Hazards/Spikes
+  <trainHazard>k__BackingField:
+    Guid:
+      Data1: 891102209
+      Data2: 1212086153
+      Data3: -1065712509
+      Data4: 107511840
+    Path: event:/SFX/Environment/Hazards/Train
+  <itemPickup>k__BackingField:
+    Guid:
+      Data1: 926401910
+      Data2: 1149142049
+      Data3: -1309016700
+      Data4: -1763488084
+    Path: event:/SFX/Item/ItemPickup
+  <itemApproach>k__BackingField:
+    Guid:
+      Data1: -1791659208
+      Data2: 1158384876
+      Data3: -1756881735
+      Data4: 1110242641
+    Path: event:/SFX/Item/ItemApproach
+  <beaconLoop>k__BackingField:
+    Guid:
+      Data1: -1233942287
+      Data2: 1177345058
+      Data3: 1693184934
+      Data4: -623727631
+    Path: event:/SFX/Item/Beacon
+  <buttonSelect>k__BackingField:
+    Guid:
+      Data1: 1850641931
+      Data2: 1311686451
+      Data3: 1805157273
+      Data4: -1423489595
+    Path: event:/SFX/UI/ButtonSelect
+  <buttonHover>k__BackingField:
+    Guid:
+      Data1: 1466656654
+      Data2: 1181629018
+      Data3: -2076954988
+      Data4: -1343471472
+    Path: event:/SFX/UI/ButtonHover

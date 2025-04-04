@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3811418780002802434}
   - component: {fileID: 6331633120755361653}
   - component: {fileID: 8198468407160046437}
-  - component: {fileID: 8535706191566579686}
+  - component: {fileID: 7929304768059835843}
   m_Layer: 0
   m_Name: foe_LightningTwinsContainer
   m_TagString: Untagged
@@ -270,6 +270,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7929304768059835843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112369215467155691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -201428753
+      Data2: 1091656458
+      Data3: -1755913571
+      Data4: -411683646
+    Path: event:/SFX/Enemy/Base Enemies/LightningTwins
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 4.55
 --- !u!1 &3438049341815713322
 GameObject:
   m_ObjectHideFlags: 0

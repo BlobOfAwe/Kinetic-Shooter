@@ -243,6 +243,7 @@ MonoBehaviour:
   bulletKnockbackIncrease: 0.05
   attackIncrease: -0.1
   defenseIncrease: -0.05
+  parameterController: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
 --- !u!114 &3058053145853966233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,9 +272,9 @@ MonoBehaviour:
   Preload: 0
   AllowNonRigidbodyDoppler: 0
   Params: []
-  OverrideAttenuation: 0
+  OverrideAttenuation: 1
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 7
 --- !u!114 &5777393897366139749
 MonoBehaviour:
   m_ObjectHideFlags: 0

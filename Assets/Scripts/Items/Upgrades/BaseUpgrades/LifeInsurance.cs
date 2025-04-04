@@ -39,6 +39,7 @@ public class LifeInsurance : Upgrade
         if (target.GetComponent<Entity>() != null)
         {
             player.Heal((healAmount * quantity) * ((bullet.damageMultiplier * player.totalAttack) * (100 / (100 + target.GetComponent<Entity>().totalDefense))));
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.lifeInsuranceAbility, this.transform.position);
         }
     }
 }

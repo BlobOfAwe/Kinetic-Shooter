@@ -14,7 +14,6 @@ public abstract class Item : MonoBehaviour
     public List<StatGrabber> statModifications;
     //audio emitter variable
     protected StudioEventEmitter emitter;
-
     protected PlayerBehaviour player;
 
     protected void Start()

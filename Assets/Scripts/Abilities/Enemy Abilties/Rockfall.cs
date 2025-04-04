@@ -37,7 +37,7 @@ public class Rockfall : Ability
     {
         StartCoroutine(BeginCooldown());
         animator.SetTrigger("isAttacking");
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.bruteShoot, this.transform.position);
 
         int rocks = Random.Range(minRocks, maxBullets);
         for (int i = 0; i < rocks; i++)

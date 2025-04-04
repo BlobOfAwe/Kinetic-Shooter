@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1010502238320199699}
   - component: {fileID: 3455325799420116727}
   - component: {fileID: 6279953958810806973}
+  - component: {fileID: 3236451835059985300}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -154,7 +155,39 @@ MonoBehaviour:
   eruptionDuration: 1
   eruptionInterval: 2
   warningTime: 0.5
+  startDelayMax: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   warningColor: {r: 1, g: 1, b: 0, a: 1}
   eruptionColor: {r: 1, g: 0, b: 0, a: 1}
   playerTag: Player
+--- !u!114 &3236451835059985300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955052843754982336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1089219027
+      Data2: 1300584891
+      Data3: -577911920
+      Data4: -155214097
+    Path: event:/SFX/Environment/Hazards/Geysers
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 5

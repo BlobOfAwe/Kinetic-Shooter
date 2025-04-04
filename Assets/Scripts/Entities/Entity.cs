@@ -127,7 +127,17 @@ public abstract class Entity : MonoBehaviour
                 totalDamage *= 100 / (100 + (cushion * 100));
             }
             health -= totalDamage;
+
+            if (totalDamage <= 0.01f)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.armadilloBlock, this.transform.position);
+            }
+            else
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDamaged, this.transform.position);
+            }
         }
+
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
         if (health <= 0f)

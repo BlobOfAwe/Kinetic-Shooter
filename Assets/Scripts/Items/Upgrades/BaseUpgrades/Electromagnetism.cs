@@ -64,6 +64,7 @@ public class Electromagnetism : Upgrade
             Instantiate(arcLine).GetComponent<ArcLine>().SetParameters(source, closestEnemy.gameObject, arcLineTime);
             //Debug.Log("Arc from " + source.name + " to " + closestEnemy.name + ", dealing " + (player.totalAttack * bullet.damageMultiplier * quantity * arcDamagePercent) + " damage.");
             Debug.DrawLine(source.transform.position, closestEnemy.transform.position, Color.yellow, arcLineTime);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.electromagnetismAbility, this.transform.position);
             arcZoneColor = Color.green;
             arcs -= 1;
             if (arcs > 0)

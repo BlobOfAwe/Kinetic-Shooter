@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class SpinningBlade : MonoBehaviour
@@ -35,7 +36,7 @@ public class SpinningBlade : MonoBehaviour
             {
                 //Debug.Log("HIT " + collision.gameObject.name + " FOR " + damage + " DAMAGE!");
                 collision.gameObject.GetComponent<Enemy>().Damage(damage);
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.swooshMelee, this.transform.position);
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.bladeSpinner, this.transform.position);
             }
             timeToDamage = damageCooldown;
         }

@@ -28,9 +28,11 @@ public class ImpalerRounds : Upgrade
 
     public override void ProjectileUpgradeEffect(TestBullet bullet, GameObject target, int quantity)
     {
+
         //Instantiate(piercingBullet, bullet.transform.position, Quaternion.identity);
         if (target.GetComponent<Entity>() != null)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
             if (!bullet.isPiercing)
             {
                 bullet.isPiercing = true;

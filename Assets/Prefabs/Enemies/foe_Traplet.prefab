@@ -258,6 +258,7 @@ MonoBehaviour:
   inUse: 0
   range: 15
   damageModifier: 0
+  playCooldownSound: 0
   raycastPrecision: 360
   walls:
     serializedVersion: 2
@@ -281,6 +282,7 @@ MonoBehaviour:
   inUse: 0
   range: 1.11
   damageModifier: 1
+  playCooldownSound: 0
   bulletPrefab: {fileID: 8025443713472894268, guid: 41886386877e23742aa7b3a504c18ff9, type: 3}
   maxBullets: 25
   offsetFromWall: 0

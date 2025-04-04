@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class Geyser : MonoBehaviour
@@ -41,12 +42,22 @@ public class Geyser : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    //audio emitter variable
+    protected StudioEventEmitter emitter;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerBehaviour>();
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
         timer = Random.Range(0f, startDelayMax);
+    }
+
+    private void Start()
+    {
+        //creates an audio emitter and plays event
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.geyserHazard, this.gameObject);
+        emitter.Play();
     }
 
     private void Update()

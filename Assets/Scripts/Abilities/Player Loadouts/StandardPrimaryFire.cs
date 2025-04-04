@@ -64,7 +64,6 @@ public class StandardPrimaryFire : ShootAbility
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
         }
 
         // If no inactive bullets were found, throw an error

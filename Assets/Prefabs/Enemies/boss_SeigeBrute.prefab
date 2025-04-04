@@ -263,6 +263,7 @@ MonoBehaviour:
   inUse: 0
   range: 7
   damageModifier: 3
+  playCooldownSound: 0
   rockPrefab: {fileID: 3936140453622299009, guid: 88ab66528e97e024983c64281890aa0d, type: 3}
   maxBullets: 8
   minRocks: 5
@@ -284,6 +285,7 @@ MonoBehaviour:
   inUse: 0
   range: 15
   damageModifier: 1
+  playCooldownSound: 0
   bulletPrefab: {fileID: 8025443713472894268, guid: 5b4ea9faf40a9634092d460368c54d5e, type: 3}
   maxBullets: 2
   recoil: 1
@@ -310,6 +312,7 @@ MonoBehaviour:
   inUse: 0
   range: 0
   damageModifier: 0
+  playCooldownSound: 0
   enemies:
   - {fileID: 3305726313623563983, guid: 6fcfec6ca129d9341ab66df41b08ba72, type: 3}
   - {fileID: 1917370352328444805, guid: cc4120c9f367fcc40ad0cb1c32d02fe9, type: 3}

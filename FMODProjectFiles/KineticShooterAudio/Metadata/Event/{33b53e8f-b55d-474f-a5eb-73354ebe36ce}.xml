@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{964207c9-049e-4496-be16-2efb7b3ec9d0}">
 		<relationship name="sounds">
-			<destination>{c6967905-530d-4da0-9c11-285925abdf54}</destination>
+			<destination>{255f928c-88a0-4c41-bb66-b1613c63dd35}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4af97b76-8bc6-4532-b963-b3cbd51627ee}">
@@ -96,29 +96,39 @@
 	<object class="MixerBusEffectChain" id="{e29eff7c-4271-4d0d-bc07-368d593e9206}">
 		<relationship name="effects">
 			<destination>{39cd2e09-59e0-488e-85ed-419cdf6ce80c}</destination>
-			<destination>{e3115201-480b-480f-b9aa-ed76da5e6e0c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ff012545-c3a7-405c-bc9f-f14d9be8b00c}" />
-	<object class="SingleSound" id="{c6967905-530d-4da0-9c11-285925abdf54}">
+	<object class="MultiSound" id="{255f928c-88a0-4c41-bb66-b1613c63dd35}">
 		<property name="volume">
-			<value>5</value>
+			<value>-9.5</value>
 		</property>
-		<relationship name="audioFile">
-			<destination>{d1411bcb-d810-45a7-9357-0936ceb3b97b}</destination>
+		<relationship name="modulators">
+			<destination>{d73f7301-1061-494e-901f-c232f8bbe3ad}</destination>
+		</relationship>
+		<relationship name="sounds">
+			<destination>{7c8cc68d-0508-4718-bb01-66a07684be9b}</destination>
+			<destination>{ee86eb92-b926-442b-a46d-eb04481eed60}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{0d63aa3e-b4c5-4fa5-8a92-34a969cd8ec4}" />
 	<object class="MixerBusFader" id="{39cd2e09-59e0-488e-85ed-419cdf6ce80c}" />
-	<object class="ThreeEQEffect" id="{e3115201-480b-480f-b9aa-ed76da5e6e0c}">
-		<property name="lowGain">
-			<value>-19.5</value>
+	<object class="RandomizerModulator" id="{d73f7301-1061-494e-901f-c232f8bbe3ad}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
 		</property>
-		<property name="midGain">
-			<value>-7.5</value>
+		<property name="amount">
+			<value>11</value>
 		</property>
-		<property name="highGain">
-			<value>-6</value>
-		</property>
+	</object>
+	<object class="SingleSound" id="{7c8cc68d-0508-4718-bb01-66a07684be9b}">
+		<relationship name="audioFile">
+			<destination>{e6b051b3-4fb0-413d-88c7-ecfed25142d1}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{ee86eb92-b926-442b-a46d-eb04481eed60}">
+		<relationship name="audioFile">
+			<destination>{e144cac5-170b-41ea-8b42-832b39d7fdaf}</destination>
+		</relationship>
 	</object>
 </objects>
