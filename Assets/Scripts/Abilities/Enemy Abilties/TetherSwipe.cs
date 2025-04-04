@@ -17,7 +17,6 @@ public class TetherSwipe : Ability
     [SerializeField] float sideReach = 2f;
 
     [SerializeField] Sprite tempHitbox;
-    [SerializeField] private Sprite debuffUIIcon;
 
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
     new void Awake()

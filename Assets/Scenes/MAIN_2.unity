@@ -990,6 +990,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 773717972}
     - target: {fileID: 8818079687504875579, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: target
       value: 
@@ -998,10 +1002,6 @@ PrefabInstance:
       propertyPath: arrowRectTransform
       value: 
       objectReference: {fileID: 418610655}
-    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
-      propertyPath: parameterController
-      value: 
-      objectReference: {fileID: 773717972}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46751,11 +46751,12 @@ MonoBehaviour:
   - {fileID: 2581933093498011819, guid: 02adad0d5a0d9144c8878862b3e25bdb, type: 3}
   - {fileID: 7673192598118557021, guid: 038fe402f7fc21449aad86160c05ce66, type: 3}
   - {fileID: 8064715954622458216, guid: 6eb461590e55bd543bb76652b1b6b3de, type: 3}
-  hazardPrefabs: []
+  hazardPrefabs:
+  - {fileID: 6574393862147389001, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
   minItems: 6
   maxItems: 8
-  minHazards: 0
-  maxHazards: 0
+  minHazards: 10
+  maxHazards: 20
   levelXMin: -36
   levelXMax: 36
   levelYMin: -27
@@ -47017,6 +47018,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 19151614702368147, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
   m_PrefabInstance: {fileID: 1908882112}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5448727769594965562
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.2099295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.2982264
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3124828624813950523, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6574393862147389001, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
+      propertyPath: m_Name
+      value: Blackberry bush
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28d5997dbc5a4db40a63cfe162a02f3a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -47040,3 +47098,4 @@ SceneRoots:
   - {fileID: 691232815}
   - {fileID: 194655684}
   - {fileID: 163397956}
+  - {fileID: 5448727769594965562}
