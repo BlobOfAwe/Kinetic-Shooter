@@ -47,6 +47,7 @@ public abstract class Entity : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     protected InventoryManager inventoryManager;
     protected SpriteRenderer spriteRenderer;
+    protected Color color;
 
     [SerializeField] private StatsDisplay statsDisplay;
 
@@ -80,6 +81,7 @@ public abstract class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         inventoryManager = GetComponentInChildren<InventoryManager>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        color = spriteRenderer.color;
     }
 
     protected void Update()
@@ -127,7 +129,10 @@ public abstract class Entity : MonoBehaviour
                 totalDamage *= 100 / (100 + (cushion * 100));
             }
             health -= totalDamage;
-
+            if (spriteRenderer != null)
+            {
+                StartCoroutine(DamageFlash());
+            }
             if (totalDamage <= 0.01f)
             {
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.armadilloBlock, this.transform.position);
@@ -143,6 +148,15 @@ public abstract class Entity : MonoBehaviour
         if (health <= 0f)
         {
             Death();
+        }
+    }
+    protected virtual IEnumerator DamageFlash()
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = color * 0.5f;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = color;
         }
     }
     public virtual void Heal(float amount)

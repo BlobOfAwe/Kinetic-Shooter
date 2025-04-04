@@ -7,7 +7,7 @@ public class TetherSwipe : Ability
     private BoxCollider2D hitbox;
     private SpriteRenderer hitboxSprite;
     private BuffUIManager buffUI;
-
+    private Animator animator;
     public float knockback;
     public float activeTime;
     [SerializeField] private float onHitSpeedMod;
@@ -21,6 +21,7 @@ public class TetherSwipe : Ability
     // Create a gameObject as a child of this gameObject and add a BoxCollider2D trigger based on the ability's stats, then disable it
     new void Awake()
     {
+        animator = GetComponent<Animator>();
         base.Awake();
         GameObject hitboxObj = new GameObject("TetherHitbox", typeof(BoxCollider2D), typeof(SpriteRenderer));
         hitboxSprite = hitboxObj.GetComponent<SpriteRenderer>();
@@ -62,7 +63,8 @@ public class TetherSwipe : Ability
     public override void OnActivate()
     {
         hitbox.enabled = true;
-        hitboxSprite.enabled = true;
+        animator.SetTrigger("isAttacking");
+        //hitboxSprite.enabled = true;
         StartCoroutine(BeginCooldown());
         StartCoroutine(DisableAfterSeconds());
     }
