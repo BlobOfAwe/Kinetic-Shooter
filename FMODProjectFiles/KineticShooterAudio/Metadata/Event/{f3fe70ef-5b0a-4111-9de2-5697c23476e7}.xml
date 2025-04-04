@@ -215,6 +215,9 @@
 	</object>
 	<object class="MixerBusFader" id="{e33dbd8f-d21c-498b-9371-3e1f8d00d238}" />
 	<object class="MultibandEqEffect" id="{b8c35b1e-0799-4176-a345-ddf929f04bdd}">
+		<property name="bypass">
+			<value>true</value>
+		</property>
 		<property name="filterTypeA">
 			<value>8</value>
 		</property>
