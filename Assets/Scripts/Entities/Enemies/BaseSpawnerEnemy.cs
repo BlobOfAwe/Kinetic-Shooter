@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseSpawnerEnemy : Enemy
 {
+    [SerializeField]
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -28,10 +30,12 @@ public class BaseSpawnerEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
+                animator.SetBool("isMoving", true);
                 Wander();
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack

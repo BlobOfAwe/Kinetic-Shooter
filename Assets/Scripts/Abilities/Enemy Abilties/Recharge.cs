@@ -7,6 +7,7 @@ public class Recharge : Ability
     private Buff armorBuff;
     private Buff speedDebuff;
     [SerializeField] float duration;
+    private Animator animator;
 
     // FOR WHITEBOX USE ONLY
     private Color baseColor;
@@ -15,7 +16,7 @@ public class Recharge : Ability
     new private void Awake()
     {
         base.Awake();
-
+        animator = GetComponent<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
         baseColor = sprite.color;
 
@@ -38,6 +39,7 @@ public class Recharge : Ability
     public override void OnActivate()
     {
         available = false;
+        
 
         StartCoroutine(VulnerableRecharge());
     }
@@ -46,10 +48,10 @@ public class Recharge : Ability
     {
         thisEntity.defenseBuffs.Remove(armorBuff);
         thisEntity.ApplyBuff(speedDebuff);
-        sprite.color = Color.red;
-
+        // sprite.color = Color.red;
+        animator.SetBool("isDefending", true);
         yield return new WaitForSeconds(duration);
-
+        animator.SetBool("isDefending", false);
         thisEntity.speedBuffs.Remove(speedDebuff);
         thisEntity.ApplyBuff(armorBuff);
 

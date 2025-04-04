@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Rockfall : Ability
 {
+    private Animator animator;
     [SerializeField] FallingRock rockPrefab;
     // Added maxBullets instead of the max number of bullets being hard-coded. - NK
     [SerializeField]
@@ -18,6 +19,7 @@ public class Rockfall : Ability
     // Populate the array bullets with instances of bulletPrefab
     new private void Awake()
     {
+        animator = GetComponent<Animator>();
         base.Awake();
         bullets = new FallingRock[maxBullets];
         for (int i = 0; i < bullets.Length; i++)
@@ -34,7 +36,7 @@ public class Rockfall : Ability
     public override void OnActivate()
     {
         StartCoroutine(BeginCooldown());
-
+        animator.SetTrigger("isAttacking");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
 
         int rocks = Random.Range(minRocks, maxBullets);

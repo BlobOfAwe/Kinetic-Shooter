@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseSpeedDemonEnemy : Enemy
 {
+    [SerializeField]
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -28,15 +30,19 @@ public class BaseSpeedDemonEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
+                animator.SetBool("isMoving", true);
                 Wander();
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack
                 Strafe();
+                animator.SetBool("isMoving", true);
                 if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
+                animator.SetBool("isMoving", false);
                 break;
         }
     }

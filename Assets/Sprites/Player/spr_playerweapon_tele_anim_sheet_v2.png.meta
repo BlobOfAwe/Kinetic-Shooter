@@ -1,0 +1,303 @@
+fileFormatVersion: 2
+guid: 4fe2df11195fd3f40827ba53c90895ad
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6168225, y: 0.8382287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9128825093ee74a8224aeeea98e765
+      internalID: -2000033881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6220146, y: 0.885205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6adc3f0a63a9c4bb394d766c181b56
+      internalID: 1124889828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6272067, y: 0.8382287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8748fad1944d9444886962c640c6708
+      internalID: -1406382614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.58567005, y: 0.7536715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd35b50751cba047ad3626a784e4c1b
+      internalID: -414053517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.58567005, y: 0.77246195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d47c202c0f16d37428c58d3289996b38
+      internalID: -760089341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_5
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5804781, y: 0.7536715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02180e3b0bb582d4cb15bfdcae0eb881
+      internalID: -2002219114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_6
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6349953, y: 0.7912525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6eab8301cc77f54dbd3585c18adddd4
+      internalID: -2116484326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_playerweapon_tele_anim_sheet_v2_7
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 76
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6791285, y: 0.77246195}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c2aaeeffcca1a4b8e950be674706e3
+      internalID: -311290810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      spr_playerweapon_tele_anim_sheet_v2_0: -2000033881
+      spr_playerweapon_tele_anim_sheet_v2_1: 1124889828
+      spr_playerweapon_tele_anim_sheet_v2_2: -1406382614
+      spr_playerweapon_tele_anim_sheet_v2_3: -414053517
+      spr_playerweapon_tele_anim_sheet_v2_4: -760089341
+      spr_playerweapon_tele_anim_sheet_v2_5: -2002219114
+      spr_playerweapon_tele_anim_sheet_v2_6: -2116484326
+      spr_playerweapon_tele_anim_sheet_v2_7: -311290810
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

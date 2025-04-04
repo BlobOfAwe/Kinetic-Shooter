@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4453793798671692911}
   - component: {fileID: 7955933720918278427}
   - component: {fileID: 2444843956360531543}
+  - component: {fileID: 5028277065283571611}
   m_Layer: 7
   m_Name: foe_Normal
   m_TagString: Untagged
@@ -237,6 +238,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  animator: {fileID: 5028277065283571611}
 --- !u!114 &2444843956360531543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +264,27 @@ MonoBehaviour:
   startupSpeed: 1
   lungeForce: 600
   endtime: 1
+--- !u!95 &5028277065283571611
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e78f72211f4a38e43a7306814fdc8ac4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3430238739745844217
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +358,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a91bc57f86b04f4292280704a4cdc04, type: 3}
+  m_Sprite: {fileID: 153180614, guid: ea9cba6c7ce4b6645a26cb8b79e92412, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

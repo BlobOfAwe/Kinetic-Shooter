@@ -243,7 +243,6 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
-  bossAnimator: {fileID: 4313039758088035429}
 --- !u!114 &3490139462273597173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +294,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 4939012426212569785, guid: 55c54049215b6a345931f8abb5bb1716, type: 3}
-  bossSpawnAnimator: {fileID: 536302097104265161}
+  bossSpawnAnimator: {fileID: 2645928613935373750}
   spawnPoint: {fileID: 8589704739381277583}
   localSpawnCredits: 25
 --- !u!114 &8692585260050756621
@@ -319,7 +318,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8025443713472894268, guid: 106f575805b7126459123e6a102f15bf, type: 3}
   amount: 8
   bullets: []
-  bossGunAnimator: {fileID: 8746092702919196880}
+  bossGunAnimator: {fileID: 0}
 --- !u!95 &4313039758088035429
 Animator:
   serializedVersion: 5
@@ -434,8 +433,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8142735573171698112}
-  - component: {fileID: 673962664989321567}
   - component: {fileID: 6768737036415211668}
+  - component: {fileID: 3417514105752439561}
   m_Layer: 7
   m_Name: BossBouncerEyes
   m_TagString: Untagged
@@ -458,27 +457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 553466555589206235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &673962664989321567
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5233543228841819661}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1099383609ec3904e99399a2e4e55ba5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &6768737036415211668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -519,7 +497,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1458479718, guid: 5943f0d90e5ea13409766da87a9f0b1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -531,6 +509,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3417514105752439561
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233543228841819661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1099383609ec3904e99399a2e4e55ba5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7175009721136794416
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +603,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 28078420, guid: b115aa40d57060348aa3a062af14ee91, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b69fd516175f2f4eaac4dba4bbe8da9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -624,7 +623,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7227268736122034157}
-  - component: {fileID: 8746092702919196880}
   - component: {fileID: 5676613041862490126}
   m_Layer: 3
   m_Name: BossBouncerFirePoint
@@ -648,27 +646,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 553466555589206235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8746092702919196880
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8020436932308150862}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b217b1579b2d4294b84052ce27b3b5f5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &5676613041862490126
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -730,8 +707,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8589704739381277583}
-  - component: {fileID: 536302097104265161}
   - component: {fileID: 81397106442893577}
+  - component: {fileID: 2645928613935373750}
   m_Layer: 7
   m_Name: BossBouncerSpawnPoint
   m_TagString: Untagged
@@ -754,27 +731,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 553466555589206235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &536302097104265161
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8417426695389369379}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 744f1c4fa49f6d14dba3ee558fcd5367, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &81397106442893577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -827,3 +783,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2645928613935373750
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417426695389369379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 744f1c4fa49f6d14dba3ee558fcd5367, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

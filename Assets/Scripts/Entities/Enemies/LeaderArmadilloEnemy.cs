@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LeaderArmadilloEnemy : Enemy
 {
-
+    [SerializeField] private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
+
     public override void DerivativeUpdate()
     {
         if (ReadyToStateChange())
@@ -22,10 +23,13 @@ public class LeaderArmadilloEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
+                animator.SetBool("isMoving", true);
+                animator.SetBool("isDefending", false);
                 Wander();
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
                 if (primary.available) { UseAbility(primary); }
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;

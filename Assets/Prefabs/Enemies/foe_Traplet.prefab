@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8123420351666558616}
   - component: {fileID: 3228195953123852849}
   - component: {fileID: 6260670657974642900}
+  - component: {fileID: 3651240974481404652}
   m_Layer: 7
   m_Name: foe_Traplet
   m_TagString: Untagged
@@ -238,6 +239,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 1
+  animator: {fileID: 3651240974481404652}
 --- !u!114 &3228195953123852849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +287,27 @@ MonoBehaviour:
   walls:
     serializedVersion: 2
     m_Bits: 64
+--- !u!95 &3651240974481404652
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6925e9abbcccf246a852d120c7ec72e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3430238739745844217
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +381,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c37cf1591c9a6f14084180bb5ea9e037, type: 3}
+  m_Sprite: {fileID: -385622221, guid: adbffc8918df6de43b722aabbf9dbf48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

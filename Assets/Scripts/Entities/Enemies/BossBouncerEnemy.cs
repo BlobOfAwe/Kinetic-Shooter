@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class BossBouncerEnemy : Enemy
 {
-    [SerializeField]
-    private Animator bossAnimator;
+
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
+    new private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     public override void DerivativeUpdate()
     {
         if (ReadyToStateChange())
@@ -27,7 +31,7 @@ public class BossBouncerEnemy : Enemy
         {
             case 0: // Wandering
                 SearchForTarget();
-                bossAnimator.SetBool("isMoving", true);
+                animator.SetBool("isMoving", true);
                 Wander();
                 break;
             case 1: // Attack
@@ -35,5 +39,16 @@ public class BossBouncerEnemy : Enemy
                 if (utility.available) { UseAbility(utility); }
                 break;
         }
+    }
+    public override void Death()
+    {
+        animator.SetTrigger("isDead");
+        StartCoroutine(DeathSequence());
+    }
+    private IEnumerator DeathSequence()
+    {
+        float deathAnimationLength = 0.8f;
+        yield return new WaitForSeconds(deathAnimationLength);
+        base.Death();
     }
 }

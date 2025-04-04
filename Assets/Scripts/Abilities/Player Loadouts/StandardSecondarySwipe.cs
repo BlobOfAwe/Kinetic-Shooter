@@ -9,6 +9,8 @@ public class StandardSecondarySwipe : Ability
     private BoxCollider2D hitbox;
     private SpriteRenderer hitboxSprite;
     private PlayerBehaviour player;
+    [SerializeField]
+    private Animator swipeAnim;
 
     public float knockback;
     [SerializeField] float staggerTime = 3f;
@@ -63,8 +65,9 @@ public class StandardSecondarySwipe : Ability
         hitbox.transform.rotation = player.firePoint.rotation;
         hitbox.transform.position = player.firePoint.position;
 
-        hitbox.enabled = true;
-        hitboxSprite.enabled = true;
+        //hitbox.enabled = true;
+        //hitboxSprite.enabled = true;
+        swipeAnim.SetTrigger("isSwiping");
         StartCoroutine(BeginCooldown());
         StartCoroutine(DisableAfterSeconds());
         AudioManager.instance.PlayOneShot(FMODEvents.instance.standardSecondary, this.transform.position);

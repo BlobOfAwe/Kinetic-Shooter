@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseTrapletEnemy : Enemy
-{ 
+{
+    [SerializeField]
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -26,14 +28,20 @@ public class BaseTrapletEnemy : Enemy
             case 0: // Wandering
                 SearchForTarget();
                 Wander();
+                animator.SetBool("isMoving", true);
+                animator.SetBool("isTrapping", false);
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
+                animator.SetBool("isTrapping", false);
                 if (primary.available && distanceToTarget < (primary.range)) { UseAbility(primary); }
                 break;
             case 2: // Plant spike
                 Pursue();
                 if (secondary.available && distanceToTarget < (secondary.range)) { UseAbility(secondary); }
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isTrapping", true);
                 break;
         }
     }

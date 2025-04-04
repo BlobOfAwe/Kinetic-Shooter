@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66ad9654488860438b0e324f70a6d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCursor: {fileID: 2800000, guid: 9c7497498a5fc494aae92298ef409c14, type: 3}
-  uiCursor: {fileID: 2800000, guid: 873312c40faa0e4449629b029f2f4f13, type: 3}
-  hotspot: {x: 0, y: 0}
+  reticleTexture: {fileID: 2800000, guid: 9c7497498a5fc494aae92298ef409c14, type: 3}
+  uiCursorTexture: {fileID: 2800000, guid: 873312c40faa0e4449629b029f2f4f13, type: 3}
+  reticleHotSpot: {x: 25, y: 25}
+  uiHotSpot: {x: 0, y: 0}

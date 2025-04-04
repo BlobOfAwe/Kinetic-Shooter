@@ -23,6 +23,8 @@ public class HeavyTertiaryBall : Ability
     private PlayerBehaviour player;
     private Rigidbody2D rb;
     private Coroutine ballCurlCoroutine;
+    [SerializeField]
+    private Animator animator;
 
     // FOR WHITEBOX USE ONLY
     private Color baseColor;
@@ -56,6 +58,7 @@ public class HeavyTertiaryBall : Ability
         if (!curled)
         {
             rb.isKinematic = true;
+            animator.SetBool("isBall", true);
             curled = true;
             player.canMoveManually = false;
             player.rb.velocity = Vector2.zero;
@@ -65,7 +68,7 @@ public class HeavyTertiaryBall : Ability
             player.primary.available = false;
             player.secondary.StopAllCoroutines();
             player.secondary.available = false;
-            sprite.color = Color.blue;
+            //sprite.color = Color.blue;
 
             ballCurlCoroutine = StartCoroutine(BallCurl());
         }
@@ -73,6 +76,7 @@ public class HeavyTertiaryBall : Ability
         else
         {
             StopCoroutine(ballCurlCoroutine);
+            animator.SetBool("isBall", false);
             rb.isKinematic = false;
             curled = false;
             player.speedBuffs.Remove(speedDebuff);

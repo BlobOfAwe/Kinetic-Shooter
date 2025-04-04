@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class BossSeigeBruteEnemy : Enemy
 {
-    [SerializeField]
-    private Animator bossAnimator;
+    
+    private Animator animator;
     [SerializeField]
     private float accelerateOnDamageTaken = 0.1f;
     [SerializeField]
@@ -16,6 +16,7 @@ public class BossSeigeBruteEnemy : Enemy
 
     protected override void Start()
     {
+        animator = GetComponent<Animator>();
         base.Start();
         speedBuff = ScriptableObject.CreateInstance<Buff>();
         speedBuff.buffType = Buff.buffCategory.SPEED_BUFF;
@@ -38,12 +39,11 @@ public class BossSeigeBruteEnemy : Enemy
             }
 
         }
-
         switch (state)
         {
             case 0: // Wandering
                 SearchForTarget();
-                bossAnimator.SetBool("isMoving", true);
+                animator.SetBool("isMoving", true);
                 Wander();
                 break;
             case 1: // Attack
@@ -62,11 +62,9 @@ public class BossSeigeBruteEnemy : Enemy
                 RefreshTarget();
                 break;
         }
-
         speedBuffs.Remove(speedBuff);
         speedBuff.value -= degradeSpeedRate * Time.deltaTime;
         ApplyBuff(speedBuff);
-
     }
 
     public override void Damage(float amount)
@@ -76,7 +74,6 @@ public class BossSeigeBruteEnemy : Enemy
         speedBuff.value += accelerateOnDamageTaken;
         ApplyBuff(speedBuff);
     }
-
     // If this entity collides with something while it is lunging, attempt to damage it
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -84,5 +81,16 @@ public class BossSeigeBruteEnemy : Enemy
         {
             collision.gameObject.GetComponent<Entity>().Damage(totalAttack, true);
         }
+    }
+    public override void Death()
+    {
+        animator.SetTrigger("isDead");
+        StartCoroutine(DeathSequence());
+    }
+    private IEnumerator DeathSequence()
+    {
+        float deathAnimationLength = 0.8f;
+        yield return new WaitForSeconds(deathAnimationLength);
+        base.Death();
     }
 }
