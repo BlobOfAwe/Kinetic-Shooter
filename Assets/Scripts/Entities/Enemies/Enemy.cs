@@ -59,8 +59,8 @@ public abstract class Enemy : Entity
 
     protected virtual void Start()
     {
-        seeker = GetComponent<Seeker> ();
-        aiPath = GetComponent<AIPath> ();
+        seeker = GetComponent<Seeker>();
+        aiPath = GetComponent<AIPath>();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
         scoreManager = FindObjectOfType<ScoreManager> ();
         specialUpgradeSpawner = FindObjectOfType<SpecialUpgradeSpawner>(); // Added by Nathaniel Klassen
@@ -72,6 +72,7 @@ public abstract class Enemy : Entity
         recoverStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
         if (BossTracker.Instance != null)
             BossTracker.Instance.AddBoss(this);
+        UpdateStats();
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -80,7 +81,6 @@ public abstract class Enemy : Entity
         base.Update();
         // As long as a target exists, record how far it is from this object
         if (target) { distanceToTarget = Vector2.Distance(target.transform.position, transform.position); }
-
         aiPath.maxSpeed = totalSpeed;
         
         DerivativeUpdate(); // Run derived class-specific logic

@@ -14,8 +14,9 @@ public class BossBouncerEnemy : Enemy
     protected StudioEventEmitter emitter;
     
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
-    new private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         animator = GetComponent<Animator>();
     }
 
@@ -23,8 +24,9 @@ public class BossBouncerEnemy : Enemy
 
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
 
-    public void Start()
+    protected override void Start()
     {
+        base.Start();
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.bouncerMovement, this.gameObject);
         emitter.Play();
@@ -56,7 +58,7 @@ public class BossBouncerEnemy : Enemy
             case 1: // Attack
                 FaceTarget();
                 if (utility.available) { UseAbility(utility); }
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.bouncerLaunch, this.transform.position);
+                //AudioManager.instance.PlayOneShot(FMODEvents.instance.bouncerLaunch, this.transform.position);
                 break;
         }
     }

@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
                         deathScoreDisplay = display;
                         break;
                     case "WinScoreDisplay":
-                        parameterController.EndingWin();
+                        //parameterController.EndingWin();
                         winScoreDisplay = display;
                         break;
                     default:
