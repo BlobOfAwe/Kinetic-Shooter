@@ -42,6 +42,8 @@ public class Geyser : MonoBehaviour
 
     private SpriteRenderer sr;
 
+    private ParticleSystem particles;
+
     //audio emitter variable
     protected StudioEventEmitter emitter;
 
@@ -50,6 +52,7 @@ public class Geyser : MonoBehaviour
         player = FindObjectOfType<PlayerBehaviour>();
         col = GetComponent<Collider2D>();
         sr = GetComponent<SpriteRenderer>();
+        particles = GetComponent<ParticleSystem>();
         timer = Random.Range(0f, startDelayMax);
     }
 
@@ -102,6 +105,8 @@ public class Geyser : MonoBehaviour
         col.enabled = true;
         timer = eruptionDuration;
         sr.color = eruptionColor;
+        particles.Stop();
+        particles.Play();
     }
 
     private void EruptWarning()
