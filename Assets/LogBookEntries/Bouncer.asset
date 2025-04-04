@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76961e356e0b5c14480652a193ea6e7b, type: 3}
+  m_Name: Bouncer
+  m_EditorClassIdentifier: 
+  entryID: 13
+  entryName: Bouncer
+  entryImage: {fileID: -1125476035, guid: fe587ad96e2e85344ba4eb5feecc9354, type: 3}
+  entryIcon: {fileID: -1125476035, guid: fe587ad96e2e85344ba4eb5feecc9354, type: 3}
+  description: "Classification/Rank: \u2018Boss\u2019 \r\n\r\nPhysiology: An amorphous
+    blob of alien plasma, the bouncer moves fairly slowly most of the time, ejecting
+    other aliens from its body.\n\nBehaviour: Bouncers move slowly most of the time,
+    but can lunge violently towards hostile targets. When it does so, it's body partially
+    solidifies, allowing it to bounce rapidly around its environment, covering all
+    possible escapes."
+  isUnlocked: 1
+  unlockCondition: Kill the Bouncer Boss
+  unlockVariable: callerKills
+  requiredUnlockVariableValue: 0
