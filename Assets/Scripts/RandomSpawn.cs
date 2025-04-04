@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class RandomSpawn : MonoBehaviour
 {
-    [SerializeField]
-    private float minX;
-
-    [SerializeField]
-    private float maxX;
-
-    [SerializeField]
-    private float minY;
-
-    [SerializeField]
-    private float maxY;
+    private MapGenerator mapGenerator;
 
     private Vector2 spawnPosition;
 
+    private void Awake()
+    {
+        mapGenerator = FindObjectOfType<MapGenerator>();
+    }
+
     public void Spawn()
     {
-        spawnPosition.x = Random.Range(minX, maxX);
-        spawnPosition.y = Random.Range(minY, maxY);
+        if (mapGenerator != null)
+        {
+            spawnPosition.x = Random.Range(mapGenerator.levelXMin, mapGenerator.levelXMax);
+            spawnPosition.y = Random.Range(mapGenerator.levelYMin, mapGenerator.levelYMax);
+        } else
+        {
+            spawnPosition = Vector2.zero;
+        }
         transform.position = spawnPosition;
         GraphNode node = AstarPath.active.GetNearest(transform.position, NNConstraint.Default).node;
         transform.position = (Vector3)node.position;

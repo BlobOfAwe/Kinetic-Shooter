@@ -38,6 +38,14 @@ public class MapGenerator : MonoBehaviour
     [SerializeField]
     private int maxHazards = 0;
 
+    public float levelXMin = -1f;
+
+    public float levelXMax = 1f;
+
+    public float levelYMin = -1f;
+
+    public float levelYMax = 1f;
+
     private void Awake()
     {
         positions = new Transform[positionRows[0].transforms.Length, positionRows.Length];
