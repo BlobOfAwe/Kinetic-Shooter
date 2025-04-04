@@ -24,10 +24,12 @@ public class BruteShot : Ability
     private Buff speedDebuff;
     private LineRenderer lineRender;
     private Enemy thisEnemy;
+    private Animator animator;
 
     // Populate the array bullets with instances of bulletPrefab
     new private void Awake()
     {
+        animator = GetComponent<Animator>();
         base.Awake();
         bullets = new GameObject[maxBullets];
         for (int i = 0; i < bullets.Length; i++)
@@ -90,7 +92,7 @@ public class BruteShot : Ability
     private void Shoot()
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.turretShotAbility, this.transform.position);
-
+        animator.SetTrigger("isAttacking");
         // Check for the first available inactive bullet, and activate it from this object's position
         foreach (GameObject bullet in bullets)
         {

@@ -17,8 +17,8 @@ GameObject:
   - component: {fileID: 2025566866386047605}
   - component: {fileID: 3824037137724082642}
   - component: {fileID: 3360637977860876143}
-  - component: {fileID: 4313039758088035429}
   - component: {fileID: 4956321145471153201}
+  - component: {fileID: 2192405600704870713}
   m_Layer: 7
   m_Name: boss_SeigeBrute
   m_TagString: Untagged
@@ -215,9 +215,10 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  isInvincible: 0
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
+  isOnFire: 0
   spawnCost: 100
   target: {fileID: 0}
   seeker: {fileID: 0}
@@ -234,11 +235,13 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 1
+  isLeader: 0
   enemyName: Seige Brute
   score: 0
   enemyCounterValue: 1
+  leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
-  bossAnimator: {fileID: 4313039758088035429}
+  bossAnimator: {fileID: 0}
   accelerateOnDamageTaken: 0.5
   degradeSpeedRate: 0.1
 --- !u!114 &2025566866386047605
@@ -313,27 +316,6 @@ MonoBehaviour:
   bossSpawnAnimator: {fileID: 0}
   spawnPoint: {fileID: 553466555589206235}
   localSpawnCredits: 25
---- !u!95 &4313039758088035429
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863582455569772561}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d9e4dea91d84b0d40bc69bec2c11c7e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!120 &4956321145471153201
 LineRenderer:
   serializedVersion: 2
@@ -438,6 +420,27 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!95 &2192405600704870713
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 489842b2a1e75df49a85e5d9621ba65c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7175009721136794416
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +519,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -531,7 +534,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7227268736122034157}
-  - component: {fileID: 8746092702919196880}
   - component: {fileID: 5676613041862490126}
   m_Layer: 3
   m_Name: BossBouncerFirePoint
@@ -555,27 +557,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 553466555589206235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8746092702919196880
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8020436932308150862}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b217b1579b2d4294b84052ce27b3b5f5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &5676613041862490126
 SpriteRenderer:
   m_ObjectHideFlags: 0

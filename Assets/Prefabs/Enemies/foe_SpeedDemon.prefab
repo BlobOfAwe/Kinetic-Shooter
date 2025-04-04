@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4453793798671692911}
   - component: {fileID: 8768425740899451525}
   - component: {fileID: 6319996032255132710}
+  - component: {fileID: 7054410301508322081}
   m_Layer: 7
   m_Name: foe_SpeedDemon
   m_TagString: Untagged
@@ -213,6 +214,7 @@ MonoBehaviour:
   statsDisplay: {fileID: 0}
   isFlammable: 1
   cushion: 0
+  capSpeedToTotalSpeed: 1
   isOnFire: 0
   spawnCost: 10
   target: {fileID: 0}
@@ -226,6 +228,7 @@ MonoBehaviour:
   sightRange: 20
   stayDistance: 5
   chaseDistance: 7
+  rotationSpeed: 2
   pursuitDuration: 0
   state: 0
   isBoss: 0
@@ -235,6 +238,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  animator: {fileID: 7054410301508322081}
 --- !u!114 &6319996032255132710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +266,27 @@ MonoBehaviour:
   endtime: 1
   latched: 0
   stunDuration: 5
+--- !u!95 &7054410301508322081
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7210f4cca4454474ca57347d21a952e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &938633410468682402
 GameObject:
   m_ObjectHideFlags: 0

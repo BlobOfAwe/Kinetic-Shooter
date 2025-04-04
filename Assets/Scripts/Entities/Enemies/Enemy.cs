@@ -42,7 +42,7 @@ public abstract class Enemy : Entity
     // I don't know what category to put this in. - NK
     [Header("Other")]
     [SerializeField]
-    protected bool isBoss = false; // Added by Nathaniel Klassen
+    public bool isBoss = false; // Added by Nathaniel Klassen
     [SerializeField]
     protected bool isLeader = false; // Added by Nathaniel Klassen
     [SerializeField]
@@ -70,6 +70,8 @@ public abstract class Enemy : Entity
         hpStat *= 1 + GameManager.difficultyCoefficient * 0.2f;
         speedStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
         recoverStat *= 1 + GameManager.difficultyCoefficient * 0.1f;
+        if (BossTracker.Instance != null)
+            BossTracker.Instance.AddBoss(this);
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
@@ -292,5 +294,10 @@ public abstract class Enemy : Entity
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange); // The sight range of the enemy
         if (target != null) { Gizmos.DrawLine(transform.position, target.transform.position); } // A direct line to the target
+    }
+    private void OnDestroy()
+    {
+        if (BossTracker.Instance != null)
+            BossTracker.Instance.RemoveBoss(this);
     }
 }

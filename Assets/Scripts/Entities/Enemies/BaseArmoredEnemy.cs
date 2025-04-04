@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseArmoredEnemy : Enemy
 {
+    [SerializeField]
+    private Animator animator;
     // DerivativeUpdate is called once per frame as a part of the abstract Enemy class' Update()
     public override void DerivativeUpdate()
     {
@@ -22,10 +24,14 @@ public class BaseArmoredEnemy : Enemy
             case 0: // Wandering
                 SearchForTarget();
                 Wander();
+                animator.SetBool("isMoving", true);
+                //animator.SetBool("isAttacking", false);
                 break;
             case 1: // Pursuit
                 Pursue();
+                animator.SetBool("isMoving", true);
                 if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
+                //animator.SetBool("isAttacking", true);
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
         }

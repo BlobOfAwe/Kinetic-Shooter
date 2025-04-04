@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 /// <summary>
@@ -14,15 +15,15 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current != null && !EventSystem.current.IsPointerOverGameObject())
         {
             Cursor.visible = true;
-            Cursor.SetCursor(uiCursorTexture, uiHotSpot, CursorMode.Auto);
+            Cursor.SetCursor(reticleTexture, reticleHotSpot, CursorMode.Auto);
         }
         else
         {
             Cursor.visible = true;
-            Cursor.SetCursor(reticleTexture, reticleHotSpot, CursorMode.Auto);
+            Cursor.SetCursor(uiCursorTexture, uiHotSpot, CursorMode.Auto);
         }
     }
 }

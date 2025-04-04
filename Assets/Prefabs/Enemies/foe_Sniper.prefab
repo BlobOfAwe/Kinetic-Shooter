@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4939012426212569785}
   - component: {fileID: 7324984096438370378}
   - component: {fileID: 5090649625414642468}
+  - component: {fileID: 5960396712181214541}
   m_Layer: 7
   m_Name: foe_Sniper
   m_TagString: Untagged
@@ -238,6 +239,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  animator: {fileID: 5960396712181214541}
 --- !u!114 &7324984096438370378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +317,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5960396712181214541
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3815d497f2915624d83bc50f5e6a2bc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1415236656105136016
 GameObject:
   m_ObjectHideFlags: 0

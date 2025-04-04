@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3811418780002802434}
   - component: {fileID: 6331633120755361653}
   - component: {fileID: 8198468407160046437}
+  - component: {fileID: 8535706191566579686}
   m_Layer: 0
   m_Name: foe_LightningTwinsContainer
   m_TagString: Untagged
@@ -247,6 +248,28 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  animator: {fileID: 0}
+--- !u!95 &8535706191566579686
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112369215467155691}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 180326084db87bd44831a63b3e647b2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3438049341815713322
 GameObject:
   m_ObjectHideFlags: 0
