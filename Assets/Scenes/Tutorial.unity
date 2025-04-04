@@ -649,7 +649,7 @@ MonoBehaviour:
   bossXOffsetMax: 2
   bossYOffsetMin: -2
   bossYOffsetMax: 2
-  beacon: {fileID: 0}
+  beacon: {fileID: 298994680}
   enemyCounterText: {fileID: 1497419932}
   beaconIndicator: {fileID: 1497419934}
   parameterController: {fileID: 1102249746}
@@ -773,6 +773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2272644414554483721, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: beaconIndicator
+      value: 
+      objectReference: {fileID: 1497419934}
     - target: {fileID: 7408100330477493710, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: m_Name
       value: Beacon
