@@ -52,7 +52,16 @@ public class Beacon : MonoBehaviour
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].Death();
+            // Splitters behave uniquely when dying. Destroy them directly to avoid problematic behaviour
+            if (enemies[i].GetType() == typeof(LeaderSplitterEnemy))
+            {
+                Destroy(enemies[i].gameObject);
+            }
+            else
+            {
+                enemies[i].Death();
+            }
+
         }
         
         Debug.Log("Beacon activated!");
