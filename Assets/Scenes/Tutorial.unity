@@ -1283,6 +1283,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: parameterController
+      value: 
+      objectReference: {fileID: 1102249746}
     - target: {fileID: 8818079687504875579, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: target
       value: 
@@ -64553,7 +64557,7 @@ Transform:
   m_GameObject: {fileID: 1479278621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.21982, y: -3.1000009, z: -10}
+  m_LocalPosition: {x: -28.214334, y: -3.1000009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
