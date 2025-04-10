@@ -29,6 +29,7 @@ public abstract class Item : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerBehaviour>() != null)
         {
             collision.GetComponentInChildren<InventoryManager>().AddItem(this);
+            Debug.Log("Added item: " + this);
 
             emitter.Stop();
             gameObject.SetActive(false); // The item should be disabled, not destroyed. Otherwise, the item that goes into the inventory will be missing.
