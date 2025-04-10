@@ -330,7 +330,7 @@ AnimatorStateMachine:
     m_Position: {x: 790, y: 220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1959993620252993468}
-    m_Position: {x: 280, y: -130, z: 0}
+    m_Position: {x: -40, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1251533759131600229}
     m_Position: {x: 380, y: 300, z: 0}
@@ -590,7 +590,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: isAudioPanel
     m_Type: 4
@@ -608,7 +608,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: isLoadoutMenu
     m_Type: 4
