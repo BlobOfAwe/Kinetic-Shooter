@@ -119,29 +119,21 @@ public abstract class Entity : MonoBehaviour
         
         // Obsolete. Invincibility is now handled differently.
         //if (!isInvincible)
+
+        float totalDamage = amount * (100 / (100 + totalDefense));
+        if (isContactDamage)
         {
-            float totalDamage = amount * (100 / (100 + totalDefense));
-            if (isContactDamage)
-            {
-                totalDamage *= 1f - cushion;
-            } else
-            {
-                totalDamage *= 100 / (100 + (cushion * 100));
-            }
-            health -= totalDamage;
-            if (spriteRenderer != null)
-            {
-                StartCoroutine(DamageFlash());
-            }
-            if (totalDamage <= 0.01f)
-            {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.armadilloBlock, this.transform.position);
-            }
-            else
-            {
-                AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDamaged, this.transform.position);
-            }
+            totalDamage *= 1f - cushion;
+        } else
+        {
+            totalDamage *= 100 / (100 + (cushion * 100));
         }
+        health -= totalDamage;
+        if (spriteRenderer != null)
+        {
+            StartCoroutine(DamageFlash());
+        }
+
 
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);

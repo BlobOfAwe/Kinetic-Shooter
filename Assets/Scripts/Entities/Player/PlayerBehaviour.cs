@@ -361,9 +361,17 @@ public class PlayerBehaviour : Entity
         //hpBar.TakeDamage(amount);
         if (audioTimer <= 0)
         {
-            //plays damage sound
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
             audioTimer = 0.5f;
+            float totalDamage = amount * (100 / (100 + totalDefense));
+            if (totalDamage <= 0.01f)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.armadilloBlock, this.transform.position);
+            }
+            else
+            {
+                //plays damage sound
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.damageRecieved, this.transform.position);
+            }
         }
         
         /*if (!isInvincible)
