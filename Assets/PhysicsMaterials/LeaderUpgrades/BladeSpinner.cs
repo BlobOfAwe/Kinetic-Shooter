@@ -13,14 +13,14 @@ public class BladeSpinner : Upgrade
     private GameObject blade;
 
     //audio emitter variable
-    protected StudioEventEmitter emitter;
+    //protected StudioEventEmitter emitter;
 
-    public void Start()
+    /*public void Start()
     {
         //creates an audio emitter and plays event
         emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.itemApproach, this.gameObject);
         emitter.Play();
-    }
+    }*/
 
     public override void ApplyUpgrade(int quantity)
     {
