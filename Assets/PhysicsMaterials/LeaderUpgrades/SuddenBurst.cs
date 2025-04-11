@@ -14,7 +14,7 @@ public class SuddenBurst : Upgrade
 
     public override void ProjectileUpgradeEffect(TestBullet shotBullet, GameObject target, int quantity)
     {
-        if (Random.Range(0f, 1f) <= burstChance * quantity && shotBullet.isBursting)
+        if (Random.Range(0f, 1f) <= burstChance * quantity * shotBullet.effectModifier && shotBullet.isBursting)
         {
             Debug.Log("Bullet with damage of " + shootAbility.bulletDamageMultiplier + " burst into " + fragments + " fragments, each one dealing " + (shootAbility.bulletDamageMultiplier / fragments) + " damage.");
 

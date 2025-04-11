@@ -6432,6 +6432,7 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 1
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 60
@@ -6454,8 +6455,8 @@ MonoBehaviour:
   inUse: 0
   range: 3
   damageModifier: 2
-  swipeAnim: {fileID: 4349683947698627306}
   playCooldownSound: 1
+  swipeAnim: {fileID: 4349683947698627306}
   knockback: 60
   staggerTime: 0.2
   sideReach: 2
@@ -6510,6 +6511,7 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 30
@@ -6517,12 +6519,15 @@ MonoBehaviour:
   damageModOne: 0.5
   recoilModOne: 1
   scaleModOne: 1
+  effectModOne: 0
   damageModTwo: 1
   recoilModTwo: 3
   scaleModTwo: 1.5
+  effectModTwo: 0
   damageModThree: 1.5
   recoilModThree: 10
   scaleModThree: 3
+  effectModThree: 0
 --- !u!114 &8881820493473276149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,6 +6602,7 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 0.2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 20
