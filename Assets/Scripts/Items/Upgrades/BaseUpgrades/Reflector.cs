@@ -12,9 +12,12 @@ public class Reflector : MonoBehaviour
 
     private ShootAbility shootAbility;
 
+    public Animator animator;
+
     private void Awake()
     {
         shootAbility = FindObjectOfType<PlayerBehaviour>().gameObject.GetComponent<ShootAbility>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +25,6 @@ public class Reflector : MonoBehaviour
         if (collision.CompareTag(enemyBulletTag))
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.reflectorBoltAbility, this.transform.position);
-
             Projectile enemyBullet = collision.GetComponent<Projectile>();
             foreach (GameObject bullet in shootAbility.bullets)
             {

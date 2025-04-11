@@ -10,6 +10,7 @@ public class StandardTertiaryBoomDash : Ability
     [SerializeField] private float explosionKnockback;
     [SerializeField] private float dashForce;
     [SerializeField] private float dashDuration;
+    [SerializeField] private ParticleSystem particles;
     private PlayerBehaviour player;
     private SpriteRenderer hurtbox;
     [SerializeField] Sprite tempHitBox;
@@ -61,11 +62,15 @@ public class StandardTertiaryBoomDash : Ability
 
     IEnumerator DisplayExplosionHitbox()
     {
-        hurtbox.transform.position = transform.position;
-        hurtbox.transform.localScale = Vector2.one * range * 2;
-        hurtbox.enabled = true;
+        particles.transform.position = transform.position;
+        particles.transform.localScale = Vector2.one * range * 2;
+        particles.transform.parent = null;
+        particles.gameObject.SetActive(true);
+        particles.Play();
+        //hurtbox.enabled = true;
         yield return new WaitForSeconds(0.5f);
-        hurtbox.enabled = false;
+        particles.gameObject.SetActive(false);
+        //hurtbox.enabled = false;
     }
 
     IEnumerator RemoveSpeedCap()

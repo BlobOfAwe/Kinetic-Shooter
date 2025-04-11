@@ -11,16 +11,25 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private string description;
     public string title;
     public List<StatGrabber> modifications;
+    void Awake()
+    {
+        sidebar = FindObjectOfType<InventoryManager>();
+        if (sidebar != null)
+        {
+            Initialize(sidebar, "string description");
+        }
+    }
     public void Initialize(InventoryManager sidebar, string description)
     {
         this.sidebar = sidebar;
         this.description = description;
     
     //this.description = title;
-}
+    }
 
-   
-    public void OnPointerEnter(PointerEventData eventData)
+
+
+        public void OnPointerEnter(PointerEventData eventData)
     {
         sidebar.ShowTooltip(title, description, modifications);
         //sidebar.ShowTooltip(title);

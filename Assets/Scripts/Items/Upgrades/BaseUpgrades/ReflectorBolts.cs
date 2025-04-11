@@ -19,8 +19,7 @@ public class ReflectorBolts : Upgrade
 
     [SerializeField]
     private Vector2 reflectorOffset = Vector2.zero;
-
-
+   // private Animator animator;
     public override void ApplyUpgrade(int quantity)
     {
         base.ApplyUpgrade(quantity);
@@ -37,6 +36,8 @@ public class ReflectorBolts : Upgrade
             if (bullet != null)
             {
                 GameObject reflector = Instantiate(reflectorPrefab, bullet.transform, false);
+                Animator animator = reflector.GetComponent<Animator>();
+                animator.SetTrigger("isShooting");
                 reflector.transform.Translate(reflectorOffset);
                 reflector.GetComponent<Reflector>().reflects = quantity;
             }

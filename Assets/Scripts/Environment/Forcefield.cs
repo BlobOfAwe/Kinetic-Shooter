@@ -29,7 +29,7 @@ public class Forcefield : MonoBehaviour
             //FindAnyObjectByType<AudioParameterController>().IncrementIntensity(2);
             //sr.enabled = true;
             beaconZone.enabled = true;
-            beaconIndicator.GetComponent<Image>().enabled = false;
+            beaconIndicator.SetActive(false);
             //Debug.Log("Player entered the beacon radius.");
             forcefieldCollider.enabled = true;
             FindObjectOfType<EnemyCounter>().SpawnBoss();

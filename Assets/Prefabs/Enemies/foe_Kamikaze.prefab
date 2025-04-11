@@ -37,7 +37,6 @@ Transform:
   m_Children:
   - {fileID: 5894557207145226070}
   - {fileID: 2650934399078723129}
-  - {fileID: 9109462433348042759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8341179428624320036
@@ -232,12 +231,13 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: Kamikaze
   score: 3
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  initializedByParent: 0
 --- !u!114 &-5988937039465329921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,6 +398,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3144707555970100491, guid: df62889d9ffc64c44b54ac47fa1c3d82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982553413982269599, guid: df62889d9ffc64c44b54ac47fa1c3d82, type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

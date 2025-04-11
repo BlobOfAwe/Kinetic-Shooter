@@ -145,7 +145,6 @@ public class PlayerBehaviour : Entity
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
         playerAnimator.SetTrigger("isTeleportingIn");
-        playerGunAnimator.SetTrigger("isTeleportingIn");
 
         pauseMenu = FindObjectOfType<PauseMenu>();
         inventory = FindObjectOfType<InventoryManager>();
@@ -471,7 +470,7 @@ public class PlayerBehaviour : Entity
                 {
                     // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
                     //Added the animator trigger back in because it was interacting weirdly with the ability activation causing the animation to play twice for a single instance of primary activation. Z.S
-                    playerGunAnimator.SetTrigger("isShooting");
+                    
                     
                     isFiringPrimary = true;
                     //AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);
@@ -600,7 +599,6 @@ public class PlayerBehaviour : Entity
             isGameEnd = true;
             totalSpeed = 0f;
             playerAnimator.SetTrigger("isTeleporting");
-            playerGunAnimator.SetTrigger("isTeleporting");
         }
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu

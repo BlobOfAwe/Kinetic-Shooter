@@ -56,6 +56,7 @@ public abstract class Enemy : Entity
     [SerializeField]
     private bool rotateSpriteToFacePlayer = false;
     private bool dead;
+    public bool initializedByParent = false;
 
     protected virtual void Start()
     {
@@ -73,6 +74,10 @@ public abstract class Enemy : Entity
         if (BossTracker.Instance != null)
             BossTracker.Instance.AddBoss(this);
         UpdateStats();
+        if (!initializedByParent)
+        {
+            health = maxHealth;
+        }
     }
 
     public abstract void DerivativeUpdate(); // Used by derivative classes to contain class specific logic, called by the abstract class Update() every frame
