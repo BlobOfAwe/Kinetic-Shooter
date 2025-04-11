@@ -97,7 +97,10 @@ public class Beacon : MonoBehaviour
         }
         // Otherwise, enable the win panel
         else
+        {
             winPanel.SetActive(true);
             parameterController.EndingWin();
+            FindObjectOfType<CursorManager>().isEndScreen = true;
+        }
     }
 }

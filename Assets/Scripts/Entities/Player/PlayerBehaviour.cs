@@ -591,6 +591,7 @@ public class PlayerBehaviour : Entity
         //Time.timeScale = 0f;
         parameterController.EndingLoss();
         gameOverPanel.SetActive(true);
+        FindObjectOfType<CursorManager>().isEndScreen = true;
     }
 
     public void TeleportAnim()
