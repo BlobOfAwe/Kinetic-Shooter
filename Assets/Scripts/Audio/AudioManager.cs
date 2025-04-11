@@ -24,6 +24,9 @@ public class AudioManager : MonoBehaviour
     private EventInstance ambienceEventInstance;
     private EventInstance musicEventInstance;
 
+    private EventInstance menuMusic;
+    private EventInstance industrialMusic;
+
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
@@ -33,11 +36,15 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != this)
         {
+            Destroy(this);
             Debug.LogError("Found more than one Audio Manager in the scene");
         }
-        instance = this;
+        else
+        {
+            instance = this;
+        }
 
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
@@ -55,36 +62,42 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        InitiliazeAmbience(FMODEvents.instance.mainMenuAmbience);
+        InitiliazeMusic(FMODEvents.instance.allMusic);
+
+        /*
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
 
         // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        // Retrieve current variable status
-
-
         // Main Menu
         if (sceneName == "MainMenu")
         {
-            songSelection = 0;
+            MusicSelection musicSelection = MusicSelection.MENU;
+            SetMusicSelection(musicSelection);
         }
         // Industrial Level
         else if (sceneName == "MAIN")
         {
-            songSelection = 1;
+            MusicSelection musicSelection = MusicSelection.INDUSTRIAL;
+            SetMusicSelection(musicSelection);
         }
         // Jungle Level
         else if (sceneName == "MAIN_2")
         {
-            songSelection = 2;
+            MusicSelection musicSelection = MusicSelection.JUNGLE;
+            SetMusicSelection(musicSelection);
         }
         // Lava Level
         else if (sceneName == "MAIN_3")
         {
-            songSelection = 3;
+            MusicSelection musicSelection = MusicSelection.LAVA;
+            SetMusicSelection(musicSelection);
         }
-
+        
+        
         // Main Menu
         if (songSelection == 0)
         {
@@ -109,15 +122,48 @@ public class AudioManager : MonoBehaviour
             InitiliazeAmbience(FMODEvents.instance.lavaAmbience);
             InitiliazeMusic(FMODEvents.instance.lavaMusic);
         }
-
+        */
     }
 
     private void Update()
     {
+
+        // Create a temporary reference to the current scene.
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Retrieve the name of this scene.
+        string sceneName = currentScene.name;
+
+        // Main Menu
+        if (sceneName == "MainMenu")
+        {
+            MusicSelection musicSelection = MusicSelection.MENU;
+            SetMusicSelection(musicSelection);
+        }
+        // Industrial Level
+        else if (sceneName == "MAIN")
+        {
+            MusicSelection musicSelection = MusicSelection.INDUSTRIAL;
+            SetMusicSelection(musicSelection);
+        }
+        // Jungle Level
+        else if (sceneName == "MAIN_2")
+        {
+            MusicSelection musicSelection = MusicSelection.JUNGLE;
+            SetMusicSelection(musicSelection);
+        }
+        // Lava Level
+        else if (sceneName == "MAIN_3")
+        {
+            MusicSelection musicSelection = MusicSelection.LAVA;
+            SetMusicSelection(musicSelection);
+        }
+
         masterBus.setVolume(masterVolume);
         musicBus.setVolume(musicVolume);
         ambienceBus.setVolume(ambienceVolume);
         SFXBus.setVolume(SFXVolume);
+
     }
 
     private void InitiliazeAmbience(EventReference ambienceEventReference)
@@ -135,6 +181,11 @@ public class AudioManager : MonoBehaviour
     public void SetMusicIntensity(string parameterName, float parameterValue)
     {
         musicEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
+    public void SetMusicSelection(MusicSelection musicSelection)
+    {
+        musicEventInstance.setParameterByName("level", (float) musicSelection);
     }
 
     public EventInstance CreateEventInstance(EventReference eventReference)

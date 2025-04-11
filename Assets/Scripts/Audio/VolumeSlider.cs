@@ -24,6 +24,11 @@ public class VolumeSlider : MonoBehaviour
         volumeSlider = this.GetComponentInChildren<Slider>();
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         switch (volumeType)

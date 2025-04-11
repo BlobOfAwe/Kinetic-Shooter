@@ -74,6 +74,11 @@ public class EnemyCounter : MonoBehaviour
         {
             parameterController.IntensityOne();
         }
+
+        if (bossIsSpawned == true)
+        {
+            parameterController.StageFour();
+        }
     }
 
     public void EnemyDefeated(Enemy enemy)
@@ -118,7 +123,6 @@ public class EnemyCounter : MonoBehaviour
 
             bossIsSpawned = true;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.bossEnemyAppear, this.transform.position);
-            parameterController.StageFour();
             UpdateEnemyCounter();
         }
     }

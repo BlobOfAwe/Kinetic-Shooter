@@ -59,7 +59,11 @@
 			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{44122322-5fa8-4068-8c87-8a0131505c40}" />
+	<object class="EventAutomatableProperties" id="{44122322-5fa8-4068-8c87-8a0131505c40}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{724dc118-7654-4993-b288-b1e7816ca441}" />
 	<object class="Timeline" id="{8a6ab82c-9a2d-4c3b-8287-a0766c99c0a2}">
 		<property name="isProxyEnabled">
@@ -95,11 +99,16 @@
 	<object class="MixerBusPanner" id="{28c85b6f-384a-43f5-a268-bfcbcb86c387}" />
 	<object class="MixerBusEffectChain" id="{eb6dca3b-adaf-4328-a2ed-fac6f70ada7b}">
 		<relationship name="effects">
+			<destination>{1f626b17-6232-4513-9993-3ab61f0a9d43}</destination>
 			<destination>{edaf115a-fd33-41fa-a0a7-87928defca8a}</destination>
+			<destination>{6199dc20-621f-43ad-8fc9-1f3023524ea9}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e6273fdb-d5ff-4be6-b67b-1ded5ebf6d9c}" />
 	<object class="MultiSound" id="{f28b9483-f9c6-4915-8300-dd58ca66c732}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
@@ -113,7 +122,32 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d1cf1a91-9f88-42bd-a0a4-ad7ac97367ae}" />
+	<object class="MultibandEqEffect" id="{1f626b17-6232-4513-9993-3ab61f0a9d43}">
+		<property name="filterTypeA">
+			<value>6</value>
+		</property>
+		<property name="filterTypeB">
+			<value>8</value>
+		</property>
+		<property name="frequencyA">
+			<value>168.983734</value>
+		</property>
+		<property name="frequencyB">
+			<value>1369.81946</value>
+		</property>
+		<property name="qualityA">
+			<value>0.974517226</value>
+		</property>
+		<property name="gainB">
+			<value>-30</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{edaf115a-fd33-41fa-a0a7-87928defca8a}" />
+	<object class="DistortionEffect" id="{6199dc20-621f-43ad-8fc9-1f3023524ea9}">
+		<property name="level">
+			<value>0.849999964</value>
+		</property>
+	</object>
 	<object class="RandomizerModulator" id="{b346c288-827d-42fc-a68a-25af98847b9a}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>

@@ -57,6 +57,10 @@ public abstract class Enemy : Entity
     private bool rotateSpriteToFacePlayer = false;
     private bool dead;
 
+ 
+    //audio parameter controller script reference
+    [SerializeField] AudioParameterController parameterController;
+
     protected virtual void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -99,7 +103,7 @@ public abstract class Enemy : Entity
             dead = true;
             //Debug.Log(gameObject.name + " was killed");
             FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
-
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
             // Purge any dependant objects from the enemy's abilities
             if (primary != null) { primary.PurgeDependantObjects(); }
             if (secondary != null) { secondary.PurgeDependantObjects(); }
@@ -144,9 +148,11 @@ public abstract class Enemy : Entity
                 Debug.Log("You beat the boss!");
                 // Whatever happens when a boss is defeated goes here.
                 enemyCounter.BossDefeated(this);
+                //triggers win audio
+                parameterController.EndingWin();
             }
             //Debug.Log(gameObject.name + " SHOULD BE DESTROYED NOW");
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
+            
             
             DataManager.Instance.gameData.AddKills(enemyName); // Added by Nathaniel Klassen
 

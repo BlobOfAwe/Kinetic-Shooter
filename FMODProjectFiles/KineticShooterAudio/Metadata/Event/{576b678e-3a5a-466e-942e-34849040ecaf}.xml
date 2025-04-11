@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{0295f325-ec70-4933-be38-d6d17d67493e}">
+		<relationship name="modulators">
+			<destination>{cf44e280-3904-48ec-9bbe-459c50ae7bd9}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{0de0e789-c2b2-4010-8b95-2e5cb92771bb}</destination>
 		</relationship>
@@ -93,6 +96,29 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ee68caed-31b2-4931-af97-52466bab8c6e}" />
+	<object class="ADSRModulator" id="{cf44e280-3904-48ec-9bbe-459c50ae7bd9}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>60</value>
+		</property>
+		<property name="holdTime">
+			<value>20</value>
+		</property>
+		<property name="decayTime">
+			<value>340</value>
+		</property>
+		<property name="sustainValue">
+			<value>-80</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{0de0e789-c2b2-4010-8b95-2e5cb92771bb}">
 		<relationship name="effects">
 			<destination>{ef27f13c-9d52-438f-bcad-1d1524666f48}</destination>
@@ -100,10 +126,21 @@
 	</object>
 	<object class="MixerBusPanner" id="{14afbdf3-5bf2-4bfc-8955-fd457cf511e6}" />
 	<object class="SingleSound" id="{515a64f0-f9da-416a-bbf1-d016c5e93dd5}">
+		<relationship name="modulators">
+			<destination>{1a910435-14b4-4983-84ae-07668fd66424}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{b221b0f0-8dcc-4399-9da0-962d7baaf2f6}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{f10096ea-1e83-4f3a-9414-b4bbc7d1c2aa}" />
 	<object class="MixerBusFader" id="{ef27f13c-9d52-438f-bcad-1d1524666f48}" />
+	<object class="RandomizerModulator" id="{1a910435-14b4-4983-84ae-07668fd66424}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>6</value>
+		</property>
+	</object>
 </objects>

@@ -57,7 +57,7 @@ public class Beacon : MonoBehaviour
         
         Debug.Log("Beacon activated!");
         forcefield.gameObject.SetActive(true);
-        
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -86,7 +86,6 @@ public class Beacon : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         GameManager.difficultyCoefficient++;
-        parameterController.EndingWin();
 
         // If the current level is not the last level, load the next level
         if (GameManager.currentLevel < GameManager.sceneIndexForLevel.Length - 1)
@@ -98,6 +97,5 @@ public class Beacon : MonoBehaviour
         // Otherwise, enable the win panel
         else
             winPanel.SetActive(true);
-            parameterController.EndingWin();
     }
 }
