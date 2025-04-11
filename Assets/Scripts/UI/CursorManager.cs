@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 /// <summary>
 /// Script handles dynamic cursor changing between Menus and gameplay
 /// </summary>
 public class CursorManager : MonoBehaviour
 {
+    // Code heavily modified by Nathaniel Klassen
+
     public Texture2D reticleTexture;
     public Texture2D uiCursorTexture;
     public Vector2 reticleHotSpot = Vector2.zero;
@@ -47,6 +50,22 @@ public class CursorManager : MonoBehaviour
         } else
         {
             Cursor.SetCursor(reticleTexture, reticleHotSpot, CursorMode.Auto);
+        }
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            if (playerInput.currentControlScheme == "Keyboard+Mouse")
+            {
+                Cursor.visible = true;
+            }
+            else if (playerInput.currentControlScheme == "Gamepad")
+            {
+                Cursor.visible = false;
+            }
+        } else
+        {
+            Cursor.visible = true;
+            Debug.LogWarning("No PlayerInput in scene. Cursor will not hide on gamepad input.");
         }
     }
 

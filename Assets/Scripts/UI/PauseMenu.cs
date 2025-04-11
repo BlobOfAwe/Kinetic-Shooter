@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using FMOD.Studio;
 using FMODUnity;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -13,6 +15,15 @@ public class PauseMenu : MonoBehaviour
 
     // audio parameter controller script
     [SerializeField] AudioParameterController parameterController;
+
+    // Added by Nathaniel Klassen
+    private EventSystem eventSystem;
+    [SerializeField]
+    private GameObject defaultButton;
+    [SerializeField]
+    private GameObject settingsButton;
+    [SerializeField]
+    private GameObject defaultAudioSlider;
 
     // This is now handled in PlayerBehaviour.OnPauseGame() - NK
     /*void Update()
@@ -29,6 +40,13 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }*/
+
+    // All EventSystem related code added by Nathaniel Klassen
+    private void OnEnable()
+    {
+        eventSystem = EventSystem.current;
+    }
+
     public void ResumeGame()
     {
         CloseSettingsMenu(); // Added this so that the settings menu automatically closes in case it was open when the game is resumed. - NK
@@ -43,15 +61,18 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameManager.paused = true;
+        eventSystem.SetSelectedGameObject(defaultButton);
     }
     public void OpenSettingsMenu()
     {
         settingsMenu.SetActive(true);
+        eventSystem.SetSelectedGameObject(defaultAudioSlider);
     }
     public void CloseSettingsMenu()
     {
         settingsMenu.SetActive(false);
         pauseMenu.SetActive(true);
+        eventSystem.SetSelectedGameObject(settingsButton);
     }
     public void QuitToMainMenu()
     {
@@ -74,5 +95,13 @@ public class PauseMenu : MonoBehaviour
     {
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonHover, this.transform.position);
     }
-    
+
+    // Added by Nathaniel Klassen
+    public void OnNavigate(InputAction.CallbackContext context)
+    {
+        if (context.canceled && eventSystem.currentSelectedGameObject == null)
+        {
+            eventSystem.SetSelectedGameObject(defaultButton);
+        }
+    }
 }
