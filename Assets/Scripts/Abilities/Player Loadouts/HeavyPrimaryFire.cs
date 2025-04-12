@@ -90,7 +90,7 @@ public class HeavyPrimaryFire : ShootAbility
                 bulletProj.timeRemaining = bulletProj.despawnTime; // Reset the bullet's despawn timer. - NK
                 bulletProj.speedMultiplier = bulletSpeedMultiplier;
                 bulletProj.knockbackMultiplier = bulletKnockbackMultiplier;
-                bulletProj.damageMultiplier *= damageMod * damageModifier * bulletDamageMultiplier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
+                bulletProj.damageMultiplier = 1 * damageMod * damageModifier * bulletDamageMultiplier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
                 bulletProj.effectModifier = effectMod * upgradeTriggerRate;
                 bullet.transform.localScale = Vector3.one * scaleMod;
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());

@@ -134,6 +134,8 @@ public abstract class Entity : MonoBehaviour
             StartCoroutine(DamageFlash());
         }
 
+        Debug.Log("Object " + this.gameObject.name + " atkDamage:" + amount + " armor:" + totalDefense + " resultDamage:" + totalDamage + " HP:" + health + "/" + maxHealth);
+
 
         //Debug.Log("Took " + amount + " damage.");
         //Debug.Log("Health: " + health);
