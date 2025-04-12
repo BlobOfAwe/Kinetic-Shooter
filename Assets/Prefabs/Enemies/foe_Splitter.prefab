@@ -117,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.98, y: -5.79, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8580531464074920892}
@@ -298,7 +298,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -326,6 +325,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 7538930451151872605}
   - {fileID: 3698536560306664421}
@@ -700,7 +700,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -728,6 +727,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -964,7 +964,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -992,6 +991,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -1732,7 +1732,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -1760,6 +1759,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -1996,7 +1996,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -2024,6 +2023,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -2260,7 +2260,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -2288,6 +2287,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -2999,7 +2999,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -3027,6 +3026,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 1841696412842891636}
   - {fileID: 1885802789279100123}
@@ -3769,7 +3769,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -3797,6 +3796,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -4088,7 +4088,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -4116,6 +4115,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 8760664120714615669}
   - {fileID: 7864851996485042116}
@@ -4409,7 +4409,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -4437,6 +4436,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 39777393546055203}
   - {fileID: 4968474553354677259}
@@ -4814,7 +4814,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -4842,6 +4841,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 8824482241776116004}
   - {fileID: 5937737119171422920}
@@ -5303,7 +5303,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -5331,6 +5330,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 2427194287461552305}
   - {fileID: 1952737647834903006}
@@ -5737,7 +5737,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -5765,6 +5764,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
@@ -6308,7 +6308,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -6336,6 +6335,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots:
   - {fileID: 3449285902774385929}
   - {fileID: 9024278956173182716}
@@ -6742,7 +6742,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 0}
   isFlammable: 1
   cushion: 1
   capSpeedToTotalSpeed: 1
@@ -6770,6 +6769,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0.5
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   childSplots: []
   splotRepelForce: 100
   iSecondsAfterSplit: 0.5
