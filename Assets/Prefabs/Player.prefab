@@ -6436,7 +6436,7 @@ MonoBehaviour:
   upgradeTriggerRate: 1
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 60
+  maxBullets: 200
   recoil: 5
 --- !u!114 &571558318740040795
 MonoBehaviour:
@@ -6516,7 +6516,7 @@ MonoBehaviour:
   upgradeTriggerRate: 2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 30
+  maxBullets: 200
   burstSpacing: 0.07
   damageModOne: 0.7
   recoilModOne: 1
@@ -6607,7 +6607,7 @@ MonoBehaviour:
   upgradeTriggerRate: 0.2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
-  maxBullets: 20
+  maxBullets: 200
   recoil: 3
 --- !u!114 &1537881835366685869
 MonoBehaviour:
