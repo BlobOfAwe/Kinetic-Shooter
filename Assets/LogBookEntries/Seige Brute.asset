@@ -23,7 +23,7 @@ MonoBehaviour:
     by repeated attacks, in which case it will rush with increasing speed towards
     the offending target. It also hurls rocks at its targets, devestating anything
     in its path."
-  isUnlocked: 1
+  isUnlocked: 0
   unlockCondition: Killing the Seige Brute Boss
   unlockVariable: bruteKills
   requiredUnlockVariableValue: 1

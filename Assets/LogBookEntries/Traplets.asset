@@ -25,7 +25,7 @@ MonoBehaviour:
     Behaviour:
     Traplets do not directly damage their victims, but instead plant spikes around
     the area of its victims.'
-  isUnlocked: 1
+  isUnlocked: 0
   unlockCondition: Killing 100 Traplets
   unlockVariable: trapletKills
   requiredUnlockVariableValue: 20

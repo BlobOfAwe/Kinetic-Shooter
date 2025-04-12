@@ -22,7 +22,7 @@ MonoBehaviour:
     but can lunge violently towards hostile targets. When it does so, it's body partially
     solidifies, allowing it to bounce rapidly around its environment, covering all
     possible escapes."
-  isUnlocked: 1
+  isUnlocked: 0
   unlockCondition: Killing the Bouncer Boss
   unlockVariable: bouncerKills
   requiredUnlockVariableValue: 1
