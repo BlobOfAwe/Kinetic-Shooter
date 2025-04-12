@@ -62,7 +62,7 @@ MonoBehaviour:
     callerKills: 0
     armadilloKills: 0
     bouncerKills: 0
-    necromancerKills: 0
+    bruteKills: 0
     standardLoadoutKills: 0
     heavyLoadoutKills: 0
     lightLoadoutKills: 0
@@ -82,4 +82,5 @@ MonoBehaviour:
   uiCursorTexture: {fileID: 2800000, guid: 873312c40faa0e4449629b029f2f4f13, type: 3}
   reticleHotSpot: {x: 25, y: 25}
   uiHotSpot: {x: 0, y: 0}
-  isMenu: 0
+  menuScene: 1
+  isEndScreen: 0
