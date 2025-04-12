@@ -601,6 +601,11 @@ public class PlayerBehaviour : Entity
             totalSpeed = 0f;
             playerAnimator.SetTrigger("isTeleporting");
             playerGunAnimator.SetTrigger("isTeleporting");
+            //resets audio parameters
+            parameterController.EndingStatic();
+            parameterController.IntensityZero();
+            parameterController.StageZero();
+            parameterController.Unpaused();
         }
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu

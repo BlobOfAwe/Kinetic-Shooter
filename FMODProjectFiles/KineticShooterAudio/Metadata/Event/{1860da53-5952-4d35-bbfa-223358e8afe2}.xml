@@ -61,10 +61,13 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{fe50d6d6-6c41-4b32-bbe1-023216297b88}">
 		<property name="maxVoices">
-			<value>1</value>
+			<value>5</value>
 		</property>
 		<property name="voiceStealing">
 			<value>3</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>2600</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{29ebb71b-ff4c-49cd-8831-70fdc205f92f}" />
@@ -107,6 +110,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{1f95a753-edbd-4682-8976-42546a354e1b}" />
 	<object class="MultiSound" id="{29de3bd4-9a32-495a-9e53-551bf40c9f0b}">
+		<relationship name="modulators">
+			<destination>{d6101ed5-0313-4657-bc99-f1052bd9ff2f}</destination>
+			<destination>{b5de67b7-23ab-41f7-9ab6-6cab75abbd21}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{1e3744dd-0493-41e0-9a3e-a48c596f4542}</destination>
 			<destination>{42d64c72-2c4a-480e-84ee-1b2f35014b29}</destination>
@@ -115,6 +122,40 @@
 	</object>
 	<object class="MixerBusFader" id="{4644a093-54a4-4cc0-ab31-d986e141ac7b}" />
 	<object class="MixerBusFader" id="{24c2ecbb-9d7b-4090-86e5-9239b20ece05}" />
+	<object class="ADSRModulator" id="{d6101ed5-0313-4657-bc99-f1052bd9ff2f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>420</value>
+		</property>
+		<property name="holdTime">
+			<value>540</value>
+		</property>
+		<property name="decayTime">
+			<value>480</value>
+		</property>
+		<property name="sustainValue">
+			<value>-80</value>
+		</property>
+		<property name="releaseTime">
+			<value>0</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{b5de67b7-23ab-41f7-9ab6-6cab75abbd21}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>7.5</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{1e3744dd-0493-41e0-9a3e-a48c596f4542}">
 		<relationship name="audioFile">
 			<destination>{fbb9d4dd-a90d-492f-b9e7-936b0d62c618}</destination>

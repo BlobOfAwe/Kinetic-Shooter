@@ -61,10 +61,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{b17fc322-6997-48ae-af1d-7ed7c7253e35}">
 		<property name="maxVoices">
-			<value>1</value>
-		</property>
-		<property name="voiceStealing">
-			<value>3</value>
+			<value>10</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{7fdb59f9-0da4-44b7-a23a-d3ee8ca55c16}" />
@@ -103,14 +100,46 @@
 	<object class="MixerBusEffectChain" id="{0e34da6b-9d5b-4c52-a56e-4af9de9e48af}">
 		<relationship name="effects">
 			<destination>{52d6c290-2b36-415b-b726-354573351f7e}</destination>
+			<destination>{fbc4b3d9-fbee-4c5d-9c4b-2b27481ad605}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b343835c-dbb3-475b-a7b9-8edf9660a500}" />
 	<object class="SingleSound" id="{565eecde-09e9-4b46-bc7e-e5221b9c7e3f}">
+		<relationship name="modulators">
+			<destination>{6c73f9e2-5b35-4b2a-970e-82b888f21150}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{9a09c9f2-50cb-44a2-b340-9c97dc85a5b8}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{9e5b91fd-b445-478f-b511-6972f1e94247}" />
 	<object class="MixerBusFader" id="{52d6c290-2b36-415b-b726-354573351f7e}" />
+	<object class="MultibandEqEffect" id="{fbc4b3d9-fbee-4c5d-9c4b-2b27481ad605}">
+		<property name="filterTypeA">
+			<value>8</value>
+		</property>
+		<property name="filterTypeB">
+			<value>7</value>
+		</property>
+		<property name="frequencyA">
+			<value>2888.00977</value>
+		</property>
+		<property name="frequencyB">
+			<value>165.518555</value>
+		</property>
+		<property name="gainA">
+			<value>7.24137783</value>
+		</property>
+		<property name="gainB">
+			<value>-13.965517</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{6c73f9e2-5b35-4b2a-970e-82b888f21150}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>7</value>
+		</property>
+	</object>
 </objects>

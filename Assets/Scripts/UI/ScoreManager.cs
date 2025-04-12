@@ -34,6 +34,11 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        //resets audio parameters
+        parameterController.EndingStatic();
+        parameterController.IntensityZero();
+        parameterController.StageZero();
+        parameterController.Unpaused();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
