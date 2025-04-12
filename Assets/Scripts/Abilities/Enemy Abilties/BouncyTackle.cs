@@ -121,7 +121,6 @@ public class BouncyTackle : Ability
         // Use the point's normal to calculate the reflection vector.
         Vector3 reflectVec = Vector3.Reflect(incomingVec, contactPoint.normal);
         Debug.DrawRay(contactPoint.point, reflectVec, Color.cyan, 10f);
-        if (reflectVec == null) { reflectVec = incomingVec * -1; }
 
         StartCoroutine(LungeForward(reflectVec));
     }
