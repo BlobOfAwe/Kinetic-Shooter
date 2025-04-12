@@ -28,7 +28,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private CanvasGroup pickupCanvasGroup;
     [SerializeField] private float displayDuration = 2f;
     [SerializeField] private float fadeDuration = 0.5f;
-    [SerializeField] private bool isPaused;
+    public bool isPaused; // Made public - NK
     private Coroutine currentNotificationRoutine;
     [Header("Tooltip Positioning")]
     [SerializeField] private float verticalOffset = 20f;

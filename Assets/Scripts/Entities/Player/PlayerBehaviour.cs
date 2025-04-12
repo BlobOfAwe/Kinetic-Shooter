@@ -7,6 +7,7 @@ using FMOD.Studio;
 using FMODUnity;
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class PlayerBehaviour : Entity
 {
@@ -114,6 +115,9 @@ public class PlayerBehaviour : Entity
     // audio parameter controller script
     [SerializeField] AudioParameterController parameterController;
 
+    [SerializeField]
+    private GameObject gameOverButton;
+
     protected override void Awake()
     {
         base.Awake();
@@ -174,6 +178,8 @@ public class PlayerBehaviour : Entity
         } else
         {
             aimLine.enabled = false;
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
         }
 
         // audio timer
@@ -536,7 +542,7 @@ public class PlayerBehaviour : Entity
 
     public void OnPauseGame(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !inventory.isPaused)
         {
             if (GameManager.paused)
             {
@@ -550,7 +556,7 @@ public class PlayerBehaviour : Entity
 
     public void OnInventory(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && !pauseMenu.isPaused)
         {
             inventory.ToggleSidebar();
         }
@@ -593,6 +599,7 @@ public class PlayerBehaviour : Entity
         parameterController.EndingLoss();
         gameOverPanel.SetActive(true);
         FindObjectOfType<CursorManager>().isEndScreen = true;
+        EventSystem.current.SetSelectedGameObject(gameOverButton);
     }
 
     public void TeleportAnim()

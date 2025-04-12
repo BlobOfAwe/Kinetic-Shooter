@@ -1163,6 +1163,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1611796992}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: gameOverButton
+      value: 
+      objectReference: {fileID: 1161058570}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: parameterController
       value: 
       objectReference: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
@@ -43052,6 +43056,16 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1161058570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359437210231581626, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1161058571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7974121998783368311, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1300686081
 GameObject:
   m_ObjectHideFlags: 0
@@ -47078,6 +47092,10 @@ PrefabInstance:
       propertyPath: beaconIndicator
       value: 
       objectReference: {fileID: 1497419934}
+    - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: winButton
+      value: 
+      objectReference: {fileID: 1161058571}
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: parameterController
       value: 

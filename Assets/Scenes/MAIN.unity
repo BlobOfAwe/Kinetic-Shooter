@@ -1192,6 +1192,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1611796992}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: gameOverButton
+      value: 
+      objectReference: {fileID: 1497419931}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: parameterController
       value: 
       objectReference: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
@@ -51708,6 +51712,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26c905ef936a7a4a92a5507e21886ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1497419931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359437210231581626, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1497419932 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7828729185248199735, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
@@ -51719,6 +51728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1497419933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7974121998783368311, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1497419934 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 612758956431635732, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
@@ -52288,6 +52302,10 @@ PrefabInstance:
       propertyPath: winPanel
       value: 
       objectReference: {fileID: 553722597}
+    - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: winButton
+      value: 
+      objectReference: {fileID: 1497419933}
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: parameterController
       value: 

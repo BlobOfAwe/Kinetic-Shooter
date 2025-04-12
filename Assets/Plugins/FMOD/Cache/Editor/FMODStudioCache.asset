@@ -93,10 +93,34 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638793748508343729
+  lastModified: 638800087932928081
   FileSizes:
   - Name: Desktop
-    Value: 3458848
+    Value: 3462208
+  Exists: 1
+--- !u!114 &-8133013910785086748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MUSIC/ending
+  m_EditorClassIdentifier: 
+  Name: ending
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 3911068529
+    data2: 2129448781
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &-8016401552917219330
 MonoBehaviour:
@@ -188,10 +212,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638793748510434619
+  lastModified: 638800087935309699
   FileSizes:
   - Name: Desktop
-    Value: 2310880
+    Value: 2341152
   Exists: 1
 --- !u!114 &-7777554827445684272
 MonoBehaviour:
@@ -220,6 +244,38 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10057
+--- !u!114 &-7746911711742091665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MUSIC
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MUSIC
+  Guid:
+    Data1: -976662669
+    Data2: 1183193118
+    Data3: 1016228504
+    Data4: 1621340802
+  Banks:
+  - {fileID: 8966357372075816652}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3633495501808183799}
+  - {fileID: -1419235372985153333}
+  - {fileID: 2446039353423257247}
+  - {fileID: -3915033309389603857}
+  - {fileID: -8133013910785086748}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6813885082286440365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +540,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5302
+--- !u!114 &-3915033309389603857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MUSIC/pause
+  m_EditorClassIdentifier: 
+  Name: pause
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1053798372
+    data2: 3965535339
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3874236022536000344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,6 +934,35 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1419235372985153333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MUSIC/level
+  m_EditorClassIdentifier: 
+  Name: level
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2399840656
+    data2: 3630115925
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Menu
+  - Industrial
+  - Jungle
+  - Lava
+  - Cutscene
+  Exists: 1
 --- !u!114 &-1280494357791043125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,12 +1206,15 @@ MonoBehaviour:
   - {fileID: -3822437288545017066}
   - {fileID: 992505904984132445}
   - {fileID: 4129551222191391662}
+  - {fileID: 3885697728060260790}
+  - {fileID: -7746911711742091665}
+  - {fileID: 5589653532584059175}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6065114308530843012}
   StringsBanks:
   - {fileID: 2421541565822050154}
-  cacheTime: 638793748510434619
+  cacheTime: 638800087935309699
   cacheVersion: 131617
 --- !u!114 &58960200177815597
 MonoBehaviour:
@@ -1374,7 +1486,7 @@ MonoBehaviour:
   - {fileID: -6605962475572068328}
   MinDistance: 1
   MaxDistance: 20
-  Length: 158931
+  Length: 370758
 --- !u!114 &2030024205284780227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,7 +1571,7 @@ MonoBehaviour:
   - {fileID: 7046807605547272100}
   MinDistance: 1
   MaxDistance: 20
-  Length: 139842
+  Length: 223689
 --- !u!114 &2413987677828057306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,10 +1611,34 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638793748508343729
+  lastModified: 638800087932928081
   FileSizes:
   - Name: Desktop
-    Value: 4296
+    Value: 4458
+  Exists: 1
+--- !u!114 &2446039353423257247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MUSIC/intensity
+  m_EditorClassIdentifier: 
+  Name: intensity
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 2907666254
+    data2: 2767104508
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &3089898121057244785
 MonoBehaviour:
@@ -1528,6 +1664,87 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3357311581318445263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/AMBIENCE/level
+  m_EditorClassIdentifier: 
+  Name: level
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 2399840656
+    data2: 3630115925
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Menu
+  - Industrial
+  - Jungle
+  - Lava
+  - Cutscene
+  Exists: 1
+--- !u!114 &3633495501808183799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MUSIC/stage
+  m_EditorClassIdentifier: 
+  Name: stage
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 2491811445
+    data2: 889848548
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3885697728060260790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/AMBIENCE
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/AMBIENCE
+  Guid:
+    Data1: -1944618351
+    Data2: 1220399613
+    Data3: 151207849
+    Data4: 633915145
+  Banks:
+  - {fileID: -8644083924450930584}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3357311581318445263}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3893263178846853908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1828,7 +2045,7 @@ MonoBehaviour:
   - {fileID: -2815357494758538485}
   MinDistance: 1
   MaxDistance: 20
-  Length: 210610
+  Length: 300521
 --- !u!114 &5400873564298835736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,6 +2091,33 @@ MonoBehaviour:
     Data2: 1262367208
     Data3: -1377149005
     Data4: 1099981047
+  Banks:
+  - {fileID: -7791431625784592819}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5589653532584059175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Notification/Teleport
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Notification/Teleport
+  Guid:
+    Data1: -907968346
+    Data2: 1160514855
+    Data3: 1121774259
+    Data4: -83726774
   Banks:
   - {fileID: -7791431625784592819}
   IsStream: 0
@@ -1977,13 +2221,13 @@ MonoBehaviour:
     Data4: 419629243
   Banks:
   - {fileID: 8966357372075816652}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 56006
 --- !u!114 &6561689122105641061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2155,10 +2399,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638793748510267572
+  lastModified: 638800087935139061
   FileSizes:
   - Name: Desktop
-    Value: 30163232
+    Value: 30852960
   Exists: 1
 --- !u!114 &9171413878878511421
 MonoBehaviour:
