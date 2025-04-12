@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: ec667a1b4bb1eb041b0326189beca378, type: 3}
   title: Blade Spinner
-  description: Spinning blades may spawn where your bullets hit!
+  description: Shots may create blades on impact.
   statModifications: []
   spawnChance: 0.5
   bladeDamageMod: 0.2
