@@ -23,6 +23,6 @@ MonoBehaviour:
     solidifies, allowing it to bounce rapidly around its environment, covering all
     possible escapes."
   isUnlocked: 1
-  unlockCondition: Kill the Bouncer Boss
-  unlockVariable: callerKills
-  requiredUnlockVariableValue: 0
+  unlockCondition: Killing the Bouncer Boss
+  unlockVariable: bouncerKills
+  requiredUnlockVariableValue: 1

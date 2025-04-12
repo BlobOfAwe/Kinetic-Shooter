@@ -22,16 +22,15 @@ MonoBehaviour:
     time. The acid seems to be attached to the sniper entity, as its effect stops
     when the creature is killed.
 
-    
 
-    Behaviour: This creature seems to lack
-    all survival instincts, acting more like a machine than an intelligent being.
-    Its single goal is to kill its target. It is still a mystery who created the
-    creature but it demonstrates an advanced ability to mix biological and mechanical
-    substances.
+
+    Behaviour: This creature seems to lack all
+    survival instincts, acting more like a machine than an intelligent being. Its
+    single goal is to kill its target. It is still a mystery who created the creature
+    but it demonstrates an advanced ability to mix biological and mechanical substances.
 
 '
   isUnlocked: 0
-  unlockCondition: Kill 50 Sticky Snipers
+  unlockCondition: Killing 50 Sticky Snipers
   unlockVariable: stickyKills
   requiredUnlockVariableValue: 20

@@ -212,7 +212,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -234,12 +233,13 @@ MonoBehaviour:
   state: 0
   isBoss: 0
   isLeader: 0
-  enemyName: 
+  enemyName: Armadillo
   score: 0
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   animator: {fileID: 5515086074136579149}
 --- !u!114 &7733871101192951907
 MonoBehaviour:

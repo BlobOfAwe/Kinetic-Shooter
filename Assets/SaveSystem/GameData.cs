@@ -23,7 +23,7 @@ public class GameData
     public int armadilloKills;
     [Header("Boss Enemy Kills")]
     public int bouncerKills;
-    public int necromancerKills;
+    public int bruteKills;
     [Space]
     [Header("Loadout Kills")]
     public int standardLoadoutKills;
@@ -52,7 +52,7 @@ public class GameData
         armadilloKills = 0;
 
         bouncerKills = 0;
-        necromancerKills = 0;
+        bruteKills = 0;
 
 
         standardLoadoutKills = 0;
@@ -111,8 +111,8 @@ public class GameData
             case "Bouncer":
                 bouncerKills += 1;
                 break;
-            case "Necromancer":
-                necromancerKills += 1;
+            case "Seige Brute":
+                bruteKills += 1;
                 break;
         }
         if (GameManager.playerLoadout != null)
