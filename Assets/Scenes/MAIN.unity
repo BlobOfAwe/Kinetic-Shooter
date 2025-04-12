@@ -533,7 +533,7 @@ MonoBehaviour:
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
   beaconIndicator: {fileID: 1497419934}
-  parameterController: {fileID: 1102249746}
+  parameterController: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
 --- !u!4 &287445713
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ PrefabInstance:
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: parameterController
       value: 
-      objectReference: {fileID: 1102249746}
+      objectReference: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
     - target: {fileID: 8818079687504875579, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: target
       value: 
@@ -47888,17 +47888,6 @@ CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 1604773457763394314, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
   m_PrefabInstance: {fileID: 1497419929}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1102249746 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5060754713572733352, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-  m_PrefabInstance: {fileID: 1372423953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 022dfc1b0e34882419434505f30076ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1300686081
 GameObject:
   m_ObjectHideFlags: 0
@@ -48034,367 +48023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8666e9fd034c8f64895fcc90b8f4fd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1372423953
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1483171461850264308, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: parameterNameStage
-      value: stage
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: parameterNameIntensity
-      value: intensity
-      objectReference: {fileID: 0}
-    - target: {fileID: 2469818775549233405, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: parameterValueIntensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024545155582286812, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <buffTile>k__BackingField.Path
-      value: event:/SFX/Environment/Hazards/BuffTile
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <debuffTile>k__BackingField.Path
-      value: event:/SFX/Environment/Hazards/DebuffTile
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <spikeHazard>k__BackingField.Path
-      value: event:/SFX/Environment/Hazards/Spikes
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <trainHazard>k__BackingField.Path
-      value: event:/SFX/Environment/Hazards/Train
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bladeSpinner>k__BackingField.Path
-      value: event:/SFX/Player/Melee/BladeSpinner
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <geyserHazard>k__BackingField.Path
-      value: event:/SFX/Environment/Hazards/Geysers
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <armadilloBlock>k__BackingField.Path
-      value: event:/SFX/Enemy/Leader Enemies/ArmadilloBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <buffTile>k__BackingField.Guid.Data1
-      value: -1101417253
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <buffTile>k__BackingField.Guid.Data2
-      value: 1306991014
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <buffTile>k__BackingField.Guid.Data3
-      value: 1984628158
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <buffTile>k__BackingField.Guid.Data4
-      value: 1569613452
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightningTwins>k__BackingField.Path
-      value: event:/SFX/Enemy/Base Enemies/LightningTwins
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bouncerMovement>k__BackingField.Path
-      value: event:/SFX/Enemy/Boss Enemies/BouncerMovement
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <debuffTile>k__BackingField.Guid.Data1
-      value: 653230407
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <debuffTile>k__BackingField.Guid.Data2
-      value: 1339476778
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <debuffTile>k__BackingField.Guid.Data3
-      value: -959002490
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <debuffTile>k__BackingField.Guid.Data4
-      value: 1923434001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <fastFlying>k__BackingField.Guid.Data1
-      value: 67294925
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <fastFlying>k__BackingField.Guid.Data2
-      value: 1293585052
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <fastFlying>k__BackingField.Guid.Data3
-      value: 544438457
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <fastFlying>k__BackingField.Guid.Data4
-      value: 953258887
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <spikeHazard>k__BackingField.Guid.Data1
-      value: 2044171095
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <spikeHazard>k__BackingField.Guid.Data2
-      value: 1262367208
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <spikeHazard>k__BackingField.Guid.Data3
-      value: -1377149005
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <spikeHazard>k__BackingField.Guid.Data4
-      value: 1099981047
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <trainHazard>k__BackingField.Guid.Data1
-      value: 891102209
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <trainHazard>k__BackingField.Guid.Data2
-      value: 1212086153
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <trainHazard>k__BackingField.Guid.Data3
-      value: -1065712509
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <trainHazard>k__BackingField.Guid.Data4
-      value: 107511840
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bladeSpinner>k__BackingField.Guid.Data1
-      value: -1578103234
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bladeSpinner>k__BackingField.Guid.Data2
-      value: 1207137173
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bladeSpinner>k__BackingField.Guid.Data3
-      value: -1736653642
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bladeSpinner>k__BackingField.Guid.Data4
-      value: 865333498
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <geyserHazard>k__BackingField.Guid.Data1
-      value: 1089219027
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <geyserHazard>k__BackingField.Guid.Data2
-      value: 1300584891
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <geyserHazard>k__BackingField.Guid.Data3
-      value: -577911920
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <geyserHazard>k__BackingField.Guid.Data4
-      value: -155214097
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityActive>k__BackingField.Path
-      value: event:/SFX/Player/Loadouts/HeavyInherentActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityLaunch>k__BackingField.Path
-      value: event:/SFX/Player/Loadouts/HeavyInherentLaunch
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityActive>k__BackingField.Path
-      value: event:/SFX/Player/Loadouts/LightInherentActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityBounce>k__BackingField.Path
-      value: event:/SFX/Player/Loadouts/LightInherentBounce
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <basicMovement>k__BackingField.Guid.Data1
-      value: -36229141
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <basicMovement>k__BackingField.Guid.Data2
-      value: 1294141513
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <basicMovement>k__BackingField.Guid.Data3
-      value: -953129813
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <basicMovement>k__BackingField.Guid.Data4
-      value: 1057355258
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <armadilloBlock>k__BackingField.Guid.Data1
-      value: -580065476
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <armadilloBlock>k__BackingField.Guid.Data2
-      value: 1160959472
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <armadilloBlock>k__BackingField.Guid.Data3
-      value: -1672333144
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <armadilloBlock>k__BackingField.Guid.Data4
-      value: -751488505
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightningTwins>k__BackingField.Guid.Data1
-      value: -201428753
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightningTwins>k__BackingField.Guid.Data2
-      value: 1091656458
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightningTwins>k__BackingField.Guid.Data3
-      value: -1755913571
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightningTwins>k__BackingField.Guid.Data4
-      value: -411683646
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bouncerMovement>k__BackingField.Guid.Data1
-      value: 1788432580
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bouncerMovement>k__BackingField.Guid.Data2
-      value: 1309242010
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bouncerMovement>k__BackingField.Guid.Data3
-      value: 240389286
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <bouncerMovement>k__BackingField.Guid.Data4
-      value: -808402409
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data1
-      value: 1241409933
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data2
-      value: 1268039060
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data3
-      value: 1146371227
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data4
-      value: -1170223514
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data1
-      value: -962762412
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data2
-      value: 1256148334
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data3
-      value: -1286777177
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <heavyAbilityLaunch>k__BackingField.Guid.Data4
-      value: -1470416776
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data1
-      value: 688659987
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data2
-      value: 1308015868
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data3
-      value: 162375095
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityActive>k__BackingField.Guid.Data4
-      value: -1320496221
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data1
-      value: -977927201
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data2
-      value: 1223401663
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data3
-      value: -1211677510
-      objectReference: {fileID: 0}
-    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
-      propertyPath: <lightAbilityBounce>k__BackingField.Guid.Data4
-      value: -2090714115
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
 --- !u!1 &1438056805
 GameObject:
   m_ObjectHideFlags: 0
@@ -51968,7 +51596,7 @@ PrefabInstance:
     - target: {fileID: 5333087664484751289, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
       propertyPath: parameterController
       value: 
-      objectReference: {fileID: 1102249746}
+      objectReference: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
     - target: {fileID: 5541923507258668553, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -52164,7 +51792,7 @@ PrefabInstance:
     - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
       propertyPath: parameterController
       value: 
-      objectReference: {fileID: 1102249746}
+      objectReference: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
     - target: {fileID: 8992352216531085834, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
       propertyPath: m_Name
       value: ScoreManager
@@ -52663,7 +52291,7 @@ PrefabInstance:
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: parameterController
       value: 
-      objectReference: {fileID: 1102249746}
+      objectReference: {fileID: 0}
     - target: {fileID: 7408100330477493710, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: m_Name
       value: Beacon
@@ -52746,7 +52374,6 @@ SceneRoots:
   - {fileID: 1479278625}
   - {fileID: 1300686083}
   - {fileID: 1497419929}
-  - {fileID: 1372423953}
   - {fileID: 493073860}
   - {fileID: 896367707}
   - {fileID: 879053011}

@@ -11260,8 +11260,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allMusic>k__BackingField.Path
+      value: event:/Music/MUSIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allAmbience>k__BackingField.Path
+      value: event:/Ambience/AMBIENCE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <bladeSpinner>k__BackingField.Path
       value: event:/SFX/Player/Melee/BladeSpinner
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Path
+      value: event:/Music/Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <playerTeleport>k__BackingField.Path
+      value: event:/SFX/Player/Notification/Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allAmbience>k__BackingField.Guid.Data1
+      value: -1944618351
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allAmbience>k__BackingField.Guid.Data2
+      value: 1220399613
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allAmbience>k__BackingField.Guid.Data3
+      value: 151207849
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <allAmbience>k__BackingField.Guid.Data4
+      value: 633915145
       objectReference: {fileID: 0}
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <bladeSpinner>k__BackingField.Guid.Data1
@@ -11294,6 +11326,38 @@ PrefabInstance:
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <lightAbilityBounce>k__BackingField.Path
       value: event:/SFX/Player/Loadouts/LightInherentBounce
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data1
+      value: -976662669
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data2
+      value: 1183193118
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data3
+      value: 1016228504
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <mainMenuMusic>k__BackingField.Guid.Data4
+      value: 1621340802
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <playerTeleport>k__BackingField.Guid.Data1
+      value: -907968346
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <playerTeleport>k__BackingField.Guid.Data2
+      value: 1160514855
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <playerTeleport>k__BackingField.Guid.Data3
+      value: 1121774259
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
+      propertyPath: <playerTeleport>k__BackingField.Guid.Data4
+      value: -83726774
       objectReference: {fileID: 0}
     - target: {fileID: 5555443697746097101, guid: e453e13bb35d6184292be4c98bff456c, type: 3}
       propertyPath: <heavyAbilityActive>k__BackingField.Guid.Data1

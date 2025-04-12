@@ -64,6 +64,12 @@ public class AudioParameterController : MonoBehaviour
         AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
     }
 
+    public void EndingStatic()
+    {
+        parameterValueEnding = 0;
+        AudioManager.instance.SetMusicIntensity(parameterNameEnding, parameterValueEnding);
+    }
+
     public void Paused()
     {
         parameterValuePause = 1;
@@ -77,6 +83,12 @@ public class AudioParameterController : MonoBehaviour
     }
 
     //temporary intensity
+
+    public void IntensityZero()
+    {
+        parameterValueIntensity = 0;
+        AudioManager.instance.SetMusicIntensity(parameterNameIntensity, parameterValueIntensity);
+    }
 
     public void IntensityOne()
     {
@@ -97,6 +109,11 @@ public class AudioParameterController : MonoBehaviour
 
     //temporary stage
 
+    public void StageZero()
+    {
+        parameterValueStage = 0;
+        AudioManager.instance.SetMusicIntensity(parameterNameStage, parameterValueStage);
+    }
     public void StageOne()
     {
         parameterValueStage = 1;

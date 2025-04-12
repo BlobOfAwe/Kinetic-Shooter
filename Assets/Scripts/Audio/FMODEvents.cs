@@ -8,6 +8,9 @@ public class FMODEvents : MonoBehaviour
 {
     // Ambience Events
 
+    [field: Header("General Music")]
+    [field: SerializeField] public EventReference allAmbience { get; private set; }
+
     [field: Header("Industrial Ambience")]
     [field: SerializeField] public EventReference industrialAmbience { get; private set; }
 
@@ -24,6 +27,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference mainMenuAmbience { get; private set; }
 
     // Music Events
+
+    [field: Header("General Music")]
+    [field: SerializeField] public EventReference allMusic { get; private set; }
 
     [field: Header("Industrial Music")]
     [field: SerializeField] public EventReference industrialMusic { get; private set; }
@@ -228,6 +234,11 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Button Hover")]
     [field: SerializeField] public EventReference buttonHover { get; private set; }
+
+    // OTHER
+
+    [field: Header("Teleport")]
+    [field: SerializeField] public EventReference playerTeleport { get; private set; }
 
 
     // Checks if there is more than one FMODEvents script in the scene (which is a no no)
