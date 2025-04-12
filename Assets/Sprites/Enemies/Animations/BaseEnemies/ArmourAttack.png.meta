@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 947e55ea591857240a911a357f2844fe
+guid: 312ace8f33b12c6478532b1ceb8605f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Demon Walk_0
+      name: ArmourAttack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 48
+        x: 1
+        y: 1
+        width: 45
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a3ceef55b58137478da4e9cc4a87e02
-      internalID: -321708673
+      spriteID: ed8c16c7fd758d9449d5ce88f891b322
+      internalID: 71048338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Walk_1
+      name: ArmourAttack_1
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
-        width: 48
-        height: 48
+        y: 1
+        width: 45
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 671f4e1b825da1343b4d4264b664d0a8
-      internalID: 1714091106
+      spriteID: 12a379e759bec314f9476a3099cba8f8
+      internalID: -1123757310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Walk_2
+      name: ArmourAttack_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
+        x: 95
+        y: 1
+        width: 45
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00bc12ba296bd4248845907bf795f6cb
-      internalID: 1876741125
+      spriteID: 0147865be93287548862d0d727d7f169
+      internalID: -841305836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Demon Walk_3
+      name: ArmourAttack_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
+        x: 142
+        y: 1
+        width: 43
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b09e56c3e3ba584da5327d235971bfc
-      internalID: -1273555765
+      spriteID: d9a005b9eb0d93345a7522ff58e352a8
+      internalID: -1948285789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmourAttack_4
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1356fd68857ec954b81e68037f910cfa
+      internalID: -2057937259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArmourAttack_5
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cad04001df11f2459cfbcf3a4e05c11
+      internalID: 1501769518
       vertices: []
       indices: 
       edges: []
@@ -204,10 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Demon Walk_0: -321708673
-      Demon Walk_1: 1714091106
-      Demon Walk_2: 1876741125
-      Demon Walk_3: -1273555765
+      ArmourAttack_0: 71048338
+      ArmourAttack_1: -1123757310
+      ArmourAttack_2: -841305836
+      ArmourAttack_3: -1948285789
+      ArmourAttack_4: -2057937259
+      ArmourAttack_5: 1501769518
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

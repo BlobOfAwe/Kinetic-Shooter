@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 550c86db331106b448cccfaaef133ecf
+guid: 06a0049e4f0aa424cacd4612e8f9dd4f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armoured enemy walk(1)_0
+      name: spr_player_abilities_light_wall_layer3top_anim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 33
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8784dd14e8b6b254b9b6a6b3e65f07ef
-      internalID: 1208266927
+      spriteID: 8873b3e8fdbdaca42bab2dd4310bc54b
+      internalID: -343230666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armoured enemy walk(1)_1
+      name: spr_player_abilities_light_wall_layer3top_anim_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 33
         y: 0
-        width: 48
-        height: 48
+        width: 33
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,50 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f313d42d89c78b48abcbb266fa0224a
-      internalID: 1108745355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: armoured enemy walk(1)_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e556872617da84c4283c64652c31bd5e
-      internalID: 1209821687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: armoured enemy walk(1)_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c302b2505485e8429e42d4fe3c6c1e1
-      internalID: -2085390167
+      spriteID: d0d93a466f14b6c40b47d381d0f3c9dd
+      internalID: 326818186
       vertices: []
       indices: 
       edges: []
@@ -204,10 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      armoured enemy walk(1)_0: 1208266927
-      armoured enemy walk(1)_1: 1108745355
-      armoured enemy walk(1)_2: 1209821687
-      armoured enemy walk(1)_3: -2085390167
+      spr_player_abilities_light_wall_layer3top_anim_0: -343230666
+      spr_player_abilities_light_wall_layer3top_anim_1: 326818186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

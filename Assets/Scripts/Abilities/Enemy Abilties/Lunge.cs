@@ -15,6 +15,7 @@ public class Lunge : Ability
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
     private bool lunging;
+    [SerializeField] private GameObject normalEnemy;
 
     // FOR WHITEBOX USE ONLY
     private Color baseColor;
@@ -44,9 +45,10 @@ public class Lunge : Ability
 
         // Make the entity back up slowly for startup seconds to telegraph the lunge
         var rb = GetComponent<Rigidbody2D>();
+        Animator animator = normalEnemy.GetComponent<Animator>();
+        animator.SetTrigger("isAttacking");
         rb.velocity = -transform.up * startupSpeed;
         yield return new WaitForSeconds(startup);
-        
         // Reset velocity and apply a powerful force forward to lunge
         rb.velocity = Vector2.zero;
         lunging = true;

@@ -6488,7 +6488,7 @@ MonoBehaviour:
   explosionKnockback: 20
   dashForce: 20
   dashDuration: 1
-  particles: {fileID: 0}
+  particles: {fileID: 5711845505307153964}
   tempHitBox: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
 --- !u!114 &4128416706835469520
 MonoBehaviour:
@@ -12262,5 +12262,10 @@ PrefabInstance:
 --- !u!4 &731564375018933176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3144707555970100491, guid: 3886320f89fc22b4e9bbc13684348437, type: 3}
+  m_PrefabInstance: {fileID: 2414834504821647027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5711845505307153964 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7982553413982269599, guid: 3886320f89fc22b4e9bbc13684348437, type: 3}
   m_PrefabInstance: {fileID: 2414834504821647027}
   m_PrefabAsset: {fileID: 0}

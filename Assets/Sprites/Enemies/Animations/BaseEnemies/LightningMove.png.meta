@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a22ce30714c8044390ec0836cfcb8c7
+guid: f15f470af4f63544d94293ea1e6f3cae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spawner_walk1_0
+      name: LightningMove_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 95.5
-        height: 96
+        x: 1
+        y: 1
+        width: 15
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74e4f2aee9d2fcc409c8ea390782003a
-      internalID: 1920610157
+      spriteID: be258efac66432b42be42badf018b7ea
+      internalID: -1962757218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spawner_walk1_1
+      name: LightningMove_1
       rect:
         serializedVersion: 2
-        x: 95
-        y: 0
-        width: 95.5
-        height: 96
+        x: 18
+        y: 1
+        width: 17
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 887f564a3416d014da0728663e277cff
-      internalID: 1396807801
+      spriteID: 1ba76e179f4da6a4582fcc064f58f869
+      internalID: -10165239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spawner_walk1_2
+      name: LightningMove_2
       rect:
         serializedVersion: 2
-        x: 190
-        y: 0
-        width: 95.5
-        height: 96
+        x: 37
+        y: 1
+        width: 23
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78dc044dc544154489a776ffe876d0c1
-      internalID: 1793592937
+      spriteID: 36f55be93619837418b9655ebd995331
+      internalID: -1513401270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spawner_walk1_3
+      name: LightningMove_3
       rect:
         serializedVersion: 2
-        x: 285
-        y: 0
-        width: 95.5
-        height: 96
+        x: 62
+        y: 1
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd00f337a2b9d7949a676a1d46c3b99a
-      internalID: -292626596
+      spriteID: 20851a9ff1f3d8b48acfd59907a8e86d
+      internalID: 1546876837
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spawner_walk1_0: 1920610157
-      spawner_walk1_1: 1396807801
-      spawner_walk1_2: 1793592937
-      spawner_walk1_3: -292626596
+      LightningMove_0: -1962757218
+      LightningMove_1: -10165239
+      LightningMove_2: -1513401270
+      LightningMove_3: 1546876837
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,9 +17,14 @@ public class WarCallBuff : MonoBehaviour
     [SerializeField] private float recoverBuff = 20f; // Heal this much HP per second
     [SerializeField] private float speedBuff = 0.75f; // Multiply base speed stat by this value
 
+    private void Update()
+    {
+        transform.up = Vector2.up;
+    }
     private void Awake()
     {
         particleSys = gameObject.GetComponent<ParticleSystem>();
+
     }
 
     public void ApplyBuff(float duration)

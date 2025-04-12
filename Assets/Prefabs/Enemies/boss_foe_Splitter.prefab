@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: iSecondsAfterSplit
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2839211290788275847, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
+      propertyPath: deathParticlePrefab
+      value: 
+      objectReference: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
     - target: {fileID: 3449285902774385929, guid: ca71791e809b2c344bbdfb08bbd53347, type: 3}
       propertyPath: isBoss
       value: 1

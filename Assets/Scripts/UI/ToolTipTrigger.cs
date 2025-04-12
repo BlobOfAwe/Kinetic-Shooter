@@ -29,10 +29,21 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 
 
-        public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        sidebar.ShowTooltip(title, description, modifications);
-        //sidebar.ShowTooltip(title);
+        if (sidebar == null)
+        {
+            sidebar = FindObjectOfType<InventoryManager>();
+            if (sidebar == null)
+            {
+                Debug.LogWarning("InventoryManager missing.");
+                return;
+            }
+        }
+        if (sidebar != null)
+        {
+            sidebar.ShowTooltip(title, description, modifications);
+        }
     }
     //Coroutine needed to avoid the tooltip flickering non stop because of the raycasting interaction.
     public void OnPointerExit(PointerEventData eventData)
@@ -41,8 +52,10 @@ public class ToolTipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     private IEnumerator HideTooltip()
     {
-      
         yield return new WaitForSeconds(0.1f);
-        sidebar.HideTooltip();
+        if (sidebar != null)
+        {
+            sidebar.HideTooltip();
+        }
     }
 }

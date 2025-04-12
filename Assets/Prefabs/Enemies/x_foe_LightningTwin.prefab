@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6312363553715796698}
   - component: {fileID: 1501724578238108065}
   - component: {fileID: 2868691248158318693}
+  - component: {fileID: 8924550528386107835}
   m_Layer: 7
   m_Name: x_foe_LightningTwin
   m_TagString: Untagged
@@ -212,6 +213,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -238,6 +240,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  initializedByParent: 0
   twin: {fileID: 0}
   eldest: 0
   connector: {fileID: 0}
@@ -269,6 +272,7 @@ MonoBehaviour:
   startupSpeed: 0
   lungeForce: 600
   endtime: 0.5
+  normalEnemy: {fileID: 0}
 --- !u!114 &2868691248158318693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +304,27 @@ MonoBehaviour:
   OverrideAttenuation: 1
   OverrideMinDistance: 1
   OverrideMaxDistance: 3
+--- !u!95 &8924550528386107835
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 180326084db87bd44831a63b3e647b2c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1927387057590619436
 GameObject:
   m_ObjectHideFlags: 0

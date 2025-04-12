@@ -200,7 +200,6 @@ MonoBehaviour:
   debuffDuration: 5
   sideReach: 1.5
   tempHitbox: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  debuffUIIcon: {fileID: 536006796, guid: 5fd1564f7a7cd5f46bdacad95fef7031, type: 3}
 --- !u!114 &1917370352328444805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +239,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -266,6 +266,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  initializedByParent: 0
   animator: {fileID: 5729474182169032065}
 --- !u!95 &5729474182169032065
 Animator:
@@ -445,12 +446,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1208266927, guid: 550c86db331106b448cccfaaef133ecf, type: 3}
+  m_Sprite: {fileID: -848724459, guid: 33dc63b90527c024480c8724c9cc45c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9166667, y: 0.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

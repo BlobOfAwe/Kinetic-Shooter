@@ -21,9 +21,9 @@ public class StandardTertiaryBoomDash : Ability
         
         GameObject hurtboxObj = new GameObject("UtilityBoomHitbox", typeof(SpriteRenderer));
         hurtbox = hurtboxObj.GetComponent<SpriteRenderer>();
-        hurtbox.sprite = tempHitBox;
-        hurtbox.color = Color.red;
-        hurtbox.enabled = false;
+       // hurtbox.sprite = tempHitBox;
+        //hurtbox.color = Color.red;
+        //hurtbox.enabled = false;
     }
 
     public override void OnActivate()
@@ -63,7 +63,7 @@ public class StandardTertiaryBoomDash : Ability
     IEnumerator DisplayExplosionHitbox()
     {
         particles.transform.position = transform.position;
-        particles.transform.localScale = Vector2.one * range * 2;
+        //particles.transform.localScale = Vector2.one * range * 2;
         particles.transform.parent = null;
         particles.gameObject.SetActive(true);
         particles.Play();
