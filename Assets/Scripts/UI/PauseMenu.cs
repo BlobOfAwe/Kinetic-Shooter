@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
     private GameObject settingsButton;
     [SerializeField]
     private GameObject defaultAudioSlider;
+    [HideInInspector]
+    public bool isPaused = false;
 
     // This is now handled in PlayerBehaviour.OnPauseGame() - NK
     /*void Update()
@@ -54,6 +56,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         GameManager.paused = false;
+        isPaused = false;
     }
     public void PauseGame()
     {
@@ -61,6 +64,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         GameManager.paused = true;
+        isPaused = true;
         eventSystem.SetSelectedGameObject(defaultButton);
     }
     public void OpenSettingsMenu()

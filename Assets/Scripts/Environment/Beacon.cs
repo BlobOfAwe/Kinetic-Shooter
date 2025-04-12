@@ -4,6 +4,7 @@ using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 
 public class Beacon : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class Beacon : MonoBehaviour
 
     // audio parameter controller script
     [SerializeField] AudioParameterController parameterController;
+
+    [SerializeField]
+    private GameObject winButton;
 
     public void Start()
     {
@@ -109,6 +113,7 @@ public class Beacon : MonoBehaviour
             winPanel.SetActive(true);
             parameterController.EndingWin();
             FindObjectOfType<CursorManager>().isEndScreen = true;
+            EventSystem.current.SetSelectedGameObject(winButton);
         }
     }
 }

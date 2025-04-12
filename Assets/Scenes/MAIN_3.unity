@@ -210,6 +210,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1616450769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &118970576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359437210231581626, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &118970577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7974121998783368311, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
+  m_PrefabInstance: {fileID: 1497419929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &121096089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1157,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1611796992}
+    - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: gameOverButton
+      value: 
+      objectReference: {fileID: 118970576}
     - target: {fileID: 8544861283654042662, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: parameterController
       value: 
@@ -46604,10 +46618,6 @@ PrefabInstance:
       propertyPath: parameterController
       value: 
       objectReference: {fileID: 1372423954}
-    - target: {fileID: 5541923507258668553, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6380802545698543604, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -47153,6 +47163,10 @@ PrefabInstance:
       propertyPath: winPanel
       value: 
       objectReference: {fileID: 553722597}
+    - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
+      propertyPath: winButton
+      value: 
+      objectReference: {fileID: 118970577}
     - target: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
       propertyPath: parameterController
       value: 

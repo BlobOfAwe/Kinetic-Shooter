@@ -5824,7 +5824,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6385,7 +6385,7 @@ MonoBehaviour:
   playerGunAnimator: {fileID: 2859449797758082515}
   deathDelay: 1
   manualMoveModifier: 0.1
-  aimLineLength: 30
+  aimLineLength: 8
   isFiringPrimary: 0
   isFiringSecondary: 0
   playerSpriteRenderer: {fileID: 1314501562018809629}
