@@ -130,6 +130,7 @@ public class HeavyTertiaryBall : Ability
     private IEnumerator BallCurl()
     {
         yield return new WaitForSeconds(duration);
+        animator.SetBool("isBall", false);
         rb.isKinematic = false;
         player.defenseBuffs.Remove(armorBuff);
         curled = false;

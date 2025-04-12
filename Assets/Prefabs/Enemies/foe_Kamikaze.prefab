@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4453793798671692911}
   - component: {fileID: 3305726313623563983}
   - component: {fileID: -5988937039465329921}
+  - component: {fileID: 4300313825660278217}
   m_Layer: 7
   m_Name: foe_Kamikaze
   m_TagString: Untagged
@@ -37,7 +38,6 @@ Transform:
   m_Children:
   - {fileID: 5894557207145226070}
   - {fileID: 2650934399078723129}
-  - {fileID: 9109462433348042759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8341179428624320036
@@ -212,6 +212,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -232,12 +233,13 @@ MonoBehaviour:
   pursuitDuration: 0
   state: 0
   isBoss: 0
-  isLeader: 0
+  isLeader: 1
   enemyName: Kamikaze
   score: 3
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  initializedByParent: 0
 --- !u!114 &-5988937039465329921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +262,27 @@ MonoBehaviour:
   countdown: 2
   dropoff: 2
   particles: {fileID: 1490172892191064770}
+--- !u!95 &4300313825660278217
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863582455569772561}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c6bf5910bc906e4a940d1886f8ba9cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9065590094521708619
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +421,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3144707555970100491, guid: df62889d9ffc64c44b54ac47fa1c3d82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982553413982269599, guid: df62889d9ffc64c44b54ac47fa1c3d82, type: 3}
+      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -216,6 +216,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -243,6 +244,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
   parameterController: {fileID: 8154828724401843931, guid: 3b9b61a041c7cd74dae5f0b9992b148f, type: 3}
+  initializedByParent: 0
   accelerateOnDamageTaken: 0.5
   degradeSpeedRate: 0.1
 --- !u!114 &2025566866386047605

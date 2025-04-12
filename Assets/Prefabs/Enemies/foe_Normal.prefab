@@ -212,6 +212,7 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
+  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -238,6 +239,7 @@ MonoBehaviour:
   enemyCounterValue: 1
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
+  initializedByParent: 0
   animator: {fileID: 5028277065283571611}
 --- !u!114 &2444843956360531543
 MonoBehaviour:
@@ -265,6 +267,7 @@ MonoBehaviour:
   startupSpeed: 1
   lungeForce: 600
   endtime: 1
+  normalEnemy: {fileID: 863582455569772561}
 --- !u!95 &5028277065283571611
 Animator:
   serializedVersion: 5
@@ -359,12 +362,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 153180614, guid: ea9cba6c7ce4b6645a26cb8b79e92412, type: 3}
+  m_Sprite: {fileID: 399001096, guid: b189af5b080d6e84c9e618a1f3e919da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.59375, y: 0.9583333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

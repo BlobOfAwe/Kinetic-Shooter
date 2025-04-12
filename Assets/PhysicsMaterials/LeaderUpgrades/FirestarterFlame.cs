@@ -19,6 +19,8 @@ public class FirestarterFlame : MonoBehaviour
 
     private void Update()
     {
+
+            transform.up = Vector2.up;
         if (transform.parent.GetComponent<Entity>() != null)
         {
             if (!transform.parent.GetComponent<Entity>().isOnFire)

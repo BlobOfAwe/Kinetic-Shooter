@@ -27,22 +27,25 @@ public class LeaderSplitterEnemy : Enemy
     public override void Death()
     {
         animator.SetBool("isDead", true);
-        StartCoroutine(DeathSequence());
+        float healthBeforeDeath = health;
+        StartCoroutine(DeathSequence(healthBeforeDeath));
     }
-    private IEnumerator DeathSequence()
+    private IEnumerator DeathSequence(float parentHealth)
     {
         float deathAnimationLength = 1f; 
         yield return new WaitForSeconds(deathAnimationLength);
-        if (childSplots != null)
+        if (childSplots != null && childSplots.Length > 0)
         {
+            int numChildren = childSplots.Length;
             foreach (var splot in childSplots)
             {
                 animator.SetBool("isDead", true);
                 splot.transform.parent = null;
                 splot.gameObject.SetActive(true);
-
+                splot.initializedByParent = true;
+                yield return new WaitForEndOfFrame();
+                splot.health = Mathf.Max(parentHealth / numChildren, 0f);
                 ApplyInvincibilityBuff(splot);
-
                 Vector2 randomDirection = new Vector2(Random.Range(0, 1), Random.Range(0, 1)).normalized;
                 splot.GetComponent<Rigidbody2D>().AddForce(randomDirection * splotRepelForce, ForceMode2D.Impulse);
             }

@@ -24,6 +24,14 @@ public class BossTracker : MonoBehaviour
         if (!activeBosses.Contains(boss) && boss.isBoss)
         {
             activeBosses.Add(boss);
+            Enemy[] childBosses = boss.GetComponentsInChildren<Enemy>(true);
+            foreach (Enemy child in childBosses)
+            {
+                if (child != boss && child.isBoss && !activeBosses.Contains(child))
+                {
+                    activeBosses.Add(child);
+                }
+            }
         }
     }
     public void RemoveBoss(Enemy boss)
@@ -39,9 +47,12 @@ public class BossTracker : MonoBehaviour
         float total = 0f;
         foreach (Enemy boss in activeBosses)
         {
-            if (boss != null) total += boss.health;
+            if (boss != null)
+            {
+                total += Mathf.Max(boss.health, 0f);
+            }
         }
-        return total;
+        return Mathf.Max(total, 0f);
     }
 
     public float GetTotalMaxHealth()
@@ -49,13 +60,23 @@ public class BossTracker : MonoBehaviour
         float total = 0f;
         foreach (Enemy boss in activeBosses)
         {
-            if (boss != null) total += boss.maxHealth;
+            if (boss != null)
+            {
+                total += boss.maxHealth;
+            }
         }
         return total;
     }
 
     public bool HasActiveBosses()
     {
-        return activeBosses.Count > 0;
+        foreach (Enemy boss in activeBosses)
+        {
+            if (boss != null)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

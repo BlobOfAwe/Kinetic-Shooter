@@ -225,12 +225,10 @@ MonoBehaviour:
   title: Shotgun Blast
   description: You now have bullets that spread!
   statModifications:
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: -1567753783, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
     isPositive: 1
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: 1417520992, guid: 21adad5e0b5ab9a438309f5e666fa10e, type: 3}
     isPositive: 0
-  - statIcon: {fileID: 0}
-    isPositive: 1
   knockbackIncrease: 0.05
   attackIncrease: -0.3
   cooldownIncrease: 0.05

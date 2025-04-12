@@ -480,7 +480,7 @@ public class PlayerBehaviour : Entity
                 {
                     // Removed audio and animator triggers because this should be happening when the ability activates rather than every time the fire button is pressed.
                     //Added the animator trigger back in because it was interacting weirdly with the ability activation causing the animation to play twice for a single instance of primary activation. Z.S
-                    playerGunAnimator.SetTrigger("isShooting");
+                    
                     
                     isFiringPrimary = true;
                     //AudioManager.instance.PlayOneShot(FMODEvents.instance.impalerGun, this.transform.position);

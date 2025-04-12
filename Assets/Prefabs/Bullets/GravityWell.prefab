@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7007953336672322914}
   - component: {fileID: 3368161223938899733}
   - component: {fileID: 2752309846472491776}
+  - component: {fileID: 8305927226037580241}
   m_Layer: 2
   m_Name: GravityWell
   m_TagString: Untagged
@@ -43,7 +44,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8025443713472894268}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -76,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.17652391, g: 0.1528301, b: 0.5999999, a: 1}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: -245282555, guid: 0a2ae1cfa47bdb54b862fad85b8957db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,6 +179,27 @@ MonoBehaviour:
   attractionForce: 600
   radius: 15
   dropoff: 3
+--- !u!95 &8305927226037580241
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025443713472894268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0694f9bf16773545a2521de167ab99b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &9030890851164295119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +211,86 @@ PrefabInstance:
     - target: {fileID: 2289548895813160552, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
       propertyPath: m_Name
       value: GWell
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289548895813160552, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: TrailModule.colorOverLifetime.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421876802361399243, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7253888661598514671, guid: 9741a2d4c3cb8224db31f9fa814fa423, type: 3}
       propertyPath: m_LocalScale.x

@@ -8,13 +8,14 @@ public class Mine : Projectile
     private LayerMask shootableLayer;
     [SerializeField]
     private float range;
+    [SerializeField]
     private ParticleSystem particles;
     private SpriteRenderer sprite;
 
     protected override void Start()
     {
         base.Start();
-        particles = GetComponentInChildren<ParticleSystem>(true);
+        //particles = GetComponentInChildren<ParticleSystem>(true);
         sprite = GetComponent<SpriteRenderer>();
     }
 

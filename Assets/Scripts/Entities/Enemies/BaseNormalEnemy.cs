@@ -30,19 +30,19 @@ public class BaseNormalEnemy : Enemy
                 SearchForTarget();
                 Wander();
                 animator.SetBool("isMoving", true);
-                animator.SetBool("isAttacking", false);
+                //animator.SetBool("isAttacking", false);
                 break;
             case 1: // Pursuit
                 Pursue();
                 animator.SetBool("isMoving", true);
-                animator.SetBool("isAttacking", false);
+                //animator.SetBool("isAttacking", false);
                 RefreshTarget(); // Periodically update to see if target is within range. Lose interest if not
                 break;
             case 2: // Attack
                 Strafe();
                 animator.SetBool("isMoving", false);
                 if (primary.available && distanceToTarget < (primary.range + 1)) { UseAbility(primary); }
-                animator.SetBool("isAttacking", true);
+                //animator.SetTrigger("isAttacking");
                 break;
         }
     }
