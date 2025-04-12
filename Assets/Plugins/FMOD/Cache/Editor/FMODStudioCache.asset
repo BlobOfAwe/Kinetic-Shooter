@@ -188,10 +188,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638799876674469241
+  lastModified: 638799996819946793
   FileSizes:
   - Name: Desktop
-    Value: 2314144
+    Value: 2341152
   Exists: 1
 --- !u!114 &-7777554827445684272
 MonoBehaviour:
@@ -1123,12 +1123,13 @@ MonoBehaviour:
   - {fileID: 4129551222191391662}
   - {fileID: 1452172606269478884}
   - {fileID: 3636627286018808000}
+  - {fileID: 5912751113678120877}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6065114308530843012}
   StringsBanks:
   - {fileID: 2421541565822050154}
-  cacheTime: 638799876674469241
+  cacheTime: 638799996819946793
   cacheVersion: 131617
 --- !u!114 &58960200177815597
 MonoBehaviour:
@@ -1577,10 +1578,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638799876655243184
+  lastModified: 638799996816860650
   FileSizes:
   - Name: Desktop
-    Value: 4418
+    Value: 4458
   Exists: 1
 --- !u!114 &2931375033082527934
 MonoBehaviour:
@@ -2073,6 +2074,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5912751113678120877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Notification/Teleport
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Notification/Teleport
+  Guid:
+    Data1: -907968346
+    Data2: 1160514855
+    Data3: 1121774259
+    Data4: -83726774
+  Banks:
+  - {fileID: -7791431625784592819}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6065114308530843012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,7 +2116,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638799876655208879
+  lastModified: 638799996816830634
   FileSizes:
   - Name: Desktop
     Value: 2174
@@ -2371,10 +2399,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638799876672291014
+  lastModified: 638799993764399197
   FileSizes:
   - Name: Desktop
-    Value: 30865632
+    Value: 30852960
   Exists: 1
 --- !u!114 &9171413878878511421
 MonoBehaviour:

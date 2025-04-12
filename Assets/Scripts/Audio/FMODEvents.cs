@@ -235,6 +235,11 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Button Hover")]
     [field: SerializeField] public EventReference buttonHover { get; private set; }
 
+    // OTHER
+
+    [field: Header("Teleport")]
+    [field: SerializeField] public EventReference playerTeleport { get; private set; }
+
 
     // Checks if there is more than one FMODEvents script in the scene (which is a no no)
 
