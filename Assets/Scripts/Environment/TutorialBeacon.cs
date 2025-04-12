@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class TutorialBeacon : Beacon
 {
     [SerializeField]
-    private int menuScene = 0;
+    private int menuScene = 1;
 
     protected override IEnumerator WinGame()
     {

@@ -828,7 +828,8 @@ MonoBehaviour:
   levelIsFinished: 0
   player: {fileID: 1356101962}
   parameterController: {fileID: 1102249746}
-  menuScene: 0
+  winButton: {fileID: 0}
+  menuScene: 1
 --- !u!4 &298994681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 19151614702368147, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
@@ -1487,6 +1488,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  defaultButtonMain: {fileID: 0}
+  defaultButtonLoadout: {fileID: 0}
+  defaultButtonLogBook: {fileID: 0}
+  defaultButtonSettings: {fileID: 0}
+  defaultButtonAudio: {fileID: 0}
 --- !u!114 &879053010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64558,7 +64564,7 @@ Transform:
   m_GameObject: {fileID: 1479278621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.222357, y: -3.1000009, z: -10}
+  m_LocalPosition: {x: -28.214201, y: -3.1000009, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

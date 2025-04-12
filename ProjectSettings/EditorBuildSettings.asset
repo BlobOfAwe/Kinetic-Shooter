@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/cutscene.unity
+    guid: 6ddd7470675febe41b046ac9bfb644c9
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 680c13b2e765a22478a6c751a2ecdff3
   - enabled: 0
@@ -41,8 +44,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AudioAlphaScene.unity
     guid: 441fb6a2ed729f44f8fbb300d5f040d4
-  - enabled: 1
-    path: Assets/Scenes/cutscene.unity
-    guid: 6ddd7470675febe41b046ac9bfb644c9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ef194648287b1ac4fb4d8a99db31e8c3, type: 2}

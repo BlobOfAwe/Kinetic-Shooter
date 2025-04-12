@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a2d61caab12d9438a0f58a13bfe08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 0
+  sceneToLoad: 1
 --- !u!4 &879053011
 Transform:
   m_ObjectHideFlags: 0
@@ -46747,6 +46747,10 @@ PrefabInstance:
       propertyPath: deathScoreDisplay
       value: 
       objectReference: {fileID: 940481001}
+    - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
+      propertyPath: menuSceneBuildIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8796563139429861027, guid: c6b3918ae51a6344bbaf054a8daa1c29, type: 3}
       propertyPath: parameterController
       value: 

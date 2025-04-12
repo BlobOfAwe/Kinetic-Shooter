@@ -25,7 +25,7 @@ public static class GameManager
     /// to which environment. The indexes can be changed, or more can be added to increase the game length.
     /// This is retrieved by Beacon.cs to load levels after completion.
     /// </summary>
-    public static int[] sceneIndexForLevel = {1,1,1,2,2,2,3,3,3};
+    public static int[] sceneIndexForLevel = {2,2,2,3,3,3,4,4,4};
 
     public static int[] bossSpawnCreditsForLevel = { 20, 40, 100, 60, 120, 160, 180, 200, 260 };
     

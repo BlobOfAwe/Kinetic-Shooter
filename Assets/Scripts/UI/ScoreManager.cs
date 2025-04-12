@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;
 
     [SerializeField]
-    private int menuSceneBuildIndex = 0;
+    private int menuSceneBuildIndex = 1;
 
     [SerializeField] 
     private ScoreDisplay scoreDisplay; //Added By ZS to reference ScoreDisplay
