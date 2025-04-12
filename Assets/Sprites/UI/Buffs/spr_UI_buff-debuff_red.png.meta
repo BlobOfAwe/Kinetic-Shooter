@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74771255f6aaba34a896603d48ba1f70
+guid: 21adad5e0b5ab9a438309f5e666fa10e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_attack_Debuff_0
+      name: spr_UI_buff-debuff_red_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 12
-        width: 166
+        x: 0
+        y: 171
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0d790db16b5ee6498bfbe8a30132cfc
-      internalID: -1829021549
+      spriteID: 24c9ddf450c37804eac98e5993e902b6
+      internalID: 1417520992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_1
+      name: spr_UI_buff-debuff_red_1
       rect:
         serializedVersion: 2
-        x: 217
-        y: 12
-        width: 167
+        x: 170
+        y: 171
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e9e93acb0acf6d48a599037a1c5f1ae
-      internalID: -30120734
+      spriteID: d08131858730c4c42bc9fc7b422bce78
+      internalID: -1542814009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_2
+      name: spr_UI_buff-debuff_red_2
       rect:
         serializedVersion: 2
-        x: 417
-        y: 12
-        width: 167
+        x: 340
+        y: 171
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecacef05705a5a248b170ff5ab19cac6
-      internalID: 490834427
+      spriteID: 3b2ea9b939be3494082b1b521f917dec
+      internalID: -1793161515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_3
+      name: spr_UI_buff-debuff_red_3
       rect:
         serializedVersion: 2
-        x: 617
-        y: 12
-        width: 167
+        x: 0
+        y: 0
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5e6acbebc441e744913bba75a354699
-      internalID: -1129881224
+      spriteID: 64819c232c8fddc4cbacbb9f111502e4
+      internalID: -525708559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_4
+      name: spr_UI_buff-debuff_red_4
       rect:
         serializedVersion: 2
-        x: 817
-        y: 12
-        width: 167
+        x: 170
+        y: 0
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cfa81d9716ae34b9e944118719c704
-      internalID: 724035254
+      spriteID: da68b2f550c052844b37de5cdb6c3c21
+      internalID: -393574411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_5
+      name: spr_UI_buff-debuff_red_5
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 12
-        width: 167
+        x: 340
+        y: 0
+        width: 170
         height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -229,29 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 781fb53d4034700448d5907ec6c32a85
-      internalID: 943932935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_attack_Debuff_6
-      rect:
-        serializedVersion: 2
-        x: 1217
-        y: 12
-        width: 167
-        height: 171
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e525c027b013d8f4d85084bbc3cb7e2c
-      internalID: -468438744
+      spriteID: 396ad77890fd65544bb4c0d96358df0c
+      internalID: -1920899556
       vertices: []
       indices: 
       edges: []
@@ -267,13 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_attack_Debuff_0: -1829021549
-      spr_attack_Debuff_1: -30120734
-      spr_attack_Debuff_2: 490834427
-      spr_attack_Debuff_3: -1129881224
-      spr_attack_Debuff_4: 724035254
-      spr_attack_Debuff_5: 943932935
-      spr_attack_Debuff_6: -468438744
+      spr_UI_buff-debuff_red_0: 1417520992
+      spr_UI_buff-debuff_red_1: -1542814009
+      spr_UI_buff-debuff_red_2: -1793161515
+      spr_UI_buff-debuff_red_3: -525708559
+      spr_UI_buff-debuff_red_4: -393574411
+      spr_UI_buff-debuff_red_5: -1920899556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

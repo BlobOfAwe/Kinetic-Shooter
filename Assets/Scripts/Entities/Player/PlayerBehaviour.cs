@@ -145,6 +145,7 @@ public class PlayerBehaviour : Entity
         mainCam = Camera.main;
         playerMovementSound = AudioManager.instance.CreateEventInstance(FMODEvents.instance.basicMovement);
         playerAnimator.SetTrigger("isTeleportingIn");
+        playerGunAnimator.SetTrigger("isTeleportingIn");
 
         pauseMenu = FindObjectOfType<PauseMenu>();
         inventory = FindObjectOfType<InventoryManager>();
@@ -599,6 +600,7 @@ public class PlayerBehaviour : Entity
             isGameEnd = true;
             totalSpeed = 0f;
             playerAnimator.SetTrigger("isTeleporting");
+            playerGunAnimator.SetTrigger("isTeleporting");
         }
     }
     //Added by ZS, to play the death animation and add a delay before switching scenes to the gameover menu

@@ -225,17 +225,15 @@ MonoBehaviour:
   title: Fast Flying
   description: Your speed is increased!
   statModifications:
-  - statIcon: {fileID: 0}
-    isPositive: 0
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: 1432936135, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
     isPositive: 1
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: -1319397313, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
     isPositive: 1
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: -1567753783, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
     isPositive: 1
   - statIcon: {fileID: 0}
     isPositive: 0
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: -393574411, guid: 21adad5e0b5ab9a438309f5e666fa10e, type: 3}
     isPositive: 0
   cooldownIncrease: -0.1
   bulletSpeedIncrease: 0.1

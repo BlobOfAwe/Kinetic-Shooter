@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 74771255f6aaba34a896603d48ba1f70
+guid: 3a051ec3394c6684fab18622dadae7bb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_attack_Debuff_0
+      name: BuffAttack_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 12
-        width: 166
-        height: 171
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0d790db16b5ee6498bfbe8a30132cfc
-      internalID: -1829021549
+      spriteID: 5ddec45a9e6b73147b3c815e9fa1e282
+      internalID: -15117990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_1
+      name: BuffAttack_1
       rect:
         serializedVersion: 2
-        x: 217
-        y: 12
-        width: 167
-        height: 171
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e9e93acb0acf6d48a599037a1c5f1ae
-      internalID: -30120734
+      spriteID: 9be3282e7753a584b96d4c950a24f7d3
+      internalID: -1023317987
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_2
+      name: BuffAttack_2
       rect:
         serializedVersion: 2
-        x: 417
-        y: 12
-        width: 167
-        height: 171
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecacef05705a5a248b170ff5ab19cac6
-      internalID: 490834427
+      spriteID: 958ea19df28d650418de0357bb023f41
+      internalID: 142340732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_3
+      name: BuffAttack_3
       rect:
         serializedVersion: 2
-        x: 617
-        y: 12
-        width: 167
-        height: 171
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5e6acbebc441e744913bba75a354699
-      internalID: -1129881224
+      spriteID: 20c77f4774733eb4a93db0ed3d02c790
+      internalID: -116876524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_4
+      name: BuffAttack_4
       rect:
         serializedVersion: 2
-        x: 817
-        y: 12
-        width: 167
-        height: 171
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cfa81d9716ae34b9e944118719c704
-      internalID: 724035254
+      spriteID: 49999e3426cd60d47a63e592c01cafc1
+      internalID: -309391111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_5
+      name: BuffAttack_5
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 12
-        width: 167
-        height: 171
+        x: 5120
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 781fb53d4034700448d5907ec6c32a85
-      internalID: 943932935
+      spriteID: c6202d993fb11ea438e485f03c510da6
+      internalID: -450361981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_attack_Debuff_6
+      name: BuffAttack_6
       rect:
         serializedVersion: 2
-        x: 1217
-        y: 12
-        width: 167
-        height: 171
+        x: 6144
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e525c027b013d8f4d85084bbc3cb7e2c
-      internalID: -468438744
+      spriteID: 529e7602003406541b79320440087e49
+      internalID: -1130259160
       vertices: []
       indices: 
       edges: []
@@ -267,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_attack_Debuff_0: -1829021549
-      spr_attack_Debuff_1: -30120734
-      spr_attack_Debuff_2: 490834427
-      spr_attack_Debuff_3: -1129881224
-      spr_attack_Debuff_4: 724035254
-      spr_attack_Debuff_5: 943932935
-      spr_attack_Debuff_6: -468438744
+      BuffAttack_0: -15117990
+      BuffAttack_1: -1023317987
+      BuffAttack_2: 142340732
+      BuffAttack_3: -116876524
+      BuffAttack_4: -309391111
+      BuffAttack_5: -450361981
+      BuffAttack_6: -1130259160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

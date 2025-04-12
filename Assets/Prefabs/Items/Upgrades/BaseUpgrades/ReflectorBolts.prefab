@@ -225,12 +225,12 @@ MonoBehaviour:
   title: Reflector Bolts
   description: Some bullets now reflect enemy projectiles!
   statModifications:
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: -382517122, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
     isPositive: 1
-  - statIcon: {fileID: 0}
-    isPositive: 1
-  - statIcon: {fileID: 0}
+  - statIcon: {fileID: 1417520992, guid: 21adad5e0b5ab9a438309f5e666fa10e, type: 3}
     isPositive: 0
+  - statIcon: {fileID: -933228904, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
+    isPositive: 1
   defenseIncrease: 0.05
   healthIncrease: 0.05
   damageIncrease: -0.05

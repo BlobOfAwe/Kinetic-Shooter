@@ -140,7 +140,13 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: eae837964d9d09e46874f6256c9cc3d6, type: 3}
   title: Rocket Launcher
   description: Your bullets are now rockets!
-  statModifications: []
+  statModifications:
+  - statIcon: {fileID: -997724992, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
+    isPositive: 1
+  - statIcon: {fileID: -1567753783, guid: cba9e8477f16e7849abc4005da2b651d, type: 3}
+    isPositive: 1
+  - statIcon: {fileID: -1793161515, guid: 21adad5e0b5ab9a438309f5e666fa10e, type: 3}
+    isPositive: 0
   damagePercent: 0.1
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.1
