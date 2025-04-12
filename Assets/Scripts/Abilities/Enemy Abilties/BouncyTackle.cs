@@ -17,7 +17,7 @@ public class BouncyTackle : Ability
     private int bounceCounter;
 
     private Rigidbody2D rb;
-    private BoxCollider2D hitbox;
+    private Collider2D hitbox;
     private bool lunging;
     [SerializeField] private GameObject[] shockwaves;
     
@@ -45,6 +45,7 @@ public class BouncyTackle : Ability
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hitbox = GetComponent<Collider2D>();
         sprite = GetComponentInChildren<Enemy>().sprite;
         baseColor = sprite.color;
         Physics2D.queriesStartInColliders = false; // Raycasts that start inside a collider should not register that collider
@@ -120,6 +121,7 @@ public class BouncyTackle : Ability
         // Use the point's normal to calculate the reflection vector.
         Vector3 reflectVec = Vector3.Reflect(incomingVec, contactPoint.normal);
         Debug.DrawRay(contactPoint.point, reflectVec, Color.cyan, 10f);
+        if (reflectVec == null) { reflectVec = incomingVec * -1; }
 
         StartCoroutine(LungeForward(reflectVec));
     }
@@ -148,7 +150,7 @@ public class BouncyTackle : Ability
         try { GetComponent<AIPath>().canMove = false; }
         catch { Debug.LogWarning("No AIPath component detected."); }
 
-        sprite.color = Color.gray; // WHITEBOX ONLY: Change the color to indicate the lunge is starting
+        sprite.color = Color.gray;
 
         transform.up = direction;
 
@@ -170,7 +172,9 @@ public class BouncyTackle : Ability
         lunging = true;
         rb.velocity = transform.up * lungeForce;
 
-        yield return new WaitForEndOfFrame();
-        
+        hitbox.enabled = false;
+        yield return new WaitForFixedUpdate();
+        hitbox.enabled = true;
+
     }
 }
