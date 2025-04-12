@@ -105,6 +105,8 @@ public class EnemyCounter : MonoBehaviour
         {
             FindObjectOfType<Forcefield>().Deactivate();
             FindObjectOfType<Beacon>().levelIsFinished = true; // temporary
+            //triggers win audio
+            parameterController.EndingWin();
         }
     }
 

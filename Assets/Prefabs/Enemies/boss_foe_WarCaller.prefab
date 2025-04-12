@@ -128,6 +128,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4795441454637176457, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
+      propertyPath: range
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795441454637176457, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
+      propertyPath: cooldown
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
       propertyPath: hpStat
       value: 500
