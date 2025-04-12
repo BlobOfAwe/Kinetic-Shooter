@@ -18,16 +18,19 @@ public class HeavyPrimaryFire : ShootAbility
     [SerializeField] private float damageModOne;
     [SerializeField] private float recoilModOne;
     [SerializeField] private float scaleModOne;
+    [SerializeField] private float effectModOne;
 
     [Header("Bullet 2")]
     [SerializeField] private float damageModTwo;
     [SerializeField] private float recoilModTwo;
     [SerializeField] private float scaleModTwo;
+    [SerializeField] private float effectModTwo;
 
     [Header("Bullet 3")]
     [SerializeField] private float damageModThree;
     [SerializeField] private float recoilModThree;
     [SerializeField] private float scaleModThree;
+    [SerializeField] private float effectModThree;
 
 
     private Rigidbody2D rb;
@@ -61,15 +64,15 @@ public class HeavyPrimaryFire : ShootAbility
 
     private IEnumerator Burst()
     {
-        FireBullet(damageModOne, recoilModOne, scaleModOne);
+        FireBullet(damageModOne, recoilModOne, scaleModOne, effectModOne);
         yield return new WaitForSeconds(burstSpacing);
-        FireBullet(damageModTwo, recoilModTwo, scaleModTwo);
+        FireBullet(damageModTwo, recoilModTwo, scaleModTwo, effectModTwo);
         yield return new WaitForSeconds(burstSpacing);
-        FireBullet(damageModThree, recoilModThree, scaleModThree);
+        FireBullet(damageModThree, recoilModThree, scaleModThree, effectModThree);
         StartCoroutine(BeginCooldown());
     }
 
-    private void FireBullet(float damageMod, float recoilMod, float scaleMod)
+    private void FireBullet(float damageMod, float recoilMod, float scaleMod, float effectMod)
     {
         // Modified code to animate gun and play fire sound here and only here. - NK
         player.playerGunAnimator.SetTrigger("isShooting");
@@ -87,8 +90,8 @@ public class HeavyPrimaryFire : ShootAbility
                 bulletProj.timeRemaining = bulletProj.despawnTime; // Reset the bullet's despawn timer. - NK
                 bulletProj.speedMultiplier = bulletSpeedMultiplier;
                 bulletProj.knockbackMultiplier = bulletKnockbackMultiplier;
-                bulletProj.damageMultiplier *= damageMod * damageModifier * bulletDamageMultiplier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
-                bulletProj.effectModifier = damageModifier * damageMod;
+                bulletProj.damageMultiplier = 1 * damageMod * damageModifier * bulletDamageMultiplier; // Modify the bullet's damage by the projectile's default modifier, the modifier of the burst sequence, and the ability's damage modifier
+                bulletProj.effectModifier = effectMod * upgradeTriggerRate;
                 bullet.transform.localScale = Vector3.one * scaleMod;
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;

@@ -60,7 +60,7 @@ public class StandardPrimaryFire : ShootAbility
                 bulletProj.speedMultiplier = bulletSpeedMultiplier;
                 bulletProj.knockbackMultiplier = bulletKnockbackMultiplier;
                 bulletProj.damageMultiplier = bulletDamageMultiplier * damageModifier;
-                bulletProj.effectModifier = damageModifier;
+                bulletProj.effectModifier = upgradeTriggerRate;
                 player.ProjectileFireEffect(bullet.GetComponent<TestBullet>());
                 bullet.SetActive(true); return;
             } // Set the bullet to active and return

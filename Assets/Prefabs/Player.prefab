@@ -6422,7 +6422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89961ccd2eb5704b8d5aecc00d653e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.5
+  cooldown: 0.35
   cooldownMultiplier: 1
   available: 1
   inUse: 0
@@ -6432,6 +6432,7 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 1
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 60
@@ -6500,7 +6501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a5a6285e3eb68843bf26975608b5fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1.25
+  cooldown: 0.7
   cooldownMultiplier: 1
   available: 1
   inUse: 0
@@ -6510,19 +6511,23 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 30
   burstSpacing: 0.07
-  damageModOne: 0.5
+  damageModOne: 0.7
   recoilModOne: 1
   scaleModOne: 1
-  damageModTwo: 1
+  effectModOne: 0
+  damageModTwo: 1.2
   recoilModTwo: 3
   scaleModTwo: 1.5
-  damageModThree: 1.5
+  effectModTwo: 0
+  damageModThree: 1.7
   recoilModThree: 10
   scaleModThree: 3
+  effectModThree: 0
 --- !u!114 &8881820493473276149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,6 +6602,7 @@ MonoBehaviour:
   bulletSpeedMultiplier: 1
   bulletKnockbackMultiplier: 1
   bulletDamageMultiplier: 1
+  upgradeTriggerRate: 0.2
   bullets: []
   bulletPrefab: {fileID: 343203927459609909, guid: 9b0b6a1be408ff948b11367d3abbbf37, type: 3}
   maxBullets: 20

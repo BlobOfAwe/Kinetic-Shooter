@@ -95,6 +95,20 @@ public abstract class Enemy : Entity
         if (!rotateSpriteToFacePlayer) { sprite.transform.rotation = Quaternion.Euler(Vector2.zero); }
     }
 
+    public override void Damage(float amount)
+    {
+        base.Damage(amount);
+        float totalDamage = amount * (100 / (100 + totalDefense));
+        if (totalDamage <= 0.01f)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.armadilloBlock, this.transform.position);
+        }
+        else
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDamaged, this.transform.position);
+        }
+    }
+
     // Required implementation of the abstract function Entity.Death()
     public override void Death()
     {
