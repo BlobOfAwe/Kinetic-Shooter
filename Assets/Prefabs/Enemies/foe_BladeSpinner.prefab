@@ -211,7 +211,6 @@ MonoBehaviour:
   additional: {fileID: 0}
   rb: {fileID: 0}
   statsDisplay: {fileID: 0}
-  deathParticlePrefab: {fileID: 4233059743597468736, guid: 240685b31db871a42b3a6df09a46c1a5, type: 3}
   isFlammable: 1
   cushion: 0
   capSpeedToTotalSpeed: 1
@@ -239,6 +238,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
 --- !u!114 &-3649585130351582013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 3634279922253819881}
   - component: {fileID: 9207667339505459354}
   - component: {fileID: 8656705314244082390}
+  - component: {fileID: 4466397110877291993}
   m_Layer: 7
   m_Name: Blade
   m_TagString: Untagged
@@ -742,3 +743,24 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!95 &4466397110877291993
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7643348754889422399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21db3714026b95d428662d4becf41668, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
