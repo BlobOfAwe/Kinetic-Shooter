@@ -13,8 +13,10 @@ public class BouncyTackle : Ability
     [SerializeField] private float bounceDelay; // How long does the enemy pause between bounces?
     [SerializeField] private float lungeForce; // How far does the entity lunge?
     [SerializeField] private float endtime; // After lunging, how long (in seconds) before the entity can move again
+    [SerializeField] private float maxLungeDuration; // A backup in case the enemy doesn't hit a wall, how long can it lunge for before resetting?
     [SerializeField] private int maxBounces; // The maximum number of times it can bounce
     private int bounceCounter;
+    private Coroutine backupTerminationRoutine; // Stores an active coroutine termination
 
     private Rigidbody2D rb;
     private Collider2D hitbox;
@@ -71,11 +73,9 @@ public class BouncyTackle : Ability
             if ((canDamage & (1 << collision.gameObject.layer)) != 0)
             {
                 // Try to damage the object
-                try
-                {
-                    collision.gameObject.GetComponent<Entity>().Damage(thisEntity.totalAttack * damageModifier, true);
-                }
-                catch { }
+                Entity obj = collision.gameObject.GetComponent<Entity>();
+                if (obj != null)
+                    obj.Damage(thisEntity.totalAttack * damageModifier, true);
             }
             
 
@@ -83,7 +83,7 @@ public class BouncyTackle : Ability
             Rigidbody2D collidedRB = collision.gameObject.gameObject.GetComponent<Rigidbody2D>();
 
             // If the object has no rigidbody or the rigidbody is set to kinematic, get a reflection angle and prepare to bounce
-            if (collidedRB == null || collidedRB.isKinematic)
+            if (collidedRB == null || collidedRB.bodyType == RigidbodyType2D.Kinematic || collidedRB.bodyType == RigidbodyType2D.Static)
             {
                //Debug.Log(bounceCounter + " bounces");
 
@@ -170,7 +170,6 @@ public class BouncyTackle : Ability
         rb.velocity = Vector2.zero;
         lunging = true;
         rb.velocity = transform.up * lungeForce;
-
         hitbox.enabled = false;
         yield return new WaitForFixedUpdate();
         hitbox.enabled = true;

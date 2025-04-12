@@ -64,6 +64,10 @@ public class BossSeigeBruteEnemy : Enemy
         }
         speedBuffs.Remove(speedBuff);
         speedBuff.value -= degradeSpeedRate * Time.deltaTime;
+        if (speedBuff.value < 0)
+        {
+            speedBuff.value = 0;
+        }
         ApplyBuff(speedBuff);
     }
 
