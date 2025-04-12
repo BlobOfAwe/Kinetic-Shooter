@@ -266,6 +266,7 @@ MonoBehaviour:
   leaderUpgradeSpawnChance: 0
   rotateSpriteToFacePlayer: 0
   initializedByParent: 0
+  parameterController: {fileID: 0}
   animator: {fileID: 5729474182169032065}
 --- !u!95 &5729474182169032065
 Animator:
@@ -481,13 +482,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5383328274113600427}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6991793, w: 0.71494645}
+  m_LocalPosition: {x: -0.08, y: 0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 553466555589206235}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 88.722}
 --- !u!212 &7659142814019577326
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -534,7 +535,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3.8999996}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
