@@ -543,13 +543,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalEnemies: 1
-  bossEnemy: {fileID: 863582455569772561, guid: bf28529699bf8a241849118eb93edfbc, type: 3}
+  bossSpawningCredits: 0
+  remainingBosses: 0
+  bossEnemies: []
   bossXOffsetMin: -2
   bossXOffsetMax: 2
   bossYOffsetMin: -2
   bossYOffsetMax: 2
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
+  beaconIndicator: {fileID: 0}
+  parameterController: {fileID: 0}
 --- !u!4 &287445713
 Transform:
   m_ObjectHideFlags: 0
@@ -587,7 +591,9 @@ MonoBehaviour:
   credits: 40
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
-  spawnRange: 17
+  maxEnemiesPerSpawn: 0
+  maxSpawnDistance: 0
+  minSpawnDistance: 0
   spawnPosition: {x: 0, y: 0}
   player: {fileID: 176354478}
 --- !u!1 &295779775
@@ -744,6 +750,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forcefield: {fileID: 842212480}
   active: 0
+  bossCamSize: 0
+  timeToFullZoomOut: 1
+  vCam: {fileID: 0}
+  winPanel: {fileID: 0}
+  levelIsFinished: 0
+  player: {fileID: 0}
+  parameterController: {fileID: 0}
+  winButton: {fileID: 0}
 --- !u!114 &638390376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -756,10 +770,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -18.5
-  maxX: 18.5
-  minY: -9.5
-  maxY: 9.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!58 &638390377
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -815,7 +830,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -930,6 +945,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   forcefieldCollider: {fileID: 1777373406}
+  beaconIndicator: {fileID: 0}
 --- !u!4 &842212481
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,7 +1017,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1278,7 +1294,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4334,7 +4350,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4449,8 +4465,15 @@ MonoBehaviour:
   - {fileID: 4137132167847580081, guid: 4099f008a87c7ca419aba191e263da26, type: 3}
   itemPrefabs:
   - {fileID: 5797877328153500716, guid: c61e17f0706058e428601a02b1493944, type: 3}
+  hazardPrefabs: []
   minItems: 5
   maxItems: 10
+  minHazards: 0
+  maxHazards: 0
+  levelXMin: -1
+  levelXMax: 1
+  levelYMin: -1
+  levelYMax: 1
 --- !u!4 &1616450769
 Transform:
   m_ObjectHideFlags: 0

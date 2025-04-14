@@ -156,7 +156,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: eae837964d9d09e46874f6256c9cc3d6, type: 3}
   title: Rocket Launcher
   description: Your bullets are now rockets!
-  damageIncrease: 0.1
+  statModifications: []
+  damagePercent: 1
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.1
   explosion: {fileID: 6102170954844317050, guid: 0a344dc35930bac419a8afbead9cbc3f, type: 3}
@@ -215,7 +216,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -546,7 +547,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: eae837964d9d09e46874f6256c9cc3d6, type: 3}
   title: Rocket Launcher
   description: Your bullets are now rockets!
-  damageIncrease: 0.1
+  statModifications: []
+  damagePercent: 1
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.1
   explosion: {fileID: 6102170954844317050, guid: 0a344dc35930bac419a8afbead9cbc3f, type: 3}
@@ -605,7 +607,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -745,13 +747,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalEnemies: 20
-  bossEnemy: {fileID: 863582455569772561, guid: bf28529699bf8a241849118eb93edfbc, type: 3}
+  bossSpawningCredits: 0
+  remainingBosses: 0
+  bossEnemies: []
   bossXOffsetMin: -2
   bossXOffsetMax: 2
   bossYOffsetMin: -2
   bossYOffsetMax: 2
   beacon: {fileID: 638390375}
   enemyCounterText: {fileID: 1497419932}
+  beaconIndicator: {fileID: 0}
+  parameterController: {fileID: 0}
 --- !u!4 &287445713
 Transform:
   m_ObjectHideFlags: 0
@@ -785,13 +791,13 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 7955933720918278427, guid: bc929a9448bc09747902289cd0cbc855, type: 3}
   - {fileID: 6830094450603475086, guid: 8e0cda38ca0a08a49935a2a7eb07690b, type: 3}
-  leaderPrefabs: []
   timeToNextSpawn: 0
   credits: 40
   selectedEnemy: {fileID: 0}
   lastSpawnSuccess: 0
   maxEnemiesPerSpawn: 0
-  spawnRange: 10.5
+  maxSpawnDistance: 0
+  minSpawnDistance: 0
   spawnPosition: {x: 0, y: 0}
   player: {fileID: 176354478}
 --- !u!1 &295779775
@@ -951,8 +957,11 @@ MonoBehaviour:
   bossCamSize: 10
   timeToFullZoomOut: 3
   vCam: {fileID: 0}
-  nextLevelScene: UpgradeTest
+  winPanel: {fileID: 0}
   levelIsFinished: 0
+  player: {fileID: 0}
+  parameterController: {fileID: 0}
+  winButton: {fileID: 0}
 --- !u!114 &638390376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,10 +974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -18.5
-  maxX: 18.5
-  minY: -9.5
-  maxY: 9.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!58 &638390377
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1024,7 +1034,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1139,6 +1149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   forcefieldCollider: {fileID: 1777373406}
+  beaconIndicator: {fileID: 0}
 --- !u!4 &842212481
 Transform:
   m_ObjectHideFlags: 0
@@ -1210,7 +1221,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1326,7 +1337,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40383,7 +40394,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -40504,7 +40516,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: eae837964d9d09e46874f6256c9cc3d6, type: 3}
   title: Rocket Launcher
   description: Your bullets are now rockets!
-  damageIncrease: 0.1
+  statModifications: []
+  damagePercent: 1
   bulletKnockbackIncrease: 0.05
   bulletSpeedIncrease: -0.1
   explosion: {fileID: 6102170954844317050, guid: 0a344dc35930bac419a8afbead9cbc3f, type: 3}
@@ -40563,7 +40576,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -40880,7 +40893,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43953,7 +43966,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44068,8 +44081,15 @@ MonoBehaviour:
   - {fileID: 4137132167847580081, guid: 4099f008a87c7ca419aba191e263da26, type: 3}
   itemPrefabs:
   - {fileID: 5797877328153500716, guid: c61e17f0706058e428601a02b1493944, type: 3}
+  hazardPrefabs: []
   minItems: 5
   maxItems: 10
+  minHazards: 0
+  maxHazards: 0
+  levelXMin: -1
+  levelXMax: 1
+  levelYMin: -1
+  levelYMax: 1
 --- !u!4 &1616450769
 Transform:
   m_ObjectHideFlags: 0
