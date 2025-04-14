@@ -140,7 +140,6 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 4ba485328fc2af34b838bae1a378f3e8, type: 3}
   title: Test Item 1
   description: A bizarre cat
-  statModifications: []
 --- !u!114 &2661991241401170517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,11 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wholeMap: 1
-  xMin: 0
-  xMax: 0
-  yMin: 0
-  yMax: 0
+  minX: -35.5
+  maxX: 35.5
+  minY: -26.5
+  maxY: 26.5
 --- !u!199 &8686918527902266176
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -179,7 +177,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

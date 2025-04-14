@@ -338,7 +338,6 @@ MonoBehaviour:
   title: Test Item 2
   description: This description is very long and is going to test what the text wrapping
     capacity of the tooltips is.
-  statModifications: []
 --- !u!58 &252508566
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -394,7 +393,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -928,7 +927,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1009,7 +1008,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   title: 
   description: 
-  statModifications: []
 --- !u!58 &1025302074
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1065,7 +1063,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1239,7 +1237,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   title: 
   description: 
-  statModifications: []
 --- !u!58 &1235196670
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1295,7 +1292,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1512,7 +1509,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1626,15 +1623,8 @@ MonoBehaviour:
   - {fileID: 1921778264852202543, guid: 2bdebbdc99db5724988785080ccf51fb, type: 3}
   itemPrefabs:
   - {fileID: 5797877328153500716, guid: c61e17f0706058e428601a02b1493944, type: 3}
-  hazardPrefabs: []
   minItems: 0
   maxItems: 0
-  minHazards: 0
-  maxHazards: 0
-  levelXMin: -1
-  levelXMax: 1
-  levelYMin: -1
-  levelYMax: 1
 --- !u!4 &1466704898
 Transform:
   m_ObjectHideFlags: 0
@@ -1942,7 +1932,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   title: 
   description: 
-  statModifications: []
 --- !u!58 &1846130138
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1998,7 +1987,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2079,7 +2068,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   title: 
   description: 
-  statModifications: []
 --- !u!58 &1962464023
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2135,7 +2123,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
