@@ -9870,6 +9870,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &911499823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911499824}
+  - component: {fileID: 911499825}
+  m_Layer: 0
+  m_Name: TutorialLoadoutManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &911499824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911499823}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 176.62997, y: -2.5480042, z: 0}
+  m_LocalScale: {x: 1.6480685, y: 1.6480685, z: 1.6480685}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2101523286}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &911499825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911499823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fcbe861ef53d8b44a2038c317521c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLoadoutImage: {fileID: 0}
+  loadoutInfoText: {fileID: 0}
+  loadoutTitleText: {fileID: 0}
+  loadouts:
+  - loadout: Standard
+    weapon: Repulsor Mk IIV
+    primary: 'STEADY PULSE: Fire bullets doing medium damage at a medium pace.'
+    secondary: 'POINT BLANK: Blast enemies in front of you with explosive knockback.'
+    ability: 'EXPLOSIVE LEAP: Explode in a radius, launching yourself forward.'
+    description: The standard kit. Reliable in all scenarios.
+    loadoutImage: {fileID: 21300000, guid: 4137d3bd08076764eaf36d65dd778806, type: 3}
+    primaryAbility: {fileID: -2479830224578350400, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+    secondaryAbility: {fileID: 571558318740040795, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+    utilityAbility: {fileID: 821309631429538210, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+    attackStat: 10
+    defenseStat: 0
+    speedStat: 7
+    hpStat: 150
+    recoverStat: 1
+  playerPrefab: {fileID: 5777279789927432716, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
 --- !u!1 &969779152
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,9 +11494,9 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnUp: {fileID: 1244047851}
+    m_SelectOnDown: {fileID: 1244047851}
+    m_SelectOnLeft: {fileID: 1244047851}
     m_SelectOnRight: {fileID: 1244047851}
   m_Transition: 1
   m_Colors:
@@ -11778,10 +11842,10 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1210261391}
+    m_SelectOnDown: {fileID: 1210261391}
+    m_SelectOnLeft: {fileID: 1210261391}
+    m_SelectOnRight: {fileID: 1210261391}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -12721,6 +12785,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 911499825}
+        m_TargetAssemblyTypeName: LoadoutManager, Assembly-CSharp
+        m_MethodName: AssignLoadoutToPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1730333010}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: PlayClickSound
@@ -15616,6 +15692,7 @@ RectTransform:
   - {fileID: 415970169}
   - {fileID: 1351778418}
   - {fileID: 684634668}
+  - {fileID: 911499824}
   - {fileID: 516909403}
   m_Father: {fileID: 543547803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
