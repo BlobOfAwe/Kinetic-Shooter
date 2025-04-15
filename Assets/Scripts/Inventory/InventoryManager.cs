@@ -192,6 +192,11 @@ public class InventoryManager : MonoBehaviour
         bool isBackgroundActive = inventoryBackground.activeSelf;
         inventoryBackground.SetActive(!isBackgroundActive);
         slotParent.gameObject.SetActive(!isActive);
+        // Added by Nathaniel Klassen
+        if (FindObjectOfType<InventoryCursor>() != null)
+        {
+            FindObjectOfType<InventoryCursor>().SetCursorMode(!isActive);
+        }
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0 : 1;
         GameManager.paused = isPaused;

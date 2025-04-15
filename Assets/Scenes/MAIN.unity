@@ -929,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionId
@@ -964,6 +964,10 @@ PrefabInstance:
       value: 6744fd3c-b833-4213-a16e-1da3653df1d8
       objectReference: {fileID: 0}
     - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: cce50eae-c205-4a62-a263-9665306d7d27
+      objectReference: {fileID: 0}
+    - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_ActionName
       value: UI/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad,/XInputControllerWindows/leftStick]
       objectReference: {fileID: 0}
@@ -994,6 +998,10 @@ PrefabInstance:
     - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_ActionName
       value: UI/ScrollWheel[/Mouse/scroll]
+      objectReference: {fileID: 0}
+    - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/VirtualCursor[/XInputControllerWindows/leftStick,/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
       objectReference: {fileID: 0}
     - target: {fileID: 925940763141688901, guid: 8abf3a786b578fe448fa9b8aa67f9f9f, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
@@ -1233,66 +1241,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5541923507258668553, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
   m_PrefabInstance: {fileID: 1497419929}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &620497038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7392127733221791462, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-  m_PrefabInstance: {fileID: 1497419929}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &620497039 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6874570373368192242, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-  m_PrefabInstance: {fileID: 1497419929}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &620497040 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4091801824120781135, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-  m_PrefabInstance: {fileID: 1497419929}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &620497041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620497038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isUI: 1
-  keyboardSprite: {fileID: 21300000, guid: 80a8ee050494b9c40be4f1feafc923af, type: 3}
-  gamepadSprite: {fileID: 21300000, guid: b3eb15f4eb73caf458ed1c9a20942088, type: 3}
---- !u!114 &620497042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620497039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isUI: 1
-  keyboardSprite: {fileID: 21300000, guid: 1b8a515a3076d5a4bbc18db3abfcec18, type: 3}
-  gamepadSprite: {fileID: 21300000, guid: a6b574811b9b1104eb3a5be756efb539, type: 3}
---- !u!114 &620497043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620497040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isUI: 1
-  keyboardSprite: {fileID: 21300000, guid: 7caac11e270cc27468d8589f1d37a67f, type: 3}
-  gamepadSprite: {fileID: 21300000, guid: 19997a798a0cb47448866fa0934886c0, type: 3}
 --- !u!114 &638390375 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3808064876116611774, guid: ee71bf3a7603ed44d924ca860b868071, type: 3}
@@ -51759,16 +51707,7 @@ PrefabInstance:
     - {fileID: 4954933220631921168, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
     - {fileID: 2597877611638503547, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4091801824120781135, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 620497043}
-    - targetCorrespondingSourceObject: {fileID: 6874570373368192242, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 620497042}
-    - targetCorrespondingSourceObject: {fileID: 7392127733221791462, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 620497041}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6aab345a0528e0418aa2c7d1939b976, type: 3}
 --- !u!114 &1497419930 stripped
 MonoBehaviour:

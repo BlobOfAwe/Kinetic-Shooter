@@ -4145,6 +4145,7 @@ GameObject:
   - component: {fileID: 3803048821385961536}
   - component: {fileID: 2167590629363343229}
   - component: {fileID: 7261517478418351316}
+  - component: {fileID: 4281258948377391011}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4209,6 +4210,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4281258948377391011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091801824120781135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUI: 1
+  keyboardSprite: {fileID: 21300000, guid: 7caac11e270cc27468d8589f1d37a67f, type: 3}
+  gamepadSprite: {fileID: 21300000, guid: 19997a798a0cb47448866fa0934886c0, type: 3}
 --- !u!1 &4102660017506008640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7096,6 +7112,7 @@ GameObject:
   - component: {fileID: 3793733102176133708}
   - component: {fileID: 7156446454575706166}
   - component: {fileID: 5752559282987135620}
+  - component: {fileID: 722979248617265016}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7160,6 +7177,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &722979248617265016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874570373368192242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUI: 1
+  keyboardSprite: {fileID: 21300000, guid: 1b8a515a3076d5a4bbc18db3abfcec18, type: 3}
+  gamepadSprite: {fileID: 21300000, guid: a6b574811b9b1104eb3a5be756efb539, type: 3}
 --- !u!1 &7121033408158633408
 GameObject:
   m_ObjectHideFlags: 0
@@ -7473,6 +7505,7 @@ GameObject:
   - component: {fileID: 9105543405472049382}
   - component: {fileID: 4334581223965556588}
   - component: {fileID: 5609384784355987512}
+  - component: {fileID: 2773337914805764472}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7537,6 +7570,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2773337914805764472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7392127733221791462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0393b0860ecd4cc499e27fb0e148946e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUI: 1
+  keyboardSprite: {fileID: 21300000, guid: 80a8ee050494b9c40be4f1feafc923af, type: 3}
+  gamepadSprite: {fileID: 21300000, guid: b3eb15f4eb73caf458ed1c9a20942088, type: 3}
 --- !u!1 &7469153162547322464
 GameObject:
   m_ObjectHideFlags: 0

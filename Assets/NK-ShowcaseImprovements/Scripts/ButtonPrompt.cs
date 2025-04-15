@@ -29,7 +29,17 @@ public class ButtonPrompt : MonoBehaviour
 
     private void Update()
     {
-        if (playerInput != null)
+        if (FindObjectOfType<InventoryCursor>() != null && FindObjectOfType<InventoryCursor>().controlCursor)
+        {
+            if (isUI)
+            {
+                image.sprite = gamepadSprite;
+            }
+            else
+            {
+                spriteRenderer.sprite = gamepadSprite;
+            }
+        } else if (playerInput != null)
         {
             if (playerInput.currentControlScheme == "Keyboard+Mouse")
             {

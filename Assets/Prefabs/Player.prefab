@@ -6322,6 +6322,66 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e84e15b8-9e9a-45c3-99de-637526660ab8
     m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5793988220114659197}
+        m_TargetAssemblyTypeName: InventoryCursor, Assembly-CSharp
+        m_MethodName: OnCursorMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cce50eae-c205-4a62-a263-9665306d7d27
+    m_ActionName: Player/VirtualCursor[/XInputControllerWindows/leftStick,/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8b037df9-2847-4247-abe3-b56758f14739
+    m_ActionName: UI/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a7990236-ad5e-4155-9d65-5f001d124c62
+    m_ActionName: UI/Submit[/Keyboard/enter,/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3d8d1278-6979-4ec0-925a-1e2cecaecc99
+    m_ActionName: UI/Cancel[/Keyboard/escape,/Keyboard/backspace,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f3c2e456-bd20-4bfe-8bcf-840bef545842
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee46ec97-4c69-4b86-b9f2-502e19aa76ee
+    m_ActionName: UI/LeftClick[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 00a58e63-ad2d-462f-a777-b59922b9e397
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72495000-ce2d-4449-841d-6ae0e465c80d
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5793988220114659197}
+        m_TargetAssemblyTypeName: InventoryCursor, Assembly-CSharp
+        m_MethodName: OnCursorMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6744fd3c-b833-4213-a16e-1da3653df1d8
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -7067,6 +7127,7 @@ GameObject:
   - component: {fileID: 3626381369976393752}
   - component: {fileID: 5738236036888129858}
   - component: {fileID: 8730447275355375454}
+  - component: {fileID: 5793988220114659197}
   m_Layer: 5
   m_Name: InventoryLayoutGroup
   m_TagString: Untagged
@@ -7155,6 +7216,22 @@ MonoBehaviour:
   m_Spacing: {x: 52.73, y: 53.1}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &5793988220114659197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196206578916276599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c14beef1d661d554287910cd5732fe3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultPos: {x: 0.095, y: 0.575}
+  speed: 0.5
+  deadzone: 0.5
+  controlCursor: 0
 --- !u!1 &7901297314226792248
 GameObject:
   m_ObjectHideFlags: 0

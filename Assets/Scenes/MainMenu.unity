@@ -4931,19 +4931,7 @@ MonoBehaviour:
     m_ActionId: 7eff86b0-6c28-4002-8bc5-c3c0479cd129
     m_ActionName: Player/Aim[/Mouse/position,/Pen/position,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ControllerCursor, Assembly-CSharp
-        m_MethodName: OnCursorMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: a74be310-121e-4844-b8f5-c457ebe806d5
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]
   - m_PersistentCalls:
@@ -5038,6 +5026,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6744fd3c-b833-4213-a16e-1da3653df1d8
     m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cce50eae-c205-4a62-a263-9665306d7d27
+    m_ActionName: Player/VirtualCursor[/XInputControllerWindows/leftStick,/XInputControllerWindows/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -14484,50 +14476,6 @@ RectTransform:
   m_AnchoredPosition: {x: 10.163, y: 0}
   m_SizeDelta: {x: 10.326, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1931596416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1931596418}
-  - component: {fileID: 1931596417}
-  m_Layer: 0
-  m_Name: CheatCode
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1931596417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931596416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0e9f6d66dc6cf4aa17aacf1766e197, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1931596418
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931596416}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955621843
 GameObject:
   m_ObjectHideFlags: 0
@@ -15937,4 +15885,3 @@ SceneRoots:
   - {fileID: 1137687436}
   - {fileID: 1873168834}
   - {fileID: 903874975}
-  - {fileID: 1931596418}
