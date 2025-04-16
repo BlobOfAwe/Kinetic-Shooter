@@ -9,7 +9,8 @@ public abstract class ShootAbility : Ability
     public float bulletKnockbackMultiplier = 1f;
     public float bulletDamageMultiplier = 1f;
     public float upgradeTriggerRate = 1f;
-
+    [HideInInspector]
+    public float modifiedTriggerRate;
     [HideInInspector]
     public GameObject[] bullets; // Changed to public so it can be used with upgrade behaviour. - NK
 }
