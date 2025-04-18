@@ -10,12 +10,13 @@ public class Cushion : Upgrade
         base.ApplyUpgrade(quantity);
         if (FindObjectOfType<CushionShield>() == null)
         {
-            Instantiate(cushionShield, player.transform);
+            Instantiate(cushionShield, player.transform).GetComponent<CushionShield>().quantity = quantity;
             AudioManager.instance.PlayOneShot(FMODEvents.instance.cushionActivateAbility, this.transform.position);
             Debug.Log("Shield activated.");
         } else
         {
-            Debug.Log("Shield already active.");
+            FindObjectOfType<CushionShield>().quantity = quantity;
+            Debug.Log("Shield upgraded.");
         }
     }
 }

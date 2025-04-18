@@ -21,12 +21,12 @@ public class SlowShots : Upgrade
             Buff buffConstructor = ScriptableObject.CreateInstance<Buff>();
 
             buffConstructor.buffType = Buff.buffCategory.SPEED_BUFF;
-            buffConstructor.value = enemySlow;
+            buffConstructor.value = enemySlow * quantity;
             buffConstructor.modification = Buff.modificationType.Additive;
             buffConstructor.duration = duration;
 
             Enemy enemy = target.GetComponent<Enemy>();
-            if (enemy.totalSpeed + enemySlow <= 0f)
+            if (enemy.totalSpeed + enemySlow * quantity <= 0f)
             {
                 buffConstructor.value = -enemy.totalSpeed;
             }
