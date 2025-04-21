@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 28836387514f34f47b398f6008e9329d
+guid: adbffc8918df6de43b722aabbf9dbf48
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Armadillo_defense(1)_0
+      name: OLD_traplet walk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 143.75
-        height: 96
-      alignment: 9
-      pivot: {x: 0.49610597, y: 0.26870444}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76dd0de601bdec54a9ca42b16f246e8d
-      internalID: 1846691399
+      spriteID: dd45da88777a8104184442a0834bdcf2
+      internalID: -385622221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Armadillo_defense(1)_1
+      name: OLD_traplet walk_1
       rect:
         serializedVersion: 2
-        x: 143
+        x: 48
         y: 0
-        width: 143.75
-        height: 96
-      alignment: 9
-      pivot: {x: 0.49740395, y: 0.25704247}
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54c1ceb51702576428e44f1706b7ee1b
-      internalID: 106475754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armadillo_defense(1)_2
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 0
-        width: 143.75
-        height: 96
-      alignment: 9
-      pivot: {x: 0.49740425, y: 0.26676077}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2de7b1c58fa378469e04e5560e3545d
-      internalID: 1179427166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Armadillo_defense(1)_3
-      rect:
-        serializedVersion: 2
-        x: 429
-        y: 0
-        width: 143.75
-        height: 96
-      alignment: 9
-      pivot: {x: 0.50389415, y: 0.30174664}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5238b516d9d50674d8a3cd2e65f497c3
-      internalID: 1940294299
+      spriteID: e9a01b576f6152645a22c6f4e73ae70f
+      internalID: -1728516753
       vertices: []
       indices: 
       edges: []
@@ -204,10 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Armadillo_defense(1)_0: 1846691399
-      Armadillo_defense(1)_1: 106475754
-      Armadillo_defense(1)_2: 1179427166
-      Armadillo_defense(1)_3: 1940294299
+      OLD_traplet walk_0: -385622221
+      OLD_traplet walk_1: -1728516753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

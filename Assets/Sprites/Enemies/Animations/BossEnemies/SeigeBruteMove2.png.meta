@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4062bd8e199f134b8624f2987b8477b
+guid: c1c0651cf4ed5ee4e98fbf0fe5e18717
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,102 +93,131 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armadillo walk(1)_0
+      name: SeigeBruteMove2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128.25
-        height: 86
-      alignment: 9
-      pivot: {x: 0.5051921, y: 0.27158496}
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaaba77202cc34e48895ed061d09a001
-      internalID: 1557624495
+      spriteID: 801c6370ac00f36409561145372daf38
+      internalID: -1471186223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armadillo walk(1)_1
+      name: SeigeBruteMove2_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 240
         y: 0
-        width: 128.25
-        height: 86
-      alignment: 9
-      pivot: {x: 0.49870184, y: 0.30255648}
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 693725f3a587dd84c8333c2a40b55675
-      internalID: 203228188
+      spriteID: aa7c24e28371a4e4a97c41b1096f241a
+      internalID: 1744572728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armadillo walk(1)_2
+      name: SeigeBruteMove2_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 480
         y: 0
-        width: 128.25
-        height: 86
-      alignment: 9
-      pivot: {x: 0.5129804, y: 0.2948136}
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f3484d152cb19a4284d6b2695ed8c7c
-      internalID: -1356256
+      spriteID: c98480453c6122e4cbc7adf421751205
+      internalID: 609896769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armadillo walk(1)_3
+      name: SeigeBruteMove2_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 720
         y: 0
-        width: 128.25
-        height: 86
-      alignment: 9
-      pivot: {x: 0.5025961, y: 0.27932784}
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46016e50be87008468c541108747e6e9
-      internalID: -2079902327
+      spriteID: ddb0d41986d716640bd237929827b5f7
+      internalID: -271131712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeigeBruteMove2_4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7d6871fbafb1c479b215f7c0b01627
+      internalID: -754244301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeigeBruteMove2_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9a87dd9aec4e1469e27458bc736573
+      internalID: -730091010
       vertices: []
       indices: 
       edges: []
@@ -204,10 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      armadillo walk(1)_0: 1557624495
-      armadillo walk(1)_1: 203228188
-      armadillo walk(1)_2: -1356256
-      armadillo walk(1)_3: -2079902327
+      SeigeBruteMove2_0: -1471186223
+      SeigeBruteMove2_1: 1744572728
+      SeigeBruteMove2_2: 609896769
+      SeigeBruteMove2_3: -271131712
+      SeigeBruteMove2_4: -754244301
+      SeigeBruteMove2_5: -730091010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

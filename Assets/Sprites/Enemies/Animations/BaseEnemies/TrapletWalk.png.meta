@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: adbffc8918df6de43b722aabbf9dbf48
+guid: 551a37656979d0c4a8a6933f4c06a34b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,24 +93,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: traplet walk_0
+      name: TrapletWalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +105,20 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd45da88777a8104184442a0834bdcf2
-      internalID: -385622221
+      spriteID: 3e9ee59f9e96cc64da7a5282c6c1c78d
+      internalID: 1095372691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: traplet walk_1
+      name: TrapletWalk_1
       rect:
         serializedVersion: 2
         x: 48
@@ -139,14 +126,14 @@ TextureImporter:
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9a01b576f6152645a22c6f4e73ae70f
-      internalID: -1728516753
+      spriteID: 4512824a0f4e27e418b8fd00577dd874
+      internalID: 1751932820
       vertices: []
       indices: 
       edges: []
@@ -162,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      traplet walk_0: -385622221
-      traplet walk_1: -1728516753
+      TrapletWalk_0: 1095372691
+      TrapletWalk_1: 1751932820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
