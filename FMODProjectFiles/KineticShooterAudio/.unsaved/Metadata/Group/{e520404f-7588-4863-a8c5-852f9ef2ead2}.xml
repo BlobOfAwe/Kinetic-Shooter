@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{e520404f-7588-4863-a8c5-852f9ef2ead2}">
+		<property name="name">
+			<value>SFX</value>
+		</property>
+		<property name="maxInstances">
+			<value>20</value>
+		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{abaf677d-4bdb-439d-805f-ef2831b6054b}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{842d5554-52b0-46c7-94d2-f8045cda89fc}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{c3f8f65c-5eab-4eca-9c5d-cf4a189a930c}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{abaf677d-4bdb-439d-805f-ef2831b6054b}">
+		<relationship name="effects">
+			<destination>{6c8efa1e-2c20-442c-ad2d-d076ea60bdaf}</destination>
+			<destination>{f065cc48-7c59-4100-8ae0-032dc6d6989c}</destination>
+			<destination>{15b28914-ef7b-46ec-a413-053a13e3d8b1}</destination>
+			<destination>{8210551a-e9de-4ddf-b158-f18e0de9147b}</destination>
+			<destination>{d4baf742-8876-4332-9d96-da03cde5e1ff}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{842d5554-52b0-46c7-94d2-f8045cda89fc}" />
+	<object class="MixerBusFader" id="{6c8efa1e-2c20-442c-ad2d-d076ea60bdaf}" />
+	<object class="DistortionEffect" id="{f065cc48-7c59-4100-8ae0-032dc6d6989c}" />
+	<object class="CompressorEffect" id="{15b28914-ef7b-46ec-a413-053a13e3d8b1}">
+		<property name="threshold">
+			<value>-20</value>
+		</property>
+		<property name="ratio">
+			<value>3.20000005</value>
+		</property>
+		<property name="gain">
+			<value>0.5</value>
+		</property>
+	</object>
+	<object class="Sidechain" id="{8210551a-e9de-4ddf-b158-f18e0de9147b}">
+		<property name="level">
+			<value>1.5</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{d4baf742-8876-4332-9d96-da03cde5e1ff}">
+		<property name="wetLevel">
+			<value>-22.5</value>
+		</property>
+	</object>
+</objects>
