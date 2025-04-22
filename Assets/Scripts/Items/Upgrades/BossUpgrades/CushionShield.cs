@@ -22,6 +22,8 @@ public class CushionShield : MonoBehaviour
 
     private Color originalColor = Color.white;
 
+    public int quantity = 0;
+
     private GameObject[] shards;
 
     private float shieldCharge = 0f;
@@ -57,7 +59,7 @@ public class CushionShield : MonoBehaviour
         {
             if (shieldCharge < 1f)
             {
-                shieldCharge += Time.deltaTime * chargeSpeed;
+                shieldCharge += Time.deltaTime * chargeSpeed * quantity;
             } else
             {
                 shieldCharge = 1f;

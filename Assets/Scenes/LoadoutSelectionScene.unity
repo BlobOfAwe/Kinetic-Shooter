@@ -253,8 +253,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -824,8 +823,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -961,8 +959,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1096,8 +1093,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -1652,8 +1648,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2220,14 +2215,7 @@ MonoBehaviour:
     ability: YEEEEEEEHAW
     description: Throw it down and keep pratyin till the day dont end
     loadoutImage: {fileID: 0}
-    primaryAbility: {fileID: 0}
-    secondaryAbility: {fileID: 0}
-    utilityAbility: {fileID: 0}
-    attackStat: 0
-    defenseStat: 0
-    speedStat: 0
-    hpStat: 0
-    recoverStat: 0
+    selectedAbility: {fileID: 0}
   - loadout: Standard
     weapon: Range
     primary: SSS
@@ -2235,14 +2223,7 @@ MonoBehaviour:
     ability: SSS
     description: zxcxzczc
     loadoutImage: {fileID: 0}
-    primaryAbility: {fileID: 0}
-    secondaryAbility: {fileID: 0}
-    utilityAbility: {fileID: 0}
-    attackStat: 0
-    defenseStat: 0
-    speedStat: 0
-    hpStat: 0
-    recoverStat: 0
+    selectedAbility: {fileID: 0}
   - loadout: Heavy
     weapon: The Big Ol'RustBucket
     primary: Shoots a bullet so wide it tears a hole in the space time continium
@@ -2250,15 +2231,7 @@ MonoBehaviour:
     ability: SKIBIIIIIIDY
     description: zxcxzczc
     loadoutImage: {fileID: 0}
-    primaryAbility: {fileID: 0}
-    secondaryAbility: {fileID: 0}
-    utilityAbility: {fileID: 0}
-    attackStat: 0
-    defenseStat: 0
-    speedStat: 0
-    hpStat: 0
-    recoverStat: 0
-  playerPrefab: {fileID: 0}
+    selectedAbility: {fileID: 0}
 --- !u!4 &1919258540
 Transform:
   m_ObjectHideFlags: 0
@@ -2490,8 +2463,7 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
   m_sharedMaterial: {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
-  m_fontSharedMaterials:
-  - {fileID: -3544091844112623976, guid: 450f75585bbc3814ca5e2e894e33b62f, type: 2}
+  m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

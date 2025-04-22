@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   title: Slow Shots
   description: Shots slow enemies and explode them!
   statModifications: []
-  enemySlow: -0.25
+  enemySlow: -0.05
   duration: 4
   explosion: {fileID: 6102170954844317050, guid: 0a344dc35930bac419a8afbead9cbc3f, type: 3}
   explosionDamage: 2

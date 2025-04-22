@@ -60,7 +60,13 @@ public class CursorManager : MonoBehaviour
             }
             else if (playerInput.currentControlScheme == "Gamepad")
             {
-                Cursor.visible = false;
+                if (FindObjectOfType<InventoryCursor>() != null && FindObjectOfType<InventoryCursor>().controlCursor)
+                {
+                    Cursor.visible = true;
+                } else
+                {
+                    Cursor.visible = false;
+                }
             }
         } else
         {

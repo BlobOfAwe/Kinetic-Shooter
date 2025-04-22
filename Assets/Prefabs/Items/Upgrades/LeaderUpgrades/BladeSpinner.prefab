@@ -141,7 +141,7 @@ MonoBehaviour:
   title: Blade Spinner
   description: Shots may create blades on impact.
   statModifications: []
-  spawnChance: 0.5
+  spawnChance: 0.1
   bladeDamageMod: 0.2
   blade: {fileID: 4711800757065724736, guid: f53384b87c884ed49b2e5a4623888f8d, type: 3}
 --- !u!114 &2767555183437518458
@@ -265,7 +265,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
