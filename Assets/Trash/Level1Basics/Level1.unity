@@ -161,7 +161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   forcefieldCollider: {fileID: 2079579041}
+  beaconIndicator: {fileID: 0}
 --- !u!1 &238707329
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,10 +397,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -35.5
-  maxX: 35.5
-  minY: -26.5
-  maxY: 26.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!1 &459126353
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,10 +881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -35.5
-  maxX: 35.5
-  minY: -26.5
-  maxY: 26.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!1 &985095273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,8 +1302,15 @@ MonoBehaviour:
   - {fileID: 3900444248623735405, guid: 850d8a53f2c9a2344b5bcf173601349c, type: 3}
   - {fileID: 2634069998293061957, guid: 3e97ec6d519e27d4aaef5e28f7e3f07c, type: 3}
   - {fileID: 6540024246937766661, guid: ef3a2132dbda282438218f7dc11baa34, type: 3}
+  hazardPrefabs: []
   minItems: 5
   maxItems: 10
+  minHazards: 0
+  maxHazards: 0
+  levelXMin: -1
+  levelXMax: 1
+  levelYMin: -1
+  levelYMax: 1
 --- !u!4 &1664531500
 Transform:
   m_ObjectHideFlags: 0
@@ -1566,7 +1576,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4306,10 +4316,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -0.5
-  maxX: 0.5
-  minY: -0.5
-  maxY: 0.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!1 &2079579039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4479,10 +4490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e69572763989f498902eb9f3eb8366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -18.5
-  maxX: 18.5
-  minY: -9.5
-  maxY: 9.5
+  wholeMap: 1
+  xMin: 0
+  xMax: 0
+  yMin: 0
+  yMax: 0
 --- !u!212 &1680464798916867709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4503,7 +4515,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4590,7 +4602,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4635,6 +4647,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcefield: {fileID: 116834672}
+  active: 0
+  bossCamSize: 0
+  timeToFullZoomOut: 1
+  vCam: {fileID: 0}
+  winPanel: {fileID: 0}
+  levelIsFinished: 0
+  player: {fileID: 0}
+  parameterController: {fileID: 0}
+  winButton: {fileID: 0}
 --- !u!114 &5155918238142988133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4648,13 +4669,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalEnemies: 2
-  bossEnemy: {fileID: 714103837038236202, guid: 4a8743e630961b94aa434eba3bef0fa4, type: 3}
+  bossSpawningCredits: 0
+  remainingBosses: 0
+  bossEnemies: []
   bossXOffsetMin: -2
   bossXOffsetMax: 2
   bossYOffsetMin: -2
   bossYOffsetMax: 2
   beacon: {fileID: 4045738922931962146}
   enemyCounterText: {fileID: 1728453950}
+  beaconIndicator: {fileID: 0}
+  parameterController: {fileID: 0}
 --- !u!4 &5889808701547709218
 Transform:
   m_ObjectHideFlags: 0
