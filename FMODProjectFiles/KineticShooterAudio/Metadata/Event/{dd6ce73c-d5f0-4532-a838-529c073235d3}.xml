@@ -59,10 +59,20 @@
 			<destination>{533ea8f7-bee1-4bf0-9139-72d6d49895d2}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
+			<destination>{c551085a-0e4e-4470-be60-c5e10fa7faf8}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{7e246171-1da9-4148-8711-d8e901d527cc}" />
+	<object class="EventAutomatableProperties" id="{7e246171-1da9-4148-8711-d8e901d527cc}">
+		<property name="maxVoices">
+			<value>4</value>
+		</property>
+		<property name="voiceStealing">
+			<value>1</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>320</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{ade5588e-4e69-466b-beb8-a411a416ba2b}" />
 	<object class="GroupTrack" id="{35b0af4c-84aa-4dfa-9712-d961a2232449}">
 		<relationship name="mixerGroup">
@@ -122,6 +132,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{7ebb0b9e-31bd-4ead-ba84-b35f964a74f9}" />
 	<object class="SingleSound" id="{b872507b-f70c-4c49-8fc6-f9b167c7d2d5}">
+		<property name="volume">
+			<value>-15.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{e4219e53-d6ab-4ec3-9ab7-9ca48bfe231f}</destination>
 		</relationship>

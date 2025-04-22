@@ -7,6 +7,9 @@
 		<property name="maxInstances">
 			<value>20</value>
 		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{abaf677d-4bdb-439d-805f-ef2831b6054b}</destination>
 		</relationship>
@@ -37,7 +40,7 @@
 			<value>3.20000005</value>
 		</property>
 		<property name="gain">
-			<value>4</value>
+			<value>0.5</value>
 		</property>
 	</object>
 	<object class="Sidechain" id="{8210551a-e9de-4ddf-b158-f18e0de9147b}">
