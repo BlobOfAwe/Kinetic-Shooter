@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{c551085a-0e4e-4470-be60-c5e10fa7faf8}">
+		<property name="name">
+			<value>ANNOYING</value>
+		</property>
+		<property name="maxInstances">
+			<value>7</value>
+		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{250f9048-fe65-4683-860f-ce771ba6ccc6}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{ec1a17dd-fa5a-4a2d-a0b9-be850bb4a081}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{07ca844a-0485-4b25-ac56-5c408fa2e090}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{e520404f-7588-4863-a8c5-852f9ef2ead2}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{250f9048-fe65-4683-860f-ce771ba6ccc6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>5.5</value>
+		</property>
+	</object>
+	<object class="MixerBusEffectChain" id="{ec1a17dd-fa5a-4a2d-a0b9-be850bb4a081}">
+		<relationship name="effects">
+			<destination>{c3ad6dc5-e0d0-458b-8d3e-ba692ccf4a98}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{07ca844a-0485-4b25-ac56-5c408fa2e090}" />
+	<object class="MixerBusFader" id="{c3ad6dc5-e0d0-458b-8d3e-ba692ccf4a98}" />
+</objects>
