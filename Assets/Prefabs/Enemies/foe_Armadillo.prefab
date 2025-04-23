@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackStat: 20
   defenseStat: 60
-  speedStat: 2
+  speedStat: 3
   hpStat: 200
   recoverStat: 0
   attackBuffs: []
@@ -253,14 +253,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb5f72f59e56d94ca2d2c98c65e8da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 15
+  cooldown: 10
   cooldownMultiplier: 1
   available: 1
   inUse: 0
   range: 0
   damageModifier: 0
   playCooldownSound: 0
-  duration: 6
+  duration: 10
 --- !u!95 &5515086074136579149
 Animator:
   serializedVersion: 5

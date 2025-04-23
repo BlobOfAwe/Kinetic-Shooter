@@ -7,6 +7,7 @@ public class Recharge : Ability
     private Buff armorBuff;
     private Buff speedDebuff;
     [SerializeField] float duration;
+    [SerializeField] Color rechargecolor;
     private Animator animator;
 
     // FOR WHITEBOX USE ONLY
@@ -32,28 +33,25 @@ public class Recharge : Ability
         speedDebuff.modification = Buff.modificationType.Multiplicative;
         speedDebuff.value = 0;
 
-        thisEntity.ApplyBuff(armorBuff);
-
     }
 
     public override void OnActivate()
     {
         available = false;
-        
-
         StartCoroutine(VulnerableRecharge());
     }
 
     public IEnumerator VulnerableRecharge()
     {
-        thisEntity.defenseBuffs.Remove(armorBuff);
+        thisEntity.ApplyBuff(armorBuff);
         thisEntity.ApplyBuff(speedDebuff);
-        // sprite.color = Color.red;
+        //sprite.color = rechargecolor;
         animator.SetBool("isDefending", true);
         yield return new WaitForSeconds(duration);
         animator.SetBool("isDefending", false);
         thisEntity.speedBuffs.Remove(speedDebuff);
-        thisEntity.ApplyBuff(armorBuff);
+        thisEntity.defenseBuffs.Remove(armorBuff);
+        thisEntity.UpdateStats();
 
         sprite.color = baseColor;
 
