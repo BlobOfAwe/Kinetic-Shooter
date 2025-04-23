@@ -48,7 +48,8 @@ public class SelfDestruct : Ability
 
     public override void PurgeDependantObjects()
     {
-        Destroy(particles.gameObject);
+        //Destroy(particles.gameObject);
+        particles.gameObject.SetActive(false);
     }
 
 }

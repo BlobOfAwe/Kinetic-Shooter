@@ -15,6 +15,7 @@ public class Lunge : Ability
     private Rigidbody2D rb;
     private BoxCollider2D hitbox;
     private bool lunging;
+    private AIPath aipath;
     [SerializeField] private GameObject normalEnemy;
 
     // FOR WHITEBOX USE ONLY
@@ -26,6 +27,7 @@ public class Lunge : Ability
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<Enemy>().sprite;
+        aipath = GetComponent<AIPath>();
         baseColor = sprite.color;
     }
 
@@ -45,8 +47,15 @@ public class Lunge : Ability
 
         // Make the entity back up slowly for startup seconds to telegraph the lunge
         var rb = GetComponent<Rigidbody2D>();
-        Animator animator = normalEnemy.GetComponent<Animator>();
-        animator.SetTrigger("isAttacking");
+        if (normalEnemy != null)
+        {
+            Animator animator = normalEnemy.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetTrigger("isAttacking");
+            }
+        }
+        
         rb.velocity = -transform.up * startupSpeed;
         yield return new WaitForSeconds(startup);
         // Reset velocity and apply a powerful force forward to lunge
@@ -61,8 +70,10 @@ public class Lunge : Ability
         sprite.color = baseColor;
 
         // Re-enable A* Pathfinding movement
-        try { GetComponent<AIPath>().canMove = true; }
-        catch { }
+        aipath.canMove = true;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+
     }
 
     // If this entity collides with something while it is lunging, attempt to damage it

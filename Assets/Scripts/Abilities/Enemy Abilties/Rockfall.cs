@@ -60,6 +60,9 @@ public class Rockfall : Ability
 
     public override void PurgeDependantObjects()
     {
-        foreach (FallingRock bullet in bullets) { Destroy(bullet.gameObject); }
+        foreach (FallingRock bullet in bullets) {
+            //Destroy(bullet.gameObject); 
+            bullet.gameObject.SetActive(false);
+        }
     }
 }

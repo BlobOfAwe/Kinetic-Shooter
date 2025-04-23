@@ -68,6 +68,9 @@ public class TestShootBullet : Ability
 
     public override void PurgeDependantObjects()
     {
-        foreach (GameObject bullet in bullets) { Destroy(bullet); }
+        foreach (GameObject bullet in bullets) {
+            //Destroy(bullet); 
+            bullet.SetActive(false);
+        }
     }
 }

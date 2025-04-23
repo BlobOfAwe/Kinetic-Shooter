@@ -104,9 +104,10 @@ public class WarCry : Ability
     public override void PurgeDependantObjects()
     {
         foreach (ParticleSystem indicator in buffIndicators) 
-        { 
+        {
             if (indicator != null)
-                Destroy(indicator.gameObject); 
+                //Destroy(indicator.gameObject); 
+                indicator.gameObject.SetActive(false);
         }
     }
 }

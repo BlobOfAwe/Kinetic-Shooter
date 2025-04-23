@@ -93,7 +93,7 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638800837994027046
+  lastModified: 638809231253135797
   FileSizes:
   - Name: Desktop
     Value: 3462208
@@ -188,10 +188,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638800837996001767
+  lastModified: 638809231256096817
   FileSizes:
   - Name: Desktop
-    Value: 2341152
+    Value: 2388768
   Exists: 1
 --- !u!114 &-7777554827445684272
 MonoBehaviour:
@@ -1038,13 +1038,13 @@ MonoBehaviour:
     Data4: -155214097
   Banks:
   - {fileID: -7791431625784592819}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 2586
+  Length: 10032
 --- !u!114 &-865399966455710880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   - {fileID: 6065114308530843012}
   StringsBanks:
   - {fileID: 2421541565822050154}
-  cacheTime: 638800837996001767
+  cacheTime: 638809231256096817
   cacheVersion: 131617
 --- !u!114 &58960200177815597
 MonoBehaviour:
@@ -1609,10 +1609,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638800837994027046
+  lastModified: 638809231253157988
   FileSizes:
   - Name: Desktop
-    Value: 4458
+    Value: 4508
   Exists: 1
 --- !u!114 &3089898121057244785
 MonoBehaviour:
@@ -2112,10 +2112,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638794715796792488
+  lastModified: 638809231253145769
   FileSizes:
   - Name: Desktop
-    Value: 2174
+    Value: 2536
   Exists: 1
 --- !u!114 &6375796620838126220
 MonoBehaviour:
@@ -2399,10 +2399,10 @@ MonoBehaviour:
   Path: FMODProjectFiles/KineticShooterAudio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638800837995832220
+  lastModified: 638809231255896993
   FileSizes:
   - Name: Desktop
-    Value: 30852960
+    Value: 30853056
   Exists: 1
 --- !u!114 &9171413878878511421
 MonoBehaviour:

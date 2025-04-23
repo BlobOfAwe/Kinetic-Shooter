@@ -229,7 +229,7 @@ public class PlayerBehaviour : Entity
             else if (moveDir.y > 0 && rb.velocity.y < totalSpeed * manualMoveModifier) { manualMoveY = totalSpeed * manualMoveModifier * moveDir.y; }
             else { manualMoveY = 0; }
 
-            rb.velocity += new Vector2(manualMoveX, manualMoveY); 
+            rb.velocity += new Vector2(manualMoveX, manualMoveY) * Time.fixedDeltaTime * 4; 
         }
 
         if (capSpeedToTotalSpeed && rb.velocity.magnitude > totalSpeed) { rb.velocity = rb.velocity.normalized * totalSpeed; }

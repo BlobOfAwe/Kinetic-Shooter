@@ -40,7 +40,7 @@ public class EnemyCounter : MonoBehaviour
 
     void Start()
     {
-        totalEnemies = Mathf.RoundToInt(totalEnemies * (1 + (GameManager.difficultyCoefficient * 0.5f))); // Scale the number of enemies based on the difficulty
+        totalEnemies = Mathf.RoundToInt(totalEnemies * (1 + (GameManager.difficultyCoefficient * 0.3f))); // Scale the number of enemies based on the difficulty
         remainingEnemies = totalEnemies;
         bossSpawningCredits = GameManager.bossSpawnCreditsForLevel[GameManager.currentLevel];
         UpdateEnemyCounter();

@@ -62,7 +62,11 @@ public class BouncyTackle : Ability
 
     public override void PurgeDependantObjects()
     {
-        foreach (GameObject obj in shockwaves) { Destroy(obj); }
+        foreach (GameObject obj in shockwaves) 
+        {
+            //Destroy(obj); - DISABLED IN FAVOUR OF DISABLING THE GAMEOBJECT FOR OPTIMIZATION
+            obj.SetActive(false);
+        }
     }
 
     // If this entity collides with something while it is lunging, attempt to damage it

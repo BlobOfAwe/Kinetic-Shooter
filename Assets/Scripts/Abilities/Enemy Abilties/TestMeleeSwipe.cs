@@ -45,7 +45,8 @@ public class TestMeleeSwipe : Ability
 
     public override void PurgeDependantObjects()
     {
-        Destroy(hitbox.gameObject);
+        //Destroy(hitbox.gameObject);
+        hitbox.gameObject.SetActive(false);
     }
 
     IEnumerator DisableAfterSeconds()

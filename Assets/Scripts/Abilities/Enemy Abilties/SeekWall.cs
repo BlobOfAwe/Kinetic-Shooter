@@ -49,7 +49,8 @@ public class SeekWall : Ability
 
     public override void PurgeDependantObjects()
     {
-        Destroy(targetPointer.gameObject);
+        //Destroy(targetPointer.gameObject);
+        targetPointer.gameObject.SetActive(false);
     }
 
 

@@ -57,6 +57,7 @@ public abstract class Enemy : Entity
     private bool rotateSpriteToFacePlayer = false;
     private bool dead;
     public bool initializedByParent = false;
+    private PlayerBehaviour player;
 
  
     //audio parameter controller script reference
@@ -68,6 +69,7 @@ public abstract class Enemy : Entity
         aiPath = GetComponent<AIPath>();
         enemyCounter = FindAnyObjectByType<EnemyCounter> ();
         scoreManager = FindObjectOfType<ScoreManager> ();
+        player = FindAnyObjectByType<PlayerBehaviour>();
         specialUpgradeSpawner = FindObjectOfType<SpecialUpgradeSpawner>(); // Added by Nathaniel Klassen
         if (sprite == null) { Debug.LogError(gameObject.name + " has no sprite assigned."); }
 
@@ -121,7 +123,7 @@ public abstract class Enemy : Entity
         {
             dead = true;
             //Debug.Log(gameObject.name + " was killed");
-            FindObjectOfType<PlayerBehaviour>().ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
+            player.ProjectileKillEffect(this); // Added to make upgrade effects upon killing enemies happen. - NK
             AudioManager.instance.PlayOneShot(FMODEvents.instance.enemyDeath, this.transform.position);
             // Purge any dependant objects from the enemy's abilities
             if (primary != null) { primary.PurgeDependantObjects(); }
@@ -173,7 +175,9 @@ public abstract class Enemy : Entity
             
             DataManager.Instance.gameData.AddKills(enemyName); // Added by Nathaniel Klassen
 
-            Destroy(gameObject);
+            //Destroy(gameObject); REPLACED WITH DISABLING THE GAMEOBJECT FOR OPTIMIZATION
+            gameObject.SetActive(false);
+            this.enabled = false;
         }
     }
 

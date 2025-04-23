@@ -86,7 +86,9 @@ public class LightTertiaryBall : Ability
                     float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
                     bullet.transform.eulerAngles = Vector3.forward * Mathf.Rad2Deg * angle; // Set the bullet's rotation to firePoint's rotation - changed from transform.eulerAngles - NK
                     bullet.GetComponent<Portawall>().timeRemaining = bullet.GetComponent<Portawall>().despawnTime; // Reset the bullet's despawn timer. - NK
-                    bullet.SetActive(true); return;
+                    bullet.SetActive(true);
+                    rb.velocity *= -3; 
+                    return;
                 } // Set the bullet to active and return
             }
         }
